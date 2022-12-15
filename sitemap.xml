@@ -1,0 +1,677 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+
+
+<url>
+  <loc>https://pythonread.github.io/</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/projects.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/free-course.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/getting-started.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/execute-python-scripts.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/variables.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/strings.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/replace.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/join.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/string-find.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/split.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/random-numbers.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/keyboard-input.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/if-statements.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/for-loops.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/while-loop.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/functions.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/list.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/list-operations.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/sort-list.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/range-function.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dictionary.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/read-file.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/write-file.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/nested-loops.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/slices.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/multiple-return.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/scope.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/time-and-date.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/try-except.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/how-to-use-pip-and-pypi.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/class.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/constructor.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/getter-and-setter.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/modules.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/inheritance.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/static-method.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/iterable.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/classmethod.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/multiple-inheritance.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/virtualenv.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/enumerate.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/pickle.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/regular-expressions.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/json.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/read-json-file.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/decorators.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/webserver.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/python-play-sound.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/text-to-speech.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/convert-mp3-to-wav.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/transcribe-audio.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/tkinter.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/tkinter-button.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/tkinter-menu.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/tkinter-label.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/tkinter-image.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/tkinter-canvas.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/tkinter-checkbox.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/tkinter-entry.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/tkinter-filedialog.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/tkinter-frame.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/tkinter-listbox.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/tkinter-messagebox.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/tkinter-radiobutton.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/tkinter-scale.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/stack.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/queue.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/types-of-queue.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/circular-queue.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/priority-queue.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/deque.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/linked-list.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/linked-list-operations.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/linked-list-types.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/hash-table.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/heap-data-structure.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/fibonacci-heap.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/decrease-key-and-delete-node-from-a-fibonacci-heap.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/trees.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/tree-traversal.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/binary-tree.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/full-binary-tree.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/perfect-binary-tree.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/complete-binary-tree.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/balanced-binary-tree.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/binary-search-tree.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/avl-tree.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/b-tree.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/insertion-into-a-b-tree.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/deletion-from-a-b-tree.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/b-plus-tree.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/insertion-on-a-b-plus-tree.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/deletion-from-a-b-plus-tree.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/red-black-tree.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/insertion-in-a-red-black-tree.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/deletion-from-a-red-black-tree.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/graph.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/spanning-tree-and-minimum-spanning-tree.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/strongly-connected-components.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/graph-adjacency-matrix.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/graph-adjacency-list.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/graph-dfs.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/graph-bfs.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/bellman-ford-algorithm.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/bubble-sort.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/selection-sort.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/insertion-sort.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/merge-sort.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/quick-sort.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/counting-sort.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/radix-sort.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/bucket-sort.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/heap-sort.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/shell-sort.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/linear-search.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/binary-search.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/greedy-algorithm.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/ford-fulkerson-algorithm.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/dijkstra-algorithm.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/kruskal-algorithm.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/prim-algorithm.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/huffman-coding.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/dynamic-programming.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/floyd-warshall-algorithm.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/longest-common-subsequence.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/backtracking-algorithm.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/rabin-karp-algorithm.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/divide-and-conquer.html</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/json</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/spanning-tree-and-minimum-spanning-tree</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://pythonread.github.io/dsa/kruskal-algorithm</loc>
+  <lastmod>2022-12-15T16:47:38+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>
