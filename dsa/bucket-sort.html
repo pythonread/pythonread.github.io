@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<title>Bucket Sort</title>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-HCERBDV76D"></script>
+<script>
+
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() { dataLayer.push(arguments); }
+
+        gtag('js', new Date());
+
+
+
+        gtag('config', 'G-HCERBDV76D');
+
+    </script>
+<meta content="B0487B46A104E90209E8A3BEA24ECA0E" name="msvalidate.01"/>
+<meta content="f044b3a12c7918f1" name="yandex-verification"/>
+<!--end-->
+<meta content="learn about data types, variables, lists, tuples, dictionaries,if else,DSA,loops,user-defined functions, oop, threading and scripting." name="description"/>
+<meta content="learnPython" name="author"/>
+<meta content="Learn Python for free,learn python for beginners,Core Python,Web frameworks,Multiprocess architecture,Serverside templating language,python tutorials,python4" name="keywords"/>
+<meta content="website" property="og:type"/>
+<meta content="US-CA" name="”geo.region”"/>
+<meta content="353 Jane Stanford Way, Stanford, CA 94305, United States" name="”geo.placename”"/>
+<meta content="37.430089898615456;-122.17332683124829" name="”geo.position”"/>
+<meta content="37.430089898615456, -122.17332683124829" name="”ICBM”"/>
+<link href="https://pythonread.github.io/?m=1" rel="alternate"/>
+<link href="/favicon.png" rel="icon"/>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="/style1.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/style2.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/style0.css" media="all" rel="stylesheet" type="text/css"/>
+<!--<![endif]-->
+</head>
+<body>
+<div class="nav-wrapper">
+<div class="container">
+<nav>
+<div class="logo wave">
+<a href="/" id="logo">
+
+                        Python Tutorial
+
+                    </a>
+</div>
+<div class="nav-toggle-icon" id="nav-toggle-icon" onclick="mobileMenu()">
+<div class="material-hamburger">
+<span>
+</span>
+<span>
+</span>
+<span>
+</span>
+</div>
+</div>
+<div class="menu-wrapper" id="menu-wrapper">
+<div class="nav-indicator">
+</div>
+<ul class="menus">
+<li>
+<a class="wave" href="/">
+
+                                Home
+
+                            </a>
+</li>
+<li>
+<a class="wave" href="/projects.html">
+
+                                Projects
+
+                            </a>
+</li>
+<li>
+<a class="wave" href="/free-course.html" target="_blank">
+
+                                Free Course
+
+                            </a>
+</li>
+<li>
+<a class="wave" href="/dsa.html">
+
+                                DSA
+
+                            </a>
+</li>
+</ul>
+</div>
+</nav>
+</div>
+</div>
+<div class="contents contents--neg" style="margin-top: 60px">
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+<div class="d-flex">
+<div class="left-bar d-none d-lg-block">
+<div class="card-alt mb-10x">
+<h3>Page Index</h3>
+<div class="list">
+<ul>
+<li><a href="/dsa.html#data-structure-1" title="Data Structures (I)">Data Structures
+
+                                                (I)</a></li>
+<li><a href="/dsa.html#data-structure-2" title="Data Structures (II)">Data Structures
+
+                                                (II)</a></li>
+<li><a href="/dsa.html#tree-1" title="Tree based DSA (I)">Tree based DSA (I)</a></li>
+<li><a href="/dsa.html#tree-2" title="Tree based DSA (II)">Tree based DSA (II)</a></li>
+<li><a href="/dsa.html#graph" title="Graph Data Structures and Algorithm">Graph based
+
+                                                DSA</a></li>
+<li><a href="/dsa.html#sorting-searching" title="Sorting and Searching">Sorting and
+
+                                                Searching</a></li>
+<li><a href="/dsa.html#greedy-algorithm" title="Greedy Algorithms">Greedy Algorithms</a>
+</li>
+<li><a href="/dsa.html#dynamic-programming" title="Dynamic Programming">Dynamic
+
+                                                Programming</a></li>
+<li><a href="/dsa.html#other-algorithms" title="Other Algorithms">Other Algorithms</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="right-bar">
+<!--first part end-------------------------------------------->
+
+<div class="editor-contents">
+        <h1>Bucket Sort Algorithm</h1>
+
+
+        <p class="editor-contents__short-description">In this tutorial, you will learn about the bucket sort algorithm and its implementation in Python, Java, C, and C++.</p>
+
+
+
+          
+
+
+
+<div id="node-1505" class="node node-algorithm clearfix" about="/dsa/bucket-sort" typeof="sioc:Item foaf:Document">
+
+
+<span property="dc:title" content="Bucket Sort Algorithm" class="rdf-meta element-hidden"></span>
+
+<div class="content">
+<p id="definition">Bucket Sort is&nbsp;a sorting algorithm that divides the unsorted array elements into several groups called buckets. Each bucket is then sorted by using any of the suitable <a href="/dsa.html#sorting-searching" title="Sorting Algorithm">sorting algorithms</a> or recursively applying the same bucket algorithm.</p>
+
+<p>Finally, the sorted buckets are combined to form a final sorted array.</p>
+
+<p><strong>Scatter Gather Approach</strong></p>
+
+<p>The process of bucket sort can be understood as a <strong>scatter-gather approach</strong>. Here, elements are first scattered into buckets then the elements in each bucket are sorted. Finally, the elements are gathered in order.</p>
+
+<figure><img alt="Bucket Sort Working" src="https://www.programiz.com/sites/tutorial2program/files/Bucket_2.png" title="Working of bucket sort" width="700" height="506"><figcaption>Working of Bucket Sort</figcaption></figure><hr><h2 id="working">Working of Bucket Sort</h2>
+
+<ol><li>Suppose, the input array is:
+<figure><img alt="Bucket Sort Steps" src="https://www.programiz.com/sites/tutorial2program/files/Bucket-sort-0.1_0.png" title="Original Array" width="500" height="96"><figcaption>Input array</figcaption></figure><br>
+Create an array of size 10. Each slot of this array is used as a bucket for storing elements.
+<figure><img alt="Bucket Sort Steps" src="https://www.programiz.com/sites/tutorial2program/files/Bucket-sort-0_0.png" title="Bubble Sort step 0" width="700" height="97"><figcaption>Array in which each position is a bucket</figcaption></figure></li>
+<li>Insert elements into the buckets from the array. The elements are inserted according to the range of the bucket.<br><br>
+In our example code, we have buckets each of ranges from 0 to 1, 1 to 2, 2 to 3,...... (n-1) to n.<br>
+Suppose, an input element is <code>.23</code> is taken. It is multiplied by <code>size = 10</code> (ie. <code>.23*10=2.3</code>). Then, it is converted into an integer (ie. <code>2.3≈2</code>). Finally, .23 is inserted into <strong>bucket-2</strong>.
+<figure><img alt="Bucket Sort Steps" src="https://www.programiz.com/sites/tutorial2program/files/Bucket-sort-0.2_0.png" title="Bucketing" width="700" height="213"><figcaption>Insert elements into the buckets from the array</figcaption></figure><br>
+Similarly, .25 is also inserted into the same bucket. Everytime, the floor value of the floating point number is taken.<br><br><strong>If we take integer numbers as input, we have to divide it by the interval (10 here) to get the floor value.</strong><br><br>
+Similarly, other elements are inserted into their respective buckets.
+<figure><img alt="Bucket Sort Steps" src="https://www.programiz.com/sites/tutorial2program/files/Bucket-sort-0.3_0.png" title="Bucketing Completed" width="700" height="116"><figcaption>Insert all the elements into the buckets from the array</figcaption></figure></li>
+<li>The elements of each bucket are sorted using any of the stable sorting algorithms. Here, we have used quicksort (inbuilt function).
+<figure><img alt="Bucket Sort Steps" src="https://www.programiz.com/sites/tutorial2program/files/Bucket-sort-0.4_0.png" title="Elements sorted in each bucket" width="700" height="116"><figcaption>Sort the elements in each bucket</figcaption></figure></li>
+<li>The elements from each bucket are gathered.<br><br>
+It is done by iterating through the bucket and inserting an individual element into the original array in each cycle. The element from the bucket is erased once it is copied into the original array.
+<figure><img alt="Bucket Sort Steps" src="https://www.programiz.com/sites/tutorial2program/files/Bucket-sort-0.5_0.png" title="Gathering from buckets into original array" width="700" height="190"><figcaption>Gather elements from each bucket</figcaption></figure></li>
+</ol><hr><h2 id="algorithm">Bucket Sort Algorithm</h2>
+
+<pre style="max-height: 600px;"><code class="dsa hljs sql">bucketSort()
+<span class="hljs-keyword">create</span> N buckets <span class="hljs-keyword">each</span> <span class="hljs-keyword">of</span> which can hold a <span class="hljs-keyword">range</span> <span class="hljs-keyword">of</span> <span class="hljs-keyword">values</span>
+<span class="hljs-keyword">for</span> <span class="hljs-keyword">all</span> the buckets
+initialize <span class="hljs-keyword">each</span> <span class="hljs-keyword">bucket</span> <span class="hljs-keyword">with</span> <span class="hljs-number">0</span> <span class="hljs-keyword">values</span>
+<span class="hljs-keyword">for</span> <span class="hljs-keyword">all</span> the buckets
+put elements <span class="hljs-keyword">into</span> buckets matching the <span class="hljs-keyword">range</span>
+<span class="hljs-keyword">for</span> <span class="hljs-keyword">all</span> the buckets 
+<span class="hljs-keyword">sort</span> elements <span class="hljs-keyword">in</span> <span class="hljs-keyword">each</span> <span class="hljs-keyword">bucket</span>
+gather elements <span class="hljs-keyword">from</span> <span class="hljs-keyword">each</span> <span class="hljs-keyword">bucket</span>
+<span class="hljs-keyword">end</span> bucketSort</code></pre>
+
+<hr><h2 id="code">Bucket Sort Code in Python, Java, and C/C++</h2>
+
+<div class="tabbed-editor">
+        <div id="py1" onclick="changepy()" class="tabbed-editor__node tabbed-editor__node--active"><a href="#python-code">Python</a></div>
+        
+        <div id="java1" onclick="changejava()"  class="tabbed-editor__node"><a href="#java-code">Java</a></div>
+        
+        <div id="c1" onclick="changec()" class="tabbed-editor__node"><a href="#c-code">C</a></div>
+        
+        <div id="cpp1" onclick="changecpp()" class="tabbed-editor__node"><a href="#cpp-code">C++</a></div>
+        </div>
+
+<div class="code-editor code-editor--tabbed">
+<div class="code-editor__area code-editor__area--active" id="python-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="python hljs"><span class="hljs-comment"># Bucket Sort in Python</span>
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">bucketSort</span><span class="hljs-params">(array)</span>:</span>
+bucket = []
+
+<span class="hljs-comment"># Create empty buckets</span>
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(array)):
+bucket.append([])
+
+<span class="hljs-comment"># Insert elements into their respective buckets</span>
+<span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> array:
+index_b = int(<span class="hljs-number">10</span> * j)
+bucket[index_b].append(j)
+
+<span class="hljs-comment"># Sort the elements of each bucket</span>
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(array)):
+bucket[i] = sorted(bucket[i])
+
+<span class="hljs-comment"># Get the sorted elements</span>
+k = <span class="hljs-number">0</span>
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(array)):
+<span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> range(len(bucket[i])):
+array[k] = bucket[i][j]
+k += <span class="hljs-number">1</span>
+<span class="hljs-keyword">return</span> array
+
+
+array = [<span class="hljs-number">.42</span>, <span class="hljs-number">.32</span>, <span class="hljs-number">.33</span>, <span class="hljs-number">.52</span>, <span class="hljs-number">.37</span>, <span class="hljs-number">.47</span>, <span class="hljs-number">.51</span>]
+<span class="hljs-keyword">print</span>(<span class="hljs-string">"Sorted Array in descending order is"</span>)
+<span class="hljs-keyword">print</span>(bucketSort(array))</code></pre></div>
+</div>
+
+<div class="code-editor__area" id="java-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="java hljs"><span class="hljs-comment">// Bucket sort in Java</span>
+
+<span class="hljs-keyword">import</span> java.util.ArrayList;
+<span class="hljs-keyword">import</span> java.util.Collections;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BucketSort</span> </span>{
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">bucketSort</span><span class="hljs-params">(<span class="hljs-keyword">float</span>[] arr, <span class="hljs-keyword">int</span> n)</span> </span>{
+<span class="hljs-keyword">if</span> (n &lt;= <span class="hljs-number">0</span>)
+<span class="hljs-keyword">return</span>;
+<span class="hljs-meta">@SuppressWarnings</span>(<span class="hljs-string">"unchecked"</span>)
+ArrayList&lt;Float&gt;[] bucket = <span class="hljs-keyword">new</span> ArrayList[n];
+
+<span class="hljs-comment">// Create empty buckets</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++)
+bucket[i] = <span class="hljs-keyword">new</span> ArrayList&lt;Float&gt;();
+
+<span class="hljs-comment">// Add elements into the buckets</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) {
+<span class="hljs-keyword">int</span> bucketIndex = (<span class="hljs-keyword">int</span>) arr[i] * n;
+bucket[bucketIndex].add(arr[i]);
+}
+
+<span class="hljs-comment">// Sort the elements of each bucket</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) {
+Collections.sort((bucket[i]));
+}
+
+<span class="hljs-comment">// Get the sorted array</span>
+<span class="hljs-keyword">int</span> index = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) {
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>, size = bucket[i].size(); j &lt; size; j++) {
+arr[index++] = bucket[i].get(j);
+}
+}
+}
+
+<span class="hljs-comment">// Driver code</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+BucketSort b = <span class="hljs-keyword">new</span> BucketSort();
+<span class="hljs-keyword">float</span>[] arr = { (<span class="hljs-keyword">float</span>) <span class="hljs-number">0.42</span>, (<span class="hljs-keyword">float</span>) <span class="hljs-number">0.32</span>, (<span class="hljs-keyword">float</span>) <span class="hljs-number">0.33</span>, (<span class="hljs-keyword">float</span>) <span class="hljs-number">0.52</span>, (<span class="hljs-keyword">float</span>) <span class="hljs-number">0.37</span>, (<span class="hljs-keyword">float</span>) <span class="hljs-number">0.47</span>,
+(<span class="hljs-keyword">float</span>) <span class="hljs-number">0.51</span> };
+b.bucketSort(arr, <span class="hljs-number">7</span>);
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">float</span> i : arr)
+System.out.print(i + <span class="hljs-string">"  "</span>);
+}
+}</code></pre></div>
+</div>
+
+<div class="code-editor__area" id="c-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="c hljs cpp"><span class="hljs-comment">// Bucket sort in C</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdlib.h&gt;</span></span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> NARRAY 7   <span class="hljs-comment">// Array size</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> NBUCKET 6  <span class="hljs-comment">// Number of buckets</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> INTERVAL 10  <span class="hljs-comment">// Each bucket capacity</span></span>
+
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span> {</span>
+<span class="hljs-keyword">int</span> data;
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span> *<span class="hljs-title">next</span>;</span>
+};
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">BucketSort</span><span class="hljs-params">(<span class="hljs-keyword">int</span> arr[])</span></span>;
+<span class="hljs-function">struct Node *<span class="hljs-title">InsertionSort</span><span class="hljs-params">(struct Node *<span class="hljs-built_in">list</span>)</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-keyword">int</span> arr[])</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">printBuckets</span><span class="hljs-params">(struct Node *<span class="hljs-built_in">list</span>)</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">getBucketIndex</span><span class="hljs-params">(<span class="hljs-keyword">int</span> value)</span></span>;
+
+<span class="hljs-comment">// Sorting function</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">BucketSort</span><span class="hljs-params">(<span class="hljs-keyword">int</span> arr[])</span> </span>{
+<span class="hljs-keyword">int</span> i, j;
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span> **<span class="hljs-title">buckets</span>;</span>
+
+<span class="hljs-comment">// Create buckets and allocate memory size</span>
+buckets = (struct Node **)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(struct Node *) * NBUCKET);
+
+<span class="hljs-comment">// Initialize empty buckets</span>
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; NBUCKET; ++i) {
+buckets[i] = <span class="hljs-literal">NULL</span>;
+}
+
+<span class="hljs-comment">// Fill the buckets with respective elements</span>
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; NARRAY; ++i) {
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span> *<span class="hljs-title">current</span>;</span>
+<span class="hljs-keyword">int</span> pos = getBucketIndex(arr[i]);
+current = (struct Node *)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(struct Node));
+current-&gt;data = arr[i];
+current-&gt;next = buckets[pos];
+buckets[pos] = current;
+}
+
+<span class="hljs-comment">// Print the buckets along with their elements</span>
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; NBUCKET; i++) {
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"Bucket[%d]: "</span>, i);
+printBuckets(buckets[i]);
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"\n"</span>);
+}
+
+<span class="hljs-comment">// Sort the elements of each bucket</span>
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; NBUCKET; ++i) {
+buckets[i] = InsertionSort(buckets[i]);
+}
+
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"-------------\n"</span>);
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"Bucktets after sorting\n"</span>);
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; NBUCKET; i++) {
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"Bucket[%d]: "</span>, i);
+printBuckets(buckets[i]);
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"\n"</span>);
+}
+
+<span class="hljs-comment">// Put sorted elements on arr</span>
+<span class="hljs-keyword">for</span> (j = <span class="hljs-number">0</span>, i = <span class="hljs-number">0</span>; i &lt; NBUCKET; ++i) {
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span> *<span class="hljs-title">node</span>;</span>
+node = buckets[i];
+<span class="hljs-keyword">while</span> (node) {
+arr[j++] = node-&gt;data;
+node = node-&gt;next;
+}
+}
+
+<span class="hljs-keyword">return</span>;
+}
+
+<span class="hljs-comment">// Function to sort the elements of each bucket</span>
+<span class="hljs-function">struct Node *<span class="hljs-title">InsertionSort</span><span class="hljs-params">(struct Node *<span class="hljs-built_in">list</span>)</span> </span>{
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span> *<span class="hljs-title">k</span>, *<span class="hljs-title">nodeList</span>;</span>
+<span class="hljs-keyword">if</span> (<span class="hljs-built_in">list</span> == <span class="hljs-number">0</span> || <span class="hljs-built_in">list</span>-&gt;next == <span class="hljs-number">0</span>) {
+<span class="hljs-keyword">return</span> <span class="hljs-built_in">list</span>;
+}
+
+nodeList = <span class="hljs-built_in">list</span>;
+k = <span class="hljs-built_in">list</span>-&gt;next;
+nodeList-&gt;next = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">while</span> (k != <span class="hljs-number">0</span>) {
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span> *<span class="hljs-title">ptr</span>;</span>
+<span class="hljs-keyword">if</span> (nodeList-&gt;data &gt; k-&gt;data) {
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span> *<span class="hljs-title">tmp</span>;</span>
+tmp = k;
+k = k-&gt;next;
+tmp-&gt;next = nodeList;
+nodeList = tmp;
+<span class="hljs-keyword">continue</span>;
+}
+
+<span class="hljs-keyword">for</span> (ptr = nodeList; ptr-&gt;next != <span class="hljs-number">0</span>; ptr = ptr-&gt;next) {
+<span class="hljs-keyword">if</span> (ptr-&gt;next-&gt;data &gt; k-&gt;data)
+<span class="hljs-keyword">break</span>;
+}
+
+<span class="hljs-keyword">if</span> (ptr-&gt;next != <span class="hljs-number">0</span>) {
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span> *<span class="hljs-title">tmp</span>;</span>
+tmp = k;
+k = k-&gt;next;
+tmp-&gt;next = ptr-&gt;next;
+ptr-&gt;next = tmp;
+<span class="hljs-keyword">continue</span>;
+} <span class="hljs-keyword">else</span> {
+ptr-&gt;next = k;
+k = k-&gt;next;
+ptr-&gt;next-&gt;next = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">continue</span>;
+}
+}
+<span class="hljs-keyword">return</span> nodeList;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">getBucketIndex</span><span class="hljs-params">(<span class="hljs-keyword">int</span> value)</span> </span>{
+<span class="hljs-keyword">return</span> value / INTERVAL;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-keyword">int</span> ar[])</span> </span>{
+<span class="hljs-keyword">int</span> i;
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; NARRAY; ++i) {
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d "</span>, ar[i]);
+}
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"\n"</span>);
+}
+
+<span class="hljs-comment">// Print buckets</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">printBuckets</span><span class="hljs-params">(struct Node *<span class="hljs-built_in">list</span>)</span> </span>{
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span> *<span class="hljs-title">cur</span> = <span class="hljs-title">list</span>;</span>
+<span class="hljs-keyword">while</span> (cur) {
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d "</span>, cur-&gt;data);
+cur = cur-&gt;next;
+}
+}
+
+<span class="hljs-comment">// Driver code</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span> </span>{
+<span class="hljs-keyword">int</span> <span class="hljs-built_in">array</span>[NARRAY] = {<span class="hljs-number">42</span>, <span class="hljs-number">32</span>, <span class="hljs-number">33</span>, <span class="hljs-number">52</span>, <span class="hljs-number">37</span>, <span class="hljs-number">47</span>, <span class="hljs-number">51</span>};
+
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"Initial array: "</span>);
+print(<span class="hljs-built_in">array</span>);
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"-------------\n"</span>);
+
+BucketSort(<span class="hljs-built_in">array</span>);
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"-------------\n"</span>);
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"Sorted array: "</span>);
+print(<span class="hljs-built_in">array</span>);
+<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}</code></pre></div>
+</div>
+
+<div class="code-editor__area" id="cpp-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="cpp hljs"><span class="hljs-comment">// Bucket sort in C++</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iomanip&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> NARRAY 7   <span class="hljs-comment">// Array size</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> NBUCKET 6  <span class="hljs-comment">// Number of buckets</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> INTERVAL 10  <span class="hljs-comment">// Each bucket capacity</span></span>
+
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span> {</span>
+<span class="hljs-keyword">int</span> data;
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span> *<span class="hljs-title">next</span>;</span>
+};
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">BucketSort</span><span class="hljs-params">(<span class="hljs-keyword">int</span> arr[])</span></span>;
+<span class="hljs-function">struct Node *<span class="hljs-title">InsertionSort</span><span class="hljs-params">(struct Node *<span class="hljs-built_in">list</span>)</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-keyword">int</span> arr[])</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">printBuckets</span><span class="hljs-params">(struct Node *<span class="hljs-built_in">list</span>)</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">getBucketIndex</span><span class="hljs-params">(<span class="hljs-keyword">int</span> value)</span></span>;
+
+<span class="hljs-comment">// Sorting function</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">BucketSort</span><span class="hljs-params">(<span class="hljs-keyword">int</span> arr[])</span> </span>{
+<span class="hljs-keyword">int</span> i, j;
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span> **<span class="hljs-title">buckets</span>;</span>
+
+<span class="hljs-comment">// Create buckets and allocate memory size</span>
+buckets = (struct Node **)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(struct Node *) * NBUCKET);
+
+<span class="hljs-comment">// Initialize empty buckets</span>
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; NBUCKET; ++i) {
+buckets[i] = <span class="hljs-literal">NULL</span>;
+}
+
+<span class="hljs-comment">// Fill the buckets with respective elements</span>
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; NARRAY; ++i) {
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span> *<span class="hljs-title">current</span>;</span>
+<span class="hljs-keyword">int</span> pos = getBucketIndex(arr[i]);
+current = (struct Node *)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(struct Node));
+current-&gt;data = arr[i];
+current-&gt;next = buckets[pos];
+buckets[pos] = current;
+}
+
+<span class="hljs-comment">// Print the buckets along with their elements</span>
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; NBUCKET; i++) {
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Bucket["</span> &lt;&lt; i &lt;&lt; <span class="hljs-string">"] : "</span>;
+printBuckets(buckets[i]);
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+}
+
+<span class="hljs-comment">// Sort the elements of each bucket</span>
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; NBUCKET; ++i) {
+buckets[i] = InsertionSort(buckets[i]);
+}
+
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"-------------"</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Bucktets after sorted"</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; NBUCKET; i++) {
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Bucket["</span> &lt;&lt; i &lt;&lt; <span class="hljs-string">"] : "</span>;
+printBuckets(buckets[i]);
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+}
+
+<span class="hljs-comment">// Put sorted elements on arr</span>
+<span class="hljs-keyword">for</span> (j = <span class="hljs-number">0</span>, i = <span class="hljs-number">0</span>; i &lt; NBUCKET; ++i) {
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span> *<span class="hljs-title">node</span>;</span>
+node = buckets[i];
+<span class="hljs-keyword">while</span> (node) {
+arr[j++] = node-&gt;data;
+node = node-&gt;next;
+}
+}
+
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; NBUCKET; ++i) {
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span> *<span class="hljs-title">node</span>;</span>
+node = buckets[i];
+<span class="hljs-keyword">while</span> (node) {
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span> *<span class="hljs-title">tmp</span>;</span>
+tmp = node;
+node = node-&gt;next;
+<span class="hljs-built_in">free</span>(tmp);
+}
+}
+<span class="hljs-built_in">free</span>(buckets);
+<span class="hljs-keyword">return</span>;
+}
+
+<span class="hljs-comment">// Function to sort the elements of each bucket</span>
+<span class="hljs-function">struct Node *<span class="hljs-title">InsertionSort</span><span class="hljs-params">(struct Node *<span class="hljs-built_in">list</span>)</span> </span>{
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span> *<span class="hljs-title">k</span>, *<span class="hljs-title">nodeList</span>;</span>
+<span class="hljs-keyword">if</span> (<span class="hljs-built_in">list</span> == <span class="hljs-number">0</span> || <span class="hljs-built_in">list</span>-&gt;next == <span class="hljs-number">0</span>) {
+<span class="hljs-keyword">return</span> <span class="hljs-built_in">list</span>;
+}
+
+nodeList = <span class="hljs-built_in">list</span>;
+k = <span class="hljs-built_in">list</span>-&gt;next;
+nodeList-&gt;next = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">while</span> (k != <span class="hljs-number">0</span>) {
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span> *<span class="hljs-title">ptr</span>;</span>
+<span class="hljs-keyword">if</span> (nodeList-&gt;data &gt; k-&gt;data) {
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span> *<span class="hljs-title">tmp</span>;</span>
+tmp = k;
+k = k-&gt;next;
+tmp-&gt;next = nodeList;
+nodeList = tmp;
+<span class="hljs-keyword">continue</span>;
+}
+
+<span class="hljs-keyword">for</span> (ptr = nodeList; ptr-&gt;next != <span class="hljs-number">0</span>; ptr = ptr-&gt;next) {
+<span class="hljs-keyword">if</span> (ptr-&gt;next-&gt;data &gt; k-&gt;data)
+<span class="hljs-keyword">break</span>;
+}
+
+<span class="hljs-keyword">if</span> (ptr-&gt;next != <span class="hljs-number">0</span>) {
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span> *<span class="hljs-title">tmp</span>;</span>
+tmp = k;
+k = k-&gt;next;
+tmp-&gt;next = ptr-&gt;next;
+ptr-&gt;next = tmp;
+<span class="hljs-keyword">continue</span>;
+} <span class="hljs-keyword">else</span> {
+ptr-&gt;next = k;
+k = k-&gt;next;
+ptr-&gt;next-&gt;next = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">continue</span>;
+}
+}
+<span class="hljs-keyword">return</span> nodeList;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">getBucketIndex</span><span class="hljs-params">(<span class="hljs-keyword">int</span> value)</span> </span>{
+<span class="hljs-keyword">return</span> value / INTERVAL;
+}
+
+<span class="hljs-comment">// Print buckets</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-keyword">int</span> ar[])</span> </span>{
+<span class="hljs-keyword">int</span> i;
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; NARRAY; ++i) {
+<span class="hljs-built_in">cout</span> &lt;&lt; setw(<span class="hljs-number">3</span>) &lt;&lt; ar[i];
+}
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">printBuckets</span><span class="hljs-params">(struct Node *<span class="hljs-built_in">list</span>)</span> </span>{
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span> *<span class="hljs-title">cur</span> = <span class="hljs-title">list</span>;</span>
+<span class="hljs-keyword">while</span> (cur) {
+<span class="hljs-built_in">cout</span> &lt;&lt; setw(<span class="hljs-number">3</span>) &lt;&lt; cur-&gt;data;
+cur = cur-&gt;next;
+}
+}
+
+<span class="hljs-comment">// Driver code</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span> </span>{
+<span class="hljs-keyword">int</span> <span class="hljs-built_in">array</span>[NARRAY] = {<span class="hljs-number">42</span>, <span class="hljs-number">32</span>, <span class="hljs-number">33</span>, <span class="hljs-number">52</span>, <span class="hljs-number">37</span>, <span class="hljs-number">47</span>, <span class="hljs-number">51</span>};
+
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Initial array: "</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+print(<span class="hljs-built_in">array</span>);
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"-------------"</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+
+BucketSort(<span class="hljs-built_in">array</span>);
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"-------------"</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Sorted array: "</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+print(<span class="hljs-built_in">array</span>);
+}</code></pre></div>
+</div>
+</div>
+
+<hr><h2 id="complexity">Bucket Sort Complexity</h2>
+
+<div class="table-responsive">
+<table border="0"><tbody><tr><th><strong>Time Complexity</strong></th>
+          <td>&nbsp;</td>
+  </tr><tr><td>Best</td>
+          <td>O(n+k)</td>
+  </tr><tr><td>Worst</td>
+          <td>O(n<sup>2</sup>)</td>
+  </tr><tr><td>Average</td>
+          <td>O(n)</td>
+  </tr><tr><th><strong>Space Complexity</strong></th>
+          <td>O(n+k)</td>
+  </tr><tr><th><strong>Stability</strong></th>
+          <td>Yes</td>
+  </tr></tbody></table></div>
+
+<hr><ul><li><strong>Worst Case Complexity:</strong> <code>O(n<sup>2</sup>)</code><br>
+When there are elements of close range in the array, they are likely to be placed in the same bucket. This may result in some buckets having more number of elements than others.<br>
+It makes the complexity depend on the sorting algorithm used to sort the elements of the bucket.<br>
+The complexity becomes even worse when the elements are in reverse order. If insertion sort is used to sort elements of the bucket, then the time complexity becomes <code>O(n<sup>2</sup>)</code>.</li>
+<li><strong>Best Case Complexity:</strong> <code>O(n+k)</code><br>
+It occurs when the elements are uniformly distributed in the buckets with a nearly equal number of elements in each bucket.<br>
+The complexity becomes even better if the elements inside the buckets are already sorted.<br>
+If insertion sort is used to sort elements of a bucket then the overall complexity in the best case will be linear ie. <code>O(n+k)</code>. <code>O(n)</code> is the complexity for making the buckets and <code>O(k)</code> is the complexity for sorting the elements of the bucket using algorithms having linear time complexity at the best case.</li>
+<li><strong>Average Case Complexity:</strong> <code>O(n)</code><br>
+It occurs when the elements are distributed randomly in the array. Even if the elements are not distributed uniformly, bucket sort runs in linear time. It holds true until the sum of the squares of the bucket sizes is linear in the total number of elements.</li>
+</ul><hr><h2 id="application">Bucket Sort Applications</h2>
+
+<p>Bucket sort is used when:</p>
+
+<ul><li>input is uniformly distributed over a range.</li>
+<li>there are floating point values</li>
+</ul><hr><h2>Similar Sorting Algorithms</h2>
+
+<ul><li><a href="/dsa/bubble-sort.html">Bubble Sort</a></li>
+<li><a href="/dsa/quick-sort.html">Quicksort</a></li>
+<li><a href="/dsa/insertion-sort.html">Insertion Sort</a></li>
+<li><a href="/dsa/merge-sort.html">Merge Sort</a></li>
+<li><a href="/dsa/selection-sort.html">Selection Sort</a></li>
+</ul></div>
+
+
+
+</div>
+
+
+        <div class="tutorial-toc"><div class="tutorial-toc__inner"><h3 class="tutorial-toc__title">Table of Contents
+<button class="btn btn--clear align-items-center">
+<svg class="programiz-icon"><use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#x"></use></svg></button></h3><div class="tutorial-toc__links"><ul><li><a href="#definition">Definition</a></li>
+<li><a href="#working">Working of Bucket Sort</a></li>
+<li><a href="#algorithm">Bucket Sort Algorithm</a></li>
+<li><a href="#code">Bucket Sort Code in Python, Java, and C/C++</a></li>
+<li><a href="#complexity">Complexity</a></li>
+<li><a href="#application">Applications</a></li>
+</ul></div></div></div>                          </div>
+<!--second------------------------------------------->
+<div>
+<ul>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/stack.html">
+
+        Stack</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/queue.html">
+
+        Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/types-of-queue.html">
+
+        Types of Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/circular-queue.html">
+
+        Circular Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/priority-queue.html">
+
+        Priority Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deque.html">
+
+        Deque</a></button>
+<br/>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linked-list.html">
+
+        Linked List</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linked-list-operations.html">
+
+        Linked List Operations</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linked-list-types.html">
+
+        Types of Linked List</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/hash-table.html">
+
+        Hash Table</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/heap-data-structure.html">
+
+        Heap Data Structure</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/fibonacci-heap.html">
+
+        Fibonacci Heap</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/decrease-key-and-delete-node-from-a-fibonacci-heap.html">
+
+        Decrease Key and Delete node from Fibonacci Heap</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/trees.html">
+
+        Tree Data Structure</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/tree-traversal.html">
+
+        Tree Traversal</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/binary-tree.html">
+
+        Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/full-binary-tree.html">
+
+        Full Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/perfect-binary-tree.html">
+
+        Perfect Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/complete-binary-tree.html">
+
+        Complete Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/balanced-binary-tree.html">
+
+        Balanced Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/binary-search-tree.html">
+
+        Binary Search Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/avl-tree.html">
+
+        AVL Tree</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/b-tree.html">
+
+        B Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-into-a-b-tree.html">
+
+        Insertion into B-tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deletion-from-a-b-tree.html">
+
+        Deletion from B-tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/b-plus-tree.html">
+
+        B+ Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-on-a-b-plus-tree.html">
+
+        Insertion on a B+ Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deletion-from-a-b-plus-tree.html">
+
+        Deletion from a B+ Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/red-black-tree.html">
+
+        Red Black Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-in-a-red-black-tree.html">
+
+        Insertion in Red Black Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deletion-from-a-red-black-tree.html">
+
+        Deletion from Red Black Tree</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph.html">
+
+        Graph Data Structure</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/spanning-tree-and-minimum-spanning-tree.html">
+
+        Spanning Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/strongly-connected-components.html">
+
+        Strongly Connected Components</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-adjacency-matrix.html">
+
+        Adjacency Matrix</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-adjacency-list.html">
+
+        Adjacency List</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-dfs.html">
+
+        DFS Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-bfs.html">
+
+        Breadth-first Search</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/bellman-ford-algorithm.html">
+
+        Bellman Ford's Algorithm</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/bubble-sort.html">
+
+        Bubble Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/selection-sort.html">
+
+        Selection Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-sort.html">
+
+        Insertion Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/merge-sort.html">
+
+        Merge Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/quick-sort.html">
+
+        Quick Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/counting-sort.html">
+
+        Counting Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/radix-sort.html">
+
+        Radix Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/bucket-sort.html">
+
+        Bucket Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/heap-sort.html">
+
+        Heap Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/shell-sort.html">
+
+        Shell Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linear-search.html">
+
+        Linear Search</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/binary-search.html">
+
+        Binary Search</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/greedy-algorithm.html">
+
+        Greedy Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/ford-fulkerson-algorithm.html">
+
+        Ford-Fulkerson Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/dijkstra-algorithm.html">
+
+        Dijkstra's Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/kruskal-algorithm.html">
+
+        Kruskal's Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/prim-algorithm.html">
+
+        Prim's Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/huffman-coding.html">
+
+        Huffman Code</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/dynamic-programming.html">
+
+        Dynamic Programming</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/floyd-warshall-algorithm.html">
+
+        Floyd Warshall Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/longest-common-subsequence.html">
+
+        Longest Common Subsequence</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/backtracking-algorithm.html">
+
+        Backtracking Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/rabin-karp-algorithm.html">
+
+        Rabin-Karp Algorithm</a></button>
+<br>
+<br/>
+<h2>Free Courses on YouTube</h2>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+            https://www.youtube.com/watch?v=IbSXF7eT-AU&amp;list=PLR_5PTwg_uAQw40OhdvAwN4NvzWv0xOZ2">
+
+            Python Full Course Playlist</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://www.youtube.com/watch?v=UEl6wB90Gs8">
+
+            105 STL Algorithms in Less Than an Hour</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://www.youtube.com/watch?v=zZXTgN7L1UU&amp;list=PLR_5PTwg_uAS6C1cSMjU6oVhOcCX8Zu_4">
+
+            C++ STL Playlist</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://youtu.be/ty9756v3kc8">
+
+            Learn Node.js </a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://youtu.be/exrIpdS3Crc">
+
+            Learn Data Science Full course</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://youtu.be/Q8tDO2uSk5U">
+
+            Learn Computer Networking Full course</a></button>
+<br/>
+</br></br></br></br></br></br></br></br></ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<footer class="afooter" style="margin-left:20px">
+<p>
+<a href="/cookie-policy.html">Cookie policy</a> |
+
+        <a href="/privacy-policy.html">Privacy policy</a> |
+
+        <a href="/terms-of-use.html">Terms of use</a> |
+
+        <a href="/disclaimer.html">Disclaimer</a> |
+
+        <a href="/about-us.html">About Us</a>
+</p>
+<p>
+
+        © 2023 <a href="https://pythonread.github.io">https://pythonread.github.io</a>
+</p>
+</footer>
+<script type="text/javascript">
+
+    document.addEventListener('DOMContentLoaded', function () { htmlTableOfContents() }); function htmlTableOfContents(documentRef) { var documentRef = documentRef || document; var toc = documentRef.getElementById("toc"); var headings = [].slice.call(documentRef.body.querySelectorAll('h2, h3')); headings.forEach(function (heading, index) { var ref = "toc" + index; if (heading.hasAttribute("id")) { ref = heading.getAttribute("id") } else { heading.setAttribute("id", ref) } var link = documentRef.createElement("a"); link.setAttribute("href", "#" + ref); link.textContent = heading.textContent; var div = documentRef.createElement("div"); div.setAttribute("class", heading.tagName.toLowerCase()); div.appendChild(link); toc.appendChild(div) }) } try { module.exports = htmlTableOfContents } catch (e) { } function isScrolledIntoView(el) { var rect = el.getBoundingClientRect(); var elemTop = rect.top; var elemBottom = rect.bottom; var isVisible = (elemTop >= -10) && (elemBottom <= (window.innerHeight)); return isVisible } function highlightMenu() { var headers = document.querySelectorAll("h2, h3"); for (var i = 0; i < headers.length; i += 1) { if (isScrolledIntoView(headers[i])) { var childDivs = document.getElementById('toc').getElementsByTagName('div'); var c = childDivs[i].classList; c.add("active"); for (var j = 0; j < i; j += 1) { var c = childDivs[j].classList; c.remove("active") } for (var j = i + 1; j < childDivs.length; j += 1) { var c = childDivs[j].classList; c.remove("active") } break } } } function highlightMenuLastItem() { var childDivs = document.getElementById('toc').getElementsByTagName('div'); for (var j = 0; j < childDivs.length - 1; j += 1) { var c = childDivs[j].classList; c.remove("active") } var c = childDivs[childDivs.length - 1].classList; c.add("active") } window.addEventListener("click", function (event) { highlightMenu() }); window.onscroll = function (e) { highlightMenu(); if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) { highlightMenuLastItem() } }; function mobileMenu() { var classes = document.getElementById('nav-toggle-icon').classList; if (classes.contains("active")) { classes.remove("active") } else { classes.add("active") } var classes = document.getElementById('menu-wrapper').classList; if (classes.contains("active")) { classes.remove("active") } else { classes.add("active") } }
+
+</script>
+<script type="text/javascript">
+
+    function changepy(){
+
+        document.getElementById('py1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('java1').className = 'tabbed-editor__node';
+
+        document.getElementById('c1').className = 'tabbed-editor__node';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node';
+
+        document.getElementById('python-code').className = 'code-editor__area code-editor__area--active';
+
+        document.getElementById('java-code').className = 'code-editor__area';
+
+        document.getElementById('c-code').className = 'code-editor__area';
+
+        document.getElementById('cpp-code').className = 'code-editor__area';
+
+
+
+    }
+
+    function changecpp(){
+
+        document.getElementById('py1').className = 'tabbed-editor__node';
+
+        document.getElementById('java1').className = 'tabbed-editor__node';
+
+        document.getElementById('c1').className = 'tabbed-editor__node';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('python-code').className = 'code-editor__area';
+
+        document.getElementById('java-code').className = 'code-editor__area';
+
+        document.getElementById('c-code').className = 'code-editor__area';
+
+        document.getElementById('cpp-code').className = 'code-editor__area code-editor__area--active';
+
+    }
+
+    function changejava(){
+
+       document.getElementById('py1').className = 'tabbed-editor__node';
+
+        document.getElementById('java1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('c1').className = 'tabbed-editor__node';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node';
+
+        document.getElementById('python-code').className = 'code-editor__area';
+
+        document.getElementById('java-code').className = 'code-editor__area code-editor__area--active';
+
+        document.getElementById('c-code').className = 'code-editor__area';
+
+        document.getElementById('cpp-code').className = 'code-editor__area';
+
+    }
+
+    function changec(){
+
+        document.getElementById('py1').className = 'tabbed-editor__node';
+
+        document.getElementById('java1').className = 'tabbed-editor__node';
+
+        document.getElementById('c1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node';
+
+        document.getElementById('python-code').className = 'code-editor__area';
+
+        document.getElementById('java-code').className = 'code-editor__area';
+
+        document.getElementById('c-code').className = 'code-editor__area code-editor__area--active';
+
+        document.getElementById('cpp-code').className = 'code-editor__area';
+
+    }
+
+    
+
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>

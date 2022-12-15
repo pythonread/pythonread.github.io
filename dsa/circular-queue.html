@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<title>Circular Queue</title>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-HCERBDV76D"></script>
+<script>
+
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() { dataLayer.push(arguments); }
+
+        gtag('js', new Date());
+
+
+
+        gtag('config', 'G-HCERBDV76D');
+
+    </script>
+<meta content="B0487B46A104E90209E8A3BEA24ECA0E" name="msvalidate.01"/>
+<meta content="f044b3a12c7918f1" name="yandex-verification"/>
+<!--end-->
+
+<meta content="learnPython" name="author"/>
+<meta content="Learn Python for free,learn python for beginners,Core Python,Web frameworks,Multiprocess architecture,Serverside templating language,python tutorials,python4" name="keywords"/>
+<meta content="website" property="og:type"/>
+<meta content="learn about data types, variables, lists, tuples, dictionaries,if else,DSA,loops,user-defined functions, oop, threading and scripting." name="description"/>
+<meta content="US-CA" name="”geo.region”"/>
+<meta content="353 Jane Stanford Way, Stanford, CA 94305, United States" name="”geo.placename”"/>
+<meta content="37.430089898615456;-122.17332683124829" name="”geo.position”"/>
+<meta content="37.430089898615456, -122.17332683124829" name="”ICBM”"/>
+<link href="https://pythonread.github.io/?m=1" rel="alternate"/>
+<link href="/favicon.png" rel="icon"/>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="/style1.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/style2.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/style0.css" media="all" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div class="nav-wrapper">
+<div class="container">
+<nav>
+<div class="logo wave">
+<a href="/" id="logo">
+
+                        Python Tutorial
+
+                    </a>
+</div>
+<div class="nav-toggle-icon" id="nav-toggle-icon" onclick="mobileMenu()">
+<div class="material-hamburger">
+<span>
+</span>
+<span>
+</span>
+<span>
+</span>
+</div>
+</div>
+<div class="menu-wrapper" id="menu-wrapper">
+<div class="nav-indicator">
+</div>
+<ul class="menus">
+<li>
+<a class="wave" href="/">
+
+                                Home
+
+                            </a>
+</li>
+<li>
+<a class="wave" href="/projects.html">
+
+                                Projects
+
+                            </a>
+</li>
+<li>
+<a class="wave" href="/free-course.html" target="_blank">
+
+                                Free Course
+
+                            </a>
+</li>
+<li>
+<a class="wave" href="/dsa.html">
+
+                                DSA
+
+                            </a>
+</li>
+</ul>
+</div>
+</nav>
+</div>
+</div>
+<div class="contents contents--neg" style="margin-top: 60px">
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+<div class="d-flex">
+<div class="left-bar d-none d-lg-block">
+<div class="card-alt mb-10x">
+<h3>Page Index</h3>
+<div class="list">
+<ul>
+<li><a href="/dsa.html#data-structure-1" title="Data Structures (I)">Data Structures
+
+                                                (I)</a></li>
+<li><a href="/dsa.html#data-structure-2" title="Data Structures (II)">Data Structures
+
+                                                (II)</a></li>
+<li><a href="/dsa.html#tree-1" title="Tree based DSA (I)">Tree based DSA (I)</a></li>
+<li><a href="/dsa.html#tree-2" title="Tree based DSA (II)">Tree based DSA (II)</a></li>
+<li><a href="/dsa.html#graph" title="Graph Data Structures and Algorithm">Graph based
+
+                                                DSA</a></li>
+<li><a href="/dsa.html#sorting-searching" title="Sorting and Searching">Sorting and
+
+                                                Searching</a></li>
+<li><a href="/dsa.html#greedy-algorithm" title="Greedy Algorithms">Greedy Algorithms</a>
+</li>
+<li><a href="/dsa.html#dynamic-programming" title="Dynamic Programming">Dynamic
+
+                                                Programming</a></li>
+<li><a href="/dsa.html#other-algorithms" title="Other Algorithms">Other Algorithms</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="right-bar">
+<!--first part end-------------------------------------------->
+<div class="editor-contents">
+    <h1>Circular Queue Data Structure</h1>
+
+
+    <p class="editor-contents__short-description">In this tutorial, you will learn what a circular queue is. Also, you will find implementation of circular queue in C, C++, Java and Python.</p>
+
+
+
+      
+
+
+
+<div id="node-936" class="node node-algorithm clearfix" about="/dsa/circular-queue" typeof="sioc:Item foaf:Document">
+
+
+<span property="dc:title" content="Circular Queue Data Structure" class="rdf-meta element-hidden"></span>
+
+<div class="content">
+<p id="definition">A circular queue is the extended version of a <a href="/dsa/queue.html">regular queue</a> where the last element is connected to the first element. Thus forming a circle-like structure.</p>
+
+<figure><img alt="Circular increment in circular queue" src="//cdn.programiz.com/sites/tutorial2program/files/circular-increment.png" title="Circular queue" width="274" height="278"><figcaption>Circular queue representation</figcaption></figure><p>The circular queue solves the major limitation of the normal queue. In a normal queue, after a bit of insertion and deletion, there will be non-usable empty space.</p>
+
+<figure><img alt="demonstrate how we cannot add element even after removing some element from the queue" src="//cdn.programiz.com/sites/tutorial2program/files/why-circular-queue.png" title="Demerit of queue" width="337" height="201"><figcaption>Limitation of the regular Queue</figcaption></figure><p>Here, indexes <strong>0</strong> and <strong>1</strong> can only be used after resetting the queue (deletion of all elements). This reduces the actual size of the queue.</p>
+
+<hr><h2 id="working">How Circular Queue Works</h2>
+
+<p>Circular Queue works by the process of circular increment i.e. when we try to increment the pointer and we reach the end of the queue, we start from the beginning of the queue.</p>
+
+<p>Here, the circular increment is performed by modulo division with the queue size. That is,</p>
+
+<pre style="max-height: 600px;"><code class="dsa hljs yaml">
+<span class="hljs-string">if</span> <span class="hljs-string">REAR</span> <span class="hljs-string">+</span> <span class="hljs-number">1</span> <span class="hljs-string">==</span> <span class="hljs-number">5</span> <span class="hljs-string">(overflow!),</span> <span class="hljs-string">REAR</span> <span class="hljs-string">=</span> <span class="hljs-string">(REAR</span> <span class="hljs-string">+</span> <span class="hljs-number">1</span><span class="hljs-string">)%5</span> <span class="hljs-string">=</span> <span class="hljs-number">0</span> <span class="hljs-string">(start</span> <span class="hljs-string">of</span> <span class="hljs-string">queue)</span></code></pre>
+
+<hr><h2>Circular Queue Operations</h2>
+
+<p>The circular queue work as follows:</p>
+
+<ul><li>two pointers <var>FRONT</var> and <var>REAR</var></li>
+<li><var>FRONT</var> track the first element of the queue</li>
+<li><var>REAR</var> track the last elements of the queue</li>
+<li>initially, set value of <var>FRONT</var> and <var>REAR</var> to -1</li>
+</ul><h3>1. Enqueue Operation</h3>
+
+<ul><li>check if the queue is full</li>
+<li>for the first element, set value of <var>FRONT</var> to 0</li>
+<li>circularly increase the <var>REAR</var> index by 1 (i.e. if the rear reaches the end, next it would be at the start of the queue)</li>
+<li>add the new element in the position pointed to by <var>REAR</var></li>
+</ul><h3>2. Dequeue Operation</h3>
+
+<ul><li>check if the queue is empty</li>
+<li>return the value pointed by <var>FRONT</var></li>
+<li>circularly increase the <var>FRONT</var> index by 1</li>
+<li>for the last element, reset the values of <var>FRONT</var> and <var>REAR</var> to -1</li>
+</ul><p></p><div class="clearfix"></div><p>However, the check for full queue has a new additional case:</p>
+
+<ul><li>Case 1: <var>FRONT</var> = 0 &amp;&amp; <code>REAR == SIZE - 1</code></li>
+<li>Case 2: <code>FRONT = REAR + 1</code></li>
+</ul><p>The second case happens when <var>REAR</var> starts from 0 due to circular increment and when its value is just 1 less than <var>FRONT</var>, the queue is full.</p>
+
+<figure><img alt="enqueue and dequeue operation of the circular queue" src="//cdn.programiz.com/sites/tutorial2program/files/circular-queue-program.png" title="Working of circular queue" width="432" height="1396"><figcaption>Enque and Deque Operations</figcaption></figure><hr><h2 id="code">Circular Queue Implementations in Python, Java, C, and C++</h2>
+
+<p>The most common queue implementation is using arrays, but it can also be implemented using lists.</p>
+
+<div class="tabbed-editor">
+<div id="py1"  class="tabbed-editor__node tabbed-editor__node--active" onclick="changepy()" ><a href="#python-code">Python</a></div>
+
+<div id="java1" class="tabbed-editor__node" onclick="changejava()" ><a href="#java-code">Java</a></div>
+
+<div id="c1"  class="tabbed-editor__node" onclick="changec()"><a href="#c-code">C</a></div>
+
+<div id="cpp1" onclick="changecpp()" class="tabbed-editor__node"><a href="#cpp-code">C+</a></div>
+</div>
+
+<div class="code-editor code-editor--tabbed">
+<div class="code-editor__area code-editor__area--active" id="python-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="python hljs"><span class="hljs-comment"># Circular Queue implementation in Python</span>
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyCircularQueue</span><span class="hljs-params">()</span>:</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, k)</span>:</span>
+self.k = k
+self.queue = [<span class="hljs-literal">None</span>] * k
+self.head = self.tail = <span class="hljs-number">-1</span>
+
+<span class="hljs-comment"># Insert an element into the circular queue</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">enqueue</span><span class="hljs-params">(self, data)</span>:</span>
+
+<span class="hljs-keyword">if</span> ((self.tail + <span class="hljs-number">1</span>) % self.k == self.head):
+<span class="hljs-keyword">print</span>(<span class="hljs-string">"The circular queue is full\n"</span>)
+
+<span class="hljs-keyword">elif</span> (self.head == <span class="hljs-number">-1</span>):
+self.head = <span class="hljs-number">0</span>
+self.tail = <span class="hljs-number">0</span>
+self.queue[self.tail] = data
+<span class="hljs-keyword">else</span>:
+self.tail = (self.tail + <span class="hljs-number">1</span>) % self.k
+self.queue[self.tail] = data
+
+<span class="hljs-comment"># Delete an element from the circular queue</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">dequeue</span><span class="hljs-params">(self)</span>:</span>
+<span class="hljs-keyword">if</span> (self.head == <span class="hljs-number">-1</span>):
+<span class="hljs-keyword">print</span>(<span class="hljs-string">"The circular queue is empty\n"</span>)
+
+<span class="hljs-keyword">elif</span> (self.head == self.tail):
+temp = self.queue[self.head]
+self.head = <span class="hljs-number">-1</span>
+self.tail = <span class="hljs-number">-1</span>
+<span class="hljs-keyword">return</span> temp
+<span class="hljs-keyword">else</span>:
+temp = self.queue[self.head]
+self.head = (self.head + <span class="hljs-number">1</span>) % self.k
+<span class="hljs-keyword">return</span> temp
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">printCQueue</span><span class="hljs-params">(self)</span>:</span>
+<span class="hljs-keyword">if</span>(self.head == <span class="hljs-number">-1</span>):
+<span class="hljs-keyword">print</span>(<span class="hljs-string">"No element in the circular queue"</span>)
+
+<span class="hljs-keyword">elif</span> (self.tail &gt;= self.head):
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(self.head, self.tail + <span class="hljs-number">1</span>):
+<span class="hljs-keyword">print</span>(self.queue[i], end=<span class="hljs-string">" "</span>)
+<span class="hljs-keyword">print</span>()
+<span class="hljs-keyword">else</span>:
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(self.head, self.k):
+<span class="hljs-keyword">print</span>(self.queue[i], end=<span class="hljs-string">" "</span>)
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">0</span>, self.tail + <span class="hljs-number">1</span>):
+<span class="hljs-keyword">print</span>(self.queue[i], end=<span class="hljs-string">" "</span>)
+<span class="hljs-keyword">print</span>()
+
+
+<span class="hljs-comment"># Your MyCircularQueue object will be instantiated and called as such:</span>
+obj = MyCircularQueue(<span class="hljs-number">5</span>)
+obj.enqueue(<span class="hljs-number">1</span>)
+obj.enqueue(<span class="hljs-number">2</span>)
+obj.enqueue(<span class="hljs-number">3</span>)
+obj.enqueue(<span class="hljs-number">4</span>)
+obj.enqueue(<span class="hljs-number">5</span>)
+<span class="hljs-keyword">print</span>(<span class="hljs-string">"Initial queue"</span>)
+obj.printCQueue()
+
+obj.dequeue()
+<span class="hljs-keyword">print</span>(<span class="hljs-string">"After removing an element from the queue"</span>)
+obj.printCQueue()
+</code></pre></div>
+</div>
+
+<div class="code-editor__area" id="java-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="java hljs"><span class="hljs-comment">// Circular Queue implementation in Java</span>
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CQueue</span> </span>{
+<span class="hljs-keyword">int</span> SIZE = <span class="hljs-number">5</span>; <span class="hljs-comment">// Size of Circular Queue</span>
+<span class="hljs-keyword">int</span> front, rear;
+<span class="hljs-keyword">int</span> items[] = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[SIZE];
+
+CQueue() {
+front = -<span class="hljs-number">1</span>;
+rear = -<span class="hljs-number">1</span>;
+}
+
+<span class="hljs-comment">// Check if the queue is full</span>
+<span class="hljs-function"><span class="hljs-keyword">boolean</span> <span class="hljs-title">isFull</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-keyword">if</span> (front == <span class="hljs-number">0</span> &amp;&amp; rear == SIZE - <span class="hljs-number">1</span>) {
+<span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+}
+<span class="hljs-keyword">if</span> (front == rear + <span class="hljs-number">1</span>) {
+<span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+}
+<span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+}
+
+<span class="hljs-comment">// Check if the queue is empty</span>
+<span class="hljs-function"><span class="hljs-keyword">boolean</span> <span class="hljs-title">isEmpty</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-keyword">if</span> (front == -<span class="hljs-number">1</span>)
+<span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+<span class="hljs-keyword">else</span>
+<span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+}
+
+<span class="hljs-comment">// Adding an element</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">enQueue</span><span class="hljs-params">(<span class="hljs-keyword">int</span> element)</span> </span>{
+<span class="hljs-keyword">if</span> (isFull()) {
+System.out.println(<span class="hljs-string">"Queue is full"</span>);
+} <span class="hljs-keyword">else</span> {
+<span class="hljs-keyword">if</span> (front == -<span class="hljs-number">1</span>)
+front = <span class="hljs-number">0</span>;
+rear = (rear + <span class="hljs-number">1</span>) % SIZE;
+items[rear] = element;
+System.out.println(<span class="hljs-string">"Inserted "</span> + element);
+}
+}
+
+<span class="hljs-comment">// Removing an element</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">deQueue</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-keyword">int</span> element;
+<span class="hljs-keyword">if</span> (isEmpty()) {
+System.out.println(<span class="hljs-string">"Queue is empty"</span>);
+<span class="hljs-keyword">return</span> (-<span class="hljs-number">1</span>);
+} <span class="hljs-keyword">else</span> {
+element = items[front];
+<span class="hljs-keyword">if</span> (front == rear) {
+front = -<span class="hljs-number">1</span>;
+rear = -<span class="hljs-number">1</span>;
+} <span class="hljs-comment">/* Q has only one element, so we reset the queue after deleting it. */</span>
+<span class="hljs-keyword">else</span> {
+front = (front + <span class="hljs-number">1</span>) % SIZE;
+}
+<span class="hljs-keyword">return</span> (element);
+}
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">display</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-comment">/* Function to display status of Circular Queue */</span>
+<span class="hljs-keyword">int</span> i;
+<span class="hljs-keyword">if</span> (isEmpty()) {
+System.out.println(<span class="hljs-string">"Empty Queue"</span>);
+} <span class="hljs-keyword">else</span> {
+System.out.println(<span class="hljs-string">"Front -&gt; "</span> + front);
+System.out.println(<span class="hljs-string">"Items -&gt; "</span>);
+<span class="hljs-keyword">for</span> (i = front; i != rear; i = (i + <span class="hljs-number">1</span>) % SIZE)
+System.out.print(items[i] + <span class="hljs-string">" "</span>);
+System.out.println(items[i]);
+System.out.println(<span class="hljs-string">"Rear -&gt; "</span> + rear);
+}
+}
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+
+CQueue q = <span class="hljs-keyword">new</span> CQueue();
+
+<span class="hljs-comment">// Fails because front = -1</span>
+q.deQueue();
+
+q.enQueue(<span class="hljs-number">1</span>);
+q.enQueue(<span class="hljs-number">2</span>);
+q.enQueue(<span class="hljs-number">3</span>);
+q.enQueue(<span class="hljs-number">4</span>);
+q.enQueue(<span class="hljs-number">5</span>);
+
+<span class="hljs-comment">// Fails to enqueue because front == 0 &amp;&amp; rear == SIZE - 1</span>
+q.enQueue(<span class="hljs-number">6</span>);
+
+q.display();
+
+<span class="hljs-keyword">int</span> elem = q.deQueue();
+
+<span class="hljs-keyword">if</span> (elem != -<span class="hljs-number">1</span>) {
+System.out.println(<span class="hljs-string">"Deleted Element is "</span> + elem);
+}
+q.display();
+
+q.enQueue(<span class="hljs-number">7</span>);
+
+q.display();
+
+<span class="hljs-comment">// Fails to enqueue because front == rear + 1</span>
+q.enQueue(<span class="hljs-number">8</span>);
+}
+
+}</code></pre></div>
+</div>
+
+<div class="code-editor__area" id="c-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="c hljs cpp"><span class="hljs-comment">// Circular Queue implementation in C</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> SIZE 5</span>
+
+<span class="hljs-keyword">int</span> items[SIZE];
+<span class="hljs-keyword">int</span> front = <span class="hljs-number">-1</span>, rear = <span class="hljs-number">-1</span>;
+
+<span class="hljs-comment">// Check if the queue is full</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">isFull</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-keyword">if</span> ((front == rear + <span class="hljs-number">1</span>) || (front == <span class="hljs-number">0</span> &amp;&amp; rear == SIZE - <span class="hljs-number">1</span>)) <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
+<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+
+<span class="hljs-comment">// Check if the queue is empty</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">isEmpty</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-keyword">if</span> (front == <span class="hljs-number">-1</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
+<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+
+<span class="hljs-comment">// Adding an element</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">enQueue</span><span class="hljs-params">(<span class="hljs-keyword">int</span> element)</span> </span>{
+<span class="hljs-keyword">if</span> (isFull())
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"\n Queue is full!! \n"</span>);
+<span class="hljs-keyword">else</span> {
+<span class="hljs-keyword">if</span> (front == <span class="hljs-number">-1</span>) front = <span class="hljs-number">0</span>;
+rear = (rear + <span class="hljs-number">1</span>) % SIZE;
+items[rear] = element;
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"\n Inserted -&gt; %d"</span>, element);
+}
+}
+
+<span class="hljs-comment">// Removing an element</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">deQueue</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-keyword">int</span> element;
+<span class="hljs-keyword">if</span> (isEmpty()) {
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"\n Queue is empty !! \n"</span>);
+<span class="hljs-keyword">return</span> (<span class="hljs-number">-1</span>);
+} <span class="hljs-keyword">else</span> {
+element = items[front];
+<span class="hljs-keyword">if</span> (front == rear) {
+front = <span class="hljs-number">-1</span>;
+rear = <span class="hljs-number">-1</span>;
+} 
+<span class="hljs-comment">// Q has only one element, so we reset the </span>
+<span class="hljs-comment">// queue after dequeing it. ?</span>
+<span class="hljs-keyword">else</span> {
+front = (front + <span class="hljs-number">1</span>) % SIZE;
+}
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"\n Deleted element -&gt; %d \n"</span>, element);
+<span class="hljs-keyword">return</span> (element);
+}
+}
+
+<span class="hljs-comment">// Display the queue</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">display</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-keyword">int</span> i;
+<span class="hljs-keyword">if</span> (isEmpty())
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">" \n Empty Queue\n"</span>);
+<span class="hljs-keyword">else</span> {
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"\n Front -&gt; %d "</span>, front);
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"\n Items -&gt; "</span>);
+<span class="hljs-keyword">for</span> (i = front; i != rear; i = (i + <span class="hljs-number">1</span>) % SIZE) {
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d "</span>, items[i]);
+}
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d "</span>, items[i]);
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"\n Rear -&gt; %d \n"</span>, rear);
+}
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-comment">// Fails because front = -1</span>
+deQueue();
+
+enQueue(<span class="hljs-number">1</span>);
+enQueue(<span class="hljs-number">2</span>);
+enQueue(<span class="hljs-number">3</span>);
+enQueue(<span class="hljs-number">4</span>);
+enQueue(<span class="hljs-number">5</span>);
+
+<span class="hljs-comment">// Fails to enqueue because front == 0 &amp;&amp; rear == SIZE - 1</span>
+enQueue(<span class="hljs-number">6</span>);
+
+display();
+deQueue();
+
+display();
+
+enQueue(<span class="hljs-number">7</span>);
+display();
+
+<span class="hljs-comment">// Fails to enqueue because front == rear + 1</span>
+enQueue(<span class="hljs-number">8</span>);
+
+<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}</code></pre></div>
+</div>
+
+<div class="code-editor__area" id="cpp-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="cpp hljs"><span class="hljs-comment">// Circular Queue implementation in C++</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> SIZE 5 <span class="hljs-comment">/* Size of Circular Queue */</span></span>
+
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Queue</span> {</span>
+<span class="hljs-keyword">private</span>:
+<span class="hljs-keyword">int</span> items[SIZE], front, rear;
+
+<span class="hljs-keyword">public</span>:
+Queue() {
+front = <span class="hljs-number">-1</span>;
+rear = <span class="hljs-number">-1</span>;
+}
+<span class="hljs-comment">// Check if the queue is full</span>
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">isFull</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-keyword">if</span> (front == <span class="hljs-number">0</span> &amp;&amp; rear == SIZE - <span class="hljs-number">1</span>) {
+<span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+}
+<span class="hljs-keyword">if</span> (front == rear + <span class="hljs-number">1</span>) {
+<span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+}
+<span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+}
+<span class="hljs-comment">// Check if the queue is empty</span>
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">isEmpty</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-keyword">if</span> (front == <span class="hljs-number">-1</span>)
+<span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+<span class="hljs-keyword">else</span>
+<span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+}
+<span class="hljs-comment">// Adding an element</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">enQueue</span><span class="hljs-params">(<span class="hljs-keyword">int</span> element)</span> </span>{
+<span class="hljs-keyword">if</span> (isFull()) {
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Queue is full"</span>;
+} <span class="hljs-keyword">else</span> {
+<span class="hljs-keyword">if</span> (front == <span class="hljs-number">-1</span>) front = <span class="hljs-number">0</span>;
+rear = (rear + <span class="hljs-number">1</span>) % SIZE;
+items[rear] = element;
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span>
+&lt;&lt; <span class="hljs-string">"Inserted "</span> &lt;&lt; element &lt;&lt; <span class="hljs-built_in">endl</span>;
+}
+}
+<span class="hljs-comment">// Removing an element</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">deQueue</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-keyword">int</span> element;
+<span class="hljs-keyword">if</span> (isEmpty()) {
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Queue is empty"</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+<span class="hljs-keyword">return</span> (<span class="hljs-number">-1</span>);
+} <span class="hljs-keyword">else</span> {
+element = items[front];
+<span class="hljs-keyword">if</span> (front == rear) {
+front = <span class="hljs-number">-1</span>;
+rear = <span class="hljs-number">-1</span>;
+}
+<span class="hljs-comment">// Q has only one element,</span>
+<span class="hljs-comment">// so we reset the queue after deleting it.</span>
+<span class="hljs-keyword">else</span> {
+front = (front + <span class="hljs-number">1</span>) % SIZE;
+}
+<span class="hljs-keyword">return</span> (element);
+}
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">display</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-comment">// Function to display status of Circular Queue</span>
+<span class="hljs-keyword">int</span> i;
+<span class="hljs-keyword">if</span> (isEmpty()) {
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span>
+&lt;&lt; <span class="hljs-string">"Empty Queue"</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+} <span class="hljs-keyword">else</span> {
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Front -&gt; "</span> &lt;&lt; front;
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span>
+&lt;&lt; <span class="hljs-string">"Items -&gt; "</span>;
+<span class="hljs-keyword">for</span> (i = front; i != rear; i = (i + <span class="hljs-number">1</span>) % SIZE)
+<span class="hljs-built_in">cout</span> &lt;&lt; items[i];
+<span class="hljs-built_in">cout</span> &lt;&lt; items[i];
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span>
+&lt;&lt; <span class="hljs-string">"Rear -&gt; "</span> &lt;&lt; rear;
+}
+}
+};
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+Queue q;
+
+<span class="hljs-comment">// Fails because front = -1</span>
+q.deQueue();
+
+q.enQueue(<span class="hljs-number">1</span>);
+q.enQueue(<span class="hljs-number">2</span>);
+q.enQueue(<span class="hljs-number">3</span>);
+q.enQueue(<span class="hljs-number">4</span>);
+q.enQueue(<span class="hljs-number">5</span>);
+
+<span class="hljs-comment">// Fails to enqueue because front == 0 &amp;&amp; rear == SIZE - 1</span>
+q.enQueue(<span class="hljs-number">6</span>);
+
+q.display();
+
+<span class="hljs-keyword">int</span> elem = q.deQueue();
+
+<span class="hljs-keyword">if</span> (elem != <span class="hljs-number">-1</span>)
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span>
+&lt;&lt; <span class="hljs-string">"Deleted Element is "</span> &lt;&lt; elem;
+
+q.display();
+
+q.enQueue(<span class="hljs-number">7</span>);
+
+q.display();
+
+<span class="hljs-comment">// Fails to enqueue because front == rear + 1</span>
+q.enQueue(<span class="hljs-number">8</span>);
+
+<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}</code></pre></div>
+</div>
+</div>
+
+<hr><h2 id="complexity">Circular Queue Complexity Analysis</h2>
+
+<p>The complexity of the enqueue and dequeue operations of a circular queue is <var>O(1)</var> for (array implementations).</p>
+
+<hr><h2 id="application">Applications of Circular Queue</h2>
+
+<ul><li>CPU scheduling</li>
+<li>Memory management</li>
+<li>Traffic Management</li>
+</ul></div>
+
+
+
+</div>
+
+
+    <div class="tutorial-toc"><div class="tutorial-toc__inner"><h3 class="tutorial-toc__title">Table of Contents
+<button class="btn btn--clear align-items-center">
+<svg class="programiz-icon"><use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#x"></use></svg></button></h3><div class="tutorial-toc__links"><ul><li><a href="#definition">Definition</a></li>
+<li><a href="#working">How Circular Queue Works</a></li>
+<li><a href="#code">Python, Java and C/C++ Examples</a></li>
+<li><a href="#complexity">Circular Queue Complexity</a></li>
+<li><a href="#application">Circular Queue Applications</a></li>
+</ul></div></div></div>                          </div>
+<!--second------------------------------------------->
+<div>
+<ul>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/stack.html">
+
+        Stack</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/queue.html">
+
+        Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/types-of-queue.html">
+
+        Types of Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/circular-queue.html">
+
+        Circular Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/priority-queue.html">
+
+        Priority Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deque.html">
+
+        Deque</a></button>
+<br/>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linked-list.html">
+
+        Linked List</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linked-list-operations.html">
+
+        Linked List Operations</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linked-list-types.html">
+
+        Types of Linked List</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/hash-table.html">
+
+        Hash Table</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/heap-data-structure.html">
+
+        Heap Data Structure</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/fibonacci-heap.html">
+
+        Fibonacci Heap</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/decrease-key-and-delete-node-from-a-fibonacci-heap.html">
+
+        Decrease Key and Delete node from Fibonacci Heap</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/trees.html">
+
+        Tree Data Structure</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/tree-traversal.html">
+
+        Tree Traversal</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/binary-tree.html">
+
+        Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/full-binary-tree.html">
+
+        Full Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/perfect-binary-tree.html">
+
+        Perfect Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/complete-binary-tree.html">
+
+        Complete Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/balanced-binary-tree.html">
+
+        Balanced Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/binary-search-tree.html">
+
+        Binary Search Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/avl-tree.html">
+
+        AVL Tree</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/b-tree.html">
+
+        B Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-into-a-b-tree.html">
+
+        Insertion into B-tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deletion-from-a-b-tree.html">
+
+        Deletion from B-tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/b-plus-tree.html">
+
+        B+ Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-on-a-b-plus-tree.html">
+
+        Insertion on a B+ Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deletion-from-a-b-plus-tree.html">
+
+        Deletion from a B+ Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/red-black-tree.html">
+
+        Red Black Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-in-a-red-black-tree.html">
+
+        Insertion in Red Black Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deletion-from-a-red-black-tree.html">
+
+        Deletion from Red Black Tree</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph.html">
+
+        Graph Data Structure</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/spanning-tree-and-minimum-spanning-tree.html">
+
+        Spanning Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/strongly-connected-components.html">
+
+        Strongly Connected Components</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-adjacency-matrix.html">
+
+        Adjacency Matrix</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-adjacency-list.html">
+
+        Adjacency List</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-dfs.html">
+
+        DFS Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-bfs.html">
+
+        Breadth-first Search</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/bellman-ford-algorithm.html">
+
+        Bellman Ford's Algorithm</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/bubble-sort.html">
+
+        Bubble Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/selection-sort.html">
+
+        Selection Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-sort.html">
+
+        Insertion Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/merge-sort.html">
+
+        Merge Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/quick-sort.html">
+
+        Quick Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/counting-sort.html">
+
+        Counting Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/radix-sort.html">
+
+        Radix Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/bucket-sort.html">
+
+        Bucket Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/heap-sort.html">
+
+        Heap Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/shell-sort.html">
+
+        Shell Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linear-search.html">
+
+        Linear Search</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/binary-search.html">
+
+        Binary Search</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/greedy-algorithm.html">
+
+        Greedy Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/ford-fulkerson-algorithm.html">
+
+        Ford-Fulkerson Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/dijkstra-algorithm.html">
+
+        Dijkstra's Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/kruskal-algorithm.html">
+
+        Kruskal's Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/prim-algorithm.html">
+
+        Prim's Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/huffman-coding.html">
+
+        Huffman Code</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/dynamic-programming.html">
+
+        Dynamic Programming</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/floyd-warshall-algorithm.html">
+
+        Floyd Warshall Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/longest-common-subsequence.html">
+
+        Longest Common Subsequence</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/backtracking-algorithm.html">
+
+        Backtracking Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/rabin-karp-algorithm.html">
+
+        Rabin-Karp Algorithm</a></button>
+<br>
+<br/>
+<h2>Free Courses on YouTube</h2>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+            https://www.youtube.com/watch?v=IbSXF7eT-AU&amp;list=PLR_5PTwg_uAQw40OhdvAwN4NvzWv0xOZ2">
+
+            Python Full Course Playlist</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://www.youtube.com/watch?v=UEl6wB90Gs8">
+
+            105 STL Algorithms in Less Than an Hour</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://www.youtube.com/watch?v=zZXTgN7L1UU&amp;list=PLR_5PTwg_uAS6C1cSMjU6oVhOcCX8Zu_4">
+
+            C++ STL Playlist</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://youtu.be/ty9756v3kc8">
+
+            Learn Node.js </a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://youtu.be/exrIpdS3Crc">
+
+            Learn Data Science Full course</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://youtu.be/Q8tDO2uSk5U">
+
+            Learn Computer Networking Full course</a></button>
+<br/>
+</br></br></br></br></br></br></br></br></ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<footer class="afooter" style="margin-left:20px">
+<p>
+<a href="/cookie-policy.html">Cookie policy</a> |
+
+        <a href="/privacy-policy.html">Privacy policy</a> |
+
+        <a href="/terms-of-use.html">Terms of use</a> |
+
+        <a href="/disclaimer.html">Disclaimer</a> |
+
+        <a href="/about-us.html">About Us</a>
+</p>
+<p>
+
+        © 2023 <a href="https://pythonread.github.io">https://pythonread.github.io</a>
+</p>
+</footer>
+<script type="text/javascript">
+
+    document.addEventListener('DOMContentLoaded', function () { htmlTableOfContents() }); function htmlTableOfContents(documentRef) { var documentRef = documentRef || document; var toc = documentRef.getElementById("toc"); var headings = [].slice.call(documentRef.body.querySelectorAll('h2, h3')); headings.forEach(function (heading, index) { var ref = "toc" + index; if (heading.hasAttribute("id")) { ref = heading.getAttribute("id") } else { heading.setAttribute("id", ref) } var link = documentRef.createElement("a"); link.setAttribute("href", "#" + ref); link.textContent = heading.textContent; var div = documentRef.createElement("div"); div.setAttribute("class", heading.tagName.toLowerCase()); div.appendChild(link); toc.appendChild(div) }) } try { module.exports = htmlTableOfContents } catch (e) { } function isScrolledIntoView(el) { var rect = el.getBoundingClientRect(); var elemTop = rect.top; var elemBottom = rect.bottom; var isVisible = (elemTop >= -10) && (elemBottom <= (window.innerHeight)); return isVisible } function highlightMenu() { var headers = document.querySelectorAll("h2, h3"); for (var i = 0; i < headers.length; i += 1) { if (isScrolledIntoView(headers[i])) { var childDivs = document.getElementById('toc').getElementsByTagName('div'); var c = childDivs[i].classList; c.add("active"); for (var j = 0; j < i; j += 1) { var c = childDivs[j].classList; c.remove("active") } for (var j = i + 1; j < childDivs.length; j += 1) { var c = childDivs[j].classList; c.remove("active") } break } } } function highlightMenuLastItem() { var childDivs = document.getElementById('toc').getElementsByTagName('div'); for (var j = 0; j < childDivs.length - 1; j += 1) { var c = childDivs[j].classList; c.remove("active") } var c = childDivs[childDivs.length - 1].classList; c.add("active") } window.addEventListener("click", function (event) { highlightMenu() }); window.onscroll = function (e) { highlightMenu(); if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) { highlightMenuLastItem() } }; function mobileMenu() { var classes = document.getElementById('nav-toggle-icon').classList; if (classes.contains("active")) { classes.remove("active") } else { classes.add("active") } var classes = document.getElementById('menu-wrapper').classList; if (classes.contains("active")) { classes.remove("active") } else { classes.add("active") } }
+
+</script>
+<script type="text/javascript">
+
+    function changepy(){
+
+        document.getElementById('py1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('java1').className = 'tabbed-editor__node';
+
+        document.getElementById('c1').className = 'tabbed-editor__node';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node';
+
+        document.getElementById('python-code').className = 'code-editor__area code-editor__area--active';
+
+        document.getElementById('java-code').className = 'code-editor__area';
+
+        document.getElementById('c-code').className = 'code-editor__area';
+
+        document.getElementById('cpp-code').className = 'code-editor__area';
+
+
+
+    }
+
+    function changecpp(){
+
+        document.getElementById('py1').className = 'tabbed-editor__node';
+
+        document.getElementById('java1').className = 'tabbed-editor__node';
+
+        document.getElementById('c1').className = 'tabbed-editor__node';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('python-code').className = 'code-editor__area';
+
+        document.getElementById('java-code').className = 'code-editor__area';
+
+        document.getElementById('c-code').className = 'code-editor__area';
+
+        document.getElementById('cpp-code').className = 'code-editor__area code-editor__area--active';
+
+    }
+
+    function changejava(){
+
+       document.getElementById('py1').className = 'tabbed-editor__node';
+
+        document.getElementById('java1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('c1').className = 'tabbed-editor__node';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node';
+
+        document.getElementById('python-code').className = 'code-editor__area';
+
+        document.getElementById('java-code').className = 'code-editor__area code-editor__area--active';
+
+        document.getElementById('c-code').className = 'code-editor__area';
+
+        document.getElementById('cpp-code').className = 'code-editor__area';
+
+    }
+
+    function changec(){
+
+        document.getElementById('py1').className = 'tabbed-editor__node';
+
+        document.getElementById('java1').className = 'tabbed-editor__node';
+
+        document.getElementById('c1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node';
+
+        document.getElementById('python-code').className = 'code-editor__area';
+
+        document.getElementById('java-code').className = 'code-editor__area';
+
+        document.getElementById('c-code').className = 'code-editor__area code-editor__area--active';
+
+        document.getElementById('cpp-code').className = 'code-editor__area';
+
+    }
+
+    
+
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>

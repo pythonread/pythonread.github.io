@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<title>Bubble Sort Algorithm</title>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-HCERBDV76D"></script>
+<script>
+
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() { dataLayer.push(arguments); }
+
+        gtag('js', new Date());
+
+
+
+        gtag('config', 'G-HCERBDV76D');
+
+    </script>
+<meta content="B0487B46A104E90209E8A3BEA24ECA0E" name="msvalidate.01"/>
+<meta content="f044b3a12c7918f1" name="yandex-verification"/>
+<!--end-->
+<meta content="learn about data types, variables, lists, tuples, dictionaries,if else,DSA,loops,user-defined functions, oop, threading and scripting." name="description"/>
+<meta content="learnPython" name="author"/>
+<meta content="Learn Python for free,learn python for beginners,Core Python,Web frameworks,Multiprocess architecture,Serverside templating language,python tutorials,python4" name="keywords"/>
+<meta content="website" property="og:type"/>
+<meta content="US-CA" name="”geo.region”"/>
+<meta content="353 Jane Stanford Way, Stanford, CA 94305, United States" name="”geo.placename”"/>
+<meta content="37.430089898615456;-122.17332683124829" name="”geo.position”"/>
+<meta content="37.430089898615456, -122.17332683124829" name="”ICBM”"/>
+<link href="https://pythonread.github.io/?m=1" rel="alternate"/>
+<link href="/favicon.png" rel="icon"/>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="/style1.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/style2.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/style0.css" media="all" rel="stylesheet" type="text/css"/>
+<!--<![endif]-->
+</head>
+<body>
+<div class="nav-wrapper">
+<div class="container">
+<nav>
+<div class="logo wave">
+<a href="/" id="logo">
+
+                        Python Tutorial
+
+                    </a>
+</div>
+<div class="nav-toggle-icon" id="nav-toggle-icon" onclick="mobileMenu()">
+<div class="material-hamburger">
+<span>
+</span>
+<span>
+</span>
+<span>
+</span>
+</div>
+</div>
+<div class="menu-wrapper" id="menu-wrapper">
+<div class="nav-indicator">
+</div>
+<ul class="menus">
+<li>
+<a class="wave" href="/">
+
+                                Home
+
+                            </a>
+</li>
+<li>
+<a class="wave" href="/projects.html">
+
+                                Projects
+
+                            </a>
+</li>
+<li>
+<a class="wave" href="/free-course.html" target="_blank">
+
+                                Free Course
+
+                            </a>
+</li>
+<li>
+<a class="wave" href="/dsa.html">
+
+                                DSA
+
+                            </a>
+</li>
+</ul>
+</div>
+</nav>
+</div>
+</div>
+<div class="contents contents--neg" style="margin-top: 60px">
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+<div class="d-flex">
+<div class="left-bar d-none d-lg-block">
+<div class="card-alt mb-10x">
+<h3>Page Index</h3>
+<div class="list">
+<ul>
+<li><a href="/dsa.html#data-structure-1" title="Data Structures (I)">Data Structures
+
+                                                (I)</a></li>
+<li><a href="/dsa.html#data-structure-2" title="Data Structures (II)">Data Structures
+
+                                                (II)</a></li>
+<li><a href="/dsa.html#tree-1" title="Tree based DSA (I)">Tree based DSA (I)</a></li>
+<li><a href="/dsa.html#tree-2" title="Tree based DSA (II)">Tree based DSA (II)</a></li>
+<li><a href="/dsa.html#graph" title="Graph Data Structures and Algorithm">Graph based
+
+                                                DSA</a></li>
+<li><a href="/dsa.html#sorting-searching" title="Sorting and Searching">Sorting and
+
+                                                Searching</a></li>
+<li><a href="/dsa.html#greedy-algorithm" title="Greedy Algorithms">Greedy Algorithms</a>
+</li>
+<li><a href="/dsa.html#dynamic-programming" title="Dynamic Programming">Dynamic
+
+                                                Programming</a></li>
+<li><a href="/dsa.html#other-algorithms" title="Other Algorithms">Other Algorithms</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="right-bar">
+<!--first part end-------------------------------------------->
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hcigjLVrWPY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<div class="editor-contents">
+        <h1>Bubble Sort</h1>
+
+
+        <p class="editor-contents__short-description">In this tutorial, you will learn about the bubble sort algorithm and its implementation in Python, Java,  C, and C++.</p>
+
+
+
+          
+
+
+
+<div id="node-329" class="node node-algorithm clearfix" about="/dsa/bubble-sort" typeof="sioc:Item foaf:Document">
+
+
+<span property="dc:title" content="Bubble Sort" class="rdf-meta element-hidden"></span>
+
+<div class="content">
+<p id="definition"><strong>Bubble sort</strong> is a sorting algorithm that compares two adjacent elements and swaps them until they are in the intended order.</p>
+
+<p>Just like the movement of air bubbles in the water that rise up to the surface, each element of the array move to the end in each iteration. Therefore, it is called a bubble sort.</p>
+
+<hr><h2 id="working">Working of Bubble Sort</h2>
+
+<p>Suppose we are trying to sort the elements in <strong>ascending order</strong>.</p>
+
+<p><strong>1. First Iteration (Compare and Swap)</strong></p>
+
+<ol><li>Starting from the first index, compare the first and the second elements.</li>
+<li>If the first element is greater than the second element, they are swapped.</li>
+<li>Now, compare the second and the third elements. Swap them if they are not in order.</li>
+<li>The above process goes on until the last element.
+<figure><img alt="Compare two adjacent elements and swap them if the first element is greater than the next element" src="https://www.programiz.com/sites/tutorial2program/files/Bubble-sort-0.png" title="Bubble Sort step 0" width="375" height="502.9"><figcaption>Compare the Adjacent Elements</figcaption></figure></li>
+</ol><p><strong>2. Remaining Iteration</strong></p>
+
+<p>The same process goes on for the remaining iterations.</p>
+
+<p>After each iteration, the largest element among the unsorted elements is placed at the end.</p>
+
+<figure><img alt="Continue the swapping and put the largest element among the unsorted list at the end" src="https://www.programiz.com/sites/tutorial2program/files/Bubble-sort-1.png" title="Bubble Sort step 1" width="375" height="414"><figcaption>Put the largest element at the end</figcaption></figure><p>In each iteration, the comparison takes place up to the last unsorted element.</p>
+
+<figure><img alt="Swapping occurs only if the first element is greater than the next element" src="https://www.programiz.com/sites/tutorial2program/files/Bubble-sort-2.png" title="Bubble Sort step 2" width="375" height="325"><figcaption>Compare the adjacent elements</figcaption></figure><p>The array is sorted when all the unsorted elements are placed at their correct positions.</p>
+
+<figure><img alt="The array is sorted if all the elements are kept in the right order." src="https://www.programiz.com/sites/tutorial2program/files/Bubble-sort-3.png" title="Bubble Sort step 3" width="375" height="237"><figcaption>The array is sorted if all elements are kept in the right order</figcaption></figure><hr><h2 id="algorithm">Bubble Sort Algorithm</h2>
+
+<pre style="max-height: 600px;"><code class="dsa hljs properties"><span class="hljs-attr">bubbleSort(array)</span>
+<span class="hljs-attr">for</span> <span class="hljs-string">i &lt;- 1 to indexOfLastUnsortedElement-1</span>
+<span class="hljs-attr">if</span> <span class="hljs-string">leftElement &gt; rightElement</span>
+<span class="hljs-attr">swap</span> <span class="hljs-string">leftElement and rightElement</span>
+<span class="hljs-attr">end</span> <span class="hljs-string">bubbleSort</span></code></pre>
+
+<hr><h2 id="code">Bubble Sort Code in Python, Java and C/C++</h2>
+
+<div class="tabbed-editor">
+        <div id='py1'class="tabbed-editor__node tabbed-editor__node--active" onclick="changepy()"><a href="#python-code">Python</a></div>
+        
+        <div id="java1" class="tabbed-editor__node" onclick="changejava()"><a href="#java-code">Java</a></div>
+        
+        <div id="c1" class="tabbed-editor__node" onclick="changec()"><a href="#c-code">C</a></div>
+        
+        <div id="cpp1" class="tabbed-editor__node" onclick="changecpp()"><a href="#cpp-code">C++</a></div>
+        </div>
+
+<div class="code-editor code-editor--tabbed">
+<div class="code-editor__area code-editor__area--active" id="python-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="python hljs"><span class="hljs-comment"># Bubble sort in Python</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">bubbleSort</span><span class="hljs-params">(array)</span>:</span>
+
+<span class="hljs-comment"># loop to access each array element</span>
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(array)):
+
+<span class="hljs-comment"># loop to compare array elements</span>
+<span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> range(<span class="hljs-number">0</span>, len(array) - i - <span class="hljs-number">1</span>):
+
+<span class="hljs-comment"># compare two adjacent elements</span>
+<span class="hljs-comment"># change &gt; to &lt; to sort in descending order</span>
+<span class="hljs-keyword">if</span> array[j] &gt; array[j + <span class="hljs-number">1</span>]:
+
+<span class="hljs-comment"># swapping elements if elements</span>
+<span class="hljs-comment"># are not in the intended order</span>
+temp = array[j]
+array[j] = array[j+<span class="hljs-number">1</span>]
+array[j+<span class="hljs-number">1</span>] = temp
+
+
+data = [<span class="hljs-number">-2</span>, <span class="hljs-number">45</span>, <span class="hljs-number">0</span>, <span class="hljs-number">11</span>, <span class="hljs-number">-9</span>]
+
+bubbleSort(data)
+
+<span class="hljs-keyword">print</span>(<span class="hljs-string">'Sorted Array in Ascending Order:'</span>)
+<span class="hljs-keyword">print</span>(data)</code></pre></div>
+</div>
+
+<div class="code-editor__area" id="java-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="java hljs"><span class="hljs-comment">// Bubble sort in Java</span>
+
+<span class="hljs-keyword">import</span> java.util.Arrays;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span> </span>{
+
+<span class="hljs-comment">// perform the bubble sort</span>
+<span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">bubbleSort</span><span class="hljs-params">(<span class="hljs-keyword">int</span> array[])</span> </span>{
+<span class="hljs-keyword">int</span> size = array.length;
+
+<span class="hljs-comment">// loop to access each array element</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; size - <span class="hljs-number">1</span>; i++)
+
+<span class="hljs-comment">// loop to compare array elements</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; size - i - <span class="hljs-number">1</span>; j++)
+
+<span class="hljs-comment">// compare two adjacent elements</span>
+<span class="hljs-comment">// change &gt; to &lt; to sort in descending order</span>
+<span class="hljs-keyword">if</span> (array[j] &gt; array[j + <span class="hljs-number">1</span>]) {
+
+<span class="hljs-comment">// swapping occurs if elements</span>
+<span class="hljs-comment">// are not in the intended order</span>
+<span class="hljs-keyword">int</span> temp = array[j];
+array[j] = array[j + <span class="hljs-number">1</span>];
+array[j + <span class="hljs-number">1</span>] = temp;
+}
+}
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span> </span>{
+
+<span class="hljs-keyword">int</span>[] data = { -<span class="hljs-number">2</span>, <span class="hljs-number">45</span>, <span class="hljs-number">0</span>, <span class="hljs-number">11</span>, -<span class="hljs-number">9</span> };
+
+<span class="hljs-comment">// call method using class name</span>
+Main.bubbleSort(data);
+
+System.out.println(<span class="hljs-string">"Sorted Array in Ascending Order:"</span>);
+System.out.println(Arrays.toString(data));
+}
+}</code></pre></div>
+</div>
+
+<div class="code-editor__area" id="c-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="c hljs cpp"><span class="hljs-comment">// Bubble sort in C</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+
+<span class="hljs-comment">// perform the bubble sort</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">bubbleSort</span><span class="hljs-params">(<span class="hljs-keyword">int</span> <span class="hljs-built_in">array</span>[], <span class="hljs-keyword">int</span> size)</span> </span>{
+
+<span class="hljs-comment">// loop to access each array element</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> step = <span class="hljs-number">0</span>; step &lt; size - <span class="hljs-number">1</span>; ++step) {
+
+<span class="hljs-comment">// loop to compare array elements</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; size - step - <span class="hljs-number">1</span>; ++i) {
+
+<span class="hljs-comment">// compare two adjacent elements</span>
+<span class="hljs-comment">// change &gt; to &lt; to sort in descending order</span>
+<span class="hljs-keyword">if</span> (<span class="hljs-built_in">array</span>[i] &gt; <span class="hljs-built_in">array</span>[i + <span class="hljs-number">1</span>]) {
+
+<span class="hljs-comment">// swapping occurs if elements</span>
+<span class="hljs-comment">// are not in the intended order</span>
+<span class="hljs-keyword">int</span> temp = <span class="hljs-built_in">array</span>[i];
+<span class="hljs-built_in">array</span>[i] = <span class="hljs-built_in">array</span>[i + <span class="hljs-number">1</span>];
+<span class="hljs-built_in">array</span>[i + <span class="hljs-number">1</span>] = temp;
+}
+}
+}
+}
+
+<span class="hljs-comment">// print array</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">printArray</span><span class="hljs-params">(<span class="hljs-keyword">int</span> <span class="hljs-built_in">array</span>[], <span class="hljs-keyword">int</span> size)</span> </span>{
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; size; ++i) {
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d  "</span>, <span class="hljs-built_in">array</span>[i]);
+}
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"\n"</span>);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-keyword">int</span> data[] = {<span class="hljs-number">-2</span>, <span class="hljs-number">45</span>, <span class="hljs-number">0</span>, <span class="hljs-number">11</span>, <span class="hljs-number">-9</span>};
+
+<span class="hljs-comment">// find the array's length</span>
+<span class="hljs-keyword">int</span> size = <span class="hljs-keyword">sizeof</span>(data) / <span class="hljs-keyword">sizeof</span>(data[<span class="hljs-number">0</span>]);
+
+bubbleSort(data, size);
+
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"Sorted Array in Ascending Order:\n"</span>);
+printArray(data, size);
+}</code></pre></div>
+</div>
+
+<div class="code-editor__area" id="cpp-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="cpp hljs"><span class="hljs-comment">// Bubble sort in C++</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-comment">// perform bubble sort</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">bubbleSort</span><span class="hljs-params">(<span class="hljs-keyword">int</span> <span class="hljs-built_in">array</span>[], <span class="hljs-keyword">int</span> size)</span> </span>{
+
+<span class="hljs-comment">// loop to access each array element</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> step = <span class="hljs-number">0</span>; step &lt; size; ++step) {
+
+<span class="hljs-comment">// loop to compare array elements</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; size - step; ++i) {
+
+<span class="hljs-comment">// compare two adjacent elements</span>
+<span class="hljs-comment">// change &gt; to &lt; to sort in descending order</span>
+<span class="hljs-keyword">if</span> (<span class="hljs-built_in">array</span>[i] &gt; <span class="hljs-built_in">array</span>[i + <span class="hljs-number">1</span>]) {
+
+<span class="hljs-comment">// swapping elements if elements</span>
+<span class="hljs-comment">// are not in the intended order</span>
+<span class="hljs-keyword">int</span> temp = <span class="hljs-built_in">array</span>[i];
+<span class="hljs-built_in">array</span>[i] = <span class="hljs-built_in">array</span>[i + <span class="hljs-number">1</span>];
+<span class="hljs-built_in">array</span>[i + <span class="hljs-number">1</span>] = temp;
+}
+}
+}
+}
+
+<span class="hljs-comment">// print array</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">printArray</span><span class="hljs-params">(<span class="hljs-keyword">int</span> <span class="hljs-built_in">array</span>[], <span class="hljs-keyword">int</span> size)</span> </span>{
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; size; ++i) {
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"  "</span> &lt;&lt; <span class="hljs-built_in">array</span>[i];
+}
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"\n"</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-keyword">int</span> data[] = {<span class="hljs-number">-2</span>, <span class="hljs-number">45</span>, <span class="hljs-number">0</span>, <span class="hljs-number">11</span>, <span class="hljs-number">-9</span>};
+
+<span class="hljs-comment">// find array's length</span>
+<span class="hljs-keyword">int</span> size = <span class="hljs-keyword">sizeof</span>(data) / <span class="hljs-keyword">sizeof</span>(data[<span class="hljs-number">0</span>]);
+
+bubbleSort(data, size);
+
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Sorted Array in Ascending Order:\n"</span>;  
+printArray(data, size);
+}</code></pre></div>
+</div>
+</div>
+
+<hr><h2 id="optimized-algorithm">Optimized Bubble Sort Algorithm</h2>
+
+<p>In the above algorithm, all the comparisons are made even if the array is already sorted.</p>
+
+<p>This increases the execution time.</p>
+
+<p></p><div class="clearfix"></div><p>To solve this, we can introduce an extra variable <var>swapped</var>. The value of <var>swapped</var> is set true if there occurs swapping of elements. Otherwise, it is set <strong>false</strong>.</p>
+
+<p>After an iteration, if there is no swapping, the value of <var>swapped</var> will be <strong>false</strong>. This means elements are already sorted and there is no need to perform further iterations.</p>
+
+<p>This will reduce the execution time and helps to optimize the bubble sort.</p>
+
+<p><strong>Algorithm for optimized bubble sort is</strong></p>
+
+<pre style="max-height: 600px;"><code class="dsa hljs properties"><span class="hljs-attr">bubbleSort(array)</span>
+<span class="hljs-attr">swapped</span> <span class="hljs-string">&lt;- false</span>
+<span class="hljs-attr">for</span> <span class="hljs-string">i &lt;- 1 to indexOfLastUnsortedElement-1</span>
+<span class="hljs-attr">if</span> <span class="hljs-string">leftElement &gt; rightElement</span>
+<span class="hljs-attr">swap</span> <span class="hljs-string">leftElement and rightElement</span>
+<span class="hljs-attr">swapped</span> <span class="hljs-string">&lt;- true</span>
+<span class="hljs-attr">end</span> <span class="hljs-string">bubbleSort</span></code></pre>
+
+<hr><h2 id="optimized-example">Optimized Bubble Sort in Python, Java, and C/C++</h2>
+
+<div class="tabbed-editor">
+<div class="tabbed-editor__node tabbed-editor__node--active"><a href="#python-code">Python</a></div>
+
+<div class="tabbed-editor__node"><a href="#java-code">Java</a></div>
+
+<div class="tabbed-editor__node"><a href="#c-code">C</a></div>
+
+<div class="tabbed-editor__node"><a href="#cpp-code">C++</a></div>
+</div>
+
+<div class="code-editor code-editor--tabbed">
+<div class="code-editor__area code-editor__area--active" id="python-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="python hljs"><span class="hljs-comment"># Optimized Bubble sort in Python</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">bubbleSort</span><span class="hljs-params">(array)</span>:</span>
+
+<span class="hljs-comment"># loop through each element of array</span>
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(array)):
+
+<span class="hljs-comment"># keep track of swapping</span>
+swapped = <span class="hljs-literal">False</span>
+
+<span class="hljs-comment"># loop to compare array elements</span>
+<span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> range(<span class="hljs-number">0</span>, len(array) - i - <span class="hljs-number">1</span>):
+
+<span class="hljs-comment"># compare two adjacent elements</span>
+<span class="hljs-comment"># change &gt; to &lt; to sort in descending order</span>
+<span class="hljs-keyword">if</span> array[j] &gt; array[j + <span class="hljs-number">1</span>]:
+
+<span class="hljs-comment"># swapping occurs if elements</span>
+<span class="hljs-comment"># are not in the intended order</span>
+temp = array[j]
+array[j] = array[j+<span class="hljs-number">1</span>]
+array[j+<span class="hljs-number">1</span>] = temp
+
+swapped = <span class="hljs-literal">True</span>
+
+<span class="hljs-comment"># no swapping means the array is already sorted</span>
+<span class="hljs-comment"># so no need for further comparison</span>
+<span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> swapped:
+<span class="hljs-keyword">break</span>
+
+data = [<span class="hljs-number">-2</span>, <span class="hljs-number">45</span>, <span class="hljs-number">0</span>, <span class="hljs-number">11</span>, <span class="hljs-number">-9</span>]
+
+bubbleSort(data)
+
+<span class="hljs-keyword">print</span>(<span class="hljs-string">'Sorted Array in Ascending Order:'</span>)
+<span class="hljs-keyword">print</span>(data)</code></pre></div>
+</div>
+
+<div class="code-editor__area" id="java-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="java hljs"><span class="hljs-comment">// Optimized Bubble sort in Java</span>
+
+<span class="hljs-keyword">import</span> java.util.Arrays;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span> </span>{
+
+<span class="hljs-comment">// perform the bubble sort</span>
+<span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">bubbleSort</span><span class="hljs-params">(<span class="hljs-keyword">int</span> array[])</span> </span>{
+<span class="hljs-keyword">int</span> size = array.length;
+
+<span class="hljs-comment">// loop to access each array element</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; (size-<span class="hljs-number">1</span>); i++) {
+
+<span class="hljs-comment">// check if swapping occurs</span>
+<span class="hljs-keyword">boolean</span> swapped = <span class="hljs-keyword">false</span>;
+
+<span class="hljs-comment">// loop to compare adjacent elements</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; (size-i-<span class="hljs-number">1</span>); j++) {
+
+<span class="hljs-comment">// compare two array elements</span>
+<span class="hljs-comment">// change &gt; to &lt; to sort in descending order</span>
+<span class="hljs-keyword">if</span> (array[j] &gt; array[j + <span class="hljs-number">1</span>]) {
+
+<span class="hljs-comment">// swapping occurs if elements</span>
+<span class="hljs-comment">// are not in the intended order</span>
+<span class="hljs-keyword">int</span> temp = array[j];
+array[j] = array[j + <span class="hljs-number">1</span>];
+array[j + <span class="hljs-number">1</span>] = temp;
+
+swapped = <span class="hljs-keyword">true</span>;
+}
+}
+<span class="hljs-comment">// no swapping means the array is already sorted</span>
+<span class="hljs-comment">// so no need for further comparison</span>
+<span class="hljs-keyword">if</span> (!swapped)
+<span class="hljs-keyword">break</span>;
+
+}
+}
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span> </span>{
+
+<span class="hljs-keyword">int</span>[] data = { -<span class="hljs-number">2</span>, <span class="hljs-number">45</span>, <span class="hljs-number">0</span>, <span class="hljs-number">11</span>, -<span class="hljs-number">9</span> };
+
+<span class="hljs-comment">// call method using the class name</span>
+Main.bubbleSort(data);
+
+System.out.println(<span class="hljs-string">"Sorted Array in Ascending Order:"</span>);
+System.out.println(Arrays.toString(data));
+}
+}</code></pre></div>
+</div>
+
+<div class="code-editor__area" id="c-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="c hljs cpp"><span class="hljs-comment">// Optimized Bubble sort in C</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> </span><stdio.h>
+
+<span class="hljs-comment">// perform the bubble sort</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">bubbleSort</span><span class="hljs-params">(<span class="hljs-keyword">int</span> <span class="hljs-built_in">array</span>[], <span class="hljs-keyword">int</span> size)</span> </span>{
+
+<span class="hljs-comment">// loop to access each array element</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> step = <span class="hljs-number">0</span>; step &lt; size - <span class="hljs-number">1</span>; ++step) {
+
+<span class="hljs-comment">// check if swapping occurs  </span>
+<span class="hljs-keyword">int</span> swapped = <span class="hljs-number">0</span>;
+
+<span class="hljs-comment">// loop to compare array elements</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; size - step - <span class="hljs-number">1</span>; ++i) {
+
+<span class="hljs-comment">// compare two array elements</span>
+<span class="hljs-comment">// change &gt; to &lt; to sort in descending order</span>
+<span class="hljs-keyword">if</span> (<span class="hljs-built_in">array</span>[i] &gt; <span class="hljs-built_in">array</span>[i + <span class="hljs-number">1</span>]) {
+
+<span class="hljs-comment">// swapping occurs if elements</span>
+<span class="hljs-comment">// are not in the intended order</span>
+<span class="hljs-keyword">int</span> temp = <span class="hljs-built_in">array</span>[i];
+<span class="hljs-built_in">array</span>[i] = <span class="hljs-built_in">array</span>[i + <span class="hljs-number">1</span>];
+<span class="hljs-built_in">array</span>[i + <span class="hljs-number">1</span>] = temp;
+
+swapped = <span class="hljs-number">1</span>;
+}
+}
+
+<span class="hljs-comment">// no swapping means the array is already sorted</span>
+<span class="hljs-comment">// so no need for further comparison</span>
+<span class="hljs-keyword">if</span> (swapped == <span class="hljs-number">0</span>) {
+<span class="hljs-keyword">break</span>;
+}
+
+}
+}
+
+<span class="hljs-comment">// print array</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">printArray</span><span class="hljs-params">(<span class="hljs-keyword">int</span> <span class="hljs-built_in">array</span>[], <span class="hljs-keyword">int</span> size)</span> </span>{
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; size; ++i) {
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d  "</span>, <span class="hljs-built_in">array</span>[i]);
+}
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"\n"</span>);
+}
+
+<span class="hljs-comment">// main method</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-keyword">int</span> data[] = {<span class="hljs-number">-2</span>, <span class="hljs-number">45</span>, <span class="hljs-number">0</span>, <span class="hljs-number">11</span>, <span class="hljs-number">-9</span>};
+
+<span class="hljs-comment">// find the array's length</span>
+<span class="hljs-keyword">int</span> size = <span class="hljs-keyword">sizeof</span>(data) / <span class="hljs-keyword">sizeof</span>(data[<span class="hljs-number">0</span>]);
+
+bubbleSort(data, size);
+
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"Sorted Array in Ascending Order:\n"</span>);
+printArray(data, size);
+}</stdio.h></code></pre></div>
+</div>
+
+<div class="code-editor__area" id="cpp-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="cpp hljs"><span class="hljs-comment">// Optimized bubble sort in C++</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> </span><iostream>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-comment">// perform bubble sort</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">bubbleSort</span><span class="hljs-params">(<span class="hljs-keyword">int</span> <span class="hljs-built_in">array</span>[], <span class="hljs-keyword">int</span> size)</span> </span>{
+
+<span class="hljs-comment">// loop to access each array element</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> step = <span class="hljs-number">0</span>; step &lt; (size<span class="hljs-number">-1</span>); ++step) {
+
+<span class="hljs-comment">// check if swapping occurs</span>
+<span class="hljs-keyword">int</span> swapped = <span class="hljs-number">0</span>;
+
+<span class="hljs-comment">// loop to compare two elements</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; (size-step<span class="hljs-number">-1</span>); ++i) {
+
+<span class="hljs-comment">// compare two array elements</span>
+<span class="hljs-comment">// change &gt; to &lt; to sort in descending order</span>
+<span class="hljs-keyword">if</span> (<span class="hljs-built_in">array</span>[i] &gt; <span class="hljs-built_in">array</span>[i + <span class="hljs-number">1</span>]) {
+
+<span class="hljs-comment">// swapping occurs if elements</span>
+<span class="hljs-comment">// are not in intended order </span>
+<span class="hljs-keyword">int</span> temp = <span class="hljs-built_in">array</span>[i];
+<span class="hljs-built_in">array</span>[i] = <span class="hljs-built_in">array</span>[i + <span class="hljs-number">1</span>];
+<span class="hljs-built_in">array</span>[i + <span class="hljs-number">1</span>] = temp;
+
+swapped = <span class="hljs-number">1</span>;
+}
+}
+
+<span class="hljs-comment">// no swapping means the array is already sorted</span>
+<span class="hljs-comment">// so no need of further comparison</span>
+<span class="hljs-keyword">if</span> (swapped == <span class="hljs-number">0</span>)
+<span class="hljs-keyword">break</span>;
+}
+}
+
+<span class="hljs-comment">// print an array</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">printArray</span><span class="hljs-params">(<span class="hljs-keyword">int</span> <span class="hljs-built_in">array</span>[], <span class="hljs-keyword">int</span> size)</span> </span>{
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; size; ++i) {
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"  "</span> &lt;&lt; <span class="hljs-built_in">array</span>[i];
+}
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"\n"</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-keyword">int</span> data[] = {<span class="hljs-number">-2</span>, <span class="hljs-number">45</span>, <span class="hljs-number">0</span>, <span class="hljs-number">11</span>, <span class="hljs-number">-9</span>};
+
+<span class="hljs-comment">// find the array's length</span>
+<span class="hljs-keyword">int</span> size = <span class="hljs-keyword">sizeof</span>(data) / <span class="hljs-keyword">sizeof</span>(data[<span class="hljs-number">0</span>]);
+
+bubbleSort(data, size);
+
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Sorted Array in Ascending Order:\n"</span>;
+printArray(data, size);
+}</iostream></code></pre></div>
+</div>
+</div>
+
+<hr><h2 id="complexity">Bubble Sort Complexity</h2>
+
+<div class="table-responsive">
+<table border="0"><tbody><tr><th><strong>Time Complexity</strong></th>
+          <td>&nbsp;</td>
+  </tr><tr><td>Best</td>
+          <td>O(n)</td>
+  </tr><tr><td>Worst</td>
+          <td>O(n<sup>2</sup>)</td>
+  </tr><tr><td>Average</td>
+          <td>O(n<sup>2</sup>)</td>
+  </tr><tr><th><strong>Space Complexity</strong></th>
+          <td>O(1)</td>
+  </tr><tr><th><strong>Stability</strong></th>
+          <td>Yes</td>
+  </tr></tbody></table></div>
+
+<hr><h3>Complexity in Detail</h3>
+
+<p>Bubble Sort compares the adjacent elements.</p>
+
+<div class="table-responsive">
+<table border="0"><tbody><tr><th>Cycle</th>
+          <th>Number of Comparisons</th>
+  </tr><tr><td>1st</td>
+          <td>(n-1)</td>
+  </tr><tr><td>2nd</td>
+          <td>(n-2)</td>
+  </tr><tr><td>3rd</td>
+          <td>(n-3)</td>
+  </tr><tr><td>.......</td>
+          <td>......</td>
+  </tr><tr><td>last</td>
+          <td>1</td>
+  </tr></tbody></table></div>
+
+<p>Hence, the number of comparisons is</p>
+
+<pre style="max-height: 600px;"><code class="dsa hljs yaml"><span class="hljs-string">(n-1)</span> <span class="hljs-string">+</span> <span class="hljs-string">(n-2)</span> <span class="hljs-string">+</span> <span class="hljs-string">(n-3)</span> <span class="hljs-string">+.....+</span> <span class="hljs-number">1</span> <span class="hljs-string">=</span> <span class="hljs-string">n(n-1)/2</span></code></pre>
+
+<p>nearly equals to <code>n<sup>2</sup></code></p>
+
+<p>Hence, <strong>Complexity:</strong> <var>O(n<sup>2</sup>)</var></p>
+
+<p>Also, if we&nbsp;observe the code, bubble sort requires two loops. Hence, the complexity is <code>n*n = n<sup>2</sup></code></p>
+
+<h3>1. Time Complexities</h3>
+
+<ul><li><strong>Worst Case Complexity:</strong> <code>O(n<sup>2</sup>)</code><br>
+If we want to sort in ascending order and the array is in descending order then&nbsp;the worst case occurs.</li>
+<li><strong>Best Case Complexity:</strong> <code>O(n)</code><br>
+If the array is already sorted, then there is no need for sorting.</li>
+<li><strong>Average Case Complexity: </strong><code>O(n<sup>2</sup>)</code><br>
+It occurs when the elements of the array are in jumbled order (neither ascending nor descending).</li>
+</ul><h3>2. Space Complexity</h3>
+
+<ul><li>Space complexity is <code>O(1)</code> because an extra variable is used for swapping.</li>
+<li>In the <strong>optimized bubble sort algorithm</strong>, two extra variables are used. Hence, the space complexity will be <code>O(2)</code>.</li>
+</ul><hr><h2 id="application">Bubble Sort Applications</h2>
+
+<p>Bubble sort is used if</p>
+
+<ul><li>complexity does not matter</li>
+<li>short and simple code is preferred</li>
+</ul><hr><h2>Similar Sorting Algorithms</h2>
+
+<ul><li><a href="/dsa/quick-sort.html" title="Quicksort">Quicksort</a></li>
+<li><a href="/dsa/insertion-sort.html" title="Insertion Sort">Insertion Sort</a></li>
+<li><a href="/dsa/merge-sort.html" title="Merge Sort">Merge Sort</a></li>
+<li><a href="/dsa/selection-sort.html" title="Selection Sort">Selection Sort</a></li>
+</ul></div>
+
+
+
+</div>
+
+
+        <div class="tutorial-toc"><div class="tutorial-toc__inner"><h3 class="tutorial-toc__title">Table of Contents
+<button class="btn btn--clear align-items-center">
+<svg class="programiz-icon"><use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#x"></use></svg></button></h3><div class="tutorial-toc__links"><ul><li><a href="#definition" class="">Introduction</a></li>
+<li><a href="#working" class="active">Working of Bubble Sort</a></li>
+<li><a href="#algorithm" class="">Bubble Sort Algorithm</a></li>
+<li><a href="#code" class="">Bubble Sort Code</a></li>
+<li><a href="#optimized-algorithm" class="">Optimized Bubble Sort Algorithm</a></li>
+<li><a href="#optimized-example" class="">Optimized Bubble Sort Code</a></li>
+<li><a href="#complexity" class="">Complexity</a></li>
+<li><a href="#application">Applications</a></li>
+</ul></div></div></div>                          </div>
+<!--second------------------------------------------->
+<div>
+<ul>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/stack.html">
+
+        Stack</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/queue.html">
+
+        Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/types-of-queue.html">
+
+        Types of Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/circular-queue.html">
+
+        Circular Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/priority-queue.html">
+
+        Priority Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deque.html">
+
+        Deque</a></button>
+<br/>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linked-list.html">
+
+        Linked List</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linked-list-operations.html">
+
+        Linked List Operations</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linked-list-types.html">
+
+        Types of Linked List</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/hash-table.html">
+
+        Hash Table</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/heap-data-structure.html">
+
+        Heap Data Structure</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/fibonacci-heap.html">
+
+        Fibonacci Heap</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/decrease-key-and-delete-node-from-a-fibonacci-heap.html">
+
+        Decrease Key and Delete node from Fibonacci Heap</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/trees.html">
+
+        Tree Data Structure</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/tree-traversal.html">
+
+        Tree Traversal</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/binary-tree.html">
+
+        Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/full-binary-tree.html">
+
+        Full Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/perfect-binary-tree.html">
+
+        Perfect Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/complete-binary-tree.html">
+
+        Complete Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/balanced-binary-tree.html">
+
+        Balanced Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/binary-search-tree.html">
+
+        Binary Search Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/avl-tree.html">
+
+        AVL Tree</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/b-tree.html">
+
+        B Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-into-a-b-tree.html">
+
+        Insertion into B-tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deletion-from-a-b-tree.html">
+
+        Deletion from B-tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/b-plus-tree.html">
+
+        B+ Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-on-a-b-plus-tree.html">
+
+        Insertion on a B+ Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deletion-from-a-b-plus-tree.html">
+
+        Deletion from a B+ Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/red-black-tree.html">
+
+        Red Black Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-in-a-red-black-tree.html">
+
+        Insertion in Red Black Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deletion-from-a-red-black-tree.html">
+
+        Deletion from Red Black Tree</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph.html">
+
+        Graph Data Structure</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/spanning-tree-and-minimum-spanning-tree.html">
+
+        Spanning Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/strongly-connected-components.html">
+
+        Strongly Connected Components</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-adjacency-matrix.html">
+
+        Adjacency Matrix</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-adjacency-list.html">
+
+        Adjacency List</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-dfs.html">
+
+        DFS Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-bfs.html">
+
+        Breadth-first Search</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/bellman-ford-algorithm.html">
+
+        Bellman Ford's Algorithm</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/bubble-sort.html">
+
+        Bubble Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/selection-sort.html">
+
+        Selection Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-sort.html">
+
+        Insertion Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/merge-sort.html">
+
+        Merge Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/quick-sort.html">
+
+        Quick Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/counting-sort.html">
+
+        Counting Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/radix-sort.html">
+
+        Radix Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/bucket-sort.html">
+
+        Bucket Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/heap-sort.html">
+
+        Heap Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/shell-sort.html">
+
+        Shell Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linear-search.html">
+
+        Linear Search</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/binary-search.html">
+
+        Binary Search</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/greedy-algorithm.html">
+
+        Greedy Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/ford-fulkerson-algorithm.html">
+
+        Ford-Fulkerson Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/dijkstra-algorithm.html">
+
+        Dijkstra's Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/kruskal-algorithm.html">
+
+        Kruskal's Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/prim-algorithm.html">
+
+        Prim's Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/huffman-coding.html">
+
+        Huffman Code</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/dynamic-programming.html">
+
+        Dynamic Programming</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/floyd-warshall-algorithm.html">
+
+        Floyd Warshall Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/longest-common-subsequence.html">
+
+        Longest Common Subsequence</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/backtracking-algorithm.html">
+
+        Backtracking Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/rabin-karp-algorithm.html">
+
+        Rabin-Karp Algorithm</a></button>
+<br>
+<br/>
+<h2>Free Courses on YouTube</h2>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+            https://www.youtube.com/watch?v=IbSXF7eT-AU&amp;list=PLR_5PTwg_uAQw40OhdvAwN4NvzWv0xOZ2">
+
+            Python Full Course Playlist</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://www.youtube.com/watch?v=UEl6wB90Gs8">
+
+            105 STL Algorithms in Less Than an Hour</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://www.youtube.com/watch?v=zZXTgN7L1UU&amp;list=PLR_5PTwg_uAS6C1cSMjU6oVhOcCX8Zu_4">
+
+            C++ STL Playlist</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://youtu.be/ty9756v3kc8">
+
+            Learn Node.js </a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://youtu.be/exrIpdS3Crc">
+
+            Learn Data Science Full course</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://youtu.be/Q8tDO2uSk5U">
+
+            Learn Computer Networking Full course</a></button>
+<br/>
+</br></br></br></br></br></br></br></br></ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<footer class="afooter" style="margin-left:20px">
+<p>
+<a href="/cookie-policy.html">Cookie policy</a> |
+
+        <a href="/privacy-policy.html">Privacy policy</a> |
+
+        <a href="/terms-of-use.html">Terms of use</a> |
+
+        <a href="/disclaimer.html">Disclaimer</a> |
+
+        <a href="/about-us.html">About Us</a>
+</p>
+<p>
+
+        © 2023 <a href="https://pythonread.github.io">https://pythonread.github.io</a>
+</p>
+</footer>
+<script type="text/javascript">
+
+    document.addEventListener('DOMContentLoaded', function () { htmlTableOfContents() }); function htmlTableOfContents(documentRef) { var documentRef = documentRef || document; var toc = documentRef.getElementById("toc"); var headings = [].slice.call(documentRef.body.querySelectorAll('h2, h3')); headings.forEach(function (heading, index) { var ref = "toc" + index; if (heading.hasAttribute("id")) { ref = heading.getAttribute("id") } else { heading.setAttribute("id", ref) } var link = documentRef.createElement("a"); link.setAttribute("href", "#" + ref); link.textContent = heading.textContent; var div = documentRef.createElement("div"); div.setAttribute("class", heading.tagName.toLowerCase()); div.appendChild(link); toc.appendChild(div) }) } try { module.exports = htmlTableOfContents } catch (e) { } function isScrolledIntoView(el) { var rect = el.getBoundingClientRect(); var elemTop = rect.top; var elemBottom = rect.bottom; var isVisible = (elemTop >= -10) && (elemBottom <= (window.innerHeight)); return isVisible } function highlightMenu() { var headers = document.querySelectorAll("h2, h3"); for (var i = 0; i < headers.length; i += 1) { if (isScrolledIntoView(headers[i])) { var childDivs = document.getElementById('toc').getElementsByTagName('div'); var c = childDivs[i].classList; c.add("active"); for (var j = 0; j < i; j += 1) { var c = childDivs[j].classList; c.remove("active") } for (var j = i + 1; j < childDivs.length; j += 1) { var c = childDivs[j].classList; c.remove("active") } break } } } function highlightMenuLastItem() { var childDivs = document.getElementById('toc').getElementsByTagName('div'); for (var j = 0; j < childDivs.length - 1; j += 1) { var c = childDivs[j].classList; c.remove("active") } var c = childDivs[childDivs.length - 1].classList; c.add("active") } window.addEventListener("click", function (event) { highlightMenu() }); window.onscroll = function (e) { highlightMenu(); if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) { highlightMenuLastItem() } }; function mobileMenu() { var classes = document.getElementById('nav-toggle-icon').classList; if (classes.contains("active")) { classes.remove("active") } else { classes.add("active") } var classes = document.getElementById('menu-wrapper').classList; if (classes.contains("active")) { classes.remove("active") } else { classes.add("active") } }
+
+</script>
+<script type="text/javascript">
+
+    function changepy(){
+
+        document.getElementById('py1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('java1').className = 'tabbed-editor__node';
+
+        document.getElementById('c1').className = 'tabbed-editor__node';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node';
+
+        document.getElementById('python-code').className = 'code-editor__area code-editor__area--active';
+
+        document.getElementById('java-code').className = 'code-editor__area';
+
+        document.getElementById('c-code').className = 'code-editor__area';
+
+        document.getElementById('cpp-code').className = 'code-editor__area';
+
+
+
+    }
+
+    function changecpp(){
+
+        document.getElementById('py1').className = 'tabbed-editor__node';
+
+        document.getElementById('java1').className = 'tabbed-editor__node';
+
+        document.getElementById('c1').className = 'tabbed-editor__node';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('python-code').className = 'code-editor__area';
+
+        document.getElementById('java-code').className = 'code-editor__area';
+
+        document.getElementById('c-code').className = 'code-editor__area';
+
+        document.getElementById('cpp-code').className = 'code-editor__area code-editor__area--active';
+
+    }
+
+    function changejava(){
+
+       document.getElementById('py1').className = 'tabbed-editor__node';
+
+        document.getElementById('java1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('c1').className = 'tabbed-editor__node';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node';
+
+        document.getElementById('python-code').className = 'code-editor__area';
+
+        document.getElementById('java-code').className = 'code-editor__area code-editor__area--active';
+
+        document.getElementById('c-code').className = 'code-editor__area';
+
+        document.getElementById('cpp-code').className = 'code-editor__area';
+
+    }
+
+    function changec(){
+
+        document.getElementById('py1').className = 'tabbed-editor__node';
+
+        document.getElementById('java1').className = 'tabbed-editor__node';
+
+        document.getElementById('c1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node';
+
+        document.getElementById('python-code').className = 'code-editor__area';
+
+        document.getElementById('java-code').className = 'code-editor__area';
+
+        document.getElementById('c-code').className = 'code-editor__area code-editor__area--active';
+
+        document.getElementById('cpp-code').className = 'code-editor__area';
+
+    }
+
+    
+
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>

@@ -1,0 +1,1642 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<title>AVL Tree</title>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-HCERBDV76D"></script>
+<script>
+
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() { dataLayer.push(arguments); }
+
+        gtag('js', new Date());
+
+
+
+        gtag('config', 'G-HCERBDV76D');
+
+    </script>
+<meta content="B0487B46A104E90209E8A3BEA24ECA0E" name="msvalidate.01"/>
+<meta content="f044b3a12c7918f1" name="yandex-verification"/>
+<!--end-->
+<meta content="learn about data types, variables, lists, tuples, dictionaries,if else,DSA,loops,user-defined functions, oop, threading and scripting." name="description"/>
+<meta content="learnPython" name="author"/>
+<meta content="Learn Python for free,learn python for beginners,Core Python,Web frameworks,Multiprocess architecture,Serverside templating language,python tutorials,python4" name="keywords"/>
+<meta content="website" property="og:type"/>
+<meta content="US-CA" name="”geo.region”"/>
+<meta content="353 Jane Stanford Way, Stanford, CA 94305, United States" name="”geo.placename”"/>
+<meta content="37.430089898615456;-122.17332683124829" name="”geo.position”"/>
+<meta content="37.430089898615456, -122.17332683124829" name="”ICBM”"/>
+<link href="https://pythonread.github.io/?m=1" rel="alternate"/>
+<link href="/favicon.png" rel="icon"/>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="/style1.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/style2.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/style0.css" media="all" rel="stylesheet" type="text/css"/>
+<!--<![endif]-->
+</head>
+<body>
+<div class="nav-wrapper">
+<div class="container">
+<nav>
+<div class="logo wave">
+<a href="/" id="logo">
+
+                        Python Tutorial
+
+                    </a>
+</div>
+<div class="nav-toggle-icon" id="nav-toggle-icon" onclick="mobileMenu()">
+<div class="material-hamburger">
+<span>
+</span>
+<span>
+</span>
+<span>
+</span>
+</div>
+</div>
+<div class="menu-wrapper" id="menu-wrapper">
+<div class="nav-indicator">
+</div>
+<ul class="menus">
+<li>
+<a class="wave" href="/">
+
+                                Home
+
+                            </a>
+</li>
+<li>
+<a class="wave" href="/projects.html">
+
+                                Projects
+
+                            </a>
+</li>
+<li>
+<a class="wave" href="/free-course.html" target="_blank">
+
+                                Free Course
+
+                            </a>
+</li>
+<li>
+<a class="wave" href="/dsa.html">
+
+                                DSA
+
+                            </a>
+</li>
+</ul>
+</div>
+</nav>
+</div>
+</div>
+<div class="contents contents--neg" style="margin-top: 60px">
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+<div class="d-flex">
+<div class="left-bar d-none d-lg-block">
+<div class="card-alt mb-10x">
+<h3>Page Index</h3>
+<div class="list">
+<ul>
+<li><a href="/dsa.html#data-structure-1" title="Data Structures (I)">Data Structures
+
+                                                (I)</a></li>
+<li><a href="/dsa.html#data-structure-2" title="Data Structures (II)">Data Structures
+
+                                                (II)</a></li>
+<li><a href="/dsa.html#tree-1" title="Tree based DSA (I)">Tree based DSA (I)</a></li>
+<li><a href="/dsa.html#tree-2" title="Tree based DSA (II)">Tree based DSA (II)</a></li>
+<li><a href="/dsa.html#graph" title="Graph Data Structures and Algorithm">Graph based
+
+                                                DSA</a></li>
+<li><a href="/dsa.html#sorting-searching" title="Sorting and Searching">Sorting and
+
+                                                Searching</a></li>
+<li><a href="/dsa.html#greedy-algorithm" title="Greedy Algorithms">Greedy Algorithms</a>
+</li>
+<li><a href="/dsa.html#dynamic-programming" title="Dynamic Programming">Dynamic
+
+                                                Programming</a></li>
+<li><a href="/dsa.html#other-algorithms" title="Other Algorithms">Other Algorithms</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="right-bar">
+<!--first part end-------------------------------------------->
+
+<div class="editor-contents">
+        <h1>AVL Tree</h1>
+
+
+        <p class="editor-contents__short-description">In this tutorial, you will learn  what an avl tree is. Also, you will find working examples of various operations performed on an avl tree in C, C++, Java and Python.</p>
+
+
+
+          
+
+
+
+<div id="node-1530" class="node node-algorithm clearfix" about="/dsa/avl-tree" typeof="sioc:Item foaf:Document">
+
+
+<span property="dc:title" content="AVL Tree" class="rdf-meta element-hidden"></span>
+
+<div class="content">
+<p id="introduction">AVL tree is a self-balancing binary search tree in which each node maintains extra information called a balance factor whose value is either -1, 0 or +1.</p>
+
+<p>AVL tree got its name after its inventor Georgy Adelson-Velsky and Landis.</p>
+
+<hr><h2 id="balancefactor">Balance Factor</h2>
+
+<p>Balance factor of a node in an AVL tree is the difference between the height of the left subtree and that of the right subtree of that node.</p>
+
+<p>Balance Factor = (Height of Left Subtree - Height of Right Subtree) or (Height of Right Subtree - Height of Left Subtree)</p>
+
+<p>The self balancing property of an avl tree is maintained by the balance factor. The value of balance factor should always be -1, 0 or +1.</p>
+
+<p>An example of a balanced avl tree is:</p>
+
+<figure><img alt="avl tree" src="//cdn.programiz.com/sites/tutorial2program/files/avl-tree-final-tree-1_0_2.png" title="avl tree final" width="300" height="260"><figcaption>Avl tree</figcaption></figure><hr><h2>Operations on an AVL tree</h2>
+
+<p>Various operations that can be performed on an AVL tree are:</p>
+
+<h2 id="rotations">Rotating the subtrees in an AVL Tree</h2>
+
+<p>In rotation operation, the positions of the nodes of a subtree are interchanged.</p>
+
+<p>There are two types of rotations:</p>
+
+<hr><h3>Left Rotate</h3>
+
+<p></p><div class="clearfix"></div><p>In left-rotation, the arrangement of the nodes on the right is transformed into the arrangements on the left node.</p>
+
+<p>Algorithm</p>
+
+<ol><li>Let the initial tree be:
+<figure><img alt="left-rotate" src="//cdn.programiz.com/sites/tutorial2program/files/avl-tree_leftrotate-1.png" title="left rotate" width="176" height="208"><figcaption>Left rotate</figcaption></figure></li>
+<li>If <var>y</var> has a left subtree, assign <var>x</var> as the parent of the left subtree of <var>y</var>.
+<figure><img alt="left-rotate" src="https://www.programiz.com/sites/tutorial2program/files/avl-tree_leftrotate-2.png" title="assign x as the parent of the left subtree of y" width="230" height="209"><figcaption>Assign x as the parent of the left subtree of y</figcaption></figure></li>
+<li>If the parent of <var>x</var> is <code>NULL</code>, make <var>y</var> as the root of the tree.</li>
+<li>Else if <var>x</var> is the left child of <var>p</var>, make <var>y</var> as the left child of <var>p</var>.</li>
+<li>Else assign <var>y</var> as the right child of <var>p</var>.
+<figure><img alt="left-rotate" src="https://www.programiz.com/sites/tutorial2program/files/avl-tree_leftrotate-3.png" title="change the parent of x to that of y" width="200" height="156"><figcaption>Change the parent of x to that of y</figcaption></figure></li>
+<li>Make <var>y</var> as the parent of <var>x</var>.
+<figure><img alt="left-rotate" src="https://www.programiz.com/sites/tutorial2program/files/avl-tree_leftrotate-4.png" title="Assign y as the parent of x." width="200" height="223"><figcaption>Assign y as the parent of x.</figcaption></figure></li>
+</ol><hr><h3>Right Rotate</h3>
+
+<p>In left-rotation, the arrangement of the nodes on the left is transformed into the arrangements on the right node.</p>
+
+<ol><li>Let the initial tree be:
+<figure><img alt="right-rotate" src="https://www.programiz.com/sites/tutorial2program/files/avl-tree_rightrotate-1.png" title="initial tree" width="200" height="224"><figcaption>Initial tree</figcaption></figure></li>
+<li>If <var>x</var> has a right subtree, assign y as the parent of the right subtree of <var>x</var>.
+<figure><img alt="right-rotate" src="https://www.programiz.com/sites/tutorial2program/files/avl-tree_rightrotate-2.png" title="assign y as the parent of the right subtree of x." width="230" height="215"><figcaption>Assign y as the parent of the right subtree of x</figcaption></figure></li>
+<li>If the parent of <var>y</var> is <code>NULL</code>, make <var>x</var> as the root of the tree.</li>
+<li>Else if <var>y</var> is the right child of its parent <var>p</var>, make <var>x</var> as the right child of <var>p</var>.</li>
+<li>Else assign <var>x</var> as the left child of <var>p</var>.
+<figure><img alt="right-rotate" src="https://www.programiz.com/sites/tutorial2program/files/avl-tree_rightrotate-3.png" title="Assign the parent of y as the parent of x." width="200" height="161"><figcaption>Assign the parent of y as the parent of x.</figcaption></figure></li>
+<li>Make <var>x</var> as the parent of <var>y</var>.
+<figure><img alt="right-rotate" src="https://www.programiz.com/sites/tutorial2program/files/avl-tree_rightrotate-4.png" title="assign x as the parent of y" width="200" height="224"><figcaption>Assign x as the parent of y</figcaption></figure></li>
+</ol><hr><h3>Left-Right and Right-Left Rotate</h3>
+
+<p>In left-right rotation, the arrangements are first shifted to the left and then to the right.</p>
+
+<ol><li>Do left rotation on x-y.
+<figure><img alt="left-right rotate" src="https://www.programiz.com/sites/tutorial2program/files/avl-tree-leftright-rotate-1.png" title="left rotate x-y" width="450" height="247"><figcaption>Left rotate x-y</figcaption></figure></li>
+<li>Do right rotation on y-z.
+<figure><img alt="left-right rotate" src="https://www.programiz.com/sites/tutorial2program/files/avl-tree-leftright-rotate-2.png" title="right rotate z-y" width="450" height="233"><figcaption>Right rotate z-y</figcaption></figure></li>
+</ol><p>In right-left rotation, the arrangements are first shifted to the right and then to the left.</p>
+
+<ol><li>Do right rotation on x-y.
+<figure><img alt="right-left rotate" src="https://www.programiz.com/sites/tutorial2program/files/avl-tree-rightleft-rotate-1.png" title="right rotate x-y" width="450" height="240"><figcaption>Right rotate x-y</figcaption></figure></li>
+<li>Do left rotation on z-y.
+<figure><img alt="right-left rotate" src="https://www.programiz.com/sites/tutorial2program/files/avl-tree-rightleft-rotate-2.png" title="left rotate z-y" width="450" height="235"><figcaption>Left rotate z-y</figcaption></figure></li>
+</ol><hr><h2 id="insertion">Algorithm to insert a newNode</h2>
+
+<p>A <var>newNode</var> is always inserted as a leaf node with balance factor equal to 0.</p>
+
+<ol><li>Let the initial tree be:
+<figure><img alt="initial tree" src="https://www.programiz.com/sites/tutorial2program/files/avl-tree_initial-tree.png" title="initial tree for insertion" width="450" height="325"><figcaption>Initial tree for insertion</figcaption></figure><br>
+Let the node to be inserted be:
+<figure><img alt="new node" src="https://www.programiz.com/sites/tutorial2program/files/avl-tree_newnode.png" title="new node" width="130" height="145"><figcaption>New node</figcaption></figure></li>
+<li>Go to the appropriate leaf node to insert a <var>newNode</var> using the following recursive steps. Compare <var>newKey</var> with <var>rootKey</var> of the current tree.
+<ol type="a"><li>If <var>newKey</var> &lt; <var>rootKey</var>, call insertion algorithm on the left subtree of the current node until the leaf node is reached.</li>
+  <li>Else if <var>newKey</var> &gt; <var>rootKey</var>, call insertion algorithm on the right subtree of current node until the leaf node is reached.</li>
+  <li>Else, return <var>leafNode</var>.
+          <figure><img alt="avl tree insertion" src="https://www.programiz.com/sites/tutorial2program/files/avl-tree_find-position.png" title="finding the location to insert newNode" width="500" height="275"><figcaption>Finding the location to insert newNode</figcaption></figure></li>
+</ol></li>
+<li>Compare <var>leafKey</var> obtained from the above steps with <var>newKey</var>:
+<ol type="a"><li>If <var>newKey</var> &lt; <var>leafKey</var>, make newNode as the <var>leftChild</var> of <var>leafNode</var>.</li>
+  <li>Else, make <var>newNode</var> as rightChild of <var>leafNode</var>.
+          <figure><img alt="avl tree insertion" src="https://www.programiz.com/sites/tutorial2program/files/avl-tree_insert.png" title="inserting the new node" width="450" height="364"><figcaption>Inserting the new node</figcaption></figure></li>
+</ol></li>
+<li>Update <var>balanceFactor</var> of the nodes.
+<figure><img alt="avl tree insertion" src="https://www.programiz.com/sites/tutorial2program/files/avl-tree_update-bf.png" title="updating the balance factor after insertion" width="400" height="355"><figcaption>Updating the balance factor after insertion</figcaption></figure></li>
+<li>If the nodes are unbalanced, then rebalance the node.
+<ol type="a"><li>If <var>balanceFactor</var> &gt; 1, it means the height of the left subtree is greater than that of the right subtree. So, do a right rotation or left-right rotation
+          <ol type="i"><li>If <var>newNodeKey</var> &lt; <var>leftChildKey</var> do right rotation.</li>
+                  <li>Else, do left-right rotation.
+                          <figure><img alt="insertion in avl tree" src="https://www.programiz.com/sites/tutorial2program/files/avl-tree_balance1.png" title="balancing the tree with rotation" width="1200" height="460"><figcaption>Balancing the tree with rotation</figcaption></figure><figure><img alt="insertion in avl tree" src="https://www.programiz.com/sites/tutorial2program/files/avl-tree_balnce2.png" title="balancing the tree with rotation" width="1200" height="468"><figcaption>Balancing the tree with rotation</figcaption></figure></li>
+          </ol></li>
+  <li>If <var>balanceFactor</var> &lt; -1, it means the height of the right subtree is greater than that of the left subtree. So, do right rotation or right-left rotation
+          <ol type="i"><li>If <var>newNodeKey</var> &gt; <var>rightChildKey</var> do left rotation.</li>
+                  <li>Else, do right-left rotation</li>
+          </ol></li>
+</ol></li>
+<li>The final tree is:
+<figure><img alt="left-right insertion" src="https://www.programiz.com/sites/tutorial2program/files/avl-tree_final-tree.png" title="final balanced tree" width="400" height="293"><figcaption>Final balanced tree</figcaption></figure></li>
+</ol><hr><h2 id="deletion">Algorithm to Delete a node</h2>
+
+<p>A node is always deleted as a leaf node. After deleting a node, the balance factors of the nodes get changed. In order to rebalance the balance factor, suitable rotations are performed.</p>
+
+<ol><li>Locate <var>nodeToBeDeleted</var> (recursion is used to find <var>nodeToBeDeleted</var> in the code used below).
+
+<figure><img alt="node to be deleted" src="https://www.programiz.com/sites/tutorial2program/files/avl-tree_nodeToBeDeleted_0.png" title="locating the node to be deleted" width="400" height="293"><figcaption>Locating the node to be deleted</figcaption></figure></li>
+<li>There are three cases for deleting a node:
+<ol type="a"><li>If <var>nodeToBeDeleted</var> is the leaf node (ie. does not have any child), then remove <var>nodeToBeDeleted</var>.</li>
+  <li>If <var>nodeToBeDeleted</var> has one child, then substitute the contents of <var>nodeToBeDeleted</var> with that of the child. Remove the child.</li>
+  <li>If <var>nodeToBeDeleted</var> has two children, find the inorder successor <var>w</var> of <var>nodeToBeDeleted</var> (ie. node with a minimum value of key in the right subtree).
+          <figure><img alt="finding the successor" src="https://www.programiz.com/sites/tutorial2program/files/avl-tree_successor_0.png" title="finding the successor" width="400" height="293"><figcaption>Finding the successor</figcaption></figure><ol type="i"><li>Substitute the contents of <var>nodeToBeDeleted</var> with that of <var>w</var>.
+
+                          <figure><img alt="substitute the node to be deleted" src="https://cdn.programiz.com/sites/tutorial2program/files/avl-tree_substitute_0.png" title="substitute the node to be deleted" width="400" height="258"><figcaption>Substitute the node to be deleted</figcaption></figure></li>
+                  <li>Remove the leaf node <var>w</var>.
+                          <figure><img alt="remove w" src="https://www.programiz.com/sites/tutorial2program/files/avl-tree_removal_0.png" title="remove w" width="400" height="293"><figcaption>Remove w</figcaption></figure></li>
+          </ol></li>
+</ol></li>
+<li>Update <var>balanceFactor</var> of the nodes.
+<figure><img alt="update bf" src="https://www.programiz.com/sites/tutorial2program/files/avl-tree_upatebf_0.png" title="update bf" width="400" height="293"><figcaption>Update bf</figcaption></figure></li>
+<li>Rebalance the tree if the balance factor of any of the nodes is not equal to -1, 0 or 1.
+<ol type="a"><li>If <var>balanceFactor</var> of <var>currentNode</var> &gt; 1,
+          <ol type="i"><li>If <var>balanceFactor</var> of <var>leftChild</var> &gt;= 0, do right rotation.
+                          <figure><img alt="right-rotate" src="/sites/tutorial2program/files/avl-tree_balance_0.png" title="right-rotate for balancing the tree" width="700" height="262"><figcaption>Right-rotate for balancing the tree</figcaption></figure></li>
+                  <li>Else do left-right rotation.</li>
+          </ol></li>
+  <li>If <var>balanceFactor</var> of <var>currentNode</var> &lt; -1,
+          <ol type="i"><li>If <var>balanceFactor</var> of <var>rightChild</var> &lt;= 0, do left rotation.</li>
+                  <li>Else do right-left rotation.</li>
+          </ol></li>
+</ol></li>
+<li>The final tree is:
+<figure><img alt="avl tree" src="https://www.programiz.com/sites/tutorial2program/files/avl-tree-final-tree-1_0_2.png" title="avl tree final" width="300" height="260"><figcaption>Avl tree final</figcaption></figure></li>
+</ol><hr><h2 id="code">Python, Java and C/C++ Examples</h2>
+
+<div class="tabbed-editor">
+        <div id="py1" onclick="changepy()" class="tabbed-editor__node tabbed-editor__node--active"><a href="#python-code">Python</a></div>
+        
+        <div id="java1" onclick="changejava()"  class="tabbed-editor__node"><a href="#java-code">Java</a></div>
+        
+        <div id="c1" onclick="changec()" class="tabbed-editor__node"><a href="#c-code">C</a></div>
+        
+        <div id="cpp1" onclick="changecpp()" class="tabbed-editor__node"><a href="#cpp-code">C++</a></div>
+        </div>
+
+<div class="code-editor code-editor--tabbed">
+<div class="code-editor__area code-editor__area--active" id="python-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="python hljs"><span class="hljs-comment"># AVL tree implementation in Python</span>
+
+
+<span class="hljs-keyword">import</span> sys
+
+<span class="hljs-comment"># Create a tree node</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TreeNode</span><span class="hljs-params">(object)</span>:</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, key)</span>:</span>
+self.key = key
+self.left = <span class="hljs-literal">None</span>
+self.right = <span class="hljs-literal">None</span>
+self.height = <span class="hljs-number">1</span>
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AVLTree</span><span class="hljs-params">(object)</span>:</span>
+
+<span class="hljs-comment"># Function to insert a node</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">insert_node</span><span class="hljs-params">(self, root, key)</span>:</span>
+
+<span class="hljs-comment"># Find the correct location and insert the node</span>
+<span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> root:
+<span class="hljs-keyword">return</span> TreeNode(key)
+<span class="hljs-keyword">elif</span> key &lt; root.key:
+root.left = self.insert_node(root.left, key)
+<span class="hljs-keyword">else</span>:
+root.right = self.insert_node(root.right, key)
+
+root.height = <span class="hljs-number">1</span> + max(self.getHeight(root.left),
+        self.getHeight(root.right))
+
+<span class="hljs-comment"># Update the balance factor and balance the tree</span>
+balanceFactor = self.getBalance(root)
+<span class="hljs-keyword">if</span> balanceFactor &gt; <span class="hljs-number">1</span>:
+<span class="hljs-keyword">if</span> key &lt; root.left.key:
+<span class="hljs-keyword">return</span> self.rightRotate(root)
+<span class="hljs-keyword">else</span>:
+root.left = self.leftRotate(root.left)
+<span class="hljs-keyword">return</span> self.rightRotate(root)
+
+<span class="hljs-keyword">if</span> balanceFactor &lt; <span class="hljs-number">-1</span>:
+<span class="hljs-keyword">if</span> key &gt; root.right.key:
+<span class="hljs-keyword">return</span> self.leftRotate(root)
+<span class="hljs-keyword">else</span>:
+root.right = self.rightRotate(root.right)
+<span class="hljs-keyword">return</span> self.leftRotate(root)
+
+<span class="hljs-keyword">return</span> root
+
+<span class="hljs-comment"># Function to delete a node</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">delete_node</span><span class="hljs-params">(self, root, key)</span>:</span>
+
+<span class="hljs-comment"># Find the node to be deleted and remove it</span>
+<span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> root:
+<span class="hljs-keyword">return</span> root
+<span class="hljs-keyword">elif</span> key &lt; root.key:
+root.left = self.delete_node(root.left, key)
+<span class="hljs-keyword">elif</span> key &gt; root.key:
+root.right = self.delete_node(root.right, key)
+<span class="hljs-keyword">else</span>:
+<span class="hljs-keyword">if</span> root.left <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>:
+temp = root.right
+root = <span class="hljs-literal">None</span>
+<span class="hljs-keyword">return</span> temp
+<span class="hljs-keyword">elif</span> root.right <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>:
+temp = root.left
+root = <span class="hljs-literal">None</span>
+<span class="hljs-keyword">return</span> temp
+temp = self.getMinValueNode(root.right)
+root.key = temp.key
+root.right = self.delete_node(root.right,
+                    temp.key)
+<span class="hljs-keyword">if</span> root <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>:
+<span class="hljs-keyword">return</span> root
+
+<span class="hljs-comment"># Update the balance factor of nodes</span>
+root.height = <span class="hljs-number">1</span> + max(self.getHeight(root.left),
+        self.getHeight(root.right))
+
+balanceFactor = self.getBalance(root)
+
+<span class="hljs-comment"># Balance the tree</span>
+<span class="hljs-keyword">if</span> balanceFactor &gt; <span class="hljs-number">1</span>:
+<span class="hljs-keyword">if</span> self.getBalance(root.left) &gt;= <span class="hljs-number">0</span>:
+<span class="hljs-keyword">return</span> self.rightRotate(root)
+<span class="hljs-keyword">else</span>:
+root.left = self.leftRotate(root.left)
+<span class="hljs-keyword">return</span> self.rightRotate(root)
+<span class="hljs-keyword">if</span> balanceFactor &lt; <span class="hljs-number">-1</span>:
+<span class="hljs-keyword">if</span> self.getBalance(root.right) &lt;= <span class="hljs-number">0</span>:
+<span class="hljs-keyword">return</span> self.leftRotate(root)
+<span class="hljs-keyword">else</span>:
+root.right = self.rightRotate(root.right)
+<span class="hljs-keyword">return</span> self.leftRotate(root)
+<span class="hljs-keyword">return</span> root
+
+<span class="hljs-comment"># Function to perform left rotation</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">leftRotate</span><span class="hljs-params">(self, z)</span>:</span>
+y = z.right
+T2 = y.left
+y.left = z
+z.right = T2
+z.height = <span class="hljs-number">1</span> + max(self.getHeight(z.left),
+     self.getHeight(z.right))
+y.height = <span class="hljs-number">1</span> + max(self.getHeight(y.left),
+     self.getHeight(y.right))
+<span class="hljs-keyword">return</span> y
+
+<span class="hljs-comment"># Function to perform right rotation</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">rightRotate</span><span class="hljs-params">(self, z)</span>:</span>
+y = z.left
+T3 = y.right
+y.right = z
+z.left = T3
+z.height = <span class="hljs-number">1</span> + max(self.getHeight(z.left),
+     self.getHeight(z.right))
+y.height = <span class="hljs-number">1</span> + max(self.getHeight(y.left),
+     self.getHeight(y.right))
+<span class="hljs-keyword">return</span> y
+
+<span class="hljs-comment"># Get the height of the node</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getHeight</span><span class="hljs-params">(self, root)</span>:</span>
+<span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> root:
+<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>
+<span class="hljs-keyword">return</span> root.height
+
+<span class="hljs-comment"># Get balance factore of the node</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getBalance</span><span class="hljs-params">(self, root)</span>:</span>
+<span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> root:
+<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>
+<span class="hljs-keyword">return</span> self.getHeight(root.left) - self.getHeight(root.right)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getMinValueNode</span><span class="hljs-params">(self, root)</span>:</span>
+<span class="hljs-keyword">if</span> root <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span> <span class="hljs-keyword">or</span> root.left <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>:
+<span class="hljs-keyword">return</span> root
+<span class="hljs-keyword">return</span> self.getMinValueNode(root.left)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">preOrder</span><span class="hljs-params">(self, root)</span>:</span>
+<span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> root:
+<span class="hljs-keyword">return</span>
+<span class="hljs-keyword">print</span>(<span class="hljs-string">"{0} "</span>.format(root.key), end=<span class="hljs-string">""</span>)
+self.preOrder(root.left)
+self.preOrder(root.right)
+
+<span class="hljs-comment"># Print the tree</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">printHelper</span><span class="hljs-params">(self, currPtr, indent, last)</span>:</span>
+<span class="hljs-keyword">if</span> currPtr != <span class="hljs-literal">None</span>:
+sys.stdout.write(indent)
+<span class="hljs-keyword">if</span> last:
+sys.stdout.write(<span class="hljs-string">"R----"</span>)
+indent += <span class="hljs-string">"     "</span>
+<span class="hljs-keyword">else</span>:
+sys.stdout.write(<span class="hljs-string">"L----"</span>)
+indent += <span class="hljs-string">"|    "</span>
+<span class="hljs-keyword">print</span>(currPtr.key)
+self.printHelper(currPtr.left, indent, <span class="hljs-literal">False</span>)
+self.printHelper(currPtr.right, indent, <span class="hljs-literal">True</span>)
+
+
+myTree = AVLTree()
+root = <span class="hljs-literal">None</span>
+nums = [<span class="hljs-number">33</span>, <span class="hljs-number">13</span>, <span class="hljs-number">52</span>, <span class="hljs-number">9</span>, <span class="hljs-number">21</span>, <span class="hljs-number">61</span>, <span class="hljs-number">8</span>, <span class="hljs-number">11</span>]
+<span class="hljs-keyword">for</span> num <span class="hljs-keyword">in</span> nums:
+root = myTree.insert_node(root, num)
+myTree.printHelper(root, <span class="hljs-string">""</span>, <span class="hljs-literal">True</span>)
+key = <span class="hljs-number">13</span>
+root = myTree.delete_node(root, key)
+<span class="hljs-keyword">print</span>(<span class="hljs-string">"After Deletion: "</span>)
+myTree.printHelper(root, <span class="hljs-string">""</span>, <span class="hljs-literal">True</span>)</code></pre></div>
+</div>
+
+<div class="code-editor__area" id="java-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="java hljs"><span class="hljs-comment">// AVL tree implementation in Java</span>
+
+<span class="hljs-comment">// Create node</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Node</span> </span>{
+<span class="hljs-keyword">int</span> item, height;
+Node left, right;
+
+Node(<span class="hljs-keyword">int</span> d) {
+item = d;
+height = <span class="hljs-number">1</span>;
+}
+}
+
+<span class="hljs-comment">// Tree class</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AVLTree</span> </span>{
+Node root;
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">height</span><span class="hljs-params">(Node N)</span> </span>{
+<span class="hljs-keyword">if</span> (N == <span class="hljs-keyword">null</span>)
+<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+<span class="hljs-keyword">return</span> N.height;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">max</span><span class="hljs-params">(<span class="hljs-keyword">int</span> a, <span class="hljs-keyword">int</span> b)</span> </span>{
+<span class="hljs-keyword">return</span> (a &gt; b) ? a : b;
+}
+
+<span class="hljs-function">Node <span class="hljs-title">rightRotate</span><span class="hljs-params">(Node y)</span> </span>{
+Node x = y.left;
+Node T2 = x.right;
+x.right = y;
+y.left = T2;
+y.height = max(height(y.left), height(y.right)) + <span class="hljs-number">1</span>;
+x.height = max(height(x.left), height(x.right)) + <span class="hljs-number">1</span>;
+<span class="hljs-keyword">return</span> x;
+}
+
+<span class="hljs-function">Node <span class="hljs-title">leftRotate</span><span class="hljs-params">(Node x)</span> </span>{
+Node y = x.right;
+Node T2 = y.left;
+y.left = x;
+x.right = T2;
+x.height = max(height(x.left), height(x.right)) + <span class="hljs-number">1</span>;
+y.height = max(height(y.left), height(y.right)) + <span class="hljs-number">1</span>;
+<span class="hljs-keyword">return</span> y;
+}
+
+<span class="hljs-comment">// Get balance factor of a node</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">getBalanceFactor</span><span class="hljs-params">(Node N)</span> </span>{
+<span class="hljs-keyword">if</span> (N == <span class="hljs-keyword">null</span>)
+<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+<span class="hljs-keyword">return</span> height(N.left) - height(N.right);
+}
+
+<span class="hljs-comment">// Insert a node</span>
+<span class="hljs-function">Node <span class="hljs-title">insertNode</span><span class="hljs-params">(Node node, <span class="hljs-keyword">int</span> item)</span> </span>{
+
+<span class="hljs-comment">// Find the position and insert the node</span>
+<span class="hljs-keyword">if</span> (node == <span class="hljs-keyword">null</span>)
+<span class="hljs-keyword">return</span> (<span class="hljs-keyword">new</span> Node(item));
+<span class="hljs-keyword">if</span> (item &lt; node.item)
+node.left = insertNode(node.left, item);
+<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (item &gt; node.item)
+node.right = insertNode(node.right, item);
+<span class="hljs-keyword">else</span>
+<span class="hljs-keyword">return</span> node;
+
+<span class="hljs-comment">// Update the balance factor of each node</span>
+<span class="hljs-comment">// And, balance the tree</span>
+node.height = <span class="hljs-number">1</span> + max(height(node.left), height(node.right));
+<span class="hljs-keyword">int</span> balanceFactor = getBalanceFactor(node);
+<span class="hljs-keyword">if</span> (balanceFactor &gt; <span class="hljs-number">1</span>) {
+<span class="hljs-keyword">if</span> (item &lt; node.left.item) {
+<span class="hljs-keyword">return</span> rightRotate(node);
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (item &gt; node.left.item) {
+node.left = leftRotate(node.left);
+<span class="hljs-keyword">return</span> rightRotate(node);
+}
+}
+<span class="hljs-keyword">if</span> (balanceFactor &lt; -<span class="hljs-number">1</span>) {
+<span class="hljs-keyword">if</span> (item &gt; node.right.item) {
+<span class="hljs-keyword">return</span> leftRotate(node);
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (item &lt; node.right.item) {
+node.right = rightRotate(node.right);
+<span class="hljs-keyword">return</span> leftRotate(node);
+}
+}
+<span class="hljs-keyword">return</span> node;
+}
+
+<span class="hljs-function">Node <span class="hljs-title">nodeWithMimumValue</span><span class="hljs-params">(Node node)</span> </span>{
+Node current = node;
+<span class="hljs-keyword">while</span> (current.left != <span class="hljs-keyword">null</span>)
+current = current.left;
+<span class="hljs-keyword">return</span> current;
+}
+
+<span class="hljs-comment">// Delete a node</span>
+<span class="hljs-function">Node <span class="hljs-title">deleteNode</span><span class="hljs-params">(Node root, <span class="hljs-keyword">int</span> item)</span> </span>{
+
+<span class="hljs-comment">// Find the node to be deleted and remove it</span>
+<span class="hljs-keyword">if</span> (root == <span class="hljs-keyword">null</span>)
+<span class="hljs-keyword">return</span> root;
+<span class="hljs-keyword">if</span> (item &lt; root.item)
+root.left = deleteNode(root.left, item);
+<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (item &gt; root.item)
+root.right = deleteNode(root.right, item);
+<span class="hljs-keyword">else</span> {
+<span class="hljs-keyword">if</span> ((root.left == <span class="hljs-keyword">null</span>) || (root.right == <span class="hljs-keyword">null</span>)) {
+Node temp = <span class="hljs-keyword">null</span>;
+<span class="hljs-keyword">if</span> (temp == root.left)
+temp = root.right;
+<span class="hljs-keyword">else</span>
+temp = root.left;
+<span class="hljs-keyword">if</span> (temp == <span class="hljs-keyword">null</span>) {
+temp = root;
+root = <span class="hljs-keyword">null</span>;
+} <span class="hljs-keyword">else</span>
+root = temp;
+} <span class="hljs-keyword">else</span> {
+Node temp = nodeWithMimumValue(root.right);
+root.item = temp.item;
+root.right = deleteNode(root.right, temp.item);
+}
+}
+<span class="hljs-keyword">if</span> (root == <span class="hljs-keyword">null</span>)
+<span class="hljs-keyword">return</span> root;
+
+<span class="hljs-comment">// Update the balance factor of each node and balance the tree</span>
+root.height = max(height(root.left), height(root.right)) + <span class="hljs-number">1</span>;
+<span class="hljs-keyword">int</span> balanceFactor = getBalanceFactor(root);
+<span class="hljs-keyword">if</span> (balanceFactor &gt; <span class="hljs-number">1</span>) {
+<span class="hljs-keyword">if</span> (getBalanceFactor(root.left) &gt;= <span class="hljs-number">0</span>) {
+<span class="hljs-keyword">return</span> rightRotate(root);
+} <span class="hljs-keyword">else</span> {
+root.left = leftRotate(root.left);
+<span class="hljs-keyword">return</span> rightRotate(root);
+}
+}
+<span class="hljs-keyword">if</span> (balanceFactor &lt; -<span class="hljs-number">1</span>) {
+<span class="hljs-keyword">if</span> (getBalanceFactor(root.right) &lt;= <span class="hljs-number">0</span>) {
+<span class="hljs-keyword">return</span> leftRotate(root);
+} <span class="hljs-keyword">else</span> {
+root.right = rightRotate(root.right);
+<span class="hljs-keyword">return</span> leftRotate(root);
+}
+}
+<span class="hljs-keyword">return</span> root;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">preOrder</span><span class="hljs-params">(Node node)</span> </span>{
+<span class="hljs-keyword">if</span> (node != <span class="hljs-keyword">null</span>) {
+System.out.print(node.item + <span class="hljs-string">" "</span>);
+preOrder(node.left);
+preOrder(node.right);
+}
+}
+
+<span class="hljs-comment">// Print the tree</span>
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">printTree</span><span class="hljs-params">(Node currPtr, String indent, <span class="hljs-keyword">boolean</span> last)</span> </span>{
+<span class="hljs-keyword">if</span> (currPtr != <span class="hljs-keyword">null</span>) {
+System.out.print(indent);
+<span class="hljs-keyword">if</span> (last) {
+System.out.print(<span class="hljs-string">"R----"</span>);
+indent += <span class="hljs-string">"   "</span>;
+} <span class="hljs-keyword">else</span> {
+System.out.print(<span class="hljs-string">"L----"</span>);
+indent += <span class="hljs-string">"|  "</span>;
+}
+System.out.println(currPtr.item);
+printTree(currPtr.left, indent, <span class="hljs-keyword">false</span>);
+printTree(currPtr.right, indent, <span class="hljs-keyword">true</span>);
+}
+}
+
+<span class="hljs-comment">// Driver code</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+AVLTree tree = <span class="hljs-keyword">new</span> AVLTree();
+tree.root = tree.insertNode(tree.root, <span class="hljs-number">33</span>);
+tree.root = tree.insertNode(tree.root, <span class="hljs-number">13</span>);
+tree.root = tree.insertNode(tree.root, <span class="hljs-number">53</span>);
+tree.root = tree.insertNode(tree.root, <span class="hljs-number">9</span>);
+tree.root = tree.insertNode(tree.root, <span class="hljs-number">21</span>);
+tree.root = tree.insertNode(tree.root, <span class="hljs-number">61</span>);
+tree.root = tree.insertNode(tree.root, <span class="hljs-number">8</span>);
+tree.root = tree.insertNode(tree.root, <span class="hljs-number">11</span>);
+tree.printTree(tree.root, <span class="hljs-string">""</span>, <span class="hljs-keyword">true</span>);
+tree.root = tree.deleteNode(tree.root, <span class="hljs-number">13</span>);
+System.out.println(<span class="hljs-string">"After Deletion: "</span>);
+tree.printTree(tree.root, <span class="hljs-string">""</span>, <span class="hljs-keyword">true</span>);
+}
+}</code></pre></div>
+</div>
+
+<div class="code-editor__area" id="c-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="c hljs cpp"><span class="hljs-comment">// AVL tree implementation in C</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdlib.h&gt;</span></span>
+
+<span class="hljs-comment">// Create Node</span>
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span> {</span>
+<span class="hljs-keyword">int</span> key;
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span> *<span class="hljs-title">left</span>;</span>
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span> *<span class="hljs-title">right</span>;</span>
+<span class="hljs-keyword">int</span> height;
+};
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">max</span><span class="hljs-params">(<span class="hljs-keyword">int</span> a, <span class="hljs-keyword">int</span> b)</span></span>;
+
+<span class="hljs-comment">// Calculate height</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">height</span><span class="hljs-params">(struct Node *N)</span> </span>{
+<span class="hljs-keyword">if</span> (N == <span class="hljs-literal">NULL</span>)
+<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+<span class="hljs-keyword">return</span> N-&gt;height;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">max</span><span class="hljs-params">(<span class="hljs-keyword">int</span> a, <span class="hljs-keyword">int</span> b)</span> </span>{
+<span class="hljs-keyword">return</span> (a &gt; b) ? a : b;
+}
+
+<span class="hljs-comment">// Create a node</span>
+<span class="hljs-function">struct Node *<span class="hljs-title">newNode</span><span class="hljs-params">(<span class="hljs-keyword">int</span> key)</span> </span>{
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span> *<span class="hljs-title">node</span> = (<span class="hljs-title">struct</span> <span class="hljs-title">Node</span> *)
+<span class="hljs-title">malloc</span>(<span class="hljs-title">sizeof</span>(<span class="hljs-title">struct</span> <span class="hljs-title">Node</span>));</span>
+node-&gt;key = key;
+node-&gt;left = <span class="hljs-literal">NULL</span>;
+node-&gt;right = <span class="hljs-literal">NULL</span>;
+node-&gt;height = <span class="hljs-number">1</span>;
+<span class="hljs-keyword">return</span> (node);
+}
+
+<span class="hljs-comment">// Right rotate</span>
+<span class="hljs-function">struct Node *<span class="hljs-title">rightRotate</span><span class="hljs-params">(struct Node *y)</span> </span>{
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span> *<span class="hljs-title">x</span> = <span class="hljs-title">y</span>-&gt;<span class="hljs-title">left</span>;</span>
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span> *<span class="hljs-title">T2</span> = <span class="hljs-title">x</span>-&gt;<span class="hljs-title">right</span>;</span>
+
+x-&gt;right = y;
+y-&gt;left = T2;
+
+y-&gt;height = max(height(y-&gt;left), height(y-&gt;right)) + <span class="hljs-number">1</span>;
+x-&gt;height = max(height(x-&gt;left), height(x-&gt;right)) + <span class="hljs-number">1</span>;
+
+<span class="hljs-keyword">return</span> x;
+}
+
+<span class="hljs-comment">// Left rotate</span>
+<span class="hljs-function">struct Node *<span class="hljs-title">leftRotate</span><span class="hljs-params">(struct Node *x)</span> </span>{
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span> *<span class="hljs-title">y</span> = <span class="hljs-title">x</span>-&gt;<span class="hljs-title">right</span>;</span>
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span> *<span class="hljs-title">T2</span> = <span class="hljs-title">y</span>-&gt;<span class="hljs-title">left</span>;</span>
+
+y-&gt;left = x;
+x-&gt;right = T2;
+
+x-&gt;height = max(height(x-&gt;left), height(x-&gt;right)) + <span class="hljs-number">1</span>;
+y-&gt;height = max(height(y-&gt;left), height(y-&gt;right)) + <span class="hljs-number">1</span>;
+
+<span class="hljs-keyword">return</span> y;
+}
+
+<span class="hljs-comment">// Get the balance factor</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">getBalance</span><span class="hljs-params">(struct Node *N)</span> </span>{
+<span class="hljs-keyword">if</span> (N == <span class="hljs-literal">NULL</span>)
+<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+<span class="hljs-keyword">return</span> height(N-&gt;left) - height(N-&gt;right);
+}
+
+<span class="hljs-comment">// Insert node</span>
+<span class="hljs-function">struct Node *<span class="hljs-title">insertNode</span><span class="hljs-params">(struct Node *node, <span class="hljs-keyword">int</span> key)</span> </span>{
+<span class="hljs-comment">// Find the correct position to insertNode the node and insertNode it</span>
+<span class="hljs-keyword">if</span> (node == <span class="hljs-literal">NULL</span>)
+<span class="hljs-keyword">return</span> (newNode(key));
+
+<span class="hljs-keyword">if</span> (key &lt; node-&gt;key)
+node-&gt;left = insertNode(node-&gt;left, key);
+<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (key &gt; node-&gt;key)
+node-&gt;right = insertNode(node-&gt;right, key);
+<span class="hljs-keyword">else</span>
+<span class="hljs-keyword">return</span> node;
+
+<span class="hljs-comment">// Update the balance factor of each node and</span>
+<span class="hljs-comment">// Balance the tree</span>
+node-&gt;height = <span class="hljs-number">1</span> + max(height(node-&gt;left),
+height(node-&gt;right));
+
+<span class="hljs-keyword">int</span> balance = getBalance(node);
+<span class="hljs-keyword">if</span> (balance &gt; <span class="hljs-number">1</span> &amp;&amp; key &lt; node-&gt;left-&gt;key)
+<span class="hljs-keyword">return</span> rightRotate(node);
+
+<span class="hljs-keyword">if</span> (balance &lt; <span class="hljs-number">-1</span> &amp;&amp; key &gt; node-&gt;right-&gt;key)
+<span class="hljs-keyword">return</span> leftRotate(node);
+
+<span class="hljs-keyword">if</span> (balance &gt; <span class="hljs-number">1</span> &amp;&amp; key &gt; node-&gt;left-&gt;key) {
+node-&gt;left = leftRotate(node-&gt;left);
+<span class="hljs-keyword">return</span> rightRotate(node);
+}
+
+<span class="hljs-keyword">if</span> (balance &lt; <span class="hljs-number">-1</span> &amp;&amp; key &lt; node-&gt;right-&gt;key) {
+node-&gt;right = rightRotate(node-&gt;right);
+<span class="hljs-keyword">return</span> leftRotate(node);
+}
+
+<span class="hljs-keyword">return</span> node;
+}
+
+<span class="hljs-function">struct Node *<span class="hljs-title">minValueNode</span><span class="hljs-params">(struct Node *node)</span> </span>{
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span> *<span class="hljs-title">current</span> = <span class="hljs-title">node</span>;</span>
+
+<span class="hljs-keyword">while</span> (current-&gt;left != <span class="hljs-literal">NULL</span>)
+current = current-&gt;left;
+
+<span class="hljs-keyword">return</span> current;
+}
+
+<span class="hljs-comment">// Delete a nodes</span>
+<span class="hljs-function">struct Node *<span class="hljs-title">deleteNode</span><span class="hljs-params">(struct Node *root, <span class="hljs-keyword">int</span> key)</span> </span>{
+<span class="hljs-comment">// Find the node and delete it</span>
+<span class="hljs-keyword">if</span> (root == <span class="hljs-literal">NULL</span>)
+<span class="hljs-keyword">return</span> root;
+
+<span class="hljs-keyword">if</span> (key &lt; root-&gt;key)
+root-&gt;left = deleteNode(root-&gt;left, key);
+
+<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (key &gt; root-&gt;key)
+root-&gt;right = deleteNode(root-&gt;right, key);
+
+<span class="hljs-keyword">else</span> {
+<span class="hljs-keyword">if</span> ((root-&gt;left == <span class="hljs-literal">NULL</span>) || (root-&gt;right == <span class="hljs-literal">NULL</span>)) {
+struct Node *temp = root-&gt;left ? root-&gt;left : root-&gt;right;
+
+<span class="hljs-keyword">if</span> (temp == <span class="hljs-literal">NULL</span>) {
+temp = root;
+root = <span class="hljs-literal">NULL</span>;
+} <span class="hljs-keyword">else</span>
+*root = *temp;
+<span class="hljs-built_in">free</span>(temp);
+} <span class="hljs-keyword">else</span> {
+struct Node *temp = minValueNode(root-&gt;right);
+
+root-&gt;key = temp-&gt;key;
+
+root-&gt;right = deleteNode(root-&gt;right, temp-&gt;key);
+}
+}
+
+<span class="hljs-keyword">if</span> (root == <span class="hljs-literal">NULL</span>)
+<span class="hljs-keyword">return</span> root;
+
+<span class="hljs-comment">// Update the balance factor of each node and</span>
+<span class="hljs-comment">// balance the tree</span>
+root-&gt;height = <span class="hljs-number">1</span> + max(height(root-&gt;left),
+height(root-&gt;right));
+
+<span class="hljs-keyword">int</span> balance = getBalance(root);
+<span class="hljs-keyword">if</span> (balance &gt; <span class="hljs-number">1</span> &amp;&amp; getBalance(root-&gt;left) &gt;= <span class="hljs-number">0</span>)
+<span class="hljs-keyword">return</span> rightRotate(root);
+
+<span class="hljs-keyword">if</span> (balance &gt; <span class="hljs-number">1</span> &amp;&amp; getBalance(root-&gt;left) &lt; <span class="hljs-number">0</span>) {
+root-&gt;left = leftRotate(root-&gt;left);
+<span class="hljs-keyword">return</span> rightRotate(root);
+}
+
+<span class="hljs-keyword">if</span> (balance &lt; <span class="hljs-number">-1</span> &amp;&amp; getBalance(root-&gt;right) &lt;= <span class="hljs-number">0</span>)
+<span class="hljs-keyword">return</span> leftRotate(root);
+
+<span class="hljs-keyword">if</span> (balance &lt; <span class="hljs-number">-1</span> &amp;&amp; getBalance(root-&gt;right) &gt; <span class="hljs-number">0</span>) {
+root-&gt;right = rightRotate(root-&gt;right);
+<span class="hljs-keyword">return</span> leftRotate(root);
+}
+
+<span class="hljs-keyword">return</span> root;
+}
+
+<span class="hljs-comment">// Print the tree</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">printPreOrder</span><span class="hljs-params">(struct Node *root)</span> </span>{
+<span class="hljs-keyword">if</span> (root != <span class="hljs-literal">NULL</span>) {
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d "</span>, root-&gt;key);
+printPreOrder(root-&gt;left);
+printPreOrder(root-&gt;right);
+}
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span> *<span class="hljs-title">root</span> = <span class="hljs-title">NULL</span>;</span>
+
+root = insertNode(root, <span class="hljs-number">2</span>);
+root = insertNode(root, <span class="hljs-number">1</span>);
+root = insertNode(root, <span class="hljs-number">7</span>);
+root = insertNode(root, <span class="hljs-number">4</span>);
+root = insertNode(root, <span class="hljs-number">5</span>);
+root = insertNode(root, <span class="hljs-number">3</span>);
+root = insertNode(root, <span class="hljs-number">8</span>);
+
+printPreOrder(root);
+
+root = deleteNode(root, <span class="hljs-number">3</span>);
+
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"\nAfter deletion: "</span>);
+printPreOrder(root);
+
+<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}</code></pre></div>
+</div>
+
+<div class="code-editor__area" id="cpp-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="cpp hljs"><span class="hljs-comment">// AVL tree implementation in C++</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Node</span> {</span>
+<span class="hljs-keyword">public</span>:
+<span class="hljs-keyword">int</span> key;
+Node *left;
+Node *right;
+<span class="hljs-keyword">int</span> height;
+};
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">max</span><span class="hljs-params">(<span class="hljs-keyword">int</span> a, <span class="hljs-keyword">int</span> b)</span></span>;
+
+<span class="hljs-comment">// Calculate height</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">height</span><span class="hljs-params">(Node *N)</span> </span>{
+<span class="hljs-keyword">if</span> (N == <span class="hljs-literal">NULL</span>)
+<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+<span class="hljs-keyword">return</span> N-&gt;height;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">max</span><span class="hljs-params">(<span class="hljs-keyword">int</span> a, <span class="hljs-keyword">int</span> b)</span> </span>{
+<span class="hljs-keyword">return</span> (a &gt; b) ? a : b;
+}
+
+<span class="hljs-comment">// New node creation</span>
+<span class="hljs-function">Node *<span class="hljs-title">newNode</span><span class="hljs-params">(<span class="hljs-keyword">int</span> key)</span> </span>{
+Node *node = <span class="hljs-keyword">new</span> Node();
+node-&gt;key = key;
+node-&gt;left = <span class="hljs-literal">NULL</span>;
+node-&gt;right = <span class="hljs-literal">NULL</span>;
+node-&gt;height = <span class="hljs-number">1</span>;
+<span class="hljs-keyword">return</span> (node);
+}
+
+<span class="hljs-comment">// Rotate right</span>
+<span class="hljs-function">Node *<span class="hljs-title">rightRotate</span><span class="hljs-params">(Node *y)</span> </span>{
+Node *x = y-&gt;left;
+Node *T2 = x-&gt;right;
+x-&gt;right = y;
+y-&gt;left = T2;
+y-&gt;height = max(height(y-&gt;left),
+height(y-&gt;right)) +
+<span class="hljs-number">1</span>;
+x-&gt;height = max(height(x-&gt;left),
+height(x-&gt;right)) +
+<span class="hljs-number">1</span>;
+<span class="hljs-keyword">return</span> x;
+}
+
+<span class="hljs-comment">// Rotate left</span>
+<span class="hljs-function">Node *<span class="hljs-title">leftRotate</span><span class="hljs-params">(Node *x)</span> </span>{
+Node *y = x-&gt;right;
+Node *T2 = y-&gt;left;
+y-&gt;left = x;
+x-&gt;right = T2;
+x-&gt;height = max(height(x-&gt;left),
+height(x-&gt;right)) +
+<span class="hljs-number">1</span>;
+y-&gt;height = max(height(y-&gt;left),
+height(y-&gt;right)) +
+<span class="hljs-number">1</span>;
+<span class="hljs-keyword">return</span> y;
+}
+
+<span class="hljs-comment">// Get the balance factor of each node</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">getBalanceFactor</span><span class="hljs-params">(Node *N)</span> </span>{
+<span class="hljs-keyword">if</span> (N == <span class="hljs-literal">NULL</span>)
+<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+<span class="hljs-keyword">return</span> height(N-&gt;left) -
+height(N-&gt;right);
+}
+
+<span class="hljs-comment">// Insert a node</span>
+<span class="hljs-function">Node *<span class="hljs-title">insertNode</span><span class="hljs-params">(Node *node, <span class="hljs-keyword">int</span> key)</span> </span>{
+<span class="hljs-comment">// Find the correct postion and insert the node</span>
+<span class="hljs-keyword">if</span> (node == <span class="hljs-literal">NULL</span>)
+<span class="hljs-keyword">return</span> (newNode(key));
+<span class="hljs-keyword">if</span> (key &lt; node-&gt;key)
+node-&gt;left = insertNode(node-&gt;left, key);
+<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (key &gt; node-&gt;key)
+node-&gt;right = insertNode(node-&gt;right, key);
+<span class="hljs-keyword">else</span>
+<span class="hljs-keyword">return</span> node;
+
+<span class="hljs-comment">// Update the balance factor of each node and</span>
+<span class="hljs-comment">// balance the tree</span>
+node-&gt;height = <span class="hljs-number">1</span> + max(height(node-&gt;left),
+height(node-&gt;right));
+<span class="hljs-keyword">int</span> balanceFactor = getBalanceFactor(node);
+<span class="hljs-keyword">if</span> (balanceFactor &gt; <span class="hljs-number">1</span>) {
+<span class="hljs-keyword">if</span> (key &lt; node-&gt;left-&gt;key) {
+<span class="hljs-keyword">return</span> rightRotate(node);
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (key &gt; node-&gt;left-&gt;key) {
+node-&gt;left = leftRotate(node-&gt;left);
+<span class="hljs-keyword">return</span> rightRotate(node);
+}
+}
+<span class="hljs-keyword">if</span> (balanceFactor &lt; <span class="hljs-number">-1</span>) {
+<span class="hljs-keyword">if</span> (key &gt; node-&gt;right-&gt;key) {
+<span class="hljs-keyword">return</span> leftRotate(node);
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (key &lt; node-&gt;right-&gt;key) {
+node-&gt;right = rightRotate(node-&gt;right);
+<span class="hljs-keyword">return</span> leftRotate(node);
+}
+}
+<span class="hljs-keyword">return</span> node;
+}
+
+<span class="hljs-comment">// Node with minimum value</span>
+<span class="hljs-function">Node *<span class="hljs-title">nodeWithMimumValue</span><span class="hljs-params">(Node *node)</span> </span>{
+Node *current = node;
+<span class="hljs-keyword">while</span> (current-&gt;left != <span class="hljs-literal">NULL</span>)
+current = current-&gt;left;
+<span class="hljs-keyword">return</span> current;
+}
+
+<span class="hljs-comment">// Delete a node</span>
+<span class="hljs-function">Node *<span class="hljs-title">deleteNode</span><span class="hljs-params">(Node *root, <span class="hljs-keyword">int</span> key)</span> </span>{
+<span class="hljs-comment">// Find the node and delete it</span>
+<span class="hljs-keyword">if</span> (root == <span class="hljs-literal">NULL</span>)
+<span class="hljs-keyword">return</span> root;
+<span class="hljs-keyword">if</span> (key &lt; root-&gt;key)
+root-&gt;left = deleteNode(root-&gt;left, key);
+<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (key &gt; root-&gt;key)
+root-&gt;right = deleteNode(root-&gt;right, key);
+<span class="hljs-keyword">else</span> {
+<span class="hljs-keyword">if</span> ((root-&gt;left == <span class="hljs-literal">NULL</span>) ||
+(root-&gt;right == <span class="hljs-literal">NULL</span>)) {
+Node *temp = root-&gt;left ? root-&gt;left : root-&gt;right;
+<span class="hljs-keyword">if</span> (temp == <span class="hljs-literal">NULL</span>) {
+temp = root;
+root = <span class="hljs-literal">NULL</span>;
+} <span class="hljs-keyword">else</span>
+*root = *temp;
+<span class="hljs-built_in">free</span>(temp);
+} <span class="hljs-keyword">else</span> {
+Node *temp = nodeWithMimumValue(root-&gt;right);
+root-&gt;key = temp-&gt;key;
+root-&gt;right = deleteNode(root-&gt;right,
+temp-&gt;key);
+}
+}
+
+<span class="hljs-keyword">if</span> (root == <span class="hljs-literal">NULL</span>)
+<span class="hljs-keyword">return</span> root;
+
+<span class="hljs-comment">// Update the balance factor of each node and</span>
+<span class="hljs-comment">// balance the tree</span>
+root-&gt;height = <span class="hljs-number">1</span> + max(height(root-&gt;left),
+height(root-&gt;right));
+<span class="hljs-keyword">int</span> balanceFactor = getBalanceFactor(root);
+<span class="hljs-keyword">if</span> (balanceFactor &gt; <span class="hljs-number">1</span>) {
+<span class="hljs-keyword">if</span> (getBalanceFactor(root-&gt;left) &gt;= <span class="hljs-number">0</span>) {
+<span class="hljs-keyword">return</span> rightRotate(root);
+} <span class="hljs-keyword">else</span> {
+root-&gt;left = leftRotate(root-&gt;left);
+<span class="hljs-keyword">return</span> rightRotate(root);
+}
+}
+<span class="hljs-keyword">if</span> (balanceFactor &lt; <span class="hljs-number">-1</span>) {
+<span class="hljs-keyword">if</span> (getBalanceFactor(root-&gt;right) &lt;= <span class="hljs-number">0</span>) {
+<span class="hljs-keyword">return</span> leftRotate(root);
+} <span class="hljs-keyword">else</span> {
+root-&gt;right = rightRotate(root-&gt;right);
+<span class="hljs-keyword">return</span> leftRotate(root);
+}
+}
+<span class="hljs-keyword">return</span> root;
+}
+
+<span class="hljs-comment">// Print the tree</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">printTree</span><span class="hljs-params">(Node *root, <span class="hljs-built_in">string</span> indent, <span class="hljs-keyword">bool</span> last)</span> </span>{
+<span class="hljs-keyword">if</span> (root != <span class="hljs-literal">nullptr</span>) {
+<span class="hljs-built_in">cout</span> &lt;&lt; indent;
+<span class="hljs-keyword">if</span> (last) {
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"R----"</span>;
+indent += <span class="hljs-string">"   "</span>;
+} <span class="hljs-keyword">else</span> {
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"L----"</span>;
+indent += <span class="hljs-string">"|  "</span>;
+}
+<span class="hljs-built_in">cout</span> &lt;&lt; root-&gt;key &lt;&lt; <span class="hljs-built_in">endl</span>;
+printTree(root-&gt;left, indent, <span class="hljs-literal">false</span>);
+printTree(root-&gt;right, indent, <span class="hljs-literal">true</span>);
+}
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+Node *root = <span class="hljs-literal">NULL</span>;
+root = insertNode(root, <span class="hljs-number">33</span>);
+root = insertNode(root, <span class="hljs-number">13</span>);
+root = insertNode(root, <span class="hljs-number">53</span>);
+root = insertNode(root, <span class="hljs-number">9</span>);
+root = insertNode(root, <span class="hljs-number">21</span>);
+root = insertNode(root, <span class="hljs-number">61</span>);
+root = insertNode(root, <span class="hljs-number">8</span>);
+root = insertNode(root, <span class="hljs-number">11</span>);
+printTree(root, <span class="hljs-string">""</span>, <span class="hljs-literal">true</span>);
+root = deleteNode(root, <span class="hljs-number">13</span>);
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"After deleting "</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+printTree(root, <span class="hljs-string">""</span>, <span class="hljs-literal">true</span>);
+}</code></pre></div>
+</div>
+</div>
+
+<hr><h2 id="complexity">Complexities of Different Operations on an AVL Tree</h2>
+
+<div class="table-responsive">
+<table border="0"><tbody><tr><td><strong>Insertion</strong></td>
+          <td><strong>Deletion</strong></td>
+          <td><strong>Search</strong></td>
+  </tr><tr><td>O(log n)</td>
+          <td>O(log n)</td>
+          <td>O(log n)</td>
+  </tr></tbody></table></div>
+
+<hr><h2 id="application">AVL Tree Applications</h2>
+
+<ul><li>For indexing large records in databases</li>
+<li>For searching in large databases</li>
+</ul></div>
+
+
+
+</div>
+
+
+        <div class="tutorial-toc"><div class="tutorial-toc__inner"><h3 class="tutorial-toc__title">Table of Contents
+<button class="btn btn--clear align-items-center">
+<svg class="programiz-icon"><use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#x"></use></svg></button></h3><div class="tutorial-toc__links"><ul><li><a href="#definition">Definition</a></li>
+<li><a href="#balancefactor">Balance Factor </a></li>
+<li><a href="#rotations">Rotating the subtrees in an AVL Tree </a></li>
+<li><a href="#insertion">Algorithm to Insert a newNode </a></li>
+<li><a href="#deletion">Algorithm to Delete a node </a></li>
+<li><a href="#code">Python, Java and C/C++ Examples </a></li>
+<li><a href="#complexity">Complexities of Different Operations on an AVL Tree</a></li>
+<li><a href="#application">AVL Tree Applications </a></li>
+</ul></div></div></div>                          </div>
+<!--second------------------------------------------->
+<div>
+<ul>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/stack.html">
+
+        Stack</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/queue.html">
+
+        Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/types-of-queue.html">
+
+        Types of Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/circular-queue.html">
+
+        Circular Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/priority-queue.html">
+
+        Priority Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deque.html">
+
+        Deque</a></button>
+<br/>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linked-list.html">
+
+        Linked List</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linked-list-operations.html">
+
+        Linked List Operations</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linked-list-types.html">
+
+        Types of Linked List</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/hash-table.html">
+
+        Hash Table</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/heap-data-structure.html">
+
+        Heap Data Structure</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/fibonacci-heap.html">
+
+        Fibonacci Heap</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/decrease-key-and-delete-node-from-a-fibonacci-heap.html">
+
+        Decrease Key and Delete node from Fibonacci Heap</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/trees.html">
+
+        Tree Data Structure</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/tree-traversal.html">
+
+        Tree Traversal</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/binary-tree.html">
+
+        Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/full-binary-tree.html">
+
+        Full Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/perfect-binary-tree.html">
+
+        Perfect Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/complete-binary-tree.html">
+
+        Complete Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/balanced-binary-tree.html">
+
+        Balanced Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/binary-search-tree.html">
+
+        Binary Search Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/avl-tree.html">
+
+        AVL Tree</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/b-tree.html">
+
+        B Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-into-a-b-tree.html">
+
+        Insertion into B-tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deletion-from-a-b-tree.html">
+
+        Deletion from B-tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/b-plus-tree.html">
+
+        B+ Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-on-a-b-plus-tree.html">
+
+        Insertion on a B+ Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deletion-from-a-b-plus-tree.html">
+
+        Deletion from a B+ Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/red-black-tree.html">
+
+        Red Black Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-in-a-red-black-tree.html">
+
+        Insertion in Red Black Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deletion-from-a-red-black-tree.html">
+
+        Deletion from Red Black Tree</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph.html">
+
+        Graph Data Structure</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/spanning-tree-and-minimum-spanning-tree.html">
+
+        Spanning Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/strongly-connected-components.html">
+
+        Strongly Connected Components</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-adjacency-matrix.html">
+
+        Adjacency Matrix</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-adjacency-list.html">
+
+        Adjacency List</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-dfs.html">
+
+        DFS Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-bfs.html">
+
+        Breadth-first Search</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/bellman-ford-algorithm.html">
+
+        Bellman Ford's Algorithm</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/bubble-sort.html">
+
+        Bubble Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/selection-sort.html">
+
+        Selection Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-sort.html">
+
+        Insertion Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/merge-sort.html">
+
+        Merge Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/quick-sort.html">
+
+        Quick Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/counting-sort.html">
+
+        Counting Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/radix-sort.html">
+
+        Radix Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/bucket-sort.html">
+
+        Bucket Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/heap-sort.html">
+
+        Heap Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/shell-sort.html">
+
+        Shell Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linear-search.html">
+
+        Linear Search</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/binary-search.html">
+
+        Binary Search</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/greedy-algorithm.html">
+
+        Greedy Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/ford-fulkerson-algorithm.html">
+
+        Ford-Fulkerson Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/dijkstra-algorithm.html">
+
+        Dijkstra's Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/kruskal-algorithm.html">
+
+        Kruskal's Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/prim-algorithm.html">
+
+        Prim's Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/huffman-coding.html">
+
+        Huffman Code</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/dynamic-programming.html">
+
+        Dynamic Programming</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/floyd-warshall-algorithm.html">
+
+        Floyd Warshall Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/longest-common-subsequence.html">
+
+        Longest Common Subsequence</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/backtracking-algorithm.html">
+
+        Backtracking Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/rabin-karp-algorithm.html">
+
+        Rabin-Karp Algorithm</a></button>
+<br>
+<br/>
+<h2>Free Courses on YouTube</h2>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+            https://www.youtube.com/watch?v=IbSXF7eT-AU&amp;list=PLR_5PTwg_uAQw40OhdvAwN4NvzWv0xOZ2">
+
+            Python Full Course Playlist</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://www.youtube.com/watch?v=UEl6wB90Gs8">
+
+            105 STL Algorithms in Less Than an Hour</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://www.youtube.com/watch?v=zZXTgN7L1UU&amp;list=PLR_5PTwg_uAS6C1cSMjU6oVhOcCX8Zu_4">
+
+            C++ STL Playlist</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://youtu.be/ty9756v3kc8">
+
+            Learn Node.js </a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://youtu.be/exrIpdS3Crc">
+
+            Learn Data Science Full course</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://youtu.be/Q8tDO2uSk5U">
+
+            Learn Computer Networking Full course</a></button>
+<br/>
+</br></br></br></br></br></br></br></br></ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<footer class="afooter" style="margin-left:20px">
+<p>
+<a href="/cookie-policy.html">Cookie policy</a> |
+
+        <a href="/privacy-policy.html">Privacy policy</a> |
+
+        <a href="/terms-of-use.html">Terms of use</a> |
+
+        <a href="/disclaimer.html">Disclaimer</a> |
+
+        <a href="/about-us.html">About Us</a>
+</p>
+<p>
+
+        © 2023 <a href="https://pythonread.github.io">https://pythonread.github.io</a>
+</p>
+</footer>
+<script type="text/javascript">
+
+    document.addEventListener('DOMContentLoaded', function () { htmlTableOfContents() }); function htmlTableOfContents(documentRef) { var documentRef = documentRef || document; var toc = documentRef.getElementById("toc"); var headings = [].slice.call(documentRef.body.querySelectorAll('h2, h3')); headings.forEach(function (heading, index) { var ref = "toc" + index; if (heading.hasAttribute("id")) { ref = heading.getAttribute("id") } else { heading.setAttribute("id", ref) } var link = documentRef.createElement("a"); link.setAttribute("href", "#" + ref); link.textContent = heading.textContent; var div = documentRef.createElement("div"); div.setAttribute("class", heading.tagName.toLowerCase()); div.appendChild(link); toc.appendChild(div) }) } try { module.exports = htmlTableOfContents } catch (e) { } function isScrolledIntoView(el) { var rect = el.getBoundingClientRect(); var elemTop = rect.top; var elemBottom = rect.bottom; var isVisible = (elemTop >= -10) && (elemBottom <= (window.innerHeight)); return isVisible } function highlightMenu() { var headers = document.querySelectorAll("h2, h3"); for (var i = 0; i < headers.length; i += 1) { if (isScrolledIntoView(headers[i])) { var childDivs = document.getElementById('toc').getElementsByTagName('div'); var c = childDivs[i].classList; c.add("active"); for (var j = 0; j < i; j += 1) { var c = childDivs[j].classList; c.remove("active") } for (var j = i + 1; j < childDivs.length; j += 1) { var c = childDivs[j].classList; c.remove("active") } break } } } function highlightMenuLastItem() { var childDivs = document.getElementById('toc').getElementsByTagName('div'); for (var j = 0; j < childDivs.length - 1; j += 1) { var c = childDivs[j].classList; c.remove("active") } var c = childDivs[childDivs.length - 1].classList; c.add("active") } window.addEventListener("click", function (event) { highlightMenu() }); window.onscroll = function (e) { highlightMenu(); if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) { highlightMenuLastItem() } }; function mobileMenu() { var classes = document.getElementById('nav-toggle-icon').classList; if (classes.contains("active")) { classes.remove("active") } else { classes.add("active") } var classes = document.getElementById('menu-wrapper').classList; if (classes.contains("active")) { classes.remove("active") } else { classes.add("active") } }
+
+</script>
+<script type="text/javascript">
+
+    function changepy(){
+
+        document.getElementById('py1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('java1').className = 'tabbed-editor__node';
+
+        document.getElementById('c1').className = 'tabbed-editor__node';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node';
+
+        document.getElementById('python-code').className = 'code-editor__area code-editor__area--active';
+
+        document.getElementById('java-code').className = 'code-editor__area';
+
+        document.getElementById('c-code').className = 'code-editor__area';
+
+        document.getElementById('cpp-code').className = 'code-editor__area';
+
+
+
+    }
+
+    function changecpp(){
+
+        document.getElementById('py1').className = 'tabbed-editor__node';
+
+        document.getElementById('java1').className = 'tabbed-editor__node';
+
+        document.getElementById('c1').className = 'tabbed-editor__node';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('python-code').className = 'code-editor__area';
+
+        document.getElementById('java-code').className = 'code-editor__area';
+
+        document.getElementById('c-code').className = 'code-editor__area';
+
+        document.getElementById('cpp-code').className = 'code-editor__area code-editor__area--active';
+
+    }
+
+    function changejava(){
+
+       document.getElementById('py1').className = 'tabbed-editor__node';
+
+        document.getElementById('java1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('c1').className = 'tabbed-editor__node';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node';
+
+        document.getElementById('python-code').className = 'code-editor__area';
+
+        document.getElementById('java-code').className = 'code-editor__area code-editor__area--active';
+
+        document.getElementById('c-code').className = 'code-editor__area';
+
+        document.getElementById('cpp-code').className = 'code-editor__area';
+
+    }
+
+    function changec(){
+
+        document.getElementById('py1').className = 'tabbed-editor__node';
+
+        document.getElementById('java1').className = 'tabbed-editor__node';
+
+        document.getElementById('c1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node';
+
+        document.getElementById('python-code').className = 'code-editor__area';
+
+        document.getElementById('java-code').className = 'code-editor__area';
+
+        document.getElementById('c-code').className = 'code-editor__area code-editor__area--active';
+
+        document.getElementById('cpp-code').className = 'code-editor__area';
+
+    }
+
+    
+
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>

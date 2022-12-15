@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<title>Dijkstra Algorithm</title>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-HCERBDV76D"></script>
+<script>
+
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() { dataLayer.push(arguments); }
+
+        gtag('js', new Date());
+
+
+
+        gtag('config', 'G-HCERBDV76D');
+
+    </script>
+<meta content="B0487B46A104E90209E8A3BEA24ECA0E" name="msvalidate.01"/>
+<meta content="f044b3a12c7918f1" name="yandex-verification"/>
+<!--end-->
+<meta content="learn about data types, variables, lists, tuples, dictionaries,if else,DSA,loops,user-defined functions, oop, threading and scripting." name="description"/>
+<meta content="learnPython" name="author"/>
+<meta content="Learn Python for free,learn python for beginners,Core Python,Web frameworks,Multiprocess architecture,Serverside templating language,python tutorials,python4" name="keywords"/>
+<meta content="website" property="og:type"/>
+<meta content="US-CA" name="”geo.region”"/>
+<meta content="353 Jane Stanford Way, Stanford, CA 94305, United States" name="”geo.placename”"/>
+<meta content="37.430089898615456;-122.17332683124829" name="”geo.position”"/>
+<meta content="37.430089898615456, -122.17332683124829" name="”ICBM”"/>
+<link href="https://pythonread.github.io/?m=1" rel="alternate"/>
+<link href="/favicon.png" rel="icon"/>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="/style1.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/style2.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/style0.css" media="all" rel="stylesheet" type="text/css"/>
+<!--<![endif]-->
+</head>
+<body>
+<div class="nav-wrapper">
+<div class="container">
+<nav>
+<div class="logo wave">
+<a href="/" id="logo">
+
+                        Python Tutorial
+
+                    </a>
+</div>
+<div class="nav-toggle-icon" id="nav-toggle-icon" onclick="mobileMenu()">
+<div class="material-hamburger">
+<span>
+</span>
+<span>
+</span>
+<span>
+</span>
+</div>
+</div>
+<div class="menu-wrapper" id="menu-wrapper">
+<div class="nav-indicator">
+</div>
+<ul class="menus">
+<li>
+<a class="wave" href="/">
+
+                                Home
+
+                            </a>
+</li>
+<li>
+<a class="wave" href="/projects.html">
+
+                                Projects
+
+                            </a>
+</li>
+<li>
+<a class="wave" href="/free-course.html" target="_blank">
+
+                                Free Course
+
+                            </a>
+</li>
+<li>
+<a class="wave" href="/dsa.html">
+
+                                DSA
+
+                            </a>
+</li>
+</ul>
+</div>
+</nav>
+</div>
+</div>
+<div class="contents contents--neg" style="margin-top: 60px">
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+<div class="d-flex">
+<div class="left-bar d-none d-lg-block">
+<div class="card-alt mb-10x">
+<h3>Page Index</h3>
+<div class="list">
+<ul>
+<li><a href="/dsa.html#data-structure-1" title="Data Structures (I)">Data Structures
+
+                                                (I)</a></li>
+<li><a href="/dsa.html#data-structure-2" title="Data Structures (II)">Data Structures
+
+                                                (II)</a></li>
+<li><a href="/dsa.html#tree-1" title="Tree based DSA (I)">Tree based DSA (I)</a></li>
+<li><a href="/dsa.html#tree-2" title="Tree based DSA (II)">Tree based DSA (II)</a></li>
+<li><a href="/dsa.html#graph" title="Graph Data Structures and Algorithm">Graph based
+
+                                                DSA</a></li>
+<li><a href="/dsa.html#sorting-searching" title="Sorting and Searching">Sorting and
+
+                                                Searching</a></li>
+<li><a href="/dsa.html#greedy-algorithm" title="Greedy Algorithms">Greedy Algorithms</a>
+</li>
+<li><a href="/dsa.html#dynamic-programming" title="Dynamic Programming">Dynamic
+
+                                                Programming</a></li>
+<li><a href="/dsa.html#other-algorithms" title="Other Algorithms">Other Algorithms</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="right-bar">
+<!--first part end-------------------------------------------->
+
+<div class="editor-contents">
+        <h1>Dijkstra's Algorithm</h1>
+
+
+        <p class="editor-contents__short-description">Dijkstra's algorithm allows us to find the shortest path between any two vertices of a graph.</p>
+
+
+
+          
+
+
+
+<div id="node-1063" class="node node-algorithm clearfix" about="/dsa/dijkstra-algorithm" typeof="sioc:Item foaf:Document">
+
+
+<span property="dc:title" content="Dijkstra's Algorithm" class="rdf-meta element-hidden"></span>
+
+<div class="content">
+<p id="introduction">It differs from the minimum spanning tree because the shortest distance between two vertices might not include all the vertices of the graph.</p>
+
+<hr><h2 id="working">How Dijkstra's Algorithm works</h2>
+
+<p>Dijkstra's Algorithm works on the basis that any subpath <code>B -&gt; D</code> of the shortest path <code>A -&gt; D</code> between vertices A and D is also the shortest path between vertices B and D.</p>
+
+<figure><img alt="shortest subpath property is used by dijkstra's algorithm" src="//cdn.programiz.com/sites/tutorial2program/files/shortest-subpath.png" title="Subpaths - Dijkstra's Algorithm" width="730" height="260"><figcaption>Each subpath is the shortest path</figcaption></figure><p>Djikstra used this property in the opposite direction i.e we overestimate the distance of each vertex from the starting vertex. Then we visit each node and its neighbors to find the shortest subpath to those neighbors.</p>
+
+<p>The algorithm uses a greedy approach in the sense that we find the next best solution hoping that the end result is the best solution for the whole problem.</p>
+
+<hr><h2 id="example">Example of Dijkstra's algorithm</h2>
+
+<p>It is easier to start with an example and then think about the algorithm.</p>
+
+<figure><img alt="Start with a weighted graph" src="//cdn.programiz.com/sites/tutorial2program/files/dj-1.png" title="Dijkstra's algorithm steps" width="730" height="306"><figcaption>Start with a weighted graph</figcaption></figure><figure><img alt="Choose a starting vertex and assign infinity path values to all other devices" src="//cdn.programiz.com/sites/tutorial2program/files/dj-2.png" title="Dijkstra's algorithm steps" width="730" height="306"><figcaption>Choose a starting vertex and assign infinity path values to all other devices</figcaption></figure><figure><img alt="Go to each vertex and update its path length" src="//cdn.programiz.com/sites/tutorial2program/files/dj-3.png" title="Dijkstra's algorithm steps" width="730" height="306"><figcaption>Go to each vertex and update its path length</figcaption></figure><figure><img alt="If the path length of the adjacent vertex is lesser than new path length, don't update it" src="//cdn.programiz.com/sites/tutorial2program/files/dj-4.png" title="Dijkstra's algorithm steps" width="730" height="306"><figcaption>If the path length of the adjacent vertex is lesser than new path length, don't update it</figcaption></figure><figure><img alt="Avoid updating path lengths of already visited vertices" src="//cdn.programiz.com/sites/tutorial2program/files/dj-5.png" title="Dijkstra's algorithm steps" width="730" height="330"><figcaption>Avoid updating path lengths of already visited vertices</figcaption></figure><figure><img alt="After each iteration, we pick the unvisited vertex with the least path length. So we choose 5 before 7" src="//cdn.programiz.com/sites/tutorial2program/files/dj-6.png" title="Dijkstra's algorithm steps" width="730" height="306"><figcaption>After each iteration, we pick the unvisited vertex with the least path length. So we choose 5 before 7</figcaption></figure><figure><img alt="Notice how the rightmost vertex has its path length updated twice" src="//cdn.programiz.com/sites/tutorial2program/files/dj-7.png" title="Dijkstra's algorithm steps" width="730" height="306"><figcaption>Notice how the rightmost vertex has its path length updated twice</figcaption></figure><figure><img alt="Repeat until all the vertices have been visited" src="//cdn.programiz.com/sites/tutorial2program/files/dj-8.png" title="Dijkstra's algorithm steps" width="730" height="306"><figcaption>Repeat until all the vertices have been visited</figcaption></figure><hr><h2 id="pseudocode">Djikstra's algorithm pseudocode</h2>
+
+<p>We need to maintain the path distance of every vertex. We can store that in an array of size v, where v is the number of vertices.</p>
+
+<p>We also want to be able to get the shortest path, not only know the length of the shortest path. For this, we map each vertex to the vertex that last updated its path length.</p>
+
+<p></p><div class="clearfix"></div><p>Once the algorithm is over, we can backtrack from the destination vertex to the source vertex to find the path.</p>
+
+<p>A minimum priority queue can be used to efficiently receive the vertex with least path distance.</p>
+
+<pre style="max-height: 600px;"><code class="dsa hljs properties"><span class="hljs-attr">function</span> <span class="hljs-string">dijkstra(G, S)</span>
+<span class="hljs-attr">for</span> <span class="hljs-string">each vertex V in G</span>
+<span class="hljs-meta">distance[V]</span> <span class="hljs-string">&lt;- infinite</span>
+<span class="hljs-meta">previous[V]</span> <span class="hljs-string">&lt;- NULL</span>
+<span class="hljs-attr">If</span> <span class="hljs-string">V != S, add V to Priority Queue Q</span>
+<span class="hljs-meta">distance[S]</span> <span class="hljs-string">&lt;- 0</span>
+
+<span class="hljs-attr">while</span> <span class="hljs-string">Q IS NOT EMPTY</span>
+<span class="hljs-attr">U</span> <span class="hljs-string">&lt;- Extract MIN from Q</span>
+<span class="hljs-attr">for</span> <span class="hljs-string">each unvisited neighbour V of U</span>
+<span class="hljs-attr">tempDistance</span> <span class="hljs-string">&lt;- distance[U] + edge_weight(U, V)</span>
+<span class="hljs-attr">if</span> <span class="hljs-string">tempDistance &lt; distance[V]</span>
+<span class="hljs-meta">distance[V]</span> <span class="hljs-string">&lt;- tempDistance</span>
+<span class="hljs-meta">previous[V]</span> <span class="hljs-string">&lt;- U</span>
+<span class="hljs-attr">return</span> <span class="hljs-string">distance[], previous[]</span></code></pre>
+
+<hr><h2 id="code">Code for Dijkstra's Algorithm</h2>
+
+<p>The implementation of Dijkstra's Algorithm in C++ is given below. The complexity of the code can be improved, but the abstractions are convenient to relate the code with the algorithm.</p>
+
+<div class="tabbed-editor">
+        <div id="py1" onclick="changepy()" class="tabbed-editor__node tabbed-editor__node--active"><a href="#python-code">Python</a></div>
+        
+        <div id="java1" onclick="changejava()"  class="tabbed-editor__node"><a href="#java-code">Java</a></div>
+        
+        <div id="c1" onclick="changec()" class="tabbed-editor__node"><a href="#c-code">C</a></div>
+        
+        <div id="cpp1" onclick="changecpp()" class="tabbed-editor__node"><a href="#cpp-code">C++</a></div>
+        </div>
+
+<div class="code-editor code-editor--tabbed">
+<div class="code-editor__area code-editor__area--active" id="python-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="python hljs"><span class="hljs-comment"># Dijkstra's Algorithm in Python</span>
+
+
+<span class="hljs-keyword">import</span> sys
+
+<span class="hljs-comment"># Providing the graph</span>
+vertices = [[<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>],
+[<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>],
+[<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>],
+[<span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>],
+[<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>],
+[<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>],
+[<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>]]
+
+edges = [[<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>],
+[<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">2</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">3</span>, <span class="hljs-number">0</span>],
+[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>],
+[<span class="hljs-number">2</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>],
+[<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">3</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">2</span>, <span class="hljs-number">0</span>],
+[<span class="hljs-number">0</span>, <span class="hljs-number">3</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">2</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>],
+[<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>]]
+
+<span class="hljs-comment"># Find which vertex is to be visited next</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">to_be_visited</span><span class="hljs-params">()</span>:</span>
+<span class="hljs-keyword">global</span> visited_and_distance
+v = <span class="hljs-number">-10</span>
+<span class="hljs-keyword">for</span> index <span class="hljs-keyword">in</span> range(num_of_vertices):
+<span class="hljs-keyword">if</span> visited_and_distance[index][<span class="hljs-number">0</span>] == <span class="hljs-number">0</span> \
+<span class="hljs-keyword">and</span> (v &lt; <span class="hljs-number">0</span> <span class="hljs-keyword">or</span> visited_and_distance[index][<span class="hljs-number">1</span>] &lt;=
+visited_and_distance[v][<span class="hljs-number">1</span>]):
+v = index
+<span class="hljs-keyword">return</span> v
+
+
+num_of_vertices = len(vertices[<span class="hljs-number">0</span>])
+
+visited_and_distance = [[<span class="hljs-number">0</span>, <span class="hljs-number">0</span>]]
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(num_of_vertices<span class="hljs-number">-1</span>):
+visited_and_distance.append([<span class="hljs-number">0</span>, sys.maxsize])
+
+<span class="hljs-keyword">for</span> vertex <span class="hljs-keyword">in</span> range(num_of_vertices):
+
+<span class="hljs-comment"># Find next vertex to be visited</span>
+to_visit = to_be_visited()
+<span class="hljs-keyword">for</span> neighbor_index <span class="hljs-keyword">in</span> range(num_of_vertices):
+
+<span class="hljs-comment"># Updating new distances</span>
+<span class="hljs-keyword">if</span> vertices[to_visit][neighbor_index] == <span class="hljs-number">1</span> <span class="hljs-keyword">and</span> \
+visited_and_distance[neighbor_index][<span class="hljs-number">0</span>] == <span class="hljs-number">0</span>:
+new_distance = visited_and_distance[to_visit][<span class="hljs-number">1</span>] \
++ edges[to_visit][neighbor_index]
+<span class="hljs-keyword">if</span> visited_and_distance[neighbor_index][<span class="hljs-number">1</span>] &gt; new_distance:
+visited_and_distance[neighbor_index][<span class="hljs-number">1</span>] = new_distance
+
+visited_and_distance[to_visit][<span class="hljs-number">0</span>] = <span class="hljs-number">1</span>
+
+i = <span class="hljs-number">0</span>
+
+<span class="hljs-comment"># Printing the distance</span>
+<span class="hljs-keyword">for</span> distance <span class="hljs-keyword">in</span> visited_and_distance:
+<span class="hljs-keyword">print</span>(<span class="hljs-string">"Distance of "</span>, chr(ord(<span class="hljs-string">'a'</span>) + i),
+<span class="hljs-string">" from source vertex: "</span>, distance[<span class="hljs-number">1</span>])
+i = i + <span class="hljs-number">1</span></code></pre></div>
+</div>
+
+<div class="code-editor__area" id="java-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="java hljs"><span class="hljs-comment">// Dijkstra's Algorithm in Java</span>
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Dijkstra</span> </span>{
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">dijkstra</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[][] graph, <span class="hljs-keyword">int</span> source)</span> </span>{
+<span class="hljs-keyword">int</span> count = graph.length;
+<span class="hljs-keyword">boolean</span>[] visitedVertex = <span class="hljs-keyword">new</span> <span class="hljs-keyword">boolean</span>[count];
+<span class="hljs-keyword">int</span>[] distance = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[count];
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; count; i++) {
+visitedVertex[i] = <span class="hljs-keyword">false</span>;
+distance[i] = Integer.MAX_VALUE;
+}
+
+<span class="hljs-comment">// Distance of self loop is zero</span>
+distance[source] = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; count; i++) {
+
+<span class="hljs-comment">// Update the distance between neighbouring vertex and source vertex</span>
+<span class="hljs-keyword">int</span> u = findMinDistance(distance, visitedVertex);
+visitedVertex[u] = <span class="hljs-keyword">true</span>;
+
+<span class="hljs-comment">// Update all the neighbouring vertex distances</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> v = <span class="hljs-number">0</span>; v &lt; count; v++) {
+<span class="hljs-keyword">if</span> (!visitedVertex[v] &amp;&amp; graph[u][v] != <span class="hljs-number">0</span> &amp;&amp; (distance[u] + graph[u][v] &lt; distance[v])) {
+distance[v] = distance[u] + graph[u][v];
+}
+}
+}
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; distance.length; i++) {
+System.out.println(String.format(<span class="hljs-string">"Distance from %s to %s is %s"</span>, source, i, distance[i]));
+}
+
+}
+
+<span class="hljs-comment">// Finding the minimum distance</span>
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">findMinDistance</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] distance, <span class="hljs-keyword">boolean</span>[] visitedVertex)</span> </span>{
+<span class="hljs-keyword">int</span> minDistance = Integer.MAX_VALUE;
+<span class="hljs-keyword">int</span> minDistanceVertex = -<span class="hljs-number">1</span>;
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; distance.length; i++) {
+<span class="hljs-keyword">if</span> (!visitedVertex[i] &amp;&amp; distance[i] &lt; minDistance) {
+minDistance = distance[i];
+minDistanceVertex = i;
+}
+}
+<span class="hljs-keyword">return</span> minDistanceVertex;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+<span class="hljs-keyword">int</span> graph[][] = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[][] { { <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span> }, { <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">2</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">3</span>, <span class="hljs-number">0</span> }, { <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span> },
+{ <span class="hljs-number">2</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span> }, { <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">3</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">2</span>, <span class="hljs-number">0</span> }, { <span class="hljs-number">0</span>, <span class="hljs-number">3</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">2</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span> }, { <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span> } };
+Dijkstra T = <span class="hljs-keyword">new</span> Dijkstra();
+T.dijkstra(graph, <span class="hljs-number">0</span>);
+}
+}</code></pre></div>
+</div>
+
+<div class="code-editor__area" id="c-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="c hljs cpp"><span class="hljs-comment">// Dijkstra's Algorithm in C</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> INFINITY 9999</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> MAX 10</span>
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Dijkstra</span><span class="hljs-params">(<span class="hljs-keyword">int</span> Graph[MAX][MAX], <span class="hljs-keyword">int</span> n, <span class="hljs-keyword">int</span> start)</span></span>;
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Dijkstra</span><span class="hljs-params">(<span class="hljs-keyword">int</span> Graph[MAX][MAX], <span class="hljs-keyword">int</span> n, <span class="hljs-keyword">int</span> start)</span> </span>{
+<span class="hljs-keyword">int</span> cost[MAX][MAX], distance[MAX], pred[MAX];
+<span class="hljs-keyword">int</span> visited[MAX], count, mindistance, nextnode, i, j;
+
+<span class="hljs-comment">// Creating cost matrix</span>
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; n; i++)
+<span class="hljs-keyword">for</span> (j = <span class="hljs-number">0</span>; j &lt; n; j++)
+<span class="hljs-keyword">if</span> (Graph[i][j] == <span class="hljs-number">0</span>)
+cost[i][j] = INFINITY;
+<span class="hljs-keyword">else</span>
+cost[i][j] = Graph[i][j];
+
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; n; i++) {
+distance[i] = cost[start][i];
+pred[i] = start;
+visited[i] = <span class="hljs-number">0</span>;
+}
+
+distance[start] = <span class="hljs-number">0</span>;
+visited[start] = <span class="hljs-number">1</span>;
+count = <span class="hljs-number">1</span>;
+
+<span class="hljs-keyword">while</span> (count &lt; n - <span class="hljs-number">1</span>) {
+mindistance = INFINITY;
+
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; n; i++)
+<span class="hljs-keyword">if</span> (distance[i] &lt; mindistance &amp;&amp; !visited[i]) {
+mindistance = distance[i];
+nextnode = i;
+}
+
+visited[nextnode] = <span class="hljs-number">1</span>;
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; n; i++)
+<span class="hljs-keyword">if</span> (!visited[i])
+<span class="hljs-keyword">if</span> (mindistance + cost[nextnode][i] &lt; distance[i]) {
+distance[i] = mindistance + cost[nextnode][i];
+pred[i] = nextnode;
+}
+count++;
+}
+
+<span class="hljs-comment">// Printing the distance</span>
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; n; i++)
+<span class="hljs-keyword">if</span> (i != start) {
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"\nDistance from source to %d: %d"</span>, i, distance[i]);
+}
+}
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-keyword">int</span> Graph[MAX][MAX], i, j, n, u;
+n = <span class="hljs-number">7</span>;
+
+Graph[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>] = <span class="hljs-number">0</span>;
+Graph[<span class="hljs-number">0</span>][<span class="hljs-number">1</span>] = <span class="hljs-number">0</span>;
+Graph[<span class="hljs-number">0</span>][<span class="hljs-number">2</span>] = <span class="hljs-number">1</span>;
+Graph[<span class="hljs-number">0</span>][<span class="hljs-number">3</span>] = <span class="hljs-number">2</span>;
+Graph[<span class="hljs-number">0</span>][<span class="hljs-number">4</span>] = <span class="hljs-number">0</span>;
+Graph[<span class="hljs-number">0</span>][<span class="hljs-number">5</span>] = <span class="hljs-number">0</span>;
+Graph[<span class="hljs-number">0</span>][<span class="hljs-number">6</span>] = <span class="hljs-number">0</span>;
+
+Graph[<span class="hljs-number">1</span>][<span class="hljs-number">0</span>] = <span class="hljs-number">0</span>;
+Graph[<span class="hljs-number">1</span>][<span class="hljs-number">1</span>] = <span class="hljs-number">0</span>;
+Graph[<span class="hljs-number">1</span>][<span class="hljs-number">2</span>] = <span class="hljs-number">2</span>;
+Graph[<span class="hljs-number">1</span>][<span class="hljs-number">3</span>] = <span class="hljs-number">0</span>;
+Graph[<span class="hljs-number">1</span>][<span class="hljs-number">4</span>] = <span class="hljs-number">0</span>;
+Graph[<span class="hljs-number">1</span>][<span class="hljs-number">5</span>] = <span class="hljs-number">3</span>;
+Graph[<span class="hljs-number">1</span>][<span class="hljs-number">6</span>] = <span class="hljs-number">0</span>;
+
+Graph[<span class="hljs-number">2</span>][<span class="hljs-number">0</span>] = <span class="hljs-number">1</span>;
+Graph[<span class="hljs-number">2</span>][<span class="hljs-number">1</span>] = <span class="hljs-number">2</span>;
+Graph[<span class="hljs-number">2</span>][<span class="hljs-number">2</span>] = <span class="hljs-number">0</span>;
+Graph[<span class="hljs-number">2</span>][<span class="hljs-number">3</span>] = <span class="hljs-number">1</span>;
+Graph[<span class="hljs-number">2</span>][<span class="hljs-number">4</span>] = <span class="hljs-number">3</span>;
+Graph[<span class="hljs-number">2</span>][<span class="hljs-number">5</span>] = <span class="hljs-number">0</span>;
+Graph[<span class="hljs-number">2</span>][<span class="hljs-number">6</span>] = <span class="hljs-number">0</span>;
+
+Graph[<span class="hljs-number">3</span>][<span class="hljs-number">0</span>] = <span class="hljs-number">2</span>;
+Graph[<span class="hljs-number">3</span>][<span class="hljs-number">1</span>] = <span class="hljs-number">0</span>;
+Graph[<span class="hljs-number">3</span>][<span class="hljs-number">2</span>] = <span class="hljs-number">1</span>;
+Graph[<span class="hljs-number">3</span>][<span class="hljs-number">3</span>] = <span class="hljs-number">0</span>;
+Graph[<span class="hljs-number">3</span>][<span class="hljs-number">4</span>] = <span class="hljs-number">0</span>;
+Graph[<span class="hljs-number">3</span>][<span class="hljs-number">5</span>] = <span class="hljs-number">0</span>;
+Graph[<span class="hljs-number">3</span>][<span class="hljs-number">6</span>] = <span class="hljs-number">1</span>;
+
+Graph[<span class="hljs-number">4</span>][<span class="hljs-number">0</span>] = <span class="hljs-number">0</span>;
+Graph[<span class="hljs-number">4</span>][<span class="hljs-number">1</span>] = <span class="hljs-number">0</span>;
+Graph[<span class="hljs-number">4</span>][<span class="hljs-number">2</span>] = <span class="hljs-number">3</span>;
+Graph[<span class="hljs-number">4</span>][<span class="hljs-number">3</span>] = <span class="hljs-number">0</span>;
+Graph[<span class="hljs-number">4</span>][<span class="hljs-number">4</span>] = <span class="hljs-number">0</span>;
+Graph[<span class="hljs-number">4</span>][<span class="hljs-number">5</span>] = <span class="hljs-number">2</span>;
+Graph[<span class="hljs-number">4</span>][<span class="hljs-number">6</span>] = <span class="hljs-number">0</span>;
+
+Graph[<span class="hljs-number">5</span>][<span class="hljs-number">0</span>] = <span class="hljs-number">0</span>;
+Graph[<span class="hljs-number">5</span>][<span class="hljs-number">1</span>] = <span class="hljs-number">3</span>;
+Graph[<span class="hljs-number">5</span>][<span class="hljs-number">2</span>] = <span class="hljs-number">0</span>;
+Graph[<span class="hljs-number">5</span>][<span class="hljs-number">3</span>] = <span class="hljs-number">0</span>;
+Graph[<span class="hljs-number">5</span>][<span class="hljs-number">4</span>] = <span class="hljs-number">2</span>;
+Graph[<span class="hljs-number">5</span>][<span class="hljs-number">5</span>] = <span class="hljs-number">0</span>;
+Graph[<span class="hljs-number">5</span>][<span class="hljs-number">6</span>] = <span class="hljs-number">1</span>;
+
+Graph[<span class="hljs-number">6</span>][<span class="hljs-number">0</span>] = <span class="hljs-number">0</span>;
+Graph[<span class="hljs-number">6</span>][<span class="hljs-number">1</span>] = <span class="hljs-number">0</span>;
+Graph[<span class="hljs-number">6</span>][<span class="hljs-number">2</span>] = <span class="hljs-number">0</span>;
+Graph[<span class="hljs-number">6</span>][<span class="hljs-number">3</span>] = <span class="hljs-number">1</span>;
+Graph[<span class="hljs-number">6</span>][<span class="hljs-number">4</span>] = <span class="hljs-number">0</span>;
+Graph[<span class="hljs-number">6</span>][<span class="hljs-number">5</span>] = <span class="hljs-number">1</span>;
+Graph[<span class="hljs-number">6</span>][<span class="hljs-number">6</span>] = <span class="hljs-number">0</span>;
+
+u = <span class="hljs-number">0</span>;
+Dijkstra(Graph, n, u);
+
+<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}</code></pre></div>
+</div>
+
+<div class="code-editor__area" id="cpp-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="cpp hljs"><span class="hljs-comment">// Dijkstra's Algorithm in C++</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;vector&gt;</span></span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> INT_MAX 10000000</span>
+
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">DijkstrasTest</span><span class="hljs-params">()</span></span>;
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+DijkstrasTest();
+<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Node</span>;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Edge</span>;</span>
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Dijkstras</span><span class="hljs-params">()</span></span>;
+<span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;Node*&gt;* <span class="hljs-title">AdjacentRemainingNodes</span><span class="hljs-params">(Node* node)</span></span>;
+<span class="hljs-function">Node* <span class="hljs-title">ExtractSmallest</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;Node*&gt;&amp; nodes)</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">Distance</span><span class="hljs-params">(Node* node1, Node* node2)</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">Contains</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;Node*&gt;&amp; nodes, Node* node)</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">PrintShortestRouteTo</span><span class="hljs-params">(Node* destination)</span></span>;
+
+<span class="hljs-built_in">vector</span>&lt;Node*&gt; nodes;
+<span class="hljs-built_in">vector</span>&lt;Edge*&gt; edges;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Node</span> {</span>
+<span class="hljs-keyword">public</span>:
+Node(<span class="hljs-keyword">char</span> id)
+: id(id), previous(<span class="hljs-literal">NULL</span>), distanceFromStart(INT_MAX) {
+nodes.push_back(<span class="hljs-keyword">this</span>);
+}
+
+<span class="hljs-keyword">public</span>:
+<span class="hljs-keyword">char</span> id;
+Node* previous;
+<span class="hljs-keyword">int</span> distanceFromStart;
+};
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Edge</span> {</span>
+<span class="hljs-keyword">public</span>:
+Edge(Node* node1, Node* node2, <span class="hljs-keyword">int</span> distance)
+: node1(node1), node2(node2), distance(distance) {
+edges.push_back(<span class="hljs-keyword">this</span>);
+}
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">Connects</span><span class="hljs-params">(Node* node1, Node* node2)</span> </span>{
+<span class="hljs-keyword">return</span> (
+(node1 == <span class="hljs-keyword">this</span>-&gt;node1 &amp;&amp;
+node2 == <span class="hljs-keyword">this</span>-&gt;node2) ||
+(node1 == <span class="hljs-keyword">this</span>-&gt;node2 &amp;&amp;
+node2 == <span class="hljs-keyword">this</span>-&gt;node1));
+}
+
+<span class="hljs-keyword">public</span>:
+Node* node1;
+Node* node2;
+<span class="hljs-keyword">int</span> distance;
+};
+
+<span class="hljs-comment">///////////////////</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">DijkstrasTest</span><span class="hljs-params">()</span> </span>{
+Node* a = <span class="hljs-keyword">new</span> Node(<span class="hljs-string">'a'</span>);
+Node* b = <span class="hljs-keyword">new</span> Node(<span class="hljs-string">'b'</span>);
+Node* c = <span class="hljs-keyword">new</span> Node(<span class="hljs-string">'c'</span>);
+Node* d = <span class="hljs-keyword">new</span> Node(<span class="hljs-string">'d'</span>);
+Node* e = <span class="hljs-keyword">new</span> Node(<span class="hljs-string">'e'</span>);
+Node* f = <span class="hljs-keyword">new</span> Node(<span class="hljs-string">'f'</span>);
+Node* g = <span class="hljs-keyword">new</span> Node(<span class="hljs-string">'g'</span>);
+
+Edge* e1 = <span class="hljs-keyword">new</span> Edge(a, c, <span class="hljs-number">1</span>);
+Edge* e2 = <span class="hljs-keyword">new</span> Edge(a, d, <span class="hljs-number">2</span>);
+Edge* e3 = <span class="hljs-keyword">new</span> Edge(b, c, <span class="hljs-number">2</span>);
+Edge* e4 = <span class="hljs-keyword">new</span> Edge(c, d, <span class="hljs-number">1</span>);
+Edge* e5 = <span class="hljs-keyword">new</span> Edge(b, f, <span class="hljs-number">3</span>);
+Edge* e6 = <span class="hljs-keyword">new</span> Edge(c, e, <span class="hljs-number">3</span>);
+Edge* e7 = <span class="hljs-keyword">new</span> Edge(e, f, <span class="hljs-number">2</span>);
+Edge* e8 = <span class="hljs-keyword">new</span> Edge(d, g, <span class="hljs-number">1</span>);
+Edge* e9 = <span class="hljs-keyword">new</span> Edge(g, f, <span class="hljs-number">1</span>);
+
+a-&gt;distanceFromStart = <span class="hljs-number">0</span>;  <span class="hljs-comment">// set start node</span>
+Dijkstras();
+PrintShortestRouteTo(f);
+}
+
+<span class="hljs-comment">///////////////////</span>
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Dijkstras</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-keyword">while</span> (nodes.size() &gt; <span class="hljs-number">0</span>) {
+Node* smallest = ExtractSmallest(nodes);
+<span class="hljs-built_in">vector</span>&lt;Node*&gt;* adjacentNodes =
+AdjacentRemainingNodes(smallest);
+
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> size = adjacentNodes-&gt;size();
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; size; ++i) {
+Node* adjacent = adjacentNodes-&gt;at(i);
+<span class="hljs-keyword">int</span> distance = Distance(smallest, adjacent) +
+smallest-&gt;distanceFromStart;
+
+<span class="hljs-keyword">if</span> (distance &lt; adjacent-&gt;distanceFromStart) {
+adjacent-&gt;distanceFromStart = distance;
+adjacent-&gt;previous = smallest;
+}
+}
+<span class="hljs-keyword">delete</span> adjacentNodes;
+}
+}
+
+<span class="hljs-comment">// Find the node with the smallest distance,</span>
+<span class="hljs-comment">// remove it, and return it.</span>
+<span class="hljs-function">Node* <span class="hljs-title">ExtractSmallest</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;Node*&gt;&amp; nodes)</span> </span>{
+<span class="hljs-keyword">int</span> size = nodes.size();
+<span class="hljs-keyword">if</span> (size == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">NULL</span>;
+<span class="hljs-keyword">int</span> smallestPosition = <span class="hljs-number">0</span>;
+Node* smallest = nodes.at(<span class="hljs-number">0</span>);
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt; size; ++i) {
+Node* current = nodes.at(i);
+<span class="hljs-keyword">if</span> (current-&gt;distanceFromStart &lt;
+smallest-&gt;distanceFromStart) {
+smallest = current;
+smallestPosition = i;
+}
+}
+nodes.erase(nodes.begin() + smallestPosition);
+<span class="hljs-keyword">return</span> smallest;
+}
+
+<span class="hljs-comment">// Return all nodes adjacent to 'node' which are still</span>
+<span class="hljs-comment">// in the 'nodes' collection.</span>
+<span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;Node*&gt;* <span class="hljs-title">AdjacentRemainingNodes</span><span class="hljs-params">(Node* node)</span> </span>{
+<span class="hljs-built_in">vector</span>&lt;Node*&gt;* adjacentNodes = <span class="hljs-keyword">new</span> <span class="hljs-built_in">vector</span>&lt;Node*&gt;();
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> size = edges.size();
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; size; ++i) {
+Edge* edge = edges.at(i);
+Node* adjacent = <span class="hljs-literal">NULL</span>;
+<span class="hljs-keyword">if</span> (edge-&gt;node1 == node) {
+adjacent = edge-&gt;node2;
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (edge-&gt;node2 == node) {
+adjacent = edge-&gt;node1;
+}
+<span class="hljs-keyword">if</span> (adjacent &amp;&amp; Contains(nodes, adjacent)) {
+adjacentNodes-&gt;push_back(adjacent);
+}
+}
+<span class="hljs-keyword">return</span> adjacentNodes;
+}
+
+<span class="hljs-comment">// Return distance between two connected nodes</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">Distance</span><span class="hljs-params">(Node* node1, Node* node2)</span> </span>{
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> size = edges.size();
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; size; ++i) {
+Edge* edge = edges.at(i);
+<span class="hljs-keyword">if</span> (edge-&gt;Connects(node1, node2)) {
+<span class="hljs-keyword">return</span> edge-&gt;distance;
+}
+}
+<span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;  <span class="hljs-comment">// should never happen</span>
+}
+
+<span class="hljs-comment">// Does the 'nodes' vector contain 'node'</span>
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">Contains</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;Node*&gt;&amp; nodes, Node* node)</span> </span>{
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> size = nodes.size();
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; size; ++i) {
+<span class="hljs-keyword">if</span> (node == nodes.at(i)) {
+<span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+}
+}
+<span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+}
+
+<span class="hljs-comment">///////////////////</span>
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">PrintShortestRouteTo</span><span class="hljs-params">(Node* destination)</span> </span>{
+Node* previous = destination;
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Distance from start: "</span>
+&lt;&lt; destination-&gt;distanceFromStart &lt;&lt; <span class="hljs-built_in">endl</span>;
+<span class="hljs-keyword">while</span> (previous) {
+<span class="hljs-built_in">cout</span> &lt;&lt; previous-&gt;id &lt;&lt; <span class="hljs-string">" "</span>;
+previous = previous-&gt;previous;
+}
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+}
+
+<span class="hljs-comment">// these two not needed</span>
+<span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;Edge*&gt;* <span class="hljs-title">AdjacentEdges</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;Edge*&gt;&amp; Edges, Node* node)</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">RemoveEdge</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;Edge*&gt;&amp; Edges, Edge* edge)</span></span>;
+
+<span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;Edge*&gt;* <span class="hljs-title">AdjacentEdges</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;Edge*&gt;&amp; edges, Node* node)</span> </span>{
+<span class="hljs-built_in">vector</span>&lt;Edge*&gt;* adjacentEdges = <span class="hljs-keyword">new</span> <span class="hljs-built_in">vector</span>&lt;Edge*&gt;();
+
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> size = edges.size();
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; size; ++i) {
+Edge* edge = edges.at(i);
+<span class="hljs-keyword">if</span> (edge-&gt;node1 == node) {
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"adjacent: "</span> &lt;&lt; edge-&gt;node2-&gt;id &lt;&lt; <span class="hljs-built_in">endl</span>;
+adjacentEdges-&gt;push_back(edge);
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (edge-&gt;node2 == node) {
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"adjacent: "</span> &lt;&lt; edge-&gt;node1-&gt;id &lt;&lt; <span class="hljs-built_in">endl</span>;
+adjacentEdges-&gt;push_back(edge);
+}
+}
+<span class="hljs-keyword">return</span> adjacentEdges;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">RemoveEdge</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;Edge*&gt;&amp; edges, Edge* edge)</span> </span>{
+<span class="hljs-built_in">vector</span>&lt;Edge*&gt;::iterator it;
+<span class="hljs-keyword">for</span> (it = edges.begin(); it &lt; edges.end(); ++it) {
+<span class="hljs-keyword">if</span> (*it == edge) {
+edges.erase(it);
+<span class="hljs-keyword">return</span>;
+}
+}
+}</code></pre></div>
+</div>
+</div>
+
+<hr><h2 id="complexity">Dijkstra's Algorithm Complexity</h2>
+
+<p>Time Complexity: <code>O(E Log V)</code></p>
+
+<p>where, E is the number of edges and V is the number of vertices.</p>
+
+<p>Space Complexity: <code>O(V)</code></p>
+
+<hr><h2 id="applications">Dijkstra's Algorithm Applications</h2>
+
+<ul><li>To find the shortest path</li>
+<li>In social networking applications</li>
+<li>In a telephone network</li>
+<li>To find the locations in the map</li>
+</ul></div>
+
+
+
+</div>
+
+
+        <div class="tutorial-toc"><div class="tutorial-toc__inner"><h3 class="tutorial-toc__title">Table of Contents
+<button class="btn btn--clear align-items-center">
+<svg class="programiz-icon"><use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#x"></use></svg></button></h3><div class="tutorial-toc__links"><ul><li><a href="#introduction">Introduction</a></li>
+<li><a href="#working">How Dijkstra's Algorithm works</a></li>
+<li><a href="#example">Example of Dijkstra's algorithm</a></li>
+<li><a href="#pseudocode">Djikstra's algorithm pseudocode</a></li>
+<li><a href="#code">Code for Dijkstra's Algorithm</a></li>
+<li><a href="#complexity">Dijkstra's Algorithm Complexity</a></li>
+<li><a href="#applications">Dijkstra's Algorithm Applications</a></li>
+</ul></div></div></div>                          </div>
+<!--second------------------------------------------->
+<div>
+<ul>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/stack.html">
+
+        Stack</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/queue.html">
+
+        Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/types-of-queue.html">
+
+        Types of Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/circular-queue.html">
+
+        Circular Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/priority-queue.html">
+
+        Priority Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deque.html">
+
+        Deque</a></button>
+<br/>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linked-list.html">
+
+        Linked List</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linked-list-operations.html">
+
+        Linked List Operations</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linked-list-types.html">
+
+        Types of Linked List</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/hash-table.html">
+
+        Hash Table</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/heap-data-structure.html">
+
+        Heap Data Structure</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/fibonacci-heap.html">
+
+        Fibonacci Heap</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/decrease-key-and-delete-node-from-a-fibonacci-heap.html">
+
+        Decrease Key and Delete node from Fibonacci Heap</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/trees.html">
+
+        Tree Data Structure</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/tree-traversal.html">
+
+        Tree Traversal</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/binary-tree.html">
+
+        Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/full-binary-tree.html">
+
+        Full Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/perfect-binary-tree.html">
+
+        Perfect Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/complete-binary-tree.html">
+
+        Complete Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/balanced-binary-tree.html">
+
+        Balanced Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/binary-search-tree.html">
+
+        Binary Search Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/avl-tree.html">
+
+        AVL Tree</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/b-tree.html">
+
+        B Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-into-a-b-tree.html">
+
+        Insertion into B-tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deletion-from-a-b-tree.html">
+
+        Deletion from B-tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/b-plus-tree.html">
+
+        B+ Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-on-a-b-plus-tree.html">
+
+        Insertion on a B+ Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deletion-from-a-b-plus-tree.html">
+
+        Deletion from a B+ Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/red-black-tree.html">
+
+        Red Black Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-in-a-red-black-tree.html">
+
+        Insertion in Red Black Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deletion-from-a-red-black-tree.html">
+
+        Deletion from Red Black Tree</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph.html">
+
+        Graph Data Structure</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/spanning-tree-and-minimum-spanning-tree.html">
+
+        Spanning Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/strongly-connected-components.html">
+
+        Strongly Connected Components</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-adjacency-matrix.html">
+
+        Adjacency Matrix</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-adjacency-list.html">
+
+        Adjacency List</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-dfs.html">
+
+        DFS Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-bfs.html">
+
+        Breadth-first Search</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/bellman-ford-algorithm.html">
+
+        Bellman Ford's Algorithm</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/bubble-sort.html">
+
+        Bubble Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/selection-sort.html">
+
+        Selection Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-sort.html">
+
+        Insertion Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/merge-sort.html">
+
+        Merge Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/quick-sort.html">
+
+        Quick Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/counting-sort.html">
+
+        Counting Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/radix-sort.html">
+
+        Radix Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/bucket-sort.html">
+
+        Bucket Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/heap-sort.html">
+
+        Heap Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/shell-sort.html">
+
+        Shell Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linear-search.html">
+
+        Linear Search</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/binary-search.html">
+
+        Binary Search</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/greedy-algorithm.html">
+
+        Greedy Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/ford-fulkerson-algorithm.html">
+
+        Ford-Fulkerson Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/dijkstra-algorithm.html">
+
+        Dijkstra's Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/kruskal-algorithm.html">
+
+        Kruskal's Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/prim-algorithm.html">
+
+        Prim's Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/huffman-coding.html">
+
+        Huffman Code</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/dynamic-programming.html">
+
+        Dynamic Programming</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/floyd-warshall-algorithm.html">
+
+        Floyd Warshall Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/longest-common-subsequence.html">
+
+        Longest Common Subsequence</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/backtracking-algorithm.html">
+
+        Backtracking Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/rabin-karp-algorithm.html">
+
+        Rabin-Karp Algorithm</a></button>
+<br>
+<br/>
+<h2>Free Courses on YouTube</h2>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+            https://www.youtube.com/watch?v=IbSXF7eT-AU&amp;list=PLR_5PTwg_uAQw40OhdvAwN4NvzWv0xOZ2">
+
+            Python Full Course Playlist</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://www.youtube.com/watch?v=UEl6wB90Gs8">
+
+            105 STL Algorithms in Less Than an Hour</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://www.youtube.com/watch?v=zZXTgN7L1UU&amp;list=PLR_5PTwg_uAS6C1cSMjU6oVhOcCX8Zu_4">
+
+            C++ STL Playlist</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://youtu.be/ty9756v3kc8">
+
+            Learn Node.js </a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://youtu.be/exrIpdS3Crc">
+
+            Learn Data Science Full course</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://youtu.be/Q8tDO2uSk5U">
+
+            Learn Computer Networking Full course</a></button>
+<br/>
+</br></br></br></br></br></br></br></br></ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<footer class="afooter" style="margin-left:20px">
+<p>
+<a href="/cookie-policy.html">Cookie policy</a> |
+
+        <a href="/privacy-policy.html">Privacy policy</a> |
+
+        <a href="/terms-of-use.html">Terms of use</a> |
+
+        <a href="/disclaimer.html">Disclaimer</a> |
+
+        <a href="/about-us.html">About Us</a>
+</p>
+<p>
+
+        © 2023 <a href="https://pythonread.github.io">https://pythonread.github.io</a>
+</p>
+</footer>
+<script type="text/javascript">
+
+    document.addEventListener('DOMContentLoaded', function () { htmlTableOfContents() }); function htmlTableOfContents(documentRef) { var documentRef = documentRef || document; var toc = documentRef.getElementById("toc"); var headings = [].slice.call(documentRef.body.querySelectorAll('h2, h3')); headings.forEach(function (heading, index) { var ref = "toc" + index; if (heading.hasAttribute("id")) { ref = heading.getAttribute("id") } else { heading.setAttribute("id", ref) } var link = documentRef.createElement("a"); link.setAttribute("href", "#" + ref); link.textContent = heading.textContent; var div = documentRef.createElement("div"); div.setAttribute("class", heading.tagName.toLowerCase()); div.appendChild(link); toc.appendChild(div) }) } try { module.exports = htmlTableOfContents } catch (e) { } function isScrolledIntoView(el) { var rect = el.getBoundingClientRect(); var elemTop = rect.top; var elemBottom = rect.bottom; var isVisible = (elemTop >= -10) && (elemBottom <= (window.innerHeight)); return isVisible } function highlightMenu() { var headers = document.querySelectorAll("h2, h3"); for (var i = 0; i < headers.length; i += 1) { if (isScrolledIntoView(headers[i])) { var childDivs = document.getElementById('toc').getElementsByTagName('div'); var c = childDivs[i].classList; c.add("active"); for (var j = 0; j < i; j += 1) { var c = childDivs[j].classList; c.remove("active") } for (var j = i + 1; j < childDivs.length; j += 1) { var c = childDivs[j].classList; c.remove("active") } break } } } function highlightMenuLastItem() { var childDivs = document.getElementById('toc').getElementsByTagName('div'); for (var j = 0; j < childDivs.length - 1; j += 1) { var c = childDivs[j].classList; c.remove("active") } var c = childDivs[childDivs.length - 1].classList; c.add("active") } window.addEventListener("click", function (event) { highlightMenu() }); window.onscroll = function (e) { highlightMenu(); if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) { highlightMenuLastItem() } }; function mobileMenu() { var classes = document.getElementById('nav-toggle-icon').classList; if (classes.contains("active")) { classes.remove("active") } else { classes.add("active") } var classes = document.getElementById('menu-wrapper').classList; if (classes.contains("active")) { classes.remove("active") } else { classes.add("active") } }
+
+</script>
+<script type="text/javascript">
+
+    function changepy(){
+
+        document.getElementById('py1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('java1').className = 'tabbed-editor__node';
+
+        document.getElementById('c1').className = 'tabbed-editor__node';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node';
+
+        document.getElementById('python-code').className = 'code-editor__area code-editor__area--active';
+
+        document.getElementById('java-code').className = 'code-editor__area';
+
+        document.getElementById('c-code').className = 'code-editor__area';
+
+        document.getElementById('cpp-code').className = 'code-editor__area';
+
+
+
+    }
+
+    function changecpp(){
+
+        document.getElementById('py1').className = 'tabbed-editor__node';
+
+        document.getElementById('java1').className = 'tabbed-editor__node';
+
+        document.getElementById('c1').className = 'tabbed-editor__node';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('python-code').className = 'code-editor__area';
+
+        document.getElementById('java-code').className = 'code-editor__area';
+
+        document.getElementById('c-code').className = 'code-editor__area';
+
+        document.getElementById('cpp-code').className = 'code-editor__area code-editor__area--active';
+
+    }
+
+    function changejava(){
+
+       document.getElementById('py1').className = 'tabbed-editor__node';
+
+        document.getElementById('java1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('c1').className = 'tabbed-editor__node';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node';
+
+        document.getElementById('python-code').className = 'code-editor__area';
+
+        document.getElementById('java-code').className = 'code-editor__area code-editor__area--active';
+
+        document.getElementById('c-code').className = 'code-editor__area';
+
+        document.getElementById('cpp-code').className = 'code-editor__area';
+
+    }
+
+    function changec(){
+
+        document.getElementById('py1').className = 'tabbed-editor__node';
+
+        document.getElementById('java1').className = 'tabbed-editor__node';
+
+        document.getElementById('c1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node';
+
+        document.getElementById('python-code').className = 'code-editor__area';
+
+        document.getElementById('java-code').className = 'code-editor__area';
+
+        document.getElementById('c-code').className = 'code-editor__area code-editor__area--active';
+
+        document.getElementById('cpp-code').className = 'code-editor__area';
+
+    }
+
+    
+
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>

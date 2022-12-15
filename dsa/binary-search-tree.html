@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<title>Binary Search Tree</title>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-HCERBDV76D"></script>
+<script>
+
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() { dataLayer.push(arguments); }
+
+        gtag('js', new Date());
+
+
+
+        gtag('config', 'G-HCERBDV76D');
+
+    </script>
+<meta content="B0487B46A104E90209E8A3BEA24ECA0E" name="msvalidate.01"/>
+<meta content="f044b3a12c7918f1" name="yandex-verification"/>
+<!--end-->
+<meta content="learn about data types, variables, lists, tuples, dictionaries,if else,DSA,loops,user-defined functions, oop, threading and scripting." name="description"/>
+<meta content="learnPython" name="author"/>
+<meta content="Learn Python for free,learn python for beginners,Core Python,Web frameworks,Multiprocess architecture,Serverside templating language,python tutorials,python4" name="keywords"/>
+<meta content="website" property="og:type"/>
+<meta content="US-CA" name="”geo.region”"/>
+<meta content="353 Jane Stanford Way, Stanford, CA 94305, United States" name="”geo.placename”"/>
+<meta content="37.430089898615456;-122.17332683124829" name="”geo.position”"/>
+<meta content="37.430089898615456, -122.17332683124829" name="”ICBM”"/>
+<link href="https://pythonread.github.io/?m=1" rel="alternate"/>
+<link href="/favicon.png" rel="icon"/>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="/style1.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/style2.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/style0.css" media="all" rel="stylesheet" type="text/css"/>
+<!--<![endif]-->
+</head>
+<body>
+<div class="nav-wrapper">
+<div class="container">
+<nav>
+<div class="logo wave">
+<a href="/" id="logo">
+
+                        Python Tutorial
+
+                    </a>
+</div>
+<div class="nav-toggle-icon" id="nav-toggle-icon" onclick="mobileMenu()">
+<div class="material-hamburger">
+<span>
+</span>
+<span>
+</span>
+<span>
+</span>
+</div>
+</div>
+<div class="menu-wrapper" id="menu-wrapper">
+<div class="nav-indicator">
+</div>
+<ul class="menus">
+<li>
+<a class="wave" href="/">
+
+                                Home
+
+                            </a>
+</li>
+<li>
+<a class="wave" href="/projects.html">
+
+                                Projects
+
+                            </a>
+</li>
+<li>
+<a class="wave" href="/free-course.html" target="_blank">
+
+                                Free Course
+
+                            </a>
+</li>
+<li>
+<a class="wave" href="/dsa.html">
+
+                                DSA
+
+                            </a>
+</li>
+</ul>
+</div>
+</nav>
+</div>
+</div>
+<div class="contents contents--neg" style="margin-top: 60px">
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+<div class="d-flex">
+<div class="left-bar d-none d-lg-block">
+<div class="card-alt mb-10x">
+<h3>Page Index</h3>
+<div class="list">
+<ul>
+<li><a href="/dsa.html#data-structure-1" title="Data Structures (I)">Data Structures
+
+                                                (I)</a></li>
+<li><a href="/dsa.html#data-structure-2" title="Data Structures (II)">Data Structures
+
+                                                (II)</a></li>
+<li><a href="/dsa.html#tree-1" title="Tree based DSA (I)">Tree based DSA (I)</a></li>
+<li><a href="/dsa.html#tree-2" title="Tree based DSA (II)">Tree based DSA (II)</a></li>
+<li><a href="/dsa.html#graph" title="Graph Data Structures and Algorithm">Graph based
+
+                                                DSA</a></li>
+<li><a href="/dsa.html#sorting-searching" title="Sorting and Searching">Sorting and
+
+                                                Searching</a></li>
+<li><a href="/dsa.html#greedy-algorithm" title="Greedy Algorithms">Greedy Algorithms</a>
+</li>
+<li><a href="/dsa.html#dynamic-programming" title="Dynamic Programming">Dynamic
+
+                                                Programming</a></li>
+<li><a href="/dsa.html#other-algorithms" title="Other Algorithms">Other Algorithms</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="right-bar">
+<!--first part end-------------------------------------------->
+<div class="editor-contents">
+        <h1>Binary Search Tree(BST)</h1>
+
+
+        <p class="editor-contents__short-description">In this tutorial, you will learn how Binary Search Tree works. Also, you will find working examples of Binary Search Tree in C, C++, Java and Python.</p>
+
+
+
+          
+
+
+
+<div id="node-1020" class="node node-algorithm clearfix" about="/dsa/binary-search-tree" typeof="sioc:Item foaf:Document">
+
+
+<span property="dc:title" content="Binary Search Tree(BST)" class="rdf-meta element-hidden"></span>
+
+<div class="content">
+<p id="definition">Binary search tree is a data structure that quickly allows us to maintain a sorted list of numbers.</p>
+
+<ul><li>It is called a binary tree because each tree node has a maximum of two children.</li>
+<li>It is called a search tree because it can be used to search for the presence of a number in <code>O(log(n))</code> time.</li>
+</ul><p>The properties that separate a binary search tree from a regular <a href="/dsa/trees.html">binary tree</a> is</p>
+
+<ol><li>All nodes of left subtree are less than the root node</li>
+<li>All nodes of right subtree are more than the root node</li>
+<li>Both subtrees of each node are also BSTs i.e. they have the above two properties</li>
+</ol><figure><img alt="A tree having a right subtree with one value smaller than the root is shown to demonstrate that it is not a valid binary search tree" src="https://www.programiz.com/sites/tutorial2program/files/bst-vs-not-bst.png" title="Binary Search Tree" width="730" height="448"><figcaption>A tree having a right subtree with one value smaller than the root is shown to demonstrate that it is not a valid binary search tree</figcaption></figure><p>The binary tree on the right isn't a binary search tree because the right subtree of the node "3" contains a value smaller than it.</p>
+
+<p>There are two basic operations that you can perform on a binary search tree:</p>
+
+<hr><h2 id="search">Search Operation</h2>
+
+<p>The algorithm depends on the property of BST that if each left subtree has values below root and each right subtree has values above the root.</p>
+
+<p>If the value is below the root, we can say for sure that the value is not in the right subtree; we need to only search in the left subtree and if the value is above the root, we can say for sure that the value is not in the left subtree; we need to only search in the right subtree.</p>
+
+<p><strong>Algorithm:</strong></p>
+
+<pre style="max-height: 600px;"><code class="dsa hljs kotlin">If root == NULL 
+<span class="hljs-keyword">return</span> NULL;
+If number == root-&gt;<span class="hljs-keyword">data</span> 
+<span class="hljs-keyword">return</span> root-&gt;<span class="hljs-keyword">data</span>;
+If number &lt; root-&gt;<span class="hljs-keyword">data</span> 
+<span class="hljs-keyword">return</span> search(root-&gt;left)
+If number &gt; root-&gt;<span class="hljs-keyword">data</span> 
+<span class="hljs-keyword">return</span> search(root-&gt;right)</code></pre>
+
+<p>Let us try to visualize this with a diagram.</p>
+
+<figure><img alt="4 is not found so, traverse through the left subtree of 8" src="//cdn.programiz.com/sites/tutorial2program/files/bst-search-1.png" title="Searching on a Binary Search Tree " width="730" height="384"><figcaption>4 is not found so, traverse through the left subtree of 8</figcaption></figure><figure><img alt="4 is not found so, traverse through the right subtree of 3" src="//cdn.programiz.com/sites/tutorial2program/files/bst-search-2.png" title="Searching on a Binary Search Tree " width="730" height="384"><figcaption>4 is not found so, traverse through the right subtree of 3</figcaption></figure><figure><img alt="4 is not found so, traverse through the left subtree of 6" src="//cdn.programiz.com/sites/tutorial2program/files/bst-search-3.png" title="Searching on a Binary Search Tree " width="730" height="384"><figcaption>4 is not found so, traverse through the left subtree of 6</figcaption></figure><figure><img alt="4 is found" src="//cdn.programiz.com/sites/tutorial2program/files/bst-search-1.png" title="Searching on a Binary Search Tree " width="730" height="384"><figcaption>4 is found</figcaption></figure><p>If the value is found, we return the value so that it gets propagated in each recursion step as shown in the image below.</p>
+
+<p>If you might have noticed, we have called return search(struct node*) four times. When we return either the new node or NULL, the value gets returned again and again until search(root) returns the final result.</p>
+
+<figure><img alt="if the value is found in any of the subtrees, it is propagated up so that in the end it is returned, otherwise null is returned" src="//cdn.programiz.com/sites/tutorial2program/files/bst-search-5.png" title="Search operation in BST" width="730" height="384"><figcaption>If the value is found in any of the subtrees, it is propagated up so that in the end it is returned, otherwise null is returned</figcaption></figure><p>If the value is not found, we eventually reach the left or right child of a leaf node which is NULL and it gets propagated and returned.</p>
+
+<hr><h2 id="insert">Insert Operation</h2>
+
+<p>Inserting a value in the correct position is similar to searching because we try to maintain the rule that the left subtree is lesser than root and the right subtree is larger than root.</p>
+
+<p></p><div class="clearfix"></div><p>We keep going to either right subtree or left subtree depending on the value and when we reach a point left or right subtree is null, we put the new node there.</p>
+
+<p><strong>Algorithm:</strong></p>
+
+<pre style="max-height: 600px;"><code class="dsa hljs kotlin">If node == NULL 
+<span class="hljs-keyword">return</span> createNode(<span class="hljs-keyword">data</span>)
+<span class="hljs-keyword">if</span> (<span class="hljs-keyword">data</span> &lt; node-&gt;<span class="hljs-keyword">data</span>)
+node-&gt;left  = insert(node-&gt;left, <span class="hljs-keyword">data</span>);
+<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">data</span> &gt; node-&gt;<span class="hljs-keyword">data</span>)
+node-&gt;right = insert(node-&gt;right, <span class="hljs-keyword">data</span>);  
+<span class="hljs-keyword">return</span> node;</code></pre>
+
+<p>The algorithm isn't as simple as it looks. Let's try to visualize how we add a number to an existing BST.</p>
+
+<figure><img alt="4<8 so, transverse through the left child of 8" src="//cdn.programiz.com/sites/tutorial2program/files/bst-insert-1.png" title="Insertion operation on a BST" width="730" height="384"><figcaption>4&lt;8 so, transverse through the left child of 8</figcaption></figure><figure><img alt="4>3 so, transverse through the right child of 4" src="//cdn.programiz.com/sites/tutorial2program/files/bst-insert-2.png" title="Insertion operation on a BST" width="730" height="384"><figcaption>4&gt;3 so, transverse through the right child of 8</figcaption></figure><figure><img alt="4<6 so, transverse through the left child of 6" src="//cdn.programiz.com/sites/tutorial2program/files/bst-insert-3.png" title="Insertion operation on a BST" width="730" height="384"><figcaption>4&lt;6 so, transverse through the left child of 6</figcaption></figure><figure><img alt="Insert 4 as a left child of 6" src="//cdn.programiz.com/sites/tutorial2program/files/bst-insert-4.png" title="Insertion operation on a BST" width="730" height="384"><figcaption>Insert 4 as a left child of 6</figcaption></figure><p>We have attached the node but we still have to exit from the function without doing any damage to the rest of the tree. This is where the <code>return node;</code> at the end comes in handy. In the case of <code>NULL</code>, the newly created node is returned and attached to the parent node, otherwise the same node is returned without any change as we go up until we return to the root.</p>
+
+<p>This makes sure that as we move back up the tree, the other node connections aren't changed.</p>
+
+<figure><img alt="Image showing the importance of returning the root element at the end so that the elements don't lose their position during the upward recursion step." src="//cdn.programiz.com/sites/tutorial2program/files/bst-insert-5.png" title="Insertion operation on a BST" width="730" height="384"><figcaption>Image showing the importance of returning the root element at the end so that the elements don't lose their position during the upward recursion step.</figcaption></figure><hr><h2 id="delete">Deletion Operation</h2>
+
+<p>There are three cases for deleting a node from a binary search tree.</p>
+
+<h3>Case I</h3>
+
+<p>In the first case, the node to be deleted is the leaf node. In such a case, simply delete the node from the tree.</p>
+
+<figure><img alt="4 is to be deleted" src="//cdn.programiz.com/sites/tutorial2program/files/bst-delete-1.png" title="Deletion operation on a BST" width="730" height="376"><figcaption>4 is to be deleted</figcaption></figure><figure><img alt="Delete the node" src="//cdn.programiz.com/sites/tutorial2program/files/bst-delete-2.png" title="Deletion operation on a BST" width="730" height="376"><figcaption>Delete the node</figcaption></figure><h3>Case II</h3>
+
+<p>In the second case, the node to be deleted lies has a single child node. In such a case follow the steps below:</p>
+
+<ol><li>Replace that node with its child node.</li>
+<li>Remove the child node from its original position.</li>
+</ol><figure><img alt="6 is to be deleted" src="//cdn.programiz.com/sites/tutorial2program/files/bst-delete-3.png" title="Deletion operation on a BST" width="730" height="376"><figcaption>6 is to be deleted</figcaption></figure><figure><img alt="copy the value of its child to the node" src="//cdn.programiz.com/sites/tutorial2program/files/bst-delete-4.png" title="Deletion operation on a BST" width="730" height="376"><figcaption>copy the value of its child to the node and delete the child</figcaption></figure><figure><img alt="Final tree" src="//cdn.programiz.com/sites/tutorial2program/files/bst-delete-5.png" title="Deletion operation on a BST" width="730" height="292"><figcaption>Final tree</figcaption></figure><h3>Case III</h3>
+
+<p>In the third case, the node to be deleted has two children. In such a case follow the steps below:</p>
+
+<ol><li>Get the inorder successor of that node.</li>
+<li>Replace the node with the inorder successor.</li>
+<li>Remove the inorder successor from its original position.</li>
+</ol><figure><img alt="3 is to be deleted" src="//cdn.programiz.com/sites/tutorial2program/files/bst-delete-6.png" title="Deletion operation on a BST" width="730" height="376"><figcaption>3 is to be deleted</figcaption></figure><figure><img alt="Copy the value of the inorder successor (4) to the node" src="//cdn.programiz.com/sites/tutorial2program/files/bst-delete-6.png" title="Deletion operation on a BST" width="730" height="376"><figcaption>Copy the value of the inorder successor (4) to the node</figcaption></figure><figure><img alt="delete the inorder successor" src="//cdn.programiz.com/sites/tutorial2program/files/bst-delete-8.png" title="Deletion operation on a BST" width="730" height="376"><figcaption>Delete the inorder successor</figcaption></figure><hr><h2 id="code">Python, Java and C/C++ Examples</h2>
+
+<div class="tabbed-editor">
+        <div id="py1" onclick="changepy()" class="tabbed-editor__node tabbed-editor__node--active"><a href="#python-code">Python</a></div>
+        
+        <div id="java1" onclick="changejava()"  class="tabbed-editor__node"><a href="#java-code">Java</a></div>
+        
+        <div id="c1" onclick="changec()" class="tabbed-editor__node"><a href="#c-code">C</a></div>
+        
+        <div id="cpp1" onclick="changecpp()" class="tabbed-editor__node"><a href="#cpp-code">C++</a></div>
+        </div>
+
+<div class="code-editor code-editor--tabbed">
+<div class="code-editor__area code-editor__area--active" id="python-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="python hljs"><span class="hljs-comment"># Binary Search Tree operations in Python</span>
+
+
+<span class="hljs-comment"># Create a node</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Node</span>:</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, key)</span>:</span>
+self.key = key
+self.left = <span class="hljs-literal">None</span>
+self.right = <span class="hljs-literal">None</span>
+
+
+<span class="hljs-comment"># Inorder traversal</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">inorder</span><span class="hljs-params">(root)</span>:</span>
+<span class="hljs-keyword">if</span> root <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">None</span>:
+<span class="hljs-comment"># Traverse left</span>
+inorder(root.left)
+
+<span class="hljs-comment"># Traverse root</span>
+<span class="hljs-keyword">print</span>(str(root.key) + <span class="hljs-string">"-&gt;"</span>, end=<span class="hljs-string">' '</span>)
+
+<span class="hljs-comment"># Traverse right</span>
+inorder(root.right)
+
+
+<span class="hljs-comment"># Insert a node</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">insert</span><span class="hljs-params">(node, key)</span>:</span>
+
+<span class="hljs-comment"># Return a new node if the tree is empty</span>
+<span class="hljs-keyword">if</span> node <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>:
+<span class="hljs-keyword">return</span> Node(key)
+
+<span class="hljs-comment"># Traverse to the right place and insert the node</span>
+<span class="hljs-keyword">if</span> key &lt; node.key:
+node.left = insert(node.left, key)
+<span class="hljs-keyword">else</span>:
+node.right = insert(node.right, key)
+
+<span class="hljs-keyword">return</span> node
+
+
+<span class="hljs-comment"># Find the inorder successor</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">minValueNode</span><span class="hljs-params">(node)</span>:</span>
+current = node
+
+<span class="hljs-comment"># Find the leftmost leaf</span>
+<span class="hljs-keyword">while</span>(current.left <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">None</span>):
+current = current.left
+
+<span class="hljs-keyword">return</span> current
+
+
+<span class="hljs-comment"># Deleting a node</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">deleteNode</span><span class="hljs-params">(root, key)</span>:</span>
+
+<span class="hljs-comment"># Return if the tree is empty</span>
+<span class="hljs-keyword">if</span> root <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>:
+<span class="hljs-keyword">return</span> root
+
+<span class="hljs-comment"># Find the node to be deleted</span>
+<span class="hljs-keyword">if</span> key &lt; root.key:
+root.left = deleteNode(root.left, key)
+<span class="hljs-keyword">elif</span>(key &gt; root.key):
+root.right = deleteNode(root.right, key)
+<span class="hljs-keyword">else</span>:
+<span class="hljs-comment"># If the node is with only one child or no child</span>
+<span class="hljs-keyword">if</span> root.left <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>:
+temp = root.right
+root = <span class="hljs-literal">None</span>
+<span class="hljs-keyword">return</span> temp
+
+<span class="hljs-keyword">elif</span> root.right <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>:
+temp = root.left
+root = <span class="hljs-literal">None</span>
+<span class="hljs-keyword">return</span> temp
+
+<span class="hljs-comment"># If the node has two children,</span>
+<span class="hljs-comment"># place the inorder successor in position of the node to be deleted</span>
+temp = minValueNode(root.right)
+
+root.key = temp.key
+
+<span class="hljs-comment"># Delete the inorder successor</span>
+root.right = deleteNode(root.right, temp.key)
+
+<span class="hljs-keyword">return</span> root
+
+
+root = <span class="hljs-literal">None</span>
+root = insert(root, <span class="hljs-number">8</span>)
+root = insert(root, <span class="hljs-number">3</span>)
+root = insert(root, <span class="hljs-number">1</span>)
+root = insert(root, <span class="hljs-number">6</span>)
+root = insert(root, <span class="hljs-number">7</span>)
+root = insert(root, <span class="hljs-number">10</span>)
+root = insert(root, <span class="hljs-number">14</span>)
+root = insert(root, <span class="hljs-number">4</span>)
+
+<span class="hljs-keyword">print</span>(<span class="hljs-string">"Inorder traversal: "</span>, end=<span class="hljs-string">' '</span>)
+inorder(root)
+
+<span class="hljs-keyword">print</span>(<span class="hljs-string">"\nDelete 10"</span>)
+root = deleteNode(root, <span class="hljs-number">10</span>)
+<span class="hljs-keyword">print</span>(<span class="hljs-string">"Inorder traversal: "</span>, end=<span class="hljs-string">' '</span>)
+inorder(root)</code></pre></div>
+</div>
+
+<div class="code-editor__area" id="java-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="java hljs"><span class="hljs-comment">// Binary Search Tree operations in Java</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BinarySearchTree</span> </span>{
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Node</span> </span>{
+<span class="hljs-keyword">int</span> key;
+Node left, right;
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Node</span><span class="hljs-params">(<span class="hljs-keyword">int</span> item)</span> </span>{
+key = item;
+left = right = <span class="hljs-keyword">null</span>;
+}
+}
+
+Node root;
+
+BinarySearchTree() {
+root = <span class="hljs-keyword">null</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">insert</span><span class="hljs-params">(<span class="hljs-keyword">int</span> key)</span> </span>{
+root = insertKey(root, key);
+}
+
+<span class="hljs-comment">// Insert key in the tree</span>
+<span class="hljs-function">Node <span class="hljs-title">insertKey</span><span class="hljs-params">(Node root, <span class="hljs-keyword">int</span> key)</span> </span>{
+<span class="hljs-comment">// Return a new node if the tree is empty</span>
+<span class="hljs-keyword">if</span> (root == <span class="hljs-keyword">null</span>) {
+root = <span class="hljs-keyword">new</span> Node(key);
+<span class="hljs-keyword">return</span> root;
+}
+
+<span class="hljs-comment">// Traverse to the right place and insert the node</span>
+<span class="hljs-keyword">if</span> (key &lt; root.key)
+root.left = insertKey(root.left, key);
+<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (key &gt; root.key)
+root.right = insertKey(root.right, key);
+
+<span class="hljs-keyword">return</span> root;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">inorder</span><span class="hljs-params">()</span> </span>{
+inorderRec(root);
+}
+
+<span class="hljs-comment">// Inorder Traversal</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">inorderRec</span><span class="hljs-params">(Node root)</span> </span>{
+<span class="hljs-keyword">if</span> (root != <span class="hljs-keyword">null</span>) {
+inorderRec(root.left);
+System.out.print(root.key + <span class="hljs-string">" -&gt; "</span>);
+inorderRec(root.right);
+}
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">deleteKey</span><span class="hljs-params">(<span class="hljs-keyword">int</span> key)</span> </span>{
+root = deleteRec(root, key);
+}
+
+<span class="hljs-function">Node <span class="hljs-title">deleteRec</span><span class="hljs-params">(Node root, <span class="hljs-keyword">int</span> key)</span> </span>{
+<span class="hljs-comment">// Return if the tree is empty</span>
+<span class="hljs-keyword">if</span> (root == <span class="hljs-keyword">null</span>)
+<span class="hljs-keyword">return</span> root;
+
+<span class="hljs-comment">// Find the node to be deleted</span>
+<span class="hljs-keyword">if</span> (key &lt; root.key)
+root.left = deleteRec(root.left, key);
+<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (key &gt; root.key)
+root.right = deleteRec(root.right, key);
+<span class="hljs-keyword">else</span> {
+<span class="hljs-comment">// If the node is with only one child or no child</span>
+<span class="hljs-keyword">if</span> (root.left == <span class="hljs-keyword">null</span>)
+<span class="hljs-keyword">return</span> root.right;
+<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (root.right == <span class="hljs-keyword">null</span>)
+<span class="hljs-keyword">return</span> root.left;
+
+<span class="hljs-comment">// If the node has two children</span>
+<span class="hljs-comment">// Place the inorder successor in position of the node to be deleted</span>
+root.key = minValue(root.right);
+
+<span class="hljs-comment">// Delete the inorder successor</span>
+root.right = deleteRec(root.right, root.key);
+}
+
+<span class="hljs-keyword">return</span> root;
+}
+
+<span class="hljs-comment">// Find the inorder successor</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">minValue</span><span class="hljs-params">(Node root)</span> </span>{
+<span class="hljs-keyword">int</span> minv = root.key;
+<span class="hljs-keyword">while</span> (root.left != <span class="hljs-keyword">null</span>) {
+minv = root.left.key;
+root = root.left;
+}
+<span class="hljs-keyword">return</span> minv;
+}
+
+<span class="hljs-comment">// Driver Program to test above functions</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+BinarySearchTree tree = <span class="hljs-keyword">new</span> BinarySearchTree();
+
+tree.insert(<span class="hljs-number">8</span>);
+tree.insert(<span class="hljs-number">3</span>);
+tree.insert(<span class="hljs-number">1</span>);
+tree.insert(<span class="hljs-number">6</span>);
+tree.insert(<span class="hljs-number">7</span>);
+tree.insert(<span class="hljs-number">10</span>);
+tree.insert(<span class="hljs-number">14</span>);
+tree.insert(<span class="hljs-number">4</span>);
+
+System.out.print(<span class="hljs-string">"Inorder traversal: "</span>);
+tree.inorder();
+
+System.out.println(<span class="hljs-string">"\n\nAfter deleting 10"</span>);
+tree.deleteKey(<span class="hljs-number">10</span>);
+System.out.print(<span class="hljs-string">"Inorder traversal: "</span>);
+tree.inorder();
+}
+}</code></pre></div>
+</div>
+
+<div class="code-editor__area" id="c-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="c hljs cpp"><span class="hljs-comment">// Binary Search Tree operations in C</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdlib.h&gt;</span></span>
+
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">node</span> {</span>
+<span class="hljs-keyword">int</span> key;
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">node</span> *<span class="hljs-title">left</span>, *<span class="hljs-title">right</span>;</span>
+};
+
+<span class="hljs-comment">// Create a node</span>
+<span class="hljs-function">struct node *<span class="hljs-title">newNode</span><span class="hljs-params">(<span class="hljs-keyword">int</span> item)</span> </span>{
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">node</span> *<span class="hljs-title">temp</span> = (<span class="hljs-title">struct</span> <span class="hljs-title">node</span> *)<span class="hljs-title">malloc</span>(<span class="hljs-title">sizeof</span>(<span class="hljs-title">struct</span> <span class="hljs-title">node</span>));</span>
+temp-&gt;key = item;
+temp-&gt;left = temp-&gt;right = <span class="hljs-literal">NULL</span>;
+<span class="hljs-keyword">return</span> temp;
+}
+
+<span class="hljs-comment">// Inorder Traversal</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">inorder</span><span class="hljs-params">(struct node *root)</span> </span>{
+<span class="hljs-keyword">if</span> (root != <span class="hljs-literal">NULL</span>) {
+<span class="hljs-comment">// Traverse left</span>
+inorder(root-&gt;left);
+
+<span class="hljs-comment">// Traverse root</span>
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d -&gt; "</span>, root-&gt;key);
+
+<span class="hljs-comment">// Traverse right</span>
+inorder(root-&gt;right);
+}
+}
+
+<span class="hljs-comment">// Insert a node</span>
+<span class="hljs-function">struct node *<span class="hljs-title">insert</span><span class="hljs-params">(struct node *node, <span class="hljs-keyword">int</span> key)</span> </span>{
+<span class="hljs-comment">// Return a new node if the tree is empty</span>
+<span class="hljs-keyword">if</span> (node == <span class="hljs-literal">NULL</span>) <span class="hljs-keyword">return</span> newNode(key);
+
+<span class="hljs-comment">// Traverse to the right place and insert the node</span>
+<span class="hljs-keyword">if</span> (key &lt; node-&gt;key)
+node-&gt;left = insert(node-&gt;left, key);
+<span class="hljs-keyword">else</span>
+node-&gt;right = insert(node-&gt;right, key);
+
+<span class="hljs-keyword">return</span> node;
+}
+
+<span class="hljs-comment">// Find the inorder successor</span>
+<span class="hljs-function">struct node *<span class="hljs-title">minValueNode</span><span class="hljs-params">(struct node *node)</span> </span>{
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">node</span> *<span class="hljs-title">current</span> = <span class="hljs-title">node</span>;</span>
+
+<span class="hljs-comment">// Find the leftmost leaf</span>
+<span class="hljs-keyword">while</span> (current &amp;&amp; current-&gt;left != <span class="hljs-literal">NULL</span>)
+current = current-&gt;left;
+
+<span class="hljs-keyword">return</span> current;
+}
+
+<span class="hljs-comment">// Deleting a node</span>
+<span class="hljs-function">struct node *<span class="hljs-title">deleteNode</span><span class="hljs-params">(struct node *root, <span class="hljs-keyword">int</span> key)</span> </span>{
+<span class="hljs-comment">// Return if the tree is empty</span>
+<span class="hljs-keyword">if</span> (root == <span class="hljs-literal">NULL</span>) <span class="hljs-keyword">return</span> root;
+
+<span class="hljs-comment">// Find the node to be deleted</span>
+<span class="hljs-keyword">if</span> (key &lt; root-&gt;key)
+root-&gt;left = deleteNode(root-&gt;left, key);
+<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (key &gt; root-&gt;key)
+root-&gt;right = deleteNode(root-&gt;right, key);
+
+<span class="hljs-keyword">else</span> {
+<span class="hljs-comment">// If the node is with only one child or no child</span>
+<span class="hljs-keyword">if</span> (root-&gt;left == <span class="hljs-literal">NULL</span>) {
+struct node *temp = root-&gt;right;
+<span class="hljs-built_in">free</span>(root);
+<span class="hljs-keyword">return</span> temp;
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (root-&gt;right == <span class="hljs-literal">NULL</span>) {
+struct node *temp = root-&gt;left;
+<span class="hljs-built_in">free</span>(root);
+<span class="hljs-keyword">return</span> temp;
+}
+
+<span class="hljs-comment">// If the node has two children</span>
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">node</span> *<span class="hljs-title">temp</span> = <span class="hljs-title">minValueNode</span>(<span class="hljs-title">root</span>-&gt;<span class="hljs-title">right</span>);</span>
+
+<span class="hljs-comment">// Place the inorder successor in position of the node to be deleted</span>
+root-&gt;key = temp-&gt;key;
+
+<span class="hljs-comment">// Delete the inorder successor</span>
+root-&gt;right = deleteNode(root-&gt;right, temp-&gt;key);
+}
+<span class="hljs-keyword">return</span> root;
+}
+
+<span class="hljs-comment">// Driver code</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">node</span> *<span class="hljs-title">root</span> = <span class="hljs-title">NULL</span>;</span>
+root = insert(root, <span class="hljs-number">8</span>);
+root = insert(root, <span class="hljs-number">3</span>);
+root = insert(root, <span class="hljs-number">1</span>);
+root = insert(root, <span class="hljs-number">6</span>);
+root = insert(root, <span class="hljs-number">7</span>);
+root = insert(root, <span class="hljs-number">10</span>);
+root = insert(root, <span class="hljs-number">14</span>);
+root = insert(root, <span class="hljs-number">4</span>);
+
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"Inorder traversal: "</span>);
+inorder(root);
+
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"\nAfter deleting 10\n"</span>);
+root = deleteNode(root, <span class="hljs-number">10</span>);
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"Inorder traversal: "</span>);
+inorder(root);
+}</code></pre></div>
+</div>
+
+<div class="code-editor__area" id="cpp-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="cpp hljs"><span class="hljs-comment">// Binary Search Tree operations in C++</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">node</span> {</span>
+<span class="hljs-keyword">int</span> key;
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">node</span> *<span class="hljs-title">left</span>, *<span class="hljs-title">right</span>;</span>
+};
+
+<span class="hljs-comment">// Create a node</span>
+<span class="hljs-function">struct node *<span class="hljs-title">newNode</span><span class="hljs-params">(<span class="hljs-keyword">int</span> item)</span> </span>{
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">node</span> *<span class="hljs-title">temp</span> = (<span class="hljs-title">struct</span> <span class="hljs-title">node</span> *)<span class="hljs-title">malloc</span>(<span class="hljs-title">sizeof</span>(<span class="hljs-title">struct</span> <span class="hljs-title">node</span>));</span>
+temp-&gt;key = item;
+temp-&gt;left = temp-&gt;right = <span class="hljs-literal">NULL</span>;
+<span class="hljs-keyword">return</span> temp;
+}
+
+<span class="hljs-comment">// Inorder Traversal</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">inorder</span><span class="hljs-params">(struct node *root)</span> </span>{
+<span class="hljs-keyword">if</span> (root != <span class="hljs-literal">NULL</span>) {
+<span class="hljs-comment">// Traverse left</span>
+inorder(root-&gt;left);
+
+<span class="hljs-comment">// Traverse root</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; root-&gt;key &lt;&lt; <span class="hljs-string">" -&gt; "</span>;
+
+<span class="hljs-comment">// Traverse right</span>
+inorder(root-&gt;right);
+}
+}
+
+<span class="hljs-comment">// Insert a node</span>
+<span class="hljs-function">struct node *<span class="hljs-title">insert</span><span class="hljs-params">(struct node *node, <span class="hljs-keyword">int</span> key)</span> </span>{
+<span class="hljs-comment">// Return a new node if the tree is empty</span>
+<span class="hljs-keyword">if</span> (node == <span class="hljs-literal">NULL</span>) <span class="hljs-keyword">return</span> newNode(key);
+
+<span class="hljs-comment">// Traverse to the right place and insert the node</span>
+<span class="hljs-keyword">if</span> (key &lt; node-&gt;key)
+node-&gt;left = insert(node-&gt;left, key);
+<span class="hljs-keyword">else</span>
+node-&gt;right = insert(node-&gt;right, key);
+
+<span class="hljs-keyword">return</span> node;
+}
+
+<span class="hljs-comment">// Find the inorder successor</span>
+<span class="hljs-function">struct node *<span class="hljs-title">minValueNode</span><span class="hljs-params">(struct node *node)</span> </span>{
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">node</span> *<span class="hljs-title">current</span> = <span class="hljs-title">node</span>;</span>
+
+<span class="hljs-comment">// Find the leftmost leaf</span>
+<span class="hljs-keyword">while</span> (current &amp;&amp; current-&gt;left != <span class="hljs-literal">NULL</span>)
+current = current-&gt;left;
+
+<span class="hljs-keyword">return</span> current;
+}
+
+<span class="hljs-comment">// Deleting a node</span>
+<span class="hljs-function">struct node *<span class="hljs-title">deleteNode</span><span class="hljs-params">(struct node *root, <span class="hljs-keyword">int</span> key)</span> </span>{
+<span class="hljs-comment">// Return if the tree is empty</span>
+<span class="hljs-keyword">if</span> (root == <span class="hljs-literal">NULL</span>) <span class="hljs-keyword">return</span> root;
+
+<span class="hljs-comment">// Find the node to be deleted</span>
+<span class="hljs-keyword">if</span> (key &lt; root-&gt;key)
+root-&gt;left = deleteNode(root-&gt;left, key);
+<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (key &gt; root-&gt;key)
+root-&gt;right = deleteNode(root-&gt;right, key);
+<span class="hljs-keyword">else</span> {
+<span class="hljs-comment">// If the node is with only one child or no child</span>
+<span class="hljs-keyword">if</span> (root-&gt;left == <span class="hljs-literal">NULL</span>) {
+struct node *temp = root-&gt;right;
+<span class="hljs-built_in">free</span>(root);
+<span class="hljs-keyword">return</span> temp;
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (root-&gt;right == <span class="hljs-literal">NULL</span>) {
+struct node *temp = root-&gt;left;
+<span class="hljs-built_in">free</span>(root);
+<span class="hljs-keyword">return</span> temp;
+}
+
+<span class="hljs-comment">// If the node has two children</span>
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">node</span> *<span class="hljs-title">temp</span> = <span class="hljs-title">minValueNode</span>(<span class="hljs-title">root</span>-&gt;<span class="hljs-title">right</span>);</span>
+
+<span class="hljs-comment">// Place the inorder successor in position of the node to be deleted</span>
+root-&gt;key = temp-&gt;key;
+
+<span class="hljs-comment">// Delete the inorder successor</span>
+root-&gt;right = deleteNode(root-&gt;right, temp-&gt;key);
+}
+<span class="hljs-keyword">return</span> root;
+}
+
+<span class="hljs-comment">// Driver code</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">node</span> *<span class="hljs-title">root</span> = <span class="hljs-title">NULL</span>;</span>
+root = insert(root, <span class="hljs-number">8</span>);
+root = insert(root, <span class="hljs-number">3</span>);
+root = insert(root, <span class="hljs-number">1</span>);
+root = insert(root, <span class="hljs-number">6</span>);
+root = insert(root, <span class="hljs-number">7</span>);
+root = insert(root, <span class="hljs-number">10</span>);
+root = insert(root, <span class="hljs-number">14</span>);
+root = insert(root, <span class="hljs-number">4</span>);
+
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Inorder traversal: "</span>;
+inorder(root);
+
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"\nAfter deleting 10\n"</span>;
+root = deleteNode(root, <span class="hljs-number">10</span>);
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Inorder traversal: "</span>;
+inorder(root);
+}</code></pre></div>
+</div>
+</div>
+
+<hr><h2 id="complexity">Binary Search Tree Complexities</h2>
+
+<h3>Time Complexity</h3>
+
+<div class="table-responsive">
+<table border="0"><tbody><tr><td><strong>Operation</strong></td>
+          <td><strong>Best Case Complexity</strong></td>
+          <td><strong>Average Case Complexity</strong></td>
+          <td><strong>Worst Case Complexity</strong></td>
+  </tr><tr><td>Search</td>
+          <td>O(log n)</td>
+          <td>O(log n)</td>
+          <td>O(n)</td>
+  </tr><tr><td>Insertion</td>
+          <td>O(log n)</td>
+          <td>O(log n)</td>
+          <td>O(n)</td>
+  </tr><tr><td>Deletion</td>
+          <td>O(log n)</td>
+          <td>O(log n)</td>
+          <td>O(n)</td>
+  </tr></tbody></table></div>
+
+<p>Here, <var>n</var> is the number of nodes in the tree.</p>
+
+<h3>Space Complexity</h3>
+
+<p>The space complexity for all the operations is <var>O(n)</var>.</p>
+
+<hr><h2 id="applications">Binary Search Tree Applications</h2>
+
+<ol><li>In multilevel indexing in the database</li>
+<li>For dynamic sorting</li>
+<li>For managing virtual memory areas in Unix kernel</li>
+</ol></div>
+
+
+
+</div>
+
+
+        <div class="tutorial-toc"><div class="tutorial-toc__inner"><h3 class="tutorial-toc__title">Table of Contents
+<button class="btn btn--clear align-items-center">
+<svg class="programiz-icon"><use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#x"></use></svg></button></h3><div class="tutorial-toc__links"><ul><li><a href="#introduction">Introduction</a></li>
+<li><a href="#search">Search Operation</a></li>
+<li><a href="#insert">Insert Operation</a></li>
+<li><a href="#delete">Deletion Operation</a></li>
+<li><a href="#code">Python, Java and C/C++ Examples</a></li>
+<li><a href="#complexity">Binary Search Tree Complexities</a></li>
+<li><a href="#applications">Binary Search Tree Applications</a></li>
+</ul></div></div></div>                          </div>
+<!--second------------------------------------------->
+<div>
+<ul>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/stack.html">
+
+        Stack</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/queue.html">
+
+        Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/types-of-queue.html">
+
+        Types of Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/circular-queue.html">
+
+        Circular Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/priority-queue.html">
+
+        Priority Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deque.html">
+
+        Deque</a></button>
+<br/>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linked-list.html">
+
+        Linked List</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linked-list-operations.html">
+
+        Linked List Operations</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linked-list-types.html">
+
+        Types of Linked List</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/hash-table.html">
+
+        Hash Table</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/heap-data-structure.html">
+
+        Heap Data Structure</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/fibonacci-heap.html">
+
+        Fibonacci Heap</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/decrease-key-and-delete-node-from-a-fibonacci-heap.html">
+
+        Decrease Key and Delete node from Fibonacci Heap</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/trees.html">
+
+        Tree Data Structure</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/tree-traversal.html">
+
+        Tree Traversal</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/binary-tree.html">
+
+        Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/full-binary-tree.html">
+
+        Full Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/perfect-binary-tree.html">
+
+        Perfect Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/complete-binary-tree.html">
+
+        Complete Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/balanced-binary-tree.html">
+
+        Balanced Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/binary-search-tree.html">
+
+        Binary Search Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/avl-tree.html">
+
+        AVL Tree</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/b-tree.html">
+
+        B Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-into-a-b-tree.html">
+
+        Insertion into B-tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deletion-from-a-b-tree.html">
+
+        Deletion from B-tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/b-plus-tree.html">
+
+        B+ Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-on-a-b-plus-tree.html">
+
+        Insertion on a B+ Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deletion-from-a-b-plus-tree.html">
+
+        Deletion from a B+ Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/red-black-tree.html">
+
+        Red Black Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-in-a-red-black-tree.html">
+
+        Insertion in Red Black Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deletion-from-a-red-black-tree.html">
+
+        Deletion from Red Black Tree</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph.html">
+
+        Graph Data Structure</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/spanning-tree-and-minimum-spanning-tree.html">
+
+        Spanning Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/strongly-connected-components.html">
+
+        Strongly Connected Components</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-adjacency-matrix.html">
+
+        Adjacency Matrix</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-adjacency-list.html">
+
+        Adjacency List</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-dfs.html">
+
+        DFS Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-bfs.html">
+
+        Breadth-first Search</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/bellman-ford-algorithm.html">
+
+        Bellman Ford's Algorithm</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/bubble-sort.html">
+
+        Bubble Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/selection-sort.html">
+
+        Selection Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-sort.html">
+
+        Insertion Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/merge-sort.html">
+
+        Merge Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/quick-sort.html">
+
+        Quick Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/counting-sort.html">
+
+        Counting Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/radix-sort.html">
+
+        Radix Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/bucket-sort.html">
+
+        Bucket Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/heap-sort.html">
+
+        Heap Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/shell-sort.html">
+
+        Shell Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linear-search.html">
+
+        Linear Search</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/binary-search.html">
+
+        Binary Search</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/greedy-algorithm.html">
+
+        Greedy Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/ford-fulkerson-algorithm.html">
+
+        Ford-Fulkerson Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/dijkstra-algorithm.html">
+
+        Dijkstra's Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/kruskal-algorithm.html">
+
+        Kruskal's Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/prim-algorithm.html">
+
+        Prim's Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/huffman-coding.html">
+
+        Huffman Code</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/dynamic-programming.html">
+
+        Dynamic Programming</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/floyd-warshall-algorithm.html">
+
+        Floyd Warshall Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/longest-common-subsequence.html">
+
+        Longest Common Subsequence</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/backtracking-algorithm.html">
+
+        Backtracking Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/rabin-karp-algorithm.html">
+
+        Rabin-Karp Algorithm</a></button>
+<br>
+<br/>
+<h2>Free Courses on YouTube</h2>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+            https://www.youtube.com/watch?v=IbSXF7eT-AU&amp;list=PLR_5PTwg_uAQw40OhdvAwN4NvzWv0xOZ2">
+
+            Python Full Course Playlist</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://www.youtube.com/watch?v=UEl6wB90Gs8">
+
+            105 STL Algorithms in Less Than an Hour</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://www.youtube.com/watch?v=zZXTgN7L1UU&amp;list=PLR_5PTwg_uAS6C1cSMjU6oVhOcCX8Zu_4">
+
+            C++ STL Playlist</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://youtu.be/ty9756v3kc8">
+
+            Learn Node.js </a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://youtu.be/exrIpdS3Crc">
+
+            Learn Data Science Full course</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://youtu.be/Q8tDO2uSk5U">
+
+            Learn Computer Networking Full course</a></button>
+<br/>
+</br></br></br></br></br></br></br></br></ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<footer class="afooter" style="margin-left:20px">
+<p>
+<a href="/cookie-policy.html">Cookie policy</a> |
+
+        <a href="/privacy-policy.html">Privacy policy</a> |
+
+        <a href="/terms-of-use.html">Terms of use</a> |
+
+        <a href="/disclaimer.html">Disclaimer</a> |
+
+        <a href="/about-us.html">About Us</a>
+</p>
+<p>
+
+        © 2023 <a href="https://pythonread.github.io">https://pythonread.github.io</a>
+</p>
+</footer>
+<script type="text/javascript">
+
+    document.addEventListener('DOMContentLoaded', function () { htmlTableOfContents() }); function htmlTableOfContents(documentRef) { var documentRef = documentRef || document; var toc = documentRef.getElementById("toc"); var headings = [].slice.call(documentRef.body.querySelectorAll('h2, h3')); headings.forEach(function (heading, index) { var ref = "toc" + index; if (heading.hasAttribute("id")) { ref = heading.getAttribute("id") } else { heading.setAttribute("id", ref) } var link = documentRef.createElement("a"); link.setAttribute("href", "#" + ref); link.textContent = heading.textContent; var div = documentRef.createElement("div"); div.setAttribute("class", heading.tagName.toLowerCase()); div.appendChild(link); toc.appendChild(div) }) } try { module.exports = htmlTableOfContents } catch (e) { } function isScrolledIntoView(el) { var rect = el.getBoundingClientRect(); var elemTop = rect.top; var elemBottom = rect.bottom; var isVisible = (elemTop >= -10) && (elemBottom <= (window.innerHeight)); return isVisible } function highlightMenu() { var headers = document.querySelectorAll("h2, h3"); for (var i = 0; i < headers.length; i += 1) { if (isScrolledIntoView(headers[i])) { var childDivs = document.getElementById('toc').getElementsByTagName('div'); var c = childDivs[i].classList; c.add("active"); for (var j = 0; j < i; j += 1) { var c = childDivs[j].classList; c.remove("active") } for (var j = i + 1; j < childDivs.length; j += 1) { var c = childDivs[j].classList; c.remove("active") } break } } } function highlightMenuLastItem() { var childDivs = document.getElementById('toc').getElementsByTagName('div'); for (var j = 0; j < childDivs.length - 1; j += 1) { var c = childDivs[j].classList; c.remove("active") } var c = childDivs[childDivs.length - 1].classList; c.add("active") } window.addEventListener("click", function (event) { highlightMenu() }); window.onscroll = function (e) { highlightMenu(); if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) { highlightMenuLastItem() } }; function mobileMenu() { var classes = document.getElementById('nav-toggle-icon').classList; if (classes.contains("active")) { classes.remove("active") } else { classes.add("active") } var classes = document.getElementById('menu-wrapper').classList; if (classes.contains("active")) { classes.remove("active") } else { classes.add("active") } }
+
+</script>
+<script type="text/javascript">
+
+    function changepy(){
+
+        document.getElementById('py1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('java1').className = 'tabbed-editor__node';
+
+        document.getElementById('c1').className = 'tabbed-editor__node';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node';
+
+        document.getElementById('python-code').className = 'code-editor__area code-editor__area--active';
+
+        document.getElementById('java-code').className = 'code-editor__area';
+
+        document.getElementById('c-code').className = 'code-editor__area';
+
+        document.getElementById('cpp-code').className = 'code-editor__area';
+
+
+
+    }
+
+    function changecpp(){
+
+        document.getElementById('py1').className = 'tabbed-editor__node';
+
+        document.getElementById('java1').className = 'tabbed-editor__node';
+
+        document.getElementById('c1').className = 'tabbed-editor__node';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('python-code').className = 'code-editor__area';
+
+        document.getElementById('java-code').className = 'code-editor__area';
+
+        document.getElementById('c-code').className = 'code-editor__area';
+
+        document.getElementById('cpp-code').className = 'code-editor__area code-editor__area--active';
+
+    }
+
+    function changejava(){
+
+       document.getElementById('py1').className = 'tabbed-editor__node';
+
+        document.getElementById('java1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('c1').className = 'tabbed-editor__node';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node';
+
+        document.getElementById('python-code').className = 'code-editor__area';
+
+        document.getElementById('java-code').className = 'code-editor__area code-editor__area--active';
+
+        document.getElementById('c-code').className = 'code-editor__area';
+
+        document.getElementById('cpp-code').className = 'code-editor__area';
+
+    }
+
+    function changec(){
+
+        document.getElementById('py1').className = 'tabbed-editor__node';
+
+        document.getElementById('java1').className = 'tabbed-editor__node';
+
+        document.getElementById('c1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node';
+
+        document.getElementById('python-code').className = 'code-editor__area';
+
+        document.getElementById('java-code').className = 'code-editor__area';
+
+        document.getElementById('c-code').className = 'code-editor__area code-editor__area--active';
+
+        document.getElementById('cpp-code').className = 'code-editor__area';
+
+    }
+
+    
+
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>

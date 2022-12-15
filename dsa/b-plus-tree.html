@@ -1,0 +1,2517 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<title>B Plus Tree</title>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-HCERBDV76D"></script>
+<script>
+
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() { dataLayer.push(arguments); }
+
+        gtag('js', new Date());
+
+
+
+        gtag('config', 'G-HCERBDV76D');
+
+    </script>
+<meta content="B0487B46A104E90209E8A3BEA24ECA0E" name="msvalidate.01"/>
+<meta content="f044b3a12c7918f1" name="yandex-verification"/>
+<!--end-->
+<meta content="learn about data types, variables, lists, tuples, dictionaries,if else,DSA,loops,user-defined functions, oop, threading and scripting." name="description"/>
+<meta content="learnPython" name="author"/>
+<meta content="Learn Python for free,learn python for beginners,Core Python,Web frameworks,Multiprocess architecture,Serverside templating language,python tutorials,python4" name="keywords"/>
+<meta content="website" property="og:type"/>
+<meta content="US-CA" name="”geo.region”"/>
+<meta content="353 Jane Stanford Way, Stanford, CA 94305, United States" name="”geo.placename”"/>
+<meta content="37.430089898615456;-122.17332683124829" name="”geo.position”"/>
+<meta content="37.430089898615456, -122.17332683124829" name="”ICBM”"/>
+<link href="https://pythonread.github.io/?m=1" rel="alternate"/>
+<link href="/favicon.png" rel="icon"/>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="/style1.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/style2.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/style0.css" media="all" rel="stylesheet" type="text/css"/>
+<!--<![endif]-->
+</head>
+<body>
+<div class="nav-wrapper">
+<div class="container">
+<nav>
+<div class="logo wave">
+<a href="/" id="logo">
+
+                        Python Tutorial
+
+                    </a>
+</div>
+<div class="nav-toggle-icon" id="nav-toggle-icon" onclick="mobileMenu()">
+<div class="material-hamburger">
+<span>
+</span>
+<span>
+</span>
+<span>
+</span>
+</div>
+</div>
+<div class="menu-wrapper" id="menu-wrapper">
+<div class="nav-indicator">
+</div>
+<ul class="menus">
+<li>
+<a class="wave" href="/">
+
+                                Home
+
+                            </a>
+</li>
+<li>
+<a class="wave" href="/projects.html">
+
+                                Projects
+
+                            </a>
+</li>
+<li>
+<a class="wave" href="/free-course.html" target="_blank">
+
+                                Free Course
+
+                            </a>
+</li>
+<li>
+<a class="wave" href="/dsa.html">
+
+                                DSA
+
+                            </a>
+</li>
+</ul>
+</div>
+</nav>
+</div>
+</div>
+<div class="contents contents--neg" style="margin-top: 60px">
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+<div class="d-flex">
+<div class="left-bar d-none d-lg-block">
+<div class="card-alt mb-10x">
+<h3>Page Index</h3>
+<div class="list">
+<ul>
+<li><a href="/dsa.html#data-structure-1" title="Data Structures (I)">Data Structures
+
+                                                (I)</a></li>
+<li><a href="/dsa.html#data-structure-2" title="Data Structures (II)">Data Structures
+
+                                                (II)</a></li>
+<li><a href="/dsa.html#tree-1" title="Tree based DSA (I)">Tree based DSA (I)</a></li>
+<li><a href="/dsa.html#tree-2" title="Tree based DSA (II)">Tree based DSA (II)</a></li>
+<li><a href="/dsa.html#graph" title="Graph Data Structures and Algorithm">Graph based
+
+                                                DSA</a></li>
+<li><a href="/dsa.html#sorting-searching" title="Sorting and Searching">Sorting and
+
+                                                Searching</a></li>
+<li><a href="/dsa.html#greedy-algorithm" title="Greedy Algorithms">Greedy Algorithms</a>
+</li>
+<li><a href="/dsa.html#dynamic-programming" title="Dynamic Programming">Dynamic
+
+                                                Programming</a></li>
+<li><a href="/dsa.html#other-algorithms" title="Other Algorithms">Other Algorithms</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="right-bar">
+<!--first part end-------------------------------------------->
+
+<div class="editor-contents">
+        <h1>B+ Tree</h1>
+
+
+        <p class="editor-contents__short-description">In this tutorial, you will learn what a B+ tree is. Also, you will find working examples of searching operation on a B+ tree in C, C++, Java and Python.</p>
+
+
+
+          
+
+
+
+<div id="node-1657" class="node node-algorithm clearfix" about="/dsa/b-plus-tree" typeof="sioc:Item foaf:Document">
+
+
+<span property="dc:title" content="B+ Tree" class="rdf-meta element-hidden"></span>
+
+<div class="content">
+<p id="definition">A B+ tree is an advanced form of a self-balancing tree in which all the values are present in the leaf level.</p>
+
+<p>An important concept to be understood before learning B+ tree is multilevel indexing. In multilevel indexing, the index of indices is created as in figure below. It makes accessing the data easier and faster.</p>
+
+<figure><img alt="Multilevel Indexing using B+ tree" src="//cdn.programiz.com/sites/tutorial2program/files/multilevel-indexing.png" title="Multilevel Indexing" width="811" height="474"><figcaption>Multilevel Indexing using B+ tree</figcaption></figure><hr><h2 id="properties">Properties of a B+ Tree</h2>
+
+<ol><li>All leaves are at the same level.</li>
+<li>The root has at least two children.</li>
+<li>Each node except root can have a maximum of <var>m</var> children and at least <var>m</var><var>/2</var> children.</li>
+<li>Each node can contain a maximum of <var>m</var> <var>- 1</var> keys and a minimum of <var>⌈m/2⌉</var> <var>- 1</var> keys.</li>
+</ol><hr><h2 id="comparison">Comparison between a B-tree and a B+ Tree</h2>
+
+<p>&nbsp;</p>
+
+<figure><img alt="B-tree" src="//cdn.programiz.com/sites/tutorial2program/files/B-tree.png" title="B-tree" width="714" height="312"><figcaption>B-tree</figcaption></figure><figure><img alt="B+ tree" src="//cdn.programiz.com/sites/tutorial2program/files/B+tree.png" title="B+ tree" width="614" height="294"><figcaption>B+ tree</figcaption></figure><p>The data pointers are present only at the leaf nodes on a B+ tree whereas the data pointers are present in the internal, leaf or root nodes on a B-tree.</p>
+
+<p>The leaves are not connected with each other on a B-tree whereas they are connected on a B+ tree.</p>
+
+<p>Operations on a B+ tree are faster than on a B-tree.</p>
+
+<hr><h2 id="search">Searching on a B+ Tree</h2>
+
+<p></p><div class="clearfix"></div><p>The following steps are followed to search for data in a B+ Tree of order <var>m</var>. Let the data to be searched be <var>k</var>.</p>
+
+<ol><li>Start from the root node. Compare k with the keys at the root node <var>[k</var><var>1</var><var>, k</var><var>2</var><var>, k</var><var>3</var><var>,......k</var><var>m - 1</var><var>]</var>.</li>
+<li>If <var>k &lt; k</var><var>1</var>, go to the left child of the root node.</li>
+<li>Else if <var>k == k</var><var>1</var>, compare <var>k</var><var>2</var>. If <code>k &lt; k</code><code>2</code>, k lies between <var>k</var><var>1</var> and <var>k</var><var>2</var>. So, search in the left child of <var>k</var><var>2</var>.</li>
+<li>If <var>k &gt; k</var><var>2</var>, go for <var>k3, k4,...k</var><var>m-1</var> as in steps 2 and 3.</li>
+<li>Repeat the above steps until a leaf node is reached.</li>
+<li>If k exists in the leaf node, return true else return false.</li>
+</ol><hr><h2 id="example">Searching Example on a B+ Tree</h2>
+
+<p>Let us search <var>k =</var> <var>45</var> on the following B+ tree.</p>
+
+<figure><img alt="B+ tree" src="//cdn.programiz.com/sites/tutorial2program/files/search-tree.png" title="B+ tree" width="488" height="216"><figcaption>B+ tree</figcaption></figure><ol><li>Compare k with the root node.
+<figure><img alt="B+ tree search" src="//cdn.programiz.com/sites/tutorial2program/files/B+tree-1.png" title="B+ tree search" width="488" height="216"><figcaption>k is not found at the root</figcaption></figure></li>
+<li>Since k &gt; 25, go to the right child.
+<figure><img alt="B+ tree search" src="//cdn.programiz.com/sites/tutorial2program/files/B+tree-2.png" title="B+ tree search" width="488" height="216"><figcaption>Go to right of the root</figcaption></figure></li>
+<li>Compare k with 35. Since k &gt; 30, compare k with 45.
+<figure><img alt="B+ tree search" src="//cdn.programiz.com/sites/tutorial2program/files/B+tree-3.png" title="B+ tree search" width="488" height="216"><figcaption>k not found</figcaption></figure></li>
+<li>Since k ≥ 45, so go to the right child.
+<figure><img alt="B+ tree search" src="//cdn.programiz.com/sites/tutorial2program/files/B+tree-4.png" title="B+ tree search" width="488" height="216"><figcaption>go to the right</figcaption></figure></li>
+<li>k is found.
+<figure><img alt="B+ tree search" src="//cdn.programiz.com/sites/tutorial2program/files/B+tree-5.png" title="B+ tree search" width="488" height="216"><figcaption>k is found</figcaption></figure></li>
+</ol><hr><h2 id="code">Python, Java and C/C++ Examples</h2>
+
+<div class="tabbed-editor">
+        <div id="py1" onclick="changepy()" class="tabbed-editor__node tabbed-editor__node--active"><a href="#python-code">Python</a></div>
+        
+        <div id="java1" onclick="changejava()"  class="tabbed-editor__node"><a href="#java-code">Java</a></div>
+        
+        <div id="c1" onclick="changec()" class="tabbed-editor__node"><a href="#c-code">C</a></div>
+        
+        <div id="cpp1" onclick="changecpp()" class="tabbed-editor__node"><a href="#cpp-code">C++</a></div>
+        </div>
+
+<div class="code-editor code-editor--tabbed">
+<div class="code-editor__area code-editor__area--active" id="python-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="python hljs"><span class="hljs-comment"># B+ tee in python</span>
+
+
+<span class="hljs-keyword">import</span> math
+
+<span class="hljs-comment"># Node creation</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Node</span>:</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, order)</span>:</span>
+self.order = order
+self.values = []
+self.keys = []
+self.nextKey = <span class="hljs-literal">None</span>
+self.parent = <span class="hljs-literal">None</span>
+self.check_leaf = <span class="hljs-literal">False</span>
+
+<span class="hljs-comment"># Insert at the leaf</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">insert_at_leaf</span><span class="hljs-params">(self, leaf, value, key)</span>:</span>
+<span class="hljs-keyword">if</span> (self.values):
+temp1 = self.values
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(temp1)):
+<span class="hljs-keyword">if</span> (value == temp1[i]):
+self.keys[i].append(key)
+<span class="hljs-keyword">break</span>
+<span class="hljs-keyword">elif</span> (value &lt; temp1[i]):
+self.values = self.values[:i] + [value] + self.values[i:]
+self.keys = self.keys[:i] + [[key]] + self.keys[i:]
+<span class="hljs-keyword">break</span>
+<span class="hljs-keyword">elif</span> (i + <span class="hljs-number">1</span> == len(temp1)):
+self.values.append(value)
+self.keys.append([key])
+<span class="hljs-keyword">break</span>
+<span class="hljs-keyword">else</span>:
+self.values = [value]
+self.keys = [[key]]
+
+
+<span class="hljs-comment"># B plus tree</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BplusTree</span>:</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, order)</span>:</span>
+self.root = Node(order)
+self.root.check_leaf = <span class="hljs-literal">True</span>
+
+<span class="hljs-comment"># Insert operation</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">insert</span><span class="hljs-params">(self, value, key)</span>:</span>
+value = str(value)
+old_node = self.search(value)
+old_node.insert_at_leaf(old_node, value, key)
+
+<span class="hljs-keyword">if</span> (len(old_node.values) == old_node.order):
+node1 = Node(old_node.order)
+node1.check_leaf = <span class="hljs-literal">True</span>
+node1.parent = old_node.parent
+mid = int(math.ceil(old_node.order / <span class="hljs-number">2</span>)) - <span class="hljs-number">1</span>
+node1.values = old_node.values[mid + <span class="hljs-number">1</span>:]
+node1.keys = old_node.keys[mid + <span class="hljs-number">1</span>:]
+node1.nextKey = old_node.nextKey
+old_node.values = old_node.values[:mid + <span class="hljs-number">1</span>]
+old_node.keys = old_node.keys[:mid + <span class="hljs-number">1</span>]
+old_node.nextKey = node1
+self.insert_in_parent(old_node, node1.values[<span class="hljs-number">0</span>], node1)
+
+<span class="hljs-comment"># Search operation for different operations</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">search</span><span class="hljs-params">(self, value)</span>:</span>
+current_node = self.root
+<span class="hljs-keyword">while</span>(current_node.check_leaf == <span class="hljs-literal">False</span>):
+temp2 = current_node.values
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(temp2)):
+<span class="hljs-keyword">if</span> (value == temp2[i]):
+current_node = current_node.keys[i + <span class="hljs-number">1</span>]
+<span class="hljs-keyword">break</span>
+<span class="hljs-keyword">elif</span> (value &lt; temp2[i]):
+current_node = current_node.keys[i]
+<span class="hljs-keyword">break</span>
+<span class="hljs-keyword">elif</span> (i + <span class="hljs-number">1</span> == len(current_node.values)):
+current_node = current_node.keys[i + <span class="hljs-number">1</span>]
+<span class="hljs-keyword">break</span>
+<span class="hljs-keyword">return</span> current_node
+
+<span class="hljs-comment"># Find the node</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">find</span><span class="hljs-params">(self, value, key)</span>:</span>
+l = self.search(value)
+<span class="hljs-keyword">for</span> i, item <span class="hljs-keyword">in</span> enumerate(l.values):
+<span class="hljs-keyword">if</span> item == value:
+<span class="hljs-keyword">if</span> key <span class="hljs-keyword">in</span> l.keys[i]:
+<span class="hljs-keyword">return</span> <span class="hljs-literal">True</span>
+<span class="hljs-keyword">else</span>:
+<span class="hljs-keyword">return</span> <span class="hljs-literal">False</span>
+<span class="hljs-keyword">return</span> <span class="hljs-literal">False</span>
+
+<span class="hljs-comment"># Inserting at the parent</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">insert_in_parent</span><span class="hljs-params">(self, n, value, ndash)</span>:</span>
+<span class="hljs-keyword">if</span> (self.root == n):
+rootNode = Node(n.order)
+rootNode.values = [value]
+rootNode.keys = [n, ndash]
+self.root = rootNode
+n.parent = rootNode
+ndash.parent = rootNode
+<span class="hljs-keyword">return</span>
+
+parentNode = n.parent
+temp3 = parentNode.keys
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(temp3)):
+<span class="hljs-keyword">if</span> (temp3[i] == n):
+parentNode.values = parentNode.values[:i] + \
+[value] + parentNode.values[i:]
+parentNode.keys = parentNode.keys[:i +
+                            <span class="hljs-number">1</span>] + [ndash] + parentNode.keys[i + <span class="hljs-number">1</span>:]
+<span class="hljs-keyword">if</span> (len(parentNode.keys) &gt; parentNode.order):
+parentdash = Node(parentNode.order)
+parentdash.parent = parentNode.parent
+mid = int(math.ceil(parentNode.order / <span class="hljs-number">2</span>)) - <span class="hljs-number">1</span>
+parentdash.values = parentNode.values[mid + <span class="hljs-number">1</span>:]
+parentdash.keys = parentNode.keys[mid + <span class="hljs-number">1</span>:]
+value_ = parentNode.values[mid]
+<span class="hljs-keyword">if</span> (mid == <span class="hljs-number">0</span>):
+  parentNode.values = parentNode.values[:mid + <span class="hljs-number">1</span>]
+<span class="hljs-keyword">else</span>:
+  parentNode.values = parentNode.values[:mid]
+parentNode.keys = parentNode.keys[:mid + <span class="hljs-number">1</span>]
+<span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> parentNode.keys:
+  j.parent = parentNode
+<span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> parentdash.keys:
+  j.parent = parentdash
+self.insert_in_parent(parentNode, value_, parentdash)
+
+<span class="hljs-comment"># Delete a node</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">delete</span><span class="hljs-params">(self, value, key)</span>:</span>
+node_ = self.search(value)
+
+temp = <span class="hljs-number">0</span>
+<span class="hljs-keyword">for</span> i, item <span class="hljs-keyword">in</span> enumerate(node_.values):
+<span class="hljs-keyword">if</span> item == value:
+temp = <span class="hljs-number">1</span>
+
+<span class="hljs-keyword">if</span> key <span class="hljs-keyword">in</span> node_.keys[i]:
+<span class="hljs-keyword">if</span> len(node_.keys[i]) &gt; <span class="hljs-number">1</span>:
+  node_.keys[i].pop(node_.keys[i].index(key))
+<span class="hljs-keyword">elif</span> node_ == self.root:
+  node_.values.pop(i)
+  node_.keys.pop(i)
+<span class="hljs-keyword">else</span>:
+  node_.keys[i].pop(node_.keys[i].index(key))
+  <span class="hljs-keyword">del</span> node_.keys[i]
+  node_.values.pop(node_.values.index(value))
+  self.deleteEntry(node_, value, key)
+<span class="hljs-keyword">else</span>:
+<span class="hljs-keyword">print</span>(<span class="hljs-string">"Value not in Key"</span>)
+<span class="hljs-keyword">return</span>
+<span class="hljs-keyword">if</span> temp == <span class="hljs-number">0</span>:
+<span class="hljs-keyword">print</span>(<span class="hljs-string">"Value not in Tree"</span>)
+<span class="hljs-keyword">return</span>
+
+<span class="hljs-comment"># Delete an entry</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">deleteEntry</span><span class="hljs-params">(self, node_, value, key)</span>:</span>
+
+<span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> node_.check_leaf:
+<span class="hljs-keyword">for</span> i, item <span class="hljs-keyword">in</span> enumerate(node_.keys):
+<span class="hljs-keyword">if</span> item == key:
+node_.keys.pop(i)
+<span class="hljs-keyword">break</span>
+<span class="hljs-keyword">for</span> i, item <span class="hljs-keyword">in</span> enumerate(node_.values):
+<span class="hljs-keyword">if</span> item == value:
+node_.values.pop(i)
+<span class="hljs-keyword">break</span>
+
+<span class="hljs-keyword">if</span> self.root == node_ <span class="hljs-keyword">and</span> len(node_.keys) == <span class="hljs-number">1</span>:
+self.root = node_.keys[<span class="hljs-number">0</span>]
+node_.keys[<span class="hljs-number">0</span>].parent = <span class="hljs-literal">None</span>
+<span class="hljs-keyword">del</span> node_
+<span class="hljs-keyword">return</span>
+<span class="hljs-keyword">elif</span> (len(node_.keys) &lt; int(math.ceil(node_.order / <span class="hljs-number">2</span>)) <span class="hljs-keyword">and</span> node_.check_leaf == <span class="hljs-literal">False</span>) <span class="hljs-keyword">or</span> (len(node_.values) &lt; int(math.ceil((node_.order - <span class="hljs-number">1</span>) / <span class="hljs-number">2</span>)) <span class="hljs-keyword">and</span> node_.check_leaf == <span class="hljs-literal">True</span>):
+
+is_predecessor = <span class="hljs-number">0</span>
+parentNode = node_.parent
+PrevNode = <span class="hljs-number">-1</span>
+NextNode = <span class="hljs-number">-1</span>
+PrevK = <span class="hljs-number">-1</span>
+PostK = <span class="hljs-number">-1</span>
+<span class="hljs-keyword">for</span> i, item <span class="hljs-keyword">in</span> enumerate(parentNode.keys):
+
+<span class="hljs-keyword">if</span> item == node_:
+<span class="hljs-keyword">if</span> i &gt; <span class="hljs-number">0</span>:
+  PrevNode = parentNode.keys[i - <span class="hljs-number">1</span>]
+  PrevK = parentNode.values[i - <span class="hljs-number">1</span>]
+
+<span class="hljs-keyword">if</span> i &lt; len(parentNode.keys) - <span class="hljs-number">1</span>:
+  NextNode = parentNode.keys[i + <span class="hljs-number">1</span>]
+  PostK = parentNode.values[i]
+
+<span class="hljs-keyword">if</span> PrevNode == <span class="hljs-number">-1</span>:
+ndash = NextNode
+value_ = PostK
+<span class="hljs-keyword">elif</span> NextNode == <span class="hljs-number">-1</span>:
+is_predecessor = <span class="hljs-number">1</span>
+ndash = PrevNode
+value_ = PrevK
+<span class="hljs-keyword">else</span>:
+<span class="hljs-keyword">if</span> len(node_.values) + len(NextNode.values) &lt; node_.order:
+ndash = NextNode
+value_ = PostK
+<span class="hljs-keyword">else</span>:
+is_predecessor = <span class="hljs-number">1</span>
+ndash = PrevNode
+value_ = PrevK
+
+<span class="hljs-keyword">if</span> len(node_.values) + len(ndash.values) &lt; node_.order:
+<span class="hljs-keyword">if</span> is_predecessor == <span class="hljs-number">0</span>:
+node_, ndash = ndash, node_
+ndash.keys += node_.keys
+<span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> node_.check_leaf:
+ndash.values.append(value_)
+<span class="hljs-keyword">else</span>:
+ndash.nextKey = node_.nextKey
+ndash.values += node_.values
+
+<span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> ndash.check_leaf:
+<span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> ndash.keys:
+  j.parent = ndash
+
+self.deleteEntry(node_.parent, value_, node_)
+<span class="hljs-keyword">del</span> node_
+<span class="hljs-keyword">else</span>:
+<span class="hljs-keyword">if</span> is_predecessor == <span class="hljs-number">1</span>:
+<span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> node_.check_leaf:
+  ndashpm = ndash.keys.pop(<span class="hljs-number">-1</span>)
+  ndashkm_1 = ndash.values.pop(<span class="hljs-number">-1</span>)
+  node_.keys = [ndashpm] + node_.keys
+  node_.values = [value_] + node_.values
+  parentNode = node_.parent
+  <span class="hljs-keyword">for</span> i, item <span class="hljs-keyword">in</span> enumerate(parentNode.values):
+      <span class="hljs-keyword">if</span> item == value_:
+          p.values[i] = ndashkm_1
+          <span class="hljs-keyword">break</span>
+<span class="hljs-keyword">else</span>:
+  ndashpm = ndash.keys.pop(<span class="hljs-number">-1</span>)
+  ndashkm = ndash.values.pop(<span class="hljs-number">-1</span>)
+  node_.keys = [ndashpm] + node_.keys
+  node_.values = [ndashkm] + node_.values
+  parentNode = node_.parent
+  <span class="hljs-keyword">for</span> i, item <span class="hljs-keyword">in</span> enumerate(p.values):
+      <span class="hljs-keyword">if</span> item == value_:
+          parentNode.values[i] = ndashkm
+          <span class="hljs-keyword">break</span>
+<span class="hljs-keyword">else</span>:
+<span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> node_.check_leaf:
+  ndashp0 = ndash.keys.pop(<span class="hljs-number">0</span>)
+  ndashk0 = ndash.values.pop(<span class="hljs-number">0</span>)
+  node_.keys = node_.keys + [ndashp0]
+  node_.values = node_.values + [value_]
+  parentNode = node_.parent
+  <span class="hljs-keyword">for</span> i, item <span class="hljs-keyword">in</span> enumerate(parentNode.values):
+      <span class="hljs-keyword">if</span> item == value_:
+          parentNode.values[i] = ndashk0
+          <span class="hljs-keyword">break</span>
+<span class="hljs-keyword">else</span>:
+  ndashp0 = ndash.keys.pop(<span class="hljs-number">0</span>)
+  ndashk0 = ndash.values.pop(<span class="hljs-number">0</span>)
+  node_.keys = node_.keys + [ndashp0]
+  node_.values = node_.values + [ndashk0]
+  parentNode = node_.parent
+  <span class="hljs-keyword">for</span> i, item <span class="hljs-keyword">in</span> enumerate(parentNode.values):
+      <span class="hljs-keyword">if</span> item == value_:
+          parentNode.values[i] = ndash.values[<span class="hljs-number">0</span>]
+          <span class="hljs-keyword">break</span>
+
+<span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> ndash.check_leaf:
+<span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> ndash.keys:
+  j.parent = ndash
+<span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> node_.check_leaf:
+<span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> node_.keys:
+  j.parent = node_
+<span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> parentNode.check_leaf:
+<span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> parentNode.keys:
+  j.parent = parentNode
+
+
+<span class="hljs-comment"># Print the tree</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">printTree</span><span class="hljs-params">(tree)</span>:</span>
+lst = [tree.root]
+level = [<span class="hljs-number">0</span>]
+leaf = <span class="hljs-literal">None</span>
+flag = <span class="hljs-number">0</span>
+lev_leaf = <span class="hljs-number">0</span>
+
+node1 = Node(str(level[<span class="hljs-number">0</span>]) + str(tree.root.values))
+
+<span class="hljs-keyword">while</span> (len(lst) != <span class="hljs-number">0</span>):
+x = lst.pop(<span class="hljs-number">0</span>)
+lev = level.pop(<span class="hljs-number">0</span>)
+<span class="hljs-keyword">if</span> (x.check_leaf == <span class="hljs-literal">False</span>):
+<span class="hljs-keyword">for</span> i, item <span class="hljs-keyword">in</span> enumerate(x.keys):
+<span class="hljs-keyword">print</span>(item.values)
+<span class="hljs-keyword">else</span>:
+<span class="hljs-keyword">for</span> i, item <span class="hljs-keyword">in</span> enumerate(x.keys):
+<span class="hljs-keyword">print</span>(item.values)
+<span class="hljs-keyword">if</span> (flag == <span class="hljs-number">0</span>):
+lev_leaf = lev
+leaf = x
+flag = <span class="hljs-number">1</span>
+
+
+record_len = <span class="hljs-number">3</span>
+bplustree = BplusTree(record_len)
+bplustree.insert(<span class="hljs-string">'5'</span>, <span class="hljs-string">'33'</span>)
+bplustree.insert(<span class="hljs-string">'15'</span>, <span class="hljs-string">'21'</span>)
+bplustree.insert(<span class="hljs-string">'25'</span>, <span class="hljs-string">'31'</span>)
+bplustree.insert(<span class="hljs-string">'35'</span>, <span class="hljs-string">'41'</span>)
+bplustree.insert(<span class="hljs-string">'45'</span>, <span class="hljs-string">'10'</span>)
+
+printTree(bplustree)
+
+<span class="hljs-keyword">if</span>(bplustree.find(<span class="hljs-string">'5'</span>, <span class="hljs-string">'34'</span>)):
+<span class="hljs-keyword">print</span>(<span class="hljs-string">"Found"</span>)
+<span class="hljs-keyword">else</span>:
+<span class="hljs-keyword">print</span>(<span class="hljs-string">"Not found"</span>)</code></pre></div>
+</div>
+
+<div class="code-editor__area" id="java-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="java hljs"><span class="hljs-comment">// Searching on a B+ tree in Java</span>
+
+<span class="hljs-keyword">import</span> java.util.*;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BPlusTree</span> </span>{
+<span class="hljs-keyword">int</span> m;
+InternalNode root;
+LeafNode firstLeaf;
+
+<span class="hljs-comment">// Binary search program</span>
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> <span class="hljs-title">binarySearch</span><span class="hljs-params">(DictionaryPair[] dps, <span class="hljs-keyword">int</span> numPairs, <span class="hljs-keyword">int</span> t)</span> </span>{
+Comparator&lt;DictionaryPair&gt; c = <span class="hljs-keyword">new</span> Comparator&lt;DictionaryPair&gt;() {
+<span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">compare</span><span class="hljs-params">(DictionaryPair o1, DictionaryPair o2)</span> </span>{
+Integer a = Integer.valueOf(o1.key);
+Integer b = Integer.valueOf(o2.key);
+<span class="hljs-keyword">return</span> a.compareTo(b);
+}
+};
+<span class="hljs-keyword">return</span> Arrays.binarySearch(dps, <span class="hljs-number">0</span>, numPairs, <span class="hljs-keyword">new</span> DictionaryPair(t, <span class="hljs-number">0</span>), c);
+}
+
+<span class="hljs-comment">// Find the leaf node</span>
+<span class="hljs-function"><span class="hljs-keyword">private</span> LeafNode <span class="hljs-title">findLeafNode</span><span class="hljs-params">(<span class="hljs-keyword">int</span> key)</span> </span>{
+
+Integer[] keys = <span class="hljs-keyword">this</span>.root.keys;
+<span class="hljs-keyword">int</span> i;
+
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-keyword">this</span>.root.degree - <span class="hljs-number">1</span>; i++) {
+<span class="hljs-keyword">if</span> (key &lt; keys[i]) {
+<span class="hljs-keyword">break</span>;
+}
+}
+
+Node child = <span class="hljs-keyword">this</span>.root.childPointers[i];
+<span class="hljs-keyword">if</span> (child <span class="hljs-keyword">instanceof</span> LeafNode) {
+<span class="hljs-keyword">return</span> (LeafNode) child;
+} <span class="hljs-keyword">else</span> {
+<span class="hljs-keyword">return</span> findLeafNode((InternalNode) child, key);
+}
+}
+
+<span class="hljs-comment">// Find the leaf node</span>
+<span class="hljs-function"><span class="hljs-keyword">private</span> LeafNode <span class="hljs-title">findLeafNode</span><span class="hljs-params">(InternalNode node, <span class="hljs-keyword">int</span> key)</span> </span>{
+
+Integer[] keys = node.keys;
+<span class="hljs-keyword">int</span> i;
+
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; node.degree - <span class="hljs-number">1</span>; i++) {
+<span class="hljs-keyword">if</span> (key &lt; keys[i]) {
+<span class="hljs-keyword">break</span>;
+}
+}
+Node childNode = node.childPointers[i];
+<span class="hljs-keyword">if</span> (childNode <span class="hljs-keyword">instanceof</span> LeafNode) {
+<span class="hljs-keyword">return</span> (LeafNode) childNode;
+} <span class="hljs-keyword">else</span> {
+<span class="hljs-keyword">return</span> findLeafNode((InternalNode) node.childPointers[i], key);
+}
+}
+
+<span class="hljs-comment">// Finding the index of the pointer</span>
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> <span class="hljs-title">findIndexOfPointer</span><span class="hljs-params">(Node[] pointers, LeafNode node)</span> </span>{
+<span class="hljs-keyword">int</span> i;
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; pointers.length; i++) {
+<span class="hljs-keyword">if</span> (pointers[i] == node) {
+<span class="hljs-keyword">break</span>;
+}
+}
+<span class="hljs-keyword">return</span> i;
+}
+
+<span class="hljs-comment">// Get the mid point</span>
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getMidpoint</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-keyword">return</span> (<span class="hljs-keyword">int</span>) Math.ceil((<span class="hljs-keyword">this</span>.m + <span class="hljs-number">1</span>) / <span class="hljs-number">2.0</span>) - <span class="hljs-number">1</span>;
+}
+
+<span class="hljs-comment">// Balance the tree</span>
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">handleDeficiency</span><span class="hljs-params">(InternalNode in)</span> </span>{
+
+InternalNode sibling;
+InternalNode parent = in.parent;
+
+<span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.root == in) {
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; in.childPointers.length; i++) {
+<span class="hljs-keyword">if</span> (in.childPointers[i] != <span class="hljs-keyword">null</span>) {
+<span class="hljs-keyword">if</span> (in.childPointers[i] <span class="hljs-keyword">instanceof</span> InternalNode) {
+<span class="hljs-keyword">this</span>.root = (InternalNode) in.childPointers[i];
+<span class="hljs-keyword">this</span>.root.parent = <span class="hljs-keyword">null</span>;
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (in.childPointers[i] <span class="hljs-keyword">instanceof</span> LeafNode) {
+<span class="hljs-keyword">this</span>.root = <span class="hljs-keyword">null</span>;
+}
+}
+}
+}
+
+<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (in.leftSibling != <span class="hljs-keyword">null</span> &amp;&amp; in.leftSibling.isLendable()) {
+sibling = in.leftSibling;
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (in.rightSibling != <span class="hljs-keyword">null</span> &amp;&amp; in.rightSibling.isLendable()) {
+sibling = in.rightSibling;
+
+<span class="hljs-keyword">int</span> borrowedKey = sibling.keys[<span class="hljs-number">0</span>];
+Node pointer = sibling.childPointers[<span class="hljs-number">0</span>];
+
+in.keys[in.degree - <span class="hljs-number">1</span>] = parent.keys[<span class="hljs-number">0</span>];
+in.childPointers[in.degree] = pointer;
+
+parent.keys[<span class="hljs-number">0</span>] = borrowedKey;
+
+sibling.removePointer(<span class="hljs-number">0</span>);
+Arrays.sort(sibling.keys);
+sibling.removePointer(<span class="hljs-number">0</span>);
+shiftDown(in.childPointers, <span class="hljs-number">1</span>);
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (in.leftSibling != <span class="hljs-keyword">null</span> &amp;&amp; in.leftSibling.isMergeable()) {
+
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (in.rightSibling != <span class="hljs-keyword">null</span> &amp;&amp; in.rightSibling.isMergeable()) {
+sibling = in.rightSibling;
+sibling.keys[sibling.degree - <span class="hljs-number">1</span>] = parent.keys[parent.degree - <span class="hljs-number">2</span>];
+Arrays.sort(sibling.keys, <span class="hljs-number">0</span>, sibling.degree);
+parent.keys[parent.degree - <span class="hljs-number">2</span>] = <span class="hljs-keyword">null</span>;
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; in.childPointers.length; i++) {
+<span class="hljs-keyword">if</span> (in.childPointers[i] != <span class="hljs-keyword">null</span>) {
+sibling.prependChildPointer(in.childPointers[i]);
+in.childPointers[i].parent = sibling;
+in.removePointer(i);
+}
+}
+
+parent.removePointer(in);
+
+sibling.leftSibling = in.leftSibling;
+}
+
+<span class="hljs-keyword">if</span> (parent != <span class="hljs-keyword">null</span> &amp;&amp; parent.isDeficient()) {
+handleDeficiency(parent);
+}
+}
+
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">isEmpty</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-keyword">return</span> firstLeaf == <span class="hljs-keyword">null</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> <span class="hljs-title">linearNullSearch</span><span class="hljs-params">(DictionaryPair[] dps)</span> </span>{
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; dps.length; i++) {
+<span class="hljs-keyword">if</span> (dps[i] == <span class="hljs-keyword">null</span>) {
+<span class="hljs-keyword">return</span> i;
+}
+}
+<span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> <span class="hljs-title">linearNullSearch</span><span class="hljs-params">(Node[] pointers)</span> </span>{
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; pointers.length; i++) {
+<span class="hljs-keyword">if</span> (pointers[i] == <span class="hljs-keyword">null</span>) {
+<span class="hljs-keyword">return</span> i;
+}
+}
+<span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">shiftDown</span><span class="hljs-params">(Node[] pointers, <span class="hljs-keyword">int</span> amount)</span> </span>{
+Node[] newPointers = <span class="hljs-keyword">new</span> Node[<span class="hljs-keyword">this</span>.m + <span class="hljs-number">1</span>];
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = amount; i &lt; pointers.length; i++) {
+newPointers[i - amount] = pointers[i];
+}
+pointers = newPointers;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sortDictionary</span><span class="hljs-params">(DictionaryPair[] dictionary)</span> </span>{
+Arrays.sort(dictionary, <span class="hljs-keyword">new</span> Comparator&lt;DictionaryPair&gt;() {
+<span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">compare</span><span class="hljs-params">(DictionaryPair o1, DictionaryPair o2)</span> </span>{
+<span class="hljs-keyword">if</span> (o1 == <span class="hljs-keyword">null</span> &amp;&amp; o2 == <span class="hljs-keyword">null</span>) {
+<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+<span class="hljs-keyword">if</span> (o1 == <span class="hljs-keyword">null</span>) {
+<span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
+}
+<span class="hljs-keyword">if</span> (o2 == <span class="hljs-keyword">null</span>) {
+<span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;
+}
+<span class="hljs-keyword">return</span> o1.compareTo(o2);
+}
+});
+}
+
+<span class="hljs-keyword">private</span> Node[] splitChildPointers(InternalNode in, <span class="hljs-keyword">int</span> split) {
+
+Node[] pointers = in.childPointers;
+Node[] halfPointers = <span class="hljs-keyword">new</span> Node[<span class="hljs-keyword">this</span>.m + <span class="hljs-number">1</span>];
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = split + <span class="hljs-number">1</span>; i &lt; pointers.length; i++) {
+halfPointers[i - split - <span class="hljs-number">1</span>] = pointers[i];
+in.removePointer(i);
+}
+
+<span class="hljs-keyword">return</span> halfPointers;
+}
+
+<span class="hljs-keyword">private</span> DictionaryPair[] splitDictionary(LeafNode ln, <span class="hljs-keyword">int</span> split) {
+
+DictionaryPair[] dictionary = ln.dictionary;
+
+DictionaryPair[] halfDict = <span class="hljs-keyword">new</span> DictionaryPair[<span class="hljs-keyword">this</span>.m];
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = split; i &lt; dictionary.length; i++) {
+halfDict[i - split] = dictionary[i];
+ln.delete(i);
+}
+
+<span class="hljs-keyword">return</span> halfDict;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">splitInternalNode</span><span class="hljs-params">(InternalNode in)</span> </span>{
+
+InternalNode parent = in.parent;
+
+<span class="hljs-keyword">int</span> midpoint = getMidpoint();
+<span class="hljs-keyword">int</span> newParentKey = in.keys[midpoint];
+Integer[] halfKeys = splitKeys(in.keys, midpoint);
+Node[] halfPointers = splitChildPointers(in, midpoint);
+
+in.degree = linearNullSearch(in.childPointers);
+
+InternalNode sibling = <span class="hljs-keyword">new</span> InternalNode(<span class="hljs-keyword">this</span>.m, halfKeys, halfPointers);
+<span class="hljs-keyword">for</span> (Node pointer : halfPointers) {
+<span class="hljs-keyword">if</span> (pointer != <span class="hljs-keyword">null</span>) {
+pointer.parent = sibling;
+}
+}
+
+sibling.rightSibling = in.rightSibling;
+<span class="hljs-keyword">if</span> (sibling.rightSibling != <span class="hljs-keyword">null</span>) {
+sibling.rightSibling.leftSibling = sibling;
+}
+in.rightSibling = sibling;
+sibling.leftSibling = in;
+
+<span class="hljs-keyword">if</span> (parent == <span class="hljs-keyword">null</span>) {
+
+Integer[] keys = <span class="hljs-keyword">new</span> Integer[<span class="hljs-keyword">this</span>.m];
+keys[<span class="hljs-number">0</span>] = newParentKey;
+InternalNode newRoot = <span class="hljs-keyword">new</span> InternalNode(<span class="hljs-keyword">this</span>.m, keys);
+newRoot.appendChildPointer(in);
+newRoot.appendChildPointer(sibling);
+<span class="hljs-keyword">this</span>.root = newRoot;
+
+in.parent = newRoot;
+sibling.parent = newRoot;
+
+} <span class="hljs-keyword">else</span> {
+
+parent.keys[parent.degree - <span class="hljs-number">1</span>] = newParentKey;
+Arrays.sort(parent.keys, <span class="hljs-number">0</span>, parent.degree);
+
+<span class="hljs-keyword">int</span> pointerIndex = parent.findIndexOfPointer(in) + <span class="hljs-number">1</span>;
+parent.insertChildPointer(sibling, pointerIndex);
+sibling.parent = parent;
+}
+}
+
+<span class="hljs-keyword">private</span> Integer[] splitKeys(Integer[] keys, <span class="hljs-keyword">int</span> split) {
+
+Integer[] halfKeys = <span class="hljs-keyword">new</span> Integer[<span class="hljs-keyword">this</span>.m];
+
+keys[split] = <span class="hljs-keyword">null</span>;
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = split + <span class="hljs-number">1</span>; i &lt; keys.length; i++) {
+halfKeys[i - split - <span class="hljs-number">1</span>] = keys[i];
+keys[i] = <span class="hljs-keyword">null</span>;
+}
+
+<span class="hljs-keyword">return</span> halfKeys;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">insert</span><span class="hljs-params">(<span class="hljs-keyword">int</span> key, <span class="hljs-keyword">double</span> value)</span> </span>{
+<span class="hljs-keyword">if</span> (isEmpty()) {
+
+LeafNode ln = <span class="hljs-keyword">new</span> LeafNode(<span class="hljs-keyword">this</span>.m, <span class="hljs-keyword">new</span> DictionaryPair(key, value));
+
+<span class="hljs-keyword">this</span>.firstLeaf = ln;
+
+} <span class="hljs-keyword">else</span> {
+LeafNode ln = (<span class="hljs-keyword">this</span>.root == <span class="hljs-keyword">null</span>) ? <span class="hljs-keyword">this</span>.firstLeaf : findLeafNode(key);
+
+<span class="hljs-keyword">if</span> (!ln.insert(<span class="hljs-keyword">new</span> DictionaryPair(key, value))) {
+
+ln.dictionary[ln.numPairs] = <span class="hljs-keyword">new</span> DictionaryPair(key, value);
+ln.numPairs++;
+sortDictionary(ln.dictionary);
+
+<span class="hljs-keyword">int</span> midpoint = getMidpoint();
+DictionaryPair[] halfDict = splitDictionary(ln, midpoint);
+
+<span class="hljs-keyword">if</span> (ln.parent == <span class="hljs-keyword">null</span>) {
+
+Integer[] parent_keys = <span class="hljs-keyword">new</span> Integer[<span class="hljs-keyword">this</span>.m];
+parent_keys[<span class="hljs-number">0</span>] = halfDict[<span class="hljs-number">0</span>].key;
+InternalNode parent = <span class="hljs-keyword">new</span> InternalNode(<span class="hljs-keyword">this</span>.m, parent_keys);
+ln.parent = parent;
+parent.appendChildPointer(ln);
+
+} <span class="hljs-keyword">else</span> {
+<span class="hljs-keyword">int</span> newParentKey = halfDict[<span class="hljs-number">0</span>].key;
+ln.parent.keys[ln.parent.degree - <span class="hljs-number">1</span>] = newParentKey;
+Arrays.sort(ln.parent.keys, <span class="hljs-number">0</span>, ln.parent.degree);
+}
+
+LeafNode newLeafNode = <span class="hljs-keyword">new</span> LeafNode(<span class="hljs-keyword">this</span>.m, halfDict, ln.parent);
+
+<span class="hljs-keyword">int</span> pointerIndex = ln.parent.findIndexOfPointer(ln) + <span class="hljs-number">1</span>;
+ln.parent.insertChildPointer(newLeafNode, pointerIndex);
+
+newLeafNode.rightSibling = ln.rightSibling;
+<span class="hljs-keyword">if</span> (newLeafNode.rightSibling != <span class="hljs-keyword">null</span>) {
+newLeafNode.rightSibling.leftSibling = newLeafNode;
+}
+ln.rightSibling = newLeafNode;
+newLeafNode.leftSibling = ln;
+
+<span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.root == <span class="hljs-keyword">null</span>) {
+
+<span class="hljs-keyword">this</span>.root = ln.parent;
+
+} <span class="hljs-keyword">else</span> {
+InternalNode in = ln.parent;
+<span class="hljs-keyword">while</span> (in != <span class="hljs-keyword">null</span>) {
+<span class="hljs-keyword">if</span> (in.isOverfull()) {
+splitInternalNode(in);
+} <span class="hljs-keyword">else</span> {
+<span class="hljs-keyword">break</span>;
+}
+in = in.parent;
+}
+}
+}
+}
+}
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> Double <span class="hljs-title">search</span><span class="hljs-params">(<span class="hljs-keyword">int</span> key)</span> </span>{
+
+<span class="hljs-keyword">if</span> (isEmpty()) {
+<span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+}
+
+LeafNode ln = (<span class="hljs-keyword">this</span>.root == <span class="hljs-keyword">null</span>) ? <span class="hljs-keyword">this</span>.firstLeaf : findLeafNode(key);
+
+DictionaryPair[] dps = ln.dictionary;
+<span class="hljs-keyword">int</span> index = binarySearch(dps, ln.numPairs, key);
+
+<span class="hljs-keyword">if</span> (index &lt; <span class="hljs-number">0</span>) {
+<span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+} <span class="hljs-keyword">else</span> {
+<span class="hljs-keyword">return</span> dps[index].value;
+}
+}
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> ArrayList&lt;Double&gt; <span class="hljs-title">search</span><span class="hljs-params">(<span class="hljs-keyword">int</span> lowerBound, <span class="hljs-keyword">int</span> upperBound)</span> </span>{
+
+ArrayList&lt;Double&gt; values = <span class="hljs-keyword">new</span> ArrayList&lt;Double&gt;();
+
+LeafNode currNode = <span class="hljs-keyword">this</span>.firstLeaf;
+<span class="hljs-keyword">while</span> (currNode != <span class="hljs-keyword">null</span>) {
+
+DictionaryPair dps[] = currNode.dictionary;
+<span class="hljs-keyword">for</span> (DictionaryPair dp : dps) {
+
+<span class="hljs-keyword">if</span> (dp == <span class="hljs-keyword">null</span>) {
+<span class="hljs-keyword">break</span>;
+}
+
+<span class="hljs-keyword">if</span> (lowerBound &lt;= dp.key &amp;&amp; dp.key &lt;= upperBound) {
+values.add(dp.value);
+}
+}
+currNode = currNode.rightSibling;
+
+}
+
+<span class="hljs-keyword">return</span> values;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">BPlusTree</span><span class="hljs-params">(<span class="hljs-keyword">int</span> m)</span> </span>{
+<span class="hljs-keyword">this</span>.m = m;
+<span class="hljs-keyword">this</span>.root = <span class="hljs-keyword">null</span>;
+}
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Node</span> </span>{
+InternalNode parent;
+}
+
+<span class="hljs-keyword">private</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">InternalNode</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Node</span> </span>{
+<span class="hljs-keyword">int</span> maxDegree;
+<span class="hljs-keyword">int</span> minDegree;
+<span class="hljs-keyword">int</span> degree;
+InternalNode leftSibling;
+InternalNode rightSibling;
+Integer[] keys;
+Node[] childPointers;
+
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">appendChildPointer</span><span class="hljs-params">(Node pointer)</span> </span>{
+<span class="hljs-keyword">this</span>.childPointers[degree] = pointer;
+<span class="hljs-keyword">this</span>.degree++;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> <span class="hljs-title">findIndexOfPointer</span><span class="hljs-params">(Node pointer)</span> </span>{
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; childPointers.length; i++) {
+<span class="hljs-keyword">if</span> (childPointers[i] == pointer) {
+<span class="hljs-keyword">return</span> i;
+}
+}
+<span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">insertChildPointer</span><span class="hljs-params">(Node pointer, <span class="hljs-keyword">int</span> index)</span> </span>{
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = degree - <span class="hljs-number">1</span>; i &gt;= index; i--) {
+childPointers[i + <span class="hljs-number">1</span>] = childPointers[i];
+}
+<span class="hljs-keyword">this</span>.childPointers[index] = pointer;
+<span class="hljs-keyword">this</span>.degree++;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">isDeficient</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.degree &lt; <span class="hljs-keyword">this</span>.minDegree;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">isLendable</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.degree &gt; <span class="hljs-keyword">this</span>.minDegree;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">isMergeable</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.degree == <span class="hljs-keyword">this</span>.minDegree;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">isOverfull</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.degree == maxDegree + <span class="hljs-number">1</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">prependChildPointer</span><span class="hljs-params">(Node pointer)</span> </span>{
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = degree - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; i--) {
+childPointers[i + <span class="hljs-number">1</span>] = childPointers[i];
+}
+<span class="hljs-keyword">this</span>.childPointers[<span class="hljs-number">0</span>] = pointer;
+<span class="hljs-keyword">this</span>.degree++;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">removeKey</span><span class="hljs-params">(<span class="hljs-keyword">int</span> index)</span> </span>{
+<span class="hljs-keyword">this</span>.keys[index] = <span class="hljs-keyword">null</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">removePointer</span><span class="hljs-params">(<span class="hljs-keyword">int</span> index)</span> </span>{
+<span class="hljs-keyword">this</span>.childPointers[index] = <span class="hljs-keyword">null</span>;
+<span class="hljs-keyword">this</span>.degree--;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">removePointer</span><span class="hljs-params">(Node pointer)</span> </span>{
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; childPointers.length; i++) {
+<span class="hljs-keyword">if</span> (childPointers[i] == pointer) {
+<span class="hljs-keyword">this</span>.childPointers[i] = <span class="hljs-keyword">null</span>;
+}
+}
+<span class="hljs-keyword">this</span>.degree--;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-title">InternalNode</span><span class="hljs-params">(<span class="hljs-keyword">int</span> m, Integer[] keys)</span> </span>{
+<span class="hljs-keyword">this</span>.maxDegree = m;
+<span class="hljs-keyword">this</span>.minDegree = (<span class="hljs-keyword">int</span>) Math.ceil(m / <span class="hljs-number">2.0</span>);
+<span class="hljs-keyword">this</span>.degree = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">this</span>.keys = keys;
+<span class="hljs-keyword">this</span>.childPointers = <span class="hljs-keyword">new</span> Node[<span class="hljs-keyword">this</span>.maxDegree + <span class="hljs-number">1</span>];
+}
+
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-title">InternalNode</span><span class="hljs-params">(<span class="hljs-keyword">int</span> m, Integer[] keys, Node[] pointers)</span> </span>{
+<span class="hljs-keyword">this</span>.maxDegree = m;
+<span class="hljs-keyword">this</span>.minDegree = (<span class="hljs-keyword">int</span>) Math.ceil(m / <span class="hljs-number">2.0</span>);
+<span class="hljs-keyword">this</span>.degree = linearNullSearch(pointers);
+<span class="hljs-keyword">this</span>.keys = keys;
+<span class="hljs-keyword">this</span>.childPointers = pointers;
+}
+}
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LeafNode</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Node</span> </span>{
+<span class="hljs-keyword">int</span> maxNumPairs;
+<span class="hljs-keyword">int</span> minNumPairs;
+<span class="hljs-keyword">int</span> numPairs;
+LeafNode leftSibling;
+LeafNode rightSibling;
+DictionaryPair[] dictionary;
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">delete</span><span class="hljs-params">(<span class="hljs-keyword">int</span> index)</span> </span>{
+<span class="hljs-keyword">this</span>.dictionary[index] = <span class="hljs-keyword">null</span>;
+numPairs--;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">insert</span><span class="hljs-params">(DictionaryPair dp)</span> </span>{
+<span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.isFull()) {
+<span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+} <span class="hljs-keyword">else</span> {
+<span class="hljs-keyword">this</span>.dictionary[numPairs] = dp;
+numPairs++;
+Arrays.sort(<span class="hljs-keyword">this</span>.dictionary, <span class="hljs-number">0</span>, numPairs);
+
+<span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+}
+}
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">isDeficient</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-keyword">return</span> numPairs &lt; minNumPairs;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">isFull</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-keyword">return</span> numPairs == maxNumPairs;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">isLendable</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-keyword">return</span> numPairs &gt; minNumPairs;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">isMergeable</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-keyword">return</span> numPairs == minNumPairs;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">LeafNode</span><span class="hljs-params">(<span class="hljs-keyword">int</span> m, DictionaryPair dp)</span> </span>{
+<span class="hljs-keyword">this</span>.maxNumPairs = m - <span class="hljs-number">1</span>;
+<span class="hljs-keyword">this</span>.minNumPairs = (<span class="hljs-keyword">int</span>) (Math.ceil(m / <span class="hljs-number">2</span>) - <span class="hljs-number">1</span>);
+<span class="hljs-keyword">this</span>.dictionary = <span class="hljs-keyword">new</span> DictionaryPair[m];
+<span class="hljs-keyword">this</span>.numPairs = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">this</span>.insert(dp);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">LeafNode</span><span class="hljs-params">(<span class="hljs-keyword">int</span> m, DictionaryPair[] dps, InternalNode parent)</span> </span>{
+<span class="hljs-keyword">this</span>.maxNumPairs = m - <span class="hljs-number">1</span>;
+<span class="hljs-keyword">this</span>.minNumPairs = (<span class="hljs-keyword">int</span>) (Math.ceil(m / <span class="hljs-number">2</span>) - <span class="hljs-number">1</span>);
+<span class="hljs-keyword">this</span>.dictionary = dps;
+<span class="hljs-keyword">this</span>.numPairs = linearNullSearch(dps);
+<span class="hljs-keyword">this</span>.parent = parent;
+}
+}
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DictionaryPair</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Comparable</span>&lt;<span class="hljs-title">DictionaryPair</span>&gt; </span>{
+<span class="hljs-keyword">int</span> key;
+<span class="hljs-keyword">double</span> value;
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">DictionaryPair</span><span class="hljs-params">(<span class="hljs-keyword">int</span> key, <span class="hljs-keyword">double</span> value)</span> </span>{
+<span class="hljs-keyword">this</span>.key = key;
+<span class="hljs-keyword">this</span>.value = value;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">compareTo</span><span class="hljs-params">(DictionaryPair o)</span> </span>{
+<span class="hljs-keyword">if</span> (key == o.key) {
+<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (key &gt; o.key) {
+<span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
+} <span class="hljs-keyword">else</span> {
+<span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;
+}
+}
+}
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+BPlusTree bpt = <span class="hljs-keyword">null</span>;
+bpt = <span class="hljs-keyword">new</span> BPlusTree(<span class="hljs-number">3</span>);
+bpt.insert(<span class="hljs-number">5</span>, <span class="hljs-number">33</span>);
+bpt.insert(<span class="hljs-number">15</span>, <span class="hljs-number">21</span>);
+bpt.insert(<span class="hljs-number">25</span>, <span class="hljs-number">31</span>);
+bpt.insert(<span class="hljs-number">35</span>, <span class="hljs-number">41</span>);
+bpt.insert(<span class="hljs-number">45</span>, <span class="hljs-number">10</span>);
+
+<span class="hljs-keyword">if</span> (bpt.search(<span class="hljs-number">15</span>) != <span class="hljs-keyword">null</span>) {
+System.out.println(<span class="hljs-string">"Found"</span>);
+} <span class="hljs-keyword">else</span> {
+System.out.println(<span class="hljs-string">"Not Found"</span>);
+}
+;
+}
+}</code></pre></div>
+</div>
+
+<div class="code-editor__area" id="c-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="c hljs cpp"><span class="hljs-comment">// Searching on a B+ Tree in C</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdbool.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdlib.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string.h&gt;</span></span>
+
+<span class="hljs-comment">// Default order</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> ORDER 3</span>
+
+<span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">record</span> {</span>
+<span class="hljs-keyword">int</span> value;
+} record;
+
+<span class="hljs-comment">// Node</span>
+<span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">node</span> {</span>
+<span class="hljs-keyword">void</span> **pointers;
+<span class="hljs-keyword">int</span> *keys;
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">node</span> *<span class="hljs-title">parent</span>;</span>
+<span class="hljs-keyword">bool</span> is_leaf;
+<span class="hljs-keyword">int</span> num_keys;
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">node</span> *<span class="hljs-title">next</span>;</span>
+} node;
+
+<span class="hljs-keyword">int</span> order = ORDER;
+node *<span class="hljs-built_in">queue</span> = <span class="hljs-literal">NULL</span>;
+<span class="hljs-keyword">bool</span> verbose_output = <span class="hljs-literal">false</span>;
+
+<span class="hljs-comment">// Enqueue</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">enqueue</span><span class="hljs-params">(node *new_node)</span></span>;
+
+<span class="hljs-comment">// Dequeue</span>
+<span class="hljs-function">node *<span class="hljs-title">dequeue</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">height</span><span class="hljs-params">(node *<span class="hljs-keyword">const</span> root)</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">pathToLeaves</span><span class="hljs-params">(node *<span class="hljs-keyword">const</span> root, node *child)</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">printLeaves</span><span class="hljs-params">(node *<span class="hljs-keyword">const</span> root)</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">printTree</span><span class="hljs-params">(node *<span class="hljs-keyword">const</span> root)</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">findAndPrint</span><span class="hljs-params">(node *<span class="hljs-keyword">const</span> root, <span class="hljs-keyword">int</span> key, <span class="hljs-keyword">bool</span> verbose)</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">findAndPrintRange</span><span class="hljs-params">(node *<span class="hljs-keyword">const</span> root, <span class="hljs-keyword">int</span> range1, <span class="hljs-keyword">int</span> range2, <span class="hljs-keyword">bool</span> verbose)</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">findRange</span><span class="hljs-params">(node *<span class="hljs-keyword">const</span> root, <span class="hljs-keyword">int</span> key_start, <span class="hljs-keyword">int</span> key_end, <span class="hljs-keyword">bool</span> verbose,
+<span class="hljs-keyword">int</span> returned_keys[], <span class="hljs-keyword">void</span> *returned_pointers[])</span></span>;
+<span class="hljs-function">node *<span class="hljs-title">findLeaf</span><span class="hljs-params">(node *<span class="hljs-keyword">const</span> root, <span class="hljs-keyword">int</span> key, <span class="hljs-keyword">bool</span> verbose)</span></span>;
+<span class="hljs-function">record *<span class="hljs-title">find</span><span class="hljs-params">(node *root, <span class="hljs-keyword">int</span> key, <span class="hljs-keyword">bool</span> verbose, node **leaf_out)</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">cut</span><span class="hljs-params">(<span class="hljs-keyword">int</span> length)</span></span>;
+
+<span class="hljs-function">record *<span class="hljs-title">makeRecord</span><span class="hljs-params">(<span class="hljs-keyword">int</span> value)</span></span>;
+<span class="hljs-function">node *<span class="hljs-title">makeNode</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span></span>;
+<span class="hljs-function">node *<span class="hljs-title">makeLeaf</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">getLeftIndex</span><span class="hljs-params">(node *parent, node *left)</span></span>;
+<span class="hljs-function">node *<span class="hljs-title">insertIntoLeaf</span><span class="hljs-params">(node *leaf, <span class="hljs-keyword">int</span> key, record *pointer)</span></span>;
+<span class="hljs-function">node *<span class="hljs-title">insertIntoLeafAfterSplitting</span><span class="hljs-params">(node *root, node *leaf, <span class="hljs-keyword">int</span> key,
+record *pointer)</span></span>;
+<span class="hljs-function">node *<span class="hljs-title">insertIntoNode</span><span class="hljs-params">(node *root, node *parent,
+<span class="hljs-keyword">int</span> left_index, <span class="hljs-keyword">int</span> key, node *right)</span></span>;
+<span class="hljs-function">node *<span class="hljs-title">insertIntoNodeAfterSplitting</span><span class="hljs-params">(node *root, node *parent,
+<span class="hljs-keyword">int</span> left_index,
+<span class="hljs-keyword">int</span> key, node *right)</span></span>;
+<span class="hljs-function">node *<span class="hljs-title">insertIntoParent</span><span class="hljs-params">(node *root, node *left, <span class="hljs-keyword">int</span> key, node *right)</span></span>;
+<span class="hljs-function">node *<span class="hljs-title">insertIntoNewRoot</span><span class="hljs-params">(node *left, <span class="hljs-keyword">int</span> key, node *right)</span></span>;
+<span class="hljs-function">node *<span class="hljs-title">startNewTree</span><span class="hljs-params">(<span class="hljs-keyword">int</span> key, record *pointer)</span></span>;
+<span class="hljs-function">node *<span class="hljs-title">insert</span><span class="hljs-params">(node *root, <span class="hljs-keyword">int</span> key, <span class="hljs-keyword">int</span> value)</span></span>;
+
+<span class="hljs-comment">// Enqueue</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">enqueue</span><span class="hljs-params">(node *new_node)</span> </span>{
+node *c;
+<span class="hljs-keyword">if</span> (<span class="hljs-built_in">queue</span> == <span class="hljs-literal">NULL</span>) {
+<span class="hljs-built_in">queue</span> = new_node;
+<span class="hljs-built_in">queue</span>-&gt;next = <span class="hljs-literal">NULL</span>;
+} <span class="hljs-keyword">else</span> {
+c = <span class="hljs-built_in">queue</span>;
+<span class="hljs-keyword">while</span> (c-&gt;next != <span class="hljs-literal">NULL</span>) {
+c = c-&gt;next;
+}
+c-&gt;next = new_node;
+new_node-&gt;next = <span class="hljs-literal">NULL</span>;
+}
+}
+
+<span class="hljs-comment">// Dequeue</span>
+<span class="hljs-function">node *<span class="hljs-title">dequeue</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span> </span>{
+node *n = <span class="hljs-built_in">queue</span>;
+<span class="hljs-built_in">queue</span> = <span class="hljs-built_in">queue</span>-&gt;next;
+n-&gt;next = <span class="hljs-literal">NULL</span>;
+<span class="hljs-keyword">return</span> n;
+}
+
+<span class="hljs-comment">// Print the leaves</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">printLeaves</span><span class="hljs-params">(node *<span class="hljs-keyword">const</span> root)</span> </span>{
+<span class="hljs-keyword">if</span> (root == <span class="hljs-literal">NULL</span>) {
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"Empty tree.\n"</span>);
+<span class="hljs-keyword">return</span>;
+}
+<span class="hljs-keyword">int</span> i;
+node *c = root;
+<span class="hljs-keyword">while</span> (!c-&gt;is_leaf)
+c = c-&gt;pointers[<span class="hljs-number">0</span>];
+<span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>) {
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; c-&gt;num_keys; i++) {
+<span class="hljs-keyword">if</span> (verbose_output)
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"%p "</span>, c-&gt;pointers[i]);
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d "</span>, c-&gt;keys[i]);
+}
+<span class="hljs-keyword">if</span> (verbose_output)
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"%p "</span>, c-&gt;pointers[order - <span class="hljs-number">1</span>]);
+<span class="hljs-keyword">if</span> (c-&gt;pointers[order - <span class="hljs-number">1</span>] != <span class="hljs-literal">NULL</span>) {
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">" | "</span>);
+c = c-&gt;pointers[order - <span class="hljs-number">1</span>];
+} <span class="hljs-keyword">else</span>
+<span class="hljs-keyword">break</span>;
+}
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"\n"</span>);
+}
+
+<span class="hljs-comment">// Calculate height</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">height</span><span class="hljs-params">(node *<span class="hljs-keyword">const</span> root)</span> </span>{
+<span class="hljs-keyword">int</span> h = <span class="hljs-number">0</span>;
+node *c = root;
+<span class="hljs-keyword">while</span> (!c-&gt;is_leaf) {
+c = c-&gt;pointers[<span class="hljs-number">0</span>];
+h++;
+}
+<span class="hljs-keyword">return</span> h;
+}
+
+<span class="hljs-comment">// Get path to root</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">pathToLeaves</span><span class="hljs-params">(node *<span class="hljs-keyword">const</span> root, node *child)</span> </span>{
+<span class="hljs-keyword">int</span> length = <span class="hljs-number">0</span>;
+node *c = child;
+<span class="hljs-keyword">while</span> (c != root) {
+c = c-&gt;parent;
+length++;
+}
+<span class="hljs-keyword">return</span> length;
+}
+
+<span class="hljs-comment">// Print the tree</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">printTree</span><span class="hljs-params">(node *<span class="hljs-keyword">const</span> root)</span> </span>{
+node *n = <span class="hljs-literal">NULL</span>;
+<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">int</span> rank = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">int</span> new_rank = <span class="hljs-number">0</span>;
+
+<span class="hljs-keyword">if</span> (root == <span class="hljs-literal">NULL</span>) {
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"Empty tree.\n"</span>);
+<span class="hljs-keyword">return</span>;
+}
+<span class="hljs-built_in">queue</span> = <span class="hljs-literal">NULL</span>;
+enqueue(root);
+<span class="hljs-keyword">while</span> (<span class="hljs-built_in">queue</span> != <span class="hljs-literal">NULL</span>) {
+n = dequeue();
+<span class="hljs-keyword">if</span> (n-&gt;parent != <span class="hljs-literal">NULL</span> &amp;&amp; n == n-&gt;parent-&gt;pointers[<span class="hljs-number">0</span>]) {
+new_rank = pathToLeaves(root, n);
+<span class="hljs-keyword">if</span> (new_rank != rank) {
+rank = new_rank;
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"\n"</span>);
+}
+}
+<span class="hljs-keyword">if</span> (verbose_output)
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"(%p)"</span>, n);
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; n-&gt;num_keys; i++) {
+<span class="hljs-keyword">if</span> (verbose_output)
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"%p "</span>, n-&gt;pointers[i]);
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d "</span>, n-&gt;keys[i]);
+}
+<span class="hljs-keyword">if</span> (!n-&gt;is_leaf)
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt;= n-&gt;num_keys; i++)
+enqueue(n-&gt;pointers[i]);
+<span class="hljs-keyword">if</span> (verbose_output) {
+<span class="hljs-keyword">if</span> (n-&gt;is_leaf)
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"%p "</span>, n-&gt;pointers[order - <span class="hljs-number">1</span>]);
+<span class="hljs-keyword">else</span>
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"%p "</span>, n-&gt;pointers[n-&gt;num_keys]);
+}
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"| "</span>);
+}
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"\n"</span>);
+}
+
+<span class="hljs-comment">// Find the node and print it</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">findAndPrint</span><span class="hljs-params">(node *<span class="hljs-keyword">const</span> root, <span class="hljs-keyword">int</span> key, <span class="hljs-keyword">bool</span> verbose)</span> </span>{
+node *leaf = <span class="hljs-literal">NULL</span>;
+record *r = find(root, key, verbose, <span class="hljs-literal">NULL</span>);
+<span class="hljs-keyword">if</span> (r == <span class="hljs-literal">NULL</span>)
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"Record not found under key %d.\n"</span>, key);
+<span class="hljs-keyword">else</span>
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"Record at %p -- key %d, value %d.\n"</span>,
+r, key, r-&gt;value);
+}
+
+<span class="hljs-comment">// Find and print the range</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">findAndPrintRange</span><span class="hljs-params">(node *<span class="hljs-keyword">const</span> root, <span class="hljs-keyword">int</span> key_start, <span class="hljs-keyword">int</span> key_end,
+<span class="hljs-keyword">bool</span> verbose)</span> </span>{
+<span class="hljs-keyword">int</span> i;
+<span class="hljs-keyword">int</span> array_size = key_end - key_start + <span class="hljs-number">1</span>;
+<span class="hljs-keyword">int</span> returned_keys[array_size];
+<span class="hljs-keyword">void</span> *returned_pointers[array_size];
+<span class="hljs-keyword">int</span> num_found = findRange(root, key_start, key_end, verbose,
+returned_keys, returned_pointers);
+<span class="hljs-keyword">if</span> (!num_found)
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"None found.\n"</span>);
+<span class="hljs-keyword">else</span> {
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; num_found; i++)
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"Key: %d   Location: %p  Value: %d\n"</span>,
+returned_keys[i],
+returned_pointers[i],
+((record *)
+returned_pointers[i])
+-&gt;value);
+}
+}
+
+<span class="hljs-comment">// Find the range</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">findRange</span><span class="hljs-params">(node *<span class="hljs-keyword">const</span> root, <span class="hljs-keyword">int</span> key_start, <span class="hljs-keyword">int</span> key_end, <span class="hljs-keyword">bool</span> verbose,
+<span class="hljs-keyword">int</span> returned_keys[], <span class="hljs-keyword">void</span> *returned_pointers[])</span> </span>{
+<span class="hljs-keyword">int</span> i, num_found;
+num_found = <span class="hljs-number">0</span>;
+node *n = findLeaf(root, key_start, verbose);
+<span class="hljs-keyword">if</span> (n == <span class="hljs-literal">NULL</span>)
+<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; n-&gt;num_keys &amp;&amp; n-&gt;keys[i] &lt; key_start; i++)
+;
+<span class="hljs-keyword">if</span> (i == n-&gt;num_keys)
+<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+<span class="hljs-keyword">while</span> (n != <span class="hljs-literal">NULL</span>) {
+<span class="hljs-keyword">for</span> (; i &lt; n-&gt;num_keys &amp;&amp; n-&gt;keys[i] &lt;= key_end; i++) {
+returned_keys[num_found] = n-&gt;keys[i];
+returned_pointers[num_found] = n-&gt;pointers[i];
+num_found++;
+}
+n = n-&gt;pointers[order - <span class="hljs-number">1</span>];
+i = <span class="hljs-number">0</span>;
+}
+<span class="hljs-keyword">return</span> num_found;
+}
+
+<span class="hljs-comment">// Find the leaf</span>
+<span class="hljs-function">node *<span class="hljs-title">findLeaf</span><span class="hljs-params">(node *<span class="hljs-keyword">const</span> root, <span class="hljs-keyword">int</span> key, <span class="hljs-keyword">bool</span> verbose)</span> </span>{
+<span class="hljs-keyword">if</span> (root == <span class="hljs-literal">NULL</span>) {
+<span class="hljs-keyword">if</span> (verbose)
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"Empty tree.\n"</span>);
+<span class="hljs-keyword">return</span> root;
+}
+<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;
+node *c = root;
+<span class="hljs-keyword">while</span> (!c-&gt;is_leaf) {
+<span class="hljs-keyword">if</span> (verbose) {
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"["</span>);
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; c-&gt;num_keys - <span class="hljs-number">1</span>; i++)
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d "</span>, c-&gt;keys[i]);
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d] "</span>, c-&gt;keys[i]);
+}
+i = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">while</span> (i &lt; c-&gt;num_keys) {
+<span class="hljs-keyword">if</span> (key &gt;= c-&gt;keys[i])
+i++;
+<span class="hljs-keyword">else</span>
+<span class="hljs-keyword">break</span>;
+}
+<span class="hljs-keyword">if</span> (verbose)
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d -&gt;\n"</span>, i);
+c = (node *)c-&gt;pointers[i];
+}
+<span class="hljs-keyword">if</span> (verbose) {
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"Leaf ["</span>);
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; c-&gt;num_keys - <span class="hljs-number">1</span>; i++)
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d "</span>, c-&gt;keys[i]);
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d] -&gt;\n"</span>, c-&gt;keys[i]);
+}
+<span class="hljs-keyword">return</span> c;
+}
+
+<span class="hljs-function">record *<span class="hljs-title">find</span><span class="hljs-params">(node *root, <span class="hljs-keyword">int</span> key, <span class="hljs-keyword">bool</span> verbose, node **leaf_out)</span> </span>{
+<span class="hljs-keyword">if</span> (root == <span class="hljs-literal">NULL</span>) {
+<span class="hljs-keyword">if</span> (leaf_out != <span class="hljs-literal">NULL</span>) {
+*leaf_out = <span class="hljs-literal">NULL</span>;
+}
+<span class="hljs-keyword">return</span> <span class="hljs-literal">NULL</span>;
+}
+
+<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;
+node *leaf = <span class="hljs-literal">NULL</span>;
+
+leaf = findLeaf(root, key, verbose);
+
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; leaf-&gt;num_keys; i++)
+<span class="hljs-keyword">if</span> (leaf-&gt;keys[i] == key)
+<span class="hljs-keyword">break</span>;
+<span class="hljs-keyword">if</span> (leaf_out != <span class="hljs-literal">NULL</span>) {
+*leaf_out = leaf;
+}
+<span class="hljs-keyword">if</span> (i == leaf-&gt;num_keys)
+<span class="hljs-keyword">return</span> <span class="hljs-literal">NULL</span>;
+<span class="hljs-keyword">else</span>
+<span class="hljs-keyword">return</span> (record *)leaf-&gt;pointers[i];
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">cut</span><span class="hljs-params">(<span class="hljs-keyword">int</span> length)</span> </span>{
+<span class="hljs-keyword">if</span> (length % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>)
+<span class="hljs-keyword">return</span> length / <span class="hljs-number">2</span>;
+<span class="hljs-keyword">else</span>
+<span class="hljs-keyword">return</span> length / <span class="hljs-number">2</span> + <span class="hljs-number">1</span>;
+}
+
+<span class="hljs-function">record *<span class="hljs-title">makeRecord</span><span class="hljs-params">(<span class="hljs-keyword">int</span> value)</span> </span>{
+record *new_record = (record *)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(record));
+<span class="hljs-keyword">if</span> (new_record == <span class="hljs-literal">NULL</span>) {
+perror(<span class="hljs-string">"Record creation."</span>);
+<span class="hljs-built_in">exit</span>(EXIT_FAILURE);
+} <span class="hljs-keyword">else</span> {
+new_record-&gt;value = value;
+}
+<span class="hljs-keyword">return</span> new_record;
+}
+
+<span class="hljs-function">node *<span class="hljs-title">makeNode</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span> </span>{
+node *new_node;
+new_node = <span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(node));
+<span class="hljs-keyword">if</span> (new_node == <span class="hljs-literal">NULL</span>) {
+perror(<span class="hljs-string">"Node creation."</span>);
+<span class="hljs-built_in">exit</span>(EXIT_FAILURE);
+}
+new_node-&gt;keys = <span class="hljs-built_in">malloc</span>((order - <span class="hljs-number">1</span>) * <span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">int</span>));
+<span class="hljs-keyword">if</span> (new_node-&gt;keys == <span class="hljs-literal">NULL</span>) {
+perror(<span class="hljs-string">"New node keys array."</span>);
+<span class="hljs-built_in">exit</span>(EXIT_FAILURE);
+}
+new_node-&gt;pointers = <span class="hljs-built_in">malloc</span>(order * <span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">void</span> *));
+<span class="hljs-keyword">if</span> (new_node-&gt;pointers == <span class="hljs-literal">NULL</span>) {
+perror(<span class="hljs-string">"New node pointers array."</span>);
+<span class="hljs-built_in">exit</span>(EXIT_FAILURE);
+}
+new_node-&gt;is_leaf = <span class="hljs-literal">false</span>;
+new_node-&gt;num_keys = <span class="hljs-number">0</span>;
+new_node-&gt;parent = <span class="hljs-literal">NULL</span>;
+new_node-&gt;next = <span class="hljs-literal">NULL</span>;
+<span class="hljs-keyword">return</span> new_node;
+}
+
+<span class="hljs-function">node *<span class="hljs-title">makeLeaf</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span> </span>{
+node *leaf = makeNode();
+leaf-&gt;is_leaf = <span class="hljs-literal">true</span>;
+<span class="hljs-keyword">return</span> leaf;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">getLeftIndex</span><span class="hljs-params">(node *parent, node *left)</span> </span>{
+<span class="hljs-keyword">int</span> left_index = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">while</span> (left_index &lt;= parent-&gt;num_keys &amp;&amp;
+parent-&gt;pointers[left_index] != left)
+left_index++;
+<span class="hljs-keyword">return</span> left_index;
+}
+
+<span class="hljs-function">node *<span class="hljs-title">insertIntoLeaf</span><span class="hljs-params">(node *leaf, <span class="hljs-keyword">int</span> key, record *pointer)</span> </span>{
+<span class="hljs-keyword">int</span> i, insertion_point;
+
+insertion_point = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">while</span> (insertion_point &lt; leaf-&gt;num_keys &amp;&amp; leaf-&gt;keys[insertion_point] &lt; key)
+insertion_point++;
+
+<span class="hljs-keyword">for</span> (i = leaf-&gt;num_keys; i &gt; insertion_point; i--) {
+leaf-&gt;keys[i] = leaf-&gt;keys[i - <span class="hljs-number">1</span>];
+leaf-&gt;pointers[i] = leaf-&gt;pointers[i - <span class="hljs-number">1</span>];
+}
+leaf-&gt;keys[insertion_point] = key;
+leaf-&gt;pointers[insertion_point] = pointer;
+leaf-&gt;num_keys++;
+<span class="hljs-keyword">return</span> leaf;
+}
+
+<span class="hljs-function">node *<span class="hljs-title">insertIntoLeafAfterSplitting</span><span class="hljs-params">(node *root, node *leaf, <span class="hljs-keyword">int</span> key, record *pointer)</span> </span>{
+node *new_leaf;
+<span class="hljs-keyword">int</span> *temp_keys;
+<span class="hljs-keyword">void</span> **temp_pointers;
+<span class="hljs-keyword">int</span> insertion_index, split, new_key, i, j;
+
+new_leaf = makeLeaf();
+
+temp_keys = <span class="hljs-built_in">malloc</span>(order * <span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">int</span>));
+<span class="hljs-keyword">if</span> (temp_keys == <span class="hljs-literal">NULL</span>) {
+perror(<span class="hljs-string">"Temporary keys array."</span>);
+<span class="hljs-built_in">exit</span>(EXIT_FAILURE);
+}
+
+temp_pointers = <span class="hljs-built_in">malloc</span>(order * <span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">void</span> *));
+<span class="hljs-keyword">if</span> (temp_pointers == <span class="hljs-literal">NULL</span>) {
+perror(<span class="hljs-string">"Temporary pointers array."</span>);
+<span class="hljs-built_in">exit</span>(EXIT_FAILURE);
+}
+
+insertion_index = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">while</span> (insertion_index &lt; order - <span class="hljs-number">1</span> &amp;&amp; leaf-&gt;keys[insertion_index] &lt; key)
+insertion_index++;
+
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>, j = <span class="hljs-number">0</span>; i &lt; leaf-&gt;num_keys; i++, j++) {
+<span class="hljs-keyword">if</span> (j == insertion_index)
+j++;
+temp_keys[j] = leaf-&gt;keys[i];
+temp_pointers[j] = leaf-&gt;pointers[i];
+}
+
+temp_keys[insertion_index] = key;
+temp_pointers[insertion_index] = pointer;
+
+leaf-&gt;num_keys = <span class="hljs-number">0</span>;
+
+split = cut(order - <span class="hljs-number">1</span>);
+
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; split; i++) {
+leaf-&gt;pointers[i] = temp_pointers[i];
+leaf-&gt;keys[i] = temp_keys[i];
+leaf-&gt;num_keys++;
+}
+
+<span class="hljs-keyword">for</span> (i = split, j = <span class="hljs-number">0</span>; i &lt; order; i++, j++) {
+new_leaf-&gt;pointers[j] = temp_pointers[i];
+new_leaf-&gt;keys[j] = temp_keys[i];
+new_leaf-&gt;num_keys++;
+}
+
+<span class="hljs-built_in">free</span>(temp_pointers);
+<span class="hljs-built_in">free</span>(temp_keys);
+
+new_leaf-&gt;pointers[order - <span class="hljs-number">1</span>] = leaf-&gt;pointers[order - <span class="hljs-number">1</span>];
+leaf-&gt;pointers[order - <span class="hljs-number">1</span>] = new_leaf;
+
+<span class="hljs-keyword">for</span> (i = leaf-&gt;num_keys; i &lt; order - <span class="hljs-number">1</span>; i++)
+leaf-&gt;pointers[i] = <span class="hljs-literal">NULL</span>;
+<span class="hljs-keyword">for</span> (i = new_leaf-&gt;num_keys; i &lt; order - <span class="hljs-number">1</span>; i++)
+new_leaf-&gt;pointers[i] = <span class="hljs-literal">NULL</span>;
+
+new_leaf-&gt;parent = leaf-&gt;parent;
+new_key = new_leaf-&gt;keys[<span class="hljs-number">0</span>];
+
+<span class="hljs-keyword">return</span> insertIntoParent(root, leaf, new_key, new_leaf);
+}
+
+<span class="hljs-function">node *<span class="hljs-title">insertIntoNode</span><span class="hljs-params">(node *root, node *n,
+<span class="hljs-keyword">int</span> left_index, <span class="hljs-keyword">int</span> key, node *right)</span> </span>{
+<span class="hljs-keyword">int</span> i;
+
+<span class="hljs-keyword">for</span> (i = n-&gt;num_keys; i &gt; left_index; i--) {
+n-&gt;pointers[i + <span class="hljs-number">1</span>] = n-&gt;pointers[i];
+n-&gt;keys[i] = n-&gt;keys[i - <span class="hljs-number">1</span>];
+}
+n-&gt;pointers[left_index + <span class="hljs-number">1</span>] = right;
+n-&gt;keys[left_index] = key;
+n-&gt;num_keys++;
+<span class="hljs-keyword">return</span> root;
+}
+
+<span class="hljs-function">node *<span class="hljs-title">insertIntoNodeAfterSplitting</span><span class="hljs-params">(node *root, node *old_node, <span class="hljs-keyword">int</span> left_index,
+<span class="hljs-keyword">int</span> key, node *right)</span> </span>{
+<span class="hljs-keyword">int</span> i, j, split, k_prime;
+node *new_node, *child;
+<span class="hljs-keyword">int</span> *temp_keys;
+node **temp_pointers;
+
+temp_pointers = <span class="hljs-built_in">malloc</span>((order + <span class="hljs-number">1</span>) * <span class="hljs-keyword">sizeof</span>(node *));
+<span class="hljs-keyword">if</span> (temp_pointers == <span class="hljs-literal">NULL</span>) {
+<span class="hljs-built_in">exit</span>(EXIT_FAILURE);
+}
+temp_keys = <span class="hljs-built_in">malloc</span>(order * <span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">int</span>));
+<span class="hljs-keyword">if</span> (temp_keys == <span class="hljs-literal">NULL</span>) {
+<span class="hljs-built_in">exit</span>(EXIT_FAILURE);
+}
+
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>, j = <span class="hljs-number">0</span>; i &lt; old_node-&gt;num_keys + <span class="hljs-number">1</span>; i++, j++) {
+<span class="hljs-keyword">if</span> (j == left_index + <span class="hljs-number">1</span>)
+j++;
+temp_pointers[j] = old_node-&gt;pointers[i];
+}
+
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>, j = <span class="hljs-number">0</span>; i &lt; old_node-&gt;num_keys; i++, j++) {
+<span class="hljs-keyword">if</span> (j == left_index)
+j++;
+temp_keys[j] = old_node-&gt;keys[i];
+}
+
+temp_pointers[left_index + <span class="hljs-number">1</span>] = right;
+temp_keys[left_index] = key;
+
+split = cut(order);
+new_node = makeNode();
+old_node-&gt;num_keys = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; split - <span class="hljs-number">1</span>; i++) {
+old_node-&gt;pointers[i] = temp_pointers[i];
+old_node-&gt;keys[i] = temp_keys[i];
+old_node-&gt;num_keys++;
+}
+old_node-&gt;pointers[i] = temp_pointers[i];
+k_prime = temp_keys[split - <span class="hljs-number">1</span>];
+<span class="hljs-keyword">for</span> (++i, j = <span class="hljs-number">0</span>; i &lt; order; i++, j++) {
+new_node-&gt;pointers[j] = temp_pointers[i];
+new_node-&gt;keys[j] = temp_keys[i];
+new_node-&gt;num_keys++;
+}
+new_node-&gt;pointers[j] = temp_pointers[i];
+<span class="hljs-built_in">free</span>(temp_pointers);
+<span class="hljs-built_in">free</span>(temp_keys);
+new_node-&gt;parent = old_node-&gt;parent;
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt;= new_node-&gt;num_keys; i++) {
+child = new_node-&gt;pointers[i];
+child-&gt;parent = new_node;
+}
+
+<span class="hljs-keyword">return</span> insertIntoParent(root, old_node, k_prime, new_node);
+}
+
+<span class="hljs-function">node *<span class="hljs-title">insertIntoParent</span><span class="hljs-params">(node *root, node *left, <span class="hljs-keyword">int</span> key, node *right)</span> </span>{
+<span class="hljs-keyword">int</span> left_index;
+node *parent;
+
+parent = left-&gt;parent;
+
+<span class="hljs-keyword">if</span> (parent == <span class="hljs-literal">NULL</span>)
+<span class="hljs-keyword">return</span> insertIntoNewRoot(left, key, right);
+
+left_index = getLeftIndex(parent, left);
+
+<span class="hljs-keyword">if</span> (parent-&gt;num_keys &lt; order - <span class="hljs-number">1</span>)
+<span class="hljs-keyword">return</span> insertIntoNode(root, parent, left_index, key, right);
+
+<span class="hljs-keyword">return</span> insertIntoNodeAfterSplitting(root, parent, left_index, key, right);
+}
+
+<span class="hljs-function">node *<span class="hljs-title">insertIntoNewRoot</span><span class="hljs-params">(node *left, <span class="hljs-keyword">int</span> key, node *right)</span> </span>{
+node *root = makeNode();
+root-&gt;keys[<span class="hljs-number">0</span>] = key;
+root-&gt;pointers[<span class="hljs-number">0</span>] = left;
+root-&gt;pointers[<span class="hljs-number">1</span>] = right;
+root-&gt;num_keys++;
+root-&gt;parent = <span class="hljs-literal">NULL</span>;
+left-&gt;parent = root;
+right-&gt;parent = root;
+<span class="hljs-keyword">return</span> root;
+}
+
+<span class="hljs-function">node *<span class="hljs-title">startNewTree</span><span class="hljs-params">(<span class="hljs-keyword">int</span> key, record *pointer)</span> </span>{
+node *root = makeLeaf();
+root-&gt;keys[<span class="hljs-number">0</span>] = key;
+root-&gt;pointers[<span class="hljs-number">0</span>] = pointer;
+root-&gt;pointers[order - <span class="hljs-number">1</span>] = <span class="hljs-literal">NULL</span>;
+root-&gt;parent = <span class="hljs-literal">NULL</span>;
+root-&gt;num_keys++;
+<span class="hljs-keyword">return</span> root;
+}
+
+<span class="hljs-function">node *<span class="hljs-title">insert</span><span class="hljs-params">(node *root, <span class="hljs-keyword">int</span> key, <span class="hljs-keyword">int</span> value)</span> </span>{
+record *record_pointer = <span class="hljs-literal">NULL</span>;
+node *leaf = <span class="hljs-literal">NULL</span>;
+
+record_pointer = find(root, key, <span class="hljs-literal">false</span>, <span class="hljs-literal">NULL</span>);
+<span class="hljs-keyword">if</span> (record_pointer != <span class="hljs-literal">NULL</span>) {
+record_pointer-&gt;value = value;
+<span class="hljs-keyword">return</span> root;
+}
+
+record_pointer = makeRecord(value);
+
+<span class="hljs-keyword">if</span> (root == <span class="hljs-literal">NULL</span>)
+<span class="hljs-keyword">return</span> startNewTree(key, record_pointer);
+
+leaf = findLeaf(root, key, <span class="hljs-literal">false</span>);
+
+<span class="hljs-keyword">if</span> (leaf-&gt;num_keys &lt; order - <span class="hljs-number">1</span>) {
+leaf = insertIntoLeaf(leaf, key, record_pointer);
+<span class="hljs-keyword">return</span> root;
+}
+
+<span class="hljs-keyword">return</span> insertIntoLeafAfterSplitting(root, leaf, key, record_pointer);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+node *root;
+<span class="hljs-keyword">char</span> instruction;
+
+root = <span class="hljs-literal">NULL</span>;
+
+root = insert(root, <span class="hljs-number">5</span>, <span class="hljs-number">33</span>);
+root = insert(root, <span class="hljs-number">15</span>, <span class="hljs-number">21</span>);
+root = insert(root, <span class="hljs-number">25</span>, <span class="hljs-number">31</span>);
+root = insert(root, <span class="hljs-number">35</span>, <span class="hljs-number">41</span>);
+root = insert(root, <span class="hljs-number">45</span>, <span class="hljs-number">10</span>);
+
+printTree(root);
+
+findAndPrint(root, <span class="hljs-number">15</span>, instruction = <span class="hljs-string">'a'</span>);
+}</code></pre></div>
+</div>
+
+<div class="code-editor__area" id="cpp-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="cpp hljs"><span class="hljs-comment">// Searching on a B+ tree in C++</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;climits&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;fstream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;sstream&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+<span class="hljs-keyword">int</span> MAX = <span class="hljs-number">3</span>;
+
+<span class="hljs-comment">// BP node</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Node</span> {</span>
+<span class="hljs-keyword">bool</span> IS_LEAF;
+<span class="hljs-keyword">int</span> *key, size;
+Node **ptr;
+<span class="hljs-keyword">friend</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BPTree</span>;</span>
+
+<span class="hljs-keyword">public</span>:
+Node();
+};
+
+<span class="hljs-comment">// BP tree</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BPTree</span> {</span>
+Node *root;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">insertInternal</span><span class="hljs-params">(<span class="hljs-keyword">int</span>, Node *, Node *)</span></span>;
+<span class="hljs-function">Node *<span class="hljs-title">findParent</span><span class="hljs-params">(Node *, Node *)</span></span>;
+
+<span class="hljs-keyword">public</span>:
+BPTree();
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">search</span><span class="hljs-params">(<span class="hljs-keyword">int</span>)</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">insert</span><span class="hljs-params">(<span class="hljs-keyword">int</span>)</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">display</span><span class="hljs-params">(Node *)</span></span>;
+<span class="hljs-function">Node *<span class="hljs-title">getRoot</span><span class="hljs-params">()</span></span>;
+};
+
+Node::Node() {
+key = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[MAX];
+ptr = <span class="hljs-keyword">new</span> Node *[MAX + <span class="hljs-number">1</span>];
+}
+
+BPTree::BPTree() {
+root = <span class="hljs-literal">NULL</span>;
+}
+
+<span class="hljs-comment">// Search operation</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">BPTree::search</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span> </span>{
+<span class="hljs-keyword">if</span> (root == <span class="hljs-literal">NULL</span>) {
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Tree is empty\n"</span>;
+} <span class="hljs-keyword">else</span> {
+Node *cursor = root;
+<span class="hljs-keyword">while</span> (cursor-&gt;IS_LEAF == <span class="hljs-literal">false</span>) {
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; cursor-&gt;size; i++) {
+<span class="hljs-keyword">if</span> (x &lt; cursor-&gt;key[i]) {
+cursor = cursor-&gt;ptr[i];
+<span class="hljs-keyword">break</span>;
+}
+<span class="hljs-keyword">if</span> (i == cursor-&gt;size - <span class="hljs-number">1</span>) {
+cursor = cursor-&gt;ptr[i + <span class="hljs-number">1</span>];
+<span class="hljs-keyword">break</span>;
+}
+}
+}
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; cursor-&gt;size; i++) {
+<span class="hljs-keyword">if</span> (cursor-&gt;key[i] == x) {
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Found\n"</span>;
+<span class="hljs-keyword">return</span>;
+}
+}
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Not found\n"</span>;
+}
+}
+
+<span class="hljs-comment">// Insert Operation</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">BPTree::insert</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span> </span>{
+<span class="hljs-keyword">if</span> (root == <span class="hljs-literal">NULL</span>) {
+root = <span class="hljs-keyword">new</span> Node;
+root-&gt;key[<span class="hljs-number">0</span>] = x;
+root-&gt;IS_LEAF = <span class="hljs-literal">true</span>;
+root-&gt;size = <span class="hljs-number">1</span>;
+} <span class="hljs-keyword">else</span> {
+Node *cursor = root;
+Node *parent;
+<span class="hljs-keyword">while</span> (cursor-&gt;IS_LEAF == <span class="hljs-literal">false</span>) {
+parent = cursor;
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; cursor-&gt;size; i++) {
+<span class="hljs-keyword">if</span> (x &lt; cursor-&gt;key[i]) {
+cursor = cursor-&gt;ptr[i];
+<span class="hljs-keyword">break</span>;
+}
+<span class="hljs-keyword">if</span> (i == cursor-&gt;size - <span class="hljs-number">1</span>) {
+cursor = cursor-&gt;ptr[i + <span class="hljs-number">1</span>];
+<span class="hljs-keyword">break</span>;
+}
+}
+}
+<span class="hljs-keyword">if</span> (cursor-&gt;size &lt; MAX) {
+<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">while</span> (x &gt; cursor-&gt;key[i] &amp;&amp; i &lt; cursor-&gt;size)
+i++;
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = cursor-&gt;size; j &gt; i; j--) {
+cursor-&gt;key[j] = cursor-&gt;key[j - <span class="hljs-number">1</span>];
+}
+cursor-&gt;key[i] = x;
+cursor-&gt;size++;
+cursor-&gt;ptr[cursor-&gt;size] = cursor-&gt;ptr[cursor-&gt;size - <span class="hljs-number">1</span>];
+cursor-&gt;ptr[cursor-&gt;size - <span class="hljs-number">1</span>] = <span class="hljs-literal">NULL</span>;
+} <span class="hljs-keyword">else</span> {
+Node *newLeaf = <span class="hljs-keyword">new</span> Node;
+<span class="hljs-keyword">int</span> virtualNode[MAX + <span class="hljs-number">1</span>];
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; MAX; i++) {
+virtualNode[i] = cursor-&gt;key[i];
+}
+<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>, j;
+<span class="hljs-keyword">while</span> (x &gt; virtualNode[i] &amp;&amp; i &lt; MAX)
+i++;
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = MAX + <span class="hljs-number">1</span>; j &gt; i; j--) {
+virtualNode[j] = virtualNode[j - <span class="hljs-number">1</span>];
+}
+virtualNode[i] = x;
+newLeaf-&gt;IS_LEAF = <span class="hljs-literal">true</span>;
+cursor-&gt;size = (MAX + <span class="hljs-number">1</span>) / <span class="hljs-number">2</span>;
+newLeaf-&gt;size = MAX + <span class="hljs-number">1</span> - (MAX + <span class="hljs-number">1</span>) / <span class="hljs-number">2</span>;
+cursor-&gt;ptr[cursor-&gt;size] = newLeaf;
+newLeaf-&gt;ptr[newLeaf-&gt;size] = cursor-&gt;ptr[MAX];
+cursor-&gt;ptr[MAX] = <span class="hljs-literal">NULL</span>;
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; cursor-&gt;size; i++) {
+cursor-&gt;key[i] = virtualNode[i];
+}
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>, j = cursor-&gt;size; i &lt; newLeaf-&gt;size; i++, j++) {
+newLeaf-&gt;key[i] = virtualNode[j];
+}
+<span class="hljs-keyword">if</span> (cursor == root) {
+Node *newRoot = <span class="hljs-keyword">new</span> Node;
+newRoot-&gt;key[<span class="hljs-number">0</span>] = newLeaf-&gt;key[<span class="hljs-number">0</span>];
+newRoot-&gt;ptr[<span class="hljs-number">0</span>] = cursor;
+newRoot-&gt;ptr[<span class="hljs-number">1</span>] = newLeaf;
+newRoot-&gt;IS_LEAF = <span class="hljs-literal">false</span>;
+newRoot-&gt;size = <span class="hljs-number">1</span>;
+root = newRoot;
+} <span class="hljs-keyword">else</span> {
+insertInternal(newLeaf-&gt;key[<span class="hljs-number">0</span>], parent, newLeaf);
+}
+}
+}
+}
+
+<span class="hljs-comment">// Insert Operation</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">BPTree::insertInternal</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x, Node *cursor, Node *child)</span> </span>{
+<span class="hljs-keyword">if</span> (cursor-&gt;size &lt; MAX) {
+<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">while</span> (x &gt; cursor-&gt;key[i] &amp;&amp; i &lt; cursor-&gt;size)
+i++;
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = cursor-&gt;size; j &gt; i; j--) {
+cursor-&gt;key[j] = cursor-&gt;key[j - <span class="hljs-number">1</span>];
+}
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = cursor-&gt;size + <span class="hljs-number">1</span>; j &gt; i + <span class="hljs-number">1</span>; j--) {
+cursor-&gt;ptr[j] = cursor-&gt;ptr[j - <span class="hljs-number">1</span>];
+}
+cursor-&gt;key[i] = x;
+cursor-&gt;size++;
+cursor-&gt;ptr[i + <span class="hljs-number">1</span>] = child;
+} <span class="hljs-keyword">else</span> {
+Node *newInternal = <span class="hljs-keyword">new</span> Node;
+<span class="hljs-keyword">int</span> virtualKey[MAX + <span class="hljs-number">1</span>];
+Node *virtualPtr[MAX + <span class="hljs-number">2</span>];
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; MAX; i++) {
+virtualKey[i] = cursor-&gt;key[i];
+}
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; MAX + <span class="hljs-number">1</span>; i++) {
+virtualPtr[i] = cursor-&gt;ptr[i];
+}
+<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>, j;
+<span class="hljs-keyword">while</span> (x &gt; virtualKey[i] &amp;&amp; i &lt; MAX)
+i++;
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = MAX + <span class="hljs-number">1</span>; j &gt; i; j--) {
+virtualKey[j] = virtualKey[j - <span class="hljs-number">1</span>];
+}
+virtualKey[i] = x;
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = MAX + <span class="hljs-number">2</span>; j &gt; i + <span class="hljs-number">1</span>; j--) {
+virtualPtr[j] = virtualPtr[j - <span class="hljs-number">1</span>];
+}
+virtualPtr[i + <span class="hljs-number">1</span>] = child;
+newInternal-&gt;IS_LEAF = <span class="hljs-literal">false</span>;
+cursor-&gt;size = (MAX + <span class="hljs-number">1</span>) / <span class="hljs-number">2</span>;
+newInternal-&gt;size = MAX - (MAX + <span class="hljs-number">1</span>) / <span class="hljs-number">2</span>;
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>, j = cursor-&gt;size + <span class="hljs-number">1</span>; i &lt; newInternal-&gt;size; i++, j++) {
+newInternal-&gt;key[i] = virtualKey[j];
+}
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>, j = cursor-&gt;size + <span class="hljs-number">1</span>; i &lt; newInternal-&gt;size + <span class="hljs-number">1</span>; i++, j++) {
+newInternal-&gt;ptr[i] = virtualPtr[j];
+}
+<span class="hljs-keyword">if</span> (cursor == root) {
+Node *newRoot = <span class="hljs-keyword">new</span> Node;
+newRoot-&gt;key[<span class="hljs-number">0</span>] = cursor-&gt;key[cursor-&gt;size];
+newRoot-&gt;ptr[<span class="hljs-number">0</span>] = cursor;
+newRoot-&gt;ptr[<span class="hljs-number">1</span>] = newInternal;
+newRoot-&gt;IS_LEAF = <span class="hljs-literal">false</span>;
+newRoot-&gt;size = <span class="hljs-number">1</span>;
+root = newRoot;
+} <span class="hljs-keyword">else</span> {
+insertInternal(cursor-&gt;key[cursor-&gt;size], findParent(root, cursor), newInternal);
+}
+}
+}
+
+<span class="hljs-comment">// Find the parent</span>
+<span class="hljs-function">Node *<span class="hljs-title">BPTree::findParent</span><span class="hljs-params">(Node *cursor, Node *child)</span> </span>{
+Node *parent;
+<span class="hljs-keyword">if</span> (cursor-&gt;IS_LEAF || (cursor-&gt;ptr[<span class="hljs-number">0</span>])-&gt;IS_LEAF) {
+<span class="hljs-keyword">return</span> <span class="hljs-literal">NULL</span>;
+}
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; cursor-&gt;size + <span class="hljs-number">1</span>; i++) {
+<span class="hljs-keyword">if</span> (cursor-&gt;ptr[i] == child) {
+parent = cursor;
+<span class="hljs-keyword">return</span> parent;
+} <span class="hljs-keyword">else</span> {
+parent = findParent(cursor-&gt;ptr[i], child);
+<span class="hljs-keyword">if</span> (parent != <span class="hljs-literal">NULL</span>)
+<span class="hljs-keyword">return</span> parent;
+}
+}
+<span class="hljs-keyword">return</span> parent;
+}
+
+<span class="hljs-comment">// Print the tree</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">BPTree::display</span><span class="hljs-params">(Node *cursor)</span> </span>{
+<span class="hljs-keyword">if</span> (cursor != <span class="hljs-literal">NULL</span>) {
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; cursor-&gt;size; i++) {
+<span class="hljs-built_in">cout</span> &lt;&lt; cursor-&gt;key[i] &lt;&lt; <span class="hljs-string">" "</span>;
+}
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"\n"</span>;
+<span class="hljs-keyword">if</span> (cursor-&gt;IS_LEAF != <span class="hljs-literal">true</span>) {
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; cursor-&gt;size + <span class="hljs-number">1</span>; i++) {
+display(cursor-&gt;ptr[i]);
+}
+}
+}
+}
+
+<span class="hljs-comment">// Get the root</span>
+<span class="hljs-function">Node *<span class="hljs-title">BPTree::getRoot</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-keyword">return</span> root;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+BPTree node;
+node.insert(<span class="hljs-number">5</span>);
+node.insert(<span class="hljs-number">15</span>);
+node.insert(<span class="hljs-number">25</span>);
+node.insert(<span class="hljs-number">35</span>);
+node.insert(<span class="hljs-number">45</span>);
+node.insert(<span class="hljs-number">55</span>);
+node.insert(<span class="hljs-number">40</span>);
+node.insert(<span class="hljs-number">30</span>);
+node.insert(<span class="hljs-number">20</span>);
+node.display(node.getRoot());
+
+node.search(<span class="hljs-number">15</span>);
+}</code></pre></div>
+</div>
+</div>
+
+<hr><h2 id="complexity">Search Complexity</h2>
+
+<h3>Time Complexity</h3>
+
+<p>If linear search is implemented inside a node, then total complexity is <var>Θ(log</var><var>t</var> <var>n)</var>.</p>
+
+<p>If binary search is used, then total complexity is <var>Θ(log</var><var>2</var><var>t.log</var><var>t</var> <var>n)</var>.</p>
+
+<hr><h2 id="application">B+ Tree Applications</h2>
+
+<ul><li>Multilevel Indexing</li>
+<li>Faster operations on the tree (insertion, deletion, search)</li>
+<li>Database indexing</li>
+</ul></div>
+
+
+
+</div>
+
+
+        <div class="tutorial-toc"><div class="tutorial-toc__inner"><h3 class="tutorial-toc__title">Table of Contents
+<button class="btn btn--clear align-items-center">
+<svg class="programiz-icon"><use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#x"></use></svg></button></h3><div class="tutorial-toc__links"><ul><li><a href="#definition">Definition</a></li>
+<li><a href="#properties">Properties of a B+ Tree</a></li>
+<li><a href="#comparison">Comparison between a B-tree and a B+ Tree</a></li>
+<li><a href="#search">Searching on a B+ Tree</a></li>
+<li><a href="#example">Searching Example on a B+ Tree</a></li>
+<li><a href="#code">Python, Java and C/C++ Examples</a></li>
+<li><a href="#complexity">Search Complexity</a></li>
+<li><a href="#application">B+ Tree Applications</a></li>
+</ul></div></div></div>                          </div>
+<!--second------------------------------------------->
+<div>
+<ul>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/stack.html">
+
+        Stack</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/queue.html">
+
+        Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/types-of-queue.html">
+
+        Types of Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/circular-queue.html">
+
+        Circular Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/priority-queue.html">
+
+        Priority Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deque.html">
+
+        Deque</a></button>
+<br/>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linked-list.html">
+
+        Linked List</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linked-list-operations.html">
+
+        Linked List Operations</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linked-list-types.html">
+
+        Types of Linked List</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/hash-table.html">
+
+        Hash Table</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/heap-data-structure.html">
+
+        Heap Data Structure</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/fibonacci-heap.html">
+
+        Fibonacci Heap</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/decrease-key-and-delete-node-from-a-fibonacci-heap.html">
+
+        Decrease Key and Delete node from Fibonacci Heap</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/trees.html">
+
+        Tree Data Structure</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/tree-traversal.html">
+
+        Tree Traversal</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/binary-tree.html">
+
+        Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/full-binary-tree.html">
+
+        Full Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/perfect-binary-tree.html">
+
+        Perfect Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/complete-binary-tree.html">
+
+        Complete Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/balanced-binary-tree.html">
+
+        Balanced Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/binary-search-tree.html">
+
+        Binary Search Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/avl-tree.html">
+
+        AVL Tree</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/b-tree.html">
+
+        B Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-into-a-b-tree.html">
+
+        Insertion into B-tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deletion-from-a-b-tree.html">
+
+        Deletion from B-tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/b-plus-tree.html">
+
+        B+ Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-on-a-b-plus-tree.html">
+
+        Insertion on a B+ Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deletion-from-a-b-plus-tree.html">
+
+        Deletion from a B+ Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/red-black-tree.html">
+
+        Red Black Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-in-a-red-black-tree.html">
+
+        Insertion in Red Black Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deletion-from-a-red-black-tree.html">
+
+        Deletion from Red Black Tree</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph.html">
+
+        Graph Data Structure</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/spanning-tree-and-minimum-spanning-tree.html">
+
+        Spanning Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/strongly-connected-components.html">
+
+        Strongly Connected Components</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-adjacency-matrix.html">
+
+        Adjacency Matrix</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-adjacency-list.html">
+
+        Adjacency List</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-dfs.html">
+
+        DFS Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-bfs.html">
+
+        Breadth-first Search</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/bellman-ford-algorithm.html">
+
+        Bellman Ford's Algorithm</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/bubble-sort.html">
+
+        Bubble Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/selection-sort.html">
+
+        Selection Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-sort.html">
+
+        Insertion Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/merge-sort.html">
+
+        Merge Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/quick-sort.html">
+
+        Quick Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/counting-sort.html">
+
+        Counting Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/radix-sort.html">
+
+        Radix Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/bucket-sort.html">
+
+        Bucket Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/heap-sort.html">
+
+        Heap Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/shell-sort.html">
+
+        Shell Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linear-search.html">
+
+        Linear Search</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/binary-search.html">
+
+        Binary Search</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/greedy-algorithm.html">
+
+        Greedy Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/ford-fulkerson-algorithm.html">
+
+        Ford-Fulkerson Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/dijkstra-algorithm.html">
+
+        Dijkstra's Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/kruskal-algorithm.html">
+
+        Kruskal's Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/prim-algorithm.html">
+
+        Prim's Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/huffman-coding.html">
+
+        Huffman Code</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/dynamic-programming.html">
+
+        Dynamic Programming</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/floyd-warshall-algorithm.html">
+
+        Floyd Warshall Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/longest-common-subsequence.html">
+
+        Longest Common Subsequence</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/backtracking-algorithm.html">
+
+        Backtracking Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/rabin-karp-algorithm.html">
+
+        Rabin-Karp Algorithm</a></button>
+<br>
+<br/>
+<h2>Free Courses on YouTube</h2>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+            https://www.youtube.com/watch?v=IbSXF7eT-AU&amp;list=PLR_5PTwg_uAQw40OhdvAwN4NvzWv0xOZ2">
+
+            Python Full Course Playlist</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://www.youtube.com/watch?v=UEl6wB90Gs8">
+
+            105 STL Algorithms in Less Than an Hour</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://www.youtube.com/watch?v=zZXTgN7L1UU&amp;list=PLR_5PTwg_uAS6C1cSMjU6oVhOcCX8Zu_4">
+
+            C++ STL Playlist</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://youtu.be/ty9756v3kc8">
+
+            Learn Node.js </a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://youtu.be/exrIpdS3Crc">
+
+            Learn Data Science Full course</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://youtu.be/Q8tDO2uSk5U">
+
+            Learn Computer Networking Full course</a></button>
+<br/>
+</br></br></br></br></br></br></br></br></ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<footer class="afooter" style="margin-left:20px">
+<p>
+<a href="/cookie-policy.html">Cookie policy</a> |
+
+        <a href="/privacy-policy.html">Privacy policy</a> |
+
+        <a href="/terms-of-use.html">Terms of use</a> |
+
+        <a href="/disclaimer.html">Disclaimer</a> |
+
+        <a href="/about-us.html">About Us</a>
+</p>
+<p>
+
+        © 2023 <a href="https://pythonread.github.io">https://pythonread.github.io</a>
+</p>
+</footer>
+<script type="text/javascript">
+
+    document.addEventListener('DOMContentLoaded', function () { htmlTableOfContents() }); function htmlTableOfContents(documentRef) { var documentRef = documentRef || document; var toc = documentRef.getElementById("toc"); var headings = [].slice.call(documentRef.body.querySelectorAll('h2, h3')); headings.forEach(function (heading, index) { var ref = "toc" + index; if (heading.hasAttribute("id")) { ref = heading.getAttribute("id") } else { heading.setAttribute("id", ref) } var link = documentRef.createElement("a"); link.setAttribute("href", "#" + ref); link.textContent = heading.textContent; var div = documentRef.createElement("div"); div.setAttribute("class", heading.tagName.toLowerCase()); div.appendChild(link); toc.appendChild(div) }) } try { module.exports = htmlTableOfContents } catch (e) { } function isScrolledIntoView(el) { var rect = el.getBoundingClientRect(); var elemTop = rect.top; var elemBottom = rect.bottom; var isVisible = (elemTop >= -10) && (elemBottom <= (window.innerHeight)); return isVisible } function highlightMenu() { var headers = document.querySelectorAll("h2, h3"); for (var i = 0; i < headers.length; i += 1) { if (isScrolledIntoView(headers[i])) { var childDivs = document.getElementById('toc').getElementsByTagName('div'); var c = childDivs[i].classList; c.add("active"); for (var j = 0; j < i; j += 1) { var c = childDivs[j].classList; c.remove("active") } for (var j = i + 1; j < childDivs.length; j += 1) { var c = childDivs[j].classList; c.remove("active") } break } } } function highlightMenuLastItem() { var childDivs = document.getElementById('toc').getElementsByTagName('div'); for (var j = 0; j < childDivs.length - 1; j += 1) { var c = childDivs[j].classList; c.remove("active") } var c = childDivs[childDivs.length - 1].classList; c.add("active") } window.addEventListener("click", function (event) { highlightMenu() }); window.onscroll = function (e) { highlightMenu(); if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) { highlightMenuLastItem() } }; function mobileMenu() { var classes = document.getElementById('nav-toggle-icon').classList; if (classes.contains("active")) { classes.remove("active") } else { classes.add("active") } var classes = document.getElementById('menu-wrapper').classList; if (classes.contains("active")) { classes.remove("active") } else { classes.add("active") } }
+
+</script>
+<script type="text/javascript">
+
+    function changepy(){
+
+        document.getElementById('py1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('java1').className = 'tabbed-editor__node';
+
+        document.getElementById('c1').className = 'tabbed-editor__node';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node';
+
+        document.getElementById('python-code').className = 'code-editor__area code-editor__area--active';
+
+        document.getElementById('java-code').className = 'code-editor__area';
+
+        document.getElementById('c-code').className = 'code-editor__area';
+
+        document.getElementById('cpp-code').className = 'code-editor__area';
+
+
+
+    }
+
+    function changecpp(){
+
+        document.getElementById('py1').className = 'tabbed-editor__node';
+
+        document.getElementById('java1').className = 'tabbed-editor__node';
+
+        document.getElementById('c1').className = 'tabbed-editor__node';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('python-code').className = 'code-editor__area';
+
+        document.getElementById('java-code').className = 'code-editor__area';
+
+        document.getElementById('c-code').className = 'code-editor__area';
+
+        document.getElementById('cpp-code').className = 'code-editor__area code-editor__area--active';
+
+    }
+
+    function changejava(){
+
+       document.getElementById('py1').className = 'tabbed-editor__node';
+
+        document.getElementById('java1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('c1').className = 'tabbed-editor__node';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node';
+
+        document.getElementById('python-code').className = 'code-editor__area';
+
+        document.getElementById('java-code').className = 'code-editor__area code-editor__area--active';
+
+        document.getElementById('c-code').className = 'code-editor__area';
+
+        document.getElementById('cpp-code').className = 'code-editor__area';
+
+    }
+
+    function changec(){
+
+        document.getElementById('py1').className = 'tabbed-editor__node';
+
+        document.getElementById('java1').className = 'tabbed-editor__node';
+
+        document.getElementById('c1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node';
+
+        document.getElementById('python-code').className = 'code-editor__area';
+
+        document.getElementById('java-code').className = 'code-editor__area';
+
+        document.getElementById('c-code').className = 'code-editor__area code-editor__area--active';
+
+        document.getElementById('cpp-code').className = 'code-editor__area';
+
+    }
+
+    
+
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>

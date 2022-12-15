@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<title>Merge Sort</title>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-HCERBDV76D"></script>
+<script>
+
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() { dataLayer.push(arguments); }
+
+        gtag('js', new Date());
+
+
+
+        gtag('config', 'G-HCERBDV76D');
+
+    </script>
+<meta content="B0487B46A104E90209E8A3BEA24ECA0E" name="msvalidate.01"/>
+<meta content="f044b3a12c7918f1" name="yandex-verification"/>
+<!--end-->
+<meta content="learn about data types, variables, lists, tuples, dictionaries,if else,DSA,loops,user-defined functions, oop, threading and scripting." name="description"/>
+<meta content="learnPython" name="author"/>
+<meta content="Learn Python for free,learn python for beginners,Core Python,Web frameworks,Multiprocess architecture,Serverside templating language,python tutorials,python4" name="keywords"/>
+<meta content="website" property="og:type"/>
+<meta content="US-CA" name="”geo.region”"/>
+<meta content="353 Jane Stanford Way, Stanford, CA 94305, United States" name="”geo.placename”"/>
+<meta content="37.430089898615456;-122.17332683124829" name="”geo.position”"/>
+<meta content="37.430089898615456, -122.17332683124829" name="”ICBM”"/>
+<link href="https://pythonread.github.io/?m=1" rel="alternate"/>
+<link href="/favicon.png" rel="icon"/>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="/style1.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/style2.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/style0.css" media="all" rel="stylesheet" type="text/css"/>
+<!--<![endif]-->
+</head>
+<body>
+<div class="nav-wrapper">
+<div class="container">
+<nav>
+<div class="logo wave">
+<a href="/" id="logo">
+
+                        Python Tutorial
+
+                    </a>
+</div>
+<div class="nav-toggle-icon" id="nav-toggle-icon" onclick="mobileMenu()">
+<div class="material-hamburger">
+<span>
+</span>
+<span>
+</span>
+<span>
+</span>
+</div>
+</div>
+<div class="menu-wrapper" id="menu-wrapper">
+<div class="nav-indicator">
+</div>
+<ul class="menus">
+<li>
+<a class="wave" href="/">
+
+                                Home
+
+                            </a>
+</li>
+<li>
+<a class="wave" href="/projects.html">
+
+                                Projects
+
+                            </a>
+</li>
+<li>
+<a class="wave" href="/free-course.html" target="_blank">
+
+                                Free Course
+
+                            </a>
+</li>
+<li>
+<a class="wave" href="/dsa.html">
+
+                                DSA
+
+                            </a>
+</li>
+</ul>
+</div>
+</nav>
+</div>
+</div>
+<div class="contents contents--neg" style="margin-top: 60px">
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+<div class="d-flex">
+<div class="left-bar d-none d-lg-block">
+<div class="card-alt mb-10x">
+<h3>Page Index</h3>
+<div class="list">
+<ul>
+<li><a href="/dsa.html#data-structure-1" title="Data Structures (I)">Data Structures
+
+                                                (I)</a></li>
+<li><a href="/dsa.html#data-structure-2" title="Data Structures (II)">Data Structures
+
+                                                (II)</a></li>
+<li><a href="/dsa.html#tree-1" title="Tree based DSA (I)">Tree based DSA (I)</a></li>
+<li><a href="/dsa.html#tree-2" title="Tree based DSA (II)">Tree based DSA (II)</a></li>
+<li><a href="/dsa.html#graph" title="Graph Data Structures and Algorithm">Graph based
+
+                                                DSA</a></li>
+<li><a href="/dsa.html#sorting-searching" title="Sorting and Searching">Sorting and
+
+                                                Searching</a></li>
+<li><a href="/dsa.html#greedy-algorithm" title="Greedy Algorithms">Greedy Algorithms</a>
+</li>
+<li><a href="/dsa.html#dynamic-programming" title="Dynamic Programming">Dynamic
+
+                                                Programming</a></li>
+<li><a href="/dsa.html#other-algorithms" title="Other Algorithms">Other Algorithms</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="right-bar">
+<!--first part end-------------------------------------------->
+<iframe width="560" height="315" src="https://www.youtube.com/embed/m18X2BqkgQo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="editor-contents">
+        <h1>Merge Sort Algorithm</h1>
+
+
+        <p class="editor-contents__short-description">In this tutorial, you will learn about merge sort algorithm and its implementation in C, C++, Java and Python. </p>
+
+
+
+          
+
+
+
+<div id="node-805" class="node node-algorithm clearfix" about="/dsa/merge-sort" typeof="sioc:Item foaf:Document">
+
+
+<span property="dc:title" content="Merge Sort Algorithm" class="rdf-meta element-hidden"></span>
+
+<div class="content">
+<p id="definition">Merge Sort is one of the most popular <a href="/dsa.html">sorting algorithms</a> that is based on the principle of <a href="/dsa/divide-and-conquer.html">Divide and Conquer Algorithm</a>.</p>
+
+<p>Here, a problem is divided into multiple sub-problems. Each sub-problem is solved individually. Finally, sub-problems are combined to form the final solution.</p>
+
+<figure><img alt="merge sort example" src="https://www.programiz.com/sites/tutorial2program/files/merge-sort-example_0.png" title="Merge sort example" width="606" height="616"><figcaption>Merge Sort example</figcaption></figure><hr><h2 id="strategy">Divide and Conquer Strategy</h2>
+
+<p>Using the <strong>Divide and Conquer</strong> technique, we divide a problem into subproblems. When the solution to each subproblem is ready, we 'combine' the results from the subproblems to solve the main problem.</p>
+
+<p>Suppose we had to sort an array <var>A</var>. A subproblem would be to sort a sub-section of this array starting at index <var>p</var> and ending at index <var>r</var>, denoted as <var>A[p..r]</var>.</p>
+
+<p><strong>Divide</strong></p>
+
+<p>If q is the half-way point between p and r, then we can split the subarray <var>A[p..r]</var> into two arrays <var>A[p..q]</var> and <var>A[q+1, r]</var>.</p>
+
+<p><strong>Conquer</strong></p>
+
+<p>In the conquer step, we try to sort both the subarrays <var>A[p..q]</var> and <var>A[q+1, r]</var>. If we haven't yet reached the base case, we again divide both these subarrays and try to sort them.</p>
+
+<p><strong>Combine</strong></p>
+
+<p>When the conquer step reaches the base step and we get two sorted subarrays <var>A[p..q]</var> and <var>A[q+1, r]</var> for array <var>A[p..r]</var>, we combine the results by creating a sorted array <var>A[p..r]</var> from two sorted subarrays <var>A[p..q]</var> and <var>A[q+1, r]</var>.</p>
+
+<hr><h2 id="merge">MergeSort Algorithm</h2>
+
+<p>The MergeSort function repeatedly divides the array into two halves until we reach a stage where we try to perform MergeSort on a subarray of size 1 i.e. <var>p == r</var>.</p>
+
+<p>After that, the merge function comes into play and combines the sorted arrays into larger arrays until the whole array is merged.</p>
+
+<pre>MergeSort(A, p, r):
+if p &gt; r 
+return
+q = (p+r)/2
+mergeSort(A, p, q)
+mergeSort(A, q+1, r)
+merge(A, p, q, r)</pre>
+
+<p>To sort an entire array, we need to call <code>MergeSort(A, 0, length(A)-1)</code>.</p>
+
+<p>As shown in the image below, the merge sort algorithm recursively divides the array into halves until we reach the base case of array with 1 element. After that, the merge function picks up the sorted sub-arrays and merges them to gradually sort the entire array.</p>
+
+<figure><img alt="merge sort algorithm visualization" src="https://www.programiz.com/sites/tutorial2program/files/merge-sort-in-action---merge-step-simple.png" title="Merge sort in action" width="623" height="385"><figcaption>Merge sort in action</figcaption></figure><h3>The <strong>merge</strong> Step of Merge Sort</h3>
+
+<p>Every recursive algorithm is dependent on a base case and the ability to combine the results from base cases. Merge sort is no different. The most important part of the merge sort algorithm is, you guessed it, <samp>merge</samp> step.</p>
+
+<p>The merge step is the solution to the simple problem of merging two sorted lists(arrays) to build one large sorted list(array).</p>
+
+<p></p><div class="clearfix"></div><p>The algorithm maintains three pointers, one for each of the two arrays and one for maintaining the current index of the final sorted array.</p>
+
+<pre>Have we reached the end of any of the arrays?
+No:
+Compare current elements of both arrays 
+Copy smaller element into sorted array
+Move pointer of element containing smaller element
+Yes:
+Copy all remaining elements of non-empty array</pre>
+
+<figure><img alt="merge two sorted arrays" src="https://www.programiz.com/sites/tutorial2program/files/merge-two-sorted-arrays.png" title="Merge step" width="655" height="580"><figcaption>Merge step</figcaption></figure><hr><h2 id="code-writing">Writing the Code for Merge Algorithm</h2>
+
+<p>A noticeable difference between the merging step we described above and the one we use for merge sort is that we only perform the merge function on consecutive sub-arrays.</p>
+
+<p>This is why we only need the array, the first position, the last index of the first subarray(we can calculate the first index of the second subarray) and the last index of the second subarray.</p>
+
+<p>Our task is to merge two subarrays <var>A[p..q]</var> and <var>A[q+1..r]</var> to create a sorted array <var>A[p..r]</var>. So the inputs to the function are A, p, q and r</p>
+
+<p>The merge function works as follows:</p>
+
+<ol><li>Create copies of the subarrays <code>L &lt;-&nbsp;A[p..q]</code> and <var>M &lt;-&nbsp;A[q+1..r]</var>.</li>
+<li>Create three pointers <var>i</var>, <var>j</var> and <var>k</var>
+<ol type="a"><li><var>i</var> maintains current index of <var>L</var>, starting at 1</li>
+  <li><var>j</var> maintains current index of <var>M</var>, starting at 1</li>
+  <li><var>k</var> maintains the current index of <var>A[p..q]</var>, starting at <var>p</var>.</li>
+</ol></li>
+<li>Until we reach the end of either <var>L</var> or <var>M</var>, pick the larger among the elements from <var>L</var> and <var>M</var> and place them in the correct position at <var>A[p..q]</var></li>
+<li>When we run out of elements in either <var>L</var> or <var>M</var>, pick up the remaining elements and put in <var>A[p..q]</var></li>
+</ol><p>In code, this would look like:</p>
+
+<pre style="max-height: 600px;"><code class="dsa hljs cpp"><span class="hljs-comment">// Merge two subarrays L and M into arr</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">merge</span><span class="hljs-params">(<span class="hljs-keyword">int</span> arr[], <span class="hljs-keyword">int</span> p, <span class="hljs-keyword">int</span> q, <span class="hljs-keyword">int</span> r)</span> </span>{
+
+<span class="hljs-comment">// Create L ← A[p..q] and M ← A[q+1..r]</span>
+<span class="hljs-keyword">int</span> n1 = q - p + <span class="hljs-number">1</span>;
+<span class="hljs-keyword">int</span> n2 = r - q;
+
+<span class="hljs-keyword">int</span> L[n1], M[n2];
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n1; i++)
+L[i] = arr[p + i];
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; n2; j++)
+M[j] = arr[q + <span class="hljs-number">1</span> + j];
+
+<span class="hljs-comment">// Maintain current index of sub-arrays and main array</span>
+<span class="hljs-keyword">int</span> i, j, k;
+i = <span class="hljs-number">0</span>;
+j = <span class="hljs-number">0</span>;
+k = p;
+
+<span class="hljs-comment">// Until we reach either end of either L or M, pick larger among</span>
+<span class="hljs-comment">// elements L and M and place them in the correct position at A[p..r]</span>
+<span class="hljs-keyword">while</span> (i &lt; n1 &amp;&amp; j &lt; n2) {
+<span class="hljs-keyword">if</span> (L[i] &lt;= M[j]) {
+arr[k] = L[i];
+i++;
+} <span class="hljs-keyword">else</span> {
+arr[k] = M[j];
+j++;
+}
+k++;
+}
+
+<span class="hljs-comment">// When we run out of elements in either L or M,</span>
+<span class="hljs-comment">// pick up the remaining elements and put in A[p..r]</span>
+<span class="hljs-keyword">while</span> (i &lt; n1) {
+arr[k] = L[i];
+i++;
+k++;
+}
+
+<span class="hljs-keyword">while</span> (j &lt; n2) {
+arr[k] = M[j];
+j++;
+k++;
+}
+}</code></pre>
+
+<hr><h2 id="function">Merge( ) Function Explained Step-By-Step</h2>
+
+<p>A lot is happening in this function, so let's take an example to see how this would work.</p>
+
+<p>As usual, a picture speaks a thousand words.</p>
+
+<figure><img alt="Merging two consecutive subarrays of array" src="https://www.programiz.com/sites/tutorial2program/files/merge-sort-demo-step-1.png" title="Merging two consecutive subarrays of array" width="335" height="112"><figcaption>Merging two consecutive subarrays of array</figcaption></figure><p>The array <var>A[0..5]</var> contains two sorted subarrays <var>A[0..3]</var> and <var>A[4..5]</var>. Let us see how the merge function will merge the two arrays.</p>
+
+<pre style="max-height: 600px;"><code class="dsa hljs cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">merge</span><span class="hljs-params">(<span class="hljs-keyword">int</span> arr[], <span class="hljs-keyword">int</span> p, <span class="hljs-keyword">int</span> q, <span class="hljs-keyword">int</span> r)</span> </span>{
+<span class="hljs-comment">// Here, p = 0, q = 4, r = 6 (size of array)</span></code></pre>
+
+<h3>Step 1: Create duplicate copies of sub-arrays to be sorted</h3>
+
+<pre style="max-height: 600px;"><code class="dsa hljs yaml">    <span class="hljs-string">//</span> <span class="hljs-string">Create</span> <span class="hljs-string">L</span> <span class="hljs-string">←</span> <span class="hljs-string">A[p..q]</span> <span class="hljs-string">and</span> <span class="hljs-string">M</span> <span class="hljs-string">←</span> <span class="hljs-string">A[q+1..r]</span>
+<span class="hljs-string">int</span> <span class="hljs-string">n1</span> <span class="hljs-string">=</span> <span class="hljs-string">q</span> <span class="hljs-bullet">-</span> <span class="hljs-string">p</span> <span class="hljs-string">+</span> <span class="hljs-number">1</span> <span class="hljs-string">=</span> <span class="hljs-number">3</span> <span class="hljs-bullet">-</span> <span class="hljs-number">0</span> <span class="hljs-string">+</span> <span class="hljs-number">1</span> <span class="hljs-string">=</span> <span class="hljs-number">4</span><span class="hljs-string">;</span>
+<span class="hljs-string">int</span> <span class="hljs-string">n2</span> <span class="hljs-string">=</span> <span class="hljs-string">r</span> <span class="hljs-bullet">-</span> <span class="hljs-string">q</span> <span class="hljs-string">=</span> <span class="hljs-number">5</span> <span class="hljs-bullet">-</span> <span class="hljs-number">3</span> <span class="hljs-string">=</span> <span class="hljs-number">2</span><span class="hljs-string">;</span>
+
+<span class="hljs-string">int</span> <span class="hljs-string">L[4],</span> <span class="hljs-string">M[2];</span>
+
+<span class="hljs-string">for</span> <span class="hljs-string">(int</span> <span class="hljs-string">i</span> <span class="hljs-string">=</span> <span class="hljs-number">0</span><span class="hljs-string">;</span> <span class="hljs-string">i</span> <span class="hljs-string">&lt;</span> <span class="hljs-number">4</span><span class="hljs-string">;</span> <span class="hljs-string">i++)</span>
+<span class="hljs-string">L[i]</span> <span class="hljs-string">=</span> <span class="hljs-string">arr[p</span> <span class="hljs-string">+</span> <span class="hljs-string">i];</span>
+<span class="hljs-string">//</span> <span class="hljs-string">L[0,1,2,3]</span> <span class="hljs-string">=</span> <span class="hljs-string">A[0,1,2,3]</span> <span class="hljs-string">=</span> <span class="hljs-string">[1,5,10,12]</span>
+
+<span class="hljs-string">for</span> <span class="hljs-string">(int</span> <span class="hljs-string">j</span> <span class="hljs-string">=</span> <span class="hljs-number">0</span><span class="hljs-string">;</span> <span class="hljs-string">j</span> <span class="hljs-string">&lt;</span> <span class="hljs-number">2</span><span class="hljs-string">;</span> <span class="hljs-string">j++)</span>
+<span class="hljs-string">M[j]</span> <span class="hljs-string">=</span> <span class="hljs-string">arr[q</span> <span class="hljs-string">+</span> <span class="hljs-number">1</span> <span class="hljs-string">+</span> <span class="hljs-string">j];</span>
+<span class="hljs-string">//</span> <span class="hljs-string">M[0,1]</span> <span class="hljs-string">=</span> <span class="hljs-string">A[4,5]</span> <span class="hljs-string">=</span> <span class="hljs-string">[6,9]</span></code></pre>
+
+<figure><img alt="Create copies of subarrays for merging" src="https://www.programiz.com/sites/tutorial2program/files/merge-sort-demo-step-2.png" title="Create copies of subarrays for merging" width="311" height="200"><figcaption>Create copies of subarrays for merging</figcaption></figure><h3>Step 2: Maintain current index of sub-arrays and main array</h3>
+
+<pre style="max-height: 600px;"><code class="dsa hljs nginx">    
+<span class="hljs-attribute">int</span> i, j, k;
+<span class="hljs-attribute">i</span> = <span class="hljs-number">0</span>; 
+<span class="hljs-attribute">j</span> = <span class="hljs-number">0</span>; 
+<span class="hljs-attribute">k</span> = p; </code></pre>
+
+<figure><img alt="Maintain indices of copies of sub array and main array" src="https://www.programiz.com/sites/tutorial2program/files/merge-sort-demo-step-3.png" title="Merge Sort" width="646" height="158"><figcaption>Maintain indices of copies of sub array and main array</figcaption></figure><h3>Step 3: Until we reach the end of either L or M, pick larger among elements L and M and place them in the correct position at A[p..r]</h3>
+
+<pre style="max-height: 600px;"><code class="dsa hljs properties">    <span class="hljs-attr">while</span> <span class="hljs-string">(i &lt; n1 &amp;&amp; j &lt; n2) { </span>
+<span class="hljs-attr">if</span> <span class="hljs-string">(L[i] &lt;= M[j]) { </span>
+<span class="hljs-meta">arr[k]</span> = <span class="hljs-string">L[i]; i++; </span>
+<span class="hljs-meta">}</span> <span class="hljs-string"></span>
+<span class="hljs-attr">else</span> <span class="hljs-string">{ </span>
+<span class="hljs-meta">arr[k]</span> = <span class="hljs-string">M[j]; </span>
+<span class="hljs-meta">j++;</span> <span class="hljs-string"></span>
+<span class="hljs-meta">}</span> <span class="hljs-string"></span>
+<span class="hljs-meta">k++;</span> <span class="hljs-string"></span>
+<span class="hljs-attr">}</span></code></pre>
+
+<figure><img alt="Comparing individual elements of sorted subarrays until we reach end of one" src="/sites/tutorial2program/files/merge-sort-demo-step-4.png" title="Merge sort" width="655" height="589"><figcaption>Comparing individual elements of sorted subarrays until we reach end of one</figcaption></figure><h3>Step 4: When we run out of elements in either L or M, pick up the remaining elements and put in A[p..r]</h3>
+
+<pre style="max-height: 600px;"><code class="dsa hljs cpp">    <span class="hljs-comment">// We exited the earlier loop because j &lt; n2 doesn't hold</span>
+<span class="hljs-keyword">while</span> (i &lt; n1)
+{
+arr[k] = L[i];
+i++;
+k++;
+}</code></pre>
+
+<figure><img alt="Copy the remaining elements from the first array to main subarray" src="/sites/tutorial2program/files/merge-sort-demo-step-5.png" title="Merge Sort" width="552" height="360"><figcaption>Copy the remaining elements from the first array to main subarray</figcaption></figure><pre style="max-height: 600px;"><code class="dsa hljs cpp">    <span class="hljs-comment">// We exited the earlier loop because i &lt; n1 doesn't hold  </span>
+<span class="hljs-keyword">while</span> (j &lt; n2)
+{
+arr[k] = M[j];
+j++;
+k++;
+}
+}</code></pre>
+
+<figure><img alt="Copy remaining elements of second array to main subarray" src="/sites/tutorial2program/files/merge-sort-demo-step-6.png" title="Merge Sort" width="473" height="158"><figcaption>Copy remaining elements of second array to main subarray</figcaption></figure><p>This step would have been needed if the size of M was greater than L.</p>
+
+<p>At the end of the merge function, the subarray <var>A[p..r]</var> is sorted.</p>
+
+<hr><h2 id="code">Merge Sort Code in Python, Java, and C/C++</h2>
+
+<div class="tabbed-editor">
+        <div id="py1" onclick="changepy()" class="tabbed-editor__node tabbed-editor__node--active"><a href="#python-code">Python</a></div>
+        
+        <div id="java1" onclick="changejava()"  class="tabbed-editor__node"><a href="#java-code">Java</a></div>
+        
+        <div id="c1" onclick="changec()" class="tabbed-editor__node"><a href="#c-code">C</a></div>
+        
+        <div id="cpp1" onclick="changecpp()" class="tabbed-editor__node"><a href="#cpp-code">C++</a></div>
+        </div>
+
+<div class="code-editor code-editor--tabbed">
+<div class="code-editor__area code-editor__area--active" id="python-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="python hljs"><span class="hljs-comment"># MergeSort in Python</span>
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">mergeSort</span><span class="hljs-params">(array)</span>:</span>
+<span class="hljs-keyword">if</span> len(array) &gt; <span class="hljs-number">1</span>:
+
+<span class="hljs-comment">#  r is the point where the array is divided into two subarrays</span>
+r = len(array)//<span class="hljs-number">2</span>
+L = array[:r]
+M = array[r:]
+
+<span class="hljs-comment"># Sort the two halves</span>
+mergeSort(L)
+mergeSort(M)
+
+i = j = k = <span class="hljs-number">0</span>
+
+<span class="hljs-comment"># Until we reach either end of either L or M, pick larger among</span>
+<span class="hljs-comment"># elements L and M and place them in the correct position at A[p..r]</span>
+<span class="hljs-keyword">while</span> i &lt; len(L) <span class="hljs-keyword">and</span> j &lt; len(M):
+<span class="hljs-keyword">if</span> L[i] &lt; M[j]:
+array[k] = L[i]
+i += <span class="hljs-number">1</span>
+<span class="hljs-keyword">else</span>:
+array[k] = M[j]
+j += <span class="hljs-number">1</span>
+k += <span class="hljs-number">1</span>
+
+<span class="hljs-comment"># When we run out of elements in either L or M,</span>
+<span class="hljs-comment"># pick up the remaining elements and put in A[p..r]</span>
+<span class="hljs-keyword">while</span> i &lt; len(L):
+array[k] = L[i]
+i += <span class="hljs-number">1</span>
+k += <span class="hljs-number">1</span>
+
+<span class="hljs-keyword">while</span> j &lt; len(M):
+array[k] = M[j]
+j += <span class="hljs-number">1</span>
+k += <span class="hljs-number">1</span>
+
+
+<span class="hljs-comment"># Print the array</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">printList</span><span class="hljs-params">(array)</span>:</span>
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(array)):
+<span class="hljs-keyword">print</span>(array[i], end=<span class="hljs-string">" "</span>)
+<span class="hljs-keyword">print</span>()
+
+
+<span class="hljs-comment"># Driver program</span>
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">'__main__'</span>:
+array = [<span class="hljs-number">6</span>, <span class="hljs-number">5</span>, <span class="hljs-number">12</span>, <span class="hljs-number">10</span>, <span class="hljs-number">9</span>, <span class="hljs-number">1</span>]
+
+mergeSort(array)
+
+<span class="hljs-keyword">print</span>(<span class="hljs-string">"Sorted array is: "</span>)
+printList(array)</code></pre></div>
+</div>
+
+<div class="code-editor__area" id="java-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="java hljs"><span class="hljs-comment">// Merge sort in Java</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MergeSort</span> </span>{
+
+<span class="hljs-comment">// Merge two subarrays L and M into arr</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">merge</span><span class="hljs-params">(<span class="hljs-keyword">int</span> arr[], <span class="hljs-keyword">int</span> p, <span class="hljs-keyword">int</span> q, <span class="hljs-keyword">int</span> r)</span> </span>{
+
+<span class="hljs-comment">// Create L ← A[p..q] and M ← A[q+1..r]</span>
+<span class="hljs-keyword">int</span> n1 = q - p + <span class="hljs-number">1</span>;
+<span class="hljs-keyword">int</span> n2 = r - q;
+
+<span class="hljs-keyword">int</span> L[] = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[n1];
+<span class="hljs-keyword">int</span> M[] = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[n2];
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n1; i++)
+L[i] = arr[p + i];
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; n2; j++)
+M[j] = arr[q + <span class="hljs-number">1</span> + j];
+
+<span class="hljs-comment">// Maintain current index of sub-arrays and main array</span>
+<span class="hljs-keyword">int</span> i, j, k;
+i = <span class="hljs-number">0</span>;
+j = <span class="hljs-number">0</span>;
+k = p;
+
+<span class="hljs-comment">// Until we reach either end of either L or M, pick larger among</span>
+<span class="hljs-comment">// elements L and M and place them in the correct position at A[p..r]</span>
+<span class="hljs-keyword">while</span> (i &lt; n1 &amp;&amp; j &lt; n2) {
+<span class="hljs-keyword">if</span> (L[i] &lt;= M[j]) {
+arr[k] = L[i];
+i++;
+} <span class="hljs-keyword">else</span> {
+arr[k] = M[j];
+j++;
+}
+k++;
+}
+
+<span class="hljs-comment">// When we run out of elements in either L or M,</span>
+<span class="hljs-comment">// pick up the remaining elements and put in A[p..r]</span>
+<span class="hljs-keyword">while</span> (i &lt; n1) {
+arr[k] = L[i];
+i++;
+k++;
+}
+
+<span class="hljs-keyword">while</span> (j &lt; n2) {
+arr[k] = M[j];
+j++;
+k++;
+}
+}
+
+<span class="hljs-comment">// Divide the array into two subarrays, sort them and merge them</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">mergeSort</span><span class="hljs-params">(<span class="hljs-keyword">int</span> arr[], <span class="hljs-keyword">int</span> l, <span class="hljs-keyword">int</span> r)</span> </span>{
+<span class="hljs-keyword">if</span> (l &lt; r) {
+
+<span class="hljs-comment">// m is the point where the array is divided into two subarrays</span>
+<span class="hljs-keyword">int</span> m = (l + r) / <span class="hljs-number">2</span>;
+
+mergeSort(arr, l, m);
+mergeSort(arr, m + <span class="hljs-number">1</span>, r);
+
+<span class="hljs-comment">// Merge the sorted subarrays</span>
+merge(arr, l, m, r);
+}
+}
+
+<span class="hljs-comment">// Print the array</span>
+<span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">printArray</span><span class="hljs-params">(<span class="hljs-keyword">int</span> arr[])</span> </span>{
+<span class="hljs-keyword">int</span> n = arr.length;
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; ++i)
+System.out.print(arr[i] + <span class="hljs-string">" "</span>);
+System.out.println();
+}
+
+<span class="hljs-comment">// Driver program</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span> </span>{
+<span class="hljs-keyword">int</span> arr[] = { <span class="hljs-number">6</span>, <span class="hljs-number">5</span>, <span class="hljs-number">12</span>, <span class="hljs-number">10</span>, <span class="hljs-number">9</span>, <span class="hljs-number">1</span> };
+
+MergeSort ob = <span class="hljs-keyword">new</span> MergeSort();
+ob.mergeSort(arr, <span class="hljs-number">0</span>, arr.length - <span class="hljs-number">1</span>);
+
+System.out.println(<span class="hljs-string">"Sorted array:"</span>);
+printArray(arr);
+}
+}</code></pre></div>
+</div>
+
+<div class="code-editor__area" id="c-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="c hljs cpp"><span class="hljs-comment">// Merge sort in C</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+
+<span class="hljs-comment">// Merge two subarrays L and M into arr</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">merge</span><span class="hljs-params">(<span class="hljs-keyword">int</span> arr[], <span class="hljs-keyword">int</span> p, <span class="hljs-keyword">int</span> q, <span class="hljs-keyword">int</span> r)</span> </span>{
+
+<span class="hljs-comment">// Create L ← A[p..q] and M ← A[q+1..r]</span>
+<span class="hljs-keyword">int</span> n1 = q - p + <span class="hljs-number">1</span>;
+<span class="hljs-keyword">int</span> n2 = r - q;
+
+<span class="hljs-keyword">int</span> L[n1], M[n2];
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n1; i++)
+L[i] = arr[p + i];
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; n2; j++)
+M[j] = arr[q + <span class="hljs-number">1</span> + j];
+
+<span class="hljs-comment">// Maintain current index of sub-arrays and main array</span>
+<span class="hljs-keyword">int</span> i, j, k;
+i = <span class="hljs-number">0</span>;
+j = <span class="hljs-number">0</span>;
+k = p;
+
+<span class="hljs-comment">// Until we reach either end of either L or M, pick larger among</span>
+<span class="hljs-comment">// elements L and M and place them in the correct position at A[p..r]</span>
+<span class="hljs-keyword">while</span> (i &lt; n1 &amp;&amp; j &lt; n2) {
+<span class="hljs-keyword">if</span> (L[i] &lt;= M[j]) {
+arr[k] = L[i];
+i++;
+} <span class="hljs-keyword">else</span> {
+arr[k] = M[j];
+j++;
+}
+k++;
+}
+
+<span class="hljs-comment">// When we run out of elements in either L or M,</span>
+<span class="hljs-comment">// pick up the remaining elements and put in A[p..r]</span>
+<span class="hljs-keyword">while</span> (i &lt; n1) {
+arr[k] = L[i];
+i++;
+k++;
+}
+
+<span class="hljs-keyword">while</span> (j &lt; n2) {
+arr[k] = M[j];
+j++;
+k++;
+}
+}
+
+<span class="hljs-comment">// Divide the array into two subarrays, sort them and merge them</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">mergeSort</span><span class="hljs-params">(<span class="hljs-keyword">int</span> arr[], <span class="hljs-keyword">int</span> l, <span class="hljs-keyword">int</span> r)</span> </span>{
+<span class="hljs-keyword">if</span> (l &lt; r) {
+
+<span class="hljs-comment">// m is the point where the array is divided into two subarrays</span>
+<span class="hljs-keyword">int</span> m = l + (r - l) / <span class="hljs-number">2</span>;
+
+mergeSort(arr, l, m);
+mergeSort(arr, m + <span class="hljs-number">1</span>, r);
+
+<span class="hljs-comment">// Merge the sorted subarrays</span>
+merge(arr, l, m, r);
+}
+}
+
+<span class="hljs-comment">// Print the array</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">printArray</span><span class="hljs-params">(<span class="hljs-keyword">int</span> arr[], <span class="hljs-keyword">int</span> size)</span> </span>{
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; size; i++)
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d "</span>, arr[i]);
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"\n"</span>);
+}
+
+<span class="hljs-comment">// Driver program</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-keyword">int</span> arr[] = {<span class="hljs-number">6</span>, <span class="hljs-number">5</span>, <span class="hljs-number">12</span>, <span class="hljs-number">10</span>, <span class="hljs-number">9</span>, <span class="hljs-number">1</span>};
+<span class="hljs-keyword">int</span> size = <span class="hljs-keyword">sizeof</span>(arr) / <span class="hljs-keyword">sizeof</span>(arr[<span class="hljs-number">0</span>]);
+
+mergeSort(arr, <span class="hljs-number">0</span>, size - <span class="hljs-number">1</span>);
+
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"Sorted array: \n"</span>);
+printArray(arr, size);
+}</code></pre></div>
+</div>
+
+<div class="code-editor__area" id="cpp-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="cpp hljs"><span class="hljs-comment">// Merge sort in C++</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-comment">// Merge two subarrays L and M into arr</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">merge</span><span class="hljs-params">(<span class="hljs-keyword">int</span> arr[], <span class="hljs-keyword">int</span> p, <span class="hljs-keyword">int</span> q, <span class="hljs-keyword">int</span> r)</span> </span>{
+
+<span class="hljs-comment">// Create L ← A[p..q] and M ← A[q+1..r]</span>
+<span class="hljs-keyword">int</span> n1 = q - p + <span class="hljs-number">1</span>;
+<span class="hljs-keyword">int</span> n2 = r - q;
+
+<span class="hljs-keyword">int</span> L[n1], M[n2];
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n1; i++)
+L[i] = arr[p + i];
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; n2; j++)
+M[j] = arr[q + <span class="hljs-number">1</span> + j];
+
+<span class="hljs-comment">// Maintain current index of sub-arrays and main array</span>
+<span class="hljs-keyword">int</span> i, j, k;
+i = <span class="hljs-number">0</span>;
+j = <span class="hljs-number">0</span>;
+k = p;
+
+<span class="hljs-comment">// Until we reach either end of either L or M, pick larger among</span>
+<span class="hljs-comment">// elements L and M and place them in the correct position at A[p..r]</span>
+<span class="hljs-keyword">while</span> (i &lt; n1 &amp;&amp; j &lt; n2) {
+<span class="hljs-keyword">if</span> (L[i] &lt;= M[j]) {
+arr[k] = L[i];
+i++;
+} <span class="hljs-keyword">else</span> {
+arr[k] = M[j];
+j++;
+}
+k++;
+}
+
+<span class="hljs-comment">// When we run out of elements in either L or M,</span>
+<span class="hljs-comment">// pick up the remaining elements and put in A[p..r]</span>
+<span class="hljs-keyword">while</span> (i &lt; n1) {
+arr[k] = L[i];
+i++;
+k++;
+}
+
+<span class="hljs-keyword">while</span> (j &lt; n2) {
+arr[k] = M[j];
+j++;
+k++;
+}
+}
+
+<span class="hljs-comment">// Divide the array into two subarrays, sort them and merge them</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">mergeSort</span><span class="hljs-params">(<span class="hljs-keyword">int</span> arr[], <span class="hljs-keyword">int</span> l, <span class="hljs-keyword">int</span> r)</span> </span>{
+<span class="hljs-keyword">if</span> (l &lt; r) {
+<span class="hljs-comment">// m is the point where the array is divided into two subarrays</span>
+<span class="hljs-keyword">int</span> m = l + (r - l) / <span class="hljs-number">2</span>;
+
+mergeSort(arr, l, m);
+mergeSort(arr, m + <span class="hljs-number">1</span>, r);
+
+<span class="hljs-comment">// Merge the sorted subarrays</span>
+merge(arr, l, m, r);
+}
+}
+
+<span class="hljs-comment">// Print the array</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">printArray</span><span class="hljs-params">(<span class="hljs-keyword">int</span> arr[], <span class="hljs-keyword">int</span> size)</span> </span>{
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; size; i++)
+<span class="hljs-built_in">cout</span> &lt;&lt; arr[i] &lt;&lt; <span class="hljs-string">" "</span>;
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+}
+
+<span class="hljs-comment">// Driver program</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-keyword">int</span> arr[] = {<span class="hljs-number">6</span>, <span class="hljs-number">5</span>, <span class="hljs-number">12</span>, <span class="hljs-number">10</span>, <span class="hljs-number">9</span>, <span class="hljs-number">1</span>};
+<span class="hljs-keyword">int</span> size = <span class="hljs-keyword">sizeof</span>(arr) / <span class="hljs-keyword">sizeof</span>(arr[<span class="hljs-number">0</span>]);
+
+mergeSort(arr, <span class="hljs-number">0</span>, size - <span class="hljs-number">1</span>);
+
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Sorted array: \n"</span>;
+printArray(arr, size);
+<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}</code></pre></div>
+</div>
+</div>
+
+<hr><h2 id="complexity">Merge Sort Complexity</h2>
+
+<div class="table-responsive">
+<table border="0"><tbody><tr><th><strong>Time Complexity</strong></th>
+          <td>&nbsp;</td>
+  </tr><tr><td>Best</td>
+          <td>O(n*log n)</td>
+  </tr><tr><td>Worst</td>
+          <td>O(n*log n)</td>
+  </tr><tr><td>Average</td>
+          <td>O(n*log n)</td>
+  </tr><tr><th><strong>Space Complexity</strong></th>
+          <td>O(n)</td>
+  </tr><tr><th><strong>Stability</strong></th>
+          <td>Yes</td>
+  </tr></tbody></table></div>
+
+<hr><h3>Time Complexity</h3>
+
+<p>Best Case Complexity: <var>O(n*log n)</var></p>
+
+<p>Worst Case Complexity: <var>O(n*log n)</var></p>
+
+<p>Average Case Complexity: <var>O(n*log n)</var></p>
+
+<h3>Space Complexity</h3>
+
+<p>The space complexity of merge sort is <var>O(n)</var>.</p>
+
+<hr><h2 id="application">Merge Sort Applications</h2>
+
+<ul><li>Inversion count problem</li>
+<li>External sorting</li>
+<li>E-commerce applications</li>
+</ul><hr><h2>Similar Sorting Algorithms</h2>
+
+<ol><li><a href="/dsa/quick-sort.html">Quicksort</a></li>
+<li><a href="/dsa/insertion-sort.html">Insertion Sort</a></li>
+<li><a href="/dsa/selection-sort.html">Selection Sort</a></li>
+<li><a href="/dsa/bucket-sort.html">Bucket Sort</a></li>
+</ol></div>
+
+
+
+</div>
+
+
+        <div class="tutorial-toc"><div class="tutorial-toc__inner"><h3 class="tutorial-toc__title">Table of Contents
+<button class="btn btn--clear align-items-center">
+<svg class="programiz-icon"><use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#x"></use></svg></button></h3><div class="tutorial-toc__links"><ul><li><a href="#definition">Definition</a></li>
+<li><a href="#strategy">Divide and Conquer Strategy</a></li>
+<li><a href="#merge">MergeSort Algorithm</a></li>
+<li><a href="#code-writing">Writing the Code for Merge Algorithm</a></li>
+<li><a href="#function">Merge() Function Explained Step-By-Step</a></li>
+<li><a href="#code">Merge Sort Code in Python, Java, and C/C++</a></li>
+<li><a href="#complexity">Complexity</a></li>
+<li><a href="#application">Applications</a></li>
+</ul></div></div></div>                          </div>
+<!--second------------------------------------------->
+<div>
+<ul>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/stack.html">
+
+        Stack</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/queue.html">
+
+        Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/types-of-queue.html">
+
+        Types of Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/circular-queue.html">
+
+        Circular Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/priority-queue.html">
+
+        Priority Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deque.html">
+
+        Deque</a></button>
+<br/>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linked-list.html">
+
+        Linked List</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linked-list-operations.html">
+
+        Linked List Operations</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linked-list-types.html">
+
+        Types of Linked List</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/hash-table.html">
+
+        Hash Table</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/heap-data-structure.html">
+
+        Heap Data Structure</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/fibonacci-heap.html">
+
+        Fibonacci Heap</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/decrease-key-and-delete-node-from-a-fibonacci-heap.html">
+
+        Decrease Key and Delete node from Fibonacci Heap</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/trees.html">
+
+        Tree Data Structure</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/tree-traversal.html">
+
+        Tree Traversal</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/binary-tree.html">
+
+        Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/full-binary-tree.html">
+
+        Full Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/perfect-binary-tree.html">
+
+        Perfect Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/complete-binary-tree.html">
+
+        Complete Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/balanced-binary-tree.html">
+
+        Balanced Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/binary-search-tree.html">
+
+        Binary Search Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/avl-tree.html">
+
+        AVL Tree</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/b-tree.html">
+
+        B Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-into-a-b-tree.html">
+
+        Insertion into B-tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deletion-from-a-b-tree.html">
+
+        Deletion from B-tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/b-plus-tree.html">
+
+        B+ Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-on-a-b-plus-tree.html">
+
+        Insertion on a B+ Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deletion-from-a-b-plus-tree.html">
+
+        Deletion from a B+ Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/red-black-tree.html">
+
+        Red Black Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-in-a-red-black-tree.html">
+
+        Insertion in Red Black Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deletion-from-a-red-black-tree.html">
+
+        Deletion from Red Black Tree</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph.html">
+
+        Graph Data Structure</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/spanning-tree-and-minimum-spanning-tree.html">
+
+        Spanning Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/strongly-connected-components.html">
+
+        Strongly Connected Components</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-adjacency-matrix.html">
+
+        Adjacency Matrix</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-adjacency-list.html">
+
+        Adjacency List</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-dfs.html">
+
+        DFS Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-bfs.html">
+
+        Breadth-first Search</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/bellman-ford-algorithm.html">
+
+        Bellman Ford's Algorithm</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/bubble-sort.html">
+
+        Bubble Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/selection-sort.html">
+
+        Selection Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-sort.html">
+
+        Insertion Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/merge-sort.html">
+
+        Merge Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/quick-sort.html">
+
+        Quick Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/counting-sort.html">
+
+        Counting Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/radix-sort.html">
+
+        Radix Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/bucket-sort.html">
+
+        Bucket Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/heap-sort.html">
+
+        Heap Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/shell-sort.html">
+
+        Shell Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linear-search.html">
+
+        Linear Search</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/binary-search.html">
+
+        Binary Search</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/greedy-algorithm.html">
+
+        Greedy Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/ford-fulkerson-algorithm.html">
+
+        Ford-Fulkerson Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/dijkstra-algorithm.html">
+
+        Dijkstra's Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/kruskal-algorithm.html">
+
+        Kruskal's Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/prim-algorithm.html">
+
+        Prim's Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/huffman-coding.html">
+
+        Huffman Code</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/dynamic-programming.html">
+
+        Dynamic Programming</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/floyd-warshall-algorithm.html">
+
+        Floyd Warshall Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/longest-common-subsequence.html">
+
+        Longest Common Subsequence</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/backtracking-algorithm.html">
+
+        Backtracking Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/rabin-karp-algorithm.html">
+
+        Rabin-Karp Algorithm</a></button>
+<br>
+<br/>
+<h2>Free Courses on YouTube</h2>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+            https://www.youtube.com/watch?v=IbSXF7eT-AU&amp;list=PLR_5PTwg_uAQw40OhdvAwN4NvzWv0xOZ2">
+
+            Python Full Course Playlist</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://www.youtube.com/watch?v=UEl6wB90Gs8">
+
+            105 STL Algorithms in Less Than an Hour</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://www.youtube.com/watch?v=zZXTgN7L1UU&amp;list=PLR_5PTwg_uAS6C1cSMjU6oVhOcCX8Zu_4">
+
+            C++ STL Playlist</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://youtu.be/ty9756v3kc8">
+
+            Learn Node.js </a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://youtu.be/exrIpdS3Crc">
+
+            Learn Data Science Full course</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://youtu.be/Q8tDO2uSk5U">
+
+            Learn Computer Networking Full course</a></button>
+<br/>
+</br></br></br></br></br></br></br></br></ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<footer class="afooter" style="margin-left:20px">
+<p>
+<a href="/cookie-policy.html">Cookie policy</a> |
+
+        <a href="/privacy-policy.html">Privacy policy</a> |
+
+        <a href="/terms-of-use.html">Terms of use</a> |
+
+        <a href="/disclaimer.html">Disclaimer</a> |
+
+        <a href="/about-us.html">About Us</a>
+</p>
+<p>
+
+        © 2023 <a href="https://pythonread.github.io">https://pythonread.github.io</a>
+</p>
+</footer>
+<script type="text/javascript">
+
+    document.addEventListener('DOMContentLoaded', function () { htmlTableOfContents() }); function htmlTableOfContents(documentRef) { var documentRef = documentRef || document; var toc = documentRef.getElementById("toc"); var headings = [].slice.call(documentRef.body.querySelectorAll('h2, h3')); headings.forEach(function (heading, index) { var ref = "toc" + index; if (heading.hasAttribute("id")) { ref = heading.getAttribute("id") } else { heading.setAttribute("id", ref) } var link = documentRef.createElement("a"); link.setAttribute("href", "#" + ref); link.textContent = heading.textContent; var div = documentRef.createElement("div"); div.setAttribute("class", heading.tagName.toLowerCase()); div.appendChild(link); toc.appendChild(div) }) } try { module.exports = htmlTableOfContents } catch (e) { } function isScrolledIntoView(el) { var rect = el.getBoundingClientRect(); var elemTop = rect.top; var elemBottom = rect.bottom; var isVisible = (elemTop >= -10) && (elemBottom <= (window.innerHeight)); return isVisible } function highlightMenu() { var headers = document.querySelectorAll("h2, h3"); for (var i = 0; i < headers.length; i += 1) { if (isScrolledIntoView(headers[i])) { var childDivs = document.getElementById('toc').getElementsByTagName('div'); var c = childDivs[i].classList; c.add("active"); for (var j = 0; j < i; j += 1) { var c = childDivs[j].classList; c.remove("active") } for (var j = i + 1; j < childDivs.length; j += 1) { var c = childDivs[j].classList; c.remove("active") } break } } } function highlightMenuLastItem() { var childDivs = document.getElementById('toc').getElementsByTagName('div'); for (var j = 0; j < childDivs.length - 1; j += 1) { var c = childDivs[j].classList; c.remove("active") } var c = childDivs[childDivs.length - 1].classList; c.add("active") } window.addEventListener("click", function (event) { highlightMenu() }); window.onscroll = function (e) { highlightMenu(); if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) { highlightMenuLastItem() } }; function mobileMenu() { var classes = document.getElementById('nav-toggle-icon').classList; if (classes.contains("active")) { classes.remove("active") } else { classes.add("active") } var classes = document.getElementById('menu-wrapper').classList; if (classes.contains("active")) { classes.remove("active") } else { classes.add("active") } }
+
+</script>
+<script type="text/javascript">
+
+    function changepy(){
+
+        document.getElementById('py1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('java1').className = 'tabbed-editor__node';
+
+        document.getElementById('c1').className = 'tabbed-editor__node';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node';
+
+        document.getElementById('python-code').className = 'code-editor__area code-editor__area--active';
+
+        document.getElementById('java-code').className = 'code-editor__area';
+
+        document.getElementById('c-code').className = 'code-editor__area';
+
+        document.getElementById('cpp-code').className = 'code-editor__area';
+
+
+
+    }
+
+    function changecpp(){
+
+        document.getElementById('py1').className = 'tabbed-editor__node';
+
+        document.getElementById('java1').className = 'tabbed-editor__node';
+
+        document.getElementById('c1').className = 'tabbed-editor__node';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('python-code').className = 'code-editor__area';
+
+        document.getElementById('java-code').className = 'code-editor__area';
+
+        document.getElementById('c-code').className = 'code-editor__area';
+
+        document.getElementById('cpp-code').className = 'code-editor__area code-editor__area--active';
+
+    }
+
+    function changejava(){
+
+       document.getElementById('py1').className = 'tabbed-editor__node';
+
+        document.getElementById('java1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('c1').className = 'tabbed-editor__node';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node';
+
+        document.getElementById('python-code').className = 'code-editor__area';
+
+        document.getElementById('java-code').className = 'code-editor__area code-editor__area--active';
+
+        document.getElementById('c-code').className = 'code-editor__area';
+
+        document.getElementById('cpp-code').className = 'code-editor__area';
+
+    }
+
+    function changec(){
+
+        document.getElementById('py1').className = 'tabbed-editor__node';
+
+        document.getElementById('java1').className = 'tabbed-editor__node';
+
+        document.getElementById('c1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node';
+
+        document.getElementById('python-code').className = 'code-editor__area';
+
+        document.getElementById('java-code').className = 'code-editor__area';
+
+        document.getElementById('c-code').className = 'code-editor__area code-editor__area--active';
+
+        document.getElementById('cpp-code').className = 'code-editor__area';
+
+    }
+
+    
+
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>

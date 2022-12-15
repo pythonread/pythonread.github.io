@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<title>Priority Queue </title>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-HCERBDV76D"></script>
+<script>
+
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() { dataLayer.push(arguments); }
+
+        gtag('js', new Date());
+
+
+
+        gtag('config', 'G-HCERBDV76D');
+
+    </script>
+<meta content="B0487B46A104E90209E8A3BEA24ECA0E" name="msvalidate.01"/>
+<meta content="f044b3a12c7918f1" name="yandex-verification"/>
+<!--end-->
+<meta content="learn about data types, variables, lists, tuples, dictionaries,if else,DSA,loops,user-defined functions, oop, threading and scripting." name="description"/>
+<meta content="learnPython" name="author"/>
+<meta content="Learn Python for free,learn python for beginners,Core Python,Web frameworks,Multiprocess architecture,Serverside templating language,python tutorials,python4" name="keywords"/>
+<meta content="website" property="og:type"/>
+
+<meta content="US-CA" name="”geo.region”"/>
+<meta content="353 Jane Stanford Way, Stanford, CA 94305, United States" name="”geo.placename”"/>
+<meta content="37.430089898615456;-122.17332683124829" name="”geo.position”"/>
+<meta content="37.430089898615456, -122.17332683124829" name="”ICBM”"/>
+<link href="https://pythonread.github.io/?m=1" rel="alternate"/>
+<link href="/favicon.png" rel="icon"/>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="/style1.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/style2.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/style0.css" media="all" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div class="nav-wrapper">
+<div class="container">
+<nav>
+<div class="logo wave">
+<a href="/" id="logo">
+
+                        Python Tutorial
+
+                    </a>
+</div>
+<div class="nav-toggle-icon" id="nav-toggle-icon" onclick="mobileMenu()">
+<div class="material-hamburger">
+<span>
+</span>
+<span>
+</span>
+<span>
+</span>
+</div>
+</div>
+<div class="menu-wrapper" id="menu-wrapper">
+<div class="nav-indicator">
+</div>
+<ul class="menus">
+<li>
+<a class="wave" href="/">
+
+                                Home
+
+                            </a>
+</li>
+<li>
+<a class="wave" href="/projects.html">
+
+                                Projects
+
+                            </a>
+</li>
+<li>
+<a class="wave" href="/free-course.html" target="_blank">
+
+                                Free Course
+
+                            </a>
+</li>
+<li>
+<a class="wave" href="/dsa.html">
+
+                                DSA
+
+                            </a>
+</li>
+</ul>
+</div>
+</nav>
+</div>
+</div>
+<div class="contents contents--neg" style="margin-top: 60px">
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+<div class="d-flex">
+<div class="left-bar d-none d-lg-block">
+<div class="card-alt mb-10x">
+<h3>Page Index</h3>
+<div class="list">
+<ul>
+<li><a href="/dsa.html#data-structure-1" title="Data Structures (I)">Data Structures
+
+                                                (I)</a></li>
+<li><a href="/dsa.html#data-structure-2" title="Data Structures (II)">Data Structures
+
+                                                (II)</a></li>
+<li><a href="/dsa.html#tree-1" title="Tree based DSA (I)">Tree based DSA (I)</a></li>
+<li><a href="/dsa.html#tree-2" title="Tree based DSA (II)">Tree based DSA (II)</a></li>
+<li><a href="/dsa.html#graph" title="Graph Data Structures and Algorithm">Graph based
+
+                                                DSA</a></li>
+<li><a href="/dsa.html#sorting-searching" title="Sorting and Searching">Sorting and
+
+                                                Searching</a></li>
+<li><a href="/dsa.html#greedy-algorithm" title="Greedy Algorithms">Greedy Algorithms</a>
+</li>
+<li><a href="/dsa.html#dynamic-programming" title="Dynamic Programming">Dynamic
+
+                                                Programming</a></li>
+<li><a href="/dsa.html#other-algorithms" title="Other Algorithms">Other Algorithms</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="right-bar">
+<!--first part end-------------------------------------------->
+<div class="editor-contents">
+    <h1>Priority Queue</h1>
+
+
+    <p class="editor-contents__short-description">In this tutorial, you will learn what priority queue is. Also, you will learn about it's implementations in Python, Java, C, and C++.</p>
+
+
+
+      
+
+
+
+<div id="node-1510" class="node node-algorithm clearfix" about="/dsa/priority-queue" typeof="sioc:Item foaf:Document">
+
+
+<span property="dc:title" content="Priority Queue" class="rdf-meta element-hidden"></span>
+
+<div class="content">
+<p id="definition">A priority queue is a <strong>special type of queue</strong> in which each element is associated with a <strong>priority value</strong>. And, elements are served on the basis of their priority. That is, higher priority elements are served first.</p>
+
+<p>However, if elements with the same priority occur, they are served according to their order in the queue.</p>
+
+<p><strong>Assigning Priority Value</strong></p>
+
+<p>Generally, the value of the element itself is considered for assigning the priority. For example,</p>
+
+<p>The element with the highest value is considered the highest priority element. However, in other cases, we can assume the element with the lowest value as the highest priority element.</p>
+
+<p>We can also set priorities according to our needs.</p>
+
+<figure><img alt="the element with highest priority is removed from the priority queue" src="//cdn.programiz.com/sites/tutorial2program/files/Introduction.png" title="Priority Queue" width="450" height="399"><figcaption>Removing Highest Priority Element</figcaption></figure><hr><h3>Difference between Priority Queue and Normal Queue</h3>
+
+<p>In a queue, the <strong>first-in-first-out rule</strong> is implemented whereas, in a priority queue, the values are removed <strong>on the basis of priority</strong>. The element with the highest priority is removed first.</p>
+
+<hr><h2 id="implementation">Implementation of Priority Queue</h2>
+
+<p>Priority queue can be implemented using an array, a linked list, a heap data structure, or a binary search tree. Among these data structures, heap data structure provides an efficient implementation of priority queues.</p>
+
+<p>Hence, we will be using the heap data structure to implement the priority queue in this tutorial. A max-heap is implemented in the following operations. If you want to learn more about it, please visit <a href="/dsa/heap-sort.html#heap">max-heap and min-heap</a>.</p>
+
+<p>A comparative analysis of different implementations of priority queue is given below.</p>
+
+<div class="table-responsive">
+<table border="0"><tbody><tr><th>Operations</th>
+<th>peek</th>
+<th>insert</th>
+<th>delete</th>
+</tr><tr><td>Linked List</td>
+<td><code>O(1)</code></td>
+<td><code>O(n)</code></td>
+<td><code>O(1)</code></td>
+</tr><tr><td>Binary Heap</td>
+<td><code>O(1)</code></td>
+<td><code>O(log n)</code></td>
+<td><code>O(log n)</code></td>
+</tr><tr><td>Binary Search Tree</td>
+<td><code>O(1)</code></td>
+<td><code>O(log n)</code></td>
+<td><code>O(log n)</code></td>
+</tr></tbody></table></div>
+
+<hr><h2>Priority Queue Operations</h2>
+
+<p>Basic operations of a priority queue are inserting, removing, and peeking elements.</p>
+
+<p class="note-tip">Before studying the priority queue, please refer to the <a href="/dsa/heap-data-structure.html">heap data structure</a> for a better understanding of binary heap as it is used to implement the priority queue in this article.</p>
+
+<hr><h3 id="insert">1. Inserting an Element into the Priority Queue</h3>
+
+<p></p><div class="clearfix"></div><p>Inserting an element into a priority queue (max-heap) is done by the following steps.</p>
+
+<ul><li>Insert the new element at the end of the tree.
+<figure><img alt="insert an element at the end of the priority queue" src="//cdn.programiz.com/sites/tutorial2program/files/insert-1_0.png" title="Priority queue insertion" width="280" height="229"><figcaption>Insert an element at the end of the queue</figcaption></figure></li>
+<li><a href="/dsa/heap-data-structure.html#heapify">Heapify</a> the tree.
+<figure><img alt="heapify the priority queue after inserting new element" src="//cdn.programiz.com/sites/tutorial2program/files/insert-2_0.png" title="Priority queue insertion" width="280" height="229"><figcaption>Heapify after insertion</figcaption></figure></li>
+</ul><p>Algorithm for insertion of an element into priority queue (max-heap)</p>
+
+<pre>If there is no node, 
+create a newNode.
+else (a node is already present)
+insert the newNode at the end (last node from left to right.)
+
+heapify the array</pre>
+
+<p>For Min Heap, the above algorithm is modified so that <code>parentNode</code> is always smaller than <code>newNode</code>.</p>
+
+<hr><h3 id="delete">2. Deleting an Element from the Priority Queue</h3>
+
+<p>Deleting an element from a priority queue (max-heap) is done as follows:</p>
+
+<ul><li>Select the element to be deleted.
+<figure><img alt="choose the element to be deleted from the priority queue" src="//cdn.programiz.com/sites/tutorial2program/files/delete-1_0.png" title="Priority queue deletion" width="280" height="229"><figcaption>Select the element to be deleted</figcaption></figure></li>
+<li>Swap it with the last element.
+<figure><img alt="swap the element to be deleted with the last leaf node element" src="//cdn.programiz.com/sites/tutorial2program/files/delete-2_0.png" title="Swap the element with the last leaf of heap" width="280" height="229"><figcaption>Swap with the last leaf node element</figcaption></figure></li>
+<li>Remove the last element.
+<figure><img alt="remove the last leaf node element" src="//cdn.programiz.com/sites/tutorial2program/files/delete-3.png" title="Remove last leaf element" width="297" height="251"><figcaption>Remove the last element leaf</figcaption></figure></li>
+<li>Heapify the tree.
+<figure><img alt="heapify the priority queue" src="//cdn.programiz.com/sites/tutorial2program/files/delete-4.png" title="Heapify Priority Queue after deletion" width="297" height="274"><figcaption>Heapify the priority queue</figcaption></figure></li>
+</ul><p>Algorithm for deletion of an element in the priority queue (max-heap)</p>
+
+<pre>If nodeToBeDeleted is the leafNode
+remove the node
+Else swap nodeToBeDeleted with the lastLeafNode
+remove noteToBeDeleted
+
+heapify the array</pre>
+
+<p>For Min Heap, the above algorithm is modified so that the both <code>childNodes</code> are smaller than <code>currentNode</code>.</p>
+
+<hr><h3>3. Peeking from the Priority Queue (Find max/min)</h3>
+
+<p>Peek operation returns the maximum element from Max Heap or minimum element from Min Heap without deleting the node.</p>
+
+<p>For both Max heap and Min Heap</p>
+
+<pre>return rootNode</pre>
+
+<hr><h3>4. Extract-Max/Min from the Priority Queue</h3>
+
+<p>Extract-Max returns the node with maximum value after removing it from a Max Heap whereas Extract-Min returns the node with minimum value after removing it from Min Heap.</p>
+
+<hr><h2 id="code">Priority Queue Implementations in Python, Java, C, and C++</h2>
+
+<div class="tabbed-editor">
+<div id="py1" onclick="changepy()" class="tabbed-editor__node tabbed-editor__node--active"><a href="#python-code">Python</a></div>
+
+<div id="java1" onclick="changejava()" class="tabbed-editor__node"><a href="#java-code">Java</a></div>
+
+<div id="c1" onclick="changec()" class="tabbed-editor__node"><a href="#c-code">C</a></div>
+
+<div id="cpp1" onclick="changecpp()" class="tabbed-editor__node"><a href="#cpp-code">C++</a></div>
+</div>
+
+<div class="code-editor code-editor--tabbed">
+<div class="code-editor__area code-editor__area--active" id="python-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="python hljs"><span class="hljs-comment"># Priority Queue implementation in Python</span>
+
+
+<span class="hljs-comment"># Function to heapify the tree</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">heapify</span><span class="hljs-params">(arr, n, i)</span>:</span>
+<span class="hljs-comment"># Find the largest among root, left child and right child</span>
+largest = i
+l = <span class="hljs-number">2</span> * i + <span class="hljs-number">1</span>
+r = <span class="hljs-number">2</span> * i + <span class="hljs-number">2</span>
+
+<span class="hljs-keyword">if</span> l &lt; n <span class="hljs-keyword">and</span> arr[i] &lt; arr[l]:
+largest = l
+
+<span class="hljs-keyword">if</span> r &lt; n <span class="hljs-keyword">and</span> arr[largest] &lt; arr[r]:
+largest = r
+
+<span class="hljs-comment"># Swap and continue heapifying if root is not largest</span>
+<span class="hljs-keyword">if</span> largest != i:
+arr[i], arr[largest] = arr[largest], arr[i]
+heapify(arr, n, largest)
+
+
+<span class="hljs-comment"># Function to insert an element into the tree</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">insert</span><span class="hljs-params">(array, newNum)</span>:</span>
+size = len(array)
+<span class="hljs-keyword">if</span> size == <span class="hljs-number">0</span>:
+array.append(newNum)
+<span class="hljs-keyword">else</span>:
+array.append(newNum)
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range((size // <span class="hljs-number">2</span>) - <span class="hljs-number">1</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">-1</span>):
+heapify(array, size, i)
+
+
+<span class="hljs-comment"># Function to delete an element from the tree</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">deleteNode</span><span class="hljs-params">(array, num)</span>:</span>
+size = len(array)
+i = <span class="hljs-number">0</span>
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">0</span>, size):
+<span class="hljs-keyword">if</span> num == array[i]:
+<span class="hljs-keyword">break</span>
+
+array[i], array[size - <span class="hljs-number">1</span>] = array[size - <span class="hljs-number">1</span>], array[i]
+
+array.remove(size - <span class="hljs-number">1</span>)
+
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range((len(array) // <span class="hljs-number">2</span>) - <span class="hljs-number">1</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">-1</span>):
+heapify(array, len(array), i)
+
+
+arr = []
+
+insert(arr, <span class="hljs-number">3</span>)
+insert(arr, <span class="hljs-number">4</span>)
+insert(arr, <span class="hljs-number">9</span>)
+insert(arr, <span class="hljs-number">5</span>)
+insert(arr, <span class="hljs-number">2</span>)
+
+<span class="hljs-keyword">print</span> (<span class="hljs-string">"Max-Heap array: "</span> + str(arr))
+
+deleteNode(arr, <span class="hljs-number">4</span>)
+<span class="hljs-keyword">print</span>(<span class="hljs-string">"After deleting an element: "</span> + str(arr))</code></pre></div>
+</div>
+
+<div class="code-editor__area" id="java-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="java hljs"><span class="hljs-comment">// Priority Queue implementation in Java</span>
+
+<span class="hljs-keyword">import</span> java.util.ArrayList;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Heap</span> </span>{
+<span class="hljs-comment">// Function to heapify the tree</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">heapify</span><span class="hljs-params">(ArrayList&lt;Integer&gt; hT, <span class="hljs-keyword">int</span> i)</span> </span>{
+<span class="hljs-keyword">int</span> size = hT.size();
+<span class="hljs-comment">// Find the largest among root, left child and right child</span>
+<span class="hljs-keyword">int</span> largest = i;
+<span class="hljs-keyword">int</span> l = <span class="hljs-number">2</span> * i + <span class="hljs-number">1</span>;
+<span class="hljs-keyword">int</span> r = <span class="hljs-number">2</span> * i + <span class="hljs-number">2</span>;
+<span class="hljs-keyword">if</span> (l &lt; size &amp;&amp; hT.get(l) &gt; hT.get(largest))
+largest = l;
+<span class="hljs-keyword">if</span> (r &lt; size &amp;&amp; hT.get(r) &gt; hT.get(largest))
+largest = r;
+
+<span class="hljs-comment">// Swap and continue heapifying if root is not largest</span>
+<span class="hljs-keyword">if</span> (largest != i) {
+<span class="hljs-keyword">int</span> temp = hT.get(largest);
+hT.set(largest, hT.get(i));
+hT.set(i, temp);
+
+heapify(hT, largest);
+}
+}
+
+<span class="hljs-comment">// Function to insert an element into the tree</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">insert</span><span class="hljs-params">(ArrayList&lt;Integer&gt; hT, <span class="hljs-keyword">int</span> newNum)</span> </span>{
+<span class="hljs-keyword">int</span> size = hT.size();
+<span class="hljs-keyword">if</span> (size == <span class="hljs-number">0</span>) {
+hT.add(newNum);
+} <span class="hljs-keyword">else</span> {
+hT.add(newNum);
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = size / <span class="hljs-number">2</span> - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; i--) {
+heapify(hT, i);
+}
+}
+}
+
+<span class="hljs-comment">// Function to delete an element from the tree</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">deleteNode</span><span class="hljs-params">(ArrayList&lt;Integer&gt; hT, <span class="hljs-keyword">int</span> num)</span> </span>{
+<span class="hljs-keyword">int</span> size = hT.size();
+<span class="hljs-keyword">int</span> i;
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; size; i++) {
+<span class="hljs-keyword">if</span> (num == hT.get(i))
+<span class="hljs-keyword">break</span>;
+}
+
+<span class="hljs-keyword">int</span> temp = hT.get(i);
+hT.set(i, hT.get(size - <span class="hljs-number">1</span>));
+hT.set(size - <span class="hljs-number">1</span>, temp);
+
+hT.remove(size - <span class="hljs-number">1</span>);
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = size / <span class="hljs-number">2</span> - <span class="hljs-number">1</span>; j &gt;= <span class="hljs-number">0</span>; j--) {
+heapify(hT, j);
+}
+}
+
+<span class="hljs-comment">// Print the tree</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">printArray</span><span class="hljs-params">(ArrayList&lt;Integer&gt; array, <span class="hljs-keyword">int</span> size)</span> </span>{
+<span class="hljs-keyword">for</span> (Integer i : array) {
+System.out.print(i + <span class="hljs-string">" "</span>);
+}
+System.out.println();
+}
+
+<span class="hljs-comment">// Driver code</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span> </span>{
+
+ArrayList&lt;Integer&gt; array = <span class="hljs-keyword">new</span> ArrayList&lt;Integer&gt;();
+<span class="hljs-keyword">int</span> size = array.size();
+
+Heap h = <span class="hljs-keyword">new</span> Heap();
+h.insert(array, <span class="hljs-number">3</span>);
+h.insert(array, <span class="hljs-number">4</span>);
+h.insert(array, <span class="hljs-number">9</span>);
+h.insert(array, <span class="hljs-number">5</span>);
+h.insert(array, <span class="hljs-number">2</span>);
+
+System.out.println(<span class="hljs-string">"Max-Heap array: "</span>);
+h.printArray(array, size);
+
+h.deleteNode(array, <span class="hljs-number">4</span>);
+System.out.println(<span class="hljs-string">"After deleting an element: "</span>);
+h.printArray(array, size);
+}
+}</code></pre></div>
+</div>
+
+<div class="code-editor__area" id="c-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="c hljs cpp"><span class="hljs-comment">// Priority Queue implementation in C</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+<span class="hljs-keyword">int</span> size = <span class="hljs-number">0</span>;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">swap</span><span class="hljs-params">(<span class="hljs-keyword">int</span> *a, <span class="hljs-keyword">int</span> *b)</span> </span>{
+<span class="hljs-keyword">int</span> temp = *b;
+*b = *a;
+*a = temp;
+}
+
+<span class="hljs-comment">// Function to heapify the tree</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">heapify</span><span class="hljs-params">(<span class="hljs-keyword">int</span> <span class="hljs-built_in">array</span>[], <span class="hljs-keyword">int</span> size, <span class="hljs-keyword">int</span> i)</span> </span>{
+<span class="hljs-keyword">if</span> (size == <span class="hljs-number">1</span>) {
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"Single element in the heap"</span>);
+} <span class="hljs-keyword">else</span> {
+<span class="hljs-comment">// Find the largest among root, left child and right child</span>
+<span class="hljs-keyword">int</span> largest = i;
+<span class="hljs-keyword">int</span> l = <span class="hljs-number">2</span> * i + <span class="hljs-number">1</span>;
+<span class="hljs-keyword">int</span> r = <span class="hljs-number">2</span> * i + <span class="hljs-number">2</span>;
+<span class="hljs-keyword">if</span> (l &lt; size &amp;&amp; <span class="hljs-built_in">array</span>[l] &gt; <span class="hljs-built_in">array</span>[largest])
+largest = l;
+<span class="hljs-keyword">if</span> (r &lt; size &amp;&amp; <span class="hljs-built_in">array</span>[r] &gt; <span class="hljs-built_in">array</span>[largest])
+largest = r;
+
+<span class="hljs-comment">// Swap and continue heapifying if root is not largest</span>
+<span class="hljs-keyword">if</span> (largest != i) {
+swap(&amp;<span class="hljs-built_in">array</span>[i], &amp;<span class="hljs-built_in">array</span>[largest]);
+heapify(<span class="hljs-built_in">array</span>, size, largest);
+}
+}
+}
+
+<span class="hljs-comment">// Function to insert an element into the tree</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">insert</span><span class="hljs-params">(<span class="hljs-keyword">int</span> <span class="hljs-built_in">array</span>[], <span class="hljs-keyword">int</span> newNum)</span> </span>{
+<span class="hljs-keyword">if</span> (size == <span class="hljs-number">0</span>) {
+<span class="hljs-built_in">array</span>[<span class="hljs-number">0</span>] = newNum;
+size += <span class="hljs-number">1</span>;
+} <span class="hljs-keyword">else</span> {
+<span class="hljs-built_in">array</span>[size] = newNum;
+size += <span class="hljs-number">1</span>;
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = size / <span class="hljs-number">2</span> - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; i--) {
+heapify(<span class="hljs-built_in">array</span>, size, i);
+}
+}
+}
+
+<span class="hljs-comment">// Function to delete an element from the tree</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">deleteRoot</span><span class="hljs-params">(<span class="hljs-keyword">int</span> <span class="hljs-built_in">array</span>[], <span class="hljs-keyword">int</span> num)</span> </span>{
+<span class="hljs-keyword">int</span> i;
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; size; i++) {
+<span class="hljs-keyword">if</span> (num == <span class="hljs-built_in">array</span>[i])
+<span class="hljs-keyword">break</span>;
+}
+
+swap(&amp;<span class="hljs-built_in">array</span>[i], &amp;<span class="hljs-built_in">array</span>[size - <span class="hljs-number">1</span>]);
+size -= <span class="hljs-number">1</span>;
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = size / <span class="hljs-number">2</span> - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; i--) {
+heapify(<span class="hljs-built_in">array</span>, size, i);
+}
+}
+
+<span class="hljs-comment">// Print the array</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">printArray</span><span class="hljs-params">(<span class="hljs-keyword">int</span> <span class="hljs-built_in">array</span>[], <span class="hljs-keyword">int</span> size)</span> </span>{
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; size; ++i)
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d "</span>, <span class="hljs-built_in">array</span>[i]);
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"\n"</span>);
+}
+
+<span class="hljs-comment">// Driver code</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-keyword">int</span> <span class="hljs-built_in">array</span>[<span class="hljs-number">10</span>];
+
+insert(<span class="hljs-built_in">array</span>, <span class="hljs-number">3</span>);
+insert(<span class="hljs-built_in">array</span>, <span class="hljs-number">4</span>);
+insert(<span class="hljs-built_in">array</span>, <span class="hljs-number">9</span>);
+insert(<span class="hljs-built_in">array</span>, <span class="hljs-number">5</span>);
+insert(<span class="hljs-built_in">array</span>, <span class="hljs-number">2</span>);
+
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"Max-Heap array: "</span>);
+printArray(<span class="hljs-built_in">array</span>, size);
+
+deleteRoot(<span class="hljs-built_in">array</span>, <span class="hljs-number">4</span>);
+
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"After deleting an element: "</span>);
+
+printArray(<span class="hljs-built_in">array</span>, size);
+}</code></pre></div>
+</div>
+
+<div class="code-editor__area" id="cpp-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="cpp hljs"><span class="hljs-comment">// Priority Queue implementation in C++</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;vector&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-comment">// Function to swap position of two elements</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">swap</span><span class="hljs-params">(<span class="hljs-keyword">int</span> *a, <span class="hljs-keyword">int</span> *b)</span> </span>{
+<span class="hljs-keyword">int</span> temp = *b;
+*b = *a;
+*a = temp;
+}
+
+<span class="hljs-comment">// Function to heapify the tree</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">heapify</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; &amp;hT, <span class="hljs-keyword">int</span> i)</span> </span>{
+<span class="hljs-keyword">int</span> size = hT.size();
+
+<span class="hljs-comment">// Find the largest among root, left child and right child</span>
+<span class="hljs-keyword">int</span> largest = i;
+<span class="hljs-keyword">int</span> l = <span class="hljs-number">2</span> * i + <span class="hljs-number">1</span>;
+<span class="hljs-keyword">int</span> r = <span class="hljs-number">2</span> * i + <span class="hljs-number">2</span>;
+<span class="hljs-keyword">if</span> (l &lt; size &amp;&amp; hT[l] &gt; hT[largest])
+largest = l;
+<span class="hljs-keyword">if</span> (r &lt; size &amp;&amp; hT[r] &gt; hT[largest])
+largest = r;
+
+<span class="hljs-comment">// Swap and continue heapifying if root is not largest</span>
+<span class="hljs-keyword">if</span> (largest != i) {
+swap(&amp;hT[i], &amp;hT[largest]);
+heapify(hT, largest);
+}
+}
+
+<span class="hljs-comment">// Function to insert an element into the tree</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">insert</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; &amp;hT, <span class="hljs-keyword">int</span> newNum)</span> </span>{
+<span class="hljs-keyword">int</span> size = hT.size();
+<span class="hljs-keyword">if</span> (size == <span class="hljs-number">0</span>) {
+hT.push_back(newNum);
+} <span class="hljs-keyword">else</span> {
+hT.push_back(newNum);
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = size / <span class="hljs-number">2</span> - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; i--) {
+heapify(hT, i);
+}
+}
+}
+
+<span class="hljs-comment">// Function to delete an element from the tree</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">deleteNode</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; &amp;hT, <span class="hljs-keyword">int</span> num)</span> </span>{
+<span class="hljs-keyword">int</span> size = hT.size();
+<span class="hljs-keyword">int</span> i;
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; size; i++) {
+<span class="hljs-keyword">if</span> (num == hT[i])
+<span class="hljs-keyword">break</span>;
+}
+swap(&amp;hT[i], &amp;hT[size - <span class="hljs-number">1</span>]);
+
+hT.pop_back();
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = size / <span class="hljs-number">2</span> - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; i--) {
+heapify(hT, i);
+}
+}
+
+<span class="hljs-comment">// Print the tree</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">printArray</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; &amp;hT)</span> </span>{
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; hT.size(); ++i)
+<span class="hljs-built_in">cout</span> &lt;&lt; hT[i] &lt;&lt; <span class="hljs-string">" "</span>;
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"\n"</span>;
+}
+
+<span class="hljs-comment">// Driver code</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; heapTree;
+
+insert(heapTree, <span class="hljs-number">3</span>);
+insert(heapTree, <span class="hljs-number">4</span>);
+insert(heapTree, <span class="hljs-number">9</span>);
+insert(heapTree, <span class="hljs-number">5</span>);
+insert(heapTree, <span class="hljs-number">2</span>);
+
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Max-Heap array: "</span>;
+printArray(heapTree);
+
+deleteNode(heapTree, <span class="hljs-number">4</span>);
+
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"After deleting an element: "</span>;
+
+printArray(heapTree);
+}</code></pre></div>
+</div>
+</div>
+
+<hr><h2 id="applications">Priority Queue Applications</h2>
+
+<p>Some of the applications of a priority queue are:</p>
+
+<ul><li>Dijkstra's algorithm</li>
+<li>for implementing stack</li>
+<li>for load balancing and interrupt handling in an operating system</li>
+<li>for data compression in Huffman code</li>
+</ul></div>
+
+
+
+</div>
+
+
+    <div class="tutorial-toc"><div class="tutorial-toc__inner"><h3 class="tutorial-toc__title">Table of Contents
+<button class="btn btn--clear align-items-center">
+<svg class="programiz-icon"><use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#x"></use></svg></button></h3><div class="tutorial-toc__links"><ul><li><a href="#definition">Definition</a></li>
+<li><a href="#implementation">Implementation of Priority Queue</a></li>
+<li><a href="#insert">Inserting an Element</a></li>
+<li><a href="#delete">Deleting an Element</a></li>
+<li><a href="#code">Python, Java and C/C++ Examples</a></li>
+<li><a href="#applications">Priority Queue Applications</a></li>
+</ul></div></div></div>                          </div>
+<!--second------------------------------------------->
+<div>
+<ul>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/stack.html">
+
+        Stack</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/queue.html">
+
+        Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/types-of-queue.html">
+
+        Types of Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/circular-queue.html">
+
+        Circular Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/priority-queue.html">
+
+        Priority Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deque.html">
+
+        Deque</a></button>
+<br/>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linked-list.html">
+
+        Linked List</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linked-list-operations.html">
+
+        Linked List Operations</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linked-list-types.html">
+
+        Types of Linked List</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/hash-table.html">
+
+        Hash Table</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/heap-data-structure.html">
+
+        Heap Data Structure</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/fibonacci-heap.html">
+
+        Fibonacci Heap</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/decrease-key-and-delete-node-from-a-fibonacci-heap.html">
+
+        Decrease Key and Delete node from Fibonacci Heap</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/trees.html">
+
+        Tree Data Structure</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/tree-traversal.html">
+
+        Tree Traversal</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/binary-tree.html">
+
+        Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/full-binary-tree.html">
+
+        Full Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/perfect-binary-tree.html">
+
+        Perfect Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/complete-binary-tree.html">
+
+        Complete Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/balanced-binary-tree.html">
+
+        Balanced Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/binary-search-tree.html">
+
+        Binary Search Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/avl-tree.html">
+
+        AVL Tree</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/b-tree.html">
+
+        B Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-into-a-b-tree.html">
+
+        Insertion into B-tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deletion-from-a-b-tree.html">
+
+        Deletion from B-tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/b-plus-tree.html">
+
+        B+ Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-on-a-b-plus-tree.html">
+
+        Insertion on a B+ Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deletion-from-a-b-plus-tree.html">
+
+        Deletion from a B+ Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/red-black-tree.html">
+
+        Red Black Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-in-a-red-black-tree.html">
+
+        Insertion in Red Black Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deletion-from-a-red-black-tree.html">
+
+        Deletion from Red Black Tree</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph.html">
+
+        Graph Data Structure</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/spanning-tree-and-minimum-spanning-tree.html">
+
+        Spanning Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/strongly-connected-components.html">
+
+        Strongly Connected Components</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-adjacency-matrix.html">
+
+        Adjacency Matrix</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-adjacency-list.html">
+
+        Adjacency List</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-dfs.html">
+
+        DFS Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-bfs.html">
+
+        Breadth-first Search</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/bellman-ford-algorithm.html">
+
+        Bellman Ford's Algorithm</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/bubble-sort.html">
+
+        Bubble Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/selection-sort.html">
+
+        Selection Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-sort.html">
+
+        Insertion Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/merge-sort.html">
+
+        Merge Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/quick-sort.html">
+
+        Quick Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/counting-sort.html">
+
+        Counting Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/radix-sort.html">
+
+        Radix Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/bucket-sort.html">
+
+        Bucket Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/heap-sort.html">
+
+        Heap Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/shell-sort.html">
+
+        Shell Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linear-search.html">
+
+        Linear Search</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/binary-search.html">
+
+        Binary Search</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/greedy-algorithm.html">
+
+        Greedy Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/ford-fulkerson-algorithm.html">
+
+        Ford-Fulkerson Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/dijkstra-algorithm.html">
+
+        Dijkstra's Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/kruskal-algorithm.html">
+
+        Kruskal's Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/prim-algorithm.html">
+
+        Prim's Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/huffman-coding.html">
+
+        Huffman Code</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/dynamic-programming.html">
+
+        Dynamic Programming</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/floyd-warshall-algorithm.html">
+
+        Floyd Warshall Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/longest-common-subsequence.html">
+
+        Longest Common Subsequence</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/backtracking-algorithm.html">
+
+        Backtracking Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/rabin-karp-algorithm.html">
+
+        Rabin-Karp Algorithm</a></button>
+<br>
+<br/>
+<h2>Free Courses on YouTube</h2>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+            https://www.youtube.com/watch?v=IbSXF7eT-AU&amp;list=PLR_5PTwg_uAQw40OhdvAwN4NvzWv0xOZ2">
+
+            Python Full Course Playlist</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://www.youtube.com/watch?v=UEl6wB90Gs8">
+
+            105 STL Algorithms in Less Than an Hour</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://www.youtube.com/watch?v=zZXTgN7L1UU&amp;list=PLR_5PTwg_uAS6C1cSMjU6oVhOcCX8Zu_4">
+
+            C++ STL Playlist</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://youtu.be/ty9756v3kc8">
+
+            Learn Node.js </a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://youtu.be/exrIpdS3Crc">
+
+            Learn Data Science Full course</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://youtu.be/Q8tDO2uSk5U">
+
+            Learn Computer Networking Full course</a></button>
+<br/>
+</br></br></br></br></br></br></br></br></ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<footer class="afooter" style="margin-left:20px">
+<p>
+<a href="/cookie-policy.html">Cookie policy</a> |
+
+        <a href="/privacy-policy.html">Privacy policy</a> |
+
+        <a href="/terms-of-use.html">Terms of use</a> |
+
+        <a href="/disclaimer.html">Disclaimer</a> |
+
+        <a href="/about-us.html">About Us</a>
+</p>
+<p>
+
+        © 2023 <a href="https://pythonread.github.io">https://pythonread.github.io</a>
+</p>
+</footer>
+<script type="text/javascript">
+
+    document.addEventListener('DOMContentLoaded', function () { htmlTableOfContents() }); function htmlTableOfContents(documentRef) { var documentRef = documentRef || document; var toc = documentRef.getElementById("toc"); var headings = [].slice.call(documentRef.body.querySelectorAll('h2, h3')); headings.forEach(function (heading, index) { var ref = "toc" + index; if (heading.hasAttribute("id")) { ref = heading.getAttribute("id") } else { heading.setAttribute("id", ref) } var link = documentRef.createElement("a"); link.setAttribute("href", "#" + ref); link.textContent = heading.textContent; var div = documentRef.createElement("div"); div.setAttribute("class", heading.tagName.toLowerCase()); div.appendChild(link); toc.appendChild(div) }) } try { module.exports = htmlTableOfContents } catch (e) { } function isScrolledIntoView(el) { var rect = el.getBoundingClientRect(); var elemTop = rect.top; var elemBottom = rect.bottom; var isVisible = (elemTop >= -10) && (elemBottom <= (window.innerHeight)); return isVisible } function highlightMenu() { var headers = document.querySelectorAll("h2, h3"); for (var i = 0; i < headers.length; i += 1) { if (isScrolledIntoView(headers[i])) { var childDivs = document.getElementById('toc').getElementsByTagName('div'); var c = childDivs[i].classList; c.add("active"); for (var j = 0; j < i; j += 1) { var c = childDivs[j].classList; c.remove("active") } for (var j = i + 1; j < childDivs.length; j += 1) { var c = childDivs[j].classList; c.remove("active") } break } } } function highlightMenuLastItem() { var childDivs = document.getElementById('toc').getElementsByTagName('div'); for (var j = 0; j < childDivs.length - 1; j += 1) { var c = childDivs[j].classList; c.remove("active") } var c = childDivs[childDivs.length - 1].classList; c.add("active") } window.addEventListener("click", function (event) { highlightMenu() }); window.onscroll = function (e) { highlightMenu(); if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) { highlightMenuLastItem() } }; function mobileMenu() { var classes = document.getElementById('nav-toggle-icon').classList; if (classes.contains("active")) { classes.remove("active") } else { classes.add("active") } var classes = document.getElementById('menu-wrapper').classList; if (classes.contains("active")) { classes.remove("active") } else { classes.add("active") } }
+
+</script>
+<script type="text/javascript">
+
+    function changepy(){
+
+        document.getElementById('py1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('java1').className = 'tabbed-editor__node';
+
+        document.getElementById('c1').className = 'tabbed-editor__node';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node';
+
+        document.getElementById('python-code').className = 'code-editor__area code-editor__area--active';
+
+        document.getElementById('java-code').className = 'code-editor__area';
+
+        document.getElementById('c-code').className = 'code-editor__area';
+
+        document.getElementById('cpp-code').className = 'code-editor__area';
+
+
+
+    }
+
+    function changecpp(){
+
+        document.getElementById('py1').className = 'tabbed-editor__node';
+
+        document.getElementById('java1').className = 'tabbed-editor__node';
+
+        document.getElementById('c1').className = 'tabbed-editor__node';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('python-code').className = 'code-editor__area';
+
+        document.getElementById('java-code').className = 'code-editor__area';
+
+        document.getElementById('c-code').className = 'code-editor__area';
+
+        document.getElementById('cpp-code').className = 'code-editor__area code-editor__area--active';
+
+    }
+
+    function changejava(){
+
+       document.getElementById('py1').className = 'tabbed-editor__node';
+
+        document.getElementById('java1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('c1').className = 'tabbed-editor__node';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node';
+
+        document.getElementById('python-code').className = 'code-editor__area';
+
+        document.getElementById('java-code').className = 'code-editor__area code-editor__area--active';
+
+        document.getElementById('c-code').className = 'code-editor__area';
+
+        document.getElementById('cpp-code').className = 'code-editor__area';
+
+    }
+
+    function changec(){
+
+        document.getElementById('py1').className = 'tabbed-editor__node';
+
+        document.getElementById('java1').className = 'tabbed-editor__node';
+
+        document.getElementById('c1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node';
+
+        document.getElementById('python-code').className = 'code-editor__area';
+
+        document.getElementById('java-code').className = 'code-editor__area';
+
+        document.getElementById('c-code').className = 'code-editor__area code-editor__area--active';
+
+        document.getElementById('cpp-code').className = 'code-editor__area';
+
+    }
+
+    
+
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>

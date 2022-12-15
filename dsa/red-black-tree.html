@@ -1,0 +1,2455 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<title>Red Black Tree</title>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-HCERBDV76D"></script>
+<script>
+
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() { dataLayer.push(arguments); }
+
+        gtag('js', new Date());
+
+
+
+        gtag('config', 'G-HCERBDV76D');
+
+    </script>
+<meta content="B0487B46A104E90209E8A3BEA24ECA0E" name="msvalidate.01"/>
+<meta content="f044b3a12c7918f1" name="yandex-verification"/>
+<!--end-->
+<meta content="learn about data types, variables, lists, tuples, dictionaries,if else,DSA,loops,user-defined functions, oop, threading and scripting." name="description"/>
+<meta content="learnPython" name="author"/>
+<meta content="Learn Python for free,learn python for beginners,Core Python,Web frameworks,Multiprocess architecture,Serverside templating language,python tutorials,python4" name="keywords"/>
+<meta content="website" property="og:type"/>
+<meta content="US-CA" name="”geo.region”"/>
+<meta content="353 Jane Stanford Way, Stanford, CA 94305, United States" name="”geo.placename”"/>
+<meta content="37.430089898615456;-122.17332683124829" name="”geo.position”"/>
+<meta content="37.430089898615456, -122.17332683124829" name="”ICBM”"/>
+<link href="https://pythonread.github.io/?m=1" rel="alternate"/>
+<link href="/favicon.png" rel="icon"/>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="/style1.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/style2.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/style0.css" media="all" rel="stylesheet" type="text/css"/>
+<!--<![endif]-->
+</head>
+<body>
+<div class="nav-wrapper">
+<div class="container">
+<nav>
+<div class="logo wave">
+<a href="/" id="logo">
+
+                        Python Tutorial
+
+                    </a>
+</div>
+<div class="nav-toggle-icon" id="nav-toggle-icon" onclick="mobileMenu()">
+<div class="material-hamburger">
+<span>
+</span>
+<span>
+</span>
+<span>
+</span>
+</div>
+</div>
+<div class="menu-wrapper" id="menu-wrapper">
+<div class="nav-indicator">
+</div>
+<ul class="menus">
+<li>
+<a class="wave" href="/">
+
+                                Home
+
+                            </a>
+</li>
+<li>
+<a class="wave" href="/projects.html">
+
+                                Projects
+
+                            </a>
+</li>
+<li>
+<a class="wave" href="/free-course.html" target="_blank">
+
+                                Free Course
+
+                            </a>
+</li>
+<li>
+<a class="wave" href="/dsa.html">
+
+                                DSA
+
+                            </a>
+</li>
+</ul>
+</div>
+</nav>
+</div>
+</div>
+<div class="contents contents--neg" style="margin-top: 60px">
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+<div class="d-flex">
+<div class="left-bar d-none d-lg-block">
+<div class="card-alt mb-10x">
+<h3>Page Index</h3>
+<div class="list">
+<ul>
+<li><a href="/dsa.html#data-structure-1" title="Data Structures (I)">Data Structures
+
+                                                (I)</a></li>
+<li><a href="/dsa.html#data-structure-2" title="Data Structures (II)">Data Structures
+
+                                                (II)</a></li>
+<li><a href="/dsa.html#tree-1" title="Tree based DSA (I)">Tree based DSA (I)</a></li>
+<li><a href="/dsa.html#tree-2" title="Tree based DSA (II)">Tree based DSA (II)</a></li>
+<li><a href="/dsa.html#graph" title="Graph Data Structures and Algorithm">Graph based
+
+                                                DSA</a></li>
+<li><a href="/dsa.html#sorting-searching" title="Sorting and Searching">Sorting and
+
+                                                Searching</a></li>
+<li><a href="/dsa.html#greedy-algorithm" title="Greedy Algorithms">Greedy Algorithms</a>
+</li>
+<li><a href="/dsa.html#dynamic-programming" title="Dynamic Programming">Dynamic
+
+                                                Programming</a></li>
+<li><a href="/dsa.html#other-algorithms" title="Other Algorithms">Other Algorithms</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="right-bar">
+<!--first part end-------------------------------------------->
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/cP_-HxHkS_8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="editor-contents">
+        <h1>Red-Black Tree</h1>
+
+
+        <p class="editor-contents__short-description">In this tutorial, you will learn  what a red-black tree is. Also, you will find working examples of various operations performed on a red-black tree in C, C++, Java and Python.</p>
+
+
+
+          
+
+
+
+<div id="node-1520" class="node node-algorithm clearfix" about="/dsa/red-black-tree" typeof="sioc:Item foaf:Document">
+
+
+<span property="dc:title" content="Red-Black Tree" class="rdf-meta element-hidden"></span>
+
+<div class="content">
+<p id="definition">Red-Black tree is a self-balancing binary search tree in which each node contains an extra bit for denoting the color of the node, either red or black.</p>
+
+<p>A red-black tree satisfies the following properties:</p>
+
+<ol><li><strong>Red/Black Property:</strong> Every node is colored, either red or black.</li>
+<li><strong>Root Property:</strong> The root is black.</li>
+<li><strong>Leaf Property:</strong> Every leaf (NIL) is black.</li>
+<li><strong>Red Property:</strong> If a red node has children then, the children are always black.</li>
+<li><strong>Depth Property:</strong> For each node, any simple path from this node to any of its descendant leaf has the same black-depth (the number of black nodes).</li>
+</ol><p>An example of a red-black tree is:</p>
+
+<figure><img alt="red-black tree" src="//cdn.programiz.com/sites/tutorial2program/files/red-black-tree_0.png" title="red-black tree" width="500" height="358"><figcaption>Red Black Tree</figcaption></figure><p>Each node has the following attributes:</p>
+
+<ul><li>color</li>
+<li>key</li>
+<li>leftChild</li>
+<li>rightChild</li>
+<li>parent (except root node)</li>
+</ul><hr><p><strong>How the red-black tree maintains the property of self-balancing?</strong></p>
+
+<p>The red-black color is meant for balancing the tree.</p>
+
+<p>The limitations put on the node colors ensure that any simple path from the root to a leaf is not more than twice as long as any other such path. It helps in maintaining the self-balancing property of the red-black tree.</p>
+
+<hr><h2>Operations on a Red-Black Tree</h2>
+
+<p>Various operations that can be performed on a red-black tree are:</p>
+
+<h3 id="rotation">Rotating the subtrees in a Red-Black Tree</h3>
+
+<p>In rotation operation, the positions of the nodes of a subtree are interchanged.</p>
+
+<p>Rotation operation is used for maintaining the properties of a red-black tree when they are violated by other operations such as insertion and deletion.</p>
+
+<p>There are two types of rotations:</p>
+
+<hr><h3>Left Rotate</h3>
+
+<p>In left-rotation, the arrangement of the nodes on the right is transformed into the arrangements on the left node.</p>
+
+<p><strong>Algorithm</strong></p>
+
+<ol><li>Let the initial tree be:
+<figure><img alt="left-rotate" src="//cdn.programiz.com/sites/tutorial2program/files/leftrotate-1_0.png" title="Initial Tree" width="150" height="177"><figcaption>Initial tree</figcaption></figure></li>
+<li>If <var>y</var> has a left subtree, assign <var>x</var> as the parent of the left subtree of <var>y</var>.
+<figure><img alt="left-rotate" src="//cdn.programiz.com/sites/tutorial2program/files/leftrotate-2_0.png" title="Assign x as the parent of the left subtree of y" width="150" height="136"><figcaption>Assign x as the parent of the left subtree of y</figcaption></figure></li>
+<li>If the parent of <var>x</var> is <code>NULL</code>, make <var>y</var> as the root of the tree.</li>
+<li>Else if <var>x</var> is the left child of <var>p</var>, make <var>y</var> as the left child of <var>p</var>.</li>
+<li>Else assign <var>y</var> as the right child of <var>p</var>.
+<figure><img alt="left-rotate" src="//cdn.programiz.com/sites/tutorial2program/files/leftrotate-3_0.png" title="change the parent of x to that of y" width="150" height="117"><figcaption>Change the parent of x to that of y</figcaption></figure></li>
+<li>Make <var>y</var> as the parent of <var>x</var>.
+<figure><img alt="left-rotate" src="//cdn.programiz.com/sites/tutorial2program/files/leftrotate-4_0.png" title="Assign y as the parent of x." width="150" height="167"><figcaption>Assign y as the parent of x.</figcaption></figure></li>
+</ol><hr><h3>Right Rotate</h3>
+
+<p>In right-rotation, the arrangement of the nodes on the left is transformed into the arrangements on the right node.</p>
+
+<ol><li>Let the initial tree be:
+<figure><img alt="right-rotate" src="//cdn.programiz.com/sites/tutorial2program/files/rightrotate-1_0.png" title="initial tree" width="150" height="168"><figcaption>Initial Tree</figcaption></figure></li>
+<li>If <var>x</var> has a right subtree, assign y as the parent of the right subtree of <var>x</var>.
+<figure><img alt="right-rotate" src="//cdn.programiz.com/sites/tutorial2program/files/rightrotate-2_0.png" title="assign y as the parent of the right subtree of x." width="150" height="140"><figcaption>Assign y as the parent of the right subtree of x</figcaption></figure></li>
+<li>If the parent of <var>y</var> is <code>NULL</code>, make <var>x</var> as the root of the tree.</li>
+<li>Else if <var>y</var> is the right child of its parent <var>p</var>, make <var>x</var> as the right child of <var>p</var>.</li>
+<li>Else assign <var>x</var> as the left child of <var>p</var>.
+<figure><img alt="right-rotate" src="//cdn.programiz.com/sites/tutorial2program/files/rightrotate-3_0.png" title="Assign the parent of y as the parent of x." width="150" height="121"><figcaption>Assign the parent of y as the parent of x</figcaption></figure></li>
+<li>Make <var>x</var> as the parent of <var>y</var>.
+<figure><img alt="right-rotate" src="//cdn.programiz.com/sites/tutorial2program/files/rightrotate-4_0.png" title="assign x as the parent of y" width="150" height="168"><figcaption>Assign x as the parent of y</figcaption></figure></li>
+</ol><hr><h3>Left-Right and Right-Left Rotate</h3>
+
+<p>In left-right rotation, the arrangements are first shifted to the left and then to the right.</p>
+
+<ol><li>Do left rotation on x-y.
+<figure><img alt="left-right rotate" src="//cdn.programiz.com/sites/tutorial2program/files/leftright-rotate-1_0.png" title="left rotate x-y" width="375" height="205"><figcaption>Left rotate x-y</figcaption></figure></li>
+<li>Do right rotation on y-z.
+<figure><img alt="left-right rotate" src="//cdn.programiz.com/sites/tutorial2program/files/leftright-rotate-2_0.png" title="right rotate z-y" width="375" height="194"><figcaption>Right rotate z-y</figcaption></figure></li>
+</ol><p></p><div class="clearfix"></div><p>In right-left rotation, the arrangements are first shifted to the right and then to the left.</p>
+
+<ol><li>Do right rotation on x-y.
+<figure><img alt="right-left rotate" src="//cdn.programiz.com/sites/tutorial2program/files/rightleft-rotate-1_0.png" title="right rotate x-y" width="375" height="200"><figcaption>Right rotate x-y</figcaption></figure></li>
+<li>Do left rotation on z-y.
+<figure><img alt="right-left rotate" src="//cdn.programiz.com/sites/tutorial2program/files/rightleft-rotate-2_0.png" title="left rotate z-y" width="375" height="196"><figcaption>Left rotate z-y</figcaption></figure></li>
+</ol><hr><h3 id="insertion">Inserting an element into a Red-Black Tree</h3>
+
+<p>While inserting a new node, the new node is always inserted as a RED node. After insertion of a new node, if the tree is violating the properties of the red-black tree then, we do the following operations.</p>
+
+<ol><li>Recolor</li>
+<li>Rotation</li>
+</ol><hr><h3>Algorithm to insert a node</h3>
+
+<p>Following steps are followed for inserting a new element into a red-black tree:</p>
+
+<ol><li>Let y be the leaf (ie. <code>NIL</code>) and x be the root of the tree.</li>
+<li>Check if the tree is empty (ie. whether <var>x</var> is <code>NIL</code>). If yes, insert <var>newNode</var> as a root node and color it black.</li>
+<li>Else, repeat steps following steps until leaf (<code>NIL</code>) is reached.
+<ol type="a"><li>Compare <var>newKey</var> with <var>rootKey</var>.</li>
+  <li>If <var>newKey</var> is greater than rootKey, traverse through the right subtree.</li>
+  <li>Else traverse through the left subtree.</li>
+</ol></li>
+<li>Assign the parent of the leaf as a parent of <var>newNode</var>.</li>
+<li>If <var>leafKey</var> is greater than <var>newKey</var>, make <var>newNode</var> as <var>rightChild</var>.</li>
+<li>Else, make <var>newNode</var> as <var>leftChild</var>.</li>
+<li>Assign <code>NULL</code> to the left and <var>rightChild</var> of <var>newNode</var>.</li>
+<li>Assign RED color to <var>newNode</var>.</li>
+<li>Call InsertFix-algorithm to maintain the property of red-black tree if violated.</li>
+</ol><hr><p><strong>Why newly inserted nodes are always red in a red-black tree?</strong></p>
+
+<p>This is because inserting a red node does not violate the depth property of a red-black tree.</p>
+
+<p>If you attach a red node to a red node, then the rule is violated but it is easier to fix this problem than the problem introduced by violating the depth property.</p>
+
+<hr><h3>Algorithm to maintain red-black property after insertion</h3>
+
+<p>This algorithm is used for maintaining the property of a red-black tree if the insertion of a newNode violates this property.</p>
+
+<ol><li>Do the following while the parent of <var>newNode</var> <var>p</var> is RED.</li>
+<li>If <var>p</var> is the left child of <var>grandParent</var> <var>gP</var> of <var>z</var>, do the following.<br><strong>Case-I:</strong>
+<ol type="a"><li>If the color of the right child of <var>gP</var> of <var>z</var> is RED, set the color of both the children of <var>gP</var> as BLACK and the color of <var>gP</var> as RED.</li>
+  <li>Assign <var>gP</var> to <var>newNode</var>.<br><strong>Case-II:</strong></li>
+  <li>Else if <var>newNode</var> is the right child of <var>p</var> then, assign <var>p</var> to <var>newNode</var>.</li>
+  <li>Left-Rotate <var>newNode</var>.<br><strong>Case-III:</strong></li>
+  <li>Set color of <var>p</var> as BLACK and color of <var>gP</var> as RED.</li>
+  <li>Right-Rotate <var>gP</var>.</li>
+</ol></li>
+<li>Else, do the following.
+<ol type="a"><li>If the color of the left child of <var>gP</var> of <var>z</var> is RED, set the color of both the children of <var>gP</var> as BLACK and the color of <var>gP</var> as RED.</li>
+  <li>Assign <var>gP</var> to <var>newNode</var>.</li>
+  <li>Else if newNode is the left child of <var>p</var> then, assign <var>p</var> to <var>newNode</var> and Right-Rotate <var>newNode</var>.</li>
+  <li>Set color of <var>p</var> as BLACK and color of <var>gP</var> as RED.</li>
+  <li>Left-Rotate <var>gP</var>.</li>
+</ol></li>
+<li>Set the root of the tree as BLACK.</li>
+</ol><hr><h3 id="deletion">Deleting an element from a Red-Black Tree</h3>
+
+<p>This operation removes a node from the tree. After deleting a node, the red-black property is maintained again.</p>
+
+<hr><h3>Algorithm to delete a node</h3>
+
+<ol><li>Save the color of <var>nodeToBeDeleted</var> in <var>origrinalColor</var>.</li>
+<li>If the left child of <var>nodeToBeDeleted</var> is <code>NULL</code>
+<ol type="a"><li>Assign the right child of <var>nodeToBeDeleted</var> to x.</li>
+  <li>Transplant <var>nodeToBeDeleted</var> with <var>x</var>.</li>
+</ol></li>
+<li>Else if the right child of <var>nodeToBeDeleted</var> is <code>NULL</code>
+<ol type="a"><li>Assign the left child of <var>nodeToBeDeleted</var> into <var>x</var>.</li>
+  <li>Transplant <var>nodeToBeDeleted</var> with <var>x</var>.</li>
+</ol></li>
+<li>Else
+<ol type="a"><li>Assign the minimum of right subtree of <var>noteToBeDeleted</var> into <var>y</var>.</li>
+  <li>Save the color of <var>y</var> in <var>originalColor</var>.</li>
+  <li>Assign the <var>rightChild</var> of <var>y</var> into <var>x</var>.</li>
+  <li>If <var>y</var> is a child of <var>nodeToBeDeleted</var>, then set the parent of <var>x</var> as <var>y</var>.</li>
+  <li>Else, transplant <var>y</var> with <var>rightChild</var> of <var>y</var>.</li>
+  <li>Transplant <var>nodeToBeDeleted</var> with <var>y</var>.</li>
+  <li>Set the color of y with originalColor.</li>
+</ol></li>
+<li>If the <var>originalColor</var> is BLACK, call DeleteFix(x).</li>
+</ol><hr><h3>Algorithm to maintain Red-Black property after deletion</h3>
+
+<p>This algorithm is implemented when a black node is deleted because it violates the black depth property of the red-black tree.</p>
+
+<p>This violation is corrected by assuming that node <var>x</var> (which is occupying <var>y</var>'s original position) has an extra black. This makes node <var>x</var> neither red nor black. It is either doubly black or black-and-red. This violates the red-black properties.</p>
+
+<p>However, the color attribute of <var>x</var> is not changed rather the extra black is represented in <var>x</var>'s pointing to the node.</p>
+
+<p>The extra black can be removed if</p>
+
+<ol><li>It reaches the root node.</li>
+<li>If <var>x</var> points to a red-black node. In this case, <var>x</var> is colored black.</li>
+<li>Suitable rotations and recoloring are performed.</li>
+</ol><p>The following algorithm retains the properties of a red-black tree.</p>
+
+<ol><li>Do the following until the <var>x</var> is not the root of the tree and the color of <var>x</var> is BLACK</li>
+<li>If <var>x</var> is the left child of its parent then,
+<ol type="a"><li>Assign w to the sibling of x.</li>
+  <li>If the right child of parent of <var>x</var> is RED,<br><strong>Case-I:</strong>
+          <ol type="i"><li>Set the color of the right child of the parent of <var>x</var> as BLACK.</li>
+                  <li>Set the color of the parent of <var>x</var> as RED.</li>
+                  <li>Left-Rotate the parent of <var>x</var>.</li>
+                  <li>Assign the <var>rightChild</var> of the parent of <var>x</var> to <var>w</var>.</li>
+          </ol></li>
+  <li>If the color of both the right and the <var>leftChild</var> of <var>w</var> is BLACK,<br><strong>Case-II:</strong>
+          <ol type="i"><li>Set the color of <var>w</var> as RED</li>
+                  <li>Assign the parent of <var>x</var> to <var>x</var>.</li>
+          </ol></li>
+  <li>Else if the color of the <var>rightChild</var> of <var>w</var> is BLACK<br><strong>Case-III:</strong>
+          <ol type="i"><li>Set the color of the <var>leftChild</var> of <var>w</var> as BLACK</li>
+                  <li>Set the color of <var>w</var> as RED</li>
+                  <li>Right-Rotate <var>w</var>.</li>
+                  <li>Assign the <var>rightChild</var> of the parent of <var>x</var> to <var>w.</var></li>
+          </ol></li>
+  <li>If any of the above cases do not occur, then do the following.<br><strong>Case-IV:</strong>
+          <ol type="i"><li>Set the color of <var>w</var> as the color of the parent of <var>x</var>.</li>
+                  <li>Set the color of the parent of <var>x</var> as BLACK.</li>
+                  <li>Set the color of the right child of <var>w</var> as BLACK.</li>
+                  <li>Left-Rotate the parent of <var>x</var>.</li>
+                  <li>Set <var>x</var> as the root of the tree.</li>
+          </ol></li>
+</ol></li>
+<li>Else the same as above with right changed to left and vice versa.</li>
+<li>Set the color of <var>x</var> as BLACK.</li>
+</ol><hr><p>Please refer to <a href="/dsa/insertion-in-a-red-black-tree.html">insertion</a> and <a href="/deletion-from-a-red-black-tree.html">deletion</a> operations for more explanation with examples.</p>
+
+<hr><h2 id="examples">Python, Java and C/C++ Examples</h2>
+
+<div class="tabbed-editor">
+        <div id="py1" onclick="changepy()" class="tabbed-editor__node tabbed-editor__node--active"><a href="#python-code">Python</a></div>
+        
+        <div id="java1" onclick="changejava()"  class="tabbed-editor__node"><a href="#java-code">Java</a></div>
+        
+        <div id="c1" onclick="changec()" class="tabbed-editor__node"><a href="#c-code">C</a></div>
+        
+        <div id="cpp1" onclick="changecpp()" class="tabbed-editor__node"><a href="#cpp-code">C++</a></div>
+        </div>
+
+<div class="code-editor code-editor--tabbed">
+<div class="code-editor__area code-editor__area--active" id="python-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="python hljs"><span class="hljs-comment"># Implementing Red-Black Tree in Python</span>
+
+
+<span class="hljs-keyword">import</span> sys
+
+
+<span class="hljs-comment"># Node creation</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Node</span><span class="hljs-params">()</span>:</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, item)</span>:</span>
+self.item = item
+self.parent = <span class="hljs-literal">None</span>
+self.left = <span class="hljs-literal">None</span>
+self.right = <span class="hljs-literal">None</span>
+self.color = <span class="hljs-number">1</span>
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RedBlackTree</span><span class="hljs-params">()</span>:</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self)</span>:</span>
+self.TNULL = Node(<span class="hljs-number">0</span>)
+self.TNULL.color = <span class="hljs-number">0</span>
+self.TNULL.left = <span class="hljs-literal">None</span>
+self.TNULL.right = <span class="hljs-literal">None</span>
+self.root = self.TNULL
+
+<span class="hljs-comment"># Preorder</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">pre_order_helper</span><span class="hljs-params">(self, node)</span>:</span>
+<span class="hljs-keyword">if</span> node != TNULL:
+sys.stdout.write(node.item + <span class="hljs-string">" "</span>)
+self.pre_order_helper(node.left)
+self.pre_order_helper(node.right)
+
+<span class="hljs-comment"># Inorder</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">in_order_helper</span><span class="hljs-params">(self, node)</span>:</span>
+<span class="hljs-keyword">if</span> node != TNULL:
+self.in_order_helper(node.left)
+sys.stdout.write(node.item + <span class="hljs-string">" "</span>)
+self.in_order_helper(node.right)
+
+<span class="hljs-comment"># Postorder</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">post_order_helper</span><span class="hljs-params">(self, node)</span>:</span>
+<span class="hljs-keyword">if</span> node != TNULL:
+self.post_order_helper(node.left)
+self.post_order_helper(node.right)
+sys.stdout.write(node.item + <span class="hljs-string">" "</span>)
+
+<span class="hljs-comment"># Search the tree</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">search_tree_helper</span><span class="hljs-params">(self, node, key)</span>:</span>
+<span class="hljs-keyword">if</span> node == TNULL <span class="hljs-keyword">or</span> key == node.item:
+<span class="hljs-keyword">return</span> node
+
+<span class="hljs-keyword">if</span> key &lt; node.item:
+<span class="hljs-keyword">return</span> self.search_tree_helper(node.left, key)
+<span class="hljs-keyword">return</span> self.search_tree_helper(node.right, key)
+
+<span class="hljs-comment"># Balancing the tree after deletion</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">delete_fix</span><span class="hljs-params">(self, x)</span>:</span>
+<span class="hljs-keyword">while</span> x != self.root <span class="hljs-keyword">and</span> x.color == <span class="hljs-number">0</span>:
+<span class="hljs-keyword">if</span> x == x.parent.left:
+s = x.parent.right
+<span class="hljs-keyword">if</span> s.color == <span class="hljs-number">1</span>:
+s.color = <span class="hljs-number">0</span>
+x.parent.color = <span class="hljs-number">1</span>
+self.left_rotate(x.parent)
+s = x.parent.right
+
+<span class="hljs-keyword">if</span> s.left.color == <span class="hljs-number">0</span> <span class="hljs-keyword">and</span> s.right.color == <span class="hljs-number">0</span>:
+s.color = <span class="hljs-number">1</span>
+x = x.parent
+<span class="hljs-keyword">else</span>:
+<span class="hljs-keyword">if</span> s.right.color == <span class="hljs-number">0</span>:
+  s.left.color = <span class="hljs-number">0</span>
+  s.color = <span class="hljs-number">1</span>
+  self.right_rotate(s)
+  s = x.parent.right
+
+s.color = x.parent.color
+x.parent.color = <span class="hljs-number">0</span>
+s.right.color = <span class="hljs-number">0</span>
+self.left_rotate(x.parent)
+x = self.root
+<span class="hljs-keyword">else</span>:
+s = x.parent.left
+<span class="hljs-keyword">if</span> s.color == <span class="hljs-number">1</span>:
+s.color = <span class="hljs-number">0</span>
+x.parent.color = <span class="hljs-number">1</span>
+self.right_rotate(x.parent)
+s = x.parent.left
+
+<span class="hljs-keyword">if</span> s.right.color == <span class="hljs-number">0</span> <span class="hljs-keyword">and</span> s.right.color == <span class="hljs-number">0</span>:
+s.color = <span class="hljs-number">1</span>
+x = x.parent
+<span class="hljs-keyword">else</span>:
+<span class="hljs-keyword">if</span> s.left.color == <span class="hljs-number">0</span>:
+  s.right.color = <span class="hljs-number">0</span>
+  s.color = <span class="hljs-number">1</span>
+  self.left_rotate(s)
+  s = x.parent.left
+
+s.color = x.parent.color
+x.parent.color = <span class="hljs-number">0</span>
+s.left.color = <span class="hljs-number">0</span>
+self.right_rotate(x.parent)
+x = self.root
+x.color = <span class="hljs-number">0</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__rb_transplant</span><span class="hljs-params">(self, u, v)</span>:</span>
+<span class="hljs-keyword">if</span> u.parent == <span class="hljs-literal">None</span>:
+self.root = v
+<span class="hljs-keyword">elif</span> u == u.parent.left:
+u.parent.left = v
+<span class="hljs-keyword">else</span>:
+u.parent.right = v
+v.parent = u.parent
+
+<span class="hljs-comment"># Node deletion</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">delete_node_helper</span><span class="hljs-params">(self, node, key)</span>:</span>
+z = self.TNULL
+<span class="hljs-keyword">while</span> node != self.TNULL:
+<span class="hljs-keyword">if</span> node.item == key:
+z = node
+
+<span class="hljs-keyword">if</span> node.item &lt;= key:
+node = node.right
+<span class="hljs-keyword">else</span>:
+node = node.left
+
+<span class="hljs-keyword">if</span> z == self.TNULL:
+<span class="hljs-keyword">print</span>(<span class="hljs-string">"Cannot find key in the tree"</span>)
+<span class="hljs-keyword">return</span>
+
+y = z
+y_original_color = y.color
+<span class="hljs-keyword">if</span> z.left == self.TNULL:
+x = z.right
+self.__rb_transplant(z, z.right)
+<span class="hljs-keyword">elif</span> (z.right == self.TNULL):
+x = z.left
+self.__rb_transplant(z, z.left)
+<span class="hljs-keyword">else</span>:
+y = self.minimum(z.right)
+y_original_color = y.color
+x = y.right
+<span class="hljs-keyword">if</span> y.parent == z:
+x.parent = y
+<span class="hljs-keyword">else</span>:
+self.__rb_transplant(y, y.right)
+y.right = z.right
+y.right.parent = y
+
+self.__rb_transplant(z, y)
+y.left = z.left
+y.left.parent = y
+y.color = z.color
+<span class="hljs-keyword">if</span> y_original_color == <span class="hljs-number">0</span>:
+self.delete_fix(x)
+
+<span class="hljs-comment"># Balance the tree after insertion</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">fix_insert</span><span class="hljs-params">(self, k)</span>:</span>
+<span class="hljs-keyword">while</span> k.parent.color == <span class="hljs-number">1</span>:
+<span class="hljs-keyword">if</span> k.parent == k.parent.parent.right:
+u = k.parent.parent.left
+<span class="hljs-keyword">if</span> u.color == <span class="hljs-number">1</span>:
+u.color = <span class="hljs-number">0</span>
+k.parent.color = <span class="hljs-number">0</span>
+k.parent.parent.color = <span class="hljs-number">1</span>
+k = k.parent.parent
+<span class="hljs-keyword">else</span>:
+<span class="hljs-keyword">if</span> k == k.parent.left:
+  k = k.parent
+  self.right_rotate(k)
+k.parent.color = <span class="hljs-number">0</span>
+k.parent.parent.color = <span class="hljs-number">1</span>
+self.left_rotate(k.parent.parent)
+<span class="hljs-keyword">else</span>:
+u = k.parent.parent.right
+
+<span class="hljs-keyword">if</span> u.color == <span class="hljs-number">1</span>:
+u.color = <span class="hljs-number">0</span>
+k.parent.color = <span class="hljs-number">0</span>
+k.parent.parent.color = <span class="hljs-number">1</span>
+k = k.parent.parent
+<span class="hljs-keyword">else</span>:
+<span class="hljs-keyword">if</span> k == k.parent.right:
+  k = k.parent
+  self.left_rotate(k)
+k.parent.color = <span class="hljs-number">0</span>
+k.parent.parent.color = <span class="hljs-number">1</span>
+self.right_rotate(k.parent.parent)
+<span class="hljs-keyword">if</span> k == self.root:
+<span class="hljs-keyword">break</span>
+self.root.color = <span class="hljs-number">0</span>
+
+<span class="hljs-comment"># Printing the tree</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__print_helper</span><span class="hljs-params">(self, node, indent, last)</span>:</span>
+<span class="hljs-keyword">if</span> node != self.TNULL:
+sys.stdout.write(indent)
+<span class="hljs-keyword">if</span> last:
+sys.stdout.write(<span class="hljs-string">"R----"</span>)
+indent += <span class="hljs-string">"     "</span>
+<span class="hljs-keyword">else</span>:
+sys.stdout.write(<span class="hljs-string">"L----"</span>)
+indent += <span class="hljs-string">"|    "</span>
+
+s_color = <span class="hljs-string">"RED"</span> <span class="hljs-keyword">if</span> node.color == <span class="hljs-number">1</span> <span class="hljs-keyword">else</span> <span class="hljs-string">"BLACK"</span>
+<span class="hljs-keyword">print</span>(str(node.item) + <span class="hljs-string">"("</span> + s_color + <span class="hljs-string">")"</span>)
+self.__print_helper(node.left, indent, <span class="hljs-literal">False</span>)
+self.__print_helper(node.right, indent, <span class="hljs-literal">True</span>)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">preorder</span><span class="hljs-params">(self)</span>:</span>
+self.pre_order_helper(self.root)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">inorder</span><span class="hljs-params">(self)</span>:</span>
+self.in_order_helper(self.root)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">postorder</span><span class="hljs-params">(self)</span>:</span>
+self.post_order_helper(self.root)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">searchTree</span><span class="hljs-params">(self, k)</span>:</span>
+<span class="hljs-keyword">return</span> self.search_tree_helper(self.root, k)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">minimum</span><span class="hljs-params">(self, node)</span>:</span>
+<span class="hljs-keyword">while</span> node.left != self.TNULL:
+node = node.left
+<span class="hljs-keyword">return</span> node
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">maximum</span><span class="hljs-params">(self, node)</span>:</span>
+<span class="hljs-keyword">while</span> node.right != self.TNULL:
+node = node.right
+<span class="hljs-keyword">return</span> node
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">successor</span><span class="hljs-params">(self, x)</span>:</span>
+<span class="hljs-keyword">if</span> x.right != self.TNULL:
+<span class="hljs-keyword">return</span> self.minimum(x.right)
+
+y = x.parent
+<span class="hljs-keyword">while</span> y != self.TNULL <span class="hljs-keyword">and</span> x == y.right:
+x = y
+y = y.parent
+<span class="hljs-keyword">return</span> y
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">predecessor</span><span class="hljs-params">(self,  x)</span>:</span>
+<span class="hljs-keyword">if</span> (x.left != self.TNULL):
+<span class="hljs-keyword">return</span> self.maximum(x.left)
+
+y = x.parent
+<span class="hljs-keyword">while</span> y != self.TNULL <span class="hljs-keyword">and</span> x == y.left:
+x = y
+y = y.parent
+
+<span class="hljs-keyword">return</span> y
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">left_rotate</span><span class="hljs-params">(self, x)</span>:</span>
+y = x.right
+x.right = y.left
+<span class="hljs-keyword">if</span> y.left != self.TNULL:
+y.left.parent = x
+
+y.parent = x.parent
+<span class="hljs-keyword">if</span> x.parent == <span class="hljs-literal">None</span>:
+self.root = y
+<span class="hljs-keyword">elif</span> x == x.parent.left:
+x.parent.left = y
+<span class="hljs-keyword">else</span>:
+x.parent.right = y
+y.left = x
+x.parent = y
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">right_rotate</span><span class="hljs-params">(self, x)</span>:</span>
+y = x.left
+x.left = y.right
+<span class="hljs-keyword">if</span> y.right != self.TNULL:
+y.right.parent = x
+
+y.parent = x.parent
+<span class="hljs-keyword">if</span> x.parent == <span class="hljs-literal">None</span>:
+self.root = y
+<span class="hljs-keyword">elif</span> x == x.parent.right:
+x.parent.right = y
+<span class="hljs-keyword">else</span>:
+x.parent.left = y
+y.right = x
+x.parent = y
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">insert</span><span class="hljs-params">(self, key)</span>:</span>
+node = Node(key)
+node.parent = <span class="hljs-literal">None</span>
+node.item = key
+node.left = self.TNULL
+node.right = self.TNULL
+node.color = <span class="hljs-number">1</span>
+
+y = <span class="hljs-literal">None</span>
+x = self.root
+
+<span class="hljs-keyword">while</span> x != self.TNULL:
+y = x
+<span class="hljs-keyword">if</span> node.item &lt; x.item:
+x = x.left
+<span class="hljs-keyword">else</span>:
+x = x.right
+
+node.parent = y
+<span class="hljs-keyword">if</span> y == <span class="hljs-literal">None</span>:
+self.root = node
+<span class="hljs-keyword">elif</span> node.item &lt; y.item:
+y.left = node
+<span class="hljs-keyword">else</span>:
+y.right = node
+
+<span class="hljs-keyword">if</span> node.parent == <span class="hljs-literal">None</span>:
+node.color = <span class="hljs-number">0</span>
+<span class="hljs-keyword">return</span>
+
+<span class="hljs-keyword">if</span> node.parent.parent == <span class="hljs-literal">None</span>:
+<span class="hljs-keyword">return</span>
+
+self.fix_insert(node)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_root</span><span class="hljs-params">(self)</span>:</span>
+<span class="hljs-keyword">return</span> self.root
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">delete_node</span><span class="hljs-params">(self, item)</span>:</span>
+self.delete_node_helper(self.root, item)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">print_tree</span><span class="hljs-params">(self)</span>:</span>
+self.__print_helper(self.root, <span class="hljs-string">""</span>, <span class="hljs-literal">True</span>)
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">"__main__"</span>:
+bst = RedBlackTree()
+
+bst.insert(<span class="hljs-number">55</span>)
+bst.insert(<span class="hljs-number">40</span>)
+bst.insert(<span class="hljs-number">65</span>)
+bst.insert(<span class="hljs-number">60</span>)
+bst.insert(<span class="hljs-number">75</span>)
+bst.insert(<span class="hljs-number">57</span>)
+
+bst.print_tree()
+
+<span class="hljs-keyword">print</span>(<span class="hljs-string">"\nAfter deleting an element"</span>)
+bst.delete_node(<span class="hljs-number">40</span>)
+bst.print_tree()
+</code></pre></div>
+</div>
+
+<div class="code-editor__area" id="java-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="java hljs"><span class="hljs-comment">// Implementing Red-Black Tree in Java</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Node</span> </span>{
+<span class="hljs-keyword">int</span> data;
+Node parent;
+Node left;
+Node right;
+<span class="hljs-keyword">int</span> color;
+}
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RedBlackTree</span> </span>{
+<span class="hljs-keyword">private</span> Node root;
+<span class="hljs-keyword">private</span> Node TNULL;
+
+<span class="hljs-comment">// Preorder</span>
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">preOrderHelper</span><span class="hljs-params">(Node node)</span> </span>{
+<span class="hljs-keyword">if</span> (node != TNULL) {
+System.out.print(node.data + <span class="hljs-string">" "</span>);
+preOrderHelper(node.left);
+preOrderHelper(node.right);
+}
+}
+
+<span class="hljs-comment">// Inorder</span>
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">inOrderHelper</span><span class="hljs-params">(Node node)</span> </span>{
+<span class="hljs-keyword">if</span> (node != TNULL) {
+inOrderHelper(node.left);
+System.out.print(node.data + <span class="hljs-string">" "</span>);
+inOrderHelper(node.right);
+}
+}
+
+<span class="hljs-comment">// Post order</span>
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">postOrderHelper</span><span class="hljs-params">(Node node)</span> </span>{
+<span class="hljs-keyword">if</span> (node != TNULL) {
+postOrderHelper(node.left);
+postOrderHelper(node.right);
+System.out.print(node.data + <span class="hljs-string">" "</span>);
+}
+}
+
+<span class="hljs-comment">// Search the tree</span>
+<span class="hljs-function"><span class="hljs-keyword">private</span> Node <span class="hljs-title">searchTreeHelper</span><span class="hljs-params">(Node node, <span class="hljs-keyword">int</span> key)</span> </span>{
+<span class="hljs-keyword">if</span> (node == TNULL || key == node.data) {
+<span class="hljs-keyword">return</span> node;
+}
+
+<span class="hljs-keyword">if</span> (key &lt; node.data) {
+<span class="hljs-keyword">return</span> searchTreeHelper(node.left, key);
+}
+<span class="hljs-keyword">return</span> searchTreeHelper(node.right, key);
+}
+
+<span class="hljs-comment">// Balance the tree after deletion of a node</span>
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">fixDelete</span><span class="hljs-params">(Node x)</span> </span>{
+Node s;
+<span class="hljs-keyword">while</span> (x != root &amp;&amp; x.color == <span class="hljs-number">0</span>) {
+<span class="hljs-keyword">if</span> (x == x.parent.left) {
+s = x.parent.right;
+<span class="hljs-keyword">if</span> (s.color == <span class="hljs-number">1</span>) {
+s.color = <span class="hljs-number">0</span>;
+x.parent.color = <span class="hljs-number">1</span>;
+leftRotate(x.parent);
+s = x.parent.right;
+}
+
+<span class="hljs-keyword">if</span> (s.left.color == <span class="hljs-number">0</span> &amp;&amp; s.right.color == <span class="hljs-number">0</span>) {
+s.color = <span class="hljs-number">1</span>;
+x = x.parent;
+} <span class="hljs-keyword">else</span> {
+<span class="hljs-keyword">if</span> (s.right.color == <span class="hljs-number">0</span>) {
+s.left.color = <span class="hljs-number">0</span>;
+s.color = <span class="hljs-number">1</span>;
+rightRotate(s);
+s = x.parent.right;
+}
+
+s.color = x.parent.color;
+x.parent.color = <span class="hljs-number">0</span>;
+s.right.color = <span class="hljs-number">0</span>;
+leftRotate(x.parent);
+x = root;
+}
+} <span class="hljs-keyword">else</span> {
+s = x.parent.left;
+<span class="hljs-keyword">if</span> (s.color == <span class="hljs-number">1</span>) {
+s.color = <span class="hljs-number">0</span>;
+x.parent.color = <span class="hljs-number">1</span>;
+rightRotate(x.parent);
+s = x.parent.left;
+}
+
+<span class="hljs-keyword">if</span> (s.right.color == <span class="hljs-number">0</span> &amp;&amp; s.right.color == <span class="hljs-number">0</span>) {
+s.color = <span class="hljs-number">1</span>;
+x = x.parent;
+} <span class="hljs-keyword">else</span> {
+<span class="hljs-keyword">if</span> (s.left.color == <span class="hljs-number">0</span>) {
+s.right.color = <span class="hljs-number">0</span>;
+s.color = <span class="hljs-number">1</span>;
+leftRotate(s);
+s = x.parent.left;
+}
+
+s.color = x.parent.color;
+x.parent.color = <span class="hljs-number">0</span>;
+s.left.color = <span class="hljs-number">0</span>;
+rightRotate(x.parent);
+x = root;
+}
+}
+}
+x.color = <span class="hljs-number">0</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">rbTransplant</span><span class="hljs-params">(Node u, Node v)</span> </span>{
+<span class="hljs-keyword">if</span> (u.parent == <span class="hljs-keyword">null</span>) {
+root = v;
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (u == u.parent.left) {
+u.parent.left = v;
+} <span class="hljs-keyword">else</span> {
+u.parent.right = v;
+}
+v.parent = u.parent;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">deleteNodeHelper</span><span class="hljs-params">(Node node, <span class="hljs-keyword">int</span> key)</span> </span>{
+Node z = TNULL;
+Node x, y;
+<span class="hljs-keyword">while</span> (node != TNULL) {
+<span class="hljs-keyword">if</span> (node.data == key) {
+z = node;
+}
+
+<span class="hljs-keyword">if</span> (node.data &lt;= key) {
+node = node.right;
+} <span class="hljs-keyword">else</span> {
+node = node.left;
+}
+}
+
+<span class="hljs-keyword">if</span> (z == TNULL) {
+System.out.println(<span class="hljs-string">"Couldn't find key in the tree"</span>);
+<span class="hljs-keyword">return</span>;
+}
+
+y = z;
+<span class="hljs-keyword">int</span> yOriginalColor = y.color;
+<span class="hljs-keyword">if</span> (z.left == TNULL) {
+x = z.right;
+rbTransplant(z, z.right);
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (z.right == TNULL) {
+x = z.left;
+rbTransplant(z, z.left);
+} <span class="hljs-keyword">else</span> {
+y = minimum(z.right);
+yOriginalColor = y.color;
+x = y.right;
+<span class="hljs-keyword">if</span> (y.parent == z) {
+x.parent = y;
+} <span class="hljs-keyword">else</span> {
+rbTransplant(y, y.right);
+y.right = z.right;
+y.right.parent = y;
+}
+
+rbTransplant(z, y);
+y.left = z.left;
+y.left.parent = y;
+y.color = z.color;
+}
+<span class="hljs-keyword">if</span> (yOriginalColor == <span class="hljs-number">0</span>) {
+fixDelete(x);
+}
+}
+
+<span class="hljs-comment">// Balance the node after insertion</span>
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">fixInsert</span><span class="hljs-params">(Node k)</span> </span>{
+Node u;
+<span class="hljs-keyword">while</span> (k.parent.color == <span class="hljs-number">1</span>) {
+<span class="hljs-keyword">if</span> (k.parent == k.parent.parent.right) {
+u = k.parent.parent.left;
+<span class="hljs-keyword">if</span> (u.color == <span class="hljs-number">1</span>) {
+u.color = <span class="hljs-number">0</span>;
+k.parent.color = <span class="hljs-number">0</span>;
+k.parent.parent.color = <span class="hljs-number">1</span>;
+k = k.parent.parent;
+} <span class="hljs-keyword">else</span> {
+<span class="hljs-keyword">if</span> (k == k.parent.left) {
+k = k.parent;
+rightRotate(k);
+}
+k.parent.color = <span class="hljs-number">0</span>;
+k.parent.parent.color = <span class="hljs-number">1</span>;
+leftRotate(k.parent.parent);
+}
+} <span class="hljs-keyword">else</span> {
+u = k.parent.parent.right;
+
+<span class="hljs-keyword">if</span> (u.color == <span class="hljs-number">1</span>) {
+u.color = <span class="hljs-number">0</span>;
+k.parent.color = <span class="hljs-number">0</span>;
+k.parent.parent.color = <span class="hljs-number">1</span>;
+k = k.parent.parent;
+} <span class="hljs-keyword">else</span> {
+<span class="hljs-keyword">if</span> (k == k.parent.right) {
+k = k.parent;
+leftRotate(k);
+}
+k.parent.color = <span class="hljs-number">0</span>;
+k.parent.parent.color = <span class="hljs-number">1</span>;
+rightRotate(k.parent.parent);
+}
+}
+<span class="hljs-keyword">if</span> (k == root) {
+<span class="hljs-keyword">break</span>;
+}
+}
+root.color = <span class="hljs-number">0</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">printHelper</span><span class="hljs-params">(Node root, String indent, <span class="hljs-keyword">boolean</span> last)</span> </span>{
+<span class="hljs-keyword">if</span> (root != TNULL) {
+System.out.print(indent);
+<span class="hljs-keyword">if</span> (last) {
+System.out.print(<span class="hljs-string">"R----"</span>);
+indent += <span class="hljs-string">"   "</span>;
+} <span class="hljs-keyword">else</span> {
+System.out.print(<span class="hljs-string">"L----"</span>);
+indent += <span class="hljs-string">"|  "</span>;
+}
+
+String sColor = root.color == <span class="hljs-number">1</span> ? <span class="hljs-string">"RED"</span> : <span class="hljs-string">"BLACK"</span>;
+System.out.println(root.data + <span class="hljs-string">"("</span> + sColor + <span class="hljs-string">")"</span>);
+printHelper(root.left, indent, <span class="hljs-keyword">false</span>);
+printHelper(root.right, indent, <span class="hljs-keyword">true</span>);
+}
+}
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">RedBlackTree</span><span class="hljs-params">()</span> </span>{
+TNULL = <span class="hljs-keyword">new</span> Node();
+TNULL.color = <span class="hljs-number">0</span>;
+TNULL.left = <span class="hljs-keyword">null</span>;
+TNULL.right = <span class="hljs-keyword">null</span>;
+root = TNULL;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">preorder</span><span class="hljs-params">()</span> </span>{
+preOrderHelper(<span class="hljs-keyword">this</span>.root);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">inorder</span><span class="hljs-params">()</span> </span>{
+inOrderHelper(<span class="hljs-keyword">this</span>.root);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">postorder</span><span class="hljs-params">()</span> </span>{
+postOrderHelper(<span class="hljs-keyword">this</span>.root);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> Node <span class="hljs-title">searchTree</span><span class="hljs-params">(<span class="hljs-keyword">int</span> k)</span> </span>{
+<span class="hljs-keyword">return</span> searchTreeHelper(<span class="hljs-keyword">this</span>.root, k);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> Node <span class="hljs-title">minimum</span><span class="hljs-params">(Node node)</span> </span>{
+<span class="hljs-keyword">while</span> (node.left != TNULL) {
+node = node.left;
+}
+<span class="hljs-keyword">return</span> node;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> Node <span class="hljs-title">maximum</span><span class="hljs-params">(Node node)</span> </span>{
+<span class="hljs-keyword">while</span> (node.right != TNULL) {
+node = node.right;
+}
+<span class="hljs-keyword">return</span> node;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> Node <span class="hljs-title">successor</span><span class="hljs-params">(Node x)</span> </span>{
+<span class="hljs-keyword">if</span> (x.right != TNULL) {
+<span class="hljs-keyword">return</span> minimum(x.right);
+}
+
+Node y = x.parent;
+<span class="hljs-keyword">while</span> (y != TNULL &amp;&amp; x == y.right) {
+x = y;
+y = y.parent;
+}
+<span class="hljs-keyword">return</span> y;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> Node <span class="hljs-title">predecessor</span><span class="hljs-params">(Node x)</span> </span>{
+<span class="hljs-keyword">if</span> (x.left != TNULL) {
+<span class="hljs-keyword">return</span> maximum(x.left);
+}
+
+Node y = x.parent;
+<span class="hljs-keyword">while</span> (y != TNULL &amp;&amp; x == y.left) {
+x = y;
+y = y.parent;
+}
+
+<span class="hljs-keyword">return</span> y;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">leftRotate</span><span class="hljs-params">(Node x)</span> </span>{
+Node y = x.right;
+x.right = y.left;
+<span class="hljs-keyword">if</span> (y.left != TNULL) {
+y.left.parent = x;
+}
+y.parent = x.parent;
+<span class="hljs-keyword">if</span> (x.parent == <span class="hljs-keyword">null</span>) {
+<span class="hljs-keyword">this</span>.root = y;
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (x == x.parent.left) {
+x.parent.left = y;
+} <span class="hljs-keyword">else</span> {
+x.parent.right = y;
+}
+y.left = x;
+x.parent = y;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">rightRotate</span><span class="hljs-params">(Node x)</span> </span>{
+Node y = x.left;
+x.left = y.right;
+<span class="hljs-keyword">if</span> (y.right != TNULL) {
+y.right.parent = x;
+}
+y.parent = x.parent;
+<span class="hljs-keyword">if</span> (x.parent == <span class="hljs-keyword">null</span>) {
+<span class="hljs-keyword">this</span>.root = y;
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (x == x.parent.right) {
+x.parent.right = y;
+} <span class="hljs-keyword">else</span> {
+x.parent.left = y;
+}
+y.right = x;
+x.parent = y;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">insert</span><span class="hljs-params">(<span class="hljs-keyword">int</span> key)</span> </span>{
+Node node = <span class="hljs-keyword">new</span> Node();
+node.parent = <span class="hljs-keyword">null</span>;
+node.data = key;
+node.left = TNULL;
+node.right = TNULL;
+node.color = <span class="hljs-number">1</span>;
+
+Node y = <span class="hljs-keyword">null</span>;
+Node x = <span class="hljs-keyword">this</span>.root;
+
+<span class="hljs-keyword">while</span> (x != TNULL) {
+y = x;
+<span class="hljs-keyword">if</span> (node.data &lt; x.data) {
+x = x.left;
+} <span class="hljs-keyword">else</span> {
+x = x.right;
+}
+}
+
+node.parent = y;
+<span class="hljs-keyword">if</span> (y == <span class="hljs-keyword">null</span>) {
+root = node;
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (node.data &lt; y.data) {
+y.left = node;
+} <span class="hljs-keyword">else</span> {
+y.right = node;
+}
+
+<span class="hljs-keyword">if</span> (node.parent == <span class="hljs-keyword">null</span>) {
+node.color = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">return</span>;
+}
+
+<span class="hljs-keyword">if</span> (node.parent.parent == <span class="hljs-keyword">null</span>) {
+<span class="hljs-keyword">return</span>;
+}
+
+fixInsert(node);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> Node <span class="hljs-title">getRoot</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.root;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">deleteNode</span><span class="hljs-params">(<span class="hljs-keyword">int</span> data)</span> </span>{
+deleteNodeHelper(<span class="hljs-keyword">this</span>.root, data);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">printTree</span><span class="hljs-params">()</span> </span>{
+printHelper(<span class="hljs-keyword">this</span>.root, <span class="hljs-string">""</span>, <span class="hljs-keyword">true</span>);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+RedBlackTree bst = <span class="hljs-keyword">new</span> RedBlackTree();
+bst.insert(<span class="hljs-number">55</span>);
+bst.insert(<span class="hljs-number">40</span>);
+bst.insert(<span class="hljs-number">65</span>);
+bst.insert(<span class="hljs-number">60</span>);
+bst.insert(<span class="hljs-number">75</span>);
+bst.insert(<span class="hljs-number">57</span>);
+bst.printTree();
+
+System.out.println(<span class="hljs-string">"\nAfter deleting:"</span>);
+bst.deleteNode(<span class="hljs-number">40</span>);
+bst.printTree();
+}
+}</code></pre></div>
+</div>
+
+<div class="code-editor__area" id="c-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="c hljs cpp"><span class="hljs-comment">// Implementing Red-Black Tree in C</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdlib.h&gt;</span></span>
+
+<span class="hljs-keyword">enum</span> nodeColor {
+RED,
+BLACK
+};
+
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">rbNode</span> {</span>
+<span class="hljs-keyword">int</span> data, color;
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">rbNode</span> *<span class="hljs-title">link</span>[2];</span>
+};
+
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">rbNode</span> *<span class="hljs-title">root</span> = <span class="hljs-title">NULL</span>;</span>
+
+<span class="hljs-comment">// Create a red-black tree</span>
+<span class="hljs-function">struct rbNode *<span class="hljs-title">createNode</span><span class="hljs-params">(<span class="hljs-keyword">int</span> data)</span> </span>{
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">rbNode</span> *<span class="hljs-title">newnode</span>;</span>
+newnode = (struct rbNode *)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(struct rbNode));
+newnode-&gt;data = data;
+newnode-&gt;color = RED;
+newnode-&gt;link[<span class="hljs-number">0</span>] = newnode-&gt;link[<span class="hljs-number">1</span>] = <span class="hljs-literal">NULL</span>;
+<span class="hljs-keyword">return</span> newnode;
+}
+
+<span class="hljs-comment">// Insert an node</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">insertion</span><span class="hljs-params">(<span class="hljs-keyword">int</span> data)</span> </span>{
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">rbNode</span> *<span class="hljs-title">stack</span>[98], *<span class="hljs-title">ptr</span>, *<span class="hljs-title">newnode</span>, *<span class="hljs-title">xPtr</span>, *<span class="hljs-title">yPtr</span>;</span>
+<span class="hljs-keyword">int</span> dir[<span class="hljs-number">98</span>], ht = <span class="hljs-number">0</span>, index;
+ptr = root;
+<span class="hljs-keyword">if</span> (!root) {
+root = createNode(data);
+<span class="hljs-keyword">return</span>;
+}
+
+<span class="hljs-built_in">stack</span>[ht] = root;
+dir[ht++] = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">while</span> (ptr != <span class="hljs-literal">NULL</span>) {
+<span class="hljs-keyword">if</span> (ptr-&gt;data == data) {
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"Duplicates Not Allowed!!\n"</span>);
+<span class="hljs-keyword">return</span>;
+}
+index = (data - ptr-&gt;data) &gt; <span class="hljs-number">0</span> ? <span class="hljs-number">1</span> : <span class="hljs-number">0</span>;
+<span class="hljs-built_in">stack</span>[ht] = ptr;
+ptr = ptr-&gt;link[index];
+dir[ht++] = index;
+}
+<span class="hljs-built_in">stack</span>[ht - <span class="hljs-number">1</span>]-&gt;link[index] = newnode = createNode(data);
+<span class="hljs-keyword">while</span> ((ht &gt;= <span class="hljs-number">3</span>) &amp;&amp; (<span class="hljs-built_in">stack</span>[ht - <span class="hljs-number">1</span>]-&gt;color == RED)) {
+<span class="hljs-keyword">if</span> (dir[ht - <span class="hljs-number">2</span>] == <span class="hljs-number">0</span>) {
+yPtr = <span class="hljs-built_in">stack</span>[ht - <span class="hljs-number">2</span>]-&gt;link[<span class="hljs-number">1</span>];
+<span class="hljs-keyword">if</span> (yPtr != <span class="hljs-literal">NULL</span> &amp;&amp; yPtr-&gt;color == RED) {
+<span class="hljs-built_in">stack</span>[ht - <span class="hljs-number">2</span>]-&gt;color = RED;
+<span class="hljs-built_in">stack</span>[ht - <span class="hljs-number">1</span>]-&gt;color = yPtr-&gt;color = BLACK;
+ht = ht - <span class="hljs-number">2</span>;
+} <span class="hljs-keyword">else</span> {
+<span class="hljs-keyword">if</span> (dir[ht - <span class="hljs-number">1</span>] == <span class="hljs-number">0</span>) {
+yPtr = <span class="hljs-built_in">stack</span>[ht - <span class="hljs-number">1</span>];
+} <span class="hljs-keyword">else</span> {
+xPtr = <span class="hljs-built_in">stack</span>[ht - <span class="hljs-number">1</span>];
+yPtr = xPtr-&gt;link[<span class="hljs-number">1</span>];
+xPtr-&gt;link[<span class="hljs-number">1</span>] = yPtr-&gt;link[<span class="hljs-number">0</span>];
+yPtr-&gt;link[<span class="hljs-number">0</span>] = xPtr;
+<span class="hljs-built_in">stack</span>[ht - <span class="hljs-number">2</span>]-&gt;link[<span class="hljs-number">0</span>] = yPtr;
+}
+xPtr = <span class="hljs-built_in">stack</span>[ht - <span class="hljs-number">2</span>];
+xPtr-&gt;color = RED;
+yPtr-&gt;color = BLACK;
+xPtr-&gt;link[<span class="hljs-number">0</span>] = yPtr-&gt;link[<span class="hljs-number">1</span>];
+yPtr-&gt;link[<span class="hljs-number">1</span>] = xPtr;
+<span class="hljs-keyword">if</span> (xPtr == root) {
+root = yPtr;
+} <span class="hljs-keyword">else</span> {
+<span class="hljs-built_in">stack</span>[ht - <span class="hljs-number">3</span>]-&gt;link[dir[ht - <span class="hljs-number">3</span>]] = yPtr;
+}
+<span class="hljs-keyword">break</span>;
+}
+} <span class="hljs-keyword">else</span> {
+yPtr = <span class="hljs-built_in">stack</span>[ht - <span class="hljs-number">2</span>]-&gt;link[<span class="hljs-number">0</span>];
+<span class="hljs-keyword">if</span> ((yPtr != <span class="hljs-literal">NULL</span>) &amp;&amp; (yPtr-&gt;color == RED)) {
+<span class="hljs-built_in">stack</span>[ht - <span class="hljs-number">2</span>]-&gt;color = RED;
+<span class="hljs-built_in">stack</span>[ht - <span class="hljs-number">1</span>]-&gt;color = yPtr-&gt;color = BLACK;
+ht = ht - <span class="hljs-number">2</span>;
+} <span class="hljs-keyword">else</span> {
+<span class="hljs-keyword">if</span> (dir[ht - <span class="hljs-number">1</span>] == <span class="hljs-number">1</span>) {
+yPtr = <span class="hljs-built_in">stack</span>[ht - <span class="hljs-number">1</span>];
+} <span class="hljs-keyword">else</span> {
+xPtr = <span class="hljs-built_in">stack</span>[ht - <span class="hljs-number">1</span>];
+yPtr = xPtr-&gt;link[<span class="hljs-number">0</span>];
+xPtr-&gt;link[<span class="hljs-number">0</span>] = yPtr-&gt;link[<span class="hljs-number">1</span>];
+yPtr-&gt;link[<span class="hljs-number">1</span>] = xPtr;
+<span class="hljs-built_in">stack</span>[ht - <span class="hljs-number">2</span>]-&gt;link[<span class="hljs-number">1</span>] = yPtr;
+}
+xPtr = <span class="hljs-built_in">stack</span>[ht - <span class="hljs-number">2</span>];
+yPtr-&gt;color = BLACK;
+xPtr-&gt;color = RED;
+xPtr-&gt;link[<span class="hljs-number">1</span>] = yPtr-&gt;link[<span class="hljs-number">0</span>];
+yPtr-&gt;link[<span class="hljs-number">0</span>] = xPtr;
+<span class="hljs-keyword">if</span> (xPtr == root) {
+root = yPtr;
+} <span class="hljs-keyword">else</span> {
+<span class="hljs-built_in">stack</span>[ht - <span class="hljs-number">3</span>]-&gt;link[dir[ht - <span class="hljs-number">3</span>]] = yPtr;
+}
+<span class="hljs-keyword">break</span>;
+}
+}
+}
+root-&gt;color = BLACK;
+}
+
+<span class="hljs-comment">// Delete a node</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">deletion</span><span class="hljs-params">(<span class="hljs-keyword">int</span> data)</span> </span>{
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">rbNode</span> *<span class="hljs-title">stack</span>[98], *<span class="hljs-title">ptr</span>, *<span class="hljs-title">xPtr</span>, *<span class="hljs-title">yPtr</span>;</span>
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">rbNode</span> *<span class="hljs-title">pPtr</span>, *<span class="hljs-title">qPtr</span>, *<span class="hljs-title">rPtr</span>;</span>
+<span class="hljs-keyword">int</span> dir[<span class="hljs-number">98</span>], ht = <span class="hljs-number">0</span>, diff, i;
+<span class="hljs-keyword">enum</span> nodeColor color;
+
+<span class="hljs-keyword">if</span> (!root) {
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"Tree not available\n"</span>);
+<span class="hljs-keyword">return</span>;
+}
+
+ptr = root;
+<span class="hljs-keyword">while</span> (ptr != <span class="hljs-literal">NULL</span>) {
+<span class="hljs-keyword">if</span> ((data - ptr-&gt;data) == <span class="hljs-number">0</span>)
+<span class="hljs-keyword">break</span>;
+diff = (data - ptr-&gt;data) &gt; <span class="hljs-number">0</span> ? <span class="hljs-number">1</span> : <span class="hljs-number">0</span>;
+<span class="hljs-built_in">stack</span>[ht] = ptr;
+dir[ht++] = diff;
+ptr = ptr-&gt;link[diff];
+}
+
+<span class="hljs-keyword">if</span> (ptr-&gt;link[<span class="hljs-number">1</span>] == <span class="hljs-literal">NULL</span>) {
+<span class="hljs-keyword">if</span> ((ptr == root) &amp;&amp; (ptr-&gt;link[<span class="hljs-number">0</span>] == <span class="hljs-literal">NULL</span>)) {
+<span class="hljs-built_in">free</span>(ptr);
+root = <span class="hljs-literal">NULL</span>;
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (ptr == root) {
+root = ptr-&gt;link[<span class="hljs-number">0</span>];
+<span class="hljs-built_in">free</span>(ptr);
+} <span class="hljs-keyword">else</span> {
+<span class="hljs-built_in">stack</span>[ht - <span class="hljs-number">1</span>]-&gt;link[dir[ht - <span class="hljs-number">1</span>]] = ptr-&gt;link[<span class="hljs-number">0</span>];
+}
+} <span class="hljs-keyword">else</span> {
+xPtr = ptr-&gt;link[<span class="hljs-number">1</span>];
+<span class="hljs-keyword">if</span> (xPtr-&gt;link[<span class="hljs-number">0</span>] == <span class="hljs-literal">NULL</span>) {
+xPtr-&gt;link[<span class="hljs-number">0</span>] = ptr-&gt;link[<span class="hljs-number">0</span>];
+color = xPtr-&gt;color;
+xPtr-&gt;color = ptr-&gt;color;
+ptr-&gt;color = color;
+
+<span class="hljs-keyword">if</span> (ptr == root) {
+root = xPtr;
+} <span class="hljs-keyword">else</span> {
+<span class="hljs-built_in">stack</span>[ht - <span class="hljs-number">1</span>]-&gt;link[dir[ht - <span class="hljs-number">1</span>]] = xPtr;
+}
+
+dir[ht] = <span class="hljs-number">1</span>;
+<span class="hljs-built_in">stack</span>[ht++] = xPtr;
+} <span class="hljs-keyword">else</span> {
+i = ht++;
+<span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>) {
+dir[ht] = <span class="hljs-number">0</span>;
+<span class="hljs-built_in">stack</span>[ht++] = xPtr;
+yPtr = xPtr-&gt;link[<span class="hljs-number">0</span>];
+<span class="hljs-keyword">if</span> (!yPtr-&gt;link[<span class="hljs-number">0</span>])
+<span class="hljs-keyword">break</span>;
+xPtr = yPtr;
+}
+
+dir[i] = <span class="hljs-number">1</span>;
+<span class="hljs-built_in">stack</span>[i] = yPtr;
+<span class="hljs-keyword">if</span> (i &gt; <span class="hljs-number">0</span>)
+<span class="hljs-built_in">stack</span>[i - <span class="hljs-number">1</span>]-&gt;link[dir[i - <span class="hljs-number">1</span>]] = yPtr;
+
+yPtr-&gt;link[<span class="hljs-number">0</span>] = ptr-&gt;link[<span class="hljs-number">0</span>];
+
+xPtr-&gt;link[<span class="hljs-number">0</span>] = yPtr-&gt;link[<span class="hljs-number">1</span>];
+yPtr-&gt;link[<span class="hljs-number">1</span>] = ptr-&gt;link[<span class="hljs-number">1</span>];
+
+<span class="hljs-keyword">if</span> (ptr == root) {
+root = yPtr;
+}
+
+color = yPtr-&gt;color;
+yPtr-&gt;color = ptr-&gt;color;
+ptr-&gt;color = color;
+}
+}
+
+<span class="hljs-keyword">if</span> (ht &lt; <span class="hljs-number">1</span>)
+<span class="hljs-keyword">return</span>;
+
+<span class="hljs-keyword">if</span> (ptr-&gt;color == BLACK) {
+<span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>) {
+pPtr = <span class="hljs-built_in">stack</span>[ht - <span class="hljs-number">1</span>]-&gt;link[dir[ht - <span class="hljs-number">1</span>]];
+<span class="hljs-keyword">if</span> (pPtr &amp;&amp; pPtr-&gt;color == RED) {
+pPtr-&gt;color = BLACK;
+<span class="hljs-keyword">break</span>;
+}
+
+<span class="hljs-keyword">if</span> (ht &lt; <span class="hljs-number">2</span>)
+<span class="hljs-keyword">break</span>;
+
+<span class="hljs-keyword">if</span> (dir[ht - <span class="hljs-number">2</span>] == <span class="hljs-number">0</span>) {
+rPtr = <span class="hljs-built_in">stack</span>[ht - <span class="hljs-number">1</span>]-&gt;link[<span class="hljs-number">1</span>];
+
+<span class="hljs-keyword">if</span> (!rPtr)
+<span class="hljs-keyword">break</span>;
+
+<span class="hljs-keyword">if</span> (rPtr-&gt;color == RED) {
+<span class="hljs-built_in">stack</span>[ht - <span class="hljs-number">1</span>]-&gt;color = RED;
+rPtr-&gt;color = BLACK;
+<span class="hljs-built_in">stack</span>[ht - <span class="hljs-number">1</span>]-&gt;link[<span class="hljs-number">1</span>] = rPtr-&gt;link[<span class="hljs-number">0</span>];
+rPtr-&gt;link[<span class="hljs-number">0</span>] = <span class="hljs-built_in">stack</span>[ht - <span class="hljs-number">1</span>];
+
+<span class="hljs-keyword">if</span> (<span class="hljs-built_in">stack</span>[ht - <span class="hljs-number">1</span>] == root) {
+root = rPtr;
+} <span class="hljs-keyword">else</span> {
+<span class="hljs-built_in">stack</span>[ht - <span class="hljs-number">2</span>]-&gt;link[dir[ht - <span class="hljs-number">2</span>]] = rPtr;
+}
+dir[ht] = <span class="hljs-number">0</span>;
+<span class="hljs-built_in">stack</span>[ht] = <span class="hljs-built_in">stack</span>[ht - <span class="hljs-number">1</span>];
+<span class="hljs-built_in">stack</span>[ht - <span class="hljs-number">1</span>] = rPtr;
+ht++;
+
+rPtr = <span class="hljs-built_in">stack</span>[ht - <span class="hljs-number">1</span>]-&gt;link[<span class="hljs-number">1</span>];
+}
+
+<span class="hljs-keyword">if</span> ((!rPtr-&gt;link[<span class="hljs-number">0</span>] || rPtr-&gt;link[<span class="hljs-number">0</span>]-&gt;color == BLACK) &amp;&amp;
+(!rPtr-&gt;link[<span class="hljs-number">1</span>] || rPtr-&gt;link[<span class="hljs-number">1</span>]-&gt;color == BLACK)) {
+rPtr-&gt;color = RED;
+} <span class="hljs-keyword">else</span> {
+<span class="hljs-keyword">if</span> (!rPtr-&gt;link[<span class="hljs-number">1</span>] || rPtr-&gt;link[<span class="hljs-number">1</span>]-&gt;color == BLACK) {
+qPtr = rPtr-&gt;link[<span class="hljs-number">0</span>];
+rPtr-&gt;color = RED;
+qPtr-&gt;color = BLACK;
+rPtr-&gt;link[<span class="hljs-number">0</span>] = qPtr-&gt;link[<span class="hljs-number">1</span>];
+qPtr-&gt;link[<span class="hljs-number">1</span>] = rPtr;
+rPtr = <span class="hljs-built_in">stack</span>[ht - <span class="hljs-number">1</span>]-&gt;link[<span class="hljs-number">1</span>] = qPtr;
+}
+rPtr-&gt;color = <span class="hljs-built_in">stack</span>[ht - <span class="hljs-number">1</span>]-&gt;color;
+<span class="hljs-built_in">stack</span>[ht - <span class="hljs-number">1</span>]-&gt;color = BLACK;
+rPtr-&gt;link[<span class="hljs-number">1</span>]-&gt;color = BLACK;
+<span class="hljs-built_in">stack</span>[ht - <span class="hljs-number">1</span>]-&gt;link[<span class="hljs-number">1</span>] = rPtr-&gt;link[<span class="hljs-number">0</span>];
+rPtr-&gt;link[<span class="hljs-number">0</span>] = <span class="hljs-built_in">stack</span>[ht - <span class="hljs-number">1</span>];
+<span class="hljs-keyword">if</span> (<span class="hljs-built_in">stack</span>[ht - <span class="hljs-number">1</span>] == root) {
+root = rPtr;
+} <span class="hljs-keyword">else</span> {
+<span class="hljs-built_in">stack</span>[ht - <span class="hljs-number">2</span>]-&gt;link[dir[ht - <span class="hljs-number">2</span>]] = rPtr;
+}
+<span class="hljs-keyword">break</span>;
+}
+} <span class="hljs-keyword">else</span> {
+rPtr = <span class="hljs-built_in">stack</span>[ht - <span class="hljs-number">1</span>]-&gt;link[<span class="hljs-number">0</span>];
+<span class="hljs-keyword">if</span> (!rPtr)
+<span class="hljs-keyword">break</span>;
+
+<span class="hljs-keyword">if</span> (rPtr-&gt;color == RED) {
+<span class="hljs-built_in">stack</span>[ht - <span class="hljs-number">1</span>]-&gt;color = RED;
+rPtr-&gt;color = BLACK;
+<span class="hljs-built_in">stack</span>[ht - <span class="hljs-number">1</span>]-&gt;link[<span class="hljs-number">0</span>] = rPtr-&gt;link[<span class="hljs-number">1</span>];
+rPtr-&gt;link[<span class="hljs-number">1</span>] = <span class="hljs-built_in">stack</span>[ht - <span class="hljs-number">1</span>];
+
+<span class="hljs-keyword">if</span> (<span class="hljs-built_in">stack</span>[ht - <span class="hljs-number">1</span>] == root) {
+root = rPtr;
+} <span class="hljs-keyword">else</span> {
+<span class="hljs-built_in">stack</span>[ht - <span class="hljs-number">2</span>]-&gt;link[dir[ht - <span class="hljs-number">2</span>]] = rPtr;
+}
+dir[ht] = <span class="hljs-number">1</span>;
+<span class="hljs-built_in">stack</span>[ht] = <span class="hljs-built_in">stack</span>[ht - <span class="hljs-number">1</span>];
+<span class="hljs-built_in">stack</span>[ht - <span class="hljs-number">1</span>] = rPtr;
+ht++;
+
+rPtr = <span class="hljs-built_in">stack</span>[ht - <span class="hljs-number">1</span>]-&gt;link[<span class="hljs-number">0</span>];
+}
+<span class="hljs-keyword">if</span> ((!rPtr-&gt;link[<span class="hljs-number">0</span>] || rPtr-&gt;link[<span class="hljs-number">0</span>]-&gt;color == BLACK) &amp;&amp;
+(!rPtr-&gt;link[<span class="hljs-number">1</span>] || rPtr-&gt;link[<span class="hljs-number">1</span>]-&gt;color == BLACK)) {
+rPtr-&gt;color = RED;
+} <span class="hljs-keyword">else</span> {
+<span class="hljs-keyword">if</span> (!rPtr-&gt;link[<span class="hljs-number">0</span>] || rPtr-&gt;link[<span class="hljs-number">0</span>]-&gt;color == BLACK) {
+qPtr = rPtr-&gt;link[<span class="hljs-number">1</span>];
+rPtr-&gt;color = RED;
+qPtr-&gt;color = BLACK;
+rPtr-&gt;link[<span class="hljs-number">1</span>] = qPtr-&gt;link[<span class="hljs-number">0</span>];
+qPtr-&gt;link[<span class="hljs-number">0</span>] = rPtr;
+rPtr = <span class="hljs-built_in">stack</span>[ht - <span class="hljs-number">1</span>]-&gt;link[<span class="hljs-number">0</span>] = qPtr;
+}
+rPtr-&gt;color = <span class="hljs-built_in">stack</span>[ht - <span class="hljs-number">1</span>]-&gt;color;
+<span class="hljs-built_in">stack</span>[ht - <span class="hljs-number">1</span>]-&gt;color = BLACK;
+rPtr-&gt;link[<span class="hljs-number">0</span>]-&gt;color = BLACK;
+<span class="hljs-built_in">stack</span>[ht - <span class="hljs-number">1</span>]-&gt;link[<span class="hljs-number">0</span>] = rPtr-&gt;link[<span class="hljs-number">1</span>];
+rPtr-&gt;link[<span class="hljs-number">1</span>] = <span class="hljs-built_in">stack</span>[ht - <span class="hljs-number">1</span>];
+<span class="hljs-keyword">if</span> (<span class="hljs-built_in">stack</span>[ht - <span class="hljs-number">1</span>] == root) {
+root = rPtr;
+} <span class="hljs-keyword">else</span> {
+<span class="hljs-built_in">stack</span>[ht - <span class="hljs-number">2</span>]-&gt;link[dir[ht - <span class="hljs-number">2</span>]] = rPtr;
+}
+<span class="hljs-keyword">break</span>;
+}
+}
+ht--;
+}
+}
+}
+
+<span class="hljs-comment">// Print the inorder traversal of the tree</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">inorderTraversal</span><span class="hljs-params">(struct rbNode *node)</span> </span>{
+<span class="hljs-keyword">if</span> (node) {
+inorderTraversal(node-&gt;link[<span class="hljs-number">0</span>]);
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d  "</span>, node-&gt;data);
+inorderTraversal(node-&gt;link[<span class="hljs-number">1</span>]);
+}
+<span class="hljs-keyword">return</span>;
+}
+
+<span class="hljs-comment">// Driver code</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-keyword">int</span> ch, data;
+<span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>) {
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"1. Insertion\t2. Deletion\n"</span>);
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"3. Traverse\t4. Exit"</span>);
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"\nEnter your choice:"</span>);
+<span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>, &amp;ch);
+<span class="hljs-keyword">switch</span> (ch) {
+<span class="hljs-keyword">case</span> <span class="hljs-number">1</span>:
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"Enter the element to insert:"</span>);
+<span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>, &amp;data);
+insertion(data);
+<span class="hljs-keyword">break</span>;
+<span class="hljs-keyword">case</span> <span class="hljs-number">2</span>:
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"Enter the element to delete:"</span>);
+<span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>, &amp;data);
+deletion(data);
+<span class="hljs-keyword">break</span>;
+<span class="hljs-keyword">case</span> <span class="hljs-number">3</span>:
+inorderTraversal(root);
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"\n"</span>);
+<span class="hljs-keyword">break</span>;
+<span class="hljs-keyword">case</span> <span class="hljs-number">4</span>:
+<span class="hljs-built_in">exit</span>(<span class="hljs-number">0</span>);
+<span class="hljs-keyword">default</span>:
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"Not available\n"</span>);
+<span class="hljs-keyword">break</span>;
+}
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"\n"</span>);
+}
+<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}</code></pre></div>
+</div>
+
+<div class="code-editor__area" id="cpp-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="cpp hljs"><span class="hljs-comment">// Implementing Red-Black Tree in C++</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span> {</span>
+<span class="hljs-keyword">int</span> data;
+Node *parent;
+Node *left;
+Node *right;
+<span class="hljs-keyword">int</span> color;
+};
+
+<span class="hljs-keyword">typedef</span> Node *NodePtr;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RedBlackTree</span> {</span>
+<span class="hljs-keyword">private</span>:
+NodePtr root;
+NodePtr TNULL;
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">initializeNULLNode</span><span class="hljs-params">(NodePtr node, NodePtr parent)</span> </span>{
+node-&gt;data = <span class="hljs-number">0</span>;
+node-&gt;parent = parent;
+node-&gt;left = <span class="hljs-literal">nullptr</span>;
+node-&gt;right = <span class="hljs-literal">nullptr</span>;
+node-&gt;color = <span class="hljs-number">0</span>;
+}
+
+<span class="hljs-comment">// Preorder</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">preOrderHelper</span><span class="hljs-params">(NodePtr node)</span> </span>{
+<span class="hljs-keyword">if</span> (node != TNULL) {
+<span class="hljs-built_in">cout</span> &lt;&lt; node-&gt;data &lt;&lt; <span class="hljs-string">" "</span>;
+preOrderHelper(node-&gt;left);
+preOrderHelper(node-&gt;right);
+}
+}
+
+<span class="hljs-comment">// Inorder</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">inOrderHelper</span><span class="hljs-params">(NodePtr node)</span> </span>{
+<span class="hljs-keyword">if</span> (node != TNULL) {
+inOrderHelper(node-&gt;left);
+<span class="hljs-built_in">cout</span> &lt;&lt; node-&gt;data &lt;&lt; <span class="hljs-string">" "</span>;
+inOrderHelper(node-&gt;right);
+}
+}
+
+<span class="hljs-comment">// Post order</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">postOrderHelper</span><span class="hljs-params">(NodePtr node)</span> </span>{
+<span class="hljs-keyword">if</span> (node != TNULL) {
+postOrderHelper(node-&gt;left);
+postOrderHelper(node-&gt;right);
+<span class="hljs-built_in">cout</span> &lt;&lt; node-&gt;data &lt;&lt; <span class="hljs-string">" "</span>;
+}
+}
+
+<span class="hljs-function">NodePtr <span class="hljs-title">searchTreeHelper</span><span class="hljs-params">(NodePtr node, <span class="hljs-keyword">int</span> key)</span> </span>{
+<span class="hljs-keyword">if</span> (node == TNULL || key == node-&gt;data) {
+<span class="hljs-keyword">return</span> node;
+}
+
+<span class="hljs-keyword">if</span> (key &lt; node-&gt;data) {
+<span class="hljs-keyword">return</span> searchTreeHelper(node-&gt;left, key);
+}
+<span class="hljs-keyword">return</span> searchTreeHelper(node-&gt;right, key);
+}
+
+<span class="hljs-comment">// For balancing the tree after deletion</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">deleteFix</span><span class="hljs-params">(NodePtr x)</span> </span>{
+NodePtr s;
+<span class="hljs-keyword">while</span> (x != root &amp;&amp; x-&gt;color == <span class="hljs-number">0</span>) {
+<span class="hljs-keyword">if</span> (x == x-&gt;parent-&gt;left) {
+s = x-&gt;parent-&gt;right;
+<span class="hljs-keyword">if</span> (s-&gt;color == <span class="hljs-number">1</span>) {
+s-&gt;color = <span class="hljs-number">0</span>;
+x-&gt;parent-&gt;color = <span class="hljs-number">1</span>;
+leftRotate(x-&gt;parent);
+s = x-&gt;parent-&gt;right;
+}
+
+<span class="hljs-keyword">if</span> (s-&gt;left-&gt;color == <span class="hljs-number">0</span> &amp;&amp; s-&gt;right-&gt;color == <span class="hljs-number">0</span>) {
+s-&gt;color = <span class="hljs-number">1</span>;
+x = x-&gt;parent;
+} <span class="hljs-keyword">else</span> {
+<span class="hljs-keyword">if</span> (s-&gt;right-&gt;color == <span class="hljs-number">0</span>) {
+s-&gt;left-&gt;color = <span class="hljs-number">0</span>;
+s-&gt;color = <span class="hljs-number">1</span>;
+rightRotate(s);
+s = x-&gt;parent-&gt;right;
+}
+
+s-&gt;color = x-&gt;parent-&gt;color;
+x-&gt;parent-&gt;color = <span class="hljs-number">0</span>;
+s-&gt;right-&gt;color = <span class="hljs-number">0</span>;
+leftRotate(x-&gt;parent);
+x = root;
+}
+} <span class="hljs-keyword">else</span> {
+s = x-&gt;parent-&gt;left;
+<span class="hljs-keyword">if</span> (s-&gt;color == <span class="hljs-number">1</span>) {
+s-&gt;color = <span class="hljs-number">0</span>;
+x-&gt;parent-&gt;color = <span class="hljs-number">1</span>;
+rightRotate(x-&gt;parent);
+s = x-&gt;parent-&gt;left;
+}
+
+<span class="hljs-keyword">if</span> (s-&gt;right-&gt;color == <span class="hljs-number">0</span> &amp;&amp; s-&gt;right-&gt;color == <span class="hljs-number">0</span>) {
+s-&gt;color = <span class="hljs-number">1</span>;
+x = x-&gt;parent;
+} <span class="hljs-keyword">else</span> {
+<span class="hljs-keyword">if</span> (s-&gt;left-&gt;color == <span class="hljs-number">0</span>) {
+s-&gt;right-&gt;color = <span class="hljs-number">0</span>;
+s-&gt;color = <span class="hljs-number">1</span>;
+leftRotate(s);
+s = x-&gt;parent-&gt;left;
+}
+
+s-&gt;color = x-&gt;parent-&gt;color;
+x-&gt;parent-&gt;color = <span class="hljs-number">0</span>;
+s-&gt;left-&gt;color = <span class="hljs-number">0</span>;
+rightRotate(x-&gt;parent);
+x = root;
+}
+}
+}
+x-&gt;color = <span class="hljs-number">0</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">rbTransplant</span><span class="hljs-params">(NodePtr u, NodePtr v)</span> </span>{
+<span class="hljs-keyword">if</span> (u-&gt;parent == <span class="hljs-literal">nullptr</span>) {
+root = v;
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (u == u-&gt;parent-&gt;left) {
+u-&gt;parent-&gt;left = v;
+} <span class="hljs-keyword">else</span> {
+u-&gt;parent-&gt;right = v;
+}
+v-&gt;parent = u-&gt;parent;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">deleteNodeHelper</span><span class="hljs-params">(NodePtr node, <span class="hljs-keyword">int</span> key)</span> </span>{
+NodePtr z = TNULL;
+NodePtr x, y;
+<span class="hljs-keyword">while</span> (node != TNULL) {
+<span class="hljs-keyword">if</span> (node-&gt;data == key) {
+z = node;
+}
+
+<span class="hljs-keyword">if</span> (node-&gt;data &lt;= key) {
+node = node-&gt;right;
+} <span class="hljs-keyword">else</span> {
+node = node-&gt;left;
+}
+}
+
+<span class="hljs-keyword">if</span> (z == TNULL) {
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Key not found in the tree"</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+<span class="hljs-keyword">return</span>;
+}
+
+y = z;
+<span class="hljs-keyword">int</span> y_original_color = y-&gt;color;
+<span class="hljs-keyword">if</span> (z-&gt;left == TNULL) {
+x = z-&gt;right;
+rbTransplant(z, z-&gt;right);
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (z-&gt;right == TNULL) {
+x = z-&gt;left;
+rbTransplant(z, z-&gt;left);
+} <span class="hljs-keyword">else</span> {
+y = minimum(z-&gt;right);
+y_original_color = y-&gt;color;
+x = y-&gt;right;
+<span class="hljs-keyword">if</span> (y-&gt;parent == z) {
+x-&gt;parent = y;
+} <span class="hljs-keyword">else</span> {
+rbTransplant(y, y-&gt;right);
+y-&gt;right = z-&gt;right;
+y-&gt;right-&gt;parent = y;
+}
+
+rbTransplant(z, y);
+y-&gt;left = z-&gt;left;
+y-&gt;left-&gt;parent = y;
+y-&gt;color = z-&gt;color;
+}
+<span class="hljs-keyword">delete</span> z;
+<span class="hljs-keyword">if</span> (y_original_color == <span class="hljs-number">0</span>) {
+deleteFix(x);
+}
+}
+
+<span class="hljs-comment">// For balancing the tree after insertion</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">insertFix</span><span class="hljs-params">(NodePtr k)</span> </span>{
+NodePtr u;
+<span class="hljs-keyword">while</span> (k-&gt;parent-&gt;color == <span class="hljs-number">1</span>) {
+<span class="hljs-keyword">if</span> (k-&gt;parent == k-&gt;parent-&gt;parent-&gt;right) {
+u = k-&gt;parent-&gt;parent-&gt;left;
+<span class="hljs-keyword">if</span> (u-&gt;color == <span class="hljs-number">1</span>) {
+u-&gt;color = <span class="hljs-number">0</span>;
+k-&gt;parent-&gt;color = <span class="hljs-number">0</span>;
+k-&gt;parent-&gt;parent-&gt;color = <span class="hljs-number">1</span>;
+k = k-&gt;parent-&gt;parent;
+} <span class="hljs-keyword">else</span> {
+<span class="hljs-keyword">if</span> (k == k-&gt;parent-&gt;left) {
+k = k-&gt;parent;
+rightRotate(k);
+}
+k-&gt;parent-&gt;color = <span class="hljs-number">0</span>;
+k-&gt;parent-&gt;parent-&gt;color = <span class="hljs-number">1</span>;
+leftRotate(k-&gt;parent-&gt;parent);
+}
+} <span class="hljs-keyword">else</span> {
+u = k-&gt;parent-&gt;parent-&gt;right;
+
+<span class="hljs-keyword">if</span> (u-&gt;color == <span class="hljs-number">1</span>) {
+u-&gt;color = <span class="hljs-number">0</span>;
+k-&gt;parent-&gt;color = <span class="hljs-number">0</span>;
+k-&gt;parent-&gt;parent-&gt;color = <span class="hljs-number">1</span>;
+k = k-&gt;parent-&gt;parent;
+} <span class="hljs-keyword">else</span> {
+<span class="hljs-keyword">if</span> (k == k-&gt;parent-&gt;right) {
+k = k-&gt;parent;
+leftRotate(k);
+}
+k-&gt;parent-&gt;color = <span class="hljs-number">0</span>;
+k-&gt;parent-&gt;parent-&gt;color = <span class="hljs-number">1</span>;
+rightRotate(k-&gt;parent-&gt;parent);
+}
+}
+<span class="hljs-keyword">if</span> (k == root) {
+<span class="hljs-keyword">break</span>;
+}
+}
+root-&gt;color = <span class="hljs-number">0</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">printHelper</span><span class="hljs-params">(NodePtr root, <span class="hljs-built_in">string</span> indent, <span class="hljs-keyword">bool</span> last)</span> </span>{
+<span class="hljs-keyword">if</span> (root != TNULL) {
+<span class="hljs-built_in">cout</span> &lt;&lt; indent;
+<span class="hljs-keyword">if</span> (last) {
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"R----"</span>;
+indent += <span class="hljs-string">"   "</span>;
+} <span class="hljs-keyword">else</span> {
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"L----"</span>;
+indent += <span class="hljs-string">"|  "</span>;
+}
+
+<span class="hljs-built_in">string</span> sColor = root-&gt;color ? <span class="hljs-string">"RED"</span> : <span class="hljs-string">"BLACK"</span>;
+<span class="hljs-built_in">cout</span> &lt;&lt; root-&gt;data &lt;&lt; <span class="hljs-string">"("</span> &lt;&lt; sColor &lt;&lt; <span class="hljs-string">")"</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+printHelper(root-&gt;left, indent, <span class="hljs-literal">false</span>);
+printHelper(root-&gt;right, indent, <span class="hljs-literal">true</span>);
+}
+}
+
+<span class="hljs-keyword">public</span>:
+RedBlackTree() {
+TNULL = <span class="hljs-keyword">new</span> Node;
+TNULL-&gt;color = <span class="hljs-number">0</span>;
+TNULL-&gt;left = <span class="hljs-literal">nullptr</span>;
+TNULL-&gt;right = <span class="hljs-literal">nullptr</span>;
+root = TNULL;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">preorder</span><span class="hljs-params">()</span> </span>{
+preOrderHelper(<span class="hljs-keyword">this</span>-&gt;root);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">inorder</span><span class="hljs-params">()</span> </span>{
+inOrderHelper(<span class="hljs-keyword">this</span>-&gt;root);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">postorder</span><span class="hljs-params">()</span> </span>{
+postOrderHelper(<span class="hljs-keyword">this</span>-&gt;root);
+}
+
+<span class="hljs-function">NodePtr <span class="hljs-title">searchTree</span><span class="hljs-params">(<span class="hljs-keyword">int</span> k)</span> </span>{
+<span class="hljs-keyword">return</span> searchTreeHelper(<span class="hljs-keyword">this</span>-&gt;root, k);
+}
+
+<span class="hljs-function">NodePtr <span class="hljs-title">minimum</span><span class="hljs-params">(NodePtr node)</span> </span>{
+<span class="hljs-keyword">while</span> (node-&gt;left != TNULL) {
+node = node-&gt;left;
+}
+<span class="hljs-keyword">return</span> node;
+}
+
+<span class="hljs-function">NodePtr <span class="hljs-title">maximum</span><span class="hljs-params">(NodePtr node)</span> </span>{
+<span class="hljs-keyword">while</span> (node-&gt;right != TNULL) {
+node = node-&gt;right;
+}
+<span class="hljs-keyword">return</span> node;
+}
+
+<span class="hljs-function">NodePtr <span class="hljs-title">successor</span><span class="hljs-params">(NodePtr x)</span> </span>{
+<span class="hljs-keyword">if</span> (x-&gt;right != TNULL) {
+<span class="hljs-keyword">return</span> minimum(x-&gt;right);
+}
+
+NodePtr y = x-&gt;parent;
+<span class="hljs-keyword">while</span> (y != TNULL &amp;&amp; x == y-&gt;right) {
+x = y;
+y = y-&gt;parent;
+}
+<span class="hljs-keyword">return</span> y;
+}
+
+<span class="hljs-function">NodePtr <span class="hljs-title">predecessor</span><span class="hljs-params">(NodePtr x)</span> </span>{
+<span class="hljs-keyword">if</span> (x-&gt;left != TNULL) {
+<span class="hljs-keyword">return</span> maximum(x-&gt;left);
+}
+
+NodePtr y = x-&gt;parent;
+<span class="hljs-keyword">while</span> (y != TNULL &amp;&amp; x == y-&gt;left) {
+x = y;
+y = y-&gt;parent;
+}
+
+<span class="hljs-keyword">return</span> y;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">leftRotate</span><span class="hljs-params">(NodePtr x)</span> </span>{
+NodePtr y = x-&gt;right;
+x-&gt;right = y-&gt;left;
+<span class="hljs-keyword">if</span> (y-&gt;left != TNULL) {
+y-&gt;left-&gt;parent = x;
+}
+y-&gt;parent = x-&gt;parent;
+<span class="hljs-keyword">if</span> (x-&gt;parent == <span class="hljs-literal">nullptr</span>) {
+<span class="hljs-keyword">this</span>-&gt;root = y;
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (x == x-&gt;parent-&gt;left) {
+x-&gt;parent-&gt;left = y;
+} <span class="hljs-keyword">else</span> {
+x-&gt;parent-&gt;right = y;
+}
+y-&gt;left = x;
+x-&gt;parent = y;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">rightRotate</span><span class="hljs-params">(NodePtr x)</span> </span>{
+NodePtr y = x-&gt;left;
+x-&gt;left = y-&gt;right;
+<span class="hljs-keyword">if</span> (y-&gt;right != TNULL) {
+y-&gt;right-&gt;parent = x;
+}
+y-&gt;parent = x-&gt;parent;
+<span class="hljs-keyword">if</span> (x-&gt;parent == <span class="hljs-literal">nullptr</span>) {
+<span class="hljs-keyword">this</span>-&gt;root = y;
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (x == x-&gt;parent-&gt;right) {
+x-&gt;parent-&gt;right = y;
+} <span class="hljs-keyword">else</span> {
+x-&gt;parent-&gt;left = y;
+}
+y-&gt;right = x;
+x-&gt;parent = y;
+}
+
+<span class="hljs-comment">// Inserting a node</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">insert</span><span class="hljs-params">(<span class="hljs-keyword">int</span> key)</span> </span>{
+NodePtr node = <span class="hljs-keyword">new</span> Node;
+node-&gt;parent = <span class="hljs-literal">nullptr</span>;
+node-&gt;data = key;
+node-&gt;left = TNULL;
+node-&gt;right = TNULL;
+node-&gt;color = <span class="hljs-number">1</span>;
+
+NodePtr y = <span class="hljs-literal">nullptr</span>;
+NodePtr x = <span class="hljs-keyword">this</span>-&gt;root;
+
+<span class="hljs-keyword">while</span> (x != TNULL) {
+y = x;
+<span class="hljs-keyword">if</span> (node-&gt;data &lt; x-&gt;data) {
+x = x-&gt;left;
+} <span class="hljs-keyword">else</span> {
+x = x-&gt;right;
+}
+}
+
+node-&gt;parent = y;
+<span class="hljs-keyword">if</span> (y == <span class="hljs-literal">nullptr</span>) {
+root = node;
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (node-&gt;data &lt; y-&gt;data) {
+y-&gt;left = node;
+} <span class="hljs-keyword">else</span> {
+y-&gt;right = node;
+}
+
+<span class="hljs-keyword">if</span> (node-&gt;parent == <span class="hljs-literal">nullptr</span>) {
+node-&gt;color = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">return</span>;
+}
+
+<span class="hljs-keyword">if</span> (node-&gt;parent-&gt;parent == <span class="hljs-literal">nullptr</span>) {
+<span class="hljs-keyword">return</span>;
+}
+
+insertFix(node);
+}
+
+<span class="hljs-function">NodePtr <span class="hljs-title">getRoot</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>-&gt;root;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">deleteNode</span><span class="hljs-params">(<span class="hljs-keyword">int</span> data)</span> </span>{
+deleteNodeHelper(<span class="hljs-keyword">this</span>-&gt;root, data);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">printTree</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-keyword">if</span> (root) {
+printHelper(<span class="hljs-keyword">this</span>-&gt;root, <span class="hljs-string">""</span>, <span class="hljs-literal">true</span>);
+}
+}
+};
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+RedBlackTree bst;
+bst.insert(<span class="hljs-number">55</span>);
+bst.insert(<span class="hljs-number">40</span>);
+bst.insert(<span class="hljs-number">65</span>);
+bst.insert(<span class="hljs-number">60</span>);
+bst.insert(<span class="hljs-number">75</span>);
+bst.insert(<span class="hljs-number">57</span>);
+
+bst.printTree();
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span>
+&lt;&lt; <span class="hljs-string">"After deleting"</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+bst.deleteNode(<span class="hljs-number">40</span>);
+bst.printTree();
+}</code></pre></div>
+</div>
+</div>
+
+<hr><h2 id="applications">Red-Black Tree Applications</h2>
+
+<ol><li>To implement finite maps</li>
+<li>To implement Java packages: <code>java.util.TreeMap</code> and <code>java.util.TreeSet</code></li>
+<li>To implement Standard Template Libraries (STL) in C++: multiset, map, multimap</li>
+<li>In Linux Kernel</li>
+</ol></div>
+
+
+
+</div>
+
+
+        <div class="tutorial-toc"><div class="tutorial-toc__inner"><h3 class="tutorial-toc__title">Table of Contents
+<button class="btn btn--clear align-items-center">
+<svg class="programiz-icon"><use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#x"></use></svg></button></h3><div class="tutorial-toc__links"><ul><li><a href="#definition">Definition</a></li>
+<li><a href="#rotation">Rotating the subtrees in a Red-Black Tree </a></li>
+<li><a href="#insertion">Inserting an element into a Red-Black Tree </a></li>
+<li><a href="#deletion">Deleting an element from a Red-Black Tree </a></li>
+<li><a href="#examples">Python, Java and C/C++ Examples </a></li>
+<li><a href="#applications">Red-Black Tree Applications </a></li>
+</ul></div></div></div>                          </div>
+
+<!--second------------------------------------------->
+<div>
+<ul>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/stack.html">
+
+        Stack</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/queue.html">
+
+        Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/types-of-queue.html">
+
+        Types of Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/circular-queue.html">
+
+        Circular Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/priority-queue.html">
+
+        Priority Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deque.html">
+
+        Deque</a></button>
+<br/>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linked-list.html">
+
+        Linked List</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linked-list-operations.html">
+
+        Linked List Operations</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linked-list-types.html">
+
+        Types of Linked List</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/hash-table.html">
+
+        Hash Table</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/heap-data-structure.html">
+
+        Heap Data Structure</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/fibonacci-heap.html">
+
+        Fibonacci Heap</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/decrease-key-and-delete-node-from-a-fibonacci-heap.html">
+
+        Decrease Key and Delete node from Fibonacci Heap</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/trees.html">
+
+        Tree Data Structure</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/tree-traversal.html">
+
+        Tree Traversal</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/binary-tree.html">
+
+        Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/full-binary-tree.html">
+
+        Full Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/perfect-binary-tree.html">
+
+        Perfect Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/complete-binary-tree.html">
+
+        Complete Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/balanced-binary-tree.html">
+
+        Balanced Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/binary-search-tree.html">
+
+        Binary Search Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/avl-tree.html">
+
+        AVL Tree</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/b-tree.html">
+
+        B Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-into-a-b-tree.html">
+
+        Insertion into B-tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deletion-from-a-b-tree.html">
+
+        Deletion from B-tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/b-plus-tree.html">
+
+        B+ Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-on-a-b-plus-tree.html">
+
+        Insertion on a B+ Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deletion-from-a-b-plus-tree.html">
+
+        Deletion from a B+ Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/red-black-tree.html">
+
+        Red Black Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-in-a-red-black-tree.html">
+
+        Insertion in Red Black Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deletion-from-a-red-black-tree.html">
+
+        Deletion from Red Black Tree</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph.html">
+
+        Graph Data Structure</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/spanning-tree-and-minimum-spanning-tree.html">
+
+        Spanning Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/strongly-connected-components.html">
+
+        Strongly Connected Components</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-adjacency-matrix.html">
+
+        Adjacency Matrix</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-adjacency-list.html">
+
+        Adjacency List</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-dfs.html">
+
+        DFS Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-bfs.html">
+
+        Breadth-first Search</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/bellman-ford-algorithm.html">
+
+        Bellman Ford's Algorithm</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/bubble-sort.html">
+
+        Bubble Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/selection-sort.html">
+
+        Selection Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-sort.html">
+
+        Insertion Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/merge-sort.html">
+
+        Merge Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/quick-sort.html">
+
+        Quick Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/counting-sort.html">
+
+        Counting Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/radix-sort.html">
+
+        Radix Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/bucket-sort.html">
+
+        Bucket Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/heap-sort.html">
+
+        Heap Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/shell-sort.html">
+
+        Shell Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linear-search.html">
+
+        Linear Search</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/binary-search.html">
+
+        Binary Search</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/greedy-algorithm.html">
+
+        Greedy Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/ford-fulkerson-algorithm.html">
+
+        Ford-Fulkerson Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/dijkstra-algorithm.html">
+
+        Dijkstra's Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/kruskal-algorithm.html">
+
+        Kruskal's Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/prim-algorithm.html">
+
+        Prim's Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/huffman-coding.html">
+
+        Huffman Code</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/dynamic-programming.html">
+
+        Dynamic Programming</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/floyd-warshall-algorithm.html">
+
+        Floyd Warshall Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/longest-common-subsequence.html">
+
+        Longest Common Subsequence</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/backtracking-algorithm.html">
+
+        Backtracking Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/rabin-karp-algorithm.html">
+
+        Rabin-Karp Algorithm</a></button>
+<br>
+<br/>
+<h2>Free Courses on YouTube</h2>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+            https://www.youtube.com/watch?v=IbSXF7eT-AU&amp;list=PLR_5PTwg_uAQw40OhdvAwN4NvzWv0xOZ2">
+
+            Python Full Course Playlist</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://www.youtube.com/watch?v=UEl6wB90Gs8">
+
+            105 STL Algorithms in Less Than an Hour</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://www.youtube.com/watch?v=zZXTgN7L1UU&amp;list=PLR_5PTwg_uAS6C1cSMjU6oVhOcCX8Zu_4">
+
+            C++ STL Playlist</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://youtu.be/ty9756v3kc8">
+
+            Learn Node.js </a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://youtu.be/exrIpdS3Crc">
+
+            Learn Data Science Full course</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://youtu.be/Q8tDO2uSk5U">
+
+            Learn Computer Networking Full course</a></button>
+<br/>
+</br></br></br></br></br></br></br></br></ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<footer class="afooter" style="margin-left:20px">
+<p>
+<a href="/cookie-policy.html">Cookie policy</a> |
+
+        <a href="/privacy-policy.html">Privacy policy</a> |
+
+        <a href="/terms-of-use.html">Terms of use</a> |
+
+        <a href="/disclaimer.html">Disclaimer</a> |
+
+        <a href="/about-us.html">About Us</a>
+</p>
+<p>
+
+        © 2023 <a href="https://pythonread.github.io">https://pythonread.github.io</a>
+</p>
+</footer>
+<script type="text/javascript">
+
+    document.addEventListener('DOMContentLoaded', function () { htmlTableOfContents() }); function htmlTableOfContents(documentRef) { var documentRef = documentRef || document; var toc = documentRef.getElementById("toc"); var headings = [].slice.call(documentRef.body.querySelectorAll('h2, h3')); headings.forEach(function (heading, index) { var ref = "toc" + index; if (heading.hasAttribute("id")) { ref = heading.getAttribute("id") } else { heading.setAttribute("id", ref) } var link = documentRef.createElement("a"); link.setAttribute("href", "#" + ref); link.textContent = heading.textContent; var div = documentRef.createElement("div"); div.setAttribute("class", heading.tagName.toLowerCase()); div.appendChild(link); toc.appendChild(div) }) } try { module.exports = htmlTableOfContents } catch (e) { } function isScrolledIntoView(el) { var rect = el.getBoundingClientRect(); var elemTop = rect.top; var elemBottom = rect.bottom; var isVisible = (elemTop >= -10) && (elemBottom <= (window.innerHeight)); return isVisible } function highlightMenu() { var headers = document.querySelectorAll("h2, h3"); for (var i = 0; i < headers.length; i += 1) { if (isScrolledIntoView(headers[i])) { var childDivs = document.getElementById('toc').getElementsByTagName('div'); var c = childDivs[i].classList; c.add("active"); for (var j = 0; j < i; j += 1) { var c = childDivs[j].classList; c.remove("active") } for (var j = i + 1; j < childDivs.length; j += 1) { var c = childDivs[j].classList; c.remove("active") } break } } } function highlightMenuLastItem() { var childDivs = document.getElementById('toc').getElementsByTagName('div'); for (var j = 0; j < childDivs.length - 1; j += 1) { var c = childDivs[j].classList; c.remove("active") } var c = childDivs[childDivs.length - 1].classList; c.add("active") } window.addEventListener("click", function (event) { highlightMenu() }); window.onscroll = function (e) { highlightMenu(); if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) { highlightMenuLastItem() } }; function mobileMenu() { var classes = document.getElementById('nav-toggle-icon').classList; if (classes.contains("active")) { classes.remove("active") } else { classes.add("active") } var classes = document.getElementById('menu-wrapper').classList; if (classes.contains("active")) { classes.remove("active") } else { classes.add("active") } }
+
+</script>
+<script type="text/javascript">
+
+    function changepy(){
+
+        document.getElementById('py1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('java1').className = 'tabbed-editor__node';
+
+        document.getElementById('c1').className = 'tabbed-editor__node';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node';
+
+        document.getElementById('python-code').className = 'code-editor__area code-editor__area--active';
+
+        document.getElementById('java-code').className = 'code-editor__area';
+
+        document.getElementById('c-code').className = 'code-editor__area';
+
+        document.getElementById('cpp-code').className = 'code-editor__area';
+
+
+
+    }
+
+    function changecpp(){
+
+        document.getElementById('py1').className = 'tabbed-editor__node';
+
+        document.getElementById('java1').className = 'tabbed-editor__node';
+
+        document.getElementById('c1').className = 'tabbed-editor__node';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('python-code').className = 'code-editor__area';
+
+        document.getElementById('java-code').className = 'code-editor__area';
+
+        document.getElementById('c-code').className = 'code-editor__area';
+
+        document.getElementById('cpp-code').className = 'code-editor__area code-editor__area--active';
+
+    }
+
+    function changejava(){
+
+       document.getElementById('py1').className = 'tabbed-editor__node';
+
+        document.getElementById('java1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('c1').className = 'tabbed-editor__node';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node';
+
+        document.getElementById('python-code').className = 'code-editor__area';
+
+        document.getElementById('java-code').className = 'code-editor__area code-editor__area--active';
+
+        document.getElementById('c-code').className = 'code-editor__area';
+
+        document.getElementById('cpp-code').className = 'code-editor__area';
+
+    }
+
+    function changec(){
+
+        document.getElementById('py1').className = 'tabbed-editor__node';
+
+        document.getElementById('java1').className = 'tabbed-editor__node';
+
+        document.getElementById('c1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node';
+
+        document.getElementById('python-code').className = 'code-editor__area';
+
+        document.getElementById('java-code').className = 'code-editor__area';
+
+        document.getElementById('c-code').className = 'code-editor__area code-editor__area--active';
+
+        document.getElementById('cpp-code').className = 'code-editor__area';
+
+    }
+
+    
+
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>

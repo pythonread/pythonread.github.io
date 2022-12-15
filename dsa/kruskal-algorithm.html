@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<title>Kruskal Algorithm</title>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-HCERBDV76D"></script>
+<script>
+
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() { dataLayer.push(arguments); }
+
+        gtag('js', new Date());
+
+
+
+        gtag('config', 'G-HCERBDV76D');
+
+    </script>
+<meta content="B0487B46A104E90209E8A3BEA24ECA0E" name="msvalidate.01"/>
+<meta content="f044b3a12c7918f1" name="yandex-verification"/>
+<!--end-->
+<meta content="learn about data types, variables, lists, tuples, dictionaries,if else,DSA,loops,user-defined functions, oop, threading and scripting." name="description"/>
+<meta content="learnPython" name="author"/>
+<meta content="Learn Python for free,learn python for beginners,Core Python,Web frameworks,Multiprocess architecture,Serverside templating language,python tutorials,python4" name="keywords"/>
+<meta content="website" property="og:type"/>
+<meta content="US-CA" name="”geo.region”"/>
+<meta content="353 Jane Stanford Way, Stanford, CA 94305, United States" name="”geo.placename”"/>
+<meta content="37.430089898615456;-122.17332683124829" name="”geo.position”"/>
+<meta content="37.430089898615456, -122.17332683124829" name="”ICBM”"/>
+<link href="https://pythonread.github.io/?m=1" rel="alternate"/>
+<link href="/favicon.png" rel="icon"/>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="/style1.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/style2.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/style0.css" media="all" rel="stylesheet" type="text/css"/>
+<!--<![endif]-->
+</head>
+<body>
+<div class="nav-wrapper">
+<div class="container">
+<nav>
+<div class="logo wave">
+<a href="/" id="logo">
+
+                        Python Tutorial
+
+                    </a>
+</div>
+<div class="nav-toggle-icon" id="nav-toggle-icon" onclick="mobileMenu()">
+<div class="material-hamburger">
+<span>
+</span>
+<span>
+</span>
+<span>
+</span>
+</div>
+</div>
+<div class="menu-wrapper" id="menu-wrapper">
+<div class="nav-indicator">
+</div>
+<ul class="menus">
+<li>
+<a class="wave" href="/">
+
+                                Home
+
+                            </a>
+</li>
+<li>
+<a class="wave" href="/projects.html">
+
+                                Projects
+
+                            </a>
+</li>
+<li>
+<a class="wave" href="/free-course.html" target="_blank">
+
+                                Free Course
+
+                            </a>
+</li>
+<li>
+<a class="wave" href="/dsa.html">
+
+                                DSA
+
+                            </a>
+</li>
+</ul>
+</div>
+</nav>
+</div>
+</div>
+<div class="contents contents--neg" style="margin-top: 60px">
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+<div class="d-flex">
+<div class="left-bar d-none d-lg-block">
+<div class="card-alt mb-10x">
+<h3>Page Index</h3>
+<div class="list">
+<ul>
+<li><a href="/dsa.html#data-structure-1" title="Data Structures (I)">Data Structures
+
+                                                (I)</a></li>
+<li><a href="/dsa.html#data-structure-2" title="Data Structures (II)">Data Structures
+
+                                                (II)</a></li>
+<li><a href="/dsa.html#tree-1" title="Tree based DSA (I)">Tree based DSA (I)</a></li>
+<li><a href="/dsa.html#tree-2" title="Tree based DSA (II)">Tree based DSA (II)</a></li>
+<li><a href="/dsa.html#graph" title="Graph Data Structures and Algorithm">Graph based
+
+                                                DSA</a></li>
+<li><a href="/dsa.html#sorting-searching" title="Sorting and Searching">Sorting and
+
+                                                Searching</a></li>
+<li><a href="/dsa.html#greedy-algorithm" title="Greedy Algorithms">Greedy Algorithms</a>
+</li>
+<li><a href="/dsa.html#dynamic-programming" title="Dynamic Programming">Dynamic
+
+                                                Programming</a></li>
+<li><a href="/dsa.html#other-algorithms" title="Other Algorithms">Other Algorithms</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="right-bar">
+<!--first part end-------------------------------------------->
+
+<div class="editor-contents">
+        <h1>Kruskal's Algorithm</h1>
+
+
+        <p class="editor-contents__short-description">In this tutorial, you will learn how Kruskal's Algorithmworks. Also, you will find working examples of Kruskal's Algorithm in C, C++, Java and Python.</p>
+
+
+
+          
+
+
+
+<div id="node-1055" class="node node-algorithm clearfix" about="/dsa/kruskal-algorithm" typeof="sioc:Item foaf:Document">
+
+
+<span property="dc:title" content="Kruskal's Algorithm" class="rdf-meta element-hidden"></span>
+
+<div class="content">
+<p id="introduction">Kruskal's algorithm is a <a href="/dsa/spanning-tree-and-minimum-spanning-tree.html">minimum spanning tree</a> algorithm that takes a graph as input and finds the subset of the edges of that graph which</p>
+
+<ul><li>form a tree that includes every vertex</li>
+<li>has the minimum sum of weights among all the trees that can be formed from the graph</li>
+</ul><hr><h2 id="working">How Kruskal's algorithm works</h2>
+
+<p>It falls under a class of algorithms called <a href="/dsa/greedy-algorithm.html" >greedy algorithms</a> that find the local optimum in the hopes of finding a global optimum.</p>
+
+<p>We start from the edges with the lowest weight and keep adding edges until we reach our goal.</p>
+
+<p>The steps for implementing Kruskal's algorithm are as follows:</p>
+
+<ol><li>Sort all the edges from low weight to high</li>
+<li>Take the edge with the lowest weight and add it to the spanning tree. If adding the edge created a cycle, then reject this edge.</li>
+<li>Keep adding edges until we reach all vertices.</li>
+</ol><hr><h2 id="example">Example of Kruskal's algorithm</h2>
+
+<figure><img alt="Start with a weighted graph" src="//cdn.programiz.com/sites/tutorial2program/files/ka-1.png" title="Kruskal's algorithm example " width="730" height="308"><figcaption>Start with a weighted graph</figcaption></figure><figure><img alt="Choose the edge with the least weight, if there are more than 1, choose anyone" src="//cdn.programiz.com/sites/tutorial2program/files/ka-2.png" title="Kruskal's algorithm example " width="730" height="240"><figcaption>Choose the edge with the least weight, if there are more than 1, choose anyone</figcaption></figure><figure><img alt="Choose the next shortest edge and add it" src="//cdn.programiz.com/sites/tutorial2program/files/ka-3.png" title="Kruskal's algorithm example " width="730" height="240"><figcaption>Choose the next shortest edge and add it</figcaption></figure><figure><img alt="Choose the next shortest edge that doesn't create a cycle and add it" src="//cdn.programiz.com/sites/tutorial2program/files/ka-4.png" title="Kruskal's algorithm example " width="730" height="306"><figcaption>Choose the next shortest edge that doesn't create a cycle and add it</figcaption></figure><figure><img alt="Choose the next shortest edge that doesn't create a cycle and add it" src="//cdn.programiz.com/sites/tutorial2program/files/ka-5.png" title="Kruskal's algorithm example " width="730" height="306"><figcaption>Choose the next shortest edge that doesn't create a cycle and add it</figcaption></figure><figure><img alt="Repeat until you have a spanning tree" src="//cdn.programiz.com/sites/tutorial2program/files/ka-6.png" title="Kruskal's algorithm example " width="730" height="306"><figcaption>Repeat until you have a spanning tree</figcaption></figure><hr><h2 id="pseudocode">Kruskal Algorithm Pseudocode</h2>
+
+<p>Any minimum spanning tree algorithm revolves around checking if adding an edge creates a loop or not.</p>
+
+<p></p><div class="clearfix"></div><p>The most common way to find this out is an algorithm called <a href="https://www.cs.duke.edu/courses/cps100e/fall09/notes/UnionFind.pdf" target="_blank">Union FInd</a>. The Union-Find algorithm divides the vertices into clusters and allows us to check if two vertices belong to the same cluster or not and hence decide whether adding an edge creates a cycle.</p>
+
+<pre style="max-height: 600px;"><code class="dsa hljs sql">KRUSKAL(G):
+A = ∅
+For each vertex v ∈ G.V:
+MAKE-<span class="hljs-keyword">SET</span>(v)
+<span class="hljs-keyword">For</span> <span class="hljs-keyword">each</span> edge (u, v) ∈ G.E ordered <span class="hljs-keyword">by</span> increasing <span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> weight(u, v):
+<span class="hljs-keyword">if</span> FIND-<span class="hljs-keyword">SET</span>(u) ≠ FIND-<span class="hljs-keyword">SET</span>(v):       
+A = A ∪ {(u, v)}
+<span class="hljs-keyword">UNION</span>(u, v)
+<span class="hljs-keyword">return</span> A</code></pre>
+
+<hr><h2 id="code">Python, Java and C/C++ Examples</h2>
+
+<div class="tabbed-editor">
+        <div id="py1" onclick="changepy()" class="tabbed-editor__node tabbed-editor__node--active"><a href="#python-code">Python</a></div>
+        
+        <div id="java1" onclick="changejava()"  class="tabbed-editor__node"><a href="#java-code">Java</a></div>
+        
+        <div id="c1" onclick="changec()" class="tabbed-editor__node"><a href="#c-code">C</a></div>
+        
+        <div id="cpp1" onclick="changecpp()" class="tabbed-editor__node"><a href="#cpp-code">C++</a></div>
+        </div>
+
+<div class="code-editor code-editor--tabbed">
+<div class="code-editor__area code-editor__area--active" id="python-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="python hljs"><span class="hljs-comment"># Kruskal's algorithm in Python</span>
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Graph</span>:</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, vertices)</span>:</span>
+self.V = vertices
+self.graph = []
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">add_edge</span><span class="hljs-params">(self, u, v, w)</span>:</span>
+self.graph.append([u, v, w])
+
+<span class="hljs-comment"># Search function</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">find</span><span class="hljs-params">(self, parent, i)</span>:</span>
+<span class="hljs-keyword">if</span> parent[i] == i:
+<span class="hljs-keyword">return</span> i
+<span class="hljs-keyword">return</span> self.find(parent, parent[i])
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">apply_union</span><span class="hljs-params">(self, parent, rank, x, y)</span>:</span>
+xroot = self.find(parent, x)
+yroot = self.find(parent, y)
+<span class="hljs-keyword">if</span> rank[xroot] &lt; rank[yroot]:
+parent[xroot] = yroot
+<span class="hljs-keyword">elif</span> rank[xroot] &gt; rank[yroot]:
+parent[yroot] = xroot
+<span class="hljs-keyword">else</span>:
+parent[yroot] = xroot
+rank[xroot] += <span class="hljs-number">1</span>
+
+<span class="hljs-comment">#  Applying Kruskal algorithm</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">kruskal_algo</span><span class="hljs-params">(self)</span>:</span>
+result = []
+i, e = <span class="hljs-number">0</span>, <span class="hljs-number">0</span>
+self.graph = sorted(self.graph, key=<span class="hljs-keyword">lambda</span> item: item[<span class="hljs-number">2</span>])
+parent = []
+rank = []
+<span class="hljs-keyword">for</span> node <span class="hljs-keyword">in</span> range(self.V):
+parent.append(node)
+rank.append(<span class="hljs-number">0</span>)
+<span class="hljs-keyword">while</span> e &lt; self.V - <span class="hljs-number">1</span>:
+u, v, w = self.graph[i]
+i = i + <span class="hljs-number">1</span>
+x = self.find(parent, u)
+y = self.find(parent, v)
+<span class="hljs-keyword">if</span> x != y:
+e = e + <span class="hljs-number">1</span>
+result.append([u, v, w])
+self.apply_union(parent, rank, x, y)
+<span class="hljs-keyword">for</span> u, v, weight <span class="hljs-keyword">in</span> result:
+<span class="hljs-keyword">print</span>(<span class="hljs-string">"%d - %d: %d"</span> % (u, v, weight))
+
+
+g = Graph(<span class="hljs-number">6</span>)
+g.add_edge(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">4</span>)
+g.add_edge(<span class="hljs-number">0</span>, <span class="hljs-number">2</span>, <span class="hljs-number">4</span>)
+g.add_edge(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">2</span>)
+g.add_edge(<span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">4</span>)
+g.add_edge(<span class="hljs-number">2</span>, <span class="hljs-number">0</span>, <span class="hljs-number">4</span>)
+g.add_edge(<span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>)
+g.add_edge(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>)
+g.add_edge(<span class="hljs-number">2</span>, <span class="hljs-number">5</span>, <span class="hljs-number">2</span>)
+g.add_edge(<span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">4</span>)
+g.add_edge(<span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>)
+g.add_edge(<span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">3</span>)
+g.add_edge(<span class="hljs-number">4</span>, <span class="hljs-number">2</span>, <span class="hljs-number">4</span>)
+g.add_edge(<span class="hljs-number">4</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>)
+g.add_edge(<span class="hljs-number">5</span>, <span class="hljs-number">2</span>, <span class="hljs-number">2</span>)
+g.add_edge(<span class="hljs-number">5</span>, <span class="hljs-number">4</span>, <span class="hljs-number">3</span>)
+g.kruskal_algo()</code></pre></div>
+</div>
+
+<div class="code-editor__area" id="java-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="java hljs"><span class="hljs-comment">// Kruskal's algorithm in Java</span>
+
+<span class="hljs-keyword">import</span> java.util.*;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Graph</span> </span>{
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Edge</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Comparable</span>&lt;<span class="hljs-title">Edge</span>&gt; </span>{
+<span class="hljs-keyword">int</span> src, dest, weight;
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">compareTo</span><span class="hljs-params">(Edge compareEdge)</span> </span>{
+<span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.weight - compareEdge.weight;
+}
+};
+
+<span class="hljs-comment">// Union</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">subset</span> </span>{
+<span class="hljs-keyword">int</span> parent, rank;
+};
+
+<span class="hljs-keyword">int</span> vertices, edges;
+Edge edge[];
+
+<span class="hljs-comment">// Graph creation</span>
+Graph(<span class="hljs-keyword">int</span> v, <span class="hljs-keyword">int</span> e) {
+vertices = v;
+edges = e;
+edge = <span class="hljs-keyword">new</span> Edge[edges];
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; e; ++i)
+edge[i] = <span class="hljs-keyword">new</span> Edge();
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">find</span><span class="hljs-params">(subset subsets[], <span class="hljs-keyword">int</span> i)</span> </span>{
+<span class="hljs-keyword">if</span> (subsets[i].parent != i)
+subsets[i].parent = find(subsets, subsets[i].parent);
+<span class="hljs-keyword">return</span> subsets[i].parent;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Union</span><span class="hljs-params">(subset subsets[], <span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y)</span> </span>{
+<span class="hljs-keyword">int</span> xroot = find(subsets, x);
+<span class="hljs-keyword">int</span> yroot = find(subsets, y);
+
+<span class="hljs-keyword">if</span> (subsets[xroot].rank &lt; subsets[yroot].rank)
+subsets[xroot].parent = yroot;
+<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (subsets[xroot].rank &gt; subsets[yroot].rank)
+subsets[yroot].parent = xroot;
+<span class="hljs-keyword">else</span> {
+subsets[yroot].parent = xroot;
+subsets[xroot].rank++;
+}
+}
+
+<span class="hljs-comment">// Applying Krushkal Algorithm</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">KruskalAlgo</span><span class="hljs-params">()</span> </span>{
+Edge result[] = <span class="hljs-keyword">new</span> Edge[vertices];
+<span class="hljs-keyword">int</span> e = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; vertices; ++i)
+result[i] = <span class="hljs-keyword">new</span> Edge();
+
+<span class="hljs-comment">// Sorting the edges</span>
+Arrays.sort(edge);
+subset subsets[] = <span class="hljs-keyword">new</span> subset[vertices];
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; vertices; ++i)
+subsets[i] = <span class="hljs-keyword">new</span> subset();
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> v = <span class="hljs-number">0</span>; v &lt; vertices; ++v) {
+subsets[v].parent = v;
+subsets[v].rank = <span class="hljs-number">0</span>;
+}
+i = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">while</span> (e &lt; vertices - <span class="hljs-number">1</span>) {
+Edge next_edge = <span class="hljs-keyword">new</span> Edge();
+next_edge = edge[i++];
+<span class="hljs-keyword">int</span> x = find(subsets, next_edge.src);
+<span class="hljs-keyword">int</span> y = find(subsets, next_edge.dest);
+<span class="hljs-keyword">if</span> (x != y) {
+result[e++] = next_edge;
+Union(subsets, x, y);
+}
+}
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; e; ++i)
+System.out.println(result[i].src + <span class="hljs-string">" - "</span> + result[i].dest + <span class="hljs-string">": "</span> + result[i].weight);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+<span class="hljs-keyword">int</span> vertices = <span class="hljs-number">6</span>; <span class="hljs-comment">// Number of vertices</span>
+<span class="hljs-keyword">int</span> edges = <span class="hljs-number">8</span>; <span class="hljs-comment">// Number of edges</span>
+Graph G = <span class="hljs-keyword">new</span> Graph(vertices, edges);
+
+G.edge[<span class="hljs-number">0</span>].src = <span class="hljs-number">0</span>;
+G.edge[<span class="hljs-number">0</span>].dest = <span class="hljs-number">1</span>;
+G.edge[<span class="hljs-number">0</span>].weight = <span class="hljs-number">4</span>;
+
+G.edge[<span class="hljs-number">1</span>].src = <span class="hljs-number">0</span>;
+G.edge[<span class="hljs-number">1</span>].dest = <span class="hljs-number">2</span>;
+G.edge[<span class="hljs-number">1</span>].weight = <span class="hljs-number">4</span>;
+
+G.edge[<span class="hljs-number">2</span>].src = <span class="hljs-number">1</span>;
+G.edge[<span class="hljs-number">2</span>].dest = <span class="hljs-number">2</span>;
+G.edge[<span class="hljs-number">2</span>].weight = <span class="hljs-number">2</span>;
+
+G.edge[<span class="hljs-number">3</span>].src = <span class="hljs-number">2</span>;
+G.edge[<span class="hljs-number">3</span>].dest = <span class="hljs-number">3</span>;
+G.edge[<span class="hljs-number">3</span>].weight = <span class="hljs-number">3</span>;
+
+G.edge[<span class="hljs-number">4</span>].src = <span class="hljs-number">2</span>;
+G.edge[<span class="hljs-number">4</span>].dest = <span class="hljs-number">5</span>;
+G.edge[<span class="hljs-number">4</span>].weight = <span class="hljs-number">2</span>;
+
+G.edge[<span class="hljs-number">5</span>].src = <span class="hljs-number">2</span>;
+G.edge[<span class="hljs-number">5</span>].dest = <span class="hljs-number">4</span>;
+G.edge[<span class="hljs-number">5</span>].weight = <span class="hljs-number">4</span>;
+
+G.edge[<span class="hljs-number">6</span>].src = <span class="hljs-number">3</span>;
+G.edge[<span class="hljs-number">6</span>].dest = <span class="hljs-number">4</span>;
+G.edge[<span class="hljs-number">6</span>].weight = <span class="hljs-number">3</span>;
+
+G.edge[<span class="hljs-number">7</span>].src = <span class="hljs-number">5</span>;
+G.edge[<span class="hljs-number">7</span>].dest = <span class="hljs-number">4</span>;
+G.edge[<span class="hljs-number">7</span>].weight = <span class="hljs-number">3</span>;
+G.KruskalAlgo();
+}
+}</code></pre></div>
+</div>
+
+<div class="code-editor__area" id="c-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="c hljs cpp"><span class="hljs-comment">// Kruskal's algorithm in C</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> MAX 30</span>
+
+<span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">edge</span> {</span>
+<span class="hljs-keyword">int</span> u, v, w;
+} edge;
+
+<span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">edge_list</span> {</span>
+edge data[MAX];
+<span class="hljs-keyword">int</span> n;
+} edge_list;
+
+edge_list elist;
+
+<span class="hljs-keyword">int</span> Graph[MAX][MAX], n;
+edge_list spanlist;
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">kruskalAlgo</span><span class="hljs-params">()</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">find</span><span class="hljs-params">(<span class="hljs-keyword">int</span> belongs[], <span class="hljs-keyword">int</span> vertexno)</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">applyUnion</span><span class="hljs-params">(<span class="hljs-keyword">int</span> belongs[], <span class="hljs-keyword">int</span> c1, <span class="hljs-keyword">int</span> c2)</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">sort</span><span class="hljs-params">()</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">print</span><span class="hljs-params">()</span></span>;
+
+<span class="hljs-comment">// Applying Krushkal Algo</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">kruskalAlgo</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-keyword">int</span> belongs[MAX], i, j, cno1, cno2;
+elist.n = <span class="hljs-number">0</span>;
+
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">1</span>; i &lt; n; i++)
+<span class="hljs-keyword">for</span> (j = <span class="hljs-number">0</span>; j &lt; i; j++) {
+<span class="hljs-keyword">if</span> (Graph[i][j] != <span class="hljs-number">0</span>) {
+elist.data[elist.n].u = i;
+elist.data[elist.n].v = j;
+elist.data[elist.n].w = Graph[i][j];
+elist.n++;
+}
+}
+
+sort();
+
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; n; i++)
+belongs[i] = i;
+
+spanlist.n = <span class="hljs-number">0</span>;
+
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; elist.n; i++) {
+cno1 = find(belongs, elist.data[i].u);
+cno2 = find(belongs, elist.data[i].v);
+
+<span class="hljs-keyword">if</span> (cno1 != cno2) {
+spanlist.data[spanlist.n] = elist.data[i];
+spanlist.n = spanlist.n + <span class="hljs-number">1</span>;
+applyUnion(belongs, cno1, cno2);
+}
+}
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">find</span><span class="hljs-params">(<span class="hljs-keyword">int</span> belongs[], <span class="hljs-keyword">int</span> vertexno)</span> </span>{
+<span class="hljs-keyword">return</span> (belongs[vertexno]);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">applyUnion</span><span class="hljs-params">(<span class="hljs-keyword">int</span> belongs[], <span class="hljs-keyword">int</span> c1, <span class="hljs-keyword">int</span> c2)</span> </span>{
+<span class="hljs-keyword">int</span> i;
+
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; n; i++)
+<span class="hljs-keyword">if</span> (belongs[i] == c2)
+belongs[i] = c1;
+}
+
+<span class="hljs-comment">// Sorting algo</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">sort</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-keyword">int</span> i, j;
+edge temp;
+
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">1</span>; i &lt; elist.n; i++)
+<span class="hljs-keyword">for</span> (j = <span class="hljs-number">0</span>; j &lt; elist.n - <span class="hljs-number">1</span>; j++)
+<span class="hljs-keyword">if</span> (elist.data[j].w &gt; elist.data[j + <span class="hljs-number">1</span>].w) {
+temp = elist.data[j];
+elist.data[j] = elist.data[j + <span class="hljs-number">1</span>];
+elist.data[j + <span class="hljs-number">1</span>] = temp;
+}
+}
+
+<span class="hljs-comment">// Printing the result</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">print</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-keyword">int</span> i, cost = <span class="hljs-number">0</span>;
+
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; spanlist.n; i++) {
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"\n%d - %d : %d"</span>, spanlist.data[i].u, spanlist.data[i].v, spanlist.data[i].w);
+cost = cost + spanlist.data[i].w;
+}
+
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"\nSpanning tree cost: %d"</span>, cost);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-keyword">int</span> i, j, total_cost;
+
+n = <span class="hljs-number">6</span>;
+
+Graph[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>] = <span class="hljs-number">0</span>;
+Graph[<span class="hljs-number">0</span>][<span class="hljs-number">1</span>] = <span class="hljs-number">4</span>;
+Graph[<span class="hljs-number">0</span>][<span class="hljs-number">2</span>] = <span class="hljs-number">4</span>;
+Graph[<span class="hljs-number">0</span>][<span class="hljs-number">3</span>] = <span class="hljs-number">0</span>;
+Graph[<span class="hljs-number">0</span>][<span class="hljs-number">4</span>] = <span class="hljs-number">0</span>;
+Graph[<span class="hljs-number">0</span>][<span class="hljs-number">5</span>] = <span class="hljs-number">0</span>;
+Graph[<span class="hljs-number">0</span>][<span class="hljs-number">6</span>] = <span class="hljs-number">0</span>;
+
+Graph[<span class="hljs-number">1</span>][<span class="hljs-number">0</span>] = <span class="hljs-number">4</span>;
+Graph[<span class="hljs-number">1</span>][<span class="hljs-number">1</span>] = <span class="hljs-number">0</span>;
+Graph[<span class="hljs-number">1</span>][<span class="hljs-number">2</span>] = <span class="hljs-number">2</span>;
+Graph[<span class="hljs-number">1</span>][<span class="hljs-number">3</span>] = <span class="hljs-number">0</span>;
+Graph[<span class="hljs-number">1</span>][<span class="hljs-number">4</span>] = <span class="hljs-number">0</span>;
+Graph[<span class="hljs-number">1</span>][<span class="hljs-number">5</span>] = <span class="hljs-number">0</span>;
+Graph[<span class="hljs-number">1</span>][<span class="hljs-number">6</span>] = <span class="hljs-number">0</span>;
+
+Graph[<span class="hljs-number">2</span>][<span class="hljs-number">0</span>] = <span class="hljs-number">4</span>;
+Graph[<span class="hljs-number">2</span>][<span class="hljs-number">1</span>] = <span class="hljs-number">2</span>;
+Graph[<span class="hljs-number">2</span>][<span class="hljs-number">2</span>] = <span class="hljs-number">0</span>;
+Graph[<span class="hljs-number">2</span>][<span class="hljs-number">3</span>] = <span class="hljs-number">3</span>;
+Graph[<span class="hljs-number">2</span>][<span class="hljs-number">4</span>] = <span class="hljs-number">4</span>;
+Graph[<span class="hljs-number">2</span>][<span class="hljs-number">5</span>] = <span class="hljs-number">0</span>;
+Graph[<span class="hljs-number">2</span>][<span class="hljs-number">6</span>] = <span class="hljs-number">0</span>;
+
+Graph[<span class="hljs-number">3</span>][<span class="hljs-number">0</span>] = <span class="hljs-number">0</span>;
+Graph[<span class="hljs-number">3</span>][<span class="hljs-number">1</span>] = <span class="hljs-number">0</span>;
+Graph[<span class="hljs-number">3</span>][<span class="hljs-number">2</span>] = <span class="hljs-number">3</span>;
+Graph[<span class="hljs-number">3</span>][<span class="hljs-number">3</span>] = <span class="hljs-number">0</span>;
+Graph[<span class="hljs-number">3</span>][<span class="hljs-number">4</span>] = <span class="hljs-number">3</span>;
+Graph[<span class="hljs-number">3</span>][<span class="hljs-number">5</span>] = <span class="hljs-number">0</span>;
+Graph[<span class="hljs-number">3</span>][<span class="hljs-number">6</span>] = <span class="hljs-number">0</span>;
+
+Graph[<span class="hljs-number">4</span>][<span class="hljs-number">0</span>] = <span class="hljs-number">0</span>;
+Graph[<span class="hljs-number">4</span>][<span class="hljs-number">1</span>] = <span class="hljs-number">0</span>;
+Graph[<span class="hljs-number">4</span>][<span class="hljs-number">2</span>] = <span class="hljs-number">4</span>;
+Graph[<span class="hljs-number">4</span>][<span class="hljs-number">3</span>] = <span class="hljs-number">3</span>;
+Graph[<span class="hljs-number">4</span>][<span class="hljs-number">4</span>] = <span class="hljs-number">0</span>;
+Graph[<span class="hljs-number">4</span>][<span class="hljs-number">5</span>] = <span class="hljs-number">0</span>;
+Graph[<span class="hljs-number">4</span>][<span class="hljs-number">6</span>] = <span class="hljs-number">0</span>;
+
+Graph[<span class="hljs-number">5</span>][<span class="hljs-number">0</span>] = <span class="hljs-number">0</span>;
+Graph[<span class="hljs-number">5</span>][<span class="hljs-number">1</span>] = <span class="hljs-number">0</span>;
+Graph[<span class="hljs-number">5</span>][<span class="hljs-number">2</span>] = <span class="hljs-number">2</span>;
+Graph[<span class="hljs-number">5</span>][<span class="hljs-number">3</span>] = <span class="hljs-number">0</span>;
+Graph[<span class="hljs-number">5</span>][<span class="hljs-number">4</span>] = <span class="hljs-number">3</span>;
+Graph[<span class="hljs-number">5</span>][<span class="hljs-number">5</span>] = <span class="hljs-number">0</span>;
+Graph[<span class="hljs-number">5</span>][<span class="hljs-number">6</span>] = <span class="hljs-number">0</span>;
+
+kruskalAlgo();
+print();
+}</code></pre></div>
+</div>
+
+<div class="code-editor__area" id="cpp-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="cpp hljs"><span class="hljs-comment">// Kruskal's algorithm in C++</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;algorithm&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;vector&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> edge pair<span class="hljs-meta-string">&lt;int, int&gt;</span></span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Graph</span> {</span>
+<span class="hljs-keyword">private</span>:
+<span class="hljs-built_in">vector</span>&lt;pair&lt;<span class="hljs-keyword">int</span>, edge&gt; &gt; G;  <span class="hljs-comment">// graph</span>
+<span class="hljs-built_in">vector</span>&lt;pair&lt;<span class="hljs-keyword">int</span>, edge&gt; &gt; T;  <span class="hljs-comment">// mst</span>
+<span class="hljs-keyword">int</span> *parent;
+<span class="hljs-keyword">int</span> V;  <span class="hljs-comment">// number of vertices/nodes in graph</span>
+<span class="hljs-keyword">public</span>:
+Graph(<span class="hljs-keyword">int</span> V);
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">AddWeightedEdge</span><span class="hljs-params">(<span class="hljs-keyword">int</span> u, <span class="hljs-keyword">int</span> v, <span class="hljs-keyword">int</span> w)</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">find_set</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i)</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">union_set</span><span class="hljs-params">(<span class="hljs-keyword">int</span> u, <span class="hljs-keyword">int</span> v)</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">kruskal</span><span class="hljs-params">()</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">print</span><span class="hljs-params">()</span></span>;
+};
+Graph::Graph(<span class="hljs-keyword">int</span> V) {
+parent = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[V];
+
+<span class="hljs-comment">//i 0 1 2 3 4 5</span>
+<span class="hljs-comment">//parent[i] 0 1 2 3 4 5</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; V; i++)
+parent[i] = i;
+
+G.clear();
+T.clear();
+}
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Graph::AddWeightedEdge</span><span class="hljs-params">(<span class="hljs-keyword">int</span> u, <span class="hljs-keyword">int</span> v, <span class="hljs-keyword">int</span> w)</span> </span>{
+G.push_back(make_pair(w, edge(u, v)));
+}
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">Graph::find_set</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i)</span> </span>{
+<span class="hljs-comment">// If i is the parent of itself</span>
+<span class="hljs-keyword">if</span> (i == parent[i])
+<span class="hljs-keyword">return</span> i;
+<span class="hljs-keyword">else</span>
+<span class="hljs-comment">// Else if i is not the parent of itself</span>
+<span class="hljs-comment">// Then i is not the representative of his set,</span>
+<span class="hljs-comment">// so we recursively call Find on its parent</span>
+<span class="hljs-keyword">return</span> find_set(parent[i]);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Graph::union_set</span><span class="hljs-params">(<span class="hljs-keyword">int</span> u, <span class="hljs-keyword">int</span> v)</span> </span>{
+parent[u] = parent[v];
+}
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Graph::kruskal</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-keyword">int</span> i, uRep, vRep;
+sort(G.begin(), G.end());  <span class="hljs-comment">// increasing weight</span>
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; G.size(); i++) {
+uRep = find_set(G[i].second.first);
+vRep = find_set(G[i].second.second);
+<span class="hljs-keyword">if</span> (uRep != vRep) {
+T.push_back(G[i]);  <span class="hljs-comment">// add to tree</span>
+union_set(uRep, vRep);
+}
+}
+}
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Graph::print</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Edge :"</span>
+&lt;&lt; <span class="hljs-string">" Weight"</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; T.size(); i++) {
+<span class="hljs-built_in">cout</span> &lt;&lt; T[i].second.first &lt;&lt; <span class="hljs-string">" - "</span> &lt;&lt; T[i].second.second &lt;&lt; <span class="hljs-string">" : "</span>
+&lt;&lt; T[i].first;
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+}
+}
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-function">Graph <span class="hljs-title">g</span><span class="hljs-params">(<span class="hljs-number">6</span>)</span></span>;
+g.AddWeightedEdge(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">4</span>);
+g.AddWeightedEdge(<span class="hljs-number">0</span>, <span class="hljs-number">2</span>, <span class="hljs-number">4</span>);
+g.AddWeightedEdge(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">2</span>);
+g.AddWeightedEdge(<span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">4</span>);
+g.AddWeightedEdge(<span class="hljs-number">2</span>, <span class="hljs-number">0</span>, <span class="hljs-number">4</span>);
+g.AddWeightedEdge(<span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>);
+g.AddWeightedEdge(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>);
+g.AddWeightedEdge(<span class="hljs-number">2</span>, <span class="hljs-number">5</span>, <span class="hljs-number">2</span>);
+g.AddWeightedEdge(<span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">4</span>);
+g.AddWeightedEdge(<span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>);
+g.AddWeightedEdge(<span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">3</span>);
+g.AddWeightedEdge(<span class="hljs-number">4</span>, <span class="hljs-number">2</span>, <span class="hljs-number">4</span>);
+g.AddWeightedEdge(<span class="hljs-number">4</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>);
+g.AddWeightedEdge(<span class="hljs-number">5</span>, <span class="hljs-number">2</span>, <span class="hljs-number">2</span>);
+g.AddWeightedEdge(<span class="hljs-number">5</span>, <span class="hljs-number">4</span>, <span class="hljs-number">3</span>);
+g.kruskal();
+g.print();
+<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}</code></pre></div>
+</div>
+</div>
+
+<hr><h2 id="vs">Kruskal's vs Prim's Algorithm</h2>
+
+<p><a href="/dsa/prim-algorithm.html">Prim's algorithm</a> is another popular minimum spanning tree algorithm that uses a different logic to find the MST of a graph. Instead of starting from an edge, Prim's algorithm starts from a vertex and keeps adding lowest-weight edges which aren't in the tree, until all vertices have been covered.</p>
+
+<hr><h2 id="complexity">Kruskal's Algorithm Complexity</h2>
+
+<p>The time complexity Of Kruskal's Algorithm is: <var>O(E log E)</var>.</p>
+
+<hr><h2 id="application">Kruskal's Algorithm Applications</h2>
+
+<ul><li>In order to layout electrical wiring</li>
+<li>In computer network (LAN connection)</li>
+</ul></div>
+
+
+
+</div>
+
+
+        <div class="tutorial-toc"><div class="tutorial-toc__inner"><h3 class="tutorial-toc__title">Table of Contents
+<button class="btn btn--clear align-items-center">
+<svg class="programiz-icon"><use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#x"></use></svg></button></h3><div class="tutorial-toc__links"><ul><li><a href="#introduction">Introduction</a></li>
+<li><a href="#working">How Kruskal's algorithm works</a></li>
+<li><a href="#example">Example of Kruskal's algorithm</a></li>
+<li><a href="#pseudocode">Kruskal Algorithm Pseudocode</a></li>
+<li><a href="#code">Python, Java and C/C++ Examples</a></li>
+<li><a href="#vs">Kruskal's vs Prim's Algorithm</a></li>
+<li><a href="#complexity">Kruskal's Algorithm Complexity</a></li>
+<li><a href="#application">Kruskal's Algorithm Applications</a></li>
+</ul></div></div></div>                          </div>
+<!--second------------------------------------------->
+<div>
+<ul>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/stack.html">
+
+        Stack</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/queue.html">
+
+        Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/types-of-queue.html">
+
+        Types of Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/circular-queue.html">
+
+        Circular Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/priority-queue.html">
+
+        Priority Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deque.html">
+
+        Deque</a></button>
+<br/>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linked-list.html">
+
+        Linked List</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linked-list-operations.html">
+
+        Linked List Operations</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linked-list-types.html">
+
+        Types of Linked List</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/hash-table.html">
+
+        Hash Table</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/heap-data-structure.html">
+
+        Heap Data Structure</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/fibonacci-heap.html">
+
+        Fibonacci Heap</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/decrease-key-and-delete-node-from-a-fibonacci-heap.html">
+
+        Decrease Key and Delete node from Fibonacci Heap</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/trees.html">
+
+        Tree Data Structure</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/tree-traversal.html">
+
+        Tree Traversal</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/binary-tree.html">
+
+        Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/full-binary-tree.html">
+
+        Full Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/perfect-binary-tree.html">
+
+        Perfect Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/complete-binary-tree.html">
+
+        Complete Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/balanced-binary-tree.html">
+
+        Balanced Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/binary-search-tree.html">
+
+        Binary Search Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/avl-tree.html">
+
+        AVL Tree</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/b-tree.html">
+
+        B Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-into-a-b-tree.html">
+
+        Insertion into B-tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deletion-from-a-b-tree.html">
+
+        Deletion from B-tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/b-plus-tree.html">
+
+        B+ Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-on-a-b-plus-tree.html">
+
+        Insertion on a B+ Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deletion-from-a-b-plus-tree.html">
+
+        Deletion from a B+ Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/red-black-tree.html">
+
+        Red Black Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-in-a-red-black-tree.html">
+
+        Insertion in Red Black Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deletion-from-a-red-black-tree.html">
+
+        Deletion from Red Black Tree</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph.html">
+
+        Graph Data Structure</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/spanning-tree-and-minimum-spanning-tree.html">
+
+        Spanning Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/strongly-connected-components.html">
+
+        Strongly Connected Components</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-adjacency-matrix.html">
+
+        Adjacency Matrix</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-adjacency-list.html">
+
+        Adjacency List</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-dfs.html">
+
+        DFS Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-bfs.html">
+
+        Breadth-first Search</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/bellman-ford-algorithm.html">
+
+        Bellman Ford's Algorithm</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/bubble-sort.html">
+
+        Bubble Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/selection-sort.html">
+
+        Selection Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-sort.html">
+
+        Insertion Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/merge-sort.html">
+
+        Merge Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/quick-sort.html">
+
+        Quick Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/counting-sort.html">
+
+        Counting Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/radix-sort.html">
+
+        Radix Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/bucket-sort.html">
+
+        Bucket Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/heap-sort.html">
+
+        Heap Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/shell-sort.html">
+
+        Shell Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linear-search.html">
+
+        Linear Search</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/binary-search.html">
+
+        Binary Search</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/greedy-algorithm.html">
+
+        Greedy Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/ford-fulkerson-algorithm.html">
+
+        Ford-Fulkerson Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/dijkstra-algorithm.html">
+
+        Dijkstra's Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/kruskal-algorithm.html">
+
+        Kruskal's Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/prim-algorithm.html">
+
+        Prim's Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/huffman-coding.html">
+
+        Huffman Code</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/dynamic-programming.html">
+
+        Dynamic Programming</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/floyd-warshall-algorithm.html">
+
+        Floyd Warshall Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/longest-common-subsequence.html">
+
+        Longest Common Subsequence</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/backtracking-algorithm.html">
+
+        Backtracking Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/rabin-karp-algorithm.html">
+
+        Rabin-Karp Algorithm</a></button>
+<br>
+<br/>
+<h2>Free Courses on YouTube</h2>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+            https://www.youtube.com/watch?v=IbSXF7eT-AU&amp;list=PLR_5PTwg_uAQw40OhdvAwN4NvzWv0xOZ2">
+
+            Python Full Course Playlist</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://www.youtube.com/watch?v=UEl6wB90Gs8">
+
+            105 STL Algorithms in Less Than an Hour</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://www.youtube.com/watch?v=zZXTgN7L1UU&amp;list=PLR_5PTwg_uAS6C1cSMjU6oVhOcCX8Zu_4">
+
+            C++ STL Playlist</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://youtu.be/ty9756v3kc8">
+
+            Learn Node.js </a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://youtu.be/exrIpdS3Crc">
+
+            Learn Data Science Full course</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://youtu.be/Q8tDO2uSk5U">
+
+            Learn Computer Networking Full course</a></button>
+<br/>
+</br></br></br></br></br></br></br></br></ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<footer class="afooter" style="margin-left:20px">
+<p>
+<a href="/cookie-policy.html">Cookie policy</a> |
+
+        <a href="/privacy-policy.html">Privacy policy</a> |
+
+        <a href="/terms-of-use.html">Terms of use</a> |
+
+        <a href="/disclaimer.html">Disclaimer</a> |
+
+        <a href="/about-us.html">About Us</a>
+</p>
+<p>
+
+        © 2023 <a href="https://pythonread.github.io">https://pythonread.github.io</a>
+</p>
+</footer>
+<script type="text/javascript">
+
+    document.addEventListener('DOMContentLoaded', function () { htmlTableOfContents() }); function htmlTableOfContents(documentRef) { var documentRef = documentRef || document; var toc = documentRef.getElementById("toc"); var headings = [].slice.call(documentRef.body.querySelectorAll('h2, h3')); headings.forEach(function (heading, index) { var ref = "toc" + index; if (heading.hasAttribute("id")) { ref = heading.getAttribute("id") } else { heading.setAttribute("id", ref) } var link = documentRef.createElement("a"); link.setAttribute("href", "#" + ref); link.textContent = heading.textContent; var div = documentRef.createElement("div"); div.setAttribute("class", heading.tagName.toLowerCase()); div.appendChild(link); toc.appendChild(div) }) } try { module.exports = htmlTableOfContents } catch (e) { } function isScrolledIntoView(el) { var rect = el.getBoundingClientRect(); var elemTop = rect.top; var elemBottom = rect.bottom; var isVisible = (elemTop >= -10) && (elemBottom <= (window.innerHeight)); return isVisible } function highlightMenu() { var headers = document.querySelectorAll("h2, h3"); for (var i = 0; i < headers.length; i += 1) { if (isScrolledIntoView(headers[i])) { var childDivs = document.getElementById('toc').getElementsByTagName('div'); var c = childDivs[i].classList; c.add("active"); for (var j = 0; j < i; j += 1) { var c = childDivs[j].classList; c.remove("active") } for (var j = i + 1; j < childDivs.length; j += 1) { var c = childDivs[j].classList; c.remove("active") } break } } } function highlightMenuLastItem() { var childDivs = document.getElementById('toc').getElementsByTagName('div'); for (var j = 0; j < childDivs.length - 1; j += 1) { var c = childDivs[j].classList; c.remove("active") } var c = childDivs[childDivs.length - 1].classList; c.add("active") } window.addEventListener("click", function (event) { highlightMenu() }); window.onscroll = function (e) { highlightMenu(); if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) { highlightMenuLastItem() } }; function mobileMenu() { var classes = document.getElementById('nav-toggle-icon').classList; if (classes.contains("active")) { classes.remove("active") } else { classes.add("active") } var classes = document.getElementById('menu-wrapper').classList; if (classes.contains("active")) { classes.remove("active") } else { classes.add("active") } }
+
+</script>
+<script type="text/javascript">
+
+    function changepy(){
+
+        document.getElementById('py1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('java1').className = 'tabbed-editor__node';
+
+        document.getElementById('c1').className = 'tabbed-editor__node';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node';
+
+        document.getElementById('python-code').className = 'code-editor__area code-editor__area--active';
+
+        document.getElementById('java-code').className = 'code-editor__area';
+
+        document.getElementById('c-code').className = 'code-editor__area';
+
+        document.getElementById('cpp-code').className = 'code-editor__area';
+
+
+
+    }
+
+    function changecpp(){
+
+        document.getElementById('py1').className = 'tabbed-editor__node';
+
+        document.getElementById('java1').className = 'tabbed-editor__node';
+
+        document.getElementById('c1').className = 'tabbed-editor__node';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('python-code').className = 'code-editor__area';
+
+        document.getElementById('java-code').className = 'code-editor__area';
+
+        document.getElementById('c-code').className = 'code-editor__area';
+
+        document.getElementById('cpp-code').className = 'code-editor__area code-editor__area--active';
+
+    }
+
+    function changejava(){
+
+       document.getElementById('py1').className = 'tabbed-editor__node';
+
+        document.getElementById('java1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('c1').className = 'tabbed-editor__node';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node';
+
+        document.getElementById('python-code').className = 'code-editor__area';
+
+        document.getElementById('java-code').className = 'code-editor__area code-editor__area--active';
+
+        document.getElementById('c-code').className = 'code-editor__area';
+
+        document.getElementById('cpp-code').className = 'code-editor__area';
+
+    }
+
+    function changec(){
+
+        document.getElementById('py1').className = 'tabbed-editor__node';
+
+        document.getElementById('java1').className = 'tabbed-editor__node';
+
+        document.getElementById('c1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node';
+
+        document.getElementById('python-code').className = 'code-editor__area';
+
+        document.getElementById('java-code').className = 'code-editor__area';
+
+        document.getElementById('c-code').className = 'code-editor__area code-editor__area--active';
+
+        document.getElementById('cpp-code').className = 'code-editor__area';
+
+    }
+
+    
+
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>

@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<title>Quick Sort</title>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-HCERBDV76D"></script>
+<script>
+
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() { dataLayer.push(arguments); }
+
+        gtag('js', new Date());
+
+
+
+        gtag('config', 'G-HCERBDV76D');
+
+    </script>
+<meta content="B0487B46A104E90209E8A3BEA24ECA0E" name="msvalidate.01"/>
+<meta content="f044b3a12c7918f1" name="yandex-verification"/>
+<!--end-->
+<meta content="learn about data types, variables, lists, tuples, dictionaries,if else,DSA,loops,user-defined functions, oop, threading and scripting." name="description"/>
+<meta content="learnPython" name="author"/>
+<meta content="Learn Python for free,learn python for beginners,Core Python,Web frameworks,Multiprocess architecture,Serverside templating language,python tutorials,python4" name="keywords"/>
+<meta content="website" property="og:type"/>
+<meta content="US-CA" name="”geo.region”"/>
+<meta content="353 Jane Stanford Way, Stanford, CA 94305, United States" name="”geo.placename”"/>
+<meta content="37.430089898615456;-122.17332683124829" name="”geo.position”"/>
+<meta content="37.430089898615456, -122.17332683124829" name="”ICBM”"/>
+<link href="https://pythonread.github.io/?m=1" rel="alternate"/>
+<link href="/favicon.png" rel="icon"/>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="/style1.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/style2.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/style0.css" media="all" rel="stylesheet" type="text/css"/>
+<!--<![endif]-->
+</head>
+<body>
+<div class="nav-wrapper">
+<div class="container">
+<nav>
+<div class="logo wave">
+<a href="/" id="logo">
+
+                        Python Tutorial
+
+                    </a>
+</div>
+<div class="nav-toggle-icon" id="nav-toggle-icon" onclick="mobileMenu()">
+<div class="material-hamburger">
+<span>
+</span>
+<span>
+</span>
+<span>
+</span>
+</div>
+</div>
+<div class="menu-wrapper" id="menu-wrapper">
+<div class="nav-indicator">
+</div>
+<ul class="menus">
+<li>
+<a class="wave" href="/">
+
+                                Home
+
+                            </a>
+</li>
+<li>
+<a class="wave" href="/projects.html">
+
+                                Projects
+
+                            </a>
+</li>
+<li>
+<a class="wave" href="/free-course.html" target="_blank">
+
+                                Free Course
+
+                            </a>
+</li>
+<li>
+<a class="wave" href="/dsa.html">
+
+                                DSA
+
+                            </a>
+</li>
+</ul>
+</div>
+</nav>
+</div>
+</div>
+<div class="contents contents--neg" style="margin-top: 60px">
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+<div class="d-flex">
+<div class="left-bar d-none d-lg-block">
+<div class="card-alt mb-10x">
+<h3>Page Index</h3>
+<div class="list">
+<ul>
+<li><a href="/dsa.html#data-structure-1" title="Data Structures (I)">Data Structures
+
+                                                (I)</a></li>
+<li><a href="/dsa.html#data-structure-2" title="Data Structures (II)">Data Structures
+
+                                                (II)</a></li>
+<li><a href="/dsa.html#tree-1" title="Tree based DSA (I)">Tree based DSA (I)</a></li>
+<li><a href="/dsa.html#tree-2" title="Tree based DSA (II)">Tree based DSA (II)</a></li>
+<li><a href="/dsa.html#graph" title="Graph Data Structures and Algorithm">Graph based
+
+                                                DSA</a></li>
+<li><a href="/dsa.html#sorting-searching" title="Sorting and Searching">Sorting and
+
+                                                Searching</a></li>
+<li><a href="/dsa.html#greedy-algorithm" title="Greedy Algorithms">Greedy Algorithms</a>
+</li>
+<li><a href="/dsa.html#dynamic-programming" title="Dynamic Programming">Dynamic
+
+                                                Programming</a></li>
+<li><a href="/dsa.html#other-algorithms" title="Other Algorithms">Other Algorithms</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="right-bar">
+<!--first part end-------------------------------------------->
+<iframe width="560" height="315" src="https://www.youtube.com/embed/MuiyN7THiO4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="editor-contents">
+        <h1>Quicksort Algorithm</h1>
+
+
+        <p class="editor-contents__short-description">In this tutorial, you will learn about the quick sort algorithm and its implementation in Python, Java, C, and C++.</p>
+
+
+
+          
+
+
+
+<div id="node-1501" class="node node-algorithm clearfix" about="/dsa/quick-sort" typeof="sioc:Item foaf:Document">
+
+
+<span property="dc:title" content="Quicksort Algorithm" class="rdf-meta element-hidden"></span>
+
+<div class="content">
+<p id="definition">Quicksort is <a href="/dsa.html">a sorting algorithm</a> based on the <strong>divide and conquer approach</strong> where</p>
+
+<ol><li>An array is divided into subarrays by selecting a <strong>pivot element</strong> (element selected from the array).<br><br>
+While dividing the array, the pivot element should be positioned in such a way that elements less than pivot are kept on the left side and elements greater than pivot are on the right side of the pivot.</li>
+<li>The left and right subarrays are also divided using the same approach. This process continues until each subarray contains a single element.</li>
+<li>At this point, elements are already sorted. Finally, elements are combined to form a sorted array.</li>
+</ol><hr><h2 id="working">Working of Quicksort Algorithm</h2>
+
+<p><strong>1. Select the Pivot Element</strong></p>
+
+<p>There are different variations of quicksort where the pivot element is selected from different positions. Here, we will be selecting the rightmost element of the array as the pivot element.</p>
+
+<figure><img alt="Quick Sort Steps" src="https://www.programiz.com/sites/tutorial2program/files/quick-sort-0.1_0.png" title="Selection of rightmost element" width="460" height="88.4"><figcaption>Select a pivot element</figcaption></figure><p><strong>2. Rearrange the Array</strong></p>
+
+<p>Now the elements of the array are rearranged so that elements that are smaller than the pivot are put on the left and the elements greater than the pivot are put on the right.</p>
+
+<figure><img alt="Quick Sort Steps" src="https://www.programiz.com/sites/tutorial2program/files/quick-sort-0.2_0.png" title="pivoting" width="460" height="88.4"><figcaption>Put all the smaller elements on the left and greater on the right of pivot element</figcaption></figure><p>Here's how we rearrange the array:</p>
+
+<ol type="a"><li>A pointer is fixed at the pivot element. The pivot element is compared with the elements beginning from the first index.
+<figure><img alt="Quick Sort Steps" src="https://www.programiz.com/sites/tutorial2program/files/quick-sort-partition-first-step.png" title="Quick Sort Steps" width="460" height="134.2"><figcaption>Comparison of pivot element with element beginning from the first index</figcaption></figure></li>
+<li>If the element is greater than the pivot element, a second pointer is set for that element.
+<figure><img alt="Quick Sort Steps" src="https://www.programiz.com/sites/tutorial2program/files/quick-sort-partition-second-step.png" title="Quick Sort Steps" width="460" height="134.2"><figcaption>If the element is greater than the pivot element, a second pointer is set for that element.</figcaption></figure></li>
+<li>Now, pivot is compared with other elements. If an element smaller than the pivot element is reached, the smaller element is swapped with the greater element found earlier.
+<figure><img alt="Quick Sort Steps" src="https://www.programiz.com/sites/tutorial2program/files/quick-sort-partition-third-step.png" title="Quick Sort Steps" width="450" height="290"><figcaption>Pivot is compared with other elements.</figcaption></figure></li>
+<li>Again, the process is repeated to set the next greater element as the second pointer. And, swap it with another smaller element.
+<figure><img alt="Quick Sort Steps" src="https://www.programiz.com/sites/tutorial2program/files/quick-sort-partition-fourth-step.png" title="Quick Sort Steps" width="450" height="206"><figcaption>The process is repeated to set the next greater element as the second pointer.</figcaption></figure></li>
+<li>The process goes on until the second last element is reached.
+<figure><img alt="Quick Sort Steps" src="https://www.programiz.com/sites/tutorial2program/files/quick-sort-partition-fifth-step.png" title="Quick Sort Steps" width="450" height="125"><figcaption>The process goes on until the second last element is reached.</figcaption></figure></li>
+<li>Finally, the pivot element is swapped with the second pointer.
+<figure><img alt="Quick Sort Steps" src="https://www.programiz.com/sites/tutorial2program/files/quick-sort-partition-sixth-step.png" title="Quick Sort Steps" width="450" height="257"><figcaption>Finally, the pivot element is swapped with the second pointer.</figcaption></figure></li>
+</ol><p><strong>3. Divide Subarrays</strong></p>
+
+<p>Pivot elements are again chosen for the left and the right sub-parts separately. And, <strong>step 2</strong> is repeated.</p>
+
+<figure><img alt="Quick Sort Steps" src="https://www.programiz.com/sites/tutorial2program/files/quick-sort_1.png" title="Quick Sort Steps" width="450" height="257"><figcaption>Select pivot element of in each half and put at correct place using recursion</figcaption></figure><p></p><div class="clearfix"></div><p>&nbsp;</p>
+
+<p>The subarrays are divided until each subarray is formed of a single element. At this point, the array is already sorted.</p>
+
+<hr><h2 id="algorithm">Quick Sort Algorithm</h2>
+
+<pre style="max-height: 600px;"><code class="dsa hljs swift">
+<span class="hljs-built_in">quickSort</span>(array, leftmostIndex, rightmostIndex)
+<span class="hljs-keyword">if</span> (leftmostIndex &lt; rightmostIndex)
+pivotIndex &lt;- <span class="hljs-built_in">partition</span>(array,leftmostIndex, rightmostIndex)
+<span class="hljs-built_in">quickSort</span>(array, leftmostIndex, pivotIndex - <span class="hljs-number">1</span>)
+<span class="hljs-built_in">quickSort</span>(array, pivotIndex, rightmostIndex)
+
+<span class="hljs-built_in">partition</span>(array, leftmostIndex, rightmostIndex)
+<span class="hljs-keyword">set</span> rightmostIndex <span class="hljs-keyword">as</span> pivotIndex
+storeIndex &lt;- leftmostIndex - <span class="hljs-number">1</span>
+<span class="hljs-keyword">for</span> i &lt;- leftmostIndex + <span class="hljs-number">1</span> to rightmostIndex
+<span class="hljs-keyword">if</span> element[i] &lt; pivotElement
+<span class="hljs-built_in">swap</span> element[i] and element[storeIndex]
+storeIndex++
+<span class="hljs-built_in">swap</span> pivotElement and element[storeIndex+<span class="hljs-number">1</span>]
+<span class="hljs-keyword">return</span> storeIndex + <span class="hljs-number">1</span></code></pre>
+
+<h3>Visual Illustration of Quicksort Algorithm</h3>
+
+<p>You can understand the working of quicksort algorithm with the help of the illustrations below.</p>
+
+<figure><img alt="Quick Sort Steps" src="https://www.programiz.com/sites/tutorial2program/files/quick-sort-working.png" title="Quick Sort first half" width="1200" height="317"><figcaption>Sorting the elements on the left of pivot using recursion</figcaption></figure><figure><img alt="Quick Sort Steps" src="https://www.programiz.com/sites/tutorial2program/files/quick-sort-1.png" title="Quick Sort second half" width="1200" height="403"><figcaption>Sorting the elements on the right of pivot using recursion</figcaption></figure><hr><hr><h2 id="code">Quicksort Code in Python, Java, and C/C++</h2>
+
+<div class="tabbed-editor">
+        <div id="py1" onclick="changepy()" class="tabbed-editor__node tabbed-editor__node--active"><a href="#python-code">Python</a></div>
+        
+        <div id="java1" onclick="changejava()"  class="tabbed-editor__node"><a href="#java-code">Java</a></div>
+        
+        <div id="c1" onclick="changec()" class="tabbed-editor__node"><a href="#c-code">C</a></div>
+        
+        <div id="cpp1" onclick="changecpp()" class="tabbed-editor__node"><a href="#cpp-code">C++</a></div>
+        </div>
+
+<div class="code-editor code-editor--tabbed">
+<div class="code-editor__area code-editor__area--active" id="python-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="python hljs"><span class="hljs-comment"># Quick sort in Python</span>
+
+<span class="hljs-comment"># function to find the partition position</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">partition</span><span class="hljs-params">(array, low, high)</span>:</span>
+
+<span class="hljs-comment"># choose the rightmost element as pivot</span>
+pivot = array[high]
+
+<span class="hljs-comment"># pointer for greater element</span>
+i = low - <span class="hljs-number">1</span>
+
+<span class="hljs-comment"># traverse through all elements</span>
+<span class="hljs-comment"># compare each element with pivot</span>
+<span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> range(low, high):
+<span class="hljs-keyword">if</span> array[j] &lt;= pivot:
+<span class="hljs-comment"># if element smaller than pivot is found</span>
+<span class="hljs-comment"># swap it with the greater element pointed by i</span>
+i = i + <span class="hljs-number">1</span>
+
+<span class="hljs-comment"># swapping element at i with element at j</span>
+(array[i], array[j]) = (array[j], array[i])
+
+<span class="hljs-comment"># swap the pivot element with the greater element specified by i</span>
+(array[i + <span class="hljs-number">1</span>], array[high]) = (array[high], array[i + <span class="hljs-number">1</span>])
+
+<span class="hljs-comment"># return the position from where partition is done</span>
+<span class="hljs-keyword">return</span> i + <span class="hljs-number">1</span>
+
+<span class="hljs-comment"># function to perform quicksort</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">quickSort</span><span class="hljs-params">(array, low, high)</span>:</span>
+<span class="hljs-keyword">if</span> low &lt; high:
+
+<span class="hljs-comment"># find pivot element such that</span>
+<span class="hljs-comment"># element smaller than pivot are on the left</span>
+<span class="hljs-comment"># element greater than pivot are on the right</span>
+pi = partition(array, low, high)
+
+<span class="hljs-comment"># recursive call on the left of pivot</span>
+quickSort(array, low, pi - <span class="hljs-number">1</span>)
+
+<span class="hljs-comment"># recursive call on the right of pivot</span>
+quickSort(array, pi + <span class="hljs-number">1</span>, high)
+
+
+data = [<span class="hljs-number">8</span>, <span class="hljs-number">7</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">9</span>, <span class="hljs-number">6</span>]
+<span class="hljs-keyword">print</span>(<span class="hljs-string">"Unsorted Array"</span>)
+<span class="hljs-keyword">print</span>(data)
+
+size = len(data)
+
+quickSort(data, <span class="hljs-number">0</span>, size - <span class="hljs-number">1</span>)
+
+<span class="hljs-keyword">print</span>(<span class="hljs-string">'Sorted Array in Ascending Order:'</span>)
+<span class="hljs-keyword">print</span>(data)</code></pre></div>
+</div>
+
+<div class="code-editor__area" id="java-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="java hljs"><span class="hljs-comment">// Quick sort in Java</span>
+
+<span class="hljs-keyword">import</span> java.util.Arrays;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Quicksort</span> </span>{
+
+<span class="hljs-comment">// method to find the partition position</span>
+<span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">partition</span><span class="hljs-params">(<span class="hljs-keyword">int</span> array[], <span class="hljs-keyword">int</span> low, <span class="hljs-keyword">int</span> high)</span> </span>{
+
+<span class="hljs-comment">// choose the rightmost element as pivot</span>
+<span class="hljs-keyword">int</span> pivot = array[high];
+
+<span class="hljs-comment">// pointer for greater element</span>
+<span class="hljs-keyword">int</span> i = (low - <span class="hljs-number">1</span>);
+
+<span class="hljs-comment">// traverse through all elements</span>
+<span class="hljs-comment">// compare each element with pivot</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = low; j &lt; high; j++) {
+<span class="hljs-keyword">if</span> (array[j] &lt;= pivot) {
+
+<span class="hljs-comment">// if element smaller than pivot is found</span>
+<span class="hljs-comment">// swap it with the greatr element pointed by i</span>
+i++;
+
+<span class="hljs-comment">// swapping element at i with element at j</span>
+<span class="hljs-keyword">int</span> temp = array[i];
+array[i] = array[j];
+array[j] = temp;
+}
+
+}
+
+<span class="hljs-comment">// swapt the pivot element with the greater element specified by i</span>
+<span class="hljs-keyword">int</span> temp = array[i + <span class="hljs-number">1</span>];
+array[i + <span class="hljs-number">1</span>] = array[high];
+array[high] = temp;
+
+<span class="hljs-comment">// return the position from where partition is done</span>
+<span class="hljs-keyword">return</span> (i + <span class="hljs-number">1</span>);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">quickSort</span><span class="hljs-params">(<span class="hljs-keyword">int</span> array[], <span class="hljs-keyword">int</span> low, <span class="hljs-keyword">int</span> high)</span> </span>{
+<span class="hljs-keyword">if</span> (low &lt; high) {
+
+<span class="hljs-comment">// find pivot element such that</span>
+<span class="hljs-comment">// elements smaller than pivot are on the left</span>
+<span class="hljs-comment">// elements greater than pivot are on the right</span>
+<span class="hljs-keyword">int</span> pi = partition(array, low, high);
+
+<span class="hljs-comment">// recursive call on the left of pivot</span>
+quickSort(array, low, pi - <span class="hljs-number">1</span>);
+
+<span class="hljs-comment">// recursive call on the right of pivot</span>
+quickSort(array, pi + <span class="hljs-number">1</span>, high);
+}
+}
+}
+
+<span class="hljs-comment">// Main class</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span> </span>{
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span> </span>{
+
+<span class="hljs-keyword">int</span>[] data = { <span class="hljs-number">8</span>, <span class="hljs-number">7</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">9</span>, <span class="hljs-number">6</span> };
+System.out.println(<span class="hljs-string">"Unsorted Array"</span>);
+System.out.println(Arrays.toString(data));
+
+<span class="hljs-keyword">int</span> size = data.length;
+
+<span class="hljs-comment">// call quicksort() on array data</span>
+Quicksort.quickSort(data, <span class="hljs-number">0</span>, size - <span class="hljs-number">1</span>);
+
+System.out.println(<span class="hljs-string">"Sorted Array in Ascending Order: "</span>);
+System.out.println(Arrays.toString(data));
+}
+}</code></pre></div>
+</div>
+
+<div class="code-editor__area" id="c-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="c hljs cpp"><span class="hljs-comment">// Quick sort in C</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+
+<span class="hljs-comment">// function to swap elements</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">swap</span><span class="hljs-params">(<span class="hljs-keyword">int</span> *a, <span class="hljs-keyword">int</span> *b)</span> </span>{
+<span class="hljs-keyword">int</span> t = *a;
+*a = *b;
+*b = t;
+}
+
+<span class="hljs-comment">// function to find the partition position</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">partition</span><span class="hljs-params">(<span class="hljs-keyword">int</span> <span class="hljs-built_in">array</span>[], <span class="hljs-keyword">int</span> low, <span class="hljs-keyword">int</span> high)</span> </span>{
+
+<span class="hljs-comment">// select the rightmost element as pivot</span>
+<span class="hljs-keyword">int</span> pivot = <span class="hljs-built_in">array</span>[high];
+
+<span class="hljs-comment">// pointer for greater element</span>
+<span class="hljs-keyword">int</span> i = (low - <span class="hljs-number">1</span>);
+
+<span class="hljs-comment">// traverse each element of the array</span>
+<span class="hljs-comment">// compare them with the pivot</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = low; j &lt; high; j++) {
+<span class="hljs-keyword">if</span> (<span class="hljs-built_in">array</span>[j] &lt;= pivot) {
+
+<span class="hljs-comment">// if element smaller than pivot is found</span>
+<span class="hljs-comment">// swap it with the greater element pointed by i</span>
+i++;
+
+<span class="hljs-comment">// swap element at i with element at j</span>
+swap(&amp;<span class="hljs-built_in">array</span>[i], &amp;<span class="hljs-built_in">array</span>[j]);
+}
+}
+
+<span class="hljs-comment">// swap the pivot element with the greater element at i</span>
+swap(&amp;<span class="hljs-built_in">array</span>[i + <span class="hljs-number">1</span>], &amp;<span class="hljs-built_in">array</span>[high]);
+
+<span class="hljs-comment">// return the partition point</span>
+<span class="hljs-keyword">return</span> (i + <span class="hljs-number">1</span>);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">quickSort</span><span class="hljs-params">(<span class="hljs-keyword">int</span> <span class="hljs-built_in">array</span>[], <span class="hljs-keyword">int</span> low, <span class="hljs-keyword">int</span> high)</span> </span>{
+<span class="hljs-keyword">if</span> (low &lt; high) {
+
+<span class="hljs-comment">// find the pivot element such that</span>
+<span class="hljs-comment">// elements smaller than pivot are on left of pivot</span>
+<span class="hljs-comment">// elements greater than pivot are on right of pivot</span>
+<span class="hljs-keyword">int</span> pi = partition(<span class="hljs-built_in">array</span>, low, high);
+
+<span class="hljs-comment">// recursive call on the left of pivot</span>
+quickSort(<span class="hljs-built_in">array</span>, low, pi - <span class="hljs-number">1</span>);
+
+<span class="hljs-comment">// recursive call on the right of pivot</span>
+quickSort(<span class="hljs-built_in">array</span>, pi + <span class="hljs-number">1</span>, high);
+}
+}
+
+<span class="hljs-comment">// function to print array elements</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">printArray</span><span class="hljs-params">(<span class="hljs-keyword">int</span> <span class="hljs-built_in">array</span>[], <span class="hljs-keyword">int</span> size)</span> </span>{
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; size; ++i) {
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d  "</span>, <span class="hljs-built_in">array</span>[i]);
+}
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"\n"</span>);
+}
+
+<span class="hljs-comment">// main function</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-keyword">int</span> data[] = {<span class="hljs-number">8</span>, <span class="hljs-number">7</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">9</span>, <span class="hljs-number">6</span>};
+
+<span class="hljs-keyword">int</span> n = <span class="hljs-keyword">sizeof</span>(data) / <span class="hljs-keyword">sizeof</span>(data[<span class="hljs-number">0</span>]);
+
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"Unsorted Array\n"</span>);
+printArray(data, n);
+
+<span class="hljs-comment">// perform quicksort on data</span>
+quickSort(data, <span class="hljs-number">0</span>, n - <span class="hljs-number">1</span>);
+
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"Sorted array in ascending order: \n"</span>);
+printArray(data, n);
+}</code></pre></div>
+</div>
+
+<div class="code-editor__area" id="cpp-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="cpp hljs"><span class="hljs-comment">// Quick sort in C++</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-comment">// function to swap elements</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">swap</span><span class="hljs-params">(<span class="hljs-keyword">int</span> *a, <span class="hljs-keyword">int</span> *b)</span> </span>{
+<span class="hljs-keyword">int</span> t = *a;
+*a = *b;
+*b = t;
+}
+
+<span class="hljs-comment">// function to print the array</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">printArray</span><span class="hljs-params">(<span class="hljs-keyword">int</span> <span class="hljs-built_in">array</span>[], <span class="hljs-keyword">int</span> size)</span> </span>{
+<span class="hljs-keyword">int</span> i;
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; size; i++)
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">array</span>[i] &lt;&lt; <span class="hljs-string">" "</span>;
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+}
+
+<span class="hljs-comment">// function to rearrange array (find the partition point)</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">partition</span><span class="hljs-params">(<span class="hljs-keyword">int</span> <span class="hljs-built_in">array</span>[], <span class="hljs-keyword">int</span> low, <span class="hljs-keyword">int</span> high)</span> </span>{
+
+<span class="hljs-comment">// select the rightmost element as pivot</span>
+<span class="hljs-keyword">int</span> pivot = <span class="hljs-built_in">array</span>[high];
+
+<span class="hljs-comment">// pointer for greater element</span>
+<span class="hljs-keyword">int</span> i = (low - <span class="hljs-number">1</span>);
+
+<span class="hljs-comment">// traverse each element of the array</span>
+<span class="hljs-comment">// compare them with the pivot</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = low; j &lt; high; j++) {
+<span class="hljs-keyword">if</span> (<span class="hljs-built_in">array</span>[j] &lt;= pivot) {
+
+<span class="hljs-comment">// if element smaller than pivot is found</span>
+<span class="hljs-comment">// swap it with the greater element pointed by i</span>
+i++;
+
+<span class="hljs-comment">// swap element at i with element at j</span>
+swap(&amp;<span class="hljs-built_in">array</span>[i], &amp;<span class="hljs-built_in">array</span>[j]);
+}
+}
+
+<span class="hljs-comment">// swap pivot with the greater element at i</span>
+swap(&amp;<span class="hljs-built_in">array</span>[i + <span class="hljs-number">1</span>], &amp;<span class="hljs-built_in">array</span>[high]);
+
+<span class="hljs-comment">// return the partition point</span>
+<span class="hljs-keyword">return</span> (i + <span class="hljs-number">1</span>);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">quickSort</span><span class="hljs-params">(<span class="hljs-keyword">int</span> <span class="hljs-built_in">array</span>[], <span class="hljs-keyword">int</span> low, <span class="hljs-keyword">int</span> high)</span> </span>{
+<span class="hljs-keyword">if</span> (low &lt; high) {
+
+<span class="hljs-comment">// find the pivot element such that</span>
+<span class="hljs-comment">// elements smaller than pivot are on left of pivot</span>
+<span class="hljs-comment">// elements greater than pivot are on righ of pivot</span>
+<span class="hljs-keyword">int</span> pi = partition(<span class="hljs-built_in">array</span>, low, high);
+
+<span class="hljs-comment">// recursive call on the left of pivot</span>
+quickSort(<span class="hljs-built_in">array</span>, low, pi - <span class="hljs-number">1</span>);
+
+<span class="hljs-comment">// recursive call on the right of pivot</span>
+quickSort(<span class="hljs-built_in">array</span>, pi + <span class="hljs-number">1</span>, high);
+}
+}
+
+<span class="hljs-comment">// Driver code</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-keyword">int</span> data[] = {<span class="hljs-number">8</span>, <span class="hljs-number">7</span>, <span class="hljs-number">6</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">9</span>, <span class="hljs-number">2</span>};
+<span class="hljs-keyword">int</span> n = <span class="hljs-keyword">sizeof</span>(data) / <span class="hljs-keyword">sizeof</span>(data[<span class="hljs-number">0</span>]);
+
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Unsorted Array: \n"</span>;
+printArray(data, n);
+
+<span class="hljs-comment">// perform quicksort on data</span>
+quickSort(data, <span class="hljs-number">0</span>, n - <span class="hljs-number">1</span>);
+
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Sorted array in ascending order: \n"</span>;
+printArray(data, n);
+}</code></pre></div>
+</div>
+</div>
+
+<hr><h2 id="complexity">Quicksort Complexity</h2>
+
+<div class="table-responsive">
+<table border="0"><tbody><tr><th><strong>Time Complexity</strong></th>
+          <td>&nbsp;</td>
+  </tr><tr><td>Best</td>
+          <td>O(n*log n)</td>
+  </tr><tr><td>Worst</td>
+          <td>O(n<sup>2</sup>)</td>
+  </tr><tr><td>Average</td>
+          <td>O(n*log n)</td>
+  </tr><tr><th><strong>Space Complexity</strong></th>
+          <td>O(log n)</td>
+  </tr><tr><th><strong>Stability</strong></th>
+          <td>No</td>
+  </tr></tbody></table></div>
+
+<hr><h3>1. Time Complexities</h3>
+
+<ul><li><strong>Worst Case Complexity [Big-O]</strong>: <code>O(n<sup>2</sup>)</code><br>
+It occurs when the pivot element picked is either the greatest or the smallest element.<br><br>
+This condition leads to the case in which the pivot element lies in an extreme end of the sorted array. One sub-array is always empty and another sub-array contains <code>n - 1</code> elements. Thus, quicksort is called only on this sub-array.<br><br>
+However, the quicksort algorithm has better performance for scattered pivots.</li>
+</ul><ul><li><strong>Best Case Complexity [Big-omega]</strong>: <code>O(n*log n)</code><br>
+It occurs when the pivot element is always the middle element or near to the middle element.</li>
+<li><strong>Average Case Complexity [Big-theta]</strong>: <code>O(n*log n)</code><br>
+It occurs when the above conditions do not occur.</li>
+</ul><h3>2. Space Complexity</h3>
+
+<p>The space complexity for quicksort is <code>O(log n)</code>.</p>
+
+<hr><h2 id="application">Quicksort Applications</h2>
+
+<p>Quicksort algorithm is used when</p>
+
+<ul><li>the programming language is good for recursion</li>
+<li>time complexity matters</li>
+<li>space complexity matters</li>
+</ul><hr><h3>Similar Sorting Algorithms</h3>
+
+<ul><li><a href="/dsa/insertion-sort.html">Insertion Sort</a></li>
+<li><a href="/dsa/merge-sort.html">Merge Sort</a></li>
+<li><a href="/dsa/selection-sort.html">Selection Sort</a></li>
+<li><a href="/dsa/bucket-sort.html">Bucket Sort</a></li>
+</ul></div>
+
+
+
+</div>
+
+
+        <div class="tutorial-toc"><div class="tutorial-toc__inner"><h3 class="tutorial-toc__title">Table of Contents
+<button class="btn btn--clear align-items-center">
+<svg class="programiz-icon"><use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#x"></use></svg></button></h3><div class="tutorial-toc__links"><ul><li><a href="#definition">Definition</a></li>
+<li><a href="#working">Working of Quicksort Algorithm</a></li>
+<li><a href="#algorithm">Quick Sort Algorithm</a></li>
+<li><a href="#code">Quicksort Code in Python, Java, and C/C++ </a></li>
+<li><a href="#complexity">Complexity</a></li>
+<li><a href="#application">Applications</a></li>
+</ul></div></div></div>                          </div>
+<!--second------------------------------------------->
+<div>
+<ul>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/stack.html">
+
+        Stack</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/queue.html">
+
+        Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/types-of-queue.html">
+
+        Types of Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/circular-queue.html">
+
+        Circular Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/priority-queue.html">
+
+        Priority Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deque.html">
+
+        Deque</a></button>
+<br/>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linked-list.html">
+
+        Linked List</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linked-list-operations.html">
+
+        Linked List Operations</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linked-list-types.html">
+
+        Types of Linked List</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/hash-table.html">
+
+        Hash Table</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/heap-data-structure.html">
+
+        Heap Data Structure</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/fibonacci-heap.html">
+
+        Fibonacci Heap</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/decrease-key-and-delete-node-from-a-fibonacci-heap.html">
+
+        Decrease Key and Delete node from Fibonacci Heap</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/trees.html">
+
+        Tree Data Structure</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/tree-traversal.html">
+
+        Tree Traversal</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/binary-tree.html">
+
+        Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/full-binary-tree.html">
+
+        Full Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/perfect-binary-tree.html">
+
+        Perfect Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/complete-binary-tree.html">
+
+        Complete Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/balanced-binary-tree.html">
+
+        Balanced Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/binary-search-tree.html">
+
+        Binary Search Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/avl-tree.html">
+
+        AVL Tree</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/b-tree.html">
+
+        B Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-into-a-b-tree.html">
+
+        Insertion into B-tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deletion-from-a-b-tree.html">
+
+        Deletion from B-tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/b-plus-tree.html">
+
+        B+ Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-on-a-b-plus-tree.html">
+
+        Insertion on a B+ Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deletion-from-a-b-plus-tree.html">
+
+        Deletion from a B+ Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/red-black-tree.html">
+
+        Red Black Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-in-a-red-black-tree.html">
+
+        Insertion in Red Black Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deletion-from-a-red-black-tree.html">
+
+        Deletion from Red Black Tree</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph.html">
+
+        Graph Data Structure</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/spanning-tree-and-minimum-spanning-tree.html">
+
+        Spanning Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/strongly-connected-components.html">
+
+        Strongly Connected Components</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-adjacency-matrix.html">
+
+        Adjacency Matrix</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-adjacency-list.html">
+
+        Adjacency List</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-dfs.html">
+
+        DFS Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-bfs.html">
+
+        Breadth-first Search</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/bellman-ford-algorithm.html">
+
+        Bellman Ford's Algorithm</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/bubble-sort.html">
+
+        Bubble Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/selection-sort.html">
+
+        Selection Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-sort.html">
+
+        Insertion Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/merge-sort.html">
+
+        Merge Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/quick-sort.html">
+
+        Quick Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/counting-sort.html">
+
+        Counting Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/radix-sort.html">
+
+        Radix Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/bucket-sort.html">
+
+        Bucket Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/heap-sort.html">
+
+        Heap Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/shell-sort.html">
+
+        Shell Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linear-search.html">
+
+        Linear Search</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/binary-search.html">
+
+        Binary Search</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/greedy-algorithm.html">
+
+        Greedy Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/ford-fulkerson-algorithm.html">
+
+        Ford-Fulkerson Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/dijkstra-algorithm.html">
+
+        Dijkstra's Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/kruskal-algorithm.html">
+
+        Kruskal's Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/prim-algorithm.html">
+
+        Prim's Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/huffman-coding.html">
+
+        Huffman Code</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/dynamic-programming.html">
+
+        Dynamic Programming</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/floyd-warshall-algorithm.html">
+
+        Floyd Warshall Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/longest-common-subsequence.html">
+
+        Longest Common Subsequence</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/backtracking-algorithm.html">
+
+        Backtracking Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/rabin-karp-algorithm.html">
+
+        Rabin-Karp Algorithm</a></button>
+<br>
+<br/>
+<h2>Free Courses on YouTube</h2>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+            https://www.youtube.com/watch?v=IbSXF7eT-AU&amp;list=PLR_5PTwg_uAQw40OhdvAwN4NvzWv0xOZ2">
+
+            Python Full Course Playlist</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://www.youtube.com/watch?v=UEl6wB90Gs8">
+
+            105 STL Algorithms in Less Than an Hour</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://www.youtube.com/watch?v=zZXTgN7L1UU&amp;list=PLR_5PTwg_uAS6C1cSMjU6oVhOcCX8Zu_4">
+
+            C++ STL Playlist</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://youtu.be/ty9756v3kc8">
+
+            Learn Node.js </a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://youtu.be/exrIpdS3Crc">
+
+            Learn Data Science Full course</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://youtu.be/Q8tDO2uSk5U">
+
+            Learn Computer Networking Full course</a></button>
+<br/>
+</br></br></br></br></br></br></br></br></ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<footer class="afooter" style="margin-left:20px">
+<p>
+<a href="/cookie-policy.html">Cookie policy</a> |
+
+        <a href="/privacy-policy.html">Privacy policy</a> |
+
+        <a href="/terms-of-use.html">Terms of use</a> |
+
+        <a href="/disclaimer.html">Disclaimer</a> |
+
+        <a href="/about-us.html">About Us</a>
+</p>
+<p>
+
+        © 2023 <a href="https://pythonread.github.io">https://pythonread.github.io</a>
+</p>
+</footer>
+<script type="text/javascript">
+
+    document.addEventListener('DOMContentLoaded', function () { htmlTableOfContents() }); function htmlTableOfContents(documentRef) { var documentRef = documentRef || document; var toc = documentRef.getElementById("toc"); var headings = [].slice.call(documentRef.body.querySelectorAll('h2, h3')); headings.forEach(function (heading, index) { var ref = "toc" + index; if (heading.hasAttribute("id")) { ref = heading.getAttribute("id") } else { heading.setAttribute("id", ref) } var link = documentRef.createElement("a"); link.setAttribute("href", "#" + ref); link.textContent = heading.textContent; var div = documentRef.createElement("div"); div.setAttribute("class", heading.tagName.toLowerCase()); div.appendChild(link); toc.appendChild(div) }) } try { module.exports = htmlTableOfContents } catch (e) { } function isScrolledIntoView(el) { var rect = el.getBoundingClientRect(); var elemTop = rect.top; var elemBottom = rect.bottom; var isVisible = (elemTop >= -10) && (elemBottom <= (window.innerHeight)); return isVisible } function highlightMenu() { var headers = document.querySelectorAll("h2, h3"); for (var i = 0; i < headers.length; i += 1) { if (isScrolledIntoView(headers[i])) { var childDivs = document.getElementById('toc').getElementsByTagName('div'); var c = childDivs[i].classList; c.add("active"); for (var j = 0; j < i; j += 1) { var c = childDivs[j].classList; c.remove("active") } for (var j = i + 1; j < childDivs.length; j += 1) { var c = childDivs[j].classList; c.remove("active") } break } } } function highlightMenuLastItem() { var childDivs = document.getElementById('toc').getElementsByTagName('div'); for (var j = 0; j < childDivs.length - 1; j += 1) { var c = childDivs[j].classList; c.remove("active") } var c = childDivs[childDivs.length - 1].classList; c.add("active") } window.addEventListener("click", function (event) { highlightMenu() }); window.onscroll = function (e) { highlightMenu(); if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) { highlightMenuLastItem() } }; function mobileMenu() { var classes = document.getElementById('nav-toggle-icon').classList; if (classes.contains("active")) { classes.remove("active") } else { classes.add("active") } var classes = document.getElementById('menu-wrapper').classList; if (classes.contains("active")) { classes.remove("active") } else { classes.add("active") } }
+
+</script>
+<script type="text/javascript">
+
+    function changepy(){
+
+        document.getElementById('py1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('java1').className = 'tabbed-editor__node';
+
+        document.getElementById('c1').className = 'tabbed-editor__node';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node';
+
+        document.getElementById('python-code').className = 'code-editor__area code-editor__area--active';
+
+        document.getElementById('java-code').className = 'code-editor__area';
+
+        document.getElementById('c-code').className = 'code-editor__area';
+
+        document.getElementById('cpp-code').className = 'code-editor__area';
+
+
+
+    }
+
+    function changecpp(){
+
+        document.getElementById('py1').className = 'tabbed-editor__node';
+
+        document.getElementById('java1').className = 'tabbed-editor__node';
+
+        document.getElementById('c1').className = 'tabbed-editor__node';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('python-code').className = 'code-editor__area';
+
+        document.getElementById('java-code').className = 'code-editor__area';
+
+        document.getElementById('c-code').className = 'code-editor__area';
+
+        document.getElementById('cpp-code').className = 'code-editor__area code-editor__area--active';
+
+    }
+
+    function changejava(){
+
+       document.getElementById('py1').className = 'tabbed-editor__node';
+
+        document.getElementById('java1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('c1').className = 'tabbed-editor__node';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node';
+
+        document.getElementById('python-code').className = 'code-editor__area';
+
+        document.getElementById('java-code').className = 'code-editor__area code-editor__area--active';
+
+        document.getElementById('c-code').className = 'code-editor__area';
+
+        document.getElementById('cpp-code').className = 'code-editor__area';
+
+    }
+
+    function changec(){
+
+        document.getElementById('py1').className = 'tabbed-editor__node';
+
+        document.getElementById('java1').className = 'tabbed-editor__node';
+
+        document.getElementById('c1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node';
+
+        document.getElementById('python-code').className = 'code-editor__area';
+
+        document.getElementById('java-code').className = 'code-editor__area';
+
+        document.getElementById('c-code').className = 'code-editor__area code-editor__area--active';
+
+        document.getElementById('cpp-code').className = 'code-editor__area';
+
+    }
+
+    
+
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>

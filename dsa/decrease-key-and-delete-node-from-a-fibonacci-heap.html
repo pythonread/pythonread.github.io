@@ -1,0 +1,2166 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<title>Decrease Key and Delete Node Operations on a Fibonacci Heap</title>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-HCERBDV76D"></script>
+<script>
+
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() { dataLayer.push(arguments); }
+
+        gtag('js', new Date());
+
+
+
+        gtag('config', 'G-HCERBDV76D');
+
+    </script>
+<meta content="B0487B46A104E90209E8A3BEA24ECA0E" name="msvalidate.01"/>
+<meta content="f044b3a12c7918f1" name="yandex-verification"/>
+<!--end-->
+<meta content="Python tutorial to learn Python.The Complete Python Programming Course,Learning Python for Data Analysis and Visualization,Python for Beginners." name="description"/>
+<meta content="learnPython" name="author"/>
+<meta content="Learn Python for free,learn python for beginners,Core Python,Web frameworks,Multiprocess architecture,Serverside templating language,python tutorials,python4" name="keywords"/>
+<meta content="website" property="og:type"/>
+<meta content="learn about data types, variables, lists, tuples, dictionaries, decision-making statements, and loops,user-defined functions, object-oriented programming, threading, and Python scripting." property="og:description"/>
+<meta content="US-CA" name="”geo.region”"/>
+<meta content="353 Jane Stanford Way, Stanford, CA 94305, United States" name="”geo.placename”"/>
+<meta content="37.430089898615456;-122.17332683124829" name="”geo.position”"/>
+<meta content="37.430089898615456, -122.17332683124829" name="”ICBM”"/>
+<link href="https://pythonread.github.io/?m=1" rel="alternate"/>
+<link href="/favicon.png" rel="icon"/>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="/style1.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/style2.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/style0.css" media="all" rel="stylesheet" type="text/css"/>
+<!--<![endif]-->
+</head>
+<body>
+<div class="nav-wrapper">
+<div class="container">
+<nav>
+<div class="logo wave">
+<a href="/" id="logo">
+
+                        Python Tutorial
+
+                    </a>
+</div>
+<div class="nav-toggle-icon" id="nav-toggle-icon" onclick="mobileMenu()">
+<div class="material-hamburger">
+<span>
+</span>
+<span>
+</span>
+<span>
+</span>
+</div>
+</div>
+<div class="menu-wrapper" id="menu-wrapper">
+<div class="nav-indicator">
+</div>
+<ul class="menus">
+<li>
+<a class="wave" href="/">
+
+                                Home
+
+                            </a>
+</li>
+<li>
+<a class="wave" href="/projects.html">
+
+                                Projects
+
+                            </a>
+</li>
+<li>
+<a class="wave" href="/free-course.html" target="_blank">
+
+                                Free Course
+
+                            </a>
+</li>
+<li>
+<a class="wave" href="/dsa.html">
+
+                                DSA
+
+                            </a>
+</li>
+</ul>
+</div>
+</nav>
+</div>
+</div>
+<div class="contents contents--neg" style="margin-top: 60px">
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+<div class="d-flex">
+<div class="left-bar d-none d-lg-block">
+<div class="card-alt mb-10x">
+<h3>Page Index</h3>
+<div class="list">
+<ul>
+<li><a href="/dsa.html#data-structure-1" title="Data Structures (I)">Data Structures
+
+                                                (I)</a></li>
+<li><a href="/dsa.html#data-structure-2" title="Data Structures (II)">Data Structures
+
+                                                (II)</a></li>
+<li><a href="/dsa.html#tree-1" title="Tree based DSA (I)">Tree based DSA (I)</a></li>
+<li><a href="/dsa.html#tree-2" title="Tree based DSA (II)">Tree based DSA (II)</a></li>
+<li><a href="/dsa.html#graph" title="Graph Data Structures and Algorithm">Graph based
+
+                                                DSA</a></li>
+<li><a href="/dsa.html#sorting-searching" title="Sorting and Searching">Sorting and
+
+                                                Searching</a></li>
+<li><a href="/dsa.html#greedy-algorithm" title="Greedy Algorithms">Greedy Algorithms</a>
+</li>
+<li><a href="/dsa.html#dynamic-programming" title="Dynamic Programming">Dynamic
+
+                                                Programming</a></li>
+<li><a href="/dsa.html#other-algorithms" title="Other Algorithms">Other Algorithms</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="right-bar">
+<!--first part end-------------------------------------------->
+
+<div class="editor-contents">
+        <h1>Decrease Key and Delete Node Operations on a Fibonacci Heap</h1>
+
+
+        <p class="editor-contents__short-description">In this tutorial, you will learn how decrease key and delete node operations work. Also, you will find working examples of these operations on a fibonacci heap in C, C++, Java and Python.</p>
+
+
+
+          
+
+
+
+<div id="node-1666" class="node node-algorithm clearfix" about="/dsa/decrease-key-and-delete-node-from-a-fibonacci-heap" typeof="sioc:Item foaf:Document">
+
+
+<span property="dc:title" content="Decrease Key and Delete Node Operations on a Fibonacci Heap" class="rdf-meta element-hidden"></span>
+
+<div class="content">
+<p>A <a href="/dsa/fibonacci-heap.html">fibonacci heap</a> is a tree based data structure which consists of a collection of trees with min heap or max heap property. Its operations are more efficient in terms of time complexity than those of its similar data structures like binomial heap and binary heap.</p>
+
+<p>Now, we will discuss two of its important operations.</p>
+
+<ol><li><a href="">Decrease a key</a>: decreases the value of a the key to any lower value</li>
+<li><a href="">Delete a node</a>: deletes the given node</li>
+</ol><hr><h2 id="decrease">Decreasing a Key</h2>
+
+<p>In decreasing a key operation, the value of a key is decreased to a lower value.</p>
+
+<p></p>
+
+<div class="clearfix"></div><p>Following functions are used for decreasing the key.</p>
+
+<h3>Decrease-Key</h3>
+
+<ol><li>Select the node to be decreased, <var>x</var>, and change its value to the new value <var>k</var>.</li>
+<li>If the parent of <var>x</var>, <var>y</var>, is not null and the key of parent is greater than that of the <var>k</var> then call <code>Cut(x)</code> and <code>Cascading-Cut(y)</code> subsequently.</li>
+<li>If the key of <var>x</var> is smaller than the key of min, then mark <var>x</var> as min.</li>
+</ol><h3>Cut</h3>
+
+<ol><li>Remove <var>x</var> from the current position and add it to the root list.</li>
+<li>If <var>x</var> is marked, then mark it as false.</li>
+</ol><h3>Cascading-Cut</h3>
+
+<ol><li>If the parent of <var>y</var> is not null then follow the following steps.</li>
+<li>If <var>y</var> is unmarked, then mark <var>y</var>.</li>
+<li>Else, call <code>Cut(y)</code> and <code>Cascading-Cut(parent of y)</code>.</li>
+</ol><hr><h2 id="example-decrease">Decrease Key Example</h2>
+
+<p>The above operations can be understood in the examples below.</p>
+
+<h3>Example: Decreasing 46 to 15.</h3>
+
+<ol><li>Decrease the value 46 to 15.
+<figure><img alt="Decrease 46 to 15" src="https://www.programiz.com/sites/tutorial2program/files/decrease-key-1.png" title="Decrease-key operation" width="1024" height="338"><figcaption>Decrease 46 to 15</figcaption></figure></li>
+<li><strong>Cut part:</strong> Since <code>24 ≠ nill</code> and <code>15 &lt; its parent</code>, cut it and add it to the root list. <strong>Cascading-Cut part:</strong> mark 24.
+<figure><img alt="Cut and Cascading part" src="https://www.programiz.com/sites/tutorial2program/files/decrease-key-2.png" title="Decrease-key operation" width="472" height="338"><figcaption>Add 15 to root list and mark 24</figcaption></figure></li>
+</ol><h3>Example: Decreasing 35 to 5</h3>
+
+<ol><li>Decrease the value 35 to 5.
+<figure><img alt="Decrease 35 to 5" src="https://www.programiz.com/sites/tutorial2program/files/decrease-key-3.png" title="Decrease-key operation" width="1024" height="338"><figcaption>Decrease 35 to 5</figcaption></figure></li>
+<li>Cut part: Since <code>26 ≠ nill</code> and <code>5&lt;its parent</code>, cut it and add it to the root list.
+<figure><img alt="Cut 5 and add it to root list" src="https://www.programiz.com/sites/tutorial2program/files/decrease-key-4.png" title="Decrease-key operation" width="472" height="274"><figcaption>Cut 5 and add it to root list</figcaption></figure></li>
+<li>Cascading-Cut part: Since 26 is marked, the flow goes to <code>Cut</code> and <code>Cascading-Cut</code>.<br><strong>Cut(26)</strong>: Cut 26 and add it to the root list and mark it as false.
+<figure><img alt="Cut 26 and add it to root list" src="https://www.programiz.com/sites/tutorial2program/files/decrease-key-5.png" title="Decrease-key operation" width="536" height="274"><figcaption>Cut 26 and add it to root list</figcaption></figure><br><strong>Cascading-Cut(24)</strong>:<br>
+Since the 24 is also marked, again call <code>Cut(24)</code> and <code>Cascading-Cut(7)</code>. These operations result in the tree below.
+
+<figure><img alt="Cut 24 and add it to root list" src="https://www.programiz.com/sites/tutorial2program/files/decrease-key-6.png" title="Decrease-key operation" width="600" height="274"><figcaption>Cut 24 and add it to root list</figcaption></figure></li>
+<li>Since <code>5 &lt; 7</code>, mark 5 as min.
+<figure><img alt="Mark the min" src="https://www.programiz.com/sites/tutorial2program/files/decrease-key-6-1.png" title="Decrease-key operation" width="600" height="274"><figcaption>Mark 5 as min</figcaption></figure></li>
+</ol><hr><h2 id="delete">Deleting a Node</h2>
+
+<p>This process makes use of <a href="#decrease">decrease-key</a> and <a href="/dsa/fibonacci-heap.html">extract-min</a> operations. The following steps are followed for deleting a node.</p>
+
+<ol><li>Let <var>k</var> be the node to be deleted.</li>
+<li>Apply decrease-key operation to decrease the value of <var>k</var> to the lowest possible value (i.e. -∞).</li>
+<li>Apply extract-min operation to remove this node.</li>
+</ol><hr><h2 id="code">Decrease key and Delete node operations in Python, Java and C/C++</h2>
+
+<div class="tabbed-editor">
+<div id="py1" onclick="changepy()" class="tabbed-editor__node tabbed-editor__node--active"><a href="#python-code">Python</a></div>
+
+<div id="java1" onclick="changejava()"  class="tabbed-editor__node"><a href="#java-code">Java</a></div>
+
+<div id="c1" onclick="changec()" class="tabbed-editor__node"><a href="#c-code">C</a></div>
+
+<div id="cpp1" onclick="changecpp()" class="tabbed-editor__node"><a href="#cpp-code">C++</a></div>
+</div>
+
+<div class="code-editor code-editor--tabbed">
+<div class="code-editor__area code-editor__area--active" id="python-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="python hljs"><span class="hljs-comment"># Fibonacci Heap in python</span>
+
+<span class="hljs-keyword">import</span> math
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FibonacciTree</span>:</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, key)</span>:</span>
+self.key = key
+self.children = []
+self.order = <span class="hljs-number">0</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">add_at_end</span><span class="hljs-params">(self, t)</span>:</span>
+self.children.append(t)
+self.order = self.order + <span class="hljs-number">1</span>
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FibonacciHeap</span>:</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self)</span>:</span>
+self.trees = []
+self.least = <span class="hljs-literal">None</span>
+self.count = <span class="hljs-number">0</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">insert</span><span class="hljs-params">(self, key)</span>:</span>
+new_tree = FibonacciTree(key)
+self.trees.append(new_tree)
+<span class="hljs-keyword">if</span> (self.least <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span> <span class="hljs-keyword">or</span> key &lt; self.least.key):
+self.least = new_tree
+self.count = self.count + <span class="hljs-number">1</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_min</span><span class="hljs-params">(self)</span>:</span>
+<span class="hljs-keyword">if</span> self.least <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>:
+<span class="hljs-keyword">return</span> <span class="hljs-literal">None</span>
+<span class="hljs-keyword">return</span> self.least.key
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">extract_min</span><span class="hljs-params">(self)</span>:</span>
+smallest = self.least
+<span class="hljs-keyword">if</span> smallest <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">None</span>:
+<span class="hljs-keyword">for</span> child <span class="hljs-keyword">in</span> smallest.children:
+self.trees.append(child)
+self.trees.remove(smallest)
+<span class="hljs-keyword">if</span> self.trees == []:
+self.least = <span class="hljs-literal">None</span>
+<span class="hljs-keyword">else</span>:
+self.least = self.trees[<span class="hljs-number">0</span>]
+self.consolidate()
+self.count = self.count - <span class="hljs-number">1</span>
+<span class="hljs-keyword">return</span> smallest.key
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">consolidate</span><span class="hljs-params">(self)</span>:</span>
+aux = (floor_log2(self.count) + <span class="hljs-number">1</span>) * [<span class="hljs-literal">None</span>]
+
+<span class="hljs-keyword">while</span> self.trees != []:
+x = self.trees[<span class="hljs-number">0</span>]
+order = x.order
+self.trees.remove(x)
+<span class="hljs-keyword">while</span> aux[order] <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">None</span>:
+y = aux[order]
+<span class="hljs-keyword">if</span> x.key &gt; y.key:
+x, y = y, x
+x.add_at_end(y)
+aux[order] = <span class="hljs-literal">None</span>
+order = order + <span class="hljs-number">1</span>
+aux[order] = x
+
+self.least = <span class="hljs-literal">None</span>
+<span class="hljs-keyword">for</span> k <span class="hljs-keyword">in</span> aux:
+<span class="hljs-keyword">if</span> k <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">None</span>:
+self.trees.append(k)
+<span class="hljs-keyword">if</span> (self.least <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>
+  <span class="hljs-keyword">or</span> k.key &lt; self.least.key):
+self.least = k
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">floor_log2</span><span class="hljs-params">(x)</span>:</span>
+<span class="hljs-keyword">return</span> math.frexp(x)[<span class="hljs-number">1</span>] - <span class="hljs-number">1</span>
+
+
+fheap = FibonacciHeap()
+
+fheap.insert(<span class="hljs-number">11</span>)
+fheap.insert(<span class="hljs-number">10</span>)
+fheap.insert(<span class="hljs-number">39</span>)
+fheap.insert(<span class="hljs-number">26</span>)
+fheap.insert(<span class="hljs-number">24</span>)
+
+<span class="hljs-keyword">print</span>(<span class="hljs-string">'Minimum value: {}'</span>.format(fheap.get_min()))
+
+<span class="hljs-keyword">print</span>(<span class="hljs-string">'Minimum value removed: {}'</span>.format(fheap.extract_min()))</code></pre></div>
+</div>
+
+<div class="code-editor__area" id="java-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="java hljs"><span class="hljs-comment">// Operations on Fibonacci Heap in Java</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">node</span> </span>{
+node parent;
+node left;
+node right;
+node child;
+<span class="hljs-keyword">int</span> degree;
+<span class="hljs-keyword">boolean</span> mark;
+<span class="hljs-keyword">int</span> key;
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">node</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-keyword">this</span>.degree = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">this</span>.mark = <span class="hljs-keyword">false</span>;
+<span class="hljs-keyword">this</span>.parent = <span class="hljs-keyword">null</span>;
+<span class="hljs-keyword">this</span>.left = <span class="hljs-keyword">this</span>;
+<span class="hljs-keyword">this</span>.right = <span class="hljs-keyword">this</span>;
+<span class="hljs-keyword">this</span>.child = <span class="hljs-keyword">null</span>;
+<span class="hljs-keyword">this</span>.key = Integer.MAX_VALUE;
+}
+
+node(<span class="hljs-keyword">int</span> x) {
+<span class="hljs-keyword">this</span>();
+<span class="hljs-keyword">this</span>.key = x;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">set_parent</span><span class="hljs-params">(node x)</span> </span>{
+<span class="hljs-keyword">this</span>.parent = x;
+}
+
+<span class="hljs-function">node <span class="hljs-title">get_parent</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.parent;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">set_left</span><span class="hljs-params">(node x)</span> </span>{
+<span class="hljs-keyword">this</span>.left = x;
+}
+
+<span class="hljs-function">node <span class="hljs-title">get_left</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.left;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">set_right</span><span class="hljs-params">(node x)</span> </span>{
+<span class="hljs-keyword">this</span>.right = x;
+}
+
+<span class="hljs-function">node <span class="hljs-title">get_right</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.right;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">set_child</span><span class="hljs-params">(node x)</span> </span>{
+<span class="hljs-keyword">this</span>.child = x;
+}
+
+<span class="hljs-function">node <span class="hljs-title">get_child</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.child;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">set_degree</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span> </span>{
+<span class="hljs-keyword">this</span>.degree = x;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">get_degree</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.degree;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">set_mark</span><span class="hljs-params">(<span class="hljs-keyword">boolean</span> m)</span> </span>{
+<span class="hljs-keyword">this</span>.mark = m;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">boolean</span> <span class="hljs-title">get_mark</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.mark;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">set_key</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span> </span>{
+<span class="hljs-keyword">this</span>.key = x;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">get_key</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.key;
+}
+}
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">fibHeap</span> </span>{
+node min;
+<span class="hljs-keyword">int</span> n;
+<span class="hljs-keyword">boolean</span> trace;
+node found;
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">get_trace</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-keyword">return</span> trace;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">set_trace</span><span class="hljs-params">(<span class="hljs-keyword">boolean</span> t)</span> </span>{
+<span class="hljs-keyword">this</span>.trace = t;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> fibHeap <span class="hljs-title">create_heap</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> fibHeap();
+}
+
+fibHeap() {
+min = <span class="hljs-keyword">null</span>;
+n = <span class="hljs-number">0</span>;
+trace = <span class="hljs-keyword">false</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">insert</span><span class="hljs-params">(node x)</span> </span>{
+<span class="hljs-keyword">if</span> (min == <span class="hljs-keyword">null</span>) {
+min = x;
+x.set_left(min);
+x.set_right(min);
+} <span class="hljs-keyword">else</span> {
+x.set_right(min);
+x.set_left(min.get_left());
+min.get_left().set_right(x);
+min.set_left(x);
+<span class="hljs-keyword">if</span> (x.get_key() &lt; min.get_key())
+min = x;
+}
+n += <span class="hljs-number">1</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">insert</span><span class="hljs-params">(<span class="hljs-keyword">int</span> key)</span> </span>{
+insert(<span class="hljs-keyword">new</span> node(key));
+}
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">display</span><span class="hljs-params">()</span> </span>{
+display(min);
+System.out.println();
+}
+
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">display</span><span class="hljs-params">(node c)</span> </span>{
+System.out.print(<span class="hljs-string">"("</span>);
+<span class="hljs-keyword">if</span> (c == <span class="hljs-keyword">null</span>) {
+System.out.print(<span class="hljs-string">")"</span>);
+<span class="hljs-keyword">return</span>;
+} <span class="hljs-keyword">else</span> {
+node temp = c;
+<span class="hljs-keyword">do</span> {
+System.out.print(temp.get_key());
+node k = temp.get_child();
+display(k);
+System.out.print(<span class="hljs-string">"-&gt;"</span>);
+temp = temp.get_right();
+} <span class="hljs-keyword">while</span> (temp != c);
+System.out.print(<span class="hljs-string">")"</span>);
+}
+}
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">merge_heap</span><span class="hljs-params">(fibHeap H1, fibHeap H2, fibHeap H3)</span> </span>{
+H3.min = H1.min;
+
+<span class="hljs-keyword">if</span> (H1.min != <span class="hljs-keyword">null</span> &amp;&amp; H2.min != <span class="hljs-keyword">null</span>) {
+node t1 = H1.min.get_left();
+node t2 = H2.min.get_left();
+H1.min.set_left(t2);
+t1.set_right(H2.min);
+H2.min.set_left(t1);
+t2.set_right(H1.min);
+}
+<span class="hljs-keyword">if</span> (H1.min == <span class="hljs-keyword">null</span> || (H2.min != <span class="hljs-keyword">null</span> &amp;&amp; H2.min.get_key() &lt; H1.min.get_key()))
+H3.min = H2.min;
+H3.n = H1.n + H2.n;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">find_min</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.min.get_key();
+}
+
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">display_node</span><span class="hljs-params">(node z)</span> </span>{
+System.out.println(<span class="hljs-string">"right: "</span> + ((z.get_right() == <span class="hljs-keyword">null</span>) ? <span class="hljs-string">"-1"</span> : z.get_right().get_key()));
+System.out.println(<span class="hljs-string">"left: "</span> + ((z.get_left() == <span class="hljs-keyword">null</span>) ? <span class="hljs-string">"-1"</span> : z.get_left().get_key()));
+System.out.println(<span class="hljs-string">"child: "</span> + ((z.get_child() == <span class="hljs-keyword">null</span>) ? <span class="hljs-string">"-1"</span> : z.get_child().get_key()));
+System.out.println(<span class="hljs-string">"degree "</span> + z.get_degree());
+}
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">extract_min</span><span class="hljs-params">()</span> </span>{
+node z = <span class="hljs-keyword">this</span>.min;
+<span class="hljs-keyword">if</span> (z != <span class="hljs-keyword">null</span>) {
+node c = z.get_child();
+node k = c, p;
+<span class="hljs-keyword">if</span> (c != <span class="hljs-keyword">null</span>) {
+<span class="hljs-keyword">do</span> {
+p = c.get_right();
+insert(c);
+c.set_parent(<span class="hljs-keyword">null</span>);
+c = p;
+} <span class="hljs-keyword">while</span> (c != <span class="hljs-keyword">null</span> &amp;&amp; c != k);
+}
+z.get_left().set_right(z.get_right());
+z.get_right().set_left(z.get_left());
+z.set_child(<span class="hljs-keyword">null</span>);
+<span class="hljs-keyword">if</span> (z == z.get_right())
+<span class="hljs-keyword">this</span>.min = <span class="hljs-keyword">null</span>;
+<span class="hljs-keyword">else</span> {
+<span class="hljs-keyword">this</span>.min = z.get_right();
+<span class="hljs-keyword">this</span>.consolidate();
+}
+<span class="hljs-keyword">this</span>.n -= <span class="hljs-number">1</span>;
+<span class="hljs-keyword">return</span> z.get_key();
+}
+<span class="hljs-keyword">return</span> Integer.MAX_VALUE;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">consolidate</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-keyword">double</span> phi = (<span class="hljs-number">1</span> + Math.sqrt(<span class="hljs-number">5</span>)) / <span class="hljs-number">2</span>;
+<span class="hljs-keyword">int</span> Dofn = (<span class="hljs-keyword">int</span>) (Math.log(<span class="hljs-keyword">this</span>.n) / Math.log(phi));
+node[] A = <span class="hljs-keyword">new</span> node[Dofn + <span class="hljs-number">1</span>];
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt;= Dofn; ++i)
+A[i] = <span class="hljs-keyword">null</span>;
+node w = min;
+<span class="hljs-keyword">if</span> (w != <span class="hljs-keyword">null</span>) {
+node check = min;
+<span class="hljs-keyword">do</span> {
+node x = w;
+<span class="hljs-keyword">int</span> d = x.get_degree();
+<span class="hljs-keyword">while</span> (A[d] != <span class="hljs-keyword">null</span>) {
+node y = A[d];
+<span class="hljs-keyword">if</span> (x.get_key() &gt; y.get_key()) {
+node temp = x;
+x = y;
+y = temp;
+w = x;
+}
+fib_heap_link(y, x);
+check = x;
+A[d] = <span class="hljs-keyword">null</span>;
+d += <span class="hljs-number">1</span>;
+}
+A[d] = x;
+w = w.get_right();
+} <span class="hljs-keyword">while</span> (w != <span class="hljs-keyword">null</span> &amp;&amp; w != check);
+<span class="hljs-keyword">this</span>.min = <span class="hljs-keyword">null</span>;
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt;= Dofn; ++i) {
+<span class="hljs-keyword">if</span> (A[i] != <span class="hljs-keyword">null</span>) {
+insert(A[i]);
+}
+}
+}
+}
+
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">fib_heap_link</span><span class="hljs-params">(node y, node x)</span> </span>{
+y.get_left().set_right(y.get_right());
+y.get_right().set_left(y.get_left());
+
+node p = x.get_child();
+<span class="hljs-keyword">if</span> (p == <span class="hljs-keyword">null</span>) {
+y.set_right(y);
+y.set_left(y);
+} <span class="hljs-keyword">else</span> {
+y.set_right(p);
+y.set_left(p.get_left());
+p.get_left().set_right(y);
+p.set_left(y);
+}
+y.set_parent(x);
+x.set_child(y);
+x.set_degree(x.get_degree() + <span class="hljs-number">1</span>);
+y.set_mark(<span class="hljs-keyword">false</span>);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">find</span><span class="hljs-params">(<span class="hljs-keyword">int</span> key, node c)</span> </span>{
+<span class="hljs-keyword">if</span> (found != <span class="hljs-keyword">null</span> || c == <span class="hljs-keyword">null</span>)
+<span class="hljs-keyword">return</span>;
+<span class="hljs-keyword">else</span> {
+node temp = c;
+<span class="hljs-keyword">do</span> {
+<span class="hljs-keyword">if</span> (key == temp.get_key())
+found = temp;
+<span class="hljs-keyword">else</span> {
+node k = temp.get_child();
+find(key, k);
+temp = temp.get_right();
+}
+} <span class="hljs-keyword">while</span> (temp != c &amp;&amp; found == <span class="hljs-keyword">null</span>);
+}
+}
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> node <span class="hljs-title">find</span><span class="hljs-params">(<span class="hljs-keyword">int</span> k)</span> </span>{
+found = <span class="hljs-keyword">null</span>;
+find(k, <span class="hljs-keyword">this</span>.min);
+<span class="hljs-keyword">return</span> found;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">decrease_key</span><span class="hljs-params">(<span class="hljs-keyword">int</span> key, <span class="hljs-keyword">int</span> nval)</span> </span>{
+node x = find(key);
+decrease_key(x, nval);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">decrease_key</span><span class="hljs-params">(node x, <span class="hljs-keyword">int</span> k)</span> </span>{
+<span class="hljs-keyword">if</span> (k &gt; x.get_key())
+<span class="hljs-keyword">return</span>;
+x.set_key(k);
+node y = x.get_parent();
+<span class="hljs-keyword">if</span> (y != <span class="hljs-keyword">null</span> &amp;&amp; x.get_key() &lt; y.get_key()) {
+cut(x, y);
+cascading_cut(y);
+}
+<span class="hljs-keyword">if</span> (x.get_key() &lt; min.get_key())
+min = x;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">cut</span><span class="hljs-params">(node x, node y)</span> </span>{
+x.get_right().set_left(x.get_left());
+x.get_left().set_right(x.get_right());
+
+y.set_degree(y.get_degree() - <span class="hljs-number">1</span>);
+
+x.set_right(<span class="hljs-keyword">null</span>);
+x.set_left(<span class="hljs-keyword">null</span>);
+insert(x);
+x.set_parent(<span class="hljs-keyword">null</span>);
+x.set_mark(<span class="hljs-keyword">false</span>);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">cascading_cut</span><span class="hljs-params">(node y)</span> </span>{
+node z = y.get_parent();
+<span class="hljs-keyword">if</span> (z != <span class="hljs-keyword">null</span>) {
+<span class="hljs-keyword">if</span> (y.get_mark() == <span class="hljs-keyword">false</span>)
+y.set_mark(<span class="hljs-keyword">true</span>);
+<span class="hljs-keyword">else</span> {
+cut(y, z);
+cascading_cut(z);
+}
+}
+}
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">delete</span><span class="hljs-params">(node x)</span> </span>{
+decrease_key(x, Integer.MIN_VALUE);
+<span class="hljs-keyword">int</span> p = extract_min();
+}
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+fibHeap obj = create_heap();
+obj.insert(<span class="hljs-number">7</span>);
+obj.insert(<span class="hljs-number">26</span>);
+obj.insert(<span class="hljs-number">30</span>);
+obj.insert(<span class="hljs-number">39</span>);
+obj.insert(<span class="hljs-number">10</span>);
+obj.display();
+
+System.out.println(obj.extract_min());
+obj.display();
+System.out.println(obj.extract_min());
+obj.display();
+System.out.println(obj.extract_min());
+obj.display();
+System.out.println(obj.extract_min());
+obj.display();
+System.out.println(obj.extract_min());
+obj.display();
+}
+}</code></pre></div>
+</div>
+
+<div class="code-editor__area" id="c-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="c hljs cpp"><span class="hljs-comment">// Operations on a Fibonacci heap in C</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdlib.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdbool.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;math.h&gt;</span></span>
+
+<span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> _<span class="hljs-title">NODE</span>
+{</span>
+<span class="hljs-keyword">int</span> key;
+<span class="hljs-keyword">int</span> degree;
+<span class="hljs-class"><span class="hljs-keyword">struct</span> _<span class="hljs-title">NODE</span> *<span class="hljs-title">left_sibling</span>;</span>
+<span class="hljs-class"><span class="hljs-keyword">struct</span> _<span class="hljs-title">NODE</span> *<span class="hljs-title">right_sibling</span>;</span>
+<span class="hljs-class"><span class="hljs-keyword">struct</span> _<span class="hljs-title">NODE</span> *<span class="hljs-title">parent</span>;</span>
+<span class="hljs-class"><span class="hljs-keyword">struct</span> _<span class="hljs-title">NODE</span> *<span class="hljs-title">child</span>;</span>
+<span class="hljs-keyword">bool</span> mark;
+<span class="hljs-keyword">bool</span> visited;
+} NODE;
+
+<span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">fibanocci_heap</span>
+{</span>
+<span class="hljs-keyword">int</span> n;
+NODE *min;
+<span class="hljs-keyword">int</span> phi;
+<span class="hljs-keyword">int</span> degree;
+} FIB_HEAP;
+
+<span class="hljs-function">FIB_HEAP *<span class="hljs-title">make_fib_heap</span><span class="hljs-params">()</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">insertion</span><span class="hljs-params">(FIB_HEAP *H, NODE *<span class="hljs-keyword">new</span>, <span class="hljs-keyword">int</span> val)</span></span>;
+<span class="hljs-function">NODE *<span class="hljs-title">extract_min</span><span class="hljs-params">(FIB_HEAP *H)</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">consolidate</span><span class="hljs-params">(FIB_HEAP *H)</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">fib_heap_link</span><span class="hljs-params">(FIB_HEAP *H, NODE *y, NODE *x)</span></span>;
+<span class="hljs-function">NODE *<span class="hljs-title">find_min_node</span><span class="hljs-params">(FIB_HEAP *H)</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">decrease_key</span><span class="hljs-params">(FIB_HEAP *H, NODE *node, <span class="hljs-keyword">int</span> key)</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">cut</span><span class="hljs-params">(FIB_HEAP *H, NODE *node_to_be_decrease, NODE *parent_node)</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">cascading_cut</span><span class="hljs-params">(FIB_HEAP *H, NODE *parent_node)</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Delete_Node</span><span class="hljs-params">(FIB_HEAP *H, <span class="hljs-keyword">int</span> dec_key)</span></span>;
+
+<span class="hljs-function">FIB_HEAP *<span class="hljs-title">make_fib_heap</span><span class="hljs-params">()</span>
+</span>{
+FIB_HEAP *H;
+H = (FIB_HEAP *)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(FIB_HEAP));
+H-&gt;n = <span class="hljs-number">0</span>;
+H-&gt;min = <span class="hljs-literal">NULL</span>;
+H-&gt;phi = <span class="hljs-number">0</span>;
+H-&gt;degree = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">return</span> H;
+}
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">new_print_heap</span><span class="hljs-params">(NODE *n)</span>
+</span>{
+NODE *x;
+<span class="hljs-keyword">for</span> (x = n;; x = x-&gt;right_sibling)
+{
+
+<span class="hljs-keyword">if</span> (x-&gt;child == <span class="hljs-literal">NULL</span>)
+{
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"node with no child (%d) \n"</span>, x-&gt;key);
+}
+<span class="hljs-keyword">else</span>
+{
+
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"NODE(%d) with child (%d)\n"</span>, x-&gt;key, x-&gt;child-&gt;key);
+new_print_heap(x-&gt;child);
+}
+<span class="hljs-keyword">if</span> (x-&gt;right_sibling == n)
+{
+<span class="hljs-keyword">break</span>;
+}
+}
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">insertion</span><span class="hljs-params">(FIB_HEAP *H, NODE *<span class="hljs-keyword">new</span>, <span class="hljs-keyword">int</span> val)</span>
+</span>{
+<span class="hljs-keyword">new</span> = (NODE *)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(NODE));
+<span class="hljs-keyword">new</span>-&gt;key = val;
+<span class="hljs-keyword">new</span>-&gt;degree = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">new</span>-&gt;mark = <span class="hljs-literal">false</span>;
+<span class="hljs-keyword">new</span>-&gt;parent = <span class="hljs-literal">NULL</span>;
+<span class="hljs-keyword">new</span>-&gt;child = <span class="hljs-literal">NULL</span>;
+<span class="hljs-keyword">new</span>-&gt;visited = <span class="hljs-literal">false</span>;
+<span class="hljs-keyword">new</span>-&gt;left_sibling = <span class="hljs-keyword">new</span>;
+<span class="hljs-keyword">new</span>-&gt;right_sibling = <span class="hljs-keyword">new</span>;
+<span class="hljs-keyword">if</span> (H-&gt;min == <span class="hljs-literal">NULL</span>)
+{
+H-&gt;min = <span class="hljs-keyword">new</span>;
+}
+<span class="hljs-keyword">else</span>
+{
+H-&gt;min-&gt;left_sibling-&gt;right_sibling = <span class="hljs-keyword">new</span>;
+<span class="hljs-keyword">new</span>-&gt;right_sibling = H-&gt;min;
+<span class="hljs-keyword">new</span>-&gt;left_sibling = H-&gt;min-&gt;left_sibling;
+H-&gt;min-&gt;left_sibling = <span class="hljs-keyword">new</span>;
+<span class="hljs-keyword">if</span> (<span class="hljs-keyword">new</span>-&gt;key &lt; H-&gt;min-&gt;key)
+{
+H-&gt;min = <span class="hljs-keyword">new</span>;
+}
+}
+(H-&gt;n)++;
+}
+
+<span class="hljs-function">NODE *<span class="hljs-title">find_min_node</span><span class="hljs-params">(FIB_HEAP *H)</span>
+</span>{
+<span class="hljs-keyword">if</span> (H == <span class="hljs-literal">NULL</span>)
+{
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">" \n Fibonacci heap not yet created \n"</span>);
+<span class="hljs-keyword">return</span> <span class="hljs-literal">NULL</span>;
+}
+<span class="hljs-keyword">else</span>
+<span class="hljs-keyword">return</span> H-&gt;min;
+}
+
+<span class="hljs-function">FIB_HEAP *<span class="hljs-title">unionHeap</span><span class="hljs-params">(FIB_HEAP *H1, FIB_HEAP *H2)</span>
+</span>{
+FIB_HEAP *Hnew;
+Hnew = make_fib_heap();
+Hnew-&gt;min = H1-&gt;min;
+
+NODE *temp1, *temp2;
+temp1 = Hnew-&gt;min-&gt;right_sibling;
+temp2 = H2-&gt;min-&gt;left_sibling;
+
+Hnew-&gt;min-&gt;right_sibling-&gt;left_sibling = H2-&gt;min-&gt;left_sibling;
+Hnew-&gt;min-&gt;right_sibling = H2-&gt;min;
+H2-&gt;min-&gt;left_sibling = Hnew-&gt;min;
+temp2-&gt;right_sibling = temp1;
+
+<span class="hljs-keyword">if</span> ((H1-&gt;min == <span class="hljs-literal">NULL</span>) || (H2-&gt;min != <span class="hljs-literal">NULL</span> &amp;&amp; H2-&gt;min-&gt;key &lt; H1-&gt;min-&gt;key))
+Hnew-&gt;min = H2-&gt;min;
+Hnew-&gt;n = H1-&gt;n + H2-&gt;n;
+<span class="hljs-keyword">return</span> Hnew;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">cal_degree</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span>
+</span>{
+<span class="hljs-keyword">int</span> count = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">while</span> (n &gt; <span class="hljs-number">0</span>)
+{
+n = n / <span class="hljs-number">2</span>;
+count++;
+}
+<span class="hljs-keyword">return</span> count;
+}
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">consolidate</span><span class="hljs-params">(FIB_HEAP *H)</span>
+</span>{
+<span class="hljs-keyword">int</span> degree, i, d;
+degree = cal_degree(H-&gt;n);
+NODE *A[degree], *x, *y, *z;
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt;= degree; i++)
+{
+A[i] = <span class="hljs-literal">NULL</span>;
+}
+x = H-&gt;min;
+<span class="hljs-keyword">do</span>
+{
+d = x-&gt;degree;
+<span class="hljs-keyword">while</span> (A[d] != <span class="hljs-literal">NULL</span>)
+{
+y = A[d];
+<span class="hljs-keyword">if</span> (x-&gt;key &gt; y-&gt;key)
+{
+NODE *exchange_help;
+exchange_help = x;
+x = y;
+y = exchange_help;
+}
+<span class="hljs-keyword">if</span> (y == H-&gt;min)
+H-&gt;min = x;
+fib_heap_link(H, y, x);
+<span class="hljs-keyword">if</span> (y-&gt;right_sibling == x)
+H-&gt;min = x;
+A[d] = <span class="hljs-literal">NULL</span>;
+d++;
+}
+A[d] = x;
+x = x-&gt;right_sibling;
+} <span class="hljs-keyword">while</span> (x != H-&gt;min);
+
+H-&gt;min = <span class="hljs-literal">NULL</span>;
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; degree; i++)
+{
+<span class="hljs-keyword">if</span> (A[i] != <span class="hljs-literal">NULL</span>)
+{
+A[i]-&gt;left_sibling = A[i];
+A[i]-&gt;right_sibling = A[i];
+<span class="hljs-keyword">if</span> (H-&gt;min == <span class="hljs-literal">NULL</span>)
+{
+H-&gt;min = A[i];
+}
+<span class="hljs-keyword">else</span>
+{
+H-&gt;min-&gt;left_sibling-&gt;right_sibling = A[i];
+A[i]-&gt;right_sibling = H-&gt;min;
+A[i]-&gt;left_sibling = H-&gt;min-&gt;left_sibling;
+H-&gt;min-&gt;left_sibling = A[i];
+<span class="hljs-keyword">if</span> (A[i]-&gt;key &lt; H-&gt;min-&gt;key)
+{
+H-&gt;min = A[i];
+}
+}
+<span class="hljs-keyword">if</span> (H-&gt;min == <span class="hljs-literal">NULL</span>)
+{
+H-&gt;min = A[i];
+}
+<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (A[i]-&gt;key &lt; H-&gt;min-&gt;key)
+{
+H-&gt;min = A[i];
+}
+}
+}
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">fib_heap_link</span><span class="hljs-params">(FIB_HEAP *H, NODE *y, NODE *x)</span>
+</span>{
+y-&gt;right_sibling-&gt;left_sibling = y-&gt;left_sibling;
+y-&gt;left_sibling-&gt;right_sibling = y-&gt;right_sibling;
+
+<span class="hljs-keyword">if</span> (x-&gt;right_sibling == x)
+H-&gt;min = x;
+
+y-&gt;left_sibling = y;
+y-&gt;right_sibling = y;
+y-&gt;parent = x;
+
+<span class="hljs-keyword">if</span> (x-&gt;child == <span class="hljs-literal">NULL</span>)
+{
+x-&gt;child = y;
+}
+y-&gt;right_sibling = x-&gt;child;
+y-&gt;left_sibling = x-&gt;child-&gt;left_sibling;
+x-&gt;child-&gt;left_sibling-&gt;right_sibling = y;
+x-&gt;child-&gt;left_sibling = y;
+<span class="hljs-keyword">if</span> ((y-&gt;key) &lt; (x-&gt;child-&gt;key))
+x-&gt;child = y;
+
+(x-&gt;degree)++;
+}
+<span class="hljs-function">NODE *<span class="hljs-title">extract_min</span><span class="hljs-params">(FIB_HEAP *H)</span>
+</span>{
+
+<span class="hljs-keyword">if</span> (H-&gt;min == <span class="hljs-literal">NULL</span>)
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"\n The heap is empty"</span>);
+<span class="hljs-keyword">else</span>
+{
+NODE *temp = H-&gt;min;
+NODE *pntr;
+pntr = temp;
+NODE *x = <span class="hljs-literal">NULL</span>;
+<span class="hljs-keyword">if</span> (temp-&gt;child != <span class="hljs-literal">NULL</span>)
+{
+
+x = temp-&gt;child;
+<span class="hljs-keyword">do</span>
+{
+pntr = x-&gt;right_sibling;
+(H-&gt;min-&gt;left_sibling)-&gt;right_sibling = x;
+x-&gt;right_sibling = H-&gt;min;
+x-&gt;left_sibling = H-&gt;min-&gt;left_sibling;
+H-&gt;min-&gt;left_sibling = x;
+<span class="hljs-keyword">if</span> (x-&gt;key &lt; H-&gt;min-&gt;key)
+H-&gt;min = x;
+x-&gt;parent = <span class="hljs-literal">NULL</span>;
+x = pntr;
+} <span class="hljs-keyword">while</span> (pntr != temp-&gt;child);
+}
+
+(temp-&gt;left_sibling)-&gt;right_sibling = temp-&gt;right_sibling;
+(temp-&gt;right_sibling)-&gt;left_sibling = temp-&gt;left_sibling;
+H-&gt;min = temp-&gt;right_sibling;
+
+<span class="hljs-keyword">if</span> (temp == temp-&gt;right_sibling &amp;&amp; temp-&gt;child == <span class="hljs-literal">NULL</span>)
+H-&gt;min = <span class="hljs-literal">NULL</span>;
+<span class="hljs-keyword">else</span>
+{
+H-&gt;min = temp-&gt;right_sibling;
+consolidate(H);
+}
+H-&gt;n = H-&gt;n - <span class="hljs-number">1</span>;
+<span class="hljs-keyword">return</span> temp;
+}
+<span class="hljs-keyword">return</span> H-&gt;min;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">cut</span><span class="hljs-params">(FIB_HEAP *H, NODE *node_to_be_decrease, NODE *parent_node)</span>
+</span>{
+NODE *temp_parent_check;
+
+<span class="hljs-keyword">if</span> (node_to_be_decrease == node_to_be_decrease-&gt;right_sibling)
+parent_node-&gt;child = <span class="hljs-literal">NULL</span>;
+
+node_to_be_decrease-&gt;left_sibling-&gt;right_sibling = node_to_be_decrease-&gt;right_sibling;
+node_to_be_decrease-&gt;right_sibling-&gt;left_sibling = node_to_be_decrease-&gt;left_sibling;
+<span class="hljs-keyword">if</span> (node_to_be_decrease == parent_node-&gt;child)
+parent_node-&gt;child = node_to_be_decrease-&gt;right_sibling;
+(parent_node-&gt;degree)--;
+
+node_to_be_decrease-&gt;left_sibling = node_to_be_decrease;
+node_to_be_decrease-&gt;right_sibling = node_to_be_decrease;
+H-&gt;min-&gt;left_sibling-&gt;right_sibling = node_to_be_decrease;
+node_to_be_decrease-&gt;right_sibling = H-&gt;min;
+node_to_be_decrease-&gt;left_sibling = H-&gt;min-&gt;left_sibling;
+H-&gt;min-&gt;left_sibling = node_to_be_decrease;
+
+node_to_be_decrease-&gt;parent = <span class="hljs-literal">NULL</span>;
+node_to_be_decrease-&gt;mark = <span class="hljs-literal">false</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">cascading_cut</span><span class="hljs-params">(FIB_HEAP *H, NODE *parent_node)</span>
+</span>{
+NODE *aux;
+aux = parent_node-&gt;parent;
+<span class="hljs-keyword">if</span> (aux != <span class="hljs-literal">NULL</span>)
+{
+<span class="hljs-keyword">if</span> (parent_node-&gt;mark == <span class="hljs-literal">false</span>)
+{
+parent_node-&gt;mark = <span class="hljs-literal">true</span>;
+}
+<span class="hljs-keyword">else</span>
+{
+cut(H, parent_node, aux);
+cascading_cut(H, aux);
+}
+}
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">decrease_key</span><span class="hljs-params">(FIB_HEAP *H, NODE *node_to_be_decrease, <span class="hljs-keyword">int</span> new_key)</span>
+</span>{
+NODE *parent_node;
+<span class="hljs-keyword">if</span> (H == <span class="hljs-literal">NULL</span>)
+{
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"\n FIbonacci heap not created "</span>);
+<span class="hljs-keyword">return</span>;
+}
+<span class="hljs-keyword">if</span> (node_to_be_decrease == <span class="hljs-literal">NULL</span>)
+{
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"Node is not in the heap"</span>);
+}
+
+<span class="hljs-keyword">else</span>
+{
+<span class="hljs-keyword">if</span> (node_to_be_decrease-&gt;key &lt; new_key)
+{
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"\n Invalid new key for decrease key operation \n "</span>);
+}
+<span class="hljs-keyword">else</span>
+{
+node_to_be_decrease-&gt;key = new_key;
+parent_node = node_to_be_decrease-&gt;parent;
+<span class="hljs-keyword">if</span> ((parent_node != <span class="hljs-literal">NULL</span>) &amp;&amp; (node_to_be_decrease-&gt;key &lt; parent_node-&gt;key))
+{
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"\n cut called"</span>);
+cut(H, node_to_be_decrease, parent_node);
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"\n cascading cut called"</span>);
+cascading_cut(H, parent_node);
+}
+<span class="hljs-keyword">if</span> (node_to_be_decrease-&gt;key &lt; H-&gt;min-&gt;key)
+{
+H-&gt;min = node_to_be_decrease;
+}
+}
+}
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> *<span class="hljs-title">find_node</span><span class="hljs-params">(FIB_HEAP *H, NODE *n, <span class="hljs-keyword">int</span> key, <span class="hljs-keyword">int</span> new_key)</span>
+</span>{
+NODE *find_use = n;
+NODE *f = <span class="hljs-literal">NULL</span>;
+find_use-&gt;visited = <span class="hljs-literal">true</span>;
+<span class="hljs-keyword">if</span> (find_use-&gt;key == key)
+{
+find_use-&gt;visited = <span class="hljs-literal">false</span>;
+f = find_use;
+decrease_key(H, f, new_key);
+}
+<span class="hljs-keyword">if</span> (find_use-&gt;child != <span class="hljs-literal">NULL</span>)
+{
+find_node(H, find_use-&gt;child, key, new_key);
+}
+<span class="hljs-keyword">if</span> ((find_use-&gt;right_sibling-&gt;visited != <span class="hljs-literal">true</span>))
+{
+find_node(H, find_use-&gt;right_sibling, key, new_key);
+}
+
+find_use-&gt;visited = <span class="hljs-literal">false</span>;
+}
+
+<span class="hljs-function">FIB_HEAP *<span class="hljs-title">insertion_procedure</span><span class="hljs-params">()</span>
+</span>{
+FIB_HEAP *temp;
+<span class="hljs-keyword">int</span> no_of_nodes, ele, i;
+NODE *new_node;
+temp = (FIB_HEAP *)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(FIB_HEAP));
+temp = <span class="hljs-literal">NULL</span>;
+<span class="hljs-keyword">if</span> (temp == <span class="hljs-literal">NULL</span>)
+{
+temp = make_fib_heap();
+}
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">" \n enter number of nodes to be insert = "</span>);
+<span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>, &amp;no_of_nodes);
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">1</span>; i &lt;= no_of_nodes; i++)
+{
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"\n node %d and its key value = "</span>, i);
+<span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>, &amp;ele);
+insertion(temp, new_node, ele);
+}
+<span class="hljs-keyword">return</span> temp;
+}
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Delete_Node</span><span class="hljs-params">(FIB_HEAP *H, <span class="hljs-keyword">int</span> dec_key)</span>
+</span>{
+NODE *p = <span class="hljs-literal">NULL</span>;
+find_node(H, H-&gt;min, dec_key, <span class="hljs-number">-5000</span>);
+p = extract_min(H);
+<span class="hljs-keyword">if</span> (p != <span class="hljs-literal">NULL</span>)
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"\n Node deleted"</span>);
+<span class="hljs-keyword">else</span>
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"\n Node not deleted:some error"</span>);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">int</span> argc, <span class="hljs-keyword">char</span> **argv)</span>
+</span>{
+NODE *new_node, *min_node, *extracted_min, *node_to_be_decrease, *find_use;
+FIB_HEAP *heap, *h1, *h2;
+<span class="hljs-keyword">int</span> operation_no, new_key, dec_key, ele, i, no_of_nodes;
+heap = (FIB_HEAP *)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(FIB_HEAP));
+heap = <span class="hljs-literal">NULL</span>;
+<span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>)
+{
+
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">" \n choose below operations \n 1. Create Fibonacci heap \n 2. Insert nodes into fibonacci heap \n 3. Find min \n 4. Union \n 5. Extract min \n 6. Decrease key \n 7.Delete node \n 8. print heap \n 9. exit \n enter operation_no = "</span>);
+<span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>, &amp;operation_no);
+
+<span class="hljs-keyword">switch</span> (operation_no)
+{
+<span class="hljs-keyword">case</span> <span class="hljs-number">1</span>:
+heap = make_fib_heap();
+<span class="hljs-keyword">break</span>;
+
+<span class="hljs-keyword">case</span> <span class="hljs-number">2</span>:
+<span class="hljs-keyword">if</span> (heap == <span class="hljs-literal">NULL</span>)
+{
+heap = make_fib_heap();
+}
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">" enter number of nodes to be insert = "</span>);
+<span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>, &amp;no_of_nodes);
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">1</span>; i &lt;= no_of_nodes; i++)
+{
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"\n node %d and its key value = "</span>, i);
+<span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>, &amp;ele);
+insertion(heap, new_node, ele);
+}
+<span class="hljs-keyword">break</span>;
+
+<span class="hljs-keyword">case</span> <span class="hljs-number">3</span>:
+min_node = find_min_node(heap);
+<span class="hljs-keyword">if</span> (min_node == <span class="hljs-literal">NULL</span>)
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"No minimum value"</span>);
+<span class="hljs-keyword">else</span>
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"\n min value = %d"</span>, min_node-&gt;key);
+<span class="hljs-keyword">break</span>;
+
+<span class="hljs-keyword">case</span> <span class="hljs-number">4</span>:
+<span class="hljs-keyword">if</span> (heap == <span class="hljs-literal">NULL</span>)
+{
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"\n no FIbonacci heap is created please create fibonacci heap \n "</span>);
+<span class="hljs-keyword">break</span>;
+}
+h1 = insertion_procedure();
+heap = unionHeap(heap, h1);
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"Unified Heap:\n"</span>);
+new_print_heap(heap-&gt;min);
+<span class="hljs-keyword">break</span>;
+
+<span class="hljs-keyword">case</span> <span class="hljs-number">5</span>:
+<span class="hljs-keyword">if</span> (heap == <span class="hljs-literal">NULL</span>)
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"Fibonacci heap is empty"</span>);
+<span class="hljs-keyword">else</span>
+{
+extracted_min = extract_min(heap);
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"\n min value = %d"</span>, extracted_min-&gt;key);
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"\n Updated heap: \n"</span>);
+new_print_heap(heap-&gt;min);
+}
+<span class="hljs-keyword">break</span>;
+
+<span class="hljs-keyword">case</span> <span class="hljs-number">6</span>:
+<span class="hljs-keyword">if</span> (heap == <span class="hljs-literal">NULL</span>)
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"Fibonacci heap is empty"</span>);
+<span class="hljs-keyword">else</span>
+{
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">" \n node to be decreased = "</span>);
+<span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>, &amp;dec_key);
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">" \n enter the new key = "</span>);
+<span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>, &amp;new_key);
+find_use = heap-&gt;min;
+find_node(heap, find_use, dec_key, new_key);
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"\n Key decreased- Corresponding heap:\n"</span>);
+new_print_heap(heap-&gt;min);
+}
+<span class="hljs-keyword">break</span>;
+<span class="hljs-keyword">case</span> <span class="hljs-number">7</span>:
+<span class="hljs-keyword">if</span> (heap == <span class="hljs-literal">NULL</span>)
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"Fibonacci heap is empty"</span>);
+<span class="hljs-keyword">else</span>
+{
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">" \n Enter node key to be deleted = "</span>);
+<span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>, &amp;dec_key);
+Delete_Node(heap, dec_key);
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"\n Node Deleted- Corresponding heap:\n"</span>);
+new_print_heap(heap-&gt;min);
+<span class="hljs-keyword">break</span>;
+}
+<span class="hljs-keyword">case</span> <span class="hljs-number">8</span>:
+new_print_heap(heap-&gt;min);
+<span class="hljs-keyword">break</span>;
+
+<span class="hljs-keyword">case</span> <span class="hljs-number">9</span>:
+<span class="hljs-built_in">free</span>(new_node);
+<span class="hljs-built_in">free</span>(heap);
+<span class="hljs-built_in">exit</span>(<span class="hljs-number">0</span>);
+
+<span class="hljs-keyword">default</span>:
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"Invalid choice "</span>);
+}
+}
+}</code></pre></div>
+</div>
+
+<div class="code-editor__area" id="cpp-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="cpp hljs"><span class="hljs-comment">// Operations on a Fibonacci heap in C++</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cmath&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstdlib&gt;</span></span>
+
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">node</span>
+{</span>
+<span class="hljs-keyword">int</span> n;
+<span class="hljs-keyword">int</span> degree;
+node *parent;
+node *child;
+node *left;
+node *right;
+<span class="hljs-keyword">char</span> mark;
+
+<span class="hljs-keyword">char</span> C;
+};
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FibonacciHeap</span>
+{</span>
+<span class="hljs-keyword">private</span>:
+<span class="hljs-keyword">int</span> nH;
+
+node *H;
+
+<span class="hljs-keyword">public</span>:
+<span class="hljs-function">node *<span class="hljs-title">InitializeHeap</span><span class="hljs-params">()</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">Fibonnaci_link</span><span class="hljs-params">(node *, node *, node *)</span></span>;
+<span class="hljs-function">node *<span class="hljs-title">Create_node</span><span class="hljs-params">(<span class="hljs-keyword">int</span>)</span></span>;
+<span class="hljs-function">node *<span class="hljs-title">Insert</span><span class="hljs-params">(node *, node *)</span></span>;
+<span class="hljs-function">node *<span class="hljs-title">Union</span><span class="hljs-params">(node *, node *)</span></span>;
+<span class="hljs-function">node *<span class="hljs-title">Extract_Min</span><span class="hljs-params">(node *)</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">Consolidate</span><span class="hljs-params">(node *)</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">Display</span><span class="hljs-params">(node *)</span></span>;
+<span class="hljs-function">node *<span class="hljs-title">Find</span><span class="hljs-params">(node *, <span class="hljs-keyword">int</span>)</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">Decrease_key</span><span class="hljs-params">(node *, <span class="hljs-keyword">int</span>, <span class="hljs-keyword">int</span>)</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">Delete_key</span><span class="hljs-params">(node *, <span class="hljs-keyword">int</span>)</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">Cut</span><span class="hljs-params">(node *, node *, node *)</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">Cascase_cut</span><span class="hljs-params">(node *, node *)</span></span>;
+FibonacciHeap() { H = InitializeHeap(); }
+};
+
+<span class="hljs-function">node *<span class="hljs-title">FibonacciHeap::InitializeHeap</span><span class="hljs-params">()</span>
+</span>{
+node *np;
+np = <span class="hljs-literal">NULL</span>;
+<span class="hljs-keyword">return</span> np;
+}
+
+<span class="hljs-function">node *<span class="hljs-title">FibonacciHeap::Create_node</span><span class="hljs-params">(<span class="hljs-keyword">int</span> value)</span>
+</span>{
+node *x = <span class="hljs-keyword">new</span> node;
+x-&gt;n = value;
+<span class="hljs-keyword">return</span> x;
+}
+
+<span class="hljs-function">node *<span class="hljs-title">FibonacciHeap::Insert</span><span class="hljs-params">(node *H, node *x)</span>
+</span>{
+x-&gt;degree = <span class="hljs-number">0</span>;
+x-&gt;parent = <span class="hljs-literal">NULL</span>;
+x-&gt;child = <span class="hljs-literal">NULL</span>;
+x-&gt;left = x;
+x-&gt;right = x;
+x-&gt;mark = <span class="hljs-string">'F'</span>;
+x-&gt;C = <span class="hljs-string">'N'</span>;
+<span class="hljs-keyword">if</span> (H != <span class="hljs-literal">NULL</span>)
+{
+(H-&gt;left)-&gt;right = x;
+x-&gt;right = H;
+x-&gt;left = H-&gt;left;
+H-&gt;left = x;
+<span class="hljs-keyword">if</span> (x-&gt;n &lt; H-&gt;n)
+H = x;
+}
+<span class="hljs-keyword">else</span>
+{
+H = x;
+}
+nH = nH + <span class="hljs-number">1</span>;
+<span class="hljs-keyword">return</span> H;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">FibonacciHeap::Fibonnaci_link</span><span class="hljs-params">(node *H1, node *y, node *z)</span>
+</span>{
+(y-&gt;left)-&gt;right = y-&gt;right;
+(y-&gt;right)-&gt;left = y-&gt;left;
+<span class="hljs-keyword">if</span> (z-&gt;right == z)
+H1 = z;
+y-&gt;left = y;
+y-&gt;right = y;
+y-&gt;parent = z;
+
+<span class="hljs-keyword">if</span> (z-&gt;child == <span class="hljs-literal">NULL</span>)
+z-&gt;child = y;
+
+y-&gt;right = z-&gt;child;
+y-&gt;left = (z-&gt;child)-&gt;left;
+((z-&gt;child)-&gt;left)-&gt;right = y;
+(z-&gt;child)-&gt;left = y;
+
+<span class="hljs-keyword">if</span> (y-&gt;n &lt; (z-&gt;child)-&gt;n)
+z-&gt;child = y;
+z-&gt;degree++;
+}
+
+<span class="hljs-function">node *<span class="hljs-title">FibonacciHeap::Union</span><span class="hljs-params">(node *H1, node *H2)</span>
+</span>{
+node *np;
+node *H = InitializeHeap();
+H = H1;
+(H-&gt;left)-&gt;right = H2;
+(H2-&gt;left)-&gt;right = H;
+np = H-&gt;left;
+H-&gt;left = H2-&gt;left;
+H2-&gt;left = np;
+<span class="hljs-keyword">return</span> H;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">FibonacciHeap::Display</span><span class="hljs-params">(node *H)</span>
+</span>{
+node *p = H;
+<span class="hljs-keyword">if</span> (p == <span class="hljs-literal">NULL</span>)
+{
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"The Heap is Empty"</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"The root nodes of Heap are: "</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+
+<span class="hljs-keyword">do</span>
+{
+<span class="hljs-built_in">cout</span> &lt;&lt; p-&gt;n;
+p = p-&gt;right;
+<span class="hljs-keyword">if</span> (p != H)
+{
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"--&gt;"</span>;
+}
+} <span class="hljs-keyword">while</span> (p != H &amp;&amp; p-&gt;right != <span class="hljs-literal">NULL</span>);
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+}
+
+<span class="hljs-function">node *<span class="hljs-title">FibonacciHeap::Extract_Min</span><span class="hljs-params">(node *H1)</span>
+</span>{
+node *p;
+node *ptr;
+node *z = H1;
+p = z;
+ptr = z;
+<span class="hljs-keyword">if</span> (z == <span class="hljs-literal">NULL</span>)
+<span class="hljs-keyword">return</span> z;
+
+node *x;
+node *np;
+
+x = <span class="hljs-literal">NULL</span>;
+
+<span class="hljs-keyword">if</span> (z-&gt;child != <span class="hljs-literal">NULL</span>)
+x = z-&gt;child;
+
+<span class="hljs-keyword">if</span> (x != <span class="hljs-literal">NULL</span>)
+{
+ptr = x;
+<span class="hljs-keyword">do</span>
+{
+np = x-&gt;right;
+(H1-&gt;left)-&gt;right = x;
+x-&gt;right = H1;
+x-&gt;left = H1-&gt;left;
+H1-&gt;left = x;
+<span class="hljs-keyword">if</span> (x-&gt;n &lt; H1-&gt;n)
+H1 = x;
+
+x-&gt;parent = <span class="hljs-literal">NULL</span>;
+x = np;
+} <span class="hljs-keyword">while</span> (np != ptr);
+}
+
+(z-&gt;left)-&gt;right = z-&gt;right;
+(z-&gt;right)-&gt;left = z-&gt;left;
+H1 = z-&gt;right;
+
+<span class="hljs-keyword">if</span> (z == z-&gt;right &amp;&amp; z-&gt;child == <span class="hljs-literal">NULL</span>)
+H = <span class="hljs-literal">NULL</span>;
+
+<span class="hljs-keyword">else</span>
+{
+H1 = z-&gt;right;
+Consolidate(H1);
+}
+nH = nH - <span class="hljs-number">1</span>;
+<span class="hljs-keyword">return</span> p;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">FibonacciHeap::Consolidate</span><span class="hljs-params">(node *H1)</span>
+</span>{
+<span class="hljs-keyword">int</span> d, i;
+<span class="hljs-keyword">float</span> f = (<span class="hljs-built_in">log</span>(nH)) / (<span class="hljs-built_in">log</span>(<span class="hljs-number">2</span>));
+<span class="hljs-keyword">int</span> D = f;
+node *A[D];
+
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt;= D; i++)
+A[i] = <span class="hljs-literal">NULL</span>;
+
+node *x = H1;
+node *y;
+node *np;
+node *pt = x;
+
+<span class="hljs-keyword">do</span>
+{
+pt = pt-&gt;right;
+
+d = x-&gt;degree;
+
+<span class="hljs-keyword">while</span> (A[d] != <span class="hljs-literal">NULL</span>)
+
+{
+y = A[d];
+
+<span class="hljs-keyword">if</span> (x-&gt;n &gt; y-&gt;n)
+
+{
+np = x;
+
+x = y;
+
+y = np;
+}
+
+<span class="hljs-keyword">if</span> (y == H1)
+H1 = x;
+Fibonnaci_link(H1, y, x);
+<span class="hljs-keyword">if</span> (x-&gt;right == x)
+H1 = x;
+A[d] = <span class="hljs-literal">NULL</span>;
+d = d + <span class="hljs-number">1</span>;
+}
+
+A[d] = x;
+x = x-&gt;right;
+
+}
+
+<span class="hljs-keyword">while</span> (x != H1);
+H = <span class="hljs-literal">NULL</span>;
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt;= D; j++)
+{
+<span class="hljs-keyword">if</span> (A[j] != <span class="hljs-literal">NULL</span>)
+{
+A[j]-&gt;left = A[j];
+A[j]-&gt;right = A[j];
+<span class="hljs-keyword">if</span> (H != <span class="hljs-literal">NULL</span>)
+{
+(H-&gt;left)-&gt;right = A[j];
+A[j]-&gt;right = H;
+A[j]-&gt;left = H-&gt;left;
+H-&gt;left = A[j];
+<span class="hljs-keyword">if</span> (A[j]-&gt;n &lt; H-&gt;n)
+H = A[j];
+}
+<span class="hljs-keyword">else</span>
+{
+H = A[j];
+}
+<span class="hljs-keyword">if</span> (H == <span class="hljs-literal">NULL</span>)
+H = A[j];
+<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (A[j]-&gt;n &lt; H-&gt;n)
+H = A[j];
+}
+}
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">FibonacciHeap::Decrease_key</span><span class="hljs-params">(node *H1, <span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> k)</span>
+</span>{
+node *y;
+<span class="hljs-keyword">if</span> (H1 == <span class="hljs-literal">NULL</span>)
+{
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"The Heap is Empty"</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+node *ptr = Find(H1, x);
+<span class="hljs-keyword">if</span> (ptr == <span class="hljs-literal">NULL</span>)
+{
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Node not found in the Heap"</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+<span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
+}
+
+<span class="hljs-keyword">if</span> (ptr-&gt;n &lt; k)
+{
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Entered key greater than current key"</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+ptr-&gt;n = k;
+y = ptr-&gt;parent;
+<span class="hljs-keyword">if</span> (y != <span class="hljs-literal">NULL</span> &amp;&amp; ptr-&gt;n &lt; y-&gt;n)
+{
+Cut(H1, ptr, y);
+Cascase_cut(H1, y);
+}
+
+<span class="hljs-keyword">if</span> (ptr-&gt;n &lt; H-&gt;n)
+H = ptr;
+
+<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">FibonacciHeap::Cut</span><span class="hljs-params">(node *H1, node *x, node *y)</span>
+
+</span>{
+<span class="hljs-keyword">if</span> (x == x-&gt;right)
+y-&gt;child = <span class="hljs-literal">NULL</span>;
+(x-&gt;left)-&gt;right = x-&gt;right;
+(x-&gt;right)-&gt;left = x-&gt;left;
+<span class="hljs-keyword">if</span> (x == y-&gt;child)
+y-&gt;child = x-&gt;right;
+y-&gt;degree = y-&gt;degree - <span class="hljs-number">1</span>;
+x-&gt;right = x;
+x-&gt;left = x;
+(H1-&gt;left)-&gt;right = x;
+x-&gt;right = H1;
+x-&gt;left = H1-&gt;left;
+H1-&gt;left = x;
+x-&gt;parent = <span class="hljs-literal">NULL</span>;
+x-&gt;mark = <span class="hljs-string">'F'</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">FibonacciHeap::Cascase_cut</span><span class="hljs-params">(node *H1, node *y)</span>
+</span>{
+node *z = y-&gt;parent;
+<span class="hljs-keyword">if</span> (z != <span class="hljs-literal">NULL</span>)
+{
+<span class="hljs-keyword">if</span> (y-&gt;mark == <span class="hljs-string">'F'</span>)
+{
+y-&gt;mark = <span class="hljs-string">'T'</span>;
+}
+<span class="hljs-keyword">else</span>
+
+{
+Cut(H1, y, z);
+Cascase_cut(H1, z);
+}
+}
+}
+
+<span class="hljs-function">node *<span class="hljs-title">FibonacciHeap::Find</span><span class="hljs-params">(node *H, <span class="hljs-keyword">int</span> k)</span>
+</span>{
+node *x = H;
+x-&gt;C = <span class="hljs-string">'Y'</span>;
+node *p = <span class="hljs-literal">NULL</span>;
+<span class="hljs-keyword">if</span> (x-&gt;n == k)
+{
+p = x;
+x-&gt;C = <span class="hljs-string">'N'</span>;
+<span class="hljs-keyword">return</span> p;
+}
+
+<span class="hljs-keyword">if</span> (p == <span class="hljs-literal">NULL</span>)
+{
+<span class="hljs-keyword">if</span> (x-&gt;child != <span class="hljs-literal">NULL</span>)
+p = Find(x-&gt;child, k);
+<span class="hljs-keyword">if</span> ((x-&gt;right)-&gt;C != <span class="hljs-string">'Y'</span>)
+p = Find(x-&gt;right, k);
+}
+
+x-&gt;C = <span class="hljs-string">'N'</span>;
+<span class="hljs-keyword">return</span> p;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">FibonacciHeap::Delete_key</span><span class="hljs-params">(node *H1, <span class="hljs-keyword">int</span> k)</span>
+</span>{
+node *np = <span class="hljs-literal">NULL</span>;
+<span class="hljs-keyword">int</span> t;
+t = Decrease_key(H1, k, <span class="hljs-number">-5000</span>);
+<span class="hljs-keyword">if</span> (!t)
+np = Extract_Min(H);
+<span class="hljs-keyword">if</span> (np != <span class="hljs-literal">NULL</span>)
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Key Deleted"</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+<span class="hljs-keyword">else</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Key not Deleted"</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+<span class="hljs-keyword">int</span> n, m, l;
+FibonacciHeap fh;
+node *p;
+node *H;
+H = fh.InitializeHeap();
+
+p = fh.Create_node(<span class="hljs-number">7</span>);
+H = fh.Insert(H, p);
+p = fh.Create_node(<span class="hljs-number">17</span>);
+H = fh.Insert(H, p);
+p = fh.Create_node(<span class="hljs-number">26</span>);
+H = fh.Insert(H, p);
+p = fh.Create_node(<span class="hljs-number">1</span>);
+H = fh.Insert(H, p);
+
+fh.Display(H);
+
+p = fh.Extract_Min(H);
+<span class="hljs-keyword">if</span> (p != <span class="hljs-literal">NULL</span>)
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"The node with minimum key: "</span> &lt;&lt; p-&gt;n &lt;&lt; <span class="hljs-built_in">endl</span>;
+<span class="hljs-keyword">else</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Heap is empty"</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+
+m = <span class="hljs-number">26</span>;
+l = <span class="hljs-number">16</span>;
+fh.Decrease_key(H, m, l);
+
+m = <span class="hljs-number">16</span>;
+fh.Delete_key(H, m);
+}</code></pre></div>
+</div>
+</div>
+
+<hr><h2 id="complexity">Complexities</h2>
+
+<div class="table-responsive">
+<table border="0"><tbody><tr><td>Decrease Key</td>
+          <td>O(1)</td>
+  </tr><tr><td>Delete Node</td>
+          <td>O(log n)</td>
+  </tr></tbody></table></div>
+</div>
+
+
+
+</div>
+
+
+        <div class="tutorial-toc"><div class="tutorial-toc__inner"><h3 class="tutorial-toc__title">Table of Contents
+<button class="btn btn--clear align-items-center">
+<svg class="programiz-icon"><use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#x"></use></svg></button></h3><div class="tutorial-toc__links"><ul><li><a href="#decrease">Decreasing a Key</a></li>
+<li><a href="#example-decrease">Decrease Key Example</a></li>
+<li><a href="#delete">Deleting a Node</a></li>
+<li><a href="#code">Decrease key and Delete node operations in Python, Java and C/C++</a></li>
+<li><a href="#complexity">Complexities</a></li>
+</ul></div></div></div>                          </div>
+<!--second------------------------------------------->
+<div>
+<ul>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/stack.html">
+
+        Stack</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/queue.html">
+
+        Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/types-of-queue.html">
+
+        Types of Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/circular-queue.html">
+
+        Circular Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/priority-queue.html">
+
+        Priority Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deque.html">
+
+        Deque</a></button>
+<br/>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linked-list.html">
+
+        Linked List</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linked-list-operations.html">
+
+        Linked List Operations</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linked-list-types.html">
+
+        Types of Linked List</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/hash-table.html">
+
+        Hash Table</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/heap-data-structure.html">
+
+        Heap Data Structure</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/fibonacci-heap.html">
+
+        Fibonacci Heap</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/decrease-key-and-delete-node-from-a-fibonacci-heap.html">
+
+        Decrease Key and Delete node from Fibonacci Heap</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/trees.html">
+
+        Tree Data Structure</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/tree-traversal.html">
+
+        Tree Traversal</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/binary-tree.html">
+
+        Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/full-binary-tree.html">
+
+        Full Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/perfect-binary-tree.html">
+
+        Perfect Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/complete-binary-tree.html">
+
+        Complete Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/balanced-binary-tree.html">
+
+        Balanced Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/binary-search-tree.html">
+
+        Binary Search Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/avl-tree.html">
+
+        AVL Tree</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/b-tree.html">
+
+        B Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-into-a-b-tree.html">
+
+        Insertion into B-tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deletion-from-a-b-tree.html">
+
+        Deletion from B-tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/b-plus-tree.html">
+
+        B+ Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-on-a-b-plus-tree.html">
+
+        Insertion on a B+ Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deletion-from-a-b-plus-tree.html">
+
+        Deletion from a B+ Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/red-black-tree.html">
+
+        Red Black Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-in-a-red-black-tree.html">
+
+        Insertion in Red Black Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deletion-from-a-red-black-tree.html">
+
+        Deletion from Red Black Tree</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph.html">
+
+        Graph Data Structure</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/spanning-tree-and-minimum-spanning-tree.html">
+
+        Spanning Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/strongly-connected-components.html">
+
+        Strongly Connected Components</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-adjacency-matrix.html">
+
+        Adjacency Matrix</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-adjacency-list.html">
+
+        Adjacency List</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-dfs.html">
+
+        DFS Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-bfs.html">
+
+        Breadth-first Search</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/bellman-ford-algorithm.html">
+
+        Bellman Ford's Algorithm</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/bubble-sort.html">
+
+        Bubble Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/selection-sort.html">
+
+        Selection Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-sort.html">
+
+        Insertion Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/merge-sort.html">
+
+        Merge Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/quick-sort.html">
+
+        Quick Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/counting-sort.html">
+
+        Counting Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/radix-sort.html">
+
+        Radix Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/bucket-sort.html">
+
+        Bucket Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/heap-sort.html">
+
+        Heap Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/shell-sort.html">
+
+        Shell Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linear-search.html">
+
+        Linear Search</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/binary-search.html">
+
+        Binary Search</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/greedy-algorithm.html">
+
+        Greedy Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/ford-fulkerson-algorithm.html">
+
+        Ford-Fulkerson Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/dijkstra-algorithm.html">
+
+        Dijkstra's Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/kruskal-algorithm.html">
+
+        Kruskal's Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/prim-algorithm.html">
+
+        Prim's Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/huffman-coding.html">
+
+        Huffman Code</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/dynamic-programming.html">
+
+        Dynamic Programming</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/floyd-warshall-algorithm.html">
+
+        Floyd Warshall Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/longest-common-subsequence.html">
+
+        Longest Common Subsequence</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/backtracking-algorithm.html">
+
+        Backtracking Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/rabin-karp-algorithm.html">
+
+        Rabin-Karp Algorithm</a></button>
+<br>
+<br/>
+<h2>Free Courses on YouTube</h2>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+            https://www.youtube.com/watch?v=IbSXF7eT-AU&amp;list=PLR_5PTwg_uAQw40OhdvAwN4NvzWv0xOZ2">
+
+            Python Full Course Playlist</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://www.youtube.com/watch?v=UEl6wB90Gs8">
+
+            105 STL Algorithms in Less Than an Hour</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://www.youtube.com/watch?v=zZXTgN7L1UU&amp;list=PLR_5PTwg_uAS6C1cSMjU6oVhOcCX8Zu_4">
+
+            C++ STL Playlist</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://youtu.be/ty9756v3kc8">
+
+            Learn Node.js </a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://youtu.be/exrIpdS3Crc">
+
+            Learn Data Science Full course</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://youtu.be/Q8tDO2uSk5U">
+
+            Learn Computer Networking Full course</a></button>
+<br/>
+</br></br></br></br></br></br></br></br></ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<footer class="afooter" style="margin-left:20px">
+<p>
+<a href="/cookie-policy.html">Cookie policy</a> |
+
+        <a href="/privacy-policy.html">Privacy policy</a> |
+
+        <a href="/terms-of-use.html">Terms of use</a> |
+
+        <a href="/disclaimer.html">Disclaimer</a> |
+
+        <a href="/about-us.html">About Us</a>
+</p>
+<p>
+
+        © 2023 <a href="https://pythonread.github.io">https://pythonread.github.io</a>
+</p>
+</footer>
+<script type="text/javascript">
+
+    document.addEventListener('DOMContentLoaded', function () { htmlTableOfContents() }); function htmlTableOfContents(documentRef) { var documentRef = documentRef || document; var toc = documentRef.getElementById("toc"); var headings = [].slice.call(documentRef.body.querySelectorAll('h2, h3')); headings.forEach(function (heading, index) { var ref = "toc" + index; if (heading.hasAttribute("id")) { ref = heading.getAttribute("id") } else { heading.setAttribute("id", ref) } var link = documentRef.createElement("a"); link.setAttribute("href", "#" + ref); link.textContent = heading.textContent; var div = documentRef.createElement("div"); div.setAttribute("class", heading.tagName.toLowerCase()); div.appendChild(link); toc.appendChild(div) }) } try { module.exports = htmlTableOfContents } catch (e) { } function isScrolledIntoView(el) { var rect = el.getBoundingClientRect(); var elemTop = rect.top; var elemBottom = rect.bottom; var isVisible = (elemTop >= -10) && (elemBottom <= (window.innerHeight)); return isVisible } function highlightMenu() { var headers = document.querySelectorAll("h2, h3"); for (var i = 0; i < headers.length; i += 1) { if (isScrolledIntoView(headers[i])) { var childDivs = document.getElementById('toc').getElementsByTagName('div'); var c = childDivs[i].classList; c.add("active"); for (var j = 0; j < i; j += 1) { var c = childDivs[j].classList; c.remove("active") } for (var j = i + 1; j < childDivs.length; j += 1) { var c = childDivs[j].classList; c.remove("active") } break } } } function highlightMenuLastItem() { var childDivs = document.getElementById('toc').getElementsByTagName('div'); for (var j = 0; j < childDivs.length - 1; j += 1) { var c = childDivs[j].classList; c.remove("active") } var c = childDivs[childDivs.length - 1].classList; c.add("active") } window.addEventListener("click", function (event) { highlightMenu() }); window.onscroll = function (e) { highlightMenu(); if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) { highlightMenuLastItem() } }; function mobileMenu() { var classes = document.getElementById('nav-toggle-icon').classList; if (classes.contains("active")) { classes.remove("active") } else { classes.add("active") } var classes = document.getElementById('menu-wrapper').classList; if (classes.contains("active")) { classes.remove("active") } else { classes.add("active") } }
+
+</script>
+<script type="text/javascript">
+
+    function changepy(){
+
+        document.getElementById('py1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('java1').className = 'tabbed-editor__node';
+
+        document.getElementById('c1').className = 'tabbed-editor__node';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node';
+
+        document.getElementById('python-code').className = 'code-editor__area code-editor__area--active';
+
+        document.getElementById('java-code').className = 'code-editor__area';
+
+        document.getElementById('c-code').className = 'code-editor__area';
+
+        document.getElementById('cpp-code').className = 'code-editor__area';
+
+
+
+    }
+
+    function changecpp(){
+
+        document.getElementById('py1').className = 'tabbed-editor__node';
+
+        document.getElementById('java1').className = 'tabbed-editor__node';
+
+        document.getElementById('c1').className = 'tabbed-editor__node';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('python-code').className = 'code-editor__area';
+
+        document.getElementById('java-code').className = 'code-editor__area';
+
+        document.getElementById('c-code').className = 'code-editor__area';
+
+        document.getElementById('cpp-code').className = 'code-editor__area code-editor__area--active';
+
+    }
+
+    function changejava(){
+
+       document.getElementById('py1').className = 'tabbed-editor__node';
+
+        document.getElementById('java1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('c1').className = 'tabbed-editor__node';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node';
+
+        document.getElementById('python-code').className = 'code-editor__area';
+
+        document.getElementById('java-code').className = 'code-editor__area code-editor__area--active';
+
+        document.getElementById('c-code').className = 'code-editor__area';
+
+        document.getElementById('cpp-code').className = 'code-editor__area';
+
+    }
+
+    function changec(){
+
+        document.getElementById('py1').className = 'tabbed-editor__node';
+
+        document.getElementById('java1').className = 'tabbed-editor__node';
+
+        document.getElementById('c1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node';
+
+        document.getElementById('python-code').className = 'code-editor__area';
+
+        document.getElementById('java-code').className = 'code-editor__area';
+
+        document.getElementById('c-code').className = 'code-editor__area code-editor__area--active';
+
+        document.getElementById('cpp-code').className = 'code-editor__area';
+
+    }
+
+    
+
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>

@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<title>Huffman Coding</title>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-HCERBDV76D"></script>
+<script>
+
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() { dataLayer.push(arguments); }
+
+        gtag('js', new Date());
+
+
+
+        gtag('config', 'G-HCERBDV76D');
+
+    </script>
+<meta content="B0487B46A104E90209E8A3BEA24ECA0E" name="msvalidate.01"/>
+<meta content="f044b3a12c7918f1" name="yandex-verification"/>
+<!--end-->
+<meta content="learn about data types, variables, lists, tuples, dictionaries,if else,DSA,loops,user-defined functions, oop, threading and scripting." name="description"/>
+<meta content="learnPython" name="author"/>
+<meta content="Learn Python for free,learn python for beginners,Core Python,Web frameworks,Multiprocess architecture,Serverside templating language,python tutorials,python4" name="keywords"/>
+<meta content="website" property="og:type"/>
+<meta content="US-CA" name="”geo.region”"/>
+<meta content="353 Jane Stanford Way, Stanford, CA 94305, United States" name="”geo.placename”"/>
+<meta content="37.430089898615456;-122.17332683124829" name="”geo.position”"/>
+<meta content="37.430089898615456, -122.17332683124829" name="”ICBM”"/>
+<link href="https://pythonread.github.io/?m=1" rel="alternate"/>
+<link href="/favicon.png" rel="icon"/>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="/style1.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/style2.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/style0.css" media="all" rel="stylesheet" type="text/css"/>
+<!--<![endif]-->
+</head>
+<body>
+<div class="nav-wrapper">
+<div class="container">
+<nav>
+<div class="logo wave">
+<a href="/" id="logo">
+
+                        Python Tutorial
+
+                    </a>
+</div>
+<div class="nav-toggle-icon" id="nav-toggle-icon" onclick="mobileMenu()">
+<div class="material-hamburger">
+<span>
+</span>
+<span>
+</span>
+<span>
+</span>
+</div>
+</div>
+<div class="menu-wrapper" id="menu-wrapper">
+<div class="nav-indicator">
+</div>
+<ul class="menus">
+<li>
+<a class="wave" href="/">
+
+                                Home
+
+                            </a>
+</li>
+<li>
+<a class="wave" href="/projects.html">
+
+                                Projects
+
+                            </a>
+</li>
+<li>
+<a class="wave" href="/free-course.html" target="_blank">
+
+                                Free Course
+
+                            </a>
+</li>
+<li>
+<a class="wave" href="/dsa.html">
+
+                                DSA
+
+                            </a>
+</li>
+</ul>
+</div>
+</nav>
+</div>
+</div>
+<div class="contents contents--neg" style="margin-top: 60px">
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+<div class="d-flex">
+<div class="left-bar d-none d-lg-block">
+<div class="card-alt mb-10x">
+<h3>Page Index</h3>
+<div class="list">
+<ul>
+<li><a href="/dsa.html#data-structure-1" title="Data Structures (I)">Data Structures
+
+                                                (I)</a></li>
+<li><a href="/dsa.html#data-structure-2" title="Data Structures (II)">Data Structures
+
+                                                (II)</a></li>
+<li><a href="/dsa.html#tree-1" title="Tree based DSA (I)">Tree based DSA (I)</a></li>
+<li><a href="/dsa.html#tree-2" title="Tree based DSA (II)">Tree based DSA (II)</a></li>
+<li><a href="/dsa.html#graph" title="Graph Data Structures and Algorithm">Graph based
+
+                                                DSA</a></li>
+<li><a href="/dsa.html#sorting-searching" title="Sorting and Searching">Sorting and
+
+                                                Searching</a></li>
+<li><a href="/dsa.html#greedy-algorithm" title="Greedy Algorithms">Greedy Algorithms</a>
+</li>
+<li><a href="/dsa.html#dynamic-programming" title="Dynamic Programming">Dynamic
+
+                                                Programming</a></li>
+<li><a href="/dsa.html#other-algorithms" title="Other Algorithms">Other Algorithms</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="right-bar">
+<!--first part end-------------------------------------------->
+
+<div class="editor-contents">
+        <h1>Huffman Coding</h1>
+
+
+        <p class="editor-contents__short-description">In this tutorial, you will learn how Huffman Coding works. Also, you will find working examples of Huffman Coding in C, C++, Java and Python.</p>
+
+
+
+          
+
+
+
+<div id="node-1550" class="node node-algorithm clearfix" about="/dsa/huffman-coding" typeof="sioc:Item foaf:Document">
+
+
+<span property="dc:title" content="Huffman Coding" class="rdf-meta element-hidden"></span>
+
+<div class="content">
+<p id="definition">Huffman Coding is a technique of compressing data to reduce its size without losing any of the details. It was first developed by David Huffman.</p>
+
+<p>Huffman Coding is generally useful to compress the data in which there are frequently occurring characters.</p>
+
+<hr><h2 id="working">How Huffman Coding works?</h2>
+
+<p>Suppose the string below is to be sent over a network.</p>
+
+<figure><img alt="string" src="//cdn.programiz.com/sites/tutorial2program/files/hf-string.png" title="initial string" width="500" height="99"><figcaption>Initial string</figcaption></figure><p>Each character occupies 8 bits. There are a total of 15 characters in the above string. Thus, a total of <code>8 * 15 = 120</code> bits are required to send this string.</p>
+
+<p>Using the Huffman Coding technique, we can compress the string to a smaller size.</p>
+
+<p>Huffman coding first creates a tree using the frequencies of the character and then generates code for each character.</p>
+
+<p>Once the data is encoded, it has to be decoded. Decoding is done using the same tree.</p>
+
+<p>Huffman Coding prevents any ambiguity in the decoding process using the concept of <strong>prefix code</strong> ie. a code associated with a character should not be present in the prefix of any other code. The tree created above helps in maintaining the property.</p>
+
+<p>Huffman coding is done with the help of the following steps.</p>
+
+<ol><li>Calculate the frequency of each character in the string.
+<figure><img alt="frequency of string" src="//cdn.programiz.com/sites/tutorial2program/files/hf-character-frequency.png" title="frequency of string" width="300" height="117"><figcaption>Frequency of string</figcaption></figure></li>
+<li>Sort the characters in increasing order of the frequency. These are stored in a priority queue <var>Q</var>.
+<figure><img alt="huffman coding" src="//cdn.programiz.com/sites/tutorial2program/files/hf-character-frequency-sorted.png" title="characters sorted in according to the frequency" width="300" height="117"><figcaption>Characters sorted according to the frequency</figcaption></figure></li>
+<li>Make each unique character as a leaf node.</li>
+<li>Create an empty node <var>z</var>. Assign the minimum frequency to the left child of z and assign the second minimum frequency to the right child of <var>z</var>. Set the value of the <var>z</var> as the sum of the above two minimum frequencies.
+<figure><img alt="huffman coding" src="//cdn.programiz.com/sites/tutorial2program/files/hf-encoding-1.png" title="getting the sum of the least numbers" width="250" height="278"><figcaption>Getting the sum of the least numbers</figcaption></figure></li>
+<li>Remove these two minimum frequencies from <var>Q</var> and add the sum into the list of frequencies (* denote the internal nodes in the figure above).</li>
+<li>Insert node <var>z</var> into the tree.</li>
+<li>Repeat steps 3 to 5 for all the characters.
+<figure><img alt="huffman coding" src="//cdn.programiz.com/sites/tutorial2program/files/hf-encoding-2.png" title="getting the sum of the least numbers" width="250" height="301"><figcaption>Repeat steps 3 to 5 for all the characters.</figcaption></figure>
+&nbsp;
+
+<figure><img alt="huffman coding" src="//cdn.programiz.com/sites/tutorial2program/files/hf-encoding-3.png" title="getting the sum of the least numbers" width="250" height="358"><figcaption>Repeat steps 3 to 5 for all the characters.</figcaption></figure></li>
+<li>For each non-leaf node, assign 0 to the left edge and 1 to the right edge.
+<figure><img alt="huffman coding" src="//cdn.programiz.com/sites/tutorial2program/files/hf-encoding-4.png" title="getting the sum of the least numbers" width="250" height="271"><figcaption>Assign 0 to the left edge and 1 to the right edge</figcaption></figure></li>
+</ol><p></p><div class="clearfix"></div><p>For sending the above string over a network, we have to send the tree as well as the above compressed-code. The total size is given by the table below.</p>
+
+<p>&nbsp;</p>
+
+<div class="table-responsive">
+<table border="0"><tbody><tr><th>Character</th>
+          <th>Frequency</th>
+          <th>Code</th>
+          <th>Size</th>
+  </tr><tr><td>A</td>
+          <td>5</td>
+          <td>11</td>
+          <td>5*2 = 10</td>
+  </tr><tr><td>B</td>
+          <td>1</td>
+          <td>100</td>
+          <td>1*3 = 3</td>
+  </tr><tr><td>C</td>
+          <td>6</td>
+          <td>0</td>
+          <td>6*1 = 6</td>
+  </tr><tr><td>D</td>
+          <td>3</td>
+          <td>101</td>
+          <td>3*3 = 9</td>
+  </tr><tr><td>4 * 8 = 32 bits</td>
+          <td>15 bits</td>
+          <td>&nbsp;</td>
+          <td>28 bits</td>
+  </tr></tbody></table></div>
+
+<p>&nbsp;</p>
+
+<p>Without encoding, the total size of the string was 120 bits. After encoding the size is reduced to <code>32 + 15 + 28 = 75</code>.</p>
+
+<hr><h2 id="decoding">Decoding the code</h2>
+
+<p>For decoding the code, we can take the code and traverse through the tree to find the character.</p>
+
+<p>Let 101 is to be decoded, we can traverse from the root as in the figure below.</p>
+
+<figure><img alt="huffman coding" src="//cdn.programiz.com/sites/tutorial2program/files/hf-decoding.png" title="decoding" width="250" height="271"><figcaption>Decoding</figcaption></figure><hr><h2 id="algorithm">Huffman Coding Algorithm</h2>
+
+<pre>create a priority queue Q consisting of each unique character.
+sort then in ascending order of their frequencies.
+for all the unique characters:
+create a newNode
+extract minimum value from Q and assign it to leftChild of newNode
+extract minimum value from Q and assign it to rightChild of newNode
+calculate the sum of these two minimum values and assign it to the value of newNode
+insert this newNode into the tree
+return rootNode</pre>
+
+<hr><h2 id="code">Python, Java and C/C++ Examples</h2>
+
+<div class="tabbed-editor">
+        <div id="py1" onclick="changepy()" class="tabbed-editor__node tabbed-editor__node--active"><a href="#python-code">Python</a></div>
+        
+        <div id="java1" onclick="changejava()"  class="tabbed-editor__node"><a href="#java-code">Java</a></div>
+        
+        <div id="c1" onclick="changec()" class="tabbed-editor__node"><a href="#c-code">C</a></div>
+        
+        <div id="cpp1" onclick="changecpp()" class="tabbed-editor__node"><a href="#cpp-code">C++</a></div>
+        </div>
+
+<div class="code-editor code-editor--tabbed">
+<div class="code-editor__area code-editor__area--active" id="python-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="python hljs"><span class="hljs-comment"># Huffman Coding in python</span>
+
+string = <span class="hljs-string">'BCAADDDCCACACAC'</span>
+
+
+<span class="hljs-comment"># Creating tree nodes</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NodeTree</span><span class="hljs-params">(object)</span>:</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, left=None, right=None)</span>:</span>
+self.left = left
+self.right = right
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">children</span><span class="hljs-params">(self)</span>:</span>
+<span class="hljs-keyword">return</span> (self.left, self.right)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">nodes</span><span class="hljs-params">(self)</span>:</span>
+<span class="hljs-keyword">return</span> (self.left, self.right)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__str__</span><span class="hljs-params">(self)</span>:</span>
+<span class="hljs-keyword">return</span> <span class="hljs-string">'%s_%s'</span> % (self.left, self.right)
+
+
+<span class="hljs-comment"># Main function implementing huffman coding</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">huffman_code_tree</span><span class="hljs-params">(node, left=True, binString=<span class="hljs-string">''</span>)</span>:</span>
+<span class="hljs-keyword">if</span> type(node) <span class="hljs-keyword">is</span> str:
+<span class="hljs-keyword">return</span> {node: binString}
+(l, r) = node.children()
+d = dict()
+d.update(huffman_code_tree(l, <span class="hljs-literal">True</span>, binString + <span class="hljs-string">'0'</span>))
+d.update(huffman_code_tree(r, <span class="hljs-literal">False</span>, binString + <span class="hljs-string">'1'</span>))
+<span class="hljs-keyword">return</span> d
+
+
+<span class="hljs-comment"># Calculating frequency</span>
+freq = {}
+<span class="hljs-keyword">for</span> c <span class="hljs-keyword">in</span> string:
+<span class="hljs-keyword">if</span> c <span class="hljs-keyword">in</span> freq:
+freq[c] += <span class="hljs-number">1</span>
+<span class="hljs-keyword">else</span>:
+freq[c] = <span class="hljs-number">1</span>
+
+freq = sorted(freq.items(), key=<span class="hljs-keyword">lambda</span> x: x[<span class="hljs-number">1</span>], reverse=<span class="hljs-literal">True</span>)
+
+nodes = freq
+
+<span class="hljs-keyword">while</span> len(nodes) &gt; <span class="hljs-number">1</span>:
+(key1, c1) = nodes[<span class="hljs-number">-1</span>]
+(key2, c2) = nodes[<span class="hljs-number">-2</span>]
+nodes = nodes[:<span class="hljs-number">-2</span>]
+node = NodeTree(key1, key2)
+nodes.append((node, c1 + c2))
+
+nodes = sorted(nodes, key=<span class="hljs-keyword">lambda</span> x: x[<span class="hljs-number">1</span>], reverse=<span class="hljs-literal">True</span>)
+
+huffmanCode = huffman_code_tree(nodes[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>])
+
+<span class="hljs-keyword">print</span>(<span class="hljs-string">' Char | Huffman code '</span>)
+<span class="hljs-keyword">print</span>(<span class="hljs-string">'----------------------'</span>)
+<span class="hljs-keyword">for</span> (char, frequency) <span class="hljs-keyword">in</span> freq:
+<span class="hljs-keyword">print</span>(<span class="hljs-string">' %-4r |%12s'</span> % (char, huffmanCode[char]))</code></pre></div>
+</div>
+
+<div class="code-editor__area" id="java-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="java hljs"><span class="hljs-comment">// Huffman Coding in Java</span>
+
+<span class="hljs-keyword">import</span> java.util.PriorityQueue;
+<span class="hljs-keyword">import</span> java.util.Comparator;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HuffmanNode</span> </span>{
+<span class="hljs-keyword">int</span> item;
+<span class="hljs-keyword">char</span> c;
+HuffmanNode left;
+HuffmanNode right;
+}
+
+<span class="hljs-comment">// For comparing the nodes</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ImplementComparator</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Comparator</span>&lt;<span class="hljs-title">HuffmanNode</span>&gt; </span>{
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">compare</span><span class="hljs-params">(HuffmanNode x, HuffmanNode y)</span> </span>{
+<span class="hljs-keyword">return</span> x.item - y.item;
+}
+}
+
+<span class="hljs-comment">// IMplementing the huffman algorithm</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Huffman</span> </span>{
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">printCode</span><span class="hljs-params">(HuffmanNode root, String s)</span> </span>{
+<span class="hljs-keyword">if</span> (root.left == <span class="hljs-keyword">null</span> &amp;&amp; root.right == <span class="hljs-keyword">null</span> &amp;&amp; Character.isLetter(root.c)) {
+
+System.out.println(root.c + <span class="hljs-string">"   |  "</span> + s);
+
+<span class="hljs-keyword">return</span>;
+}
+printCode(root.left, s + <span class="hljs-string">"0"</span>);
+printCode(root.right, s + <span class="hljs-string">"1"</span>);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+
+<span class="hljs-keyword">int</span> n = <span class="hljs-number">4</span>;
+<span class="hljs-keyword">char</span>[] charArray = { <span class="hljs-string">'A'</span>, <span class="hljs-string">'B'</span>, <span class="hljs-string">'C'</span>, <span class="hljs-string">'D'</span> };
+<span class="hljs-keyword">int</span>[] charfreq = { <span class="hljs-number">5</span>, <span class="hljs-number">1</span>, <span class="hljs-number">6</span>, <span class="hljs-number">3</span> };
+
+PriorityQueue&lt;HuffmanNode&gt; q = <span class="hljs-keyword">new</span> PriorityQueue&lt;HuffmanNode&gt;(n, <span class="hljs-keyword">new</span> ImplementComparator());
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) {
+HuffmanNode hn = <span class="hljs-keyword">new</span> HuffmanNode();
+
+hn.c = charArray[i];
+hn.item = charfreq[i];
+
+hn.left = <span class="hljs-keyword">null</span>;
+hn.right = <span class="hljs-keyword">null</span>;
+
+q.add(hn);
+}
+
+HuffmanNode root = <span class="hljs-keyword">null</span>;
+
+<span class="hljs-keyword">while</span> (q.size() &gt; <span class="hljs-number">1</span>) {
+
+HuffmanNode x = q.peek();
+q.poll();
+
+HuffmanNode y = q.peek();
+q.poll();
+
+HuffmanNode f = <span class="hljs-keyword">new</span> HuffmanNode();
+
+f.item = x.item + y.item;
+f.c = <span class="hljs-string">'-'</span>;
+f.left = x;
+f.right = y;
+root = f;
+
+q.add(f);
+}
+System.out.println(<span class="hljs-string">" Char | Huffman code "</span>);
+System.out.println(<span class="hljs-string">"--------------------"</span>);
+printCode(root, <span class="hljs-string">""</span>);
+}
+}</code></pre></div>
+</div>
+
+<div class="code-editor__area" id="c-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="c hljs cpp"><span class="hljs-comment">// Huffman Coding in C</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdlib.h&gt;</span></span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> MAX_TREE_HT 50</span>
+
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">MinHNode</span> {</span>
+<span class="hljs-keyword">char</span> item;
+<span class="hljs-keyword">unsigned</span> freq;
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">MinHNode</span> *<span class="hljs-title">left</span>, *<span class="hljs-title">right</span>;</span>
+};
+
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">MinHeap</span> {</span>
+<span class="hljs-keyword">unsigned</span> size;
+<span class="hljs-keyword">unsigned</span> capacity;
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">MinHNode</span> **<span class="hljs-title">array</span>;</span>
+};
+
+<span class="hljs-comment">// Create nodes</span>
+<span class="hljs-function">struct MinHNode *<span class="hljs-title">newNode</span><span class="hljs-params">(<span class="hljs-keyword">char</span> item, <span class="hljs-keyword">unsigned</span> freq)</span> </span>{
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">MinHNode</span> *<span class="hljs-title">temp</span> = (<span class="hljs-title">struct</span> <span class="hljs-title">MinHNode</span> *)<span class="hljs-title">malloc</span>(<span class="hljs-title">sizeof</span>(<span class="hljs-title">struct</span> <span class="hljs-title">MinHNode</span>));</span>
+
+temp-&gt;left = temp-&gt;right = <span class="hljs-literal">NULL</span>;
+temp-&gt;item = item;
+temp-&gt;freq = freq;
+
+<span class="hljs-keyword">return</span> temp;
+}
+
+<span class="hljs-comment">// Create min heap</span>
+<span class="hljs-function">struct MinHeap *<span class="hljs-title">createMinH</span><span class="hljs-params">(<span class="hljs-keyword">unsigned</span> capacity)</span> </span>{
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">MinHeap</span> *<span class="hljs-title">minHeap</span> = (<span class="hljs-title">struct</span> <span class="hljs-title">MinHeap</span> *)<span class="hljs-title">malloc</span>(<span class="hljs-title">sizeof</span>(<span class="hljs-title">struct</span> <span class="hljs-title">MinHeap</span>));</span>
+
+minHeap-&gt;size = <span class="hljs-number">0</span>;
+
+minHeap-&gt;capacity = capacity;
+
+minHeap-&gt;<span class="hljs-built_in">array</span> = (struct MinHNode **)<span class="hljs-built_in">malloc</span>(minHeap-&gt;capacity * <span class="hljs-keyword">sizeof</span>(struct MinHNode *));
+<span class="hljs-keyword">return</span> minHeap;
+}
+
+<span class="hljs-comment">// Function to swap</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">swapMinHNode</span><span class="hljs-params">(struct MinHNode **a, struct MinHNode **b)</span> </span>{
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">MinHNode</span> *<span class="hljs-title">t</span> = *<span class="hljs-title">a</span>;</span>
+*a = *b;
+*b = t;
+}
+
+<span class="hljs-comment">// Heapify</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">minHeapify</span><span class="hljs-params">(struct MinHeap *minHeap, <span class="hljs-keyword">int</span> idx)</span> </span>{
+<span class="hljs-keyword">int</span> smallest = idx;
+<span class="hljs-keyword">int</span> left = <span class="hljs-number">2</span> * idx + <span class="hljs-number">1</span>;
+<span class="hljs-keyword">int</span> right = <span class="hljs-number">2</span> * idx + <span class="hljs-number">2</span>;
+
+<span class="hljs-keyword">if</span> (left &lt; minHeap-&gt;size &amp;&amp; minHeap-&gt;<span class="hljs-built_in">array</span>[left]-&gt;freq &lt; minHeap-&gt;<span class="hljs-built_in">array</span>[smallest]-&gt;freq)
+smallest = left;
+
+<span class="hljs-keyword">if</span> (right &lt; minHeap-&gt;size &amp;&amp; minHeap-&gt;<span class="hljs-built_in">array</span>[right]-&gt;freq &lt; minHeap-&gt;<span class="hljs-built_in">array</span>[smallest]-&gt;freq)
+smallest = right;
+
+<span class="hljs-keyword">if</span> (smallest != idx) {
+swapMinHNode(&amp;minHeap-&gt;<span class="hljs-built_in">array</span>[smallest], &amp;minHeap-&gt;<span class="hljs-built_in">array</span>[idx]);
+minHeapify(minHeap, smallest);
+}
+}
+
+<span class="hljs-comment">// Check if size if 1</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">checkSizeOne</span><span class="hljs-params">(struct MinHeap *minHeap)</span> </span>{
+<span class="hljs-keyword">return</span> (minHeap-&gt;size == <span class="hljs-number">1</span>);
+}
+
+<span class="hljs-comment">// Extract min</span>
+<span class="hljs-function">struct MinHNode *<span class="hljs-title">extractMin</span><span class="hljs-params">(struct MinHeap *minHeap)</span> </span>{
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">MinHNode</span> *<span class="hljs-title">temp</span> = <span class="hljs-title">minHeap</span>-&gt;<span class="hljs-title">array</span>[0];</span>
+minHeap-&gt;<span class="hljs-built_in">array</span>[<span class="hljs-number">0</span>] = minHeap-&gt;<span class="hljs-built_in">array</span>[minHeap-&gt;size - <span class="hljs-number">1</span>];
+
+--minHeap-&gt;size;
+minHeapify(minHeap, <span class="hljs-number">0</span>);
+
+<span class="hljs-keyword">return</span> temp;
+}
+
+<span class="hljs-comment">// Insertion function</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">insertMinHeap</span><span class="hljs-params">(struct MinHeap *minHeap, struct MinHNode *minHeapNode)</span> </span>{
+++minHeap-&gt;size;
+<span class="hljs-keyword">int</span> i = minHeap-&gt;size - <span class="hljs-number">1</span>;
+
+<span class="hljs-keyword">while</span> (i &amp;&amp; minHeapNode-&gt;freq &lt; minHeap-&gt;<span class="hljs-built_in">array</span>[(i - <span class="hljs-number">1</span>) / <span class="hljs-number">2</span>]-&gt;freq) {
+minHeap-&gt;<span class="hljs-built_in">array</span>[i] = minHeap-&gt;<span class="hljs-built_in">array</span>[(i - <span class="hljs-number">1</span>) / <span class="hljs-number">2</span>];
+i = (i - <span class="hljs-number">1</span>) / <span class="hljs-number">2</span>;
+}
+minHeap-&gt;<span class="hljs-built_in">array</span>[i] = minHeapNode;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">buildMinHeap</span><span class="hljs-params">(struct MinHeap *minHeap)</span> </span>{
+<span class="hljs-keyword">int</span> n = minHeap-&gt;size - <span class="hljs-number">1</span>;
+<span class="hljs-keyword">int</span> i;
+
+<span class="hljs-keyword">for</span> (i = (n - <span class="hljs-number">1</span>) / <span class="hljs-number">2</span>; i &gt;= <span class="hljs-number">0</span>; --i)
+minHeapify(minHeap, i);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">isLeaf</span><span class="hljs-params">(struct MinHNode *root)</span> </span>{
+<span class="hljs-keyword">return</span> !(root-&gt;left) &amp;&amp; !(root-&gt;right);
+}
+
+<span class="hljs-function">struct MinHeap *<span class="hljs-title">createAndBuildMinHeap</span><span class="hljs-params">(<span class="hljs-keyword">char</span> item[], <span class="hljs-keyword">int</span> freq[], <span class="hljs-keyword">int</span> size)</span> </span>{
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">MinHeap</span> *<span class="hljs-title">minHeap</span> = <span class="hljs-title">createMinH</span>(<span class="hljs-title">size</span>);</span>
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; size; ++i)
+minHeap-&gt;<span class="hljs-built_in">array</span>[i] = newNode(item[i], freq[i]);
+
+minHeap-&gt;size = size;
+buildMinHeap(minHeap);
+
+<span class="hljs-keyword">return</span> minHeap;
+}
+
+<span class="hljs-function">struct MinHNode *<span class="hljs-title">buildHuffmanTree</span><span class="hljs-params">(<span class="hljs-keyword">char</span> item[], <span class="hljs-keyword">int</span> freq[], <span class="hljs-keyword">int</span> size)</span> </span>{
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">MinHNode</span> *<span class="hljs-title">left</span>, *<span class="hljs-title">right</span>, *<span class="hljs-title">top</span>;</span>
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">MinHeap</span> *<span class="hljs-title">minHeap</span> = <span class="hljs-title">createAndBuildMinHeap</span>(<span class="hljs-title">item</span>, <span class="hljs-title">freq</span>, <span class="hljs-title">size</span>);</span>
+
+<span class="hljs-keyword">while</span> (!checkSizeOne(minHeap)) {
+left = extractMin(minHeap);
+right = extractMin(minHeap);
+
+top = newNode(<span class="hljs-string">'$'</span>, left-&gt;freq + right-&gt;freq);
+
+top-&gt;left = left;
+top-&gt;right = right;
+
+insertMinHeap(minHeap, top);
+}
+<span class="hljs-keyword">return</span> extractMin(minHeap);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">printHCodes</span><span class="hljs-params">(struct MinHNode *root, <span class="hljs-keyword">int</span> arr[], <span class="hljs-keyword">int</span> top)</span> </span>{
+<span class="hljs-keyword">if</span> (root-&gt;left) {
+arr[top] = <span class="hljs-number">0</span>;
+printHCodes(root-&gt;left, arr, top + <span class="hljs-number">1</span>);
+}
+<span class="hljs-keyword">if</span> (root-&gt;right) {
+arr[top] = <span class="hljs-number">1</span>;
+printHCodes(root-&gt;right, arr, top + <span class="hljs-number">1</span>);
+}
+<span class="hljs-keyword">if</span> (isLeaf(root)) {
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"  %c   | "</span>, root-&gt;item);
+printArray(arr, top);
+}
+}
+
+<span class="hljs-comment">// Wrapper function</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">HuffmanCodes</span><span class="hljs-params">(<span class="hljs-keyword">char</span> item[], <span class="hljs-keyword">int</span> freq[], <span class="hljs-keyword">int</span> size)</span> </span>{
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">MinHNode</span> *<span class="hljs-title">root</span> = <span class="hljs-title">buildHuffmanTree</span>(<span class="hljs-title">item</span>, <span class="hljs-title">freq</span>, <span class="hljs-title">size</span>);</span>
+
+<span class="hljs-keyword">int</span> arr[MAX_TREE_HT], top = <span class="hljs-number">0</span>;
+
+printHCodes(root, arr, top);
+}
+
+<span class="hljs-comment">// Print the array</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">printArray</span><span class="hljs-params">(<span class="hljs-keyword">int</span> arr[], <span class="hljs-keyword">int</span> n)</span> </span>{
+<span class="hljs-keyword">int</span> i;
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; n; ++i)
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d"</span>, arr[i]);
+
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"\n"</span>);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-keyword">char</span> arr[] = {<span class="hljs-string">'A'</span>, <span class="hljs-string">'B'</span>, <span class="hljs-string">'C'</span>, <span class="hljs-string">'D'</span>};
+<span class="hljs-keyword">int</span> freq[] = {<span class="hljs-number">5</span>, <span class="hljs-number">1</span>, <span class="hljs-number">6</span>, <span class="hljs-number">3</span>};
+
+<span class="hljs-keyword">int</span> size = <span class="hljs-keyword">sizeof</span>(arr) / <span class="hljs-keyword">sizeof</span>(arr[<span class="hljs-number">0</span>]);
+
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">" Char | Huffman code "</span>);
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"\n--------------------\n"</span>);
+
+HuffmanCodes(arr, freq, size);
+}</code></pre></div>
+</div>
+
+<div class="code-editor__area" id="cpp-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="cpp hljs"><span class="hljs-comment">// Huffman Coding in C++</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> MAX_TREE_HT 50</span>
+
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">MinHNode</span> {</span>
+<span class="hljs-keyword">unsigned</span> freq;
+<span class="hljs-keyword">char</span> item;
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">MinHNode</span> *<span class="hljs-title">left</span>, *<span class="hljs-title">right</span>;</span>
+};
+
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">MinH</span> {</span>
+<span class="hljs-keyword">unsigned</span> size;
+<span class="hljs-keyword">unsigned</span> capacity;
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">MinHNode</span> **<span class="hljs-title">array</span>;</span>
+};
+
+<span class="hljs-comment">// Creating Huffman tree node</span>
+<span class="hljs-function">struct MinHNode *<span class="hljs-title">newNode</span><span class="hljs-params">(<span class="hljs-keyword">char</span> item, <span class="hljs-keyword">unsigned</span> freq)</span> </span>{
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">MinHNode</span> *<span class="hljs-title">temp</span> = (<span class="hljs-title">struct</span> <span class="hljs-title">MinHNode</span> *)<span class="hljs-title">malloc</span>(<span class="hljs-title">sizeof</span>(<span class="hljs-title">struct</span> <span class="hljs-title">MinHNode</span>));</span>
+
+temp-&gt;left = temp-&gt;right = <span class="hljs-literal">NULL</span>;
+temp-&gt;item = item;
+temp-&gt;freq = freq;
+
+<span class="hljs-keyword">return</span> temp;
+}
+
+<span class="hljs-comment">// Create min heap using given capacity</span>
+<span class="hljs-function">struct MinH *<span class="hljs-title">createMinH</span><span class="hljs-params">(<span class="hljs-keyword">unsigned</span> capacity)</span> </span>{
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">MinH</span> *<span class="hljs-title">minHeap</span> = (<span class="hljs-title">struct</span> <span class="hljs-title">MinH</span> *)<span class="hljs-title">malloc</span>(<span class="hljs-title">sizeof</span>(<span class="hljs-title">struct</span> <span class="hljs-title">MinH</span>));</span>
+minHeap-&gt;size = <span class="hljs-number">0</span>;
+minHeap-&gt;capacity = capacity;
+minHeap-&gt;<span class="hljs-built_in">array</span> = (struct MinHNode **)<span class="hljs-built_in">malloc</span>(minHeap-&gt;capacity * <span class="hljs-keyword">sizeof</span>(struct MinHNode *));
+<span class="hljs-keyword">return</span> minHeap;
+}
+
+<span class="hljs-comment">// Print the array</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">printArray</span><span class="hljs-params">(<span class="hljs-keyword">int</span> arr[], <span class="hljs-keyword">int</span> n)</span> </span>{
+<span class="hljs-keyword">int</span> i;
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; n; ++i)
+<span class="hljs-built_in">cout</span> &lt;&lt; arr[i];
+
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"\n"</span>;
+}
+
+<span class="hljs-comment">// Swap function</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">swapMinHNode</span><span class="hljs-params">(struct MinHNode **a, struct MinHNode **b)</span> </span>{
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">MinHNode</span> *<span class="hljs-title">t</span> = *<span class="hljs-title">a</span>;</span>
+*a = *b;
+*b = t;
+}
+
+<span class="hljs-comment">// Heapify</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">minHeapify</span><span class="hljs-params">(struct MinH *minHeap, <span class="hljs-keyword">int</span> idx)</span> </span>{
+<span class="hljs-keyword">int</span> smallest = idx;
+<span class="hljs-keyword">int</span> left = <span class="hljs-number">2</span> * idx + <span class="hljs-number">1</span>;
+<span class="hljs-keyword">int</span> right = <span class="hljs-number">2</span> * idx + <span class="hljs-number">2</span>;
+
+<span class="hljs-keyword">if</span> (left &lt; minHeap-&gt;size &amp;&amp; minHeap-&gt;<span class="hljs-built_in">array</span>[left]-&gt;freq &lt; minHeap-&gt;<span class="hljs-built_in">array</span>[smallest]-&gt;freq)
+smallest = left;
+
+<span class="hljs-keyword">if</span> (right &lt; minHeap-&gt;size &amp;&amp; minHeap-&gt;<span class="hljs-built_in">array</span>[right]-&gt;freq &lt; minHeap-&gt;<span class="hljs-built_in">array</span>[smallest]-&gt;freq)
+smallest = right;
+
+<span class="hljs-keyword">if</span> (smallest != idx) {
+swapMinHNode(&amp;minHeap-&gt;<span class="hljs-built_in">array</span>[smallest],
+&amp;minHeap-&gt;<span class="hljs-built_in">array</span>[idx]);
+minHeapify(minHeap, smallest);
+}
+}
+
+<span class="hljs-comment">// Check if size if 1</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">checkSizeOne</span><span class="hljs-params">(struct MinH *minHeap)</span> </span>{
+<span class="hljs-keyword">return</span> (minHeap-&gt;size == <span class="hljs-number">1</span>);
+}
+
+<span class="hljs-comment">// Extract the min</span>
+<span class="hljs-function">struct MinHNode *<span class="hljs-title">extractMin</span><span class="hljs-params">(struct MinH *minHeap)</span> </span>{
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">MinHNode</span> *<span class="hljs-title">temp</span> = <span class="hljs-title">minHeap</span>-&gt;<span class="hljs-title">array</span>[0];</span>
+minHeap-&gt;<span class="hljs-built_in">array</span>[<span class="hljs-number">0</span>] = minHeap-&gt;<span class="hljs-built_in">array</span>[minHeap-&gt;size - <span class="hljs-number">1</span>];
+
+--minHeap-&gt;size;
+minHeapify(minHeap, <span class="hljs-number">0</span>);
+
+<span class="hljs-keyword">return</span> temp;
+}
+
+<span class="hljs-comment">// Insertion</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">insertMinHeap</span><span class="hljs-params">(struct MinH *minHeap, struct MinHNode *minHeapNode)</span> </span>{
+++minHeap-&gt;size;
+<span class="hljs-keyword">int</span> i = minHeap-&gt;size - <span class="hljs-number">1</span>;
+
+<span class="hljs-keyword">while</span> (i &amp;&amp; minHeapNode-&gt;freq &lt; minHeap-&gt;<span class="hljs-built_in">array</span>[(i - <span class="hljs-number">1</span>) / <span class="hljs-number">2</span>]-&gt;freq) {
+minHeap-&gt;<span class="hljs-built_in">array</span>[i] = minHeap-&gt;<span class="hljs-built_in">array</span>[(i - <span class="hljs-number">1</span>) / <span class="hljs-number">2</span>];
+i = (i - <span class="hljs-number">1</span>) / <span class="hljs-number">2</span>;
+}
+
+minHeap-&gt;<span class="hljs-built_in">array</span>[i] = minHeapNode;
+}
+
+<span class="hljs-comment">// BUild min heap</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">buildMinHeap</span><span class="hljs-params">(struct MinH *minHeap)</span> </span>{
+<span class="hljs-keyword">int</span> n = minHeap-&gt;size - <span class="hljs-number">1</span>;
+<span class="hljs-keyword">int</span> i;
+
+<span class="hljs-keyword">for</span> (i = (n - <span class="hljs-number">1</span>) / <span class="hljs-number">2</span>; i &gt;= <span class="hljs-number">0</span>; --i)
+minHeapify(minHeap, i);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">isLeaf</span><span class="hljs-params">(struct MinHNode *root)</span> </span>{
+<span class="hljs-keyword">return</span> !(root-&gt;left) &amp;&amp; !(root-&gt;right);
+}
+
+<span class="hljs-function">struct MinH *<span class="hljs-title">createAndBuildMinHeap</span><span class="hljs-params">(<span class="hljs-keyword">char</span> item[], <span class="hljs-keyword">int</span> freq[], <span class="hljs-keyword">int</span> size)</span> </span>{
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">MinH</span> *<span class="hljs-title">minHeap</span> = <span class="hljs-title">createMinH</span>(<span class="hljs-title">size</span>);</span>
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; size; ++i)
+minHeap-&gt;<span class="hljs-built_in">array</span>[i] = newNode(item[i], freq[i]);
+
+minHeap-&gt;size = size;
+buildMinHeap(minHeap);
+
+<span class="hljs-keyword">return</span> minHeap;
+}
+
+<span class="hljs-function">struct MinHNode *<span class="hljs-title">buildHfTree</span><span class="hljs-params">(<span class="hljs-keyword">char</span> item[], <span class="hljs-keyword">int</span> freq[], <span class="hljs-keyword">int</span> size)</span> </span>{
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">MinHNode</span> *<span class="hljs-title">left</span>, *<span class="hljs-title">right</span>, *<span class="hljs-title">top</span>;</span>
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">MinH</span> *<span class="hljs-title">minHeap</span> = <span class="hljs-title">createAndBuildMinHeap</span>(<span class="hljs-title">item</span>, <span class="hljs-title">freq</span>, <span class="hljs-title">size</span>);</span>
+
+<span class="hljs-keyword">while</span> (!checkSizeOne(minHeap)) {
+left = extractMin(minHeap);
+right = extractMin(minHeap);
+
+top = newNode(<span class="hljs-string">'$'</span>, left-&gt;freq + right-&gt;freq);
+
+top-&gt;left = left;
+top-&gt;right = right;
+
+insertMinHeap(minHeap, top);
+}
+<span class="hljs-keyword">return</span> extractMin(minHeap);
+}
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">printHCodes</span><span class="hljs-params">(struct MinHNode *root, <span class="hljs-keyword">int</span> arr[], <span class="hljs-keyword">int</span> top)</span> </span>{
+<span class="hljs-keyword">if</span> (root-&gt;left) {
+arr[top] = <span class="hljs-number">0</span>;
+printHCodes(root-&gt;left, arr, top + <span class="hljs-number">1</span>);
+}
+
+<span class="hljs-keyword">if</span> (root-&gt;right) {
+arr[top] = <span class="hljs-number">1</span>;
+printHCodes(root-&gt;right, arr, top + <span class="hljs-number">1</span>);
+}
+<span class="hljs-keyword">if</span> (isLeaf(root)) {
+<span class="hljs-built_in">cout</span> &lt;&lt; root-&gt;item &lt;&lt; <span class="hljs-string">"  | "</span>;
+printArray(arr, top);
+}
+}
+
+<span class="hljs-comment">// Wrapper function</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">HuffmanCodes</span><span class="hljs-params">(<span class="hljs-keyword">char</span> item[], <span class="hljs-keyword">int</span> freq[], <span class="hljs-keyword">int</span> size)</span> </span>{
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">MinHNode</span> *<span class="hljs-title">root</span> = <span class="hljs-title">buildHfTree</span>(<span class="hljs-title">item</span>, <span class="hljs-title">freq</span>, <span class="hljs-title">size</span>);</span>
+
+<span class="hljs-keyword">int</span> arr[MAX_TREE_HT], top = <span class="hljs-number">0</span>;
+
+printHCodes(root, arr, top);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-keyword">char</span> arr[] = {<span class="hljs-string">'A'</span>, <span class="hljs-string">'B'</span>, <span class="hljs-string">'C'</span>, <span class="hljs-string">'D'</span>};
+<span class="hljs-keyword">int</span> freq[] = {<span class="hljs-number">5</span>, <span class="hljs-number">1</span>, <span class="hljs-number">6</span>, <span class="hljs-number">3</span>};
+
+<span class="hljs-keyword">int</span> size = <span class="hljs-keyword">sizeof</span>(arr) / <span class="hljs-keyword">sizeof</span>(arr[<span class="hljs-number">0</span>]);
+
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Char | Huffman code "</span>;
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"\n----------------------\n"</span>;
+HuffmanCodes(arr, freq, size);
+}</code></pre></div>
+</div>
+</div>
+
+<hr><h2 id="complexity">Huffman Coding Complexity</h2>
+
+<p>The time complexity for encoding each unique character based on its frequency is <code>O(nlog n)</code>.</p>
+
+<p>Extracting minimum frequency from the priority queue takes place <code>2*(n-1)</code> times and its complexity is <code>O(log n)</code>. Thus the overall complexity is <code>O(nlog n)</code>.</p>
+
+<hr><h2 id="application">Huffman Coding Applications</h2>
+
+<ul><li>Huffman coding is used in conventional compression formats like GZIP, BZIP2, PKZIP, etc.</li>
+<li>For text and fax transmissions.</li>
+</ul></div>
+
+
+
+</div>
+
+
+        <div class="tutorial-toc"><div class="tutorial-toc__inner"><h3 class="tutorial-toc__title">Table of Contents
+<button class="btn btn--clear align-items-center">
+<svg class="programiz-icon"><use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#x"></use></svg></button></h3><div class="tutorial-toc__links"><ul><li><a href="#definition">Definition</a></li>
+<li><a href="#working">How Huffman Coding works? </a></li>
+<li><a href="#decoding">Decoding the code </a></li>
+<li><a href="#algorithm">Huffman Coding Algorithm </a></li>
+<li><a href="#code">Python, Java and C/C++ Examples </a></li>
+<li><a href="#complexity">Huffman Coding Complexity </a></li>
+<li><a href="#application">Huffman Coding Applications </a></li>
+</ul></div></div></div>                          </div>
+<!--second------------------------------------------->
+<div>
+<ul>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/stack.html">
+
+        Stack</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/queue.html">
+
+        Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/types-of-queue.html">
+
+        Types of Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/circular-queue.html">
+
+        Circular Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/priority-queue.html">
+
+        Priority Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deque.html">
+
+        Deque</a></button>
+<br/>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linked-list.html">
+
+        Linked List</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linked-list-operations.html">
+
+        Linked List Operations</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linked-list-types.html">
+
+        Types of Linked List</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/hash-table.html">
+
+        Hash Table</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/heap-data-structure.html">
+
+        Heap Data Structure</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/fibonacci-heap.html">
+
+        Fibonacci Heap</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/decrease-key-and-delete-node-from-a-fibonacci-heap.html">
+
+        Decrease Key and Delete node from Fibonacci Heap</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/trees.html">
+
+        Tree Data Structure</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/tree-traversal.html">
+
+        Tree Traversal</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/binary-tree.html">
+
+        Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/full-binary-tree.html">
+
+        Full Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/perfect-binary-tree.html">
+
+        Perfect Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/complete-binary-tree.html">
+
+        Complete Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/balanced-binary-tree.html">
+
+        Balanced Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/binary-search-tree.html">
+
+        Binary Search Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/avl-tree.html">
+
+        AVL Tree</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/b-tree.html">
+
+        B Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-into-a-b-tree.html">
+
+        Insertion into B-tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deletion-from-a-b-tree.html">
+
+        Deletion from B-tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/b-plus-tree.html">
+
+        B+ Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-on-a-b-plus-tree.html">
+
+        Insertion on a B+ Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deletion-from-a-b-plus-tree.html">
+
+        Deletion from a B+ Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/red-black-tree.html">
+
+        Red Black Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-in-a-red-black-tree.html">
+
+        Insertion in Red Black Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deletion-from-a-red-black-tree.html">
+
+        Deletion from Red Black Tree</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph.html">
+
+        Graph Data Structure</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/spanning-tree-and-minimum-spanning-tree.html">
+
+        Spanning Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/strongly-connected-components.html">
+
+        Strongly Connected Components</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-adjacency-matrix.html">
+
+        Adjacency Matrix</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-adjacency-list.html">
+
+        Adjacency List</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-dfs.html">
+
+        DFS Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-bfs.html">
+
+        Breadth-first Search</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/bellman-ford-algorithm.html">
+
+        Bellman Ford's Algorithm</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/bubble-sort.html">
+
+        Bubble Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/selection-sort.html">
+
+        Selection Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-sort.html">
+
+        Insertion Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/merge-sort.html">
+
+        Merge Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/quick-sort.html">
+
+        Quick Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/counting-sort.html">
+
+        Counting Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/radix-sort.html">
+
+        Radix Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/bucket-sort.html">
+
+        Bucket Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/heap-sort.html">
+
+        Heap Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/shell-sort.html">
+
+        Shell Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linear-search.html">
+
+        Linear Search</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/binary-search.html">
+
+        Binary Search</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/greedy-algorithm.html">
+
+        Greedy Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/ford-fulkerson-algorithm.html">
+
+        Ford-Fulkerson Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/dijkstra-algorithm.html">
+
+        Dijkstra's Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/kruskal-algorithm.html">
+
+        Kruskal's Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/prim-algorithm.html">
+
+        Prim's Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/huffman-coding.html">
+
+        Huffman Code</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/dynamic-programming.html">
+
+        Dynamic Programming</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/floyd-warshall-algorithm.html">
+
+        Floyd Warshall Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/longest-common-subsequence.html">
+
+        Longest Common Subsequence</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/backtracking-algorithm.html">
+
+        Backtracking Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/rabin-karp-algorithm.html">
+
+        Rabin-Karp Algorithm</a></button>
+<br>
+<br/>
+<h2>Free Courses on YouTube</h2>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+            https://www.youtube.com/watch?v=IbSXF7eT-AU&amp;list=PLR_5PTwg_uAQw40OhdvAwN4NvzWv0xOZ2">
+
+            Python Full Course Playlist</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://www.youtube.com/watch?v=UEl6wB90Gs8">
+
+            105 STL Algorithms in Less Than an Hour</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://www.youtube.com/watch?v=zZXTgN7L1UU&amp;list=PLR_5PTwg_uAS6C1cSMjU6oVhOcCX8Zu_4">
+
+            C++ STL Playlist</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://youtu.be/ty9756v3kc8">
+
+            Learn Node.js </a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://youtu.be/exrIpdS3Crc">
+
+            Learn Data Science Full course</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://youtu.be/Q8tDO2uSk5U">
+
+            Learn Computer Networking Full course</a></button>
+<br/>
+</br></br></br></br></br></br></br></br></ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<footer class="afooter" style="margin-left:20px">
+<p>
+<a href="/cookie-policy.html">Cookie policy</a> |
+
+        <a href="/privacy-policy.html">Privacy policy</a> |
+
+        <a href="/terms-of-use.html">Terms of use</a> |
+
+        <a href="/disclaimer.html">Disclaimer</a> |
+
+        <a href="/about-us.html">About Us</a>
+</p>
+<p>
+
+        © 2023 <a href="https://pythonread.github.io">https://pythonread.github.io</a>
+</p>
+</footer>
+<script type="text/javascript">
+
+    document.addEventListener('DOMContentLoaded', function () { htmlTableOfContents() }); function htmlTableOfContents(documentRef) { var documentRef = documentRef || document; var toc = documentRef.getElementById("toc"); var headings = [].slice.call(documentRef.body.querySelectorAll('h2, h3')); headings.forEach(function (heading, index) { var ref = "toc" + index; if (heading.hasAttribute("id")) { ref = heading.getAttribute("id") } else { heading.setAttribute("id", ref) } var link = documentRef.createElement("a"); link.setAttribute("href", "#" + ref); link.textContent = heading.textContent; var div = documentRef.createElement("div"); div.setAttribute("class", heading.tagName.toLowerCase()); div.appendChild(link); toc.appendChild(div) }) } try { module.exports = htmlTableOfContents } catch (e) { } function isScrolledIntoView(el) { var rect = el.getBoundingClientRect(); var elemTop = rect.top; var elemBottom = rect.bottom; var isVisible = (elemTop >= -10) && (elemBottom <= (window.innerHeight)); return isVisible } function highlightMenu() { var headers = document.querySelectorAll("h2, h3"); for (var i = 0; i < headers.length; i += 1) { if (isScrolledIntoView(headers[i])) { var childDivs = document.getElementById('toc').getElementsByTagName('div'); var c = childDivs[i].classList; c.add("active"); for (var j = 0; j < i; j += 1) { var c = childDivs[j].classList; c.remove("active") } for (var j = i + 1; j < childDivs.length; j += 1) { var c = childDivs[j].classList; c.remove("active") } break } } } function highlightMenuLastItem() { var childDivs = document.getElementById('toc').getElementsByTagName('div'); for (var j = 0; j < childDivs.length - 1; j += 1) { var c = childDivs[j].classList; c.remove("active") } var c = childDivs[childDivs.length - 1].classList; c.add("active") } window.addEventListener("click", function (event) { highlightMenu() }); window.onscroll = function (e) { highlightMenu(); if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) { highlightMenuLastItem() } }; function mobileMenu() { var classes = document.getElementById('nav-toggle-icon').classList; if (classes.contains("active")) { classes.remove("active") } else { classes.add("active") } var classes = document.getElementById('menu-wrapper').classList; if (classes.contains("active")) { classes.remove("active") } else { classes.add("active") } }
+
+</script>
+<script type="text/javascript">
+
+    function changepy(){
+
+        document.getElementById('py1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('java1').className = 'tabbed-editor__node';
+
+        document.getElementById('c1').className = 'tabbed-editor__node';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node';
+
+        document.getElementById('python-code').className = 'code-editor__area code-editor__area--active';
+
+        document.getElementById('java-code').className = 'code-editor__area';
+
+        document.getElementById('c-code').className = 'code-editor__area';
+
+        document.getElementById('cpp-code').className = 'code-editor__area';
+
+
+
+    }
+
+    function changecpp(){
+
+        document.getElementById('py1').className = 'tabbed-editor__node';
+
+        document.getElementById('java1').className = 'tabbed-editor__node';
+
+        document.getElementById('c1').className = 'tabbed-editor__node';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('python-code').className = 'code-editor__area';
+
+        document.getElementById('java-code').className = 'code-editor__area';
+
+        document.getElementById('c-code').className = 'code-editor__area';
+
+        document.getElementById('cpp-code').className = 'code-editor__area code-editor__area--active';
+
+    }
+
+    function changejava(){
+
+       document.getElementById('py1').className = 'tabbed-editor__node';
+
+        document.getElementById('java1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('c1').className = 'tabbed-editor__node';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node';
+
+        document.getElementById('python-code').className = 'code-editor__area';
+
+        document.getElementById('java-code').className = 'code-editor__area code-editor__area--active';
+
+        document.getElementById('c-code').className = 'code-editor__area';
+
+        document.getElementById('cpp-code').className = 'code-editor__area';
+
+    }
+
+    function changec(){
+
+        document.getElementById('py1').className = 'tabbed-editor__node';
+
+        document.getElementById('java1').className = 'tabbed-editor__node';
+
+        document.getElementById('c1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node';
+
+        document.getElementById('python-code').className = 'code-editor__area';
+
+        document.getElementById('java-code').className = 'code-editor__area';
+
+        document.getElementById('c-code').className = 'code-editor__area code-editor__area--active';
+
+        document.getElementById('cpp-code').className = 'code-editor__area';
+
+    }
+
+    
+
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>

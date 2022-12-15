@@ -1,0 +1,1505 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<title>Document</title>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-HCERBDV76D"></script>
+<script>
+
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() { dataLayer.push(arguments); }
+
+        gtag('js', new Date());
+
+
+
+        gtag('config', 'G-HCERBDV76D');
+
+    </script>
+<meta content="B0487B46A104E90209E8A3BEA24ECA0E" name="msvalidate.01"/>
+<meta content="f044b3a12c7918f1" name="yandex-verification"/>
+<!--end-->
+
+<meta content="learnPython" name="author"/>
+<meta content="Learn Python for free,learn python for beginners,Core Python,Web frameworks,Multiprocess architecture,Serverside templating language,python tutorials,python4" name="keywords"/>
+<meta content="website" property="og:type"/>
+<meta content="learn about data types, variables, lists, tuples, dictionaries,if else,DSA,loops,user-defined functions, oop, threading and scripting." name="description"/>
+<meta content="US-CA" name="”geo.region”"/>
+<meta content="353 Jane Stanford Way, Stanford, CA 94305, United States" name="”geo.placename”"/>
+<meta content="37.430089898615456;-122.17332683124829" name="”geo.position”"/>
+<meta content="37.430089898615456, -122.17332683124829" name="”ICBM”"/>
+<link href="https://pythonread.github.io/?m=1" rel="alternate"/>
+<link href="/favicon.png" rel="icon"/>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="/style1.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/style2.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/style0.css" media="all" rel="stylesheet" type="text/css"/>
+
+
+</head>
+<body>
+<div class="nav-wrapper">
+<div class="container">
+<nav>
+<div class="logo wave">
+<a href="/" id="logo">
+
+                        Python Tutorial
+
+                    </a>
+</div>
+<div class="nav-toggle-icon" id="nav-toggle-icon" onclick="mobileMenu()">
+<div class="material-hamburger">
+<span>
+</span>
+<span>
+</span>
+<span>
+</span>
+</div>
+</div>
+<div class="menu-wrapper" id="menu-wrapper">
+<div class="nav-indicator">
+</div>
+<ul class="menus">
+<li>
+<a class="wave" href="/">
+
+                                Home
+
+                            </a>
+</li>
+<li>
+<a class="wave" href="/projects.html">
+
+                                Projects
+
+                            </a>
+</li>
+<li>
+<a class="wave" href="/free-course.html" target="_blank">
+
+                                Free Course
+
+                            </a>
+</li>
+<li>
+<a class="wave" href="/dsa.html">
+
+                                DSA
+
+                            </a>
+</li>
+</ul>
+</div>
+</nav>
+</div>
+</div>
+<div class="contents contents--neg" style="margin-top: 60px">
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+<div class="d-flex">
+<div class="left-bar d-none d-lg-block">
+<div class="card-alt mb-10x">
+<h3>Page Index</h3>
+<div class="list">
+<ul>
+<li><a href="/dsa.html#data-structure-1" title="Data Structures (I)">Data Structures
+
+                                                (I)</a></li>
+<li><a href="/dsa.html#data-structure-2" title="Data Structures (II)">Data Structures
+
+                                                (II)</a></li>
+<li><a href="/dsa.html#tree-1" title="Tree based DSA (I)">Tree based DSA (I)</a></li>
+<li><a href="/dsa.html#tree-2" title="Tree based DSA (II)">Tree based DSA (II)</a></li>
+<li><a href="/dsa.html#graph" title="Graph Data Structures and Algorithm">Graph based
+
+                                                DSA</a></li>
+<li><a href="/dsa.html#sorting-searching" title="Sorting and Searching">Sorting and
+
+                                                Searching</a></li>
+<li><a href="/dsa.html#greedy-algorithm" title="Greedy Algorithms">Greedy Algorithms</a>
+</li>
+<li><a href="/dsa.html#dynamic-programming" title="Dynamic Programming">Dynamic
+
+                                                Programming</a></li>
+<li><a href="/dsa.html#other-algorithms" title="Other Algorithms">Other Algorithms</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="right-bar">
+<!--first part end-------------------------------------------->
+<iframe width="560" height="315" src="https://www.youtube.com/embed/SRTO0VpsrFQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="editor-contents">
+    <h1>Linked List Operations: Traverse, Insert and Delete</h1>
+
+
+    <p class="editor-contents__short-description">In this tutorial, you will learn different operations on a linked list. Also, you will find implementation of linked list operations in C/C++, Python and Java.</p>
+
+
+
+      
+
+
+
+<div id="node-962" class="node node-algorithm clearfix" about="/dsa/linked-list-operations" typeof="sioc:Item foaf:Document">
+
+
+<span property="dc:title" content="Linked List Operations: Traverse, Insert and Delete" class="rdf-meta element-hidden"></span>
+
+<div class="content">
+<p id="definition">There are various linked list operations that allow us to perform different actions on linked lists. For example, the insertion operation adds a new element to the linked list.</p>
+
+<p>Here's a list of basic linked list operations that we will cover in this article.</p>
+
+<ul><li><a href="#traverse">Traversal</a> - access each element of the linked list</li>
+<li><a href="#add">Insertion</a> - adds a new element to the linked list</li>
+<li><a href="#delete">Deletion</a> - removes the existing elements</li>
+<li><a href="#search">Search</a> - find a node in the linked list</li>
+<li><a href="#sort">Sort</a> - sort the nodes of the linked list</li>
+</ul><p>Before you learn about linked list operations in detail, make sure to know about <a href="/dsa/linked-list.html">Linked List</a> first.</p>
+
+<h3>Things to Remember about Linked List</h3>
+
+<ul><li><var>head</var> points to the first node of the linked list</li>
+<li><var>next</var> pointer of the last node is <var>NULL</var>, so if the next current node is <var>NULL</var>, we have reached the end of the linked list.</li>
+</ul><p>In all of the examples, we will assume that the linked list has three nodes <code>1 ---&gt;2 ---&gt;3</code> with node structure as below:</p>
+
+<pre style="max-height: 600px;"><code class="dsa hljs cpp"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">node</span> {</span>
+<span class="hljs-keyword">int</span> data;
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">node</span> *<span class="hljs-title">next</span>;</span>
+};</code></pre>
+
+<hr><h2 id="traverse">Traverse a Linked List</h2>
+
+<p>Displaying the contents of a linked list is very simple. We keep moving the temp node to the next one and display its contents.</p>
+
+<p>When <var>temp</var> is <var>NULL</var>, we know that we have reached the end of the linked list so we get out of the while loop.</p>
+
+<pre style="max-height: 600px;"><code class="dsa hljs cpp"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">node</span> *<span class="hljs-title">temp</span> = <span class="hljs-title">head</span>;</span>
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"\n\nList elements are - \n"</span>);
+<span class="hljs-keyword">while</span>(temp != <span class="hljs-literal">NULL</span>) {
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d ---&gt;"</span>,temp-&gt;data);
+temp = temp-&gt;next;
+}</code></pre>
+
+<p>The output of this program will be:</p>
+
+<pre><samp>List elements are - 
+1 ---&gt;2 ---&gt;3 ---&gt;</samp></pre>
+
+<hr><h2 id="add">Insert Elements to a Linked List</h2>
+
+<p></p><div class="clearfix"></div><p>You can add elements to either the beginning, middle or end of the linked list.</p>
+
+<h3>1. Insert at the beginning</h3>
+
+<ul><li>Allocate memory for new node</li>
+<li>Store data</li>
+<li>Change next of new node to point to head</li>
+<li>Change head to point to recently created node</li>
+</ul><pre style="max-height: 600px;"><code class="dsa hljs rust"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">node</span></span> *newNode;
+newNode = malloc(sizeof(<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">node</span></span>));
+newNode-&gt;data = <span class="hljs-number">4</span>;
+newNode-&gt;next = head;
+head = newNode;</code></pre>
+
+<h3>2. Insert at the End</h3>
+
+<ul><li>Allocate memory for new node</li>
+<li>Store data</li>
+<li>Traverse to last node</li>
+<li>Change next of last node to recently created node</li>
+</ul><pre style="max-height: 600px;"><code class="dsa hljs rust"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">node</span></span> *newNode;
+newNode = malloc(sizeof(<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">node</span></span>));
+newNode-&gt;data = <span class="hljs-number">4</span>;
+newNode-&gt;next = NULL;
+
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">node</span></span> *temp = head;
+<span class="hljs-keyword">while</span>(temp-&gt;next != NULL){
+temp = temp-&gt;next;
+}
+
+temp-&gt;next = newNode;</code></pre>
+
+<h3>3. Insert at the Middle</h3>
+
+<ul><li>Allocate memory and store data for new node</li>
+<li>Traverse to node just before the required position of new node</li>
+<li>Change next pointers to include new node in between</li>
+</ul><pre style="max-height: 600px;"><code class="dsa hljs rust"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">node</span></span> *newNode;
+newNode = malloc(sizeof(<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">node</span></span>));
+newNode-&gt;data = <span class="hljs-number">4</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">node</span></span> *temp = head;
+
+<span class="hljs-keyword">for</span>(int i=<span class="hljs-number">2</span>; i &lt; position; i++) {
+<span class="hljs-keyword">if</span>(temp-&gt;next != NULL) {
+temp = temp-&gt;next;
+}
+}
+newNode-&gt;next = temp-&gt;next;
+temp-&gt;next = newNode;</code></pre>
+
+<hr><h2 id="delete">Delete from a Linked List</h2>
+
+<p>You can delete either from the beginning, end or from a particular position.</p>
+
+<h3>1. Delete from beginning</h3>
+
+<ul><li>Point head to the second node</li>
+</ul><pre style="max-height: 600px;"><code class="dsa hljs ini"><span class="hljs-attr">head</span> = head-&gt;next<span class="hljs-comment">;</span></code></pre>
+
+<h3>2. Delete from end</h3>
+
+<ul><li>Traverse to second last element</li>
+<li>Change its next pointer to null</li>
+</ul><pre style="max-height: 600px;"><code class="dsa hljs php">struct node* temp = head;
+<span class="hljs-keyword">while</span>(temp-&gt;next-&gt;next!=<span class="hljs-keyword">NULL</span>){
+temp = temp-&gt;next;
+}
+temp-&gt;next = <span class="hljs-keyword">NULL</span>;</code></pre>
+
+<h3>3. Delete from middle</h3>
+
+<ul><li>Traverse to element before the element to be deleted</li>
+<li>Change next pointers to exclude the node from the chain</li>
+</ul><pre style="max-height: 600px;"><code class="dsa hljs perl"><span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">2</span>; i&lt; position; i++) {
+<span class="hljs-keyword">if</span>(temp-&gt;<span class="hljs-keyword">next</span>!=NULL) {
+temp = temp-&gt;<span class="hljs-keyword">next</span>;
+}
+}
+
+temp-&gt;<span class="hljs-keyword">next</span> = temp-&gt;<span class="hljs-keyword">next</span>-&gt;<span class="hljs-keyword">next</span>;</code></pre>
+
+<hr><h2 id="search">Search an Element on a Linked List</h2>
+
+<p>You can search an element on a linked list using a loop using the following steps. We are finding <code>item</code> on a linked list.</p>
+
+<ul><li>Make <code>head</code> as the <code>current</code> node.</li>
+<li>Run a loop until the <code>current</code> node is <code>NULL</code> because the last element points to <code>NULL</code>.</li>
+<li>In each iteration, check if the key of the node is equal to <code>item</code>. If it the key matches the item, return <code>true</code> otherwise return <code>false</code>.</li>
+</ul><pre style="max-height: 600px;"><code class="dsa hljs rust"><span class="hljs-comment">// Search a node</span>
+<span class="hljs-built_in">bool</span> searchNode(<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span></span>** head_ref, int key) {
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span></span>* current = *head_ref;
+
+<span class="hljs-keyword">while</span> (current != NULL) {
+<span class="hljs-keyword">if</span> (current-&gt;data == key) <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+current = current-&gt;next;
+}
+<span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+}</code></pre>
+
+<hr><h2 id="sort">Sort Elements of a Linked List</h2>
+
+<p>We will use a simple sorting algorithm, <a href="/dsa/bubble-sort.html">Bubble Sort</a>, to sort the elements of a linked list in ascending order below.</p>
+
+<ol><li>Make the <code>head</code> as the <code>current</code> node and create another node <code>index</code> for later use.</li>
+<li>If <code>head</code> is null, return.</li>
+<li>Else, run a loop till the last node (i.e. <code>NULL</code>).</li>
+<li>In each iteration, follow the following step 5-6.</li>
+<li>Store the next node of <code>current</code> in <code>index</code>.</li>
+<li>Check if the data of the current node is greater than the next node. If it is greater, swap <code>current</code> and <code>index</code>.</li>
+</ol><p>Check the article on <a href="/dsa/bubble-sort.html">bubble sort</a> for better understanding of its working.</p>
+
+<pre style="max-height: 600px;"><code class="dsa hljs php"><span class="hljs-comment">// Sort the linked list</span>
+void sortLinkedList(struct Node** head_ref) {
+struct Node *current = *head_ref, *index = <span class="hljs-keyword">NULL</span>;
+int temp;
+
+<span class="hljs-keyword">if</span> (head_ref == <span class="hljs-keyword">NULL</span>) {
+<span class="hljs-keyword">return</span>;
+} <span class="hljs-keyword">else</span> {
+<span class="hljs-keyword">while</span> (current != <span class="hljs-keyword">NULL</span>) {
+<span class="hljs-comment">// index points to the node next to current</span>
+index = current-&gt;next;
+
+<span class="hljs-keyword">while</span> (index != <span class="hljs-keyword">NULL</span>) {
+<span class="hljs-keyword">if</span> (current-&gt;data &gt; index-&gt;data) {
+temp = current-&gt;data;
+current-&gt;data = index-&gt;data;
+index-&gt;data = temp;
+}
+index = index-&gt;next;
+}
+current = current-&gt;next;
+}
+}
+}</code></pre>
+
+<hr><h2 id="operations">LinkedList Operations in Python, Java, C, and C++</h2>
+
+<div class="tabbed-editor">
+<div id="py1" onclick="changepy()" class="tabbed-editor__node tabbed-editor__node--active"><a href="#python-code">Python</a></div>
+
+<div id="java1" onclick="changejava()" class="tabbed-editor__node"><a href="#java-code">Java</a></div>
+
+<div id="c1" onclick="changec()" class="tabbed-editor__node"><a href="#c-code">C</a></div>
+
+<div id="cpp1" onclick="changecpp()" class="tabbed-editor__node"><a href="#cpp-code">C++</a></div>
+</div>
+
+<div class="code-editor code-editor--tabbed">
+<div class="code-editor__area code-editor__area--active" id="python-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="python hljs"><span class="hljs-comment"># Linked list operations in Python</span>
+
+
+<span class="hljs-comment"># Create a node</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Node</span>:</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, data)</span>:</span>
+self.data = data
+self.next = <span class="hljs-literal">None</span>
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LinkedList</span>:</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self)</span>:</span>
+self.head = <span class="hljs-literal">None</span>
+
+<span class="hljs-comment"># Insert at the beginning</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">insertAtBeginning</span><span class="hljs-params">(self, new_data)</span>:</span>
+new_node = Node(new_data)
+
+new_node.next = self.head
+self.head = new_node
+
+<span class="hljs-comment"># Insert after a node</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">insertAfter</span><span class="hljs-params">(self, prev_node, new_data)</span>:</span>
+
+<span class="hljs-keyword">if</span> prev_node <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>:
+<span class="hljs-keyword">print</span>(<span class="hljs-string">"The given previous node must inLinkedList."</span>)
+<span class="hljs-keyword">return</span>
+
+new_node = Node(new_data)
+new_node.next = prev_node.next
+prev_node.next = new_node
+
+<span class="hljs-comment"># Insert at the end</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">insertAtEnd</span><span class="hljs-params">(self, new_data)</span>:</span>
+new_node = Node(new_data)
+
+<span class="hljs-keyword">if</span> self.head <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>:
+self.head = new_node
+<span class="hljs-keyword">return</span>
+
+last = self.head
+<span class="hljs-keyword">while</span> (last.next):
+last = last.next
+
+last.next = new_node
+
+<span class="hljs-comment"># Deleting a node</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">deleteNode</span><span class="hljs-params">(self, position)</span>:</span>
+
+<span class="hljs-keyword">if</span> self.head <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>:
+<span class="hljs-keyword">return</span>
+
+temp = self.head
+
+<span class="hljs-keyword">if</span> position == <span class="hljs-number">0</span>:
+self.head = temp.next
+temp = <span class="hljs-literal">None</span>
+<span class="hljs-keyword">return</span>
+
+<span class="hljs-comment"># Find the key to be deleted</span>
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(position - <span class="hljs-number">1</span>):
+temp = temp.next
+<span class="hljs-keyword">if</span> temp <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>:
+<span class="hljs-keyword">break</span>
+
+<span class="hljs-comment"># If the key is not present</span>
+<span class="hljs-keyword">if</span> temp <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>:
+<span class="hljs-keyword">return</span>
+
+<span class="hljs-keyword">if</span> temp.next <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>:
+<span class="hljs-keyword">return</span>
+
+next = temp.next.next
+
+temp.next = <span class="hljs-literal">None</span>
+
+temp.next = next
+
+<span class="hljs-comment"># Search an element</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">search</span><span class="hljs-params">(self, key)</span>:</span>
+
+current = self.head
+
+<span class="hljs-keyword">while</span> current <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">None</span>:
+<span class="hljs-keyword">if</span> current.data == key:
+<span class="hljs-keyword">return</span> <span class="hljs-literal">True</span>
+
+current = current.next
+
+<span class="hljs-keyword">return</span> <span class="hljs-literal">False</span>
+
+<span class="hljs-comment"># Sort the linked list</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">sortLinkedList</span><span class="hljs-params">(self, head)</span>:</span>
+current = head
+index = Node(<span class="hljs-literal">None</span>)
+
+<span class="hljs-keyword">if</span> head <span class="hljs-keyword">is</span> <span class="hljs-literal">None</span>:
+<span class="hljs-keyword">return</span>
+<span class="hljs-keyword">else</span>:
+<span class="hljs-keyword">while</span> current <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">None</span>:
+<span class="hljs-comment"># index points to the node next to current</span>
+index = current.next
+
+<span class="hljs-keyword">while</span> index <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">None</span>:
+<span class="hljs-keyword">if</span> current.data &gt; index.data:
+current.data, index.data = index.data, current.data
+
+index = index.next
+current = current.next
+
+<span class="hljs-comment"># Print the linked list</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">printList</span><span class="hljs-params">(self)</span>:</span>
+temp = self.head
+<span class="hljs-keyword">while</span> (temp):
+<span class="hljs-keyword">print</span>(str(temp.data) + <span class="hljs-string">" "</span>, end=<span class="hljs-string">""</span>)
+temp = temp.next
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">'__main__'</span>:
+
+llist = LinkedList()
+llist.insertAtEnd(<span class="hljs-number">1</span>)
+llist.insertAtBeginning(<span class="hljs-number">2</span>)
+llist.insertAtBeginning(<span class="hljs-number">3</span>)
+llist.insertAtEnd(<span class="hljs-number">4</span>)
+llist.insertAfter(llist.head.next, <span class="hljs-number">5</span>)
+
+<span class="hljs-keyword">print</span>(<span class="hljs-string">'linked list:'</span>)
+llist.printList()
+
+<span class="hljs-keyword">print</span>(<span class="hljs-string">"\nAfter deleting an element:"</span>)
+llist.deleteNode(<span class="hljs-number">3</span>)
+llist.printList()
+
+<span class="hljs-keyword">print</span>()
+item_to_find = <span class="hljs-number">3</span>
+<span class="hljs-keyword">if</span> llist.search(item_to_find):
+<span class="hljs-keyword">print</span>(str(item_to_find) + <span class="hljs-string">" is found"</span>)
+<span class="hljs-keyword">else</span>:
+<span class="hljs-keyword">print</span>(str(item_to_find) + <span class="hljs-string">" is not found"</span>)
+
+llist.sortLinkedList(llist.head)
+<span class="hljs-keyword">print</span>(<span class="hljs-string">"Sorted List: "</span>)
+llist.printList()</code></pre></div>
+</div>
+
+<div class="code-editor__area" id="java-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="java hljs"><span class="hljs-comment">// Linked list operations in Java</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LinkedList</span> </span>{
+Node head;
+
+<span class="hljs-comment">// Create a node</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Node</span> </span>{
+<span class="hljs-keyword">int</span> data;
+Node next;
+
+Node(<span class="hljs-keyword">int</span> d) {
+data = d;
+next = <span class="hljs-keyword">null</span>;
+}
+}
+
+<span class="hljs-comment">// Insert at the beginning</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">insertAtBeginning</span><span class="hljs-params">(<span class="hljs-keyword">int</span> new_data)</span> </span>{
+<span class="hljs-comment">// insert the data</span>
+Node new_node = <span class="hljs-keyword">new</span> Node(new_data);
+new_node.next = head;
+head = new_node;
+}
+
+<span class="hljs-comment">// Insert after a node</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">insertAfter</span><span class="hljs-params">(Node prev_node, <span class="hljs-keyword">int</span> new_data)</span> </span>{
+<span class="hljs-keyword">if</span> (prev_node == <span class="hljs-keyword">null</span>) {
+System.out.println(<span class="hljs-string">"The given previous node cannot be null"</span>);
+<span class="hljs-keyword">return</span>;
+}
+Node new_node = <span class="hljs-keyword">new</span> Node(new_data);
+new_node.next = prev_node.next;
+prev_node.next = new_node;
+}
+
+<span class="hljs-comment">// Insert at the end</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">insertAtEnd</span><span class="hljs-params">(<span class="hljs-keyword">int</span> new_data)</span> </span>{
+Node new_node = <span class="hljs-keyword">new</span> Node(new_data);
+
+<span class="hljs-keyword">if</span> (head == <span class="hljs-keyword">null</span>) {
+head = <span class="hljs-keyword">new</span> Node(new_data);
+<span class="hljs-keyword">return</span>;
+}
+
+new_node.next = <span class="hljs-keyword">null</span>;
+
+Node last = head;
+<span class="hljs-keyword">while</span> (last.next != <span class="hljs-keyword">null</span>)
+last = last.next;
+
+last.next = new_node;
+<span class="hljs-keyword">return</span>;
+}
+
+<span class="hljs-comment">// Delete a node</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">deleteNode</span><span class="hljs-params">(<span class="hljs-keyword">int</span> position)</span> </span>{
+<span class="hljs-keyword">if</span> (head == <span class="hljs-keyword">null</span>)
+<span class="hljs-keyword">return</span>;
+
+Node temp = head;
+
+<span class="hljs-keyword">if</span> (position == <span class="hljs-number">0</span>) {
+head = temp.next;
+<span class="hljs-keyword">return</span>;
+}
+<span class="hljs-comment">// Find the key to be deleted</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; temp != <span class="hljs-keyword">null</span> &amp;&amp; i &lt; position - <span class="hljs-number">1</span>; i++)
+temp = temp.next;
+
+<span class="hljs-comment">// If the key is not present</span>
+<span class="hljs-keyword">if</span> (temp == <span class="hljs-keyword">null</span> || temp.next == <span class="hljs-keyword">null</span>)
+<span class="hljs-keyword">return</span>;
+
+<span class="hljs-comment">// Remove the node</span>
+Node next = temp.next.next;
+
+temp.next = next;
+}
+
+<span class="hljs-comment">// Search a node</span>
+<span class="hljs-function"><span class="hljs-keyword">boolean</span> <span class="hljs-title">search</span><span class="hljs-params">(Node head, <span class="hljs-keyword">int</span> key)</span> </span>{
+Node current = head;
+<span class="hljs-keyword">while</span> (current != <span class="hljs-keyword">null</span>) {
+<span class="hljs-keyword">if</span> (current.data == key)
+<span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+current = current.next;
+}
+<span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+}
+
+<span class="hljs-comment">// Sort the linked list</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">sortLinkedList</span><span class="hljs-params">(Node head)</span> </span>{
+Node current = head;
+Node index = <span class="hljs-keyword">null</span>;
+<span class="hljs-keyword">int</span> temp;
+
+<span class="hljs-keyword">if</span> (head == <span class="hljs-keyword">null</span>) {
+<span class="hljs-keyword">return</span>;
+} <span class="hljs-keyword">else</span> {
+<span class="hljs-keyword">while</span> (current != <span class="hljs-keyword">null</span>) {
+<span class="hljs-comment">// index points to the node next to current</span>
+index = current.next;
+
+<span class="hljs-keyword">while</span> (index != <span class="hljs-keyword">null</span>) {
+<span class="hljs-keyword">if</span> (current.data &gt; index.data) {
+temp = current.data;
+current.data = index.data;
+index.data = temp;
+}
+index = index.next;
+}
+current = current.next;
+}
+}
+}
+
+<span class="hljs-comment">// Print the linked list</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">printList</span><span class="hljs-params">()</span> </span>{
+Node tnode = head;
+<span class="hljs-keyword">while</span> (tnode != <span class="hljs-keyword">null</span>) {
+System.out.print(tnode.data + <span class="hljs-string">" "</span>);
+tnode = tnode.next;
+}
+
+}
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+LinkedList llist = <span class="hljs-keyword">new</span> LinkedList();
+
+llist.insertAtEnd(<span class="hljs-number">1</span>);
+llist.insertAtBeginning(<span class="hljs-number">2</span>);
+llist.insertAtBeginning(<span class="hljs-number">3</span>);
+llist.insertAtEnd(<span class="hljs-number">4</span>);
+llist.insertAfter(llist.head.next, <span class="hljs-number">5</span>);
+
+System.out.println(<span class="hljs-string">"Linked list: "</span>);
+llist.printList();
+
+System.out.println(<span class="hljs-string">"\nAfter deleting an element: "</span>);
+llist.deleteNode(<span class="hljs-number">3</span>);
+llist.printList();
+
+System.out.println();
+<span class="hljs-keyword">int</span> item_to_find = <span class="hljs-number">3</span>;
+<span class="hljs-keyword">if</span> (llist.search(llist.head, item_to_find))
+System.out.println(item_to_find + <span class="hljs-string">" is found"</span>);
+<span class="hljs-keyword">else</span>
+System.out.println(item_to_find + <span class="hljs-string">" is not found"</span>);
+
+llist.sortLinkedList(llist.head);
+System.out.println(<span class="hljs-string">"\nSorted List: "</span>);
+llist.printList();
+}
+}</code></pre></div>
+</div>
+
+<div class="code-editor__area" id="c-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="c hljs cpp"><span class="hljs-comment">// Linked list operations in C</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdlib.h&gt;</span></span>
+
+<span class="hljs-comment">// Create a node</span>
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span> {</span>
+<span class="hljs-keyword">int</span> data;
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span>* <span class="hljs-title">next</span>;</span>
+};
+
+<span class="hljs-comment">// Insert at the beginning</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">insertAtBeginning</span><span class="hljs-params">(struct Node** head_ref, <span class="hljs-keyword">int</span> new_data)</span> </span>{
+<span class="hljs-comment">// Allocate memory to a node</span>
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span>* <span class="hljs-title">new_node</span> = (<span class="hljs-title">struct</span> <span class="hljs-title">Node</span>*)<span class="hljs-title">malloc</span>(<span class="hljs-title">sizeof</span>(<span class="hljs-title">struct</span> <span class="hljs-title">Node</span>));</span>
+
+<span class="hljs-comment">// insert the data</span>
+new_node-&gt;data = new_data;
+
+new_node-&gt;next = (*head_ref);
+
+<span class="hljs-comment">// Move head to new node</span>
+(*head_ref) = new_node;
+}
+
+<span class="hljs-comment">// Insert a node after a node</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">insertAfter</span><span class="hljs-params">(struct Node* prev_node, <span class="hljs-keyword">int</span> new_data)</span> </span>{
+<span class="hljs-keyword">if</span> (prev_node == <span class="hljs-literal">NULL</span>) {
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"the given previous node cannot be NULL"</span>);
+<span class="hljs-keyword">return</span>;
+}
+
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span>* <span class="hljs-title">new_node</span> = (<span class="hljs-title">struct</span> <span class="hljs-title">Node</span>*)<span class="hljs-title">malloc</span>(<span class="hljs-title">sizeof</span>(<span class="hljs-title">struct</span> <span class="hljs-title">Node</span>));</span>
+new_node-&gt;data = new_data;
+new_node-&gt;next = prev_node-&gt;next;
+prev_node-&gt;next = new_node;
+}
+
+<span class="hljs-comment">// Insert the the end</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">insertAtEnd</span><span class="hljs-params">(struct Node** head_ref, <span class="hljs-keyword">int</span> new_data)</span> </span>{
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span>* <span class="hljs-title">new_node</span> = (<span class="hljs-title">struct</span> <span class="hljs-title">Node</span>*)<span class="hljs-title">malloc</span>(<span class="hljs-title">sizeof</span>(<span class="hljs-title">struct</span> <span class="hljs-title">Node</span>));</span>
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span>* <span class="hljs-title">last</span> = *<span class="hljs-title">head_ref</span>;</span> <span class="hljs-comment">/* used in step 5*/</span>
+
+new_node-&gt;data = new_data;
+new_node-&gt;next = <span class="hljs-literal">NULL</span>;
+
+<span class="hljs-keyword">if</span> (*head_ref == <span class="hljs-literal">NULL</span>) {
+*head_ref = new_node;
+<span class="hljs-keyword">return</span>;
+}
+
+<span class="hljs-keyword">while</span> (last-&gt;next != <span class="hljs-literal">NULL</span>) last = last-&gt;next;
+
+last-&gt;next = new_node;
+<span class="hljs-keyword">return</span>;
+}
+
+<span class="hljs-comment">// Delete a node</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">deleteNode</span><span class="hljs-params">(struct Node** head_ref, <span class="hljs-keyword">int</span> key)</span> </span>{
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span> *<span class="hljs-title">temp</span> = *<span class="hljs-title">head_ref</span>, *<span class="hljs-title">prev</span>;</span>
+
+<span class="hljs-keyword">if</span> (temp != <span class="hljs-literal">NULL</span> &amp;&amp; temp-&gt;data == key) {
+*head_ref = temp-&gt;next;
+<span class="hljs-built_in">free</span>(temp);
+<span class="hljs-keyword">return</span>;
+}
+<span class="hljs-comment">// Find the key to be deleted</span>
+<span class="hljs-keyword">while</span> (temp != <span class="hljs-literal">NULL</span> &amp;&amp; temp-&gt;data != key) {
+prev = temp;
+temp = temp-&gt;next;
+}
+
+<span class="hljs-comment">// If the key is not present</span>
+<span class="hljs-keyword">if</span> (temp == <span class="hljs-literal">NULL</span>) <span class="hljs-keyword">return</span>;
+
+<span class="hljs-comment">// Remove the node</span>
+prev-&gt;next = temp-&gt;next;
+
+<span class="hljs-built_in">free</span>(temp);
+}
+
+<span class="hljs-comment">// Search a node</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">searchNode</span><span class="hljs-params">(struct Node** head_ref, <span class="hljs-keyword">int</span> key)</span> </span>{
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span>* <span class="hljs-title">current</span> = *<span class="hljs-title">head_ref</span>;</span>
+
+<span class="hljs-keyword">while</span> (current != <span class="hljs-literal">NULL</span>) {
+<span class="hljs-keyword">if</span> (current-&gt;data == key) <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
+current = current-&gt;next;
+}
+<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+
+<span class="hljs-comment">// Sort the linked list</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">sortLinkedList</span><span class="hljs-params">(struct Node** head_ref)</span> </span>{
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span> *<span class="hljs-title">current</span> = *<span class="hljs-title">head_ref</span>, *<span class="hljs-title">index</span> = <span class="hljs-title">NULL</span>;</span>
+<span class="hljs-keyword">int</span> temp;
+
+<span class="hljs-keyword">if</span> (head_ref == <span class="hljs-literal">NULL</span>) {
+<span class="hljs-keyword">return</span>;
+} <span class="hljs-keyword">else</span> {
+<span class="hljs-keyword">while</span> (current != <span class="hljs-literal">NULL</span>) {
+<span class="hljs-comment">// index points to the node next to current</span>
+index = current-&gt;next;
+
+<span class="hljs-keyword">while</span> (index != <span class="hljs-literal">NULL</span>) {
+<span class="hljs-keyword">if</span> (current-&gt;data &gt; index-&gt;data) {
+temp = current-&gt;data;
+current-&gt;data = index-&gt;data;
+index-&gt;data = temp;
+}
+index = index-&gt;next;
+}
+current = current-&gt;next;
+}
+}
+}
+
+<span class="hljs-comment">// Print the linked list</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">printList</span><span class="hljs-params">(struct Node* node)</span> </span>{
+<span class="hljs-keyword">while</span> (node != <span class="hljs-literal">NULL</span>) {
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">" %d "</span>, node-&gt;data);
+node = node-&gt;next;
+}
+}
+
+<span class="hljs-comment">// Driver program</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span>* <span class="hljs-title">head</span> = <span class="hljs-title">NULL</span>;</span>
+
+insertAtEnd(&amp;head, <span class="hljs-number">1</span>);
+insertAtBeginning(&amp;head, <span class="hljs-number">2</span>);
+insertAtBeginning(&amp;head, <span class="hljs-number">3</span>);
+insertAtEnd(&amp;head, <span class="hljs-number">4</span>);
+insertAfter(head-&gt;next, <span class="hljs-number">5</span>);
+
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"Linked list: "</span>);
+printList(head);
+
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"\nAfter deleting an element: "</span>);
+deleteNode(&amp;head, <span class="hljs-number">3</span>);
+printList(head);
+
+<span class="hljs-keyword">int</span> item_to_find = <span class="hljs-number">3</span>;
+<span class="hljs-keyword">if</span> (searchNode(&amp;head, item_to_find)) {
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"\n%d is found"</span>, item_to_find);
+} <span class="hljs-keyword">else</span> {
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"\n%d is not found"</span>, item_to_find);
+}
+
+sortLinkedList(&amp;head);
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"\nSorted List: "</span>);
+printList(head);
+}</code></pre></div>
+</div>
+
+<div class="code-editor__area" id="cpp-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="cpp hljs"><span class="hljs-comment">// Linked list operations in C++</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdlib.h&gt;</span></span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-comment">// Create a node</span>
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span> {</span>
+<span class="hljs-keyword">int</span> data;
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span>* <span class="hljs-title">next</span>;</span>
+};
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">insertAtBeginning</span><span class="hljs-params">(struct Node** head_ref, <span class="hljs-keyword">int</span> new_data)</span> </span>{
+<span class="hljs-comment">// Allocate memory to a node</span>
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span>* <span class="hljs-title">new_node</span> = (<span class="hljs-title">struct</span> <span class="hljs-title">Node</span>*)<span class="hljs-title">malloc</span>(<span class="hljs-title">sizeof</span>(<span class="hljs-title">struct</span> <span class="hljs-title">Node</span>));</span>
+
+<span class="hljs-comment">// insert the data</span>
+new_node-&gt;data = new_data;
+new_node-&gt;next = (*head_ref);
+
+<span class="hljs-comment">// Move head to new node</span>
+(*head_ref) = new_node;
+}
+
+<span class="hljs-comment">// Insert a node after a node</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">insertAfter</span><span class="hljs-params">(struct Node* prev_node, <span class="hljs-keyword">int</span> new_data)</span> </span>{
+<span class="hljs-keyword">if</span> (prev_node == <span class="hljs-literal">NULL</span>) {
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"the given previous node cannot be NULL"</span>;
+<span class="hljs-keyword">return</span>;
+}
+
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span>* <span class="hljs-title">new_node</span> = (<span class="hljs-title">struct</span> <span class="hljs-title">Node</span>*)<span class="hljs-title">malloc</span>(<span class="hljs-title">sizeof</span>(<span class="hljs-title">struct</span> <span class="hljs-title">Node</span>));</span>
+new_node-&gt;data = new_data;
+new_node-&gt;next = prev_node-&gt;next;
+prev_node-&gt;next = new_node;
+}
+
+<span class="hljs-comment">// Insert at the end</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">insertAtEnd</span><span class="hljs-params">(struct Node** head_ref, <span class="hljs-keyword">int</span> new_data)</span> </span>{
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span>* <span class="hljs-title">new_node</span> = (<span class="hljs-title">struct</span> <span class="hljs-title">Node</span>*)<span class="hljs-title">malloc</span>(<span class="hljs-title">sizeof</span>(<span class="hljs-title">struct</span> <span class="hljs-title">Node</span>));</span>
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span>* <span class="hljs-title">last</span> = *<span class="hljs-title">head_ref</span>;</span> <span class="hljs-comment">/* used in step 5*/</span>
+
+new_node-&gt;data = new_data;
+new_node-&gt;next = <span class="hljs-literal">NULL</span>;
+
+<span class="hljs-keyword">if</span> (*head_ref == <span class="hljs-literal">NULL</span>) {
+*head_ref = new_node;
+<span class="hljs-keyword">return</span>;
+}
+
+<span class="hljs-keyword">while</span> (last-&gt;next != <span class="hljs-literal">NULL</span>) last = last-&gt;next;
+
+last-&gt;next = new_node;
+<span class="hljs-keyword">return</span>;
+}
+
+<span class="hljs-comment">// Delete a node</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">deleteNode</span><span class="hljs-params">(struct Node** head_ref, <span class="hljs-keyword">int</span> key)</span> </span>{
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span> *<span class="hljs-title">temp</span> = *<span class="hljs-title">head_ref</span>, *<span class="hljs-title">prev</span>;</span>
+
+<span class="hljs-keyword">if</span> (temp != <span class="hljs-literal">NULL</span> &amp;&amp; temp-&gt;data == key) {
+*head_ref = temp-&gt;next;
+<span class="hljs-built_in">free</span>(temp);
+<span class="hljs-keyword">return</span>;
+}
+<span class="hljs-comment">// Find the key to be deleted</span>
+<span class="hljs-keyword">while</span> (temp != <span class="hljs-literal">NULL</span> &amp;&amp; temp-&gt;data != key) {
+prev = temp;
+temp = temp-&gt;next;
+}
+
+<span class="hljs-comment">// If the key is not present</span>
+<span class="hljs-keyword">if</span> (temp == <span class="hljs-literal">NULL</span>) <span class="hljs-keyword">return</span>;
+
+<span class="hljs-comment">// Remove the node</span>
+prev-&gt;next = temp-&gt;next;
+
+<span class="hljs-built_in">free</span>(temp);
+}
+
+<span class="hljs-comment">// Search a node</span>
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">searchNode</span><span class="hljs-params">(struct Node** head_ref, <span class="hljs-keyword">int</span> key)</span> </span>{
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span>* <span class="hljs-title">current</span> = *<span class="hljs-title">head_ref</span>;</span>
+
+<span class="hljs-keyword">while</span> (current != <span class="hljs-literal">NULL</span>) {
+<span class="hljs-keyword">if</span> (current-&gt;data == key) <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+current = current-&gt;next;
+}
+<span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+}
+
+<span class="hljs-comment">// Sort the linked list</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">sortLinkedList</span><span class="hljs-params">(struct Node** head_ref)</span> </span>{
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span> *<span class="hljs-title">current</span> = *<span class="hljs-title">head_ref</span>, *<span class="hljs-title">index</span> = <span class="hljs-title">NULL</span>;</span>
+<span class="hljs-keyword">int</span> temp;
+
+<span class="hljs-keyword">if</span> (head_ref == <span class="hljs-literal">NULL</span>) {
+<span class="hljs-keyword">return</span>;
+} <span class="hljs-keyword">else</span> {
+<span class="hljs-keyword">while</span> (current != <span class="hljs-literal">NULL</span>) {
+<span class="hljs-comment">// index points to the node next to current</span>
+index = current-&gt;next;
+
+<span class="hljs-keyword">while</span> (index != <span class="hljs-literal">NULL</span>) {
+<span class="hljs-keyword">if</span> (current-&gt;data &gt; index-&gt;data) {
+temp = current-&gt;data;
+current-&gt;data = index-&gt;data;
+index-&gt;data = temp;
+}
+index = index-&gt;next;
+}
+current = current-&gt;next;
+}
+}
+}
+
+<span class="hljs-comment">// Print the linked list</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">printList</span><span class="hljs-params">(struct Node* node)</span> </span>{
+<span class="hljs-keyword">while</span> (node != <span class="hljs-literal">NULL</span>) {
+<span class="hljs-built_in">cout</span> &lt;&lt; node-&gt;data &lt;&lt; <span class="hljs-string">" "</span>;
+node = node-&gt;next;
+}
+}
+
+<span class="hljs-comment">// Driver program</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span>* <span class="hljs-title">head</span> = <span class="hljs-title">NULL</span>;</span>
+
+insertAtEnd(&amp;head, <span class="hljs-number">1</span>);
+insertAtBeginning(&amp;head, <span class="hljs-number">2</span>);
+insertAtBeginning(&amp;head, <span class="hljs-number">3</span>);
+insertAtEnd(&amp;head, <span class="hljs-number">4</span>);
+insertAfter(head-&gt;next, <span class="hljs-number">5</span>);
+
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Linked list: "</span>;
+printList(head);
+
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"\nAfter deleting an element: "</span>;
+deleteNode(&amp;head, <span class="hljs-number">3</span>);
+printList(head);
+
+<span class="hljs-keyword">int</span> item_to_find = <span class="hljs-number">3</span>;
+<span class="hljs-keyword">if</span> (searchNode(&amp;head, item_to_find)) {
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span> &lt;&lt; item_to_find &lt;&lt; <span class="hljs-string">" is found"</span>;
+} <span class="hljs-keyword">else</span> {
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span> &lt;&lt; item_to_find &lt;&lt; <span class="hljs-string">" is not found"</span>;
+}
+
+sortLinkedList(&amp;head);
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"\nSorted List: "</span>;
+printList(head);
+}</code></pre></div>
+</div>
+</div>
+</div>
+
+
+
+</div>
+
+
+    <div class="tutorial-toc"><div class="tutorial-toc__inner"><h3 class="tutorial-toc__title">Table of Contents
+<button class="btn btn--clear align-items-center">
+<svg class="programiz-icon"><use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#x"></use></svg></button></h3><div class="tutorial-toc__links"><ul><li><a href="#definition">Introduction</a></li>
+<li><a href="#traverse">Traverse a Linked List</a></li>
+<li><a href="#add">Insert Elements to a Linked List</a></li>
+<li><a href="#delete">Delete from a Linked List</a></li>
+<li><a href="#search">Search an Element on a Linked List</a></li>
+<li><a href="#sort">Sort Elements of a Linked List</a></li>
+<li><a href="#operations">LinkedList Operations in Python, Java, C, and C++</a></li>
+</ul></div></div></div>                          </div>
+<!--second------------------------------------------->
+<div>
+<ul>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/stack.html">
+
+        Stack</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/queue.html">
+
+        Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/types-of-queue.html">
+
+        Types of Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/circular-queue.html">
+
+        Circular Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/priority-queue.html">
+
+        Priority Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deque.html">
+
+        Deque</a></button>
+<br/>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linked-list.html">
+
+        Linked List</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linked-list-operations.html">
+
+        Linked List Operations</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linked-list-types.html">
+
+        Types of Linked List</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/hash-table.html">
+
+        Hash Table</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/heap-data-structure.html">
+
+        Heap Data Structure</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/fibonacci-heap.html">
+
+        Fibonacci Heap</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/decrease-key-and-delete-node-from-a-fibonacci-heap.html">
+
+        Decrease Key and Delete node from Fibonacci Heap</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/trees.html">
+
+        Tree Data Structure</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/tree-traversal.html">
+
+        Tree Traversal</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/binary-tree.html">
+
+        Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/full-binary-tree.html">
+
+        Full Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/perfect-binary-tree.html">
+
+        Perfect Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/complete-binary-tree.html">
+
+        Complete Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/balanced-binary-tree.html">
+
+        Balanced Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/binary-search-tree.html">
+
+        Binary Search Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/avl-tree.html">
+
+        AVL Tree</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/b-tree.html">
+
+        B Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-into-a-b-tree.html">
+
+        Insertion into B-tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deletion-from-a-b-tree.html">
+
+        Deletion from B-tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/b-plus-tree.html">
+
+        B+ Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-on-a-b-plus-tree.html">
+
+        Insertion on a B+ Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deletion-from-a-b-plus-tree.html">
+
+        Deletion from a B+ Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/red-black-tree.html">
+
+        Red Black Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-in-a-red-black-tree.html">
+
+        Insertion in Red Black Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deletion-from-a-red-black-tree.html">
+
+        Deletion from Red Black Tree</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph.html">
+
+        Graph Data Structure</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/spanning-tree-and-minimum-spanning-tree.html">
+
+        Spanning Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/strongly-connected-components.html">
+
+        Strongly Connected Components</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-adjacency-matrix.html">
+
+        Adjacency Matrix</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-adjacency-list.html">
+
+        Adjacency List</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-dfs.html">
+
+        DFS Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-bfs.html">
+
+        Breadth-first Search</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/bellman-ford-algorithm.html">
+
+        Bellman Ford's Algorithm</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/bubble-sort.html">
+
+        Bubble Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/selection-sort.html">
+
+        Selection Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-sort.html">
+
+        Insertion Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/merge-sort.html">
+
+        Merge Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/quick-sort.html">
+
+        Quick Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/counting-sort.html">
+
+        Counting Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/radix-sort.html">
+
+        Radix Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/bucket-sort.html">
+
+        Bucket Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/heap-sort.html">
+
+        Heap Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/shell-sort.html">
+
+        Shell Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linear-search.html">
+
+        Linear Search</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/binary-search.html">
+
+        Binary Search</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/greedy-algorithm.html">
+
+        Greedy Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/ford-fulkerson-algorithm.html">
+
+        Ford-Fulkerson Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/dijkstra-algorithm.html">
+
+        Dijkstra's Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/kruskal-algorithm.html">
+
+        Kruskal's Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/prim-algorithm.html">
+
+        Prim's Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/huffman-coding.html">
+
+        Huffman Code</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/dynamic-programming.html">
+
+        Dynamic Programming</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/floyd-warshall-algorithm.html">
+
+        Floyd Warshall Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/longest-common-subsequence.html">
+
+        Longest Common Subsequence</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/backtracking-algorithm.html">
+
+        Backtracking Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/rabin-karp-algorithm.html">
+
+        Rabin-Karp Algorithm</a></button>
+<br>
+<br/>
+<h2>Free Courses on YouTube</h2>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+            https://www.youtube.com/watch?v=IbSXF7eT-AU&amp;list=PLR_5PTwg_uAQw40OhdvAwN4NvzWv0xOZ2">
+
+            Python Full Course Playlist</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://www.youtube.com/watch?v=UEl6wB90Gs8">
+
+            105 STL Algorithms in Less Than an Hour</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://www.youtube.com/watch?v=zZXTgN7L1UU&amp;list=PLR_5PTwg_uAS6C1cSMjU6oVhOcCX8Zu_4">
+
+            C++ STL Playlist</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://youtu.be/ty9756v3kc8">
+
+            Learn Node.js </a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://youtu.be/exrIpdS3Crc">
+
+            Learn Data Science Full course</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://youtu.be/Q8tDO2uSk5U">
+
+            Learn Computer Networking Full course</a></button>
+<br/>
+</br></br></br></br></br></br></br></br></ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<footer class="afooter" style="margin-left:20px">
+<p>
+<a href="/cookie-policy.html">Cookie policy</a> |
+
+        <a href="/privacy-policy.html">Privacy policy</a> |
+
+        <a href="/terms-of-use.html">Terms of use</a> |
+
+        <a href="/disclaimer.html">Disclaimer</a> |
+
+        <a href="/about-us.html">About Us</a>
+</p>
+<p>
+
+        © 2023 <a href="https://pythonread.github.io">https://pythonread.github.io</a>
+</p>
+</footer>
+<script type="text/javascript">
+
+    document.addEventListener('DOMContentLoaded', function () { htmlTableOfContents() }); function htmlTableOfContents(documentRef) { var documentRef = documentRef || document; var toc = documentRef.getElementById("toc"); var headings = [].slice.call(documentRef.body.querySelectorAll('h2, h3')); headings.forEach(function (heading, index) { var ref = "toc" + index; if (heading.hasAttribute("id")) { ref = heading.getAttribute("id") } else { heading.setAttribute("id", ref) } var link = documentRef.createElement("a"); link.setAttribute("href", "#" + ref); link.textContent = heading.textContent; var div = documentRef.createElement("div"); div.setAttribute("class", heading.tagName.toLowerCase()); div.appendChild(link); toc.appendChild(div) }) } try { module.exports = htmlTableOfContents } catch (e) { } function isScrolledIntoView(el) { var rect = el.getBoundingClientRect(); var elemTop = rect.top; var elemBottom = rect.bottom; var isVisible = (elemTop >= -10) && (elemBottom <= (window.innerHeight)); return isVisible } function highlightMenu() { var headers = document.querySelectorAll("h2, h3"); for (var i = 0; i < headers.length; i += 1) { if (isScrolledIntoView(headers[i])) { var childDivs = document.getElementById('toc').getElementsByTagName('div'); var c = childDivs[i].classList; c.add("active"); for (var j = 0; j < i; j += 1) { var c = childDivs[j].classList; c.remove("active") } for (var j = i + 1; j < childDivs.length; j += 1) { var c = childDivs[j].classList; c.remove("active") } break } } } function highlightMenuLastItem() { var childDivs = document.getElementById('toc').getElementsByTagName('div'); for (var j = 0; j < childDivs.length - 1; j += 1) { var c = childDivs[j].classList; c.remove("active") } var c = childDivs[childDivs.length - 1].classList; c.add("active") } window.addEventListener("click", function (event) { highlightMenu() }); window.onscroll = function (e) { highlightMenu(); if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) { highlightMenuLastItem() } }; function mobileMenu() { var classes = document.getElementById('nav-toggle-icon').classList; if (classes.contains("active")) { classes.remove("active") } else { classes.add("active") } var classes = document.getElementById('menu-wrapper').classList; if (classes.contains("active")) { classes.remove("active") } else { classes.add("active") } }
+
+</script>
+<script type="text/javascript">
+
+    function changepy(){
+
+        document.getElementById('py1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('java1').className = 'tabbed-editor__node';
+
+        document.getElementById('c1').className = 'tabbed-editor__node';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node';
+
+        document.getElementById('python-code').className = 'code-editor__area code-editor__area--active';
+
+        document.getElementById('java-code').className = 'code-editor__area';
+
+        document.getElementById('c-code').className = 'code-editor__area';
+
+        document.getElementById('cpp-code').className = 'code-editor__area';
+
+
+
+    }
+
+    function changecpp(){
+
+        document.getElementById('py1').className = 'tabbed-editor__node';
+
+        document.getElementById('java1').className = 'tabbed-editor__node';
+
+        document.getElementById('c1').className = 'tabbed-editor__node';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('python-code').className = 'code-editor__area';
+
+        document.getElementById('java-code').className = 'code-editor__area';
+
+        document.getElementById('c-code').className = 'code-editor__area';
+
+        document.getElementById('cpp-code').className = 'code-editor__area code-editor__area--active';
+
+    }
+
+    function changejava(){
+
+       document.getElementById('py1').className = 'tabbed-editor__node';
+
+        document.getElementById('java1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('c1').className = 'tabbed-editor__node';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node';
+
+        document.getElementById('python-code').className = 'code-editor__area';
+
+        document.getElementById('java-code').className = 'code-editor__area code-editor__area--active';
+
+        document.getElementById('c-code').className = 'code-editor__area';
+
+        document.getElementById('cpp-code').className = 'code-editor__area';
+
+    }
+
+    function changec(){
+
+        document.getElementById('py1').className = 'tabbed-editor__node';
+
+        document.getElementById('java1').className = 'tabbed-editor__node';
+
+        document.getElementById('c1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node';
+
+        document.getElementById('python-code').className = 'code-editor__area';
+
+        document.getElementById('java-code').className = 'code-editor__area';
+
+        document.getElementById('c-code').className = 'code-editor__area code-editor__area--active';
+
+        document.getElementById('cpp-code').className = 'code-editor__area';
+
+    }
+
+    
+
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>

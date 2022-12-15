@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<title>Bellman Ford Algorithm</title>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-HCERBDV76D"></script>
+<script>
+
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() { dataLayer.push(arguments); }
+
+        gtag('js', new Date());
+
+
+
+        gtag('config', 'G-HCERBDV76D');
+
+    </script>
+<meta content="B0487B46A104E90209E8A3BEA24ECA0E" name="msvalidate.01"/>
+<meta content="f044b3a12c7918f1" name="yandex-verification"/>
+<!--end-->
+<meta content="learn about data types, variables, lists, tuples, dictionaries,if else,DSA,loops,user-defined functions, oop, threading and scripting." name="description"/>
+<meta content="learnPython" name="author"/>
+<meta content="Learn Python for free,learn python for beginners,Core Python,Web frameworks,Multiprocess architecture,Serverside templating language,python tutorials,python4" name="keywords"/>
+<meta content="website" property="og:type"/>
+<meta content="US-CA" name="”geo.region”"/>
+<meta content="353 Jane Stanford Way, Stanford, CA 94305, United States" name="”geo.placename”"/>
+<meta content="37.430089898615456;-122.17332683124829" name="”geo.position”"/>
+<meta content="37.430089898615456, -122.17332683124829" name="”ICBM”"/>
+<link href="https://pythonread.github.io/?m=1" rel="alternate"/>
+<link href="/favicon.png" rel="icon"/>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="/style1.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/style2.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/style0.css" media="all" rel="stylesheet" type="text/css"/>
+<!--<![endif]-->
+</head>
+<body>
+<div class="nav-wrapper">
+<div class="container">
+<nav>
+<div class="logo wave">
+<a href="/" id="logo">
+
+                        Python Tutorial
+
+                    </a>
+</div>
+<div class="nav-toggle-icon" id="nav-toggle-icon" onclick="mobileMenu()">
+<div class="material-hamburger">
+<span>
+</span>
+<span>
+</span>
+<span>
+</span>
+</div>
+</div>
+<div class="menu-wrapper" id="menu-wrapper">
+<div class="nav-indicator">
+</div>
+<ul class="menus">
+<li>
+<a class="wave" href="/">
+
+                                Home
+
+                            </a>
+</li>
+<li>
+<a class="wave" href="/projects.html">
+
+                                Projects
+
+                            </a>
+</li>
+<li>
+<a class="wave" href="/free-course.html" target="_blank">
+
+                                Free Course
+
+                            </a>
+</li>
+<li>
+<a class="wave" href="/dsa.html">
+
+                                DSA
+
+                            </a>
+</li>
+</ul>
+</div>
+</nav>
+</div>
+</div>
+<div class="contents contents--neg" style="margin-top: 60px">
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+<div class="d-flex">
+<div class="left-bar d-none d-lg-block">
+<div class="card-alt mb-10x">
+<h3>Page Index</h3>
+<div class="list">
+<ul>
+<li><a href="/dsa.html#data-structure-1" title="Data Structures (I)">Data Structures
+
+                                                (I)</a></li>
+<li><a href="/dsa.html#data-structure-2" title="Data Structures (II)">Data Structures
+
+                                                (II)</a></li>
+<li><a href="/dsa.html#tree-1" title="Tree based DSA (I)">Tree based DSA (I)</a></li>
+<li><a href="/dsa.html#tree-2" title="Tree based DSA (II)">Tree based DSA (II)</a></li>
+<li><a href="/dsa.html#graph" title="Graph Data Structures and Algorithm">Graph based
+
+                                                DSA</a></li>
+<li><a href="/dsa.html#sorting-searching" title="Sorting and Searching">Sorting and
+
+                                                Searching</a></li>
+<li><a href="/dsa.html#greedy-algorithm" title="Greedy Algorithms">Greedy Algorithms</a>
+</li>
+<li><a href="/dsa.html#dynamic-programming" title="Dynamic Programming">Dynamic
+
+                                                Programming</a></li>
+<li><a href="/dsa.html#other-algorithms" title="Other Algorithms">Other Algorithms</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="right-bar">
+<!--first part end-------------------------------------------->
+<iframe width="560" height="315" src="https://www.youtube.com/embed/1XuZwJD-2LM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="editor-contents">
+        <h1>Bellman Ford's Algorithm</h1>
+
+
+        <p class="editor-contents__short-description">Bellman Ford algorithm helps us find the shortest path from a vertex to all other vertices of a weighted graph.</p>
+
+
+
+          
+
+
+
+<div id="node-1065" class="node node-algorithm clearfix" about="/dsa/bellman-ford-algorithm" typeof="sioc:Item foaf:Document">
+
+
+<span property="dc:title" content="Bellman Ford's Algorithm" class="rdf-meta element-hidden"></span>
+
+<div class="content">
+<p id="introduction">It is similar to <a href="/dsa/dijkstra-algorithm.html">Dijkstra's algorithm</a> but it can work with graphs in which edges can have negative weights.</p>
+
+<hr><h2 id="why">Why would one ever have edges with negative weights in real life?</h2>
+
+<p>Negative weight edges might seem useless at first but they can explain a lot of phenomena like cashflow, the heat released/absorbed in a chemical reaction, etc.</p>
+
+<p>For instance, if there are different ways to reach from one chemical A to another chemical B, each method will have sub-reactions involving both heat dissipation and absorption.</p>
+
+<p>If we want to find the set of reactions where minimum energy is required, then we will need to be able to factor in the heat absorption as negative weights and heat dissipation as positive weights.</p>
+
+<hr><h2 id="negative-weights">Why do we need to be careful with negative weights?</h2>
+
+<p>Negative weight edges can create negative weight cycles i.e. a cycle that will reduce the total path distance by coming back to the same point.</p>
+
+<figure><img alt="negative weight cycles can give an incorrect result when trying to find out the shortest path" src="//cdn.programiz.com/sites/tutorial2program/files/negative-weight-cycle_1.png" title="Negative Weights" width="730" height="223"><figcaption>Negative weight cycles can give an incorrect result when trying to find out the shortest path</figcaption></figure><p>Shortest path algorithms like Dijkstra's Algorithm that aren't able to detect such a cycle can give an incorrect result because they can go through a negative weight cycle and reduce the path length.</p>
+
+<hr><h2 id="working">How Bellman Ford's algorithm works</h2>
+
+<p>Bellman Ford algorithm works by overestimating the length of the path from the starting vertex to all other vertices. Then it iteratively relaxes those estimates by finding new paths that are shorter than the previously overestimated paths.</p>
+
+<p></p><div class="clearfix"></div><p>By doing this repeatedly for all vertices, we can guarantee that the result is optimized.</p>
+
+<figure><img alt="steps for bellman ford algorithm" src="//cdn.programiz.com/sites/tutorial2program/files/Bellman-Ford-Algorithm-1.png" title="Bellman Ford's algorithm steps" width="730" height="334"><figcaption>Step-1 for Bellman Ford's algorithm</figcaption></figure><figure><img alt="steps for bellman ford algorithm" src="//cdn.programiz.com/sites/tutorial2program/files/Bellman-Ford-Algorithm-2.png" title="Bellman Ford's algorithm steps" width="730" height="364"><figcaption>Step-2 for Bellman Ford's algorithm</figcaption></figure><figure><img alt="steps for bellman ford algorithm" src="//cdn.programiz.com/sites/tutorial2program/files/Bellman-Ford-Algorithm-3.png" title="Bellman Ford's algorithm steps" width="730" height="364"><figcaption>Step-3 for Bellman Ford's algorithm</figcaption></figure><figure><img alt="steps for bellman ford algorithm" src="//cdn.programiz.com/sites/tutorial2program/files/Bellman-Ford-Algorithm-4.png" title="Bellman Ford's algorithm steps" width="730" height="364"><figcaption>Step-4 for Bellman Ford's algorithm</figcaption></figure><figure><img alt="steps for bellman ford algorithm" src="//cdn.programiz.com/sites/tutorial2program/files/Bellman-Ford-Algorithm-5.png" title="Bellman Ford's algorithm steps" width="730" height="364"><figcaption>Step-5 for Bellman Ford's algorithm</figcaption></figure><figure><img alt="steps for bellman ford algorithm" src="//cdn.programiz.com/sites/tutorial2program/files/Bellman-Ford-Algorithm-6.png" title="Bellman Ford's algorithm steps" width="730" height="464"><figcaption>Step-6 for Bellman Ford's algorithm</figcaption></figure><hr><h2 id="pseudocode">Bellman Ford Pseudocode</h2>
+
+<p>We need to maintain the path distance of every vertex. We can store that in an array of size v, where v is the number of vertices.</p>
+
+<p>We also want to be able to get the shortest path, not only know the length of the shortest path. For this, we map each vertex to the vertex that last updated its path length.</p>
+
+<p>Once the algorithm is over, we can backtrack from the destination vertex to the source vertex to find the path.</p>
+
+<pre>function bellmanFord(G, S)
+for each vertex V in G
+distance[V] &lt;- infinite
+previous[V] &lt;- NULL
+distance[S] &lt;- 0
+
+for each vertex V in G				
+for each edge (U,V) in G
+tempDistance &lt;- distance[U] + edge_weight(U, V)
+if tempDistance &lt; distance[V]
+distance[V] &lt;- tempDistance
+previous[V] &lt;- U
+
+for each edge (U,V) in G
+If distance[U] + edge_weight(U, V) &lt; distance[V}
+Error: Negative Cycle Exists
+
+return distance[], previous[]</pre>
+
+<hr><h2 id="vs">Bellman Ford vs Dijkstra</h2>
+
+<p>Bellman Ford's algorithm and Dijkstra's algorithm are very similar in structure. While Dijkstra looks only to the immediate neighbors of a vertex, Bellman goes through each edge in every iteration.</p>
+
+<figure><img alt="Dijkstra's vs Bellman Ford's Algorithm" src="//cdn.programiz.com/sites/tutorial2program/files/bellman-ford-vs-dijkstra.jpg" title="Dijkstra's vs Bellman Ford's Algorithm" width="1200" height="444"><figcaption>Bellman Ford's Algorithm vs Dijkstra's Algorithm</figcaption></figure><hr><h2 id="code">Python, Java and C/C++ Examples</h2>
+
+<div class="tabbed-editor">
+        <div id='py1'class="tabbed-editor__node tabbed-editor__node--active" onclick="changepy()"><a href="#python-code">Python</a></div>
+        
+        <div id="java1" class="tabbed-editor__node" onclick="changejava()"><a href="#java-code">Java</a></div>
+        
+        <div id="c1" class="tabbed-editor__node" onclick="changec()"><a href="#c-code">C</a></div>
+        
+        <div id="cpp1" class="tabbed-editor__node" onclick="changecpp()"><a href="#cpp-code">C++</a></div>
+        </div>
+
+<div class="code-editor code-editor--tabbed">
+<div class="code-editor__area code-editor__area--active" id="python-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="python hljs"><span class="hljs-comment"># Bellman Ford Algorithm in Python</span>
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Graph</span>:</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, vertices)</span>:</span>
+self.V = vertices   <span class="hljs-comment"># Total number of vertices in the graph</span>
+self.graph = []     <span class="hljs-comment"># Array of edges</span>
+
+<span class="hljs-comment"># Add edges</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">add_edge</span><span class="hljs-params">(self, s, d, w)</span>:</span>
+self.graph.append([s, d, w])
+
+<span class="hljs-comment"># Print the solution</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">print_solution</span><span class="hljs-params">(self, dist)</span>:</span>
+<span class="hljs-keyword">print</span>(<span class="hljs-string">"Vertex Distance from Source"</span>)
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(self.V):
+<span class="hljs-keyword">print</span>(<span class="hljs-string">"{0}\t\t{1}"</span>.format(i, dist[i]))
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">bellman_ford</span><span class="hljs-params">(self, src)</span>:</span>
+
+<span class="hljs-comment"># Step 1: fill the distance array and predecessor array</span>
+dist = [float(<span class="hljs-string">"Inf"</span>)] * self.V
+<span class="hljs-comment"># Mark the source vertex</span>
+dist[src] = <span class="hljs-number">0</span>
+
+<span class="hljs-comment"># Step 2: relax edges |V| - 1 times</span>
+<span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> range(self.V - <span class="hljs-number">1</span>):
+<span class="hljs-keyword">for</span> s, d, w <span class="hljs-keyword">in</span> self.graph:
+<span class="hljs-keyword">if</span> dist[s] != float(<span class="hljs-string">"Inf"</span>) <span class="hljs-keyword">and</span> dist[s] + w &lt; dist[d]:
+dist[d] = dist[s] + w
+
+<span class="hljs-comment"># Step 3: detect negative cycle</span>
+<span class="hljs-comment"># if value changes then we have a negative cycle in the graph</span>
+<span class="hljs-comment"># and we cannot find the shortest distances</span>
+<span class="hljs-keyword">for</span> s, d, w <span class="hljs-keyword">in</span> self.graph:
+<span class="hljs-keyword">if</span> dist[s] != float(<span class="hljs-string">"Inf"</span>) <span class="hljs-keyword">and</span> dist[s] + w &lt; dist[d]:
+<span class="hljs-keyword">print</span>(<span class="hljs-string">"Graph contains negative weight cycle"</span>)
+<span class="hljs-keyword">return</span>
+
+<span class="hljs-comment"># No negative weight cycle found!</span>
+<span class="hljs-comment"># Print the distance and predecessor array</span>
+self.print_solution(dist)
+
+
+g = Graph(<span class="hljs-number">5</span>)
+g.add_edge(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">5</span>)
+g.add_edge(<span class="hljs-number">0</span>, <span class="hljs-number">2</span>, <span class="hljs-number">4</span>)
+g.add_edge(<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>)
+g.add_edge(<span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">6</span>)
+g.add_edge(<span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">2</span>)
+
+g.bellman_ford(<span class="hljs-number">0</span>)</code></pre></div>
+</div>
+
+<div class="code-editor__area" id="java-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="java hljs"><span class="hljs-comment">// Bellman Ford Algorithm in Java</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CreateGraph</span> </span>{
+
+<span class="hljs-comment">// CreateGraph - it consists of edges</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CreateEdge</span> </span>{
+<span class="hljs-keyword">int</span> s, d, w;
+
+CreateEdge() {
+s = d = w = <span class="hljs-number">0</span>;
+}
+};
+
+<span class="hljs-keyword">int</span> V, E;
+CreateEdge edge[];
+
+<span class="hljs-comment">// Creates a graph with V vertices and E edges</span>
+CreateGraph(<span class="hljs-keyword">int</span> v, <span class="hljs-keyword">int</span> e) {
+V = v;
+E = e;
+edge = <span class="hljs-keyword">new</span> CreateEdge[e];
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; e; ++i)
+edge[i] = <span class="hljs-keyword">new</span> CreateEdge();
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">BellmanFord</span><span class="hljs-params">(CreateGraph graph, <span class="hljs-keyword">int</span> s)</span> </span>{
+<span class="hljs-keyword">int</span> V = graph.V, E = graph.E;
+<span class="hljs-keyword">int</span> dist[] = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[V];
+
+<span class="hljs-comment">// Step 1: fill the distance array and predecessor array</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; V; ++i)
+dist[i] = Integer.MAX_VALUE;
+
+<span class="hljs-comment">// Mark the source vertex</span>
+dist[s] = <span class="hljs-number">0</span>;
+
+<span class="hljs-comment">// Step 2: relax edges |V| - 1 times</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt; V; ++i) {
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; E; ++j) {
+<span class="hljs-comment">// Get the edge data</span>
+<span class="hljs-keyword">int</span> u = graph.edge[j].s;
+<span class="hljs-keyword">int</span> v = graph.edge[j].d;
+<span class="hljs-keyword">int</span> w = graph.edge[j].w;
+<span class="hljs-keyword">if</span> (dist[u] != Integer.MAX_VALUE &amp;&amp; dist[u] + w &lt; dist[v])
+dist[v] = dist[u] + w;
+}
+}
+
+<span class="hljs-comment">// Step 3: detect negative cycle</span>
+<span class="hljs-comment">// if value changes then we have a negative cycle in the graph</span>
+<span class="hljs-comment">// and we cannot find the shortest distances</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; E; ++j) {
+<span class="hljs-keyword">int</span> u = graph.edge[j].s;
+<span class="hljs-keyword">int</span> v = graph.edge[j].d;
+<span class="hljs-keyword">int</span> w = graph.edge[j].w;
+<span class="hljs-keyword">if</span> (dist[u] != Integer.MAX_VALUE &amp;&amp; dist[u] + w &lt; dist[v]) {
+System.out.println(<span class="hljs-string">"CreateGraph contains negative w cycle"</span>);
+<span class="hljs-keyword">return</span>;
+}
+}
+
+<span class="hljs-comment">// No negative w cycle found!</span>
+<span class="hljs-comment">// Print the distance and predecessor array</span>
+printSolution(dist, V);
+}
+
+<span class="hljs-comment">// Print the solution</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">printSolution</span><span class="hljs-params">(<span class="hljs-keyword">int</span> dist[], <span class="hljs-keyword">int</span> V)</span> </span>{
+System.out.println(<span class="hljs-string">"Vertex Distance from Source"</span>);
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; V; ++i)
+System.out.println(i + <span class="hljs-string">"\t\t"</span> + dist[i]);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+<span class="hljs-keyword">int</span> V = <span class="hljs-number">5</span>; <span class="hljs-comment">// Total vertices</span>
+<span class="hljs-keyword">int</span> E = <span class="hljs-number">8</span>; <span class="hljs-comment">// Total Edges</span>
+
+CreateGraph graph = <span class="hljs-keyword">new</span> CreateGraph(V, E);
+
+<span class="hljs-comment">// edge 0 --&gt; 1</span>
+graph.edge[<span class="hljs-number">0</span>].s = <span class="hljs-number">0</span>;
+graph.edge[<span class="hljs-number">0</span>].d = <span class="hljs-number">1</span>;
+graph.edge[<span class="hljs-number">0</span>].w = <span class="hljs-number">5</span>;
+
+<span class="hljs-comment">// edge 0 --&gt; 2</span>
+graph.edge[<span class="hljs-number">1</span>].s = <span class="hljs-number">0</span>;
+graph.edge[<span class="hljs-number">1</span>].d = <span class="hljs-number">2</span>;
+graph.edge[<span class="hljs-number">1</span>].w = <span class="hljs-number">4</span>;
+
+<span class="hljs-comment">// edge 1 --&gt; 3</span>
+graph.edge[<span class="hljs-number">2</span>].s = <span class="hljs-number">1</span>;
+graph.edge[<span class="hljs-number">2</span>].d = <span class="hljs-number">3</span>;
+graph.edge[<span class="hljs-number">2</span>].w = <span class="hljs-number">3</span>;
+
+<span class="hljs-comment">// edge 2 --&gt; 1</span>
+graph.edge[<span class="hljs-number">3</span>].s = <span class="hljs-number">2</span>;
+graph.edge[<span class="hljs-number">3</span>].d = <span class="hljs-number">1</span>;
+graph.edge[<span class="hljs-number">3</span>].w = <span class="hljs-number">6</span>;
+
+<span class="hljs-comment">// edge 3 --&gt; 2</span>
+graph.edge[<span class="hljs-number">4</span>].s = <span class="hljs-number">3</span>;
+graph.edge[<span class="hljs-number">4</span>].d = <span class="hljs-number">2</span>;
+graph.edge[<span class="hljs-number">4</span>].w = <span class="hljs-number">2</span>;
+
+graph.BellmanFord(graph, <span class="hljs-number">0</span>); <span class="hljs-comment">// 0 is the source vertex</span>
+}
+}</code></pre></div>
+</div>
+
+<div class="code-editor__area" id="c-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="c hljs cpp"><span class="hljs-comment">// Bellman Ford Algorithm in C</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdlib.h&gt;</span></span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> INFINITY 99999</span>
+
+<span class="hljs-comment">//struct for the edges of the graph</span>
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Edge</span> {</span>
+<span class="hljs-keyword">int</span> u;  <span class="hljs-comment">//start vertex of the edge</span>
+<span class="hljs-keyword">int</span> v;  <span class="hljs-comment">//end vertex of the edge</span>
+<span class="hljs-keyword">int</span> w;  <span class="hljs-comment">//weight of the edge (u,v)</span>
+};
+
+<span class="hljs-comment">//Graph - it consists of edges</span>
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Graph</span> {</span>
+<span class="hljs-keyword">int</span> V;        <span class="hljs-comment">//total number of vertices in the graph</span>
+<span class="hljs-keyword">int</span> E;        <span class="hljs-comment">//total number of edges in the graph</span>
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Edge</span> *<span class="hljs-title">edge</span>;</span>  <span class="hljs-comment">//array of edges</span>
+};
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">bellmanford</span><span class="hljs-params">(struct Graph *g, <span class="hljs-keyword">int</span> source)</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">display</span><span class="hljs-params">(<span class="hljs-keyword">int</span> arr[], <span class="hljs-keyword">int</span> size)</span></span>;
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span> </span>{
+<span class="hljs-comment">//create graph</span>
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Graph</span> *<span class="hljs-title">g</span> = (<span class="hljs-title">struct</span> <span class="hljs-title">Graph</span> *)<span class="hljs-title">malloc</span>(<span class="hljs-title">sizeof</span>(<span class="hljs-title">struct</span> <span class="hljs-title">Graph</span>));</span>
+g-&gt;V = <span class="hljs-number">4</span>;  <span class="hljs-comment">//total vertices</span>
+g-&gt;E = <span class="hljs-number">5</span>;  <span class="hljs-comment">//total edges</span>
+
+<span class="hljs-comment">//array of edges for graph</span>
+g-&gt;edge = (struct Edge *)<span class="hljs-built_in">malloc</span>(g-&gt;E * <span class="hljs-keyword">sizeof</span>(struct Edge));
+
+<span class="hljs-comment">//------- adding the edges of the graph</span>
+<span class="hljs-comment">/*
+edge(u, v)
+where 	u = start vertex of the edge (u,v)
+          v = end vertex of the edge (u,v)
+
+w is the weight of the edge (u,v)
+*/</span>
+
+<span class="hljs-comment">//edge 0 --&gt; 1</span>
+g-&gt;edge[<span class="hljs-number">0</span>].u = <span class="hljs-number">0</span>;
+g-&gt;edge[<span class="hljs-number">0</span>].v = <span class="hljs-number">1</span>;
+g-&gt;edge[<span class="hljs-number">0</span>].w = <span class="hljs-number">5</span>;
+
+<span class="hljs-comment">//edge 0 --&gt; 2</span>
+g-&gt;edge[<span class="hljs-number">1</span>].u = <span class="hljs-number">0</span>;
+g-&gt;edge[<span class="hljs-number">1</span>].v = <span class="hljs-number">2</span>;
+g-&gt;edge[<span class="hljs-number">1</span>].w = <span class="hljs-number">4</span>;
+
+<span class="hljs-comment">//edge 1 --&gt; 3</span>
+g-&gt;edge[<span class="hljs-number">2</span>].u = <span class="hljs-number">1</span>;
+g-&gt;edge[<span class="hljs-number">2</span>].v = <span class="hljs-number">3</span>;
+g-&gt;edge[<span class="hljs-number">2</span>].w = <span class="hljs-number">3</span>;
+
+<span class="hljs-comment">//edge 2 --&gt; 1</span>
+g-&gt;edge[<span class="hljs-number">3</span>].u = <span class="hljs-number">2</span>;
+g-&gt;edge[<span class="hljs-number">3</span>].v = <span class="hljs-number">1</span>;
+g-&gt;edge[<span class="hljs-number">3</span>].w = <span class="hljs-number">6</span>;
+
+<span class="hljs-comment">//edge 3 --&gt; 2</span>
+g-&gt;edge[<span class="hljs-number">4</span>].u = <span class="hljs-number">3</span>;
+g-&gt;edge[<span class="hljs-number">4</span>].v = <span class="hljs-number">2</span>;
+g-&gt;edge[<span class="hljs-number">4</span>].w = <span class="hljs-number">2</span>;
+
+bellmanford(g, <span class="hljs-number">0</span>);  <span class="hljs-comment">//0 is the source vertex</span>
+
+<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">bellmanford</span><span class="hljs-params">(struct Graph *g, <span class="hljs-keyword">int</span> source)</span> </span>{
+<span class="hljs-comment">//variables</span>
+<span class="hljs-keyword">int</span> i, j, u, v, w;
+
+<span class="hljs-comment">//total vertex in the graph g</span>
+<span class="hljs-keyword">int</span> tV = g-&gt;V;
+
+<span class="hljs-comment">//total edge in the graph g</span>
+<span class="hljs-keyword">int</span> tE = g-&gt;E;
+
+<span class="hljs-comment">//distance array</span>
+<span class="hljs-comment">//size equal to the number of vertices of the graph g</span>
+<span class="hljs-keyword">int</span> d[tV];
+
+<span class="hljs-comment">//predecessor array</span>
+<span class="hljs-comment">//size equal to the number of vertices of the graph g</span>
+<span class="hljs-keyword">int</span> p[tV];
+
+<span class="hljs-comment">//step 1: fill the distance array and predecessor array</span>
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; tV; i++) {
+d[i] = INFINITY;
+p[i] = <span class="hljs-number">0</span>;
+}
+
+<span class="hljs-comment">//mark the source vertex</span>
+d[source] = <span class="hljs-number">0</span>;
+
+<span class="hljs-comment">//step 2: relax edges |V| - 1 times</span>
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">1</span>; i &lt;= tV - <span class="hljs-number">1</span>; i++) {
+<span class="hljs-keyword">for</span> (j = <span class="hljs-number">0</span>; j &lt; tE; j++) {
+<span class="hljs-comment">//get the edge data</span>
+u = g-&gt;edge[j].u;
+v = g-&gt;edge[j].v;
+w = g-&gt;edge[j].w;
+
+<span class="hljs-keyword">if</span> (d[u] != INFINITY &amp;&amp; d[v] &gt; d[u] + w) {
+d[v] = d[u] + w;
+p[v] = u;
+}
+}
+}
+
+<span class="hljs-comment">//step 3: detect negative cycle</span>
+<span class="hljs-comment">//if value changes then we have a negative cycle in the graph</span>
+<span class="hljs-comment">//and we cannot find the shortest distances</span>
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; tE; i++) {
+u = g-&gt;edge[i].u;
+v = g-&gt;edge[i].v;
+w = g-&gt;edge[i].w;
+<span class="hljs-keyword">if</span> (d[u] != INFINITY &amp;&amp; d[v] &gt; d[u] + w) {
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"Negative weight cycle detected!\n"</span>);
+<span class="hljs-keyword">return</span>;
+}
+}
+
+<span class="hljs-comment">//No negative weight cycle found!</span>
+<span class="hljs-comment">//print the distance and predecessor array</span>
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"Distance array: "</span>);
+display(d, tV);
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"Predecessor array: "</span>);
+display(p, tV);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">display</span><span class="hljs-params">(<span class="hljs-keyword">int</span> arr[], <span class="hljs-keyword">int</span> size)</span> </span>{
+<span class="hljs-keyword">int</span> i;
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; size; i++) {
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d "</span>, arr[i]);
+}
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"\n"</span>);
+}</code></pre></div>
+</div>
+
+<div class="code-editor__area" id="cpp-code">
+<div class="pre-code-wrapper"><div title="Click to copy" class="copy-code-button"></div><pre class="exec" style="max-height: 600px;"><code class="cpp hljs"><span class="hljs-comment">// Bellman Ford Algorithm in C++</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span>
+
+<span class="hljs-comment">// Struct for the edges of the graph</span>
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Edge</span> {</span>
+<span class="hljs-keyword">int</span> u;  <span class="hljs-comment">//start vertex of the edge</span>
+<span class="hljs-keyword">int</span> v;  <span class="hljs-comment">//end vertex of the edge</span>
+<span class="hljs-keyword">int</span> w;  <span class="hljs-comment">//w of the edge (u,v)</span>
+};
+
+<span class="hljs-comment">// Graph - it consists of edges</span>
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Graph</span> {</span>
+<span class="hljs-keyword">int</span> V;        <span class="hljs-comment">// Total number of vertices in the graph</span>
+<span class="hljs-keyword">int</span> E;        <span class="hljs-comment">// Total number of edges in the graph</span>
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Edge</span>* <span class="hljs-title">edge</span>;</span>  <span class="hljs-comment">// Array of edges</span>
+};
+
+<span class="hljs-comment">// Creates a graph with V vertices and E edges</span>
+<span class="hljs-function">struct Graph* <span class="hljs-title">createGraph</span><span class="hljs-params">(<span class="hljs-keyword">int</span> V, <span class="hljs-keyword">int</span> E)</span> </span>{
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Graph</span>* <span class="hljs-title">graph</span> = <span class="hljs-title">new</span> <span class="hljs-title">Graph</span>;</span>
+graph-&gt;V = V;  <span class="hljs-comment">// Total Vertices</span>
+graph-&gt;E = E;  <span class="hljs-comment">// Total edges</span>
+
+<span class="hljs-comment">// Array of edges for graph</span>
+graph-&gt;edge = <span class="hljs-keyword">new</span> Edge[E];
+<span class="hljs-keyword">return</span> graph;
+}
+
+<span class="hljs-comment">// Printing the solution</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">printArr</span><span class="hljs-params">(<span class="hljs-keyword">int</span> arr[], <span class="hljs-keyword">int</span> size)</span> </span>{
+<span class="hljs-keyword">int</span> i;
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; size; i++) {
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d "</span>, arr[i]);
+}
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"\n"</span>);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">BellmanFord</span><span class="hljs-params">(struct Graph* graph, <span class="hljs-keyword">int</span> u)</span> </span>{
+<span class="hljs-keyword">int</span> V = graph-&gt;V;
+<span class="hljs-keyword">int</span> E = graph-&gt;E;
+<span class="hljs-keyword">int</span> dist[V];
+
+<span class="hljs-comment">// Step 1: fill the distance array and predecessor array</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; V; i++)
+dist[i] = INT_MAX;
+
+<span class="hljs-comment">// Mark the source vertex</span>
+dist[u] = <span class="hljs-number">0</span>;
+
+<span class="hljs-comment">// Step 2: relax edges |V| - 1 times</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= V - <span class="hljs-number">1</span>; i++) {
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; E; j++) {
+<span class="hljs-comment">// Get the edge data</span>
+<span class="hljs-keyword">int</span> u = graph-&gt;edge[j].u;
+<span class="hljs-keyword">int</span> v = graph-&gt;edge[j].v;
+<span class="hljs-keyword">int</span> w = graph-&gt;edge[j].w;
+<span class="hljs-keyword">if</span> (dist[u] != INT_MAX &amp;&amp; dist[u] + w &lt; dist[v])
+dist[v] = dist[u] + w;
+}
+}
+
+<span class="hljs-comment">// Step 3: detect negative cycle</span>
+<span class="hljs-comment">// if value changes then we have a negative cycle in the graph</span>
+<span class="hljs-comment">// and we cannot find the shortest distances</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; E; i++) {
+<span class="hljs-keyword">int</span> u = graph-&gt;edge[i].u;
+<span class="hljs-keyword">int</span> v = graph-&gt;edge[i].v;
+<span class="hljs-keyword">int</span> w = graph-&gt;edge[i].w;
+<span class="hljs-keyword">if</span> (dist[u] != INT_MAX &amp;&amp; dist[u] + w &lt; dist[v]) {
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">"Graph contains negative w cycle"</span>);
+<span class="hljs-keyword">return</span>;
+}
+}
+
+<span class="hljs-comment">// No negative weight cycle found!</span>
+<span class="hljs-comment">// Print the distance and predecessor array</span>
+printArr(dist, V);
+
+<span class="hljs-keyword">return</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-comment">// Create a graph</span>
+<span class="hljs-keyword">int</span> V = <span class="hljs-number">5</span>;  <span class="hljs-comment">// Total vertices</span>
+<span class="hljs-keyword">int</span> E = <span class="hljs-number">8</span>;  <span class="hljs-comment">// Total edges</span>
+
+<span class="hljs-comment">// Array of edges for graph</span>
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Graph</span>* <span class="hljs-title">graph</span> = <span class="hljs-title">createGraph</span>(<span class="hljs-title">V</span>, <span class="hljs-title">E</span>);</span>
+
+<span class="hljs-comment">//------- adding the edges of the graph</span>
+<span class="hljs-comment">/*
+edge(u, v)
+where 	u = start vertex of the edge (u,v)
+          v = end vertex of the edge (u,v)
+
+w is the weight of the edge (u,v)
+*/</span>
+
+<span class="hljs-comment">//edge 0 --&gt; 1</span>
+graph-&gt;edge[<span class="hljs-number">0</span>].u = <span class="hljs-number">0</span>;
+graph-&gt;edge[<span class="hljs-number">0</span>].v = <span class="hljs-number">1</span>;
+graph-&gt;edge[<span class="hljs-number">0</span>].w = <span class="hljs-number">5</span>;
+
+<span class="hljs-comment">//edge 0 --&gt; 2</span>
+graph-&gt;edge[<span class="hljs-number">1</span>].u = <span class="hljs-number">0</span>;
+graph-&gt;edge[<span class="hljs-number">1</span>].v = <span class="hljs-number">2</span>;
+graph-&gt;edge[<span class="hljs-number">1</span>].w = <span class="hljs-number">4</span>;
+
+<span class="hljs-comment">//edge 1 --&gt; 3</span>
+graph-&gt;edge[<span class="hljs-number">2</span>].u = <span class="hljs-number">1</span>;
+graph-&gt;edge[<span class="hljs-number">2</span>].v = <span class="hljs-number">3</span>;
+graph-&gt;edge[<span class="hljs-number">2</span>].w = <span class="hljs-number">3</span>;
+
+<span class="hljs-comment">//edge 2 --&gt; 1</span>
+graph-&gt;edge[<span class="hljs-number">3</span>].u = <span class="hljs-number">2</span>;
+graph-&gt;edge[<span class="hljs-number">3</span>].v = <span class="hljs-number">1</span>;
+graph-&gt;edge[<span class="hljs-number">3</span>].w = <span class="hljs-number">6</span>;
+
+<span class="hljs-comment">//edge 3 --&gt; 2</span>
+graph-&gt;edge[<span class="hljs-number">4</span>].u = <span class="hljs-number">3</span>;
+graph-&gt;edge[<span class="hljs-number">4</span>].v = <span class="hljs-number">2</span>;
+graph-&gt;edge[<span class="hljs-number">4</span>].w = <span class="hljs-number">2</span>;
+
+BellmanFord(graph, <span class="hljs-number">0</span>);  <span class="hljs-comment">//0 is the source vertex</span>
+
+<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}</code></pre></div>
+</div>
+</div>
+
+<hr><h2 id="complexity">Bellman Ford's Complexity</h2>
+
+<h3>Time Complexity</h3>
+
+<div class="table-responsive"><table border="0"><tbody><tr><td>Best Case Complexity</td>
+  <td>O(E)</td>
+</tr><tr><td>Average Case Complexity</td>
+  <td>O(VE)</td>
+</tr><tr><td>Worst Case Complexity</td>
+  <td>O(VE)</td>
+</tr></tbody></table></div><h3>Space Complexity</h3>
+
+<p>And, the space complexity is <code>O(V)</code>.</p>
+
+<hr><h2 id="application">Bellman Ford's Algorithm Applications</h2>
+
+<ol><li>For calculating shortest paths in routing algorithms</li>
+<li>For finding the shortest path</li>
+</ol></div>
+
+
+
+</div>
+
+
+        <div class="tutorial-toc"><div class="tutorial-toc__inner"><h3 class="tutorial-toc__title">Table of Contents
+<button class="btn btn--clear align-items-center">
+<svg class="programiz-icon"><use xlink:href="/sites/all/themes/programiz/assets/feather-sprite.svg#x"></use></svg></button></h3><div class="tutorial-toc__links"><ul><li><a href="#introduction">Introduction</a></li>
+<li><a href="#why">Why would one ever have edges with negative weights in real life?</a></li>
+<li><a href="#negative-weights">Why do we need to be careful with negative weights?</a></li>
+<li><a href="#working">How Bellman Ford's algorithm works</a></li>
+<li><a href="#pseudocode">Bellman Ford Pseudocode</a></li>
+<li><a href="#vs">Bellman Ford vs Dijkstra</a></li>
+<li><a href="#code">Bellman Ford's Algorithm Code</a></li>
+</ul></div></div></div>                          </div>
+<!--second------------------------------------------->
+<div>
+<ul>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/stack.html">
+
+        Stack</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/queue.html">
+
+        Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/types-of-queue.html">
+
+        Types of Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/circular-queue.html">
+
+        Circular Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/priority-queue.html">
+
+        Priority Queue</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deque.html">
+
+        Deque</a></button>
+<br/>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linked-list.html">
+
+        Linked List</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linked-list-operations.html">
+
+        Linked List Operations</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linked-list-types.html">
+
+        Types of Linked List</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/hash-table.html">
+
+        Hash Table</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/heap-data-structure.html">
+
+        Heap Data Structure</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/fibonacci-heap.html">
+
+        Fibonacci Heap</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/decrease-key-and-delete-node-from-a-fibonacci-heap.html">
+
+        Decrease Key and Delete node from Fibonacci Heap</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/trees.html">
+
+        Tree Data Structure</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/tree-traversal.html">
+
+        Tree Traversal</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/binary-tree.html">
+
+        Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/full-binary-tree.html">
+
+        Full Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/perfect-binary-tree.html">
+
+        Perfect Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/complete-binary-tree.html">
+
+        Complete Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/balanced-binary-tree.html">
+
+        Balanced Binary Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/binary-search-tree.html">
+
+        Binary Search Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/avl-tree.html">
+
+        AVL Tree</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/b-tree.html">
+
+        B Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-into-a-b-tree.html">
+
+        Insertion into B-tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deletion-from-a-b-tree.html">
+
+        Deletion from B-tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/b-plus-tree.html">
+
+        B+ Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-on-a-b-plus-tree.html">
+
+        Insertion on a B+ Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deletion-from-a-b-plus-tree.html">
+
+        Deletion from a B+ Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/red-black-tree.html">
+
+        Red Black Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-in-a-red-black-tree.html">
+
+        Insertion in Red Black Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/deletion-from-a-red-black-tree.html">
+
+        Deletion from Red Black Tree</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph.html">
+
+        Graph Data Structure</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/spanning-tree-and-minimum-spanning-tree.html">
+
+        Spanning Tree</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/strongly-connected-components.html">
+
+        Strongly Connected Components</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-adjacency-matrix.html">
+
+        Adjacency Matrix</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-adjacency-list.html">
+
+        Adjacency List</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-dfs.html">
+
+        DFS Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/graph-bfs.html">
+
+        Breadth-first Search</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/bellman-ford-algorithm.html">
+
+        Bellman Ford's Algorithm</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/bubble-sort.html">
+
+        Bubble Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/selection-sort.html">
+
+        Selection Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/insertion-sort.html">
+
+        Insertion Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/merge-sort.html">
+
+        Merge Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/quick-sort.html">
+
+        Quick Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/counting-sort.html">
+
+        Counting Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/radix-sort.html">
+
+        Radix Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/bucket-sort.html">
+
+        Bucket Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/heap-sort.html">
+
+        Heap Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/shell-sort.html">
+
+        Shell Sort</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/linear-search.html">
+
+        Linear Search</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/binary-search.html">
+
+        Binary Search</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/greedy-algorithm.html">
+
+        Greedy Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/ford-fulkerson-algorithm.html">
+
+        Ford-Fulkerson Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/dijkstra-algorithm.html">
+
+        Dijkstra's Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/kruskal-algorithm.html">
+
+        Kruskal's Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/prim-algorithm.html">
+
+        Prim's Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/huffman-coding.html">
+
+        Huffman Code</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/dynamic-programming.html">
+
+        Dynamic Programming</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/floyd-warshall-algorithm.html">
+
+        Floyd Warshall Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/longest-common-subsequence.html">
+
+        Longest Common Subsequence</a></button>
+<br>
+<br/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/backtracking-algorithm.html">
+
+        Backtracking Algorithm</a></button>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+        /dsa/rabin-karp-algorithm.html">
+
+        Rabin-Karp Algorithm</a></button>
+<br>
+<br/>
+<h2>Free Courses on YouTube</h2>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="
+
+            https://www.youtube.com/watch?v=IbSXF7eT-AU&amp;list=PLR_5PTwg_uAQw40OhdvAwN4NvzWv0xOZ2">
+
+            Python Full Course Playlist</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://www.youtube.com/watch?v=UEl6wB90Gs8">
+
+            105 STL Algorithms in Less Than an Hour</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://www.youtube.com/watch?v=zZXTgN7L1UU&amp;list=PLR_5PTwg_uAS6C1cSMjU6oVhOcCX8Zu_4">
+
+            C++ STL Playlist</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://youtu.be/ty9756v3kc8">
+
+            Learn Node.js </a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://youtu.be/exrIpdS3Crc">
+
+            Learn Data Science Full course</a></button>
+<br/>
+<img height="35px" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgT9Spnddn1UerjXEbcWQUPhfDHLL9rppkmUp1x4JRPKsdTwmX0kI26Rd0-2qKlwGAAnbgiPz7dZMm5Rv5Fd1QLhkQC6n3ob13ug1bTYtizkDpk2B0LxRiA8QUIjeTmfu6vZHoKJ7pXUgt73sHoXvSpGWjKQ6ZM01IIbJnXmwzXq4RdNYA4swdULgNy/s16000/youtube-logo.png" width="35px"/>
+<button style="padding:5px; margin-bottom:2px"><a href="https://youtu.be/Q8tDO2uSk5U">
+
+            Learn Computer Networking Full course</a></button>
+<br/>
+</br></br></br></br></br></br></br></br></ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<footer class="afooter" style="margin-left:20px">
+<p>
+<a href="/cookie-policy.html">Cookie policy</a> |
+
+        <a href="/privacy-policy.html">Privacy policy</a> |
+
+        <a href="/terms-of-use.html">Terms of use</a> |
+
+        <a href="/disclaimer.html">Disclaimer</a> |
+
+        <a href="/about-us.html">About Us</a>
+</p>
+<p>
+
+        © 2023 <a href="https://pythonread.github.io">https://pythonread.github.io</a>
+</p>
+</footer>
+<script type="text/javascript">
+
+    document.addEventListener('DOMContentLoaded', function () { htmlTableOfContents() }); function htmlTableOfContents(documentRef) { var documentRef = documentRef || document; var toc = documentRef.getElementById("toc"); var headings = [].slice.call(documentRef.body.querySelectorAll('h2, h3')); headings.forEach(function (heading, index) { var ref = "toc" + index; if (heading.hasAttribute("id")) { ref = heading.getAttribute("id") } else { heading.setAttribute("id", ref) } var link = documentRef.createElement("a"); link.setAttribute("href", "#" + ref); link.textContent = heading.textContent; var div = documentRef.createElement("div"); div.setAttribute("class", heading.tagName.toLowerCase()); div.appendChild(link); toc.appendChild(div) }) } try { module.exports = htmlTableOfContents } catch (e) { } function isScrolledIntoView(el) { var rect = el.getBoundingClientRect(); var elemTop = rect.top; var elemBottom = rect.bottom; var isVisible = (elemTop >= -10) && (elemBottom <= (window.innerHeight)); return isVisible } function highlightMenu() { var headers = document.querySelectorAll("h2, h3"); for (var i = 0; i < headers.length; i += 1) { if (isScrolledIntoView(headers[i])) { var childDivs = document.getElementById('toc').getElementsByTagName('div'); var c = childDivs[i].classList; c.add("active"); for (var j = 0; j < i; j += 1) { var c = childDivs[j].classList; c.remove("active") } for (var j = i + 1; j < childDivs.length; j += 1) { var c = childDivs[j].classList; c.remove("active") } break } } } function highlightMenuLastItem() { var childDivs = document.getElementById('toc').getElementsByTagName('div'); for (var j = 0; j < childDivs.length - 1; j += 1) { var c = childDivs[j].classList; c.remove("active") } var c = childDivs[childDivs.length - 1].classList; c.add("active") } window.addEventListener("click", function (event) { highlightMenu() }); window.onscroll = function (e) { highlightMenu(); if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) { highlightMenuLastItem() } }; function mobileMenu() { var classes = document.getElementById('nav-toggle-icon').classList; if (classes.contains("active")) { classes.remove("active") } else { classes.add("active") } var classes = document.getElementById('menu-wrapper').classList; if (classes.contains("active")) { classes.remove("active") } else { classes.add("active") } }
+
+</script>
+<script type="text/javascript">
+
+    function changepy(){
+
+        document.getElementById('py1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('java1').className = 'tabbed-editor__node';
+
+        document.getElementById('c1').className = 'tabbed-editor__node';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node';
+
+        document.getElementById('python-code').className = 'code-editor__area code-editor__area--active';
+
+        document.getElementById('java-code').className = 'code-editor__area';
+
+        document.getElementById('c-code').className = 'code-editor__area';
+
+        document.getElementById('cpp-code').className = 'code-editor__area';
+
+
+
+    }
+
+    function changecpp(){
+
+        document.getElementById('py1').className = 'tabbed-editor__node';
+
+        document.getElementById('java1').className = 'tabbed-editor__node';
+
+        document.getElementById('c1').className = 'tabbed-editor__node';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('python-code').className = 'code-editor__area';
+
+        document.getElementById('java-code').className = 'code-editor__area';
+
+        document.getElementById('c-code').className = 'code-editor__area';
+
+        document.getElementById('cpp-code').className = 'code-editor__area code-editor__area--active';
+
+    }
+
+    function changejava(){
+
+       document.getElementById('py1').className = 'tabbed-editor__node';
+
+        document.getElementById('java1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('c1').className = 'tabbed-editor__node';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node';
+
+        document.getElementById('python-code').className = 'code-editor__area';
+
+        document.getElementById('java-code').className = 'code-editor__area code-editor__area--active';
+
+        document.getElementById('c-code').className = 'code-editor__area';
+
+        document.getElementById('cpp-code').className = 'code-editor__area';
+
+    }
+
+    function changec(){
+
+        document.getElementById('py1').className = 'tabbed-editor__node';
+
+        document.getElementById('java1').className = 'tabbed-editor__node';
+
+        document.getElementById('c1').className = 'tabbed-editor__node tabbed-editor__node--active';
+
+        document.getElementById('cpp1').className = 'tabbed-editor__node';
+
+        document.getElementById('python-code').className = 'code-editor__area';
+
+        document.getElementById('java-code').className = 'code-editor__area';
+
+        document.getElementById('c-code').className = 'code-editor__area code-editor__area--active';
+
+        document.getElementById('cpp-code').className = 'code-editor__area';
+
+    }
+
+    
+
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>
