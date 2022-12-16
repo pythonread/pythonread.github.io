@@ -1,0 +1,2350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns:yt="http://www.youtube.com/xml/schemas/2015" xmlns:media="http://search.yahoo.com/mrss/" xmlns="http://www.w3.org/2005/Atom">
+ <link rel="self" href="http://www.youtube.com/feeds/videos.xml?playlist_id=PLR_5PTwg_uAQw40OhdvAwN4NvzWv0xOZ2"/>
+ <id>yt:playlist:PLR_5PTwg_uAQw40OhdvAwN4NvzWv0xOZ2</id>
+ <yt:playlistId>PLR_5PTwg_uAQw40OhdvAwN4NvzWv0xOZ2</yt:playlistId>
+ <yt:channelId>UCo11jfMvmwivG6g3c9tfJqQ</yt:channelId>
+ <title>Python Tutorial for Beginners Playlist</title>
+ <author>
+  <name>LeetCode Solutions</name>
+  <uri>https://www.youtube.com/channel/UCo11jfMvmwivG6g3c9tfJqQ</uri>
+ </author>
+ <published>2022-11-23T11:59:20+00:00</published>
+ <entry>
+  <id>yt:video:IbSXF7eT-AU</id>
+  <yt:videoId>IbSXF7eT-AU</yt:videoId>
+  <yt:channelId>UCo11jfMvmwivG6g3c9tfJqQ</yt:channelId>
+  <title>Python 3 - Episode 1 - No experience necessary #python3</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=IbSXF7eT-AU"/>
+  <author>
+   <name>LeetCode Solutions</name>
+   <uri>https://www.youtube.com/channel/UCo11jfMvmwivG6g3c9tfJqQ</uri>
+  </author>
+  <published>2022-11-24T05:00:33+00:00</published>
+  <updated>2022-12-13T16:32:26+00:00</updated>
+  <media:group>
+   <media:title>Python 3 - Episode 1 - No experience necessary #python3</media:title>
+   <media:content url="https://www.youtube.com/v/IbSXF7eT-AU?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i2.ytimg.com/vi/IbSXF7eT-AU/hqdefault.jpg" width="480" height="360"/>
+   <media:description>Intro: (0:00)
+About this series: (0:05)
+Check to see if its installed: (0:25)
+Install Python for your OS: (1:25)
+Test the installation: (2:59)
+Install and configure an IDE: (4:14)
+Hello World: (7:15)
+
+https://pythonread.github.io
+
+Install Python on...
+Windows : https://bit.ly/python-on-windows
+MacOS : https://bit.ly/python-macos
+CentOS : https://bit.ly/python-centos
+Ubuntu : https://bit.ly/python-ubuntu
+
+Python 3 - Episode 1 - No experience necessary
+https://youtu.be/IbSXF7eT-AU
+Python 3 - Episode 2 - Variables are something that changes 
+https://youtu.be/yZKbNOITHAU
+Python 3 - Episode 3 - Comments, Boolean and Comparisons
+https://youtu.be/UzHvQxBcF1Q
+Python 3 - Episode 4 - Numbers and basic numeric operations
+https://youtu.be/FnsRbFZqdQU
+Python 3 - Episode 5 - What are strings
+https://youtu.be/N3kE_RuUVt4
+Python 3 - Episode 6 - Basic string operations
+https://youtu.be/GMrDDqsqI8s
+Python 3 - Episode 7 - Lists
+https://youtu.be/idhNcD9jtzE
+Python 3 - Episode 8 - Sets
+https://youtu.be/qiEGFgcWzn4
+Python 3 - Episode 9 - Tuples, fast and read only
+https://youtu.be/N3VmRXcoLDk
+Python 3 - Episode 10 - Dictionary, indexed with keys
+https://youtu.be/nMUGkTsttDQ
+Python 3 - Episode 11 - Flow control with IF, ELSE and ELIF
+https://youtu.be/AC6WURKIgcU
+Python 3 - Episode 12 - Flow control with While loops
+https://youtu.be/XOpZrd_D8es
+Python 3 - Episode 13 - For loop and range
+https://youtu.be/vx04Yfkrms8
+Python 3 - Episode 14 - Simple app, paint calculator
+https://youtu.be/ybr-nTJJFDI
+Python 3 - Episode 15 - Intro to functions
+https://youtu.be/VM2gJpjNhZM
+Python 3 - Episode 16 - Functions and scope
+https://youtu.be/k22eKsflvHI
+Python 3 - Episode 17 - Functions in depth
+https://youtu.be/-6j1_hLbq3Y
+Python 3 - Episode 18 - Packing and unpacking data
+https://youtu.be/Wpbbf66gVDw
+Python 3 - Episode 19 - Functions and arguments
+https://youtu.be/PiJQhnbgRtU
+Python 3 - Episode 20 - Global keyword
+https://youtu.be/uXxmR17Yvrw
+Python 3 - Episode 21 - Walrus operator
+https://youtu.be/bIS5XdqjyLw
+Python 3 - Episode 22 - Navigating folders
+https://youtu.be/zRLHQQ2tkKU
+Python 3 - Episode 23 - Reading a text file
+https://youtu.be/jrtIfqGlAWo
+Python 3 - Episode 24 - Write a text file
+https://youtu.be/thb_z_wPVu8
+Python 3 - Episode 25 - Working with binary files
+https://youtu.be/ueMyoL1MGlg
+Python 3 - Episode 26 - Working with JSON
+https://youtu.be/JIqW1KGl9Zs
+Python 3 - Episode 27 - Imports
+https://youtu.be/s8goqLLLCbA
+Python 3 - Episode 28 - Main function
+https://youtu.be/ui0g0ZIJIFc
+Python 3 - Episode 29 - Import madness
+https://youtu.be/7tAym_vaB6A
+Python 3 - Episode 30 - Introduction to classes
+https://youtu.be/U40v3hciOzM
+Python 3 - Episode 31 - Class Inheritance
+https://youtu.be/-RKlrYt4qVw
+Python 3 - Episode 32 - Multiple Inheritance
+https://youtu.be/KLsv0CgYSAo
+Python 3 - Episode 33 - Pet Shop Application
+https://youtu.be/a4M0ySdqId8
+Python 3 - Episode 34 - The undesrcore
+https://youtu.be/SfbwAj54mL4
+Python 3 - Episode 35 - Decorators
+https://youtu.be/45O4lWI4LAY
+Python 3 - Episode 36 - Iterators
+https://youtu.be/61eSMbpmUgk
+Python 3 - Episode 37 - Exceptions
+https://youtu.be/g0JnUjBolA8
+Python 3 - Episode 38 - Pickle
+https://youtu.be/nwR1S_ge70s
+Python 3 - Episode 39 - Map function
+https://youtu.be/RgekiWhBUc0
+Python 3 - Episode 40 - Filter function
+https://youtu.be/COPDngImfKI
+Python 3 - Episode 41 - Logging basics
+https://youtu.be/SYecRmTeBOM
+Python 3 - Episode 42 - Simple app, Dir Stats
+https://youtu.be/eYivpebplDE
+Python 3 - Episode 43 - Timers, intro to threads
+https://youtu.be/CLvhMlpUyXI
+Python 3 - Episode 44 - Thread basics
+https://youtu.be/AIclIYDJ3zA
+Python 3 - Episode 45 - Thread Pools
+https://youtu.be/vajNHfG_ZEY
+Python 3 - Episode 46 - Thread Locking
+https://youtu.be/snPtNQccDLM
+Python 3 - Episode 47 - Daemon threads
+https://youtu.be/GULIawOoAm0
+Python 3 - Episode 48 - Queues and Futures
+https://youtu.be/s2JNiuNCJlk
+Python 3 - Episode 49 - Intro to Multiprocessing
+https://youtu.be/wuP-Esom0-c
+Python 3 - Episode 50 - Multiprocess starting and stopping
+https://youtu.be/v9-D7YOSyu4
+Python 3 - Episode 51 - Multiprocess pool
+https://youtu.be/Pzv30ecJoyo
+Python 3 - Episode 52 - Async code
+https://youtu.be/bPEgYoOm0bQ
+Python 3 - Episode 53 - Producer and consumer
+https://youtu.be/Qo6hBgsXAlk
+Python 3 - Episode 54 - Communicating with processes
+https://youtu.be/qvEOZMpwtf0
+Python 3 - Episode 55 - Basic TCP Client
+https://youtu.be/5V91veF7PUQ
+Python 3 - Episode 56 - Basic TCP Server
+https://youtu.be/La3cyCnpSC4
+Python 3 - Episode 57 - Determine port availability
+https://youtu.be/EtRelbO2yNg
+Python 3 - Episode 58 - UDP Sockets
+https://youtu.be/GqNbobpNQys
+Python 3 - Episode 59 - Blocking vs Non Blocking Sockets
+https://youtu.be/tWlJsUazb_I
+Python 3 - Episode 60 - Example App: TCP Echo Server
+https://youtu.be/jm9mgejjTtw
+Python 3 - Episode 61 - DateTime is super easy to use
+https://youtu.be/RVzJwdKH2rw
+
+#pythonprogramming #python3 #pythonforbeginners 
+Like 👍, Comment ❤️ and Subscribe 📌 To Our Channel 👇</media:description>
+   <media:community>
+    <media:starRating count="2" average="5.00" min="1" max="5"/>
+    <media:statistics views="69"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:yZKbNOITHAU</id>
+  <yt:videoId>yZKbNOITHAU</yt:videoId>
+  <yt:channelId>UCo11jfMvmwivG6g3c9tfJqQ</yt:channelId>
+  <title>Python 3 - Episode 2 - Variables are something that changes</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=yZKbNOITHAU"/>
+  <author>
+   <name>LeetCode Solutions</name>
+   <uri>https://www.youtube.com/channel/UCo11jfMvmwivG6g3c9tfJqQ</uri>
+  </author>
+  <published>2022-11-24T10:30:23+00:00</published>
+  <updated>2022-11-25T06:00:11+00:00</updated>
+  <media:group>
+   <media:title>Python 3 - Episode 2 - Variables are something that changes</media:title>
+   <media:content url="https://www.youtube.com/v/yZKbNOITHAU?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i2.ytimg.com/vi/yZKbNOITHAU/hqdefault.jpg" width="480" height="360"/>
+   <media:description>https://coderpad.blogspot.com/2022/11/python-variable-types.html
+
+Intro: (0:00)
+New file: (0:08)
+Data types: (1:48)
+Dynamic and strong: (4:05)
+---------------------------------------------
+Python 3 - Episode 1 - No experience necessary
+https://youtu.be/IbSXF7eT-AU
+Python 3 - Episode 2 - Variables are something that changes 
+https://youtu.be/yZKbNOITHAU
+Python 3 - Episode 3 - Comments, Boolean and Comparisons
+https://youtu.be/UzHvQxBcF1Q
+Python 3 - Episode 4 - Numbers and basic numeric operations
+https://youtu.be/FnsRbFZqdQU
+Python 3 - Episode 5 - What are strings
+https://youtu.be/N3kE_RuUVt4
+Python 3 - Episode 6 - Basic string operations
+https://youtu.be/GMrDDqsqI8s
+Python 3 - Episode 7 - Lists
+https://youtu.be/idhNcD9jtzE
+Python 3 - Episode 8 - Sets
+https://youtu.be/qiEGFgcWzn4
+Python 3 - Episode 9 - Tuples, fast and read only
+https://youtu.be/N3VmRXcoLDk
+Python 3 - Episode 10 - Dictionary, indexed with keys
+https://youtu.be/nMUGkTsttDQ
+Python 3 - Episode 11 - Flow control with IF, ELSE and ELIF
+https://youtu.be/AC6WURKIgcU
+Python 3 - Episode 12 - Flow control with While loops
+https://youtu.be/XOpZrd_D8es
+Python 3 - Episode 13 - For loop and range
+https://youtu.be/vx04Yfkrms8
+Python 3 - Episode 14 - Simple app, paint calculator
+https://youtu.be/ybr-nTJJFDI
+Python 3 - Episode 15 - Intro to functions
+https://youtu.be/VM2gJpjNhZM
+Python 3 - Episode 16 - Functions and scope
+https://youtu.be/k22eKsflvHI
+Python 3 - Episode 17 - Functions in depth
+https://youtu.be/-6j1_hLbq3Y
+Python 3 - Episode 18 - Packing and unpacking data
+https://youtu.be/Wpbbf66gVDw
+Python 3 - Episode 19 - Functions and arguments
+https://youtu.be/PiJQhnbgRtU
+Python 3 - Episode 20 - Global keyword
+https://youtu.be/uXxmR17Yvrw
+Python 3 - Episode 21 - Walrus operator
+https://youtu.be/bIS5XdqjyLw
+Python 3 - Episode 22 - Navigating folders
+https://youtu.be/zRLHQQ2tkKU
+Python 3 - Episode 23 - Reading a text file
+https://youtu.be/jrtIfqGlAWo
+Python 3 - Episode 24 - Write a text file
+https://youtu.be/thb_z_wPVu8
+Python 3 - Episode 25 - Working with binary files
+https://youtu.be/ueMyoL1MGlg
+Python 3 - Episode 26 - Working with JSON
+https://youtu.be/JIqW1KGl9Zs
+Python 3 - Episode 27 - Imports
+https://youtu.be/s8goqLLLCbA
+Python 3 - Episode 28 - Main function
+https://youtu.be/ui0g0ZIJIFc
+Python 3 - Episode 29 - Import madness
+https://youtu.be/7tAym_vaB6A
+Python 3 - Episode 30 - Introduction to classes
+https://youtu.be/U40v3hciOzM
+Python 3 - Episode 31 - Class Inheritance
+https://youtu.be/-RKlrYt4qVw
+Python 3 - Episode 32 - Multiple Inheritance
+https://youtu.be/KLsv0CgYSAo
+Python 3 - Episode 33 - Pet Shop Application
+https://youtu.be/a4M0ySdqId8
+Python 3 - Episode 34 - The undesrcore
+https://youtu.be/SfbwAj54mL4
+Python 3 - Episode 35 - Decorators
+https://youtu.be/45O4lWI4LAY
+Python 3 - Episode 36 - Iterators
+https://youtu.be/61eSMbpmUgk
+Python 3 - Episode 37 - Exceptions
+https://youtu.be/g0JnUjBolA8
+Python 3 - Episode 38 - Pickle
+https://youtu.be/nwR1S_ge70s
+Python 3 - Episode 39 - Map function
+https://youtu.be/RgekiWhBUc0
+Python 3 - Episode 40 - Filter function
+https://youtu.be/COPDngImfKI
+Python 3 - Episode 41 - Logging basics
+https://youtu.be/SYecRmTeBOM
+Python 3 - Episode 42 - Simple app, Dir Stats
+https://youtu.be/eYivpebplDE
+Python 3 - Episode 43 - Timers, intro to threads
+https://youtu.be/CLvhMlpUyXI
+Python 3 - Episode 44 - Thread basics
+https://youtu.be/AIclIYDJ3zA
+Python 3 - Episode 45 - Thread Pools
+https://youtu.be/vajNHfG_ZEY
+Python 3 - Episode 46 - Thread Locking
+https://youtu.be/snPtNQccDLM
+Python 3 - Episode 47 - Daemon threads
+https://youtu.be/GULIawOoAm0
+Python 3 - Episode 48 - Queues and Futures
+https://youtu.be/s2JNiuNCJlk
+Python 3 - Episode 49 - Intro to Multiprocessing
+https://youtu.be/wuP-Esom0-c
+Python 3 - Episode 50 - Multiprocess starting and stopping
+https://youtu.be/v9-D7YOSyu4
+Python 3 - Episode 51 - Multiprocess pool
+https://youtu.be/Pzv30ecJoyo
+Python 3 - Episode 52 - Async code
+https://youtu.be/bPEgYoOm0bQ
+Python 3 - Episode 53 - Producer and consumer
+https://youtu.be/Qo6hBgsXAlk
+Python 3 - Episode 54 - Communicating with processes
+https://youtu.be/qvEOZMpwtf0
+Python 3 - Episode 55 - Basic TCP Client
+https://youtu.be/5V91veF7PUQ
+Python 3 - Episode 56 - Basic TCP Server
+https://youtu.be/La3cyCnpSC4
+Python 3 - Episode 57 - Determine port availability
+https://youtu.be/EtRelbO2yNg
+Python 3 - Episode 58 - UDP Sockets
+https://youtu.be/GqNbobpNQys
+Python 3 - Episode 59 - Blocking vs Non Blocking Sockets
+https://youtu.be/tWlJsUazb_I
+Python 3 - Episode 60 - Example App: TCP Echo Server
+https://youtu.be/jm9mgejjTtw
+Python 3 - Episode 61 - DateTime is super easy to use
+https://youtu.be/RVzJwdKH2rw
+
+#pythonprogramming #python3 #pythonforbeginners 
+Like 👍, Comment ❤️ and Subscribe 📌 To Our Channel 👇</media:description>
+   <media:community>
+    <media:starRating count="3" average="5.00" min="1" max="5"/>
+    <media:statistics views="34"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:UzHvQxBcF1Q</id>
+  <yt:videoId>UzHvQxBcF1Q</yt:videoId>
+  <yt:channelId>UCo11jfMvmwivG6g3c9tfJqQ</yt:channelId>
+  <title>Python 3 - Episode 3 - Comments, Boolean and Comparisons</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=UzHvQxBcF1Q"/>
+  <author>
+   <name>LeetCode Solutions</name>
+   <uri>https://www.youtube.com/channel/UCo11jfMvmwivG6g3c9tfJqQ</uri>
+  </author>
+  <published>2022-11-24T11:30:08+00:00</published>
+  <updated>2022-11-24T11:30:08+00:00</updated>
+  <media:group>
+   <media:title>Python 3 - Episode 3 - Comments, Boolean and Comparisons</media:title>
+   <media:content url="https://www.youtube.com/v/UzHvQxBcF1Q?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i2.ytimg.com/vi/UzHvQxBcF1Q/hqdefault.jpg" width="480" height="360"/>
+   <media:description>Intro: (0:00)
+Comments: (0:27)
+Boolean: (4:27)
+Comparison: (6:55)
+----------------------------------
+Python 3 - Episode 1 - No experience necessary
+https://youtu.be/IbSXF7eT-AU
+Python 3 - Episode 2 - Variables are something that changes 
+https://youtu.be/yZKbNOITHAU
+Python 3 - Episode 3 - Comments, Boolean and Comparisons
+https://youtu.be/UzHvQxBcF1Q
+Python 3 - Episode 4 - Numbers and basic numeric operations
+https://youtu.be/FnsRbFZqdQU
+Python 3 - Episode 5 - What are strings
+https://youtu.be/N3kE_RuUVt4
+Python 3 - Episode 6 - Basic string operations
+https://youtu.be/GMrDDqsqI8s
+Python 3 - Episode 7 - Lists
+https://youtu.be/idhNcD9jtzE
+Python 3 - Episode 8 - Sets
+https://youtu.be/qiEGFgcWzn4
+Python 3 - Episode 9 - Tuples, fast and read only
+https://youtu.be/N3VmRXcoLDk
+Python 3 - Episode 10 - Dictionary, indexed with keys
+https://youtu.be/nMUGkTsttDQ
+Python 3 - Episode 11 - Flow control with IF, ELSE and ELIF
+https://youtu.be/AC6WURKIgcU
+Python 3 - Episode 12 - Flow control with While loops
+https://youtu.be/XOpZrd_D8es
+Python 3 - Episode 13 - For loop and range
+https://youtu.be/vx04Yfkrms8
+Python 3 - Episode 14 - Simple app, paint calculator
+https://youtu.be/ybr-nTJJFDI
+Python 3 - Episode 15 - Intro to functions
+https://youtu.be/VM2gJpjNhZM
+Python 3 - Episode 16 - Functions and scope
+https://youtu.be/k22eKsflvHI
+Python 3 - Episode 17 - Functions in depth
+https://youtu.be/-6j1_hLbq3Y
+Python 3 - Episode 18 - Packing and unpacking data
+https://youtu.be/Wpbbf66gVDw
+Python 3 - Episode 19 - Functions and arguments
+https://youtu.be/PiJQhnbgRtU
+Python 3 - Episode 20 - Global keyword
+https://youtu.be/uXxmR17Yvrw
+Python 3 - Episode 21 - Walrus operator
+https://youtu.be/bIS5XdqjyLw
+Python 3 - Episode 22 - Navigating folders
+https://youtu.be/zRLHQQ2tkKU
+Python 3 - Episode 23 - Reading a text file
+https://youtu.be/jrtIfqGlAWo
+Python 3 - Episode 24 - Write a text file
+https://youtu.be/thb_z_wPVu8
+Python 3 - Episode 25 - Working with binary files
+https://youtu.be/ueMyoL1MGlg
+Python 3 - Episode 26 - Working with JSON
+https://youtu.be/JIqW1KGl9Zs
+Python 3 - Episode 27 - Imports
+https://youtu.be/s8goqLLLCbA
+Python 3 - Episode 28 - Main function
+https://youtu.be/ui0g0ZIJIFc
+Python 3 - Episode 29 - Import madness
+https://youtu.be/7tAym_vaB6A
+Python 3 - Episode 30 - Introduction to classes
+https://youtu.be/U40v3hciOzM
+Python 3 - Episode 31 - Class Inheritance
+https://youtu.be/-RKlrYt4qVw
+Python 3 - Episode 32 - Multiple Inheritance
+https://youtu.be/KLsv0CgYSAo
+Python 3 - Episode 33 - Pet Shop Application
+https://youtu.be/a4M0ySdqId8
+Python 3 - Episode 34 - The undesrcore
+https://youtu.be/SfbwAj54mL4
+Python 3 - Episode 35 - Decorators
+https://youtu.be/45O4lWI4LAY
+Python 3 - Episode 36 - Iterators
+https://youtu.be/61eSMbpmUgk
+Python 3 - Episode 37 - Exceptions
+https://youtu.be/g0JnUjBolA8
+Python 3 - Episode 38 - Pickle
+https://youtu.be/nwR1S_ge70s
+Python 3 - Episode 39 - Map function
+https://youtu.be/RgekiWhBUc0
+Python 3 - Episode 40 - Filter function
+https://youtu.be/COPDngImfKI
+Python 3 - Episode 41 - Logging basics
+https://youtu.be/SYecRmTeBOM
+Python 3 - Episode 42 - Simple app, Dir Stats
+https://youtu.be/eYivpebplDE
+Python 3 - Episode 43 - Timers, intro to threads
+https://youtu.be/CLvhMlpUyXI
+Python 3 - Episode 44 - Thread basics
+https://youtu.be/AIclIYDJ3zA
+Python 3 - Episode 45 - Thread Pools
+https://youtu.be/vajNHfG_ZEY
+Python 3 - Episode 46 - Thread Locking
+https://youtu.be/snPtNQccDLM
+Python 3 - Episode 47 - Daemon threads
+https://youtu.be/GULIawOoAm0
+Python 3 - Episode 48 - Queues and Futures
+https://youtu.be/s2JNiuNCJlk
+Python 3 - Episode 49 - Intro to Multiprocessing
+https://youtu.be/wuP-Esom0-c
+Python 3 - Episode 50 - Multiprocess starting and stopping
+https://youtu.be/v9-D7YOSyu4
+Python 3 - Episode 51 - Multiprocess pool
+https://youtu.be/Pzv30ecJoyo
+Python 3 - Episode 52 - Async code
+https://youtu.be/bPEgYoOm0bQ
+Python 3 - Episode 53 - Producer and consumer
+https://youtu.be/Qo6hBgsXAlk
+Python 3 - Episode 54 - Communicating with processes
+https://youtu.be/qvEOZMpwtf0
+Python 3 - Episode 55 - Basic TCP Client
+https://youtu.be/5V91veF7PUQ
+Python 3 - Episode 56 - Basic TCP Server
+https://youtu.be/La3cyCnpSC4
+Python 3 - Episode 57 - Determine port availability
+https://youtu.be/EtRelbO2yNg
+Python 3 - Episode 58 - UDP Sockets
+https://youtu.be/GqNbobpNQys
+Python 3 - Episode 59 - Blocking vs Non Blocking Sockets
+https://youtu.be/tWlJsUazb_I
+Python 3 - Episode 60 - Example App: TCP Echo Server
+https://youtu.be/jm9mgejjTtw
+Python 3 - Episode 61 - DateTime is super easy to use
+https://youtu.be/RVzJwdKH2rw
+
+#pythonprogramming #python3 #pythonforbeginners 
+Like 👍, Comment ❤️ and Subscribe 📌 To Our Channel 👇</media:description>
+   <media:community>
+    <media:starRating count="2" average="5.00" min="1" max="5"/>
+    <media:statistics views="24"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:idhNcD9jtzE</id>
+  <yt:videoId>idhNcD9jtzE</yt:videoId>
+  <yt:channelId>UCo11jfMvmwivG6g3c9tfJqQ</yt:channelId>
+  <title>Python 3   Episode 7   Lists</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=idhNcD9jtzE"/>
+  <author>
+   <name>LeetCode Solutions</name>
+   <uri>https://www.youtube.com/channel/UCo11jfMvmwivG6g3c9tfJqQ</uri>
+  </author>
+  <published>2022-11-25T01:30:18+00:00</published>
+  <updated>2022-11-25T01:30:19+00:00</updated>
+  <media:group>
+   <media:title>Python 3   Episode 7   Lists</media:title>
+   <media:content url="https://www.youtube.com/v/idhNcD9jtzE?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i2.ytimg.com/vi/idhNcD9jtzE/hqdefault.jpg" width="480" height="360"/>
+   <media:description>Intro: (0:00)
+What are lists: (0:05)
+Creating a list: (1:38)
+Index and positioning: (4:02)
+Adding items (6:49)
+Removing items (9:28)
+Extending (15:00)
+Sorting (16:43)
+Making a copy (19:16)
+Deleting (21:04)
+Clearing elements (22:30)
+Lists in lists (24:09)
+Changing items: (28:56)
+--------------------------------------
+Python 3 - Episode 1 - No experience necessary
+https://youtu.be/IbSXF7eT-AU
+Python 3 - Episode 2 - Variables are something that changes 
+https://youtu.be/yZKbNOITHAU
+Python 3 - Episode 3 - Comments, Boolean and Comparisons
+https://youtu.be/UzHvQxBcF1Q
+Python 3 - Episode 4 - Numbers and basic numeric operations
+https://youtu.be/FnsRbFZqdQU
+Python 3 - Episode 5 - What are strings
+https://youtu.be/N3kE_RuUVt4
+Python 3 - Episode 6 - Basic string operations
+https://youtu.be/GMrDDqsqI8s
+Python 3 - Episode 7 - Lists
+https://youtu.be/idhNcD9jtzE
+Python 3 - Episode 8 - Sets
+https://youtu.be/qiEGFgcWzn4
+Python 3 - Episode 9 - Tuples, fast and read only
+https://youtu.be/N3VmRXcoLDk
+Python 3 - Episode 10 - Dictionary, indexed with keys
+https://youtu.be/nMUGkTsttDQ
+Python 3 - Episode 11 - Flow control with IF, ELSE and ELIF
+https://youtu.be/AC6WURKIgcU
+Python 3 - Episode 12 - Flow control with While loops
+https://youtu.be/XOpZrd_D8es
+Python 3 - Episode 13 - For loop and range
+https://youtu.be/vx04Yfkrms8
+Python 3 - Episode 14 - Simple app, paint calculator
+https://youtu.be/ybr-nTJJFDI
+Python 3 - Episode 15 - Intro to functions
+https://youtu.be/VM2gJpjNhZM
+Python 3 - Episode 16 - Functions and scope
+https://youtu.be/k22eKsflvHI
+Python 3 - Episode 17 - Functions in depth
+https://youtu.be/-6j1_hLbq3Y
+Python 3 - Episode 18 - Packing and unpacking data
+https://youtu.be/Wpbbf66gVDw
+Python 3 - Episode 19 - Functions and arguments
+https://youtu.be/PiJQhnbgRtU
+Python 3 - Episode 20 - Global keyword
+https://youtu.be/uXxmR17Yvrw
+Python 3 - Episode 21 - Walrus operator
+https://youtu.be/bIS5XdqjyLw
+Python 3 - Episode 22 - Navigating folders
+https://youtu.be/zRLHQQ2tkKU
+Python 3 - Episode 23 - Reading a text file
+https://youtu.be/jrtIfqGlAWo
+Python 3 - Episode 24 - Write a text file
+https://youtu.be/thb_z_wPVu8
+Python 3 - Episode 25 - Working with binary files
+https://youtu.be/ueMyoL1MGlg
+Python 3 - Episode 26 - Working with JSON
+https://youtu.be/JIqW1KGl9Zs
+Python 3 - Episode 27 - Imports
+https://youtu.be/s8goqLLLCbA
+Python 3 - Episode 28 - Main function
+https://youtu.be/ui0g0ZIJIFc
+Python 3 - Episode 29 - Import madness
+https://youtu.be/7tAym_vaB6A
+Python 3 - Episode 30 - Introduction to classes
+https://youtu.be/U40v3hciOzM
+Python 3 - Episode 31 - Class Inheritance
+https://youtu.be/-RKlrYt4qVw
+Python 3 - Episode 32 - Multiple Inheritance
+https://youtu.be/KLsv0CgYSAo
+Python 3 - Episode 33 - Pet Shop Application
+https://youtu.be/a4M0ySdqId8
+Python 3 - Episode 34 - The undesrcore
+https://youtu.be/SfbwAj54mL4
+Python 3 - Episode 35 - Decorators
+https://youtu.be/45O4lWI4LAY
+Python 3 - Episode 36 - Iterators
+https://youtu.be/61eSMbpmUgk
+Python 3 - Episode 37 - Exceptions
+https://youtu.be/g0JnUjBolA8
+Python 3 - Episode 38 - Pickle
+https://youtu.be/nwR1S_ge70s
+Python 3 - Episode 39 - Map function
+https://youtu.be/RgekiWhBUc0
+Python 3 - Episode 40 - Filter function
+https://youtu.be/COPDngImfKI
+Python 3 - Episode 41 - Logging basics
+https://youtu.be/SYecRmTeBOM
+Python 3 - Episode 42 - Simple app, Dir Stats
+https://youtu.be/eYivpebplDE
+Python 3 - Episode 43 - Timers, intro to threads
+https://youtu.be/CLvhMlpUyXI
+Python 3 - Episode 44 - Thread basics
+https://youtu.be/AIclIYDJ3zA
+Python 3 - Episode 45 - Thread Pools
+https://youtu.be/vajNHfG_ZEY
+Python 3 - Episode 46 - Thread Locking
+https://youtu.be/snPtNQccDLM
+Python 3 - Episode 47 - Daemon threads
+https://youtu.be/GULIawOoAm0
+Python 3 - Episode 48 - Queues and Futures
+https://youtu.be/s2JNiuNCJlk
+Python 3 - Episode 49 - Intro to Multiprocessing
+https://youtu.be/wuP-Esom0-c
+Python 3 - Episode 50 - Multiprocess starting and stopping
+https://youtu.be/v9-D7YOSyu4
+Python 3 - Episode 51 - Multiprocess pool
+https://youtu.be/Pzv30ecJoyo
+Python 3 - Episode 52 - Async code
+https://youtu.be/bPEgYoOm0bQ
+Python 3 - Episode 53 - Producer and consumer
+https://youtu.be/Qo6hBgsXAlk
+Python 3 - Episode 54 - Communicating with processes
+https://youtu.be/qvEOZMpwtf0
+Python 3 - Episode 55 - Basic TCP Client
+https://youtu.be/5V91veF7PUQ
+Python 3 - Episode 56 - Basic TCP Server
+https://youtu.be/La3cyCnpSC4
+Python 3 - Episode 57 - Determine port availability
+https://youtu.be/EtRelbO2yNg
+Python 3 - Episode 58 - UDP Sockets
+https://youtu.be/GqNbobpNQys
+Python 3 - Episode 59 - Blocking vs Non Blocking Sockets
+https://youtu.be/tWlJsUazb_I
+Python 3 - Episode 60 - Example App: TCP Echo Server
+https://youtu.be/jm9mgejjTtw
+Python 3 - Episode 61 - DateTime is super easy to use
+https://youtu.be/RVzJwdKH2rw
+
+#pythonprogramming #python3 #pythonforbeginners 
+Like 👍, Comment ❤️ and Subscribe 📌 To Our Channel 👇</media:description>
+   <media:community>
+    <media:starRating count="0" average="0.00" min="1" max="5"/>
+    <media:statistics views="13"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:qiEGFgcWzn4</id>
+  <yt:videoId>qiEGFgcWzn4</yt:videoId>
+  <yt:channelId>UCo11jfMvmwivG6g3c9tfJqQ</yt:channelId>
+  <title>Python 3 - Episode 8 - Sets</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=qiEGFgcWzn4"/>
+  <author>
+   <name>LeetCode Solutions</name>
+   <uri>https://www.youtube.com/channel/UCo11jfMvmwivG6g3c9tfJqQ</uri>
+  </author>
+  <published>2022-11-25T04:30:13+00:00</published>
+  <updated>2022-11-25T04:30:13+00:00</updated>
+  <media:group>
+   <media:title>Python 3 - Episode 8 - Sets</media:title>
+   <media:content url="https://www.youtube.com/v/qiEGFgcWzn4?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i2.ytimg.com/vi/qiEGFgcWzn4/hqdefault.jpg" width="480" height="360"/>
+   <media:description>In this video series we will cover Python 3. This video talk about the set data type  which is fast, unique and immutable.
+
+Intro: (0:00)
+What are sets: (0:05)
+Creating a set: (1:31)
+Adding items (3:38)
+Removing items (5:08)
+Can not change items (7:31)
+----------------------------------------------
+Python 3 - Episode 1 - No experience necessary
+https://youtu.be/IbSXF7eT-AU
+Python 3 - Episode 2 - Variables are something that changes 
+https://youtu.be/yZKbNOITHAU
+Python 3 - Episode 3 - Comments, Boolean and Comparisons
+https://youtu.be/UzHvQxBcF1Q
+Python 3 - Episode 4 - Numbers and basic numeric operations
+https://youtu.be/FnsRbFZqdQU
+Python 3 - Episode 5 - What are strings
+https://youtu.be/N3kE_RuUVt4
+Python 3 - Episode 6 - Basic string operations
+https://youtu.be/GMrDDqsqI8s
+Python 3 - Episode 7 - Lists
+https://youtu.be/idhNcD9jtzE
+Python 3 - Episode 8 - Sets
+https://youtu.be/qiEGFgcWzn4
+Python 3 - Episode 9 - Tuples, fast and read only
+https://youtu.be/N3VmRXcoLDk
+Python 3 - Episode 10 - Dictionary, indexed with keys
+https://youtu.be/nMUGkTsttDQ
+Python 3 - Episode 11 - Flow control with IF, ELSE and ELIF
+https://youtu.be/AC6WURKIgcU
+Python 3 - Episode 12 - Flow control with While loops
+https://youtu.be/XOpZrd_D8es
+Python 3 - Episode 13 - For loop and range
+https://youtu.be/vx04Yfkrms8
+Python 3 - Episode 14 - Simple app, paint calculator
+https://youtu.be/ybr-nTJJFDI
+Python 3 - Episode 15 - Intro to functions
+https://youtu.be/VM2gJpjNhZM
+Python 3 - Episode 16 - Functions and scope
+https://youtu.be/k22eKsflvHI
+Python 3 - Episode 17 - Functions in depth
+https://youtu.be/-6j1_hLbq3Y
+Python 3 - Episode 18 - Packing and unpacking data
+https://youtu.be/Wpbbf66gVDw
+Python 3 - Episode 19 - Functions and arguments
+https://youtu.be/PiJQhnbgRtU
+Python 3 - Episode 20 - Global keyword
+https://youtu.be/uXxmR17Yvrw
+Python 3 - Episode 21 - Walrus operator
+https://youtu.be/bIS5XdqjyLw
+Python 3 - Episode 22 - Navigating folders
+https://youtu.be/zRLHQQ2tkKU
+Python 3 - Episode 23 - Reading a text file
+https://youtu.be/jrtIfqGlAWo
+Python 3 - Episode 24 - Write a text file
+https://youtu.be/thb_z_wPVu8
+Python 3 - Episode 25 - Working with binary files
+https://youtu.be/ueMyoL1MGlg
+Python 3 - Episode 26 - Working with JSON
+https://youtu.be/JIqW1KGl9Zs
+Python 3 - Episode 27 - Imports
+https://youtu.be/s8goqLLLCbA
+Python 3 - Episode 28 - Main function
+https://youtu.be/ui0g0ZIJIFc
+Python 3 - Episode 29 - Import madness
+https://youtu.be/7tAym_vaB6A
+Python 3 - Episode 30 - Introduction to classes
+https://youtu.be/U40v3hciOzM
+Python 3 - Episode 31 - Class Inheritance
+https://youtu.be/-RKlrYt4qVw
+Python 3 - Episode 32 - Multiple Inheritance
+https://youtu.be/KLsv0CgYSAo
+Python 3 - Episode 33 - Pet Shop Application
+https://youtu.be/a4M0ySdqId8
+Python 3 - Episode 34 - The undesrcore
+https://youtu.be/SfbwAj54mL4
+Python 3 - Episode 35 - Decorators
+https://youtu.be/45O4lWI4LAY
+Python 3 - Episode 36 - Iterators
+https://youtu.be/61eSMbpmUgk
+Python 3 - Episode 37 - Exceptions
+https://youtu.be/g0JnUjBolA8
+Python 3 - Episode 38 - Pickle
+https://youtu.be/nwR1S_ge70s
+Python 3 - Episode 39 - Map function
+https://youtu.be/RgekiWhBUc0
+Python 3 - Episode 40 - Filter function
+https://youtu.be/COPDngImfKI
+Python 3 - Episode 41 - Logging basics
+https://youtu.be/SYecRmTeBOM
+Python 3 - Episode 42 - Simple app, Dir Stats
+https://youtu.be/eYivpebplDE
+Python 3 - Episode 43 - Timers, intro to threads
+https://youtu.be/CLvhMlpUyXI
+Python 3 - Episode 44 - Thread basics
+https://youtu.be/AIclIYDJ3zA
+Python 3 - Episode 45 - Thread Pools
+https://youtu.be/vajNHfG_ZEY
+Python 3 - Episode 46 - Thread Locking
+https://youtu.be/snPtNQccDLM
+Python 3 - Episode 47 - Daemon threads
+https://youtu.be/GULIawOoAm0
+Python 3 - Episode 48 - Queues and Futures
+https://youtu.be/s2JNiuNCJlk
+Python 3 - Episode 49 - Intro to Multiprocessing
+https://youtu.be/wuP-Esom0-c
+Python 3 - Episode 50 - Multiprocess starting and stopping
+https://youtu.be/v9-D7YOSyu4
+Python 3 - Episode 51 - Multiprocess pool
+https://youtu.be/Pzv30ecJoyo
+Python 3 - Episode 52 - Async code
+https://youtu.be/bPEgYoOm0bQ
+Python 3 - Episode 53 - Producer and consumer
+https://youtu.be/Qo6hBgsXAlk
+Python 3 - Episode 54 - Communicating with processes
+https://youtu.be/qvEOZMpwtf0
+Python 3 - Episode 55 - Basic TCP Client
+https://youtu.be/5V91veF7PUQ
+Python 3 - Episode 56 - Basic TCP Server
+https://youtu.be/La3cyCnpSC4
+Python 3 - Episode 57 - Determine port availability
+https://youtu.be/EtRelbO2yNg
+Python 3 - Episode 58 - UDP Sockets
+https://youtu.be/GqNbobpNQys
+Python 3 - Episode 59 - Blocking vs Non Blocking Sockets
+https://youtu.be/tWlJsUazb_I
+Python 3 - Episode 60 - Example App: TCP Echo Server
+https://youtu.be/jm9mgejjTtw
+Python 3 - Episode 61 - DateTime is super easy to use
+https://youtu.be/RVzJwdKH2rw
+
+#pythonprogramming #python3 #pythonforbeginners 
+Like 👍, Comment ❤️ and Subscribe 📌 To Our Channel 👇</media:description>
+   <media:community>
+    <media:starRating count="0" average="0.00" min="1" max="5"/>
+    <media:statistics views="7"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:FnsRbFZqdQU</id>
+  <yt:videoId>FnsRbFZqdQU</yt:videoId>
+  <yt:channelId>UCo11jfMvmwivG6g3c9tfJqQ</yt:channelId>
+  <title>Python 3 - Episode 4 - Numbers and basic numeric operations</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=FnsRbFZqdQU"/>
+  <author>
+   <name>LeetCode Solutions</name>
+   <uri>https://www.youtube.com/channel/UCo11jfMvmwivG6g3c9tfJqQ</uri>
+  </author>
+  <published>2022-11-24T12:30:08+00:00</published>
+  <updated>2022-11-24T12:30:09+00:00</updated>
+  <media:group>
+   <media:title>Python 3 - Episode 4 - Numbers and basic numeric operations</media:title>
+   <media:content url="https://www.youtube.com/v/FnsRbFZqdQU?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i3.ytimg.com/vi/FnsRbFZqdQU/hqdefault.jpg" width="480" height="360"/>
+   <media:description>Intro: (0:00)
+Number Data Types: (0:34)
+basic Numerical Operations (6:36)
+--------------------------------------------------------
+Python 3 - Episode 1 - No experience necessary
+https://youtu.be/IbSXF7eT-AU
+Python 3 - Episode 2 - Variables are something that changes 
+https://youtu.be/yZKbNOITHAU
+Python 3 - Episode 3 - Comments, Boolean and Comparisons
+https://youtu.be/UzHvQxBcF1Q
+Python 3 - Episode 4 - Numbers and basic numeric operations
+https://youtu.be/FnsRbFZqdQU
+Python 3 - Episode 5 - What are strings
+https://youtu.be/N3kE_RuUVt4
+Python 3 - Episode 6 - Basic string operations
+https://youtu.be/GMrDDqsqI8s
+Python 3 - Episode 7 - Lists
+https://youtu.be/idhNcD9jtzE
+Python 3 - Episode 8 - Sets
+https://youtu.be/qiEGFgcWzn4
+Python 3 - Episode 9 - Tuples, fast and read only
+https://youtu.be/N3VmRXcoLDk
+Python 3 - Episode 10 - Dictionary, indexed with keys
+https://youtu.be/nMUGkTsttDQ
+Python 3 - Episode 11 - Flow control with IF, ELSE and ELIF
+https://youtu.be/AC6WURKIgcU
+Python 3 - Episode 12 - Flow control with While loops
+https://youtu.be/XOpZrd_D8es
+Python 3 - Episode 13 - For loop and range
+https://youtu.be/vx04Yfkrms8
+Python 3 - Episode 14 - Simple app, paint calculator
+https://youtu.be/ybr-nTJJFDI
+Python 3 - Episode 15 - Intro to functions
+https://youtu.be/VM2gJpjNhZM
+Python 3 - Episode 16 - Functions and scope
+https://youtu.be/k22eKsflvHI
+Python 3 - Episode 17 - Functions in depth
+https://youtu.be/-6j1_hLbq3Y
+Python 3 - Episode 18 - Packing and unpacking data
+https://youtu.be/Wpbbf66gVDw
+Python 3 - Episode 19 - Functions and arguments
+https://youtu.be/PiJQhnbgRtU
+Python 3 - Episode 20 - Global keyword
+https://youtu.be/uXxmR17Yvrw
+Python 3 - Episode 21 - Walrus operator
+https://youtu.be/bIS5XdqjyLw
+Python 3 - Episode 22 - Navigating folders
+https://youtu.be/zRLHQQ2tkKU
+Python 3 - Episode 23 - Reading a text file
+https://youtu.be/jrtIfqGlAWo
+Python 3 - Episode 24 - Write a text file
+https://youtu.be/thb_z_wPVu8
+Python 3 - Episode 25 - Working with binary files
+https://youtu.be/ueMyoL1MGlg
+Python 3 - Episode 26 - Working with JSON
+https://youtu.be/JIqW1KGl9Zs
+Python 3 - Episode 27 - Imports
+https://youtu.be/s8goqLLLCbA
+Python 3 - Episode 28 - Main function
+https://youtu.be/ui0g0ZIJIFc
+Python 3 - Episode 29 - Import madness
+https://youtu.be/7tAym_vaB6A
+Python 3 - Episode 30 - Introduction to classes
+https://youtu.be/U40v3hciOzM
+Python 3 - Episode 31 - Class Inheritance
+https://youtu.be/-RKlrYt4qVw
+Python 3 - Episode 32 - Multiple Inheritance
+https://youtu.be/KLsv0CgYSAo
+Python 3 - Episode 33 - Pet Shop Application
+https://youtu.be/a4M0ySdqId8
+Python 3 - Episode 34 - The undesrcore
+https://youtu.be/SfbwAj54mL4
+Python 3 - Episode 35 - Decorators
+https://youtu.be/45O4lWI4LAY
+Python 3 - Episode 36 - Iterators
+https://youtu.be/61eSMbpmUgk
+Python 3 - Episode 37 - Exceptions
+https://youtu.be/g0JnUjBolA8
+Python 3 - Episode 38 - Pickle
+https://youtu.be/nwR1S_ge70s
+Python 3 - Episode 39 - Map function
+https://youtu.be/RgekiWhBUc0
+Python 3 - Episode 40 - Filter function
+https://youtu.be/COPDngImfKI
+Python 3 - Episode 41 - Logging basics
+https://youtu.be/SYecRmTeBOM
+Python 3 - Episode 42 - Simple app, Dir Stats
+https://youtu.be/eYivpebplDE
+Python 3 - Episode 43 - Timers, intro to threads
+https://youtu.be/CLvhMlpUyXI
+Python 3 - Episode 44 - Thread basics
+https://youtu.be/AIclIYDJ3zA
+Python 3 - Episode 45 - Thread Pools
+https://youtu.be/vajNHfG_ZEY
+Python 3 - Episode 46 - Thread Locking
+https://youtu.be/snPtNQccDLM
+Python 3 - Episode 47 - Daemon threads
+https://youtu.be/GULIawOoAm0
+Python 3 - Episode 48 - Queues and Futures
+https://youtu.be/s2JNiuNCJlk
+Python 3 - Episode 49 - Intro to Multiprocessing
+https://youtu.be/wuP-Esom0-c
+Python 3 - Episode 50 - Multiprocess starting and stopping
+https://youtu.be/v9-D7YOSyu4
+Python 3 - Episode 51 - Multiprocess pool
+https://youtu.be/Pzv30ecJoyo
+Python 3 - Episode 52 - Async code
+https://youtu.be/bPEgYoOm0bQ
+Python 3 - Episode 53 - Producer and consumer
+https://youtu.be/Qo6hBgsXAlk
+Python 3 - Episode 54 - Communicating with processes
+https://youtu.be/qvEOZMpwtf0
+Python 3 - Episode 55 - Basic TCP Client
+https://youtu.be/5V91veF7PUQ
+Python 3 - Episode 56 - Basic TCP Server
+https://youtu.be/La3cyCnpSC4
+Python 3 - Episode 57 - Determine port availability
+https://youtu.be/EtRelbO2yNg
+Python 3 - Episode 58 - UDP Sockets
+https://youtu.be/GqNbobpNQys
+Python 3 - Episode 59 - Blocking vs Non Blocking Sockets
+https://youtu.be/tWlJsUazb_I
+Python 3 - Episode 60 - Example App: TCP Echo Server
+https://youtu.be/jm9mgejjTtw
+Python 3 - Episode 61 - DateTime is super easy to use
+https://youtu.be/RVzJwdKH2rw
+
+#pythonprogramming #python3 #pythonforbeginners 
+Like 👍, Comment ❤️ and Subscribe 📌 To Our Channel 👇</media:description>
+   <media:community>
+    <media:starRating count="2" average="5.00" min="1" max="5"/>
+    <media:statistics views="15"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:N3kE_RuUVt4</id>
+  <yt:videoId>N3kE_RuUVt4</yt:videoId>
+  <yt:channelId>UCo11jfMvmwivG6g3c9tfJqQ</yt:channelId>
+  <title>Python 3 - Episode 5 - What are strings</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=N3kE_RuUVt4"/>
+  <author>
+   <name>LeetCode Solutions</name>
+   <uri>https://www.youtube.com/channel/UCo11jfMvmwivG6g3c9tfJqQ</uri>
+  </author>
+  <published>2022-11-24T13:30:07+00:00</published>
+  <updated>2022-11-24T13:30:07+00:00</updated>
+  <media:group>
+   <media:title>Python 3 - Episode 5 - What are strings</media:title>
+   <media:content url="https://www.youtube.com/v/N3kE_RuUVt4?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i3.ytimg.com/vi/N3kE_RuUVt4/hqdefault.jpg" width="480" height="360"/>
+   <media:description>In this video series we will cover Python 3. This video talk about the basics of strings. Strings are a complex data type so we will split this into two videos.
+
+Intro: (0:00)
+What are strings: (0:04)
+How to make strings: (2:26)
+Under the hood: (6:53)
+Escape characters: (9:23)
+Formatting avoid errors: (13:49)
+-----------------------------------------------------
+Python 3 - Episode 1 - No experience necessary
+https://youtu.be/IbSXF7eT-AU
+Python 3 - Episode 2 - Variables are something that changes 
+https://youtu.be/yZKbNOITHAU
+Python 3 - Episode 3 - Comments, Boolean and Comparisons
+https://youtu.be/UzHvQxBcF1Q
+Python 3 - Episode 4 - Numbers and basic numeric operations
+https://youtu.be/FnsRbFZqdQU
+Python 3 - Episode 5 - What are strings
+https://youtu.be/N3kE_RuUVt4
+Python 3 - Episode 6 - Basic string operations
+https://youtu.be/GMrDDqsqI8s
+Python 3 - Episode 7 - Lists
+https://youtu.be/idhNcD9jtzE
+Python 3 - Episode 8 - Sets
+https://youtu.be/qiEGFgcWzn4
+Python 3 - Episode 9 - Tuples, fast and read only
+https://youtu.be/N3VmRXcoLDk
+Python 3 - Episode 10 - Dictionary, indexed with keys
+https://youtu.be/nMUGkTsttDQ
+Python 3 - Episode 11 - Flow control with IF, ELSE and ELIF
+https://youtu.be/AC6WURKIgcU
+Python 3 - Episode 12 - Flow control with While loops
+https://youtu.be/XOpZrd_D8es
+Python 3 - Episode 13 - For loop and range
+https://youtu.be/vx04Yfkrms8
+Python 3 - Episode 14 - Simple app, paint calculator
+https://youtu.be/ybr-nTJJFDI
+Python 3 - Episode 15 - Intro to functions
+https://youtu.be/VM2gJpjNhZM
+Python 3 - Episode 16 - Functions and scope
+https://youtu.be/k22eKsflvHI
+Python 3 - Episode 17 - Functions in depth
+https://youtu.be/-6j1_hLbq3Y
+Python 3 - Episode 18 - Packing and unpacking data
+https://youtu.be/Wpbbf66gVDw
+Python 3 - Episode 19 - Functions and arguments
+https://youtu.be/PiJQhnbgRtU
+Python 3 - Episode 20 - Global keyword
+https://youtu.be/uXxmR17Yvrw
+Python 3 - Episode 21 - Walrus operator
+https://youtu.be/bIS5XdqjyLw
+Python 3 - Episode 22 - Navigating folders
+https://youtu.be/zRLHQQ2tkKU
+Python 3 - Episode 23 - Reading a text file
+https://youtu.be/jrtIfqGlAWo
+Python 3 - Episode 24 - Write a text file
+https://youtu.be/thb_z_wPVu8
+Python 3 - Episode 25 - Working with binary files
+https://youtu.be/ueMyoL1MGlg
+Python 3 - Episode 26 - Working with JSON
+https://youtu.be/JIqW1KGl9Zs
+Python 3 - Episode 27 - Imports
+https://youtu.be/s8goqLLLCbA
+Python 3 - Episode 28 - Main function
+https://youtu.be/ui0g0ZIJIFc
+Python 3 - Episode 29 - Import madness
+https://youtu.be/7tAym_vaB6A
+Python 3 - Episode 30 - Introduction to classes
+https://youtu.be/U40v3hciOzM
+Python 3 - Episode 31 - Class Inheritance
+https://youtu.be/-RKlrYt4qVw
+Python 3 - Episode 32 - Multiple Inheritance
+https://youtu.be/KLsv0CgYSAo
+Python 3 - Episode 33 - Pet Shop Application
+https://youtu.be/a4M0ySdqId8
+Python 3 - Episode 34 - The undesrcore
+https://youtu.be/SfbwAj54mL4
+Python 3 - Episode 35 - Decorators
+https://youtu.be/45O4lWI4LAY
+Python 3 - Episode 36 - Iterators
+https://youtu.be/61eSMbpmUgk
+Python 3 - Episode 37 - Exceptions
+https://youtu.be/g0JnUjBolA8
+Python 3 - Episode 38 - Pickle
+https://youtu.be/nwR1S_ge70s
+Python 3 - Episode 39 - Map function
+https://youtu.be/RgekiWhBUc0
+Python 3 - Episode 40 - Filter function
+https://youtu.be/COPDngImfKI
+Python 3 - Episode 41 - Logging basics
+https://youtu.be/SYecRmTeBOM
+Python 3 - Episode 42 - Simple app, Dir Stats
+https://youtu.be/eYivpebplDE
+Python 3 - Episode 43 - Timers, intro to threads
+https://youtu.be/CLvhMlpUyXI
+Python 3 - Episode 44 - Thread basics
+https://youtu.be/AIclIYDJ3zA
+Python 3 - Episode 45 - Thread Pools
+https://youtu.be/vajNHfG_ZEY
+Python 3 - Episode 46 - Thread Locking
+https://youtu.be/snPtNQccDLM
+Python 3 - Episode 47 - Daemon threads
+https://youtu.be/GULIawOoAm0
+Python 3 - Episode 48 - Queues and Futures
+https://youtu.be/s2JNiuNCJlk
+Python 3 - Episode 49 - Intro to Multiprocessing
+https://youtu.be/wuP-Esom0-c
+Python 3 - Episode 50 - Multiprocess starting and stopping
+https://youtu.be/v9-D7YOSyu4
+Python 3 - Episode 51 - Multiprocess pool
+https://youtu.be/Pzv30ecJoyo
+Python 3 - Episode 52 - Async code
+https://youtu.be/bPEgYoOm0bQ
+Python 3 - Episode 53 - Producer and consumer
+https://youtu.be/Qo6hBgsXAlk
+Python 3 - Episode 54 - Communicating with processes
+https://youtu.be/qvEOZMpwtf0
+Python 3 - Episode 55 - Basic TCP Client
+https://youtu.be/5V91veF7PUQ
+Python 3 - Episode 56 - Basic TCP Server
+https://youtu.be/La3cyCnpSC4
+Python 3 - Episode 57 - Determine port availability
+https://youtu.be/EtRelbO2yNg
+Python 3 - Episode 58 - UDP Sockets
+https://youtu.be/GqNbobpNQys
+Python 3 - Episode 59 - Blocking vs Non Blocking Sockets
+https://youtu.be/tWlJsUazb_I
+Python 3 - Episode 60 - Example App: TCP Echo Server
+https://youtu.be/jm9mgejjTtw
+Python 3 - Episode 61 - DateTime is super easy to use
+https://youtu.be/RVzJwdKH2rw
+
+#pythonprogramming #python3 #pythonforbeginners 
+Like 👍, Comment ❤️ and Subscribe 📌 To Our Channel 👇</media:description>
+   <media:community>
+    <media:starRating count="1" average="5.00" min="1" max="5"/>
+    <media:statistics views="21"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:GMrDDqsqI8s</id>
+  <yt:videoId>GMrDDqsqI8s</yt:videoId>
+  <yt:channelId>UCo11jfMvmwivG6g3c9tfJqQ</yt:channelId>
+  <title>Python 3 - Episode 6 - Basic string operations</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=GMrDDqsqI8s"/>
+  <author>
+   <name>LeetCode Solutions</name>
+   <uri>https://www.youtube.com/channel/UCo11jfMvmwivG6g3c9tfJqQ</uri>
+  </author>
+  <published>2022-11-24T15:30:02+00:00</published>
+  <updated>2022-11-26T08:58:30+00:00</updated>
+  <media:group>
+   <media:title>Python 3 - Episode 6 - Basic string operations</media:title>
+   <media:content url="https://www.youtube.com/v/GMrDDqsqI8s?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i4.ytimg.com/vi/GMrDDqsqI8s/hqdefault.jpg" width="480" height="360"/>
+   <media:description>In this video series we will cover Python 3. This video talk about the basics string operations. Things like getting the length, upper case, lowercase, slicing or getting sub strings and finding the index of a sub string.
+
+Intro: (0:00)
+Basic string operations: (1:08)
+Slicing: (6:57)
+Index of sub strings: (10:26)
+-------------------------------------------------
+Python 3 - Episode 1 - No experience necessary
+https://youtu.be/IbSXF7eT-AU
+Python 3 - Episode 2 - Variables are something that changes 
+https://youtu.be/yZKbNOITHAU
+Python 3 - Episode 3 - Comments, Boolean and Comparisons
+https://youtu.be/UzHvQxBcF1Q
+Python 3 - Episode 4 - Numbers and basic numeric operations
+https://youtu.be/FnsRbFZqdQU
+Python 3 - Episode 5 - What are strings
+https://youtu.be/N3kE_RuUVt4
+Python 3 - Episode 6 - Basic string operations
+https://youtu.be/GMrDDqsqI8s
+Python 3 - Episode 7 - Lists
+https://youtu.be/idhNcD9jtzE
+Python 3 - Episode 8 - Sets
+https://youtu.be/qiEGFgcWzn4
+Python 3 - Episode 9 - Tuples, fast and read only
+https://youtu.be/N3VmRXcoLDk
+Python 3 - Episode 10 - Dictionary, indexed with keys
+https://youtu.be/nMUGkTsttDQ
+Python 3 - Episode 11 - Flow control with IF, ELSE and ELIF
+https://youtu.be/AC6WURKIgcU
+Python 3 - Episode 12 - Flow control with While loops
+https://youtu.be/XOpZrd_D8es
+Python 3 - Episode 13 - For loop and range
+https://youtu.be/vx04Yfkrms8
+Python 3 - Episode 14 - Simple app, paint calculator
+https://youtu.be/ybr-nTJJFDI
+Python 3 - Episode 15 - Intro to functions
+https://youtu.be/VM2gJpjNhZM
+Python 3 - Episode 16 - Functions and scope
+https://youtu.be/k22eKsflvHI
+Python 3 - Episode 17 - Functions in depth
+https://youtu.be/-6j1_hLbq3Y
+Python 3 - Episode 18 - Packing and unpacking data
+https://youtu.be/Wpbbf66gVDw
+Python 3 - Episode 19 - Functions and arguments
+https://youtu.be/PiJQhnbgRtU
+Python 3 - Episode 20 - Global keyword
+https://youtu.be/uXxmR17Yvrw
+Python 3 - Episode 21 - Walrus operator
+https://youtu.be/bIS5XdqjyLw
+Python 3 - Episode 22 - Navigating folders
+https://youtu.be/zRLHQQ2tkKU
+Python 3 - Episode 23 - Reading a text file
+https://youtu.be/jrtIfqGlAWo
+Python 3 - Episode 24 - Write a text file
+https://youtu.be/thb_z_wPVu8
+Python 3 - Episode 25 - Working with binary files
+https://youtu.be/ueMyoL1MGlg
+Python 3 - Episode 26 - Working with JSON
+https://youtu.be/JIqW1KGl9Zs
+Python 3 - Episode 27 - Imports
+https://youtu.be/s8goqLLLCbA
+Python 3 - Episode 28 - Main function
+https://youtu.be/ui0g0ZIJIFc
+Python 3 - Episode 29 - Import madness
+https://youtu.be/7tAym_vaB6A
+Python 3 - Episode 30 - Introduction to classes
+https://youtu.be/U40v3hciOzM
+Python 3 - Episode 31 - Class Inheritance
+https://youtu.be/-RKlrYt4qVw
+Python 3 - Episode 32 - Multiple Inheritance
+https://youtu.be/KLsv0CgYSAo
+Python 3 - Episode 33 - Pet Shop Application
+https://youtu.be/a4M0ySdqId8
+Python 3 - Episode 34 - The undesrcore
+https://youtu.be/SfbwAj54mL4
+Python 3 - Episode 35 - Decorators
+https://youtu.be/45O4lWI4LAY
+Python 3 - Episode 36 - Iterators
+https://youtu.be/61eSMbpmUgk
+Python 3 - Episode 37 - Exceptions
+https://youtu.be/g0JnUjBolA8
+Python 3 - Episode 38 - Pickle
+https://youtu.be/nwR1S_ge70s
+Python 3 - Episode 39 - Map function
+https://youtu.be/RgekiWhBUc0
+Python 3 - Episode 40 - Filter function
+https://youtu.be/COPDngImfKI
+Python 3 - Episode 41 - Logging basics
+https://youtu.be/SYecRmTeBOM
+Python 3 - Episode 42 - Simple app, Dir Stats
+https://youtu.be/eYivpebplDE
+Python 3 - Episode 43 - Timers, intro to threads
+https://youtu.be/CLvhMlpUyXI
+Python 3 - Episode 44 - Thread basics
+https://youtu.be/AIclIYDJ3zA
+Python 3 - Episode 45 - Thread Pools
+https://youtu.be/vajNHfG_ZEY
+Python 3 - Episode 46 - Thread Locking
+https://youtu.be/snPtNQccDLM
+Python 3 - Episode 47 - Daemon threads
+https://youtu.be/GULIawOoAm0
+Python 3 - Episode 48 - Queues and Futures
+https://youtu.be/s2JNiuNCJlk
+Python 3 - Episode 49 - Intro to Multiprocessing
+https://youtu.be/wuP-Esom0-c
+Python 3 - Episode 50 - Multiprocess starting and stopping
+https://youtu.be/v9-D7YOSyu4
+Python 3 - Episode 51 - Multiprocess pool
+https://youtu.be/Pzv30ecJoyo
+Python 3 - Episode 52 - Async code
+https://youtu.be/bPEgYoOm0bQ
+Python 3 - Episode 53 - Producer and consumer
+https://youtu.be/Qo6hBgsXAlk
+Python 3 - Episode 54 - Communicating with processes
+https://youtu.be/qvEOZMpwtf0
+Python 3 - Episode 55 - Basic TCP Client
+https://youtu.be/5V91veF7PUQ
+Python 3 - Episode 56 - Basic TCP Server
+https://youtu.be/La3cyCnpSC4
+Python 3 - Episode 57 - Determine port availability
+https://youtu.be/EtRelbO2yNg
+Python 3 - Episode 58 - UDP Sockets
+https://youtu.be/GqNbobpNQys
+Python 3 - Episode 59 - Blocking vs Non Blocking Sockets
+https://youtu.be/tWlJsUazb_I
+Python 3 - Episode 60 - Example App: TCP Echo Server
+https://youtu.be/jm9mgejjTtw
+Python 3 - Episode 61 - DateTime is super easy to use
+https://youtu.be/RVzJwdKH2rw
+
+#pythonprogramming #python3 #pythonforbeginners 
+Like 👍, Comment ❤️ and Subscribe 📌 To Our Channel 👇</media:description>
+   <media:community>
+    <media:starRating count="0" average="0.00" min="1" max="5"/>
+    <media:statistics views="16"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:AC6WURKIgcU</id>
+  <yt:videoId>AC6WURKIgcU</yt:videoId>
+  <yt:channelId>UCo11jfMvmwivG6g3c9tfJqQ</yt:channelId>
+  <title>Python 3   Episode 11   Flow control with IF, ELSE and ELIF</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=AC6WURKIgcU"/>
+  <author>
+   <name>LeetCode Solutions</name>
+   <uri>https://www.youtube.com/channel/UCo11jfMvmwivG6g3c9tfJqQ</uri>
+  </author>
+  <published>2022-11-27T14:30:01+00:00</published>
+  <updated>2022-11-27T14:30:01+00:00</updated>
+  <media:group>
+   <media:title>Python 3   Episode 11   Flow control with IF, ELSE and ELIF</media:title>
+   <media:content url="https://www.youtube.com/v/AC6WURKIgcU?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i2.ytimg.com/vi/AC6WURKIgcU/hqdefault.jpg" width="480" height="360"/>
+   <media:description>In this video series we will cover Python 3. This video talk about basic flow control using IF statments along with ELSE and ELIF.
+
+Intro: (0:00)
+Theory: (0:26)
+IF Statement: (2:11)
+Condition evaluations: (5:35)
+ELIF is the switch solution: (9:20)
+Nested statements: (12:12)
+-------------------------------------------
+Python 3 - Episode 1 - No experience necessary
+https://youtu.be/IbSXF7eT-AU
+Python 3 - Episode 2 - Variables are something that changes 
+https://youtu.be/yZKbNOITHAU
+Python 3 - Episode 3 - Comments, Boolean and Comparisons
+https://youtu.be/UzHvQxBcF1Q
+Python 3 - Episode 4 - Numbers and basic numeric operations
+https://youtu.be/FnsRbFZqdQU
+Python 3 - Episode 5 - What are strings
+https://youtu.be/N3kE_RuUVt4
+Python 3 - Episode 6 - Basic string operations
+https://youtu.be/GMrDDqsqI8s
+Python 3 - Episode 7 - Lists
+https://youtu.be/idhNcD9jtzE
+Python 3 - Episode 8 - Sets
+https://youtu.be/qiEGFgcWzn4
+Python 3 - Episode 9 - Tuples, fast and read only
+https://youtu.be/N3VmRXcoLDk
+Python 3 - Episode 10 - Dictionary, indexed with keys
+https://youtu.be/nMUGkTsttDQ
+Python 3 - Episode 11 - Flow control with IF, ELSE and ELIF
+https://youtu.be/AC6WURKIgcU
+Python 3 - Episode 12 - Flow control with While loops
+https://youtu.be/XOpZrd_D8es
+Python 3 - Episode 13 - For loop and range
+https://youtu.be/vx04Yfkrms8
+Python 3 - Episode 14 - Simple app, paint calculator
+https://youtu.be/ybr-nTJJFDI
+Python 3 - Episode 15 - Intro to functions
+https://youtu.be/VM2gJpjNhZM
+Python 3 - Episode 16 - Functions and scope
+https://youtu.be/k22eKsflvHI
+Python 3 - Episode 17 - Functions in depth
+https://youtu.be/-6j1_hLbq3Y
+Python 3 - Episode 18 - Packing and unpacking data
+https://youtu.be/Wpbbf66gVDw
+Python 3 - Episode 19 - Functions and arguments
+https://youtu.be/PiJQhnbgRtU
+Python 3 - Episode 20 - Global keyword
+https://youtu.be/uXxmR17Yvrw
+Python 3 - Episode 21 - Walrus operator
+https://youtu.be/bIS5XdqjyLw
+Python 3 - Episode 22 - Navigating folders
+https://youtu.be/zRLHQQ2tkKU
+Python 3 - Episode 23 - Reading a text file
+https://youtu.be/jrtIfqGlAWo
+Python 3 - Episode 24 - Write a text file
+https://youtu.be/thb_z_wPVu8
+Python 3 - Episode 25 - Working with binary files
+https://youtu.be/ueMyoL1MGlg
+Python 3 - Episode 26 - Working with JSON
+https://youtu.be/JIqW1KGl9Zs
+Python 3 - Episode 27 - Imports
+https://youtu.be/s8goqLLLCbA
+Python 3 - Episode 28 - Main function
+https://youtu.be/ui0g0ZIJIFc
+Python 3 - Episode 29 - Import madness
+https://youtu.be/7tAym_vaB6A
+Python 3 - Episode 30 - Introduction to classes
+https://youtu.be/U40v3hciOzM
+Python 3 - Episode 31 - Class Inheritance
+https://youtu.be/-RKlrYt4qVw
+Python 3 - Episode 32 - Multiple Inheritance
+https://youtu.be/KLsv0CgYSAo
+Python 3 - Episode 33 - Pet Shop Application
+https://youtu.be/a4M0ySdqId8
+Python 3 - Episode 34 - The undesrcore
+https://youtu.be/SfbwAj54mL4
+Python 3 - Episode 35 - Decorators
+https://youtu.be/45O4lWI4LAY
+Python 3 - Episode 36 - Iterators
+https://youtu.be/61eSMbpmUgk
+Python 3 - Episode 37 - Exceptions
+https://youtu.be/g0JnUjBolA8
+Python 3 - Episode 38 - Pickle
+https://youtu.be/nwR1S_ge70s
+Python 3 - Episode 39 - Map function
+https://youtu.be/RgekiWhBUc0
+Python 3 - Episode 40 - Filter function
+https://youtu.be/COPDngImfKI
+Python 3 - Episode 41 - Logging basics
+https://youtu.be/SYecRmTeBOM
+Python 3 - Episode 42 - Simple app, Dir Stats
+https://youtu.be/eYivpebplDE
+Python 3 - Episode 43 - Timers, intro to threads
+https://youtu.be/CLvhMlpUyXI
+Python 3 - Episode 44 - Thread basics
+https://youtu.be/AIclIYDJ3zA
+Python 3 - Episode 45 - Thread Pools
+https://youtu.be/vajNHfG_ZEY
+Python 3 - Episode 46 - Thread Locking
+https://youtu.be/snPtNQccDLM
+Python 3 - Episode 47 - Daemon threads
+https://youtu.be/GULIawOoAm0
+Python 3 - Episode 48 - Queues and Futures
+https://youtu.be/s2JNiuNCJlk
+Python 3 - Episode 49 - Intro to Multiprocessing
+https://youtu.be/wuP-Esom0-c
+Python 3 - Episode 50 - Multiprocess starting and stopping
+https://youtu.be/v9-D7YOSyu4
+Python 3 - Episode 51 - Multiprocess pool
+https://youtu.be/Pzv30ecJoyo
+Python 3 - Episode 52 - Async code
+https://youtu.be/bPEgYoOm0bQ
+Python 3 - Episode 53 - Producer and consumer
+https://youtu.be/Qo6hBgsXAlk
+Python 3 - Episode 54 - Communicating with processes
+https://youtu.be/qvEOZMpwtf0
+Python 3 - Episode 55 - Basic TCP Client
+https://youtu.be/5V91veF7PUQ
+Python 3 - Episode 56 - Basic TCP Server
+https://youtu.be/La3cyCnpSC4
+Python 3 - Episode 57 - Determine port availability
+https://youtu.be/EtRelbO2yNg
+Python 3 - Episode 58 - UDP Sockets
+https://youtu.be/GqNbobpNQys
+Python 3 - Episode 59 - Blocking vs Non Blocking Sockets
+https://youtu.be/tWlJsUazb_I
+Python 3 - Episode 60 - Example App: TCP Echo Server
+https://youtu.be/jm9mgejjTtw
+Python 3 - Episode 61 - DateTime is super easy to use
+https://youtu.be/RVzJwdKH2rw
+
+#pythonprogramming #python3 #pythonforbeginners 
+Like 👍, Comment ❤️ and Subscribe 📌 To Our Channel 👇</media:description>
+   <media:community>
+    <media:starRating count="0" average="0.00" min="1" max="5"/>
+    <media:statistics views="37"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:nMUGkTsttDQ</id>
+  <yt:videoId>nMUGkTsttDQ</yt:videoId>
+  <yt:channelId>UCo11jfMvmwivG6g3c9tfJqQ</yt:channelId>
+  <title>Python 3   Episode 10   Dictionary, indexed with keys</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=nMUGkTsttDQ"/>
+  <author>
+   <name>LeetCode Solutions</name>
+   <uri>https://www.youtube.com/channel/UCo11jfMvmwivG6g3c9tfJqQ</uri>
+  </author>
+  <published>2022-11-26T12:30:31+00:00</published>
+  <updated>2022-12-03T00:12:52+00:00</updated>
+  <media:group>
+   <media:title>Python 3   Episode 10   Dictionary, indexed with keys</media:title>
+   <media:content url="https://www.youtube.com/v/nMUGkTsttDQ?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i3.ytimg.com/vi/nMUGkTsttDQ/hqdefault.jpg" width="480" height="360"/>
+   <media:description>Intro: (0:00)
+What is a dictionary: (0:04)
+Create a dictionary: (0:37)
+Get key value pairs: (2:26)
+Getting the value from a key: (4:28)
+Add an item: (6:53)
+Remove an item: (8:06)
+Preview of whats to come: (9:03)
+-----------------------------------------------------
+Python 3 - Episode 1 - No experience necessary
+https://youtu.be/IbSXF7eT-AU
+Python 3 - Episode 2 - Variables are something that changes 
+https://youtu.be/yZKbNOITHAU
+Python 3 - Episode 3 - Comments, Boolean and Comparisons
+https://youtu.be/UzHvQxBcF1Q
+Python 3 - Episode 4 - Numbers and basic numeric operations
+https://youtu.be/FnsRbFZqdQU
+Python 3 - Episode 5 - What are strings
+https://youtu.be/N3kE_RuUVt4
+Python 3 - Episode 6 - Basic string operations
+https://youtu.be/GMrDDqsqI8s
+Python 3 - Episode 7 - Lists
+https://youtu.be/idhNcD9jtzE
+Python 3 - Episode 8 - Sets
+https://youtu.be/qiEGFgcWzn4
+Python 3 - Episode 9 - Tuples, fast and read only
+https://youtu.be/N3VmRXcoLDk
+Python 3 - Episode 10 - Dictionary, indexed with keys
+https://youtu.be/nMUGkTsttDQ
+Python 3 - Episode 11 - Flow control with IF, ELSE and ELIF
+https://youtu.be/AC6WURKIgcU
+Python 3 - Episode 12 - Flow control with While loops
+https://youtu.be/XOpZrd_D8es
+Python 3 - Episode 13 - For loop and range
+https://youtu.be/vx04Yfkrms8
+Python 3 - Episode 14 - Simple app, paint calculator
+https://youtu.be/ybr-nTJJFDI
+Python 3 - Episode 15 - Intro to functions
+https://youtu.be/VM2gJpjNhZM
+Python 3 - Episode 16 - Functions and scope
+https://youtu.be/k22eKsflvHI
+Python 3 - Episode 17 - Functions in depth
+https://youtu.be/-6j1_hLbq3Y
+Python 3 - Episode 18 - Packing and unpacking data
+https://youtu.be/Wpbbf66gVDw
+Python 3 - Episode 19 - Functions and arguments
+https://youtu.be/PiJQhnbgRtU
+Python 3 - Episode 20 - Global keyword
+https://youtu.be/uXxmR17Yvrw
+Python 3 - Episode 21 - Walrus operator
+https://youtu.be/bIS5XdqjyLw
+Python 3 - Episode 22 - Navigating folders
+https://youtu.be/zRLHQQ2tkKU
+Python 3 - Episode 23 - Reading a text file
+https://youtu.be/jrtIfqGlAWo
+Python 3 - Episode 24 - Write a text file
+https://youtu.be/thb_z_wPVu8
+Python 3 - Episode 25 - Working with binary files
+https://youtu.be/ueMyoL1MGlg
+Python 3 - Episode 26 - Working with JSON
+https://youtu.be/JIqW1KGl9Zs
+Python 3 - Episode 27 - Imports
+https://youtu.be/s8goqLLLCbA
+Python 3 - Episode 28 - Main function
+https://youtu.be/ui0g0ZIJIFc
+Python 3 - Episode 29 - Import madness
+https://youtu.be/7tAym_vaB6A
+Python 3 - Episode 30 - Introduction to classes
+https://youtu.be/U40v3hciOzM
+Python 3 - Episode 31 - Class Inheritance
+https://youtu.be/-RKlrYt4qVw
+Python 3 - Episode 32 - Multiple Inheritance
+https://youtu.be/KLsv0CgYSAo
+Python 3 - Episode 33 - Pet Shop Application
+https://youtu.be/a4M0ySdqId8
+Python 3 - Episode 34 - The undesrcore
+https://youtu.be/SfbwAj54mL4
+Python 3 - Episode 35 - Decorators
+https://youtu.be/45O4lWI4LAY
+Python 3 - Episode 36 - Iterators
+https://youtu.be/61eSMbpmUgk
+Python 3 - Episode 37 - Exceptions
+https://youtu.be/g0JnUjBolA8
+Python 3 - Episode 38 - Pickle
+https://youtu.be/nwR1S_ge70s
+Python 3 - Episode 39 - Map function
+https://youtu.be/RgekiWhBUc0
+Python 3 - Episode 40 - Filter function
+https://youtu.be/COPDngImfKI
+Python 3 - Episode 41 - Logging basics
+https://youtu.be/SYecRmTeBOM
+Python 3 - Episode 42 - Simple app, Dir Stats
+https://youtu.be/eYivpebplDE
+Python 3 - Episode 43 - Timers, intro to threads
+https://youtu.be/CLvhMlpUyXI
+Python 3 - Episode 44 - Thread basics
+https://youtu.be/AIclIYDJ3zA
+Python 3 - Episode 45 - Thread Pools
+https://youtu.be/vajNHfG_ZEY
+Python 3 - Episode 46 - Thread Locking
+https://youtu.be/snPtNQccDLM
+Python 3 - Episode 47 - Daemon threads
+https://youtu.be/GULIawOoAm0
+Python 3 - Episode 48 - Queues and Futures
+https://youtu.be/s2JNiuNCJlk
+Python 3 - Episode 49 - Intro to Multiprocessing
+https://youtu.be/wuP-Esom0-c
+Python 3 - Episode 50 - Multiprocess starting and stopping
+https://youtu.be/v9-D7YOSyu4
+Python 3 - Episode 51 - Multiprocess pool
+https://youtu.be/Pzv30ecJoyo
+Python 3 - Episode 52 - Async code
+https://youtu.be/bPEgYoOm0bQ
+Python 3 - Episode 53 - Producer and consumer
+https://youtu.be/Qo6hBgsXAlk
+Python 3 - Episode 54 - Communicating with processes
+https://youtu.be/qvEOZMpwtf0
+Python 3 - Episode 55 - Basic TCP Client
+https://youtu.be/5V91veF7PUQ
+Python 3 - Episode 56 - Basic TCP Server
+https://youtu.be/La3cyCnpSC4
+Python 3 - Episode 57 - Determine port availability
+https://youtu.be/EtRelbO2yNg
+Python 3 - Episode 58 - UDP Sockets
+https://youtu.be/GqNbobpNQys
+Python 3 - Episode 59 - Blocking vs Non Blocking Sockets
+https://youtu.be/tWlJsUazb_I
+Python 3 - Episode 60 - Example App: TCP Echo Server
+https://youtu.be/jm9mgejjTtw
+Python 3 - Episode 61 - DateTime is super easy to use
+https://youtu.be/RVzJwdKH2rw
+
+#pythonprogramming #python3 #pythonforbeginners 
+Like 👍, Comment ❤️ and Subscribe 📌 To Our Channel 👇</media:description>
+   <media:community>
+    <media:starRating count="0" average="0.00" min="1" max="5"/>
+    <media:statistics views="2"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:N3VmRXcoLDk</id>
+  <yt:videoId>N3VmRXcoLDk</yt:videoId>
+  <yt:channelId>UCo11jfMvmwivG6g3c9tfJqQ</yt:channelId>
+  <title>Python 3   Episode 9   Tuples, fast and readonly</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=N3VmRXcoLDk"/>
+  <author>
+   <name>LeetCode Solutions</name>
+   <uri>https://www.youtube.com/channel/UCo11jfMvmwivG6g3c9tfJqQ</uri>
+  </author>
+  <published>2022-11-25T12:30:08+00:00</published>
+  <updated>2022-11-29T06:25:42+00:00</updated>
+  <media:group>
+   <media:title>Python 3   Episode 9   Tuples, fast and readonly</media:title>
+   <media:content url="https://www.youtube.com/v/N3VmRXcoLDk?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i3.ytimg.com/vi/N3VmRXcoLDk/hqdefault.jpg" width="480" height="360"/>
+   <media:description>In this video series we will cover Python 3. This video talk about the tuple data type  which is fast and immutable, along with the range function and some tips and tricks for fast variable assignment.
+
+Intro: (0:00)
+Creating a tuple: (0:49)
+Access elements: (1:36)
+Assignment: (3:07)
+------------------------------
+Python 3 - Episode 1 - No experience necessary
+https://youtu.be/IbSXF7eT-AU
+Python 3 - Episode 2 - Variables are something that changes 
+https://youtu.be/yZKbNOITHAU
+Python 3 - Episode 3 - Comments, Boolean and Comparisons
+https://youtu.be/UzHvQxBcF1Q
+Python 3 - Episode 4 - Numbers and basic numeric operations
+https://youtu.be/FnsRbFZqdQU
+Python 3 - Episode 5 - What are strings
+https://youtu.be/N3kE_RuUVt4
+Python 3 - Episode 6 - Basic string operations
+https://youtu.be/GMrDDqsqI8s
+Python 3 - Episode 7 - Lists
+https://youtu.be/idhNcD9jtzE
+Python 3 - Episode 8 - Sets
+https://youtu.be/qiEGFgcWzn4
+Python 3 - Episode 9 - Tuples, fast and read only
+https://youtu.be/N3VmRXcoLDk
+Python 3 - Episode 10 - Dictionary, indexed with keys
+https://youtu.be/nMUGkTsttDQ
+Python 3 - Episode 11 - Flow control with IF, ELSE and ELIF
+https://youtu.be/AC6WURKIgcU
+Python 3 - Episode 12 - Flow control with While loops
+https://youtu.be/XOpZrd_D8es
+Python 3 - Episode 13 - For loop and range
+https://youtu.be/vx04Yfkrms8
+Python 3 - Episode 14 - Simple app, paint calculator
+https://youtu.be/ybr-nTJJFDI
+Python 3 - Episode 15 - Intro to functions
+https://youtu.be/VM2gJpjNhZM
+Python 3 - Episode 16 - Functions and scope
+https://youtu.be/k22eKsflvHI
+Python 3 - Episode 17 - Functions in depth
+https://youtu.be/-6j1_hLbq3Y
+Python 3 - Episode 18 - Packing and unpacking data
+https://youtu.be/Wpbbf66gVDw
+Python 3 - Episode 19 - Functions and arguments
+https://youtu.be/PiJQhnbgRtU
+Python 3 - Episode 20 - Global keyword
+https://youtu.be/uXxmR17Yvrw
+Python 3 - Episode 21 - Walrus operator
+https://youtu.be/bIS5XdqjyLw
+Python 3 - Episode 22 - Navigating folders
+https://youtu.be/zRLHQQ2tkKU
+Python 3 - Episode 23 - Reading a text file
+https://youtu.be/jrtIfqGlAWo
+Python 3 - Episode 24 - Write a text file
+https://youtu.be/thb_z_wPVu8
+Python 3 - Episode 25 - Working with binary files
+https://youtu.be/ueMyoL1MGlg
+Python 3 - Episode 26 - Working with JSON
+https://youtu.be/JIqW1KGl9Zs
+Python 3 - Episode 27 - Imports
+https://youtu.be/s8goqLLLCbA
+Python 3 - Episode 28 - Main function
+https://youtu.be/ui0g0ZIJIFc
+Python 3 - Episode 29 - Import madness
+https://youtu.be/7tAym_vaB6A
+Python 3 - Episode 30 - Introduction to classes
+https://youtu.be/U40v3hciOzM
+Python 3 - Episode 31 - Class Inheritance
+https://youtu.be/-RKlrYt4qVw
+Python 3 - Episode 32 - Multiple Inheritance
+https://youtu.be/KLsv0CgYSAo
+Python 3 - Episode 33 - Pet Shop Application
+https://youtu.be/a4M0ySdqId8
+Python 3 - Episode 34 - The undesrcore
+https://youtu.be/SfbwAj54mL4
+Python 3 - Episode 35 - Decorators
+https://youtu.be/45O4lWI4LAY
+Python 3 - Episode 36 - Iterators
+https://youtu.be/61eSMbpmUgk
+Python 3 - Episode 37 - Exceptions
+https://youtu.be/g0JnUjBolA8
+Python 3 - Episode 38 - Pickle
+https://youtu.be/nwR1S_ge70s
+Python 3 - Episode 39 - Map function
+https://youtu.be/RgekiWhBUc0
+Python 3 - Episode 40 - Filter function
+https://youtu.be/COPDngImfKI
+Python 3 - Episode 41 - Logging basics
+https://youtu.be/SYecRmTeBOM
+Python 3 - Episode 42 - Simple app, Dir Stats
+https://youtu.be/eYivpebplDE
+Python 3 - Episode 43 - Timers, intro to threads
+https://youtu.be/CLvhMlpUyXI
+Python 3 - Episode 44 - Thread basics
+https://youtu.be/AIclIYDJ3zA
+Python 3 - Episode 45 - Thread Pools
+https://youtu.be/vajNHfG_ZEY
+Python 3 - Episode 46 - Thread Locking
+https://youtu.be/snPtNQccDLM
+Python 3 - Episode 47 - Daemon threads
+https://youtu.be/GULIawOoAm0
+Python 3 - Episode 48 - Queues and Futures
+https://youtu.be/s2JNiuNCJlk
+Python 3 - Episode 49 - Intro to Multiprocessing
+https://youtu.be/wuP-Esom0-c
+Python 3 - Episode 50 - Multiprocess starting and stopping
+https://youtu.be/v9-D7YOSyu4
+Python 3 - Episode 51 - Multiprocess pool
+https://youtu.be/Pzv30ecJoyo
+Python 3 - Episode 52 - Async code
+https://youtu.be/bPEgYoOm0bQ
+Python 3 - Episode 53 - Producer and consumer
+https://youtu.be/Qo6hBgsXAlk
+Python 3 - Episode 54 - Communicating with processes
+https://youtu.be/qvEOZMpwtf0
+Python 3 - Episode 55 - Basic TCP Client
+https://youtu.be/5V91veF7PUQ
+Python 3 - Episode 56 - Basic TCP Server
+https://youtu.be/La3cyCnpSC4
+Python 3 - Episode 57 - Determine port availability
+https://youtu.be/EtRelbO2yNg
+Python 3 - Episode 58 - UDP Sockets
+https://youtu.be/GqNbobpNQys
+Python 3 - Episode 59 - Blocking vs Non Blocking Sockets
+https://youtu.be/tWlJsUazb_I
+Python 3 - Episode 60 - Example App: TCP Echo Server
+https://youtu.be/jm9mgejjTtw
+Python 3 - Episode 61 - DateTime is super easy to use
+https://youtu.be/RVzJwdKH2rw
+
+#pythonprogramming #python3 #pythonforbeginners 
+Like 👍, Comment ❤️ and Subscribe 📌 To Our Channel 👇</media:description>
+   <media:community>
+    <media:starRating count="0" average="0.00" min="1" max="5"/>
+    <media:statistics views="3"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:XOpZrd_D8es</id>
+  <yt:videoId>XOpZrd_D8es</yt:videoId>
+  <yt:channelId>UCo11jfMvmwivG6g3c9tfJqQ</yt:channelId>
+  <title>Python 3   Episode 12   Flow control with While loops</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=XOpZrd_D8es"/>
+  <author>
+   <name>LeetCode Solutions</name>
+   <uri>https://www.youtube.com/channel/UCo11jfMvmwivG6g3c9tfJqQ</uri>
+  </author>
+  <published>2022-11-28T12:30:12+00:00</published>
+  <updated>2022-12-05T11:48:29+00:00</updated>
+  <media:group>
+   <media:title>Python 3   Episode 12   Flow control with While loops</media:title>
+   <media:content url="https://www.youtube.com/v/XOpZrd_D8es?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i1.ytimg.com/vi/XOpZrd_D8es/hqdefault.jpg" width="480" height="360"/>
+   <media:description>In this video series we will cover Python 3. This video talk about basic flow control using While loops along with the continue and break commands, and some warnings about infinite loops.
+
+Intro: (0:00)
+Theory: (0:36)
+Loop: (2:40)
+Pass: (4:58)
+Continue: (6:35)
+Break: (9:29)
+----------------------
+Python 3 - Episode 1 - No experience necessary
+https://youtu.be/IbSXF7eT-AU
+Python 3 - Episode 2 - Variables are something that changes 
+https://youtu.be/yZKbNOITHAU
+Python 3 - Episode 3 - Comments, Boolean and Comparisons
+https://youtu.be/UzHvQxBcF1Q
+Python 3 - Episode 4 - Numbers and basic numeric operations
+https://youtu.be/FnsRbFZqdQU
+Python 3 - Episode 5 - What are strings
+https://youtu.be/N3kE_RuUVt4
+Python 3 - Episode 6 - Basic string operations
+https://youtu.be/GMrDDqsqI8s
+Python 3 - Episode 7 - Lists
+https://youtu.be/idhNcD9jtzE
+Python 3 - Episode 8 - Sets
+https://youtu.be/qiEGFgcWzn4
+Python 3 - Episode 9 - Tuples, fast and read only
+https://youtu.be/N3VmRXcoLDk
+Python 3 - Episode 10 - Dictionary, indexed with keys
+https://youtu.be/nMUGkTsttDQ
+Python 3 - Episode 11 - Flow control with IF, ELSE and ELIF
+https://youtu.be/AC6WURKIgcU
+Python 3 - Episode 12 - Flow control with While loops
+https://youtu.be/XOpZrd_D8es
+Python 3 - Episode 13 - For loop and range
+https://youtu.be/vx04Yfkrms8
+Python 3 - Episode 14 - Simple app, paint calculator
+https://youtu.be/ybr-nTJJFDI
+Python 3 - Episode 15 - Intro to functions
+https://youtu.be/VM2gJpjNhZM
+Python 3 - Episode 16 - Functions and scope
+https://youtu.be/k22eKsflvHI
+Python 3 - Episode 17 - Functions in depth
+https://youtu.be/-6j1_hLbq3Y
+Python 3 - Episode 18 - Packing and unpacking data
+https://youtu.be/Wpbbf66gVDw
+Python 3 - Episode 19 - Functions and arguments
+https://youtu.be/PiJQhnbgRtU
+Python 3 - Episode 20 - Global keyword
+https://youtu.be/uXxmR17Yvrw
+Python 3 - Episode 21 - Walrus operator
+https://youtu.be/bIS5XdqjyLw
+Python 3 - Episode 22 - Navigating folders
+https://youtu.be/zRLHQQ2tkKU
+Python 3 - Episode 23 - Reading a text file
+https://youtu.be/jrtIfqGlAWo
+Python 3 - Episode 24 - Write a text file
+https://youtu.be/thb_z_wPVu8
+Python 3 - Episode 25 - Working with binary files
+https://youtu.be/ueMyoL1MGlg
+Python 3 - Episode 26 - Working with JSON
+https://youtu.be/JIqW1KGl9Zs
+Python 3 - Episode 27 - Imports
+https://youtu.be/s8goqLLLCbA
+Python 3 - Episode 28 - Main function
+https://youtu.be/ui0g0ZIJIFc
+Python 3 - Episode 29 - Import madness
+https://youtu.be/7tAym_vaB6A
+Python 3 - Episode 30 - Introduction to classes
+https://youtu.be/U40v3hciOzM
+Python 3 - Episode 31 - Class Inheritance
+https://youtu.be/-RKlrYt4qVw
+Python 3 - Episode 32 - Multiple Inheritance
+https://youtu.be/KLsv0CgYSAo
+Python 3 - Episode 33 - Pet Shop Application
+https://youtu.be/a4M0ySdqId8
+Python 3 - Episode 34 - The undesrcore
+https://youtu.be/SfbwAj54mL4
+Python 3 - Episode 35 - Decorators
+https://youtu.be/45O4lWI4LAY
+Python 3 - Episode 36 - Iterators
+https://youtu.be/61eSMbpmUgk
+Python 3 - Episode 37 - Exceptions
+https://youtu.be/g0JnUjBolA8
+Python 3 - Episode 38 - Pickle
+https://youtu.be/nwR1S_ge70s
+Python 3 - Episode 39 - Map function
+https://youtu.be/RgekiWhBUc0
+Python 3 - Episode 40 - Filter function
+https://youtu.be/COPDngImfKI
+Python 3 - Episode 41 - Logging basics
+https://youtu.be/SYecRmTeBOM
+Python 3 - Episode 42 - Simple app, Dir Stats
+https://youtu.be/eYivpebplDE
+Python 3 - Episode 43 - Timers, intro to threads
+https://youtu.be/CLvhMlpUyXI
+Python 3 - Episode 44 - Thread basics
+https://youtu.be/AIclIYDJ3zA
+Python 3 - Episode 45 - Thread Pools
+https://youtu.be/vajNHfG_ZEY
+Python 3 - Episode 46 - Thread Locking
+https://youtu.be/snPtNQccDLM
+Python 3 - Episode 47 - Daemon threads
+https://youtu.be/GULIawOoAm0
+Python 3 - Episode 48 - Queues and Futures
+https://youtu.be/s2JNiuNCJlk
+Python 3 - Episode 49 - Intro to Multiprocessing
+https://youtu.be/wuP-Esom0-c
+Python 3 - Episode 50 - Multiprocess starting and stopping
+https://youtu.be/v9-D7YOSyu4
+Python 3 - Episode 51 - Multiprocess pool
+https://youtu.be/Pzv30ecJoyo
+Python 3 - Episode 52 - Async code
+https://youtu.be/bPEgYoOm0bQ
+Python 3 - Episode 53 - Producer and consumer
+https://youtu.be/Qo6hBgsXAlk
+Python 3 - Episode 54 - Communicating with processes
+https://youtu.be/qvEOZMpwtf0
+Python 3 - Episode 55 - Basic TCP Client
+https://youtu.be/5V91veF7PUQ
+Python 3 - Episode 56 - Basic TCP Server
+https://youtu.be/La3cyCnpSC4
+Python 3 - Episode 57 - Determine port availability
+https://youtu.be/EtRelbO2yNg
+Python 3 - Episode 58 - UDP Sockets
+https://youtu.be/GqNbobpNQys
+Python 3 - Episode 59 - Blocking vs Non Blocking Sockets
+https://youtu.be/tWlJsUazb_I
+Python 3 - Episode 60 - Example App: TCP Echo Server
+https://youtu.be/jm9mgejjTtw
+Python 3 - Episode 61 - DateTime is super easy to use
+https://youtu.be/RVzJwdKH2rw
+
+#pythonprogramming #python3 #pythonforbeginners 
+Like 👍, Comment ❤️ and Subscribe 📌 To Our Channel 👇</media:description>
+   <media:community>
+    <media:starRating count="0" average="0.00" min="1" max="5"/>
+    <media:statistics views="7"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:vx04Yfkrms8</id>
+  <yt:videoId>vx04Yfkrms8</yt:videoId>
+  <yt:channelId>UCo11jfMvmwivG6g3c9tfJqQ</yt:channelId>
+  <title>Python 3   Episode 13   For loop and range</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=vx04Yfkrms8"/>
+  <author>
+   <name>LeetCode Solutions</name>
+   <uri>https://www.youtube.com/channel/UCo11jfMvmwivG6g3c9tfJqQ</uri>
+  </author>
+  <published>2022-11-29T10:30:25+00:00</published>
+  <updated>2022-11-29T10:30:25+00:00</updated>
+  <media:group>
+   <media:title>Python 3   Episode 13   For loop and range</media:title>
+   <media:content url="https://www.youtube.com/v/vx04Yfkrms8?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i3.ytimg.com/vi/vx04Yfkrms8/hqdefault.jpg" width="480" height="360"/>
+   <media:description>In this video series we will cover Python 3. This video talk about basic flow control using the for loop and the range function.
+
+Intro: (0:00)
+For loop on lists, tupples and sets: (0:29)
+For loop on dictionaries: (3:04)
+Range: (7:57)
+Range start, stop and step: (9:56)
+------------------------------------------------------
+Python 3 - Episode 1 - No experience necessary
+https://youtu.be/IbSXF7eT-AU
+Python 3 - Episode 2 - Variables are something that changes 
+https://youtu.be/yZKbNOITHAU
+Python 3 - Episode 3 - Comments, Boolean and Comparisons
+https://youtu.be/UzHvQxBcF1Q
+Python 3 - Episode 4 - Numbers and basic numeric operations
+https://youtu.be/FnsRbFZqdQU
+Python 3 - Episode 5 - What are strings
+https://youtu.be/N3kE_RuUVt4
+Python 3 - Episode 6 - Basic string operations
+https://youtu.be/GMrDDqsqI8s
+Python 3 - Episode 7 - Lists
+https://youtu.be/idhNcD9jtzE
+Python 3 - Episode 8 - Sets
+https://youtu.be/qiEGFgcWzn4
+Python 3 - Episode 9 - Tuples, fast and read only
+https://youtu.be/N3VmRXcoLDk
+Python 3 - Episode 10 - Dictionary, indexed with keys
+https://youtu.be/nMUGkTsttDQ
+Python 3 - Episode 11 - Flow control with IF, ELSE and ELIF
+https://youtu.be/AC6WURKIgcU
+Python 3 - Episode 12 - Flow control with While loops
+https://youtu.be/XOpZrd_D8es
+Python 3 - Episode 13 - For loop and range
+https://youtu.be/vx04Yfkrms8
+Python 3 - Episode 14 - Simple app, paint calculator
+https://youtu.be/ybr-nTJJFDI
+Python 3 - Episode 15 - Intro to functions
+https://youtu.be/VM2gJpjNhZM
+Python 3 - Episode 16 - Functions and scope
+https://youtu.be/k22eKsflvHI
+Python 3 - Episode 17 - Functions in depth
+https://youtu.be/-6j1_hLbq3Y
+Python 3 - Episode 18 - Packing and unpacking data
+https://youtu.be/Wpbbf66gVDw
+Python 3 - Episode 19 - Functions and arguments
+https://youtu.be/PiJQhnbgRtU
+Python 3 - Episode 20 - Global keyword
+https://youtu.be/uXxmR17Yvrw
+Python 3 - Episode 21 - Walrus operator
+https://youtu.be/bIS5XdqjyLw
+Python 3 - Episode 22 - Navigating folders
+https://youtu.be/zRLHQQ2tkKU
+Python 3 - Episode 23 - Reading a text file
+https://youtu.be/jrtIfqGlAWo
+Python 3 - Episode 24 - Write a text file
+https://youtu.be/thb_z_wPVu8
+Python 3 - Episode 25 - Working with binary files
+https://youtu.be/ueMyoL1MGlg
+Python 3 - Episode 26 - Working with JSON
+https://youtu.be/JIqW1KGl9Zs
+Python 3 - Episode 27 - Imports
+https://youtu.be/s8goqLLLCbA
+Python 3 - Episode 28 - Main function
+https://youtu.be/ui0g0ZIJIFc
+Python 3 - Episode 29 - Import madness
+https://youtu.be/7tAym_vaB6A
+Python 3 - Episode 30 - Introduction to classes
+https://youtu.be/U40v3hciOzM
+Python 3 - Episode 31 - Class Inheritance
+https://youtu.be/-RKlrYt4qVw
+Python 3 - Episode 32 - Multiple Inheritance
+https://youtu.be/KLsv0CgYSAo
+Python 3 - Episode 33 - Pet Shop Application
+https://youtu.be/a4M0ySdqId8
+Python 3 - Episode 34 - The undesrcore
+https://youtu.be/SfbwAj54mL4
+Python 3 - Episode 35 - Decorators
+https://youtu.be/45O4lWI4LAY
+Python 3 - Episode 36 - Iterators
+https://youtu.be/61eSMbpmUgk
+Python 3 - Episode 37 - Exceptions
+https://youtu.be/g0JnUjBolA8
+Python 3 - Episode 38 - Pickle
+https://youtu.be/nwR1S_ge70s
+Python 3 - Episode 39 - Map function
+https://youtu.be/RgekiWhBUc0
+Python 3 - Episode 40 - Filter function
+https://youtu.be/COPDngImfKI
+Python 3 - Episode 41 - Logging basics
+https://youtu.be/SYecRmTeBOM
+Python 3 - Episode 42 - Simple app, Dir Stats
+https://youtu.be/eYivpebplDE
+Python 3 - Episode 43 - Timers, intro to threads
+https://youtu.be/CLvhMlpUyXI
+Python 3 - Episode 44 - Thread basics
+https://youtu.be/AIclIYDJ3zA
+Python 3 - Episode 45 - Thread Pools
+https://youtu.be/vajNHfG_ZEY
+Python 3 - Episode 46 - Thread Locking
+https://youtu.be/snPtNQccDLM
+Python 3 - Episode 47 - Daemon threads
+https://youtu.be/GULIawOoAm0
+Python 3 - Episode 48 - Queues and Futures
+https://youtu.be/s2JNiuNCJlk
+Python 3 - Episode 49 - Intro to Multiprocessing
+https://youtu.be/wuP-Esom0-c
+Python 3 - Episode 50 - Multiprocess starting and stopping
+https://youtu.be/v9-D7YOSyu4
+Python 3 - Episode 51 - Multiprocess pool
+https://youtu.be/Pzv30ecJoyo
+Python 3 - Episode 52 - Async code
+https://youtu.be/bPEgYoOm0bQ
+Python 3 - Episode 53 - Producer and consumer
+https://youtu.be/Qo6hBgsXAlk
+Python 3 - Episode 54 - Communicating with processes
+https://youtu.be/qvEOZMpwtf0
+Python 3 - Episode 55 - Basic TCP Client
+https://youtu.be/5V91veF7PUQ
+Python 3 - Episode 56 - Basic TCP Server
+https://youtu.be/La3cyCnpSC4
+Python 3 - Episode 57 - Determine port availability
+https://youtu.be/EtRelbO2yNg
+Python 3 - Episode 58 - UDP Sockets
+https://youtu.be/GqNbobpNQys
+Python 3 - Episode 59 - Blocking vs Non Blocking Sockets
+https://youtu.be/tWlJsUazb_I
+Python 3 - Episode 60 - Example App: TCP Echo Server
+https://youtu.be/jm9mgejjTtw
+Python 3 - Episode 61 - DateTime is super easy to use
+https://youtu.be/RVzJwdKH2rw
+
+#pythonprogramming #python3 #pythonforbeginners 
+Like 👍, Comment ❤️ and Subscribe 📌 To Our Channel 👇</media:description>
+   <media:community>
+    <media:starRating count="0" average="0.00" min="1" max="5"/>
+    <media:statistics views="6"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:ybr-nTJJFDI</id>
+  <yt:videoId>ybr-nTJJFDI</yt:videoId>
+  <yt:channelId>UCo11jfMvmwivG6g3c9tfJqQ</yt:channelId>
+  <title>Python 3   Episode 14   Simple app, paint calculator</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=ybr-nTJJFDI"/>
+  <author>
+   <name>LeetCode Solutions</name>
+   <uri>https://www.youtube.com/channel/UCo11jfMvmwivG6g3c9tfJqQ</uri>
+  </author>
+  <published>2022-11-30T12:30:30+00:00</published>
+  <updated>2022-12-06T21:22:44+00:00</updated>
+  <media:group>
+   <media:title>Python 3   Episode 14   Simple app, paint calculator</media:title>
+   <media:content url="https://www.youtube.com/v/ybr-nTJJFDI?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i2.ytimg.com/vi/ybr-nTJJFDI/hqdefault.jpg" width="480" height="360"/>
+   <media:description>In this video series we will cover Python 3. This video is going to take everything we have learned so far and make a simple application that calculates how much paint is needed to paint a room.
+
+Intro: (0:00)
+Variables: (0:49)
+Get the user input: (1:52)
+Verify the input: (3:24)
+Convert the strings to ints: (5:36)
+Calculate the numbers: (8:51)
+------------------------------------------------
+Python 3 - Episode 1 - No experience necessary
+https://youtu.be/IbSXF7eT-AU
+Python 3 - Episode 2 - Variables are something that changes 
+https://youtu.be/yZKbNOITHAU
+Python 3 - Episode 3 - Comments, Boolean and Comparisons
+https://youtu.be/UzHvQxBcF1Q
+Python 3 - Episode 4 - Numbers and basic numeric operations
+https://youtu.be/FnsRbFZqdQU
+Python 3 - Episode 5 - What are strings
+https://youtu.be/N3kE_RuUVt4
+Python 3 - Episode 6 - Basic string operations
+https://youtu.be/GMrDDqsqI8s
+Python 3 - Episode 7 - Lists
+https://youtu.be/idhNcD9jtzE
+Python 3 - Episode 8 - Sets
+https://youtu.be/qiEGFgcWzn4
+Python 3 - Episode 9 - Tuples, fast and read only
+https://youtu.be/N3VmRXcoLDk
+Python 3 - Episode 10 - Dictionary, indexed with keys
+https://youtu.be/nMUGkTsttDQ
+Python 3 - Episode 11 - Flow control with IF, ELSE and ELIF
+https://youtu.be/AC6WURKIgcU
+Python 3 - Episode 12 - Flow control with While loops
+https://youtu.be/XOpZrd_D8es
+Python 3 - Episode 13 - For loop and range
+https://youtu.be/vx04Yfkrms8
+Python 3 - Episode 14 - Simple app, paint calculator
+https://youtu.be/ybr-nTJJFDI
+Python 3 - Episode 15 - Intro to functions
+https://youtu.be/VM2gJpjNhZM
+Python 3 - Episode 16 - Functions and scope
+https://youtu.be/k22eKsflvHI
+Python 3 - Episode 17 - Functions in depth
+https://youtu.be/-6j1_hLbq3Y
+Python 3 - Episode 18 - Packing and unpacking data
+https://youtu.be/Wpbbf66gVDw
+Python 3 - Episode 19 - Functions and arguments
+https://youtu.be/PiJQhnbgRtU
+Python 3 - Episode 20 - Global keyword
+https://youtu.be/uXxmR17Yvrw
+Python 3 - Episode 21 - Walrus operator
+https://youtu.be/bIS5XdqjyLw
+Python 3 - Episode 22 - Navigating folders
+https://youtu.be/zRLHQQ2tkKU
+Python 3 - Episode 23 - Reading a text file
+https://youtu.be/jrtIfqGlAWo
+Python 3 - Episode 24 - Write a text file
+https://youtu.be/thb_z_wPVu8
+Python 3 - Episode 25 - Working with binary files
+https://youtu.be/ueMyoL1MGlg
+Python 3 - Episode 26 - Working with JSON
+https://youtu.be/JIqW1KGl9Zs
+Python 3 - Episode 27 - Imports
+https://youtu.be/s8goqLLLCbA
+Python 3 - Episode 28 - Main function
+https://youtu.be/ui0g0ZIJIFc
+Python 3 - Episode 29 - Import madness
+https://youtu.be/7tAym_vaB6A
+Python 3 - Episode 30 - Introduction to classes
+https://youtu.be/U40v3hciOzM
+Python 3 - Episode 31 - Class Inheritance
+https://youtu.be/-RKlrYt4qVw
+Python 3 - Episode 32 - Multiple Inheritance
+https://youtu.be/KLsv0CgYSAo
+Python 3 - Episode 33 - Pet Shop Application
+https://youtu.be/a4M0ySdqId8
+Python 3 - Episode 34 - The undesrcore
+https://youtu.be/SfbwAj54mL4
+Python 3 - Episode 35 - Decorators
+https://youtu.be/45O4lWI4LAY
+Python 3 - Episode 36 - Iterators
+https://youtu.be/61eSMbpmUgk
+Python 3 - Episode 37 - Exceptions
+https://youtu.be/g0JnUjBolA8
+Python 3 - Episode 38 - Pickle
+https://youtu.be/nwR1S_ge70s
+Python 3 - Episode 39 - Map function
+https://youtu.be/RgekiWhBUc0
+Python 3 - Episode 40 - Filter function
+https://youtu.be/COPDngImfKI
+Python 3 - Episode 41 - Logging basics
+https://youtu.be/SYecRmTeBOM
+Python 3 - Episode 42 - Simple app, Dir Stats
+https://youtu.be/eYivpebplDE
+Python 3 - Episode 43 - Timers, intro to threads
+https://youtu.be/CLvhMlpUyXI
+Python 3 - Episode 44 - Thread basics
+https://youtu.be/AIclIYDJ3zA
+Python 3 - Episode 45 - Thread Pools
+https://youtu.be/vajNHfG_ZEY
+Python 3 - Episode 46 - Thread Locking
+https://youtu.be/snPtNQccDLM
+Python 3 - Episode 47 - Daemon threads
+https://youtu.be/GULIawOoAm0
+Python 3 - Episode 48 - Queues and Futures
+https://youtu.be/s2JNiuNCJlk
+Python 3 - Episode 49 - Intro to Multiprocessing
+https://youtu.be/wuP-Esom0-c
+Python 3 - Episode 50 - Multiprocess starting and stopping
+https://youtu.be/v9-D7YOSyu4
+Python 3 - Episode 51 - Multiprocess pool
+https://youtu.be/Pzv30ecJoyo
+Python 3 - Episode 52 - Async code
+https://youtu.be/bPEgYoOm0bQ
+Python 3 - Episode 53 - Producer and consumer
+https://youtu.be/Qo6hBgsXAlk
+Python 3 - Episode 54 - Communicating with processes
+https://youtu.be/qvEOZMpwtf0
+Python 3 - Episode 55 - Basic TCP Client
+https://youtu.be/5V91veF7PUQ
+Python 3 - Episode 56 - Basic TCP Server
+https://youtu.be/La3cyCnpSC4
+Python 3 - Episode 57 - Determine port availability
+https://youtu.be/EtRelbO2yNg
+Python 3 - Episode 58 - UDP Sockets
+https://youtu.be/GqNbobpNQys
+Python 3 - Episode 59 - Blocking vs Non Blocking Sockets
+https://youtu.be/tWlJsUazb_I
+Python 3 - Episode 60 - Example App: TCP Echo Server
+https://youtu.be/jm9mgejjTtw
+Python 3 - Episode 61 - DateTime is super easy to use
+https://youtu.be/RVzJwdKH2rw
+
+#pythonprogramming #python3 #pythonforbeginners 
+Like 👍, Comment ❤️ and Subscribe 📌 To Our Channel 👇</media:description>
+   <media:community>
+    <media:starRating count="0" average="0.00" min="1" max="5"/>
+    <media:statistics views="31"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:VM2gJpjNhZM</id>
+  <yt:videoId>VM2gJpjNhZM</yt:videoId>
+  <yt:channelId>UCo11jfMvmwivG6g3c9tfJqQ</yt:channelId>
+  <title>Python 3   Episode 15   Intro to functions</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=VM2gJpjNhZM"/>
+  <author>
+   <name>LeetCode Solutions</name>
+   <uri>https://www.youtube.com/channel/UCo11jfMvmwivG6g3c9tfJqQ</uri>
+  </author>
+  <published>2022-12-01T15:30:11+00:00</published>
+  <updated>2022-12-08T02:16:18+00:00</updated>
+  <media:group>
+   <media:title>Python 3   Episode 15   Intro to functions</media:title>
+   <media:content url="https://www.youtube.com/v/VM2gJpjNhZM?version=3" type="application/x-shockwave-flash" width="640" height="390"/>
+   <media:thumbnail url="https://i3.ytimg.com/vi/VM2gJpjNhZM/hqdefault.jpg" width="480" height="360"/>
+   <media:description>In this video series we will cover Python 3. This video is going to introduce functions. This is a big topic so we will split it into multiple videos.
+
+Intro: (0:00)
+Reads from top down: (1:33)
+Define a function: (2:55)
+With parameters and return: (3:59)
+Call a function: (5:33)
+Call a function multiple times: (7:01)
+Call a function with parameters: (8:17)
+--------------------------------------------------------------
+Python 3 - Episode 1 - No experience necessary
+https://youtu.be/IbSXF7eT-AU
+Python 3 - Episode 2 - Variables are something that changes 
+https://youtu.be/yZKbNOITHAU
+Python 3 - Episode 3 - Comments, Boolean and Comparisons
+https://youtu.be/UzHvQxBcF1Q
+Python 3 - Episode 4 - Numbers and basic numeric operations
+https://youtu.be/FnsRbFZqdQU
+Python 3 - Episode 5 - What are strings
+https://youtu.be/N3kE_RuUVt4
+Python 3 - Episode 6 - Basic string operations
+https://youtu.be/GMrDDqsqI8s
+Python 3 - Episode 7 - Lists
+https://youtu.be/idhNcD9jtzE
+Python 3 - Episode 8 - Sets
+https://youtu.be/qiEGFgcWzn4
+Python 3 - Episode 9 - Tuples, fast and read only
+https://youtu.be/N3VmRXcoLDk
+Python 3 - Episode 10 - Dictionary, indexed with keys
+https://youtu.be/nMUGkTsttDQ
+Python 3 - Episode 11 - Flow control with IF, ELSE and ELIF
+https://youtu.be/AC6WURKIgcU
+Python 3 - Episode 12 - Flow control with While loops
+https://youtu.be/XOpZrd_D8es
+Python 3 - Episode 13 - For loop and range
+https://youtu.be/vx04Yfkrms8
+Python 3 - Episode 14 - Simple app, paint calculator
+https://youtu.be/ybr-nTJJFDI
+Python 3 - Episode 15 - Intro to functions
+https://youtu.be/VM2gJpjNhZM
+Python 3 - Episode 16 - Functions and scope
+https://youtu.be/k22eKsflvHI
+Python 3 - Episode 17 - Functions in depth
+https://youtu.be/-6j1_hLbq3Y
+Python 3 - Episode 18 - Packing and unpacking data
+https://youtu.be/Wpbbf66gVDw
+Python 3 - Episode 19 - Functions and arguments
+https://youtu.be/PiJQhnbgRtU
+Python 3 - Episode 20 - Global keyword
+https://youtu.be/uXxmR17Yvrw
+Python 3 - Episode 21 - Walrus operator
+https://youtu.be/bIS5XdqjyLw
+Python 3 - Episode 22 - Navigating folders
+https://youtu.be/zRLHQQ2tkKU
+Python 3 - Episode 23 - Reading a text file
+https://youtu.be/jrtIfqGlAWo
+Python 3 - Episode 24 - Write a text file
+https://youtu.be/thb_z_wPVu8
+Python 3 - Episode 25 - Working with binary files
+https://youtu.be/ueMyoL1MGlg
+Python 3 - Episode 26 - Working with JSON
+https://youtu.be/JIqW1KGl9Zs
+Python 3 - Episode 27 - Imports
+https://youtu.be/s8goqLLLCbA
+Python 3 - Episode 28 - Main function
+https://youtu.be/ui0g0ZIJIFc
+Python 3 - Episode 29 - Import madness
+https://youtu.be/7tAym_vaB6A
+Python 3 - Episode 30 - Introduction to classes
+https://youtu.be/U40v3hciOzM
+Python 3 - Episode 31 - Class Inheritance
+https://youtu.be/-RKlrYt4qVw
+Python 3 - Episode 32 - Multiple Inheritance
+https://youtu.be/KLsv0CgYSAo
+Python 3 - Episode 33 - Pet Shop Application
+https://youtu.be/a4M0ySdqId8
+Python 3 - Episode 34 - The undesrcore
+https://youtu.be/SfbwAj54mL4
+Python 3 - Episode 35 - Decorators
+https://youtu.be/45O4lWI4LAY
+Python 3 - Episode 36 - Iterators
+https://youtu.be/61eSMbpmUgk
+Python 3 - Episode 37 - Exceptions
+https://youtu.be/g0JnUjBolA8
+Python 3 - Episode 38 - Pickle
+https://youtu.be/nwR1S_ge70s
+Python 3 - Episode 39 - Map function
+https://youtu.be/RgekiWhBUc0
+Python 3 - Episode 40 - Filter function
+https://youtu.be/COPDngImfKI
+Python 3 - Episode 41 - Logging basics
+https://youtu.be/SYecRmTeBOM
+Python 3 - Episode 42 - Simple app, Dir Stats
+https://youtu.be/eYivpebplDE
+Python 3 - Episode 43 - Timers, intro to threads
+https://youtu.be/CLvhMlpUyXI
+Python 3 - Episode 44 - Thread basics
+https://youtu.be/AIclIYDJ3zA
+Python 3 - Episode 45 - Thread Pools
+https://youtu.be/vajNHfG_ZEY
+Python 3 - Episode 46 - Thread Locking
+https://youtu.be/snPtNQccDLM
+Python 3 - Episode 47 - Daemon threads
+https://youtu.be/GULIawOoAm0
+Python 3 - Episode 48 - Queues and Futures
+https://youtu.be/s2JNiuNCJlk
+Python 3 - Episode 49 - Intro to Multiprocessing
+https://youtu.be/wuP-Esom0-c
+Python 3 - Episode 50 - Multiprocess starting and stopping
+https://youtu.be/v9-D7YOSyu4
+Python 3 - Episode 51 - Multiprocess pool
+https://youtu.be/Pzv30ecJoyo
+Python 3 - Episode 52 - Async code
+https://youtu.be/bPEgYoOm0bQ
+Python 3 - Episode 53 - Producer and consumer
+https://youtu.be/Qo6hBgsXAlk
+Python 3 - Episode 54 - Communicating with processes
+https://youtu.be/qvEOZMpwtf0
+Python 3 - Episode 55 - Basic TCP Client
+https://youtu.be/5V91veF7PUQ
+Python 3 - Episode 56 - Basic TCP Server
+https://youtu.be/La3cyCnpSC4
+Python 3 - Episode 57 - Determine port availability
+https://youtu.be/EtRelbO2yNg
+Python 3 - Episode 58 - UDP Sockets
+https://youtu.be/GqNbobpNQys
+Python 3 - Episode 59 - Blocking vs Non Blocking Sockets
+https://youtu.be/tWlJsUazb_I
+Python 3 - Episode 60 - Example App: TCP Echo Server
+https://youtu.be/jm9mgejjTtw
+Python 3 - Episode 61 - DateTime is super easy to use
+https://youtu.be/RVzJwdKH2rw
+
+#pythonprogramming #python3 #pythonforbeginners 
+Like 👍, Comment ❤️ and Subscribe 📌 To Our Channel 👇</media:description>
+   <media:community>
+    <media:starRating count="0" average="0.00" min="1" max="5"/>
+    <media:statistics views="24"/>
+   </media:community>
+  </media:group>
+ </entry>
+</feed>
