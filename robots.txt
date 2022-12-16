@@ -1,3 +1,5 @@
 User-agent: *
-Disallow: 
-Sitemap: https://pythonread.github.io/sitemap.xml
+Disallow: /search
+Allow: /
+
+Sitemap: https://pythonread.github.io/sitemap.xml?redirect=false&start-index=1&max-results=500
