@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Paypal Fee Calculator</title>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HCERBDV76D"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-HCERBDV76D');
+    </script>
+    <meta name="msvalidate.01" content="B0487B46A104E90209E8A3BEA24ECA0E" />
+    <meta name="yandex-verification" content="f044b3a12c7918f1" />
+    <!--end-->
+    <meta
+        content="Need a PayPal Fee Calculator? PayPal upped its fees to 3.49% + $0.49. Calculate your costs in seconds with Our free PayPal Fees Calculator."
+        name="description" />
+    <meta name="author" content="Paypal Fee calculator" />
+    <meta name="keywords"
+        content="paypal fee calculator,paypal calculator,paypal goods and services fee calculator,paypal exchange rate calculator,paypal invoice fee calculator,paypal fee calculator international,paypal charges calculator,paypal transfer fee calculator,paypal commission calculator" />
+    <meta property="og:type" content="Tool website" />
+
+    <meta name=”geo.region” content="US-CA" />
+    <meta name=”geo.placename” content="353 Jane Stanford Way, Stanford, CA 94305, United States" />
+    <meta name=”geo.position” content="37.37651243464075:-121.92247088996199" />
+    <meta name=”ICBM” content="37.37651243464075, -121.92247088996199" />
+    <link href='https://pythonread.github.io/paypalfeecalculator.html?m=1' rel='alternate' />
+
+    <link href="/favicon.png" rel="icon" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+    <link type="text/css" rel="stylesheet" media="all"
+        href="https://pythonread.github.io/paypalfeecalculator.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <!--<![endif]-->
+</head>
+
+<body>
+
+    <section class="pages-content container-fluid">
+        <div class="row">
+
+
+
+            <section class="tools-header change--padding expand-padding sloganHeadercss" style="background-color: #4184f3; padding-bottom: 15px; padding-top: 5px; ">
+
+
+                <div class="container tools-breadcrumb-data">
+                    <div class="row">
+
+                        
+                        <div class="tool-top-content">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <h1 class="reduce-font-size">Paypal fee calculator</h1>
+                                <p>The Best PayPal Fees Calculator Is Now Just A Click Away!</p>
+                        
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="upperRow form-controllers-css paypal-info-css manage-padding">
+                <div class="container">
+                    <div class="col-lg-10 col-md-10 col-sm-12 col-lg-offset-1 col-md-offset-1">
+                        <div class="field-css-new">
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <div class="form-group form-group-default required">
+                                    <label>Enter an amount ($)</label>
+                                    <input type="number" value="" id="amt" class="form-control" min="0">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <div class="form-group form-group-default">
+                                    <label>Paypal Fees</label>
+                                    <input type="text" value="" id="paypalFees" disabled="disabled"
+                                        class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field-css-new">
+                            <div class="col-lg-12 text-center whiteBtnNectar paypal-button-group " >
+                                <button class="btn btn-lg btn-clear btn-default btn-white" id="reset" style="background-color: #4184f3;">Reset</button>
+                                <button class="btn btn-lg btn-default" id="calBtn" style="background-color: #4184f3;"><a href="#result-show" style="color: white;"> Fees Calculate</a></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="paypalFeeCalculator" id="result-show">
+                    <div class="container">
+                        <div class="field-css-new">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <h4 class="text-center">Paypal Fee Calculation results</h4>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 text-center">
+                                <h4>Total fees</h4>
+                                <div id="totalFees" class="bigText">$63.84</div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 text-center">
+                                <h4>You will receive</h4>
+                                <div id="youReceive" class="bigText">$1,380.16<br><small>If you invoice for
+                                        $1,444</small></div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 text-center">
+                                <h4>You should ask for</h4>
+                                <div id="youAsk" class="bigText">$1,510.77<br><small>If you need $1,444</small></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="field-css-new priceCal">
+                    <div class="col-md-12 col-sm-12">
+                        <h4 class="text-center">Understanding Paypal Fees</h4>
+                    </div>
+                    <div class="col-lg-7 col-md-8 col-sm-10 col-md-offset-3 col-sm-offset-2 col-lg-offset-3">
+                        <div class="col-md-6 col-sm-6  pro-left">
+                            <div class="pTitle">Monthly Sale</div>
+                            <p>Up to $3,000 USD</p>
+                            <p>$3,000.01 USD - $10,000.00 USD</p>
+                            <p>$10,000.01 USD - $100,000.00 USD</p>
+                            <p>Above $100,000.01 USD</p>
+                        </div>
+                        <div class="col-md-6 col-sm-6  pro-right">
+                            <div class="pTitle">International Customers(per transaction)</div>
+                            <p>4.4% + Fixed Fee</p>
+                            <p>3.9% + Fixed Fee</p>
+                            <p>3.7% + Fixed Fee</p>
+                            <p>3.4% + Fixed Fee</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="slogan-infos common-new text-center ">
+                <div class="container">
+                    <div class="row">
+                        <div class="field-css-new">
+                            <p>Check out our Stripe Fee Calculator.</p>
+                            <div class="col-lg-12 text-center whiteBtnNectar paypal-button-group " >
+                                <button class="btn btn-lg btn-clear btn-default btn-white" id="reset" style="background-color: #4184f3;"><a href="https://pythonread.github.io/stripefeecalculator.html" target="_blank" style="color:white">Stripe Fee Calculator</a></button>
+                                </div>
+                                </div>
+                                            </div>
+                        </div>
+
+</section>
+            <section class="slogan-infos common-new text-center show-dark-bg">
+                <div class="container">
+                    <div class="row">
+                        <h2 class="slogan-info-title">WHAT IS PAYPAL FEE CALCULATOR?</h2>
+
+                        <div class="slogan-info-detail change-subtitle font-style ">
+                            <p style="text-align: justify;">PayPal fee calculator is an easy way to calculating
+                                payments, including PayPal charges. When dealing with transactions, there come times
+                                when we want the other party to pay the PayPal fee. However, we don’t know how much it
+                                is. Our PayPal fee calculator helps you get out of such issues. You can calculate the
+                                fees in just a click!</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="slogan-infos common-new text-center ">
+                <div class="container">
+                    <div class="row">
+                        <h2 class="slogan-info-title">HOW TO THIS USE PAYPAL CALCULATOR?</h2>
+
+                        <div class="slogan-info-detail change-subtitle font-style change-alignment">
+                            <div class="row">
+                                <p class="slogan-info-detail change-subtitle change-alignment font-style">The PayPal
+                                    fee-calculator by us is quick and easy to use. It quickly calculates deductions
+                                    while sending or receiving money through PayPal.</p>
+                                <div class="launch-wrapper">
+                                    <p class="slogan-info-detail change-space-detail">All you need to do is to —</p>
+                                </div>
+                                <ul class="benefits-grs-content remove-extra-space">
+                                    <li>Enter the amount</li>
+                                    <li>Click the <span class="make-it-bold">"Calculate Fees"</span> button</li>
+                                    <li>Soon you click the calculate button, your total fees appears just below it.</li>
+                                    <li>The tool also shows the money you'll receive after deductions. Even, it shows
+                                        you the money you should ask for a certain amount after fee deductions.</li>
+                                    <li>To delete the entered amount, reset the tool by clicking on the <span
+                                            class="make-it-bold">"Reset"</span> button.</li>
+                                </ul>
+                                <p class="slogan-info-detail change-alignment font-style change-margin-top">That's it!
+                                    This PayPal Fee Calculator makes the process of calculating payments easy. By just
+                                    entering the amount in question, you can figure out how much you'll have to pay or
+                                    receive. The tool supports standard fee that PayPal charges for international
+                                    transactions.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="slogan-infos common-new text-center show-dark-bg">
+                <div class="container">
+                    <div class="row">
+                        <h2 class="slogan-info-title">WHY DOES YOUR BUSINESS NEED PAYPAL FEE CALCULATOR?</h2>
+
+                        <div class="slogan-info-detail change-subtitle font-style change-alignment">
+                            <div class="row">
+                                <p class="slogan-info-detail change-subtitle change-alignment font-style">Our PayPal
+                                    calculator takes away the complexity of calculating individual fees and payments. It
+                                    makes sure your calculations are done correctly even in a jiffy. If you own a
+                                    business and your buyers /customers use PayPal, you'll have to bear the fee. As you
+                                    have many transactions in a day, This PayPal fee calculator can prove to be a useful
+                                    tool for you.</p>
+                                <ul class="benefits-grs-content remove-extra-space">
+                                    <li><span class="make-it-bold">Error-free calculations:</span> Manual calculations
+                                        lead to error and can impact the gross revenue. PayPal fee-calculator, on the
+                                        other hand, prevents errors. It is more precise than manual calculations.</li>
+                                    <li><span class="make-it-bold">Saves time:</span> The PayPal fee calculator helps
+                                        you figure out deductions and fees easily and quickly. Hence, it saves your
+                                        valuable time which you can use in your critical business activities.</li>
+                                    <li><span class="make-it-bold">Automated calculations:</span> Calculations are
+                                        accomplished automatically. The taxes and deductions are as per PayPal's
+                                        standard charges.</li>
+                                    <li><span class="make-it-bold">Access the tool from anywhere:</span> You can use Our
+                                        PayPal fee calculator anywhere, anytime. Just launch the tool and you're free to
+                                        do calculations on-the-go.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <script>
+
+                $(document).ready(function () {
+                    $(window).scroll(function () {
+                        $(".create-sticky-deisgn").addClass("sticky-design");
+                        $(".footerblock3").addClass("bottom-space-props");
+                    });
+                    $('#logoname4').keydown(function (e) {
+                        if (e.keyCode == 13) {
+                            $('.lm_stickey_form').submit();
+                        }
+                    });
+                });
+            </script>
+            <script>
+
+                
+                function numberWithCommas_old(x) {
+                    var parts = x.toString().split(".");
+                    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                    return parts.join(".");
+                }
+                function numberWithCommas(n) {
+                    var parts = n.toString().split('.');
+                    return parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',') + (parts[1] ? '.' + parts[1] : '');
+                }
+
+                var paypalPercentage = 3.4;
+                var paypalAddition = 0.30;
+                function setPapPalCommissionToolsPg() {
+                    var amt = parseFloat($("#amt").val());
+                    paypalPercentage = 4.4;
+                    if (isNaN(amt) || amt < 1) {
+                        // do nothing
+                    } else {
+                        if (amt >= 3000.01 && amt <= 10000) {
+                            paypalPercentage = 3.9;
+                        }
+                        if (amt >= 10000.01 && amt <= 100000) {
+                            paypalPercentage = 3.7;
+                        }
+                        if (amt > 100000) {
+                            paypalPercentage = 3.4;
+                        }
+                    }
+                    $('#paypalFees').val(paypalPercentage + "% + " + paypalAddition.toFixed(2));
+                }
+
+                $('#amt').on('keyup blur', function () {
+                    setPapPalCommissionToolsPg();
+                });
+
+                $('#amt').trigger('keyup');
+
+                function showResultOld() {
+
+                    var amt = parseFloat($("#amt").val());
+                    if (isNaN(amt) || amt < 1) {
+                        alert("Please enter a valid amount greater than zero");
+                        $("#amt").val('');
+                        $("#amt").focus();
+                        return false;
+                    }
+
+                    var paypalAmt = Math.round(((amt * paypalPercentage) / 100), 2) + paypalAddition;
+                    var totalFees = ((amt * paypalPercentage) / 100) + paypalAddition;
+                    var youReceive = amt - paypalAmt;
+                    var youAsk = amt + paypalAmt;
+                    var youAskpaypalAmt = Math.round(((youAsk * paypalPercentage) / 100), 2) + paypalAddition;
+                    youAsk = amt + youAskpaypalAmt;
+
+
+                    $('#totalFees').html("$" + numberWithCommas(totalFees.toFixed(2)));
+                    $('#youReceive').html("$" + numberWithCommas(youReceive.toFixed(2)) + "<br><small>If you invoice for $" + numberWithCommas(amt.toFixed(2)) + "</small>");
+                    $('#youAsk').html("$" + numberWithCommas(youAsk.toFixed(2)) + "<br><small>If you need $" + numberWithCommas(amt.toFixed(2)) + "</small>");
+                }
+                function showResult() {
+                    var x = 10;
+                    var amt = $("#amt").val();
+                    var value = parseFloat(amt, 10);
+                    setPapPalCommissionToolsPg();
+                    if (value > 0) {
+
+                        paypalPercentage = parseFloat((paypalPercentage / 100), 10);
+                        var total = numberWithCommas((value * paypalPercentage + paypalAddition).toFixed(2));
+
+                        var received = numberWithCommas((value - (value * paypalPercentage + paypalAddition)).toFixed(2));
+                        var asked = value + (value * paypalPercentage + paypalAddition) + (value * paypalPercentage + paypalAddition) * paypalPercentage +
+                            ((value * paypalPercentage + paypalAddition) * paypalPercentage) * paypalPercentage + (((value * paypalPercentage + paypalAddition) * paypalPercentage)
+                                * paypalPercentage) * paypalPercentage + ((((value * paypalPercentage + paypalAddition) * paypalPercentage)
+                                    * paypalPercentage) * paypalPercentage) * paypalPercentage;
+                        var asked_refined = numberWithCommas(asked.toFixed(2));
+
+
+                        $('#totalFees').html("$" + numberWithCommas(total));
+                        $('#youReceive').html("$" + numberWithCommas(received) + "<br><small>If you invoice for $" + numberWithCommas(amt) + "</small>");
+                        $('#youAsk').html("$" + numberWithCommas(asked_refined) + "<br><small>If you need $" + numberWithCommas(amt) + "</small>");
+
+                    }
+                }
+
+                function resetForm() {
+                    setPapPalCommissionToolsPg();
+                    $('#amt').val("");
+                    $('#paypalFees').val(paypalPercentage + "% + " + paypalAddition.toFixed(2));
+
+                    $('#totalFees').html("-");
+                    $('#youReceive').html("-");
+                    $('#youAsk').html("-");
+                }
+
+                $(function () {
+                    $('#calBtn').on('click', showResult);
+                    $('#reset').on('click', resetForm);
+                    resetForm();
+                });
+
+
+                function get_float(string) {
+                    var to_return = parseFloat(string);
+                    if (typeof to_return == 'undefined') {
+                        to_return = 0.00
+                    }
+                    if (isNaN(to_return)) {
+                        to_return = 0.00
+                    }
+                    to_return = (to_return / 100) * 100;
+                    return to_return
+                }
+                function figure_fees(item_price, fee_percentage, fixed_fee) {
+                    var the_fee_percentage = fee_percentage / 100;
+                    the_fee_percentage = the_fee_percentage.toFixed(4);
+                    the_fee_percentage = get_float(the_fee_percentage);
+                    var to_return = item_price * the_fee_percentage + fixed_fee;
+                    to_return = Math.round(to_return * 100) / 100;
+                    to_return = to_return.toFixed(2);
+                    to_return = get_float(to_return);
+                    if (to_return > item_price) {
+                        to_return = item_price
+                    }
+                    return to_return
+                }
+
+            </script>
+
+
+            <script>
+                $(document).ready(function (e) {
+
+                    $('[data-type="opacity"]').each(function () {
+                        $window = $(window);
+                        var $bgobj = $(this);
+                        $(window).scroll(function () {
+                            var yPos = -($window.scrollTop() / $bgobj.data('speed'));
+                            var coords = yPos + 'px';
+                            $bgobj.css({
+                                'transform': 'translateY(' + coords + ')',
+                                '-webkit-': 'translateY(' + coords + ')',
+                                '-ms-': 'translateY(' + coords + ')',
+                                '-o-': 'translateY(' + coords + ')'
+                            });
+                        });
+                    });
+
+                    $('.form-controllers-css .form-control').focus(function (e) {
+                        $(this).parents('.form-group').addClass('focused');
+
+                    });
+
+                    $('.form-controllers-css .form-control').blur(function (e) {
+                        if (typeof url !== 'undefined' && typeof title !== 'undefined') {
+                            window.open("https://twitter.com/share?url=" + escape(url) + "&text=" + escape(title), '');
+                        }
+
+                        $('.form-group').removeClass('focused');
+                    });
+
+                    try {
+                        $('[data-toggle="tooltip"]').tooltip();
+                    } catch (err) { }
+                });
+            </script>
+
+
+
+
+
+
+        </div>
+    </section>
+
+</body>
+
+</html>
