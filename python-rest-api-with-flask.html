@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Python REST API with Flask - Part 1 </title>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HCERBDV76D"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-HCERBDV76D');
+    </script>
+    <meta name="msvalidate.01" content="B0487B46A104E90209E8A3BEA24ECA0E" />
+    <meta name="yandex-verification" content="f044b3a12c7918f1" />
+    <!--end-->
+    <meta
+        content="you'll create a Note taking App using RESTful API from scratch to keep track of people and notes using the Flask web framework. You'll also test your API with Swagger UI API documentation."
+        name="description" />
+    <meta name="author" content="Paypal Fee calculator" />
+    <meta name="keywords"
+        content="Learn Python for free,learn python for beginners,Core Python,Web frameworks,Multiprocess architecture,Serverside templating language,python tutorials,Rest Api,flask,note taking app using python" />
+    <meta property="og:type" content="Tool website" />
+
+    <meta name=”geo.region” content="US-CA" />
+    <meta name=”geo.placename” content="353 Jane Stanford Way, Stanford, CA 94305, United States" />
+    <meta name=”geo.position” content="37.37651243464075:-121.92247088996199" />
+    <meta name=”ICBM” content="37.37651243464075, -121.92247088996199" />
+    <link href='https://pythonread.github.io/paypalfeecalculator.html?m=1' rel='alternate' />
+
+    <link href="/favicon.png" rel="icon" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+    
+       
+    
+    <!--<![endif]-->
+    <link rel="stylesheet" href="https://cdn.realpython.com/static/realpython.min.1a28062d0366.css">
+    <link rel="stylesheet" href="https://cdn.realpython.com/static/gfonts/font.5ac42994de49.css">
+    <link rel="preload" href="https://cdn.realpython.com/static/glightbox.min.9b438b29cef1.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link type="text/css" rel="stylesheet" media="all"
+    href="https://pythonread.github.io/style0.css">
+</head>
+
+<body>
+    <div class="nav-wrapper">
+
+        <div class="container">
+            <nav>
+                <div class="logo wave">
+                    <a href="/" id="logo">
+                        Python Tutorial
+                    </a>
+                </div>
+                <div class="nav-toggle-icon" id="nav-toggle-icon" onclick="mobileMenu()">
+                    <div class="material-hamburger">
+                        <span>
+                        </span>
+                        <span>
+                        </span>
+                        <span>
+                        </span>
+                    </div>
+                </div>
+                <div class="menu-wrapper" id="menu-wrapper">
+                    <div class="nav-indicator">
+                    </div>
+                    <ul class="menus">
+
+
+                        <li>
+                            <a class="wave " href="/">
+                                Home
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="wave" href="/projects.html">
+                                Projects
+                            </a>
+                        </li>
+                        <li>
+                            <a class="wave" href="/free-course.html" 
+                                target="_blank">
+                                Free Course
+                            </a>
+                        </li>
+                        <li>
+                            <a class="wave " href="/dsa.html">
+                                DSA
+                            </a>
+                        </li>
+
+
+
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="article-body" style="margin-left:10px; margin-right:10px; margin-top:15px; ">
+    
+        <div >
+    <ul>
+    <li><a href="#demo">Demo</a></li>
+    <li><a href="#planning-part-one">Planning Part One</a></li>
+    <li><a href="#getting-started">Getting Started</a><ul>
+    <li><a href="#create-a-virtual-environment">Create a Virtual Environment</a></li>
+    <li><a href="#add-dependencies">Add Dependencies</a></li>
+    <li><a href="#initiate-your-flask-project">Initiate Your Flask Project</a></li>
+    </ul>
+    </li>
+    <li><a href="#adding-your-first-rest-api-endpoint">Adding Your First REST API Endpoint</a><ul>
+    <li><a href="#create-the-api-configuration-file">Create the API Configuration File</a></li>
+    <li><a href="#add-connexion-to-the-app">Add Connexion to the App</a></li>
+    <li><a href="#return-data-from-your-people-endpoint">Return Data From Your People Endpoint</a></li>
+    <li><a href="#explore-your-api-documentation">Explore Your API Documentation</a></li>
+    </ul>
+    </li>
+    <li><a href="#building-out-the-complete-api">Building Out the Complete API</a><ul>
+    <li><a href="#work-with-components">Work With Components</a></li>
+    <li><a href="#create-a-new-person">Create a New Person</a></li>
+    <li><a href="#handle-a-person">Handle a Person</a></li>
+    <li><a href="#explore-your-complete-api-documentation">Explore Your Complete API Documentation</a></li>
+    </ul>
+    </li>
+    <li><a href="#conclusion">Conclusion</a></li>
+    </ul>
+    </div>
+    
+          
+      
+  
+      
+      
+      
+  
+      
+  
+      <p>Most modern web applications are powered by a <strong>REST API</strong> under the hood. That way, developers can separate the front-end code from the back-end logic, and users can interact with the interface dynamically. In this three-part tutorial series, you’ll build a REST API with the <strong>Flask web framework</strong>.</p>
+  <p>You’ll create a foundation with a basic Flask project then add endpoints and connect them to a <strong>SQLite database</strong>. You’ll test your API with <strong>Swagger UI API documentation</strong> that you’ll build along the way.</p>
+  <p><strong>In the first part of this tutorial series, you’ll learn how to:</strong></p>
+  <ul>
+  <li>Build a base <strong>Flask</strong> project with a <strong>REST API</strong></li>
+  <li>Handle <strong>HTTP requests</strong> with <strong>Connexion</strong></li>
+  <li>Define <strong>API endpoints</strong> using the <strong>OpenAPI</strong> specification</li>
+  <li>Interact with your <strong>API</strong> to manage data</li>
+  <li>Build <strong>API documentation</strong> with <strong>Swagger UI</strong></li>
+  </ul>
+  <p>After finishing the first part of this series, you’ll move on to the second part, where you’ll learn to use a proper database to store your data permanently instead of relying on in-memory storage.</p>
+  <p>This tutorial series is a hand-on guide on how to create a REST API with Flask and interact with it using <a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD operations</a>. If you want to refresh your knowledge on working with APIs, then you can give <a href="/api-integration-in-python.html">Python and REST APIs: Interacting With Web Services</a> a read.</p>
+  <p>You can download the code for the first part of this project by clicking the link below:</p>
+  
+  <section class="section2" id="demo"><h2>Demo<a class="headerlink" href="#demo" title="Permanent link"></a></h2>
+  <p>In this three-part tutorial series, you’ll build a REST API to keep track of notes for people that may visit you throughout the year. In this tutorial, you’ll create people like the <a href="https://en.wikipedia.org/wiki/Tooth_fairy">Tooth Fairy</a>, the <a href="https://en.wikipedia.org/wiki/Easter_Bunny">Easter Bunny</a>, and <a href="https://en.wikipedia.org/wiki/Knecht_Ruprecht">Knecht Ruprecht</a>. </p>
+  <p>Ideally, you want to be on good terms with all three of them. That’s why you’ll send them notes, to increase the chance of getting valuable gifts from them.</p>
+  <p>You can interact with your application by leveraging the API documentation. Along the way, you’ll build a basic front end that reflects the contents of your database:</p>
+  
+  
+  <p>In the first part of this series, you’ll create a base Flask project and plug in your first API endpoints. At the end of this part, you’ll be able to see a list of people in the front end and manage each person in the back end:</p>
+  
+  
+  <p>By leveraging Swagger UI, you’ll create handy documentation for your API along the way. That way, you’ll have the opportunity to test how your API works at each stage of this tutorial and get a useful overview of all your endpoints.</p>
+ </section>
+    
+    <section class="section2" id="planning-part-one"><h2>Planning Part One<a class="headerlink" href="#planning-part-one" title="Permanent link"></a></h2>
+  <p>Besides building the Flask project foundation, you’re going to create a REST API that provides access to a collection of people and to the individuals within that collection. Here’s the API design for the people collection:</p>
+  <div class="table-responsive">
+  <table class="table table-hover">
+  <thead>
+  <tr>
+  <th class="text-left">Action</th>
+  <th class="text-left">HTTP Verb</th>
+  <th class="text-left">URL Path</th>
+  <th class="text-left">Description</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td class="text-left">Read</td>
+  <td class="text-left"><code>GET</code></td>
+  <td class="text-left"><code>/api/people</code></td>
+  <td class="text-left">Read a collection of people.</td>
+  </tr>
+  <tr>
+  <td class="text-left">Create</td>
+  <td class="text-left"><code>POST</code></td>
+  <td class="text-left"><code>/api/people</code></td>
+  <td class="text-left">Create a new person.</td>
+  </tr>
+  <tr>
+  <td class="text-left">Read</td>
+  <td class="text-left"><code>GET</code></td>
+  <td class="text-left"><code>/api/people/&lt;lname&gt;</code></td>
+  <td class="text-left">Read a particular person.</td>
+  </tr>
+  <tr>
+  <td class="text-left">Update</td>
+  <td class="text-left"><code>PUT</code></td>
+  <td class="text-left"><code>/api/people/&lt;lname&gt;</code></td>
+  <td class="text-left">Update an existing person.</td>
+  </tr>
+  <tr>
+  <td class="text-left">Delete</td>
+  <td class="text-left"><code>DELETE</code></td>
+  <td class="text-left"><code>/api/people/&lt;lname&gt;</code></td>
+  <td class="text-left">Delete an existing person.</td>
+  </tr>
+  </tbody>
+  </table>
+  </div>
+  <p>The REST API that you’ll be building will serve a simple people data structure where the people are keyed to the last name, and any updates are marked with a new timestamp.</p>
+  <p>The dataset that you’ll be working with looks like this:</p>
+  <div class="highlight python"><pre><span></span><code><span class="n">PEOPLE</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="s2">"Fairy"</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s2">"fname"</span><span class="p">:</span> <span class="s2">"Tooth"</span><span class="p">,</span>
+          <span class="s2">"lname"</span><span class="p">:</span> <span class="s2">"Fairy"</span><span class="p">,</span>
+          <span class="s2">"timestamp"</span><span class="p">:</span> <span class="s2">"2022-10-08 09:15:10"</span><span class="p">,</span>
+      <span class="p">},</span>
+      <span class="s2">"Ruprecht"</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s2">"fname"</span><span class="p">:</span> <span class="s2">"Knecht"</span><span class="p">,</span>
+          <span class="s2">"lname"</span><span class="p">:</span> <span class="s2">"Ruprecht"</span><span class="p">,</span>
+          <span class="s2">"timestamp"</span><span class="p">:</span> <span class="s2">"2022-10-08 09:15:13"</span><span class="p">,</span>
+      <span class="p">},</span>
+      <span class="s2">"Bunny"</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s2">"fname"</span><span class="p">:</span> <span class="s2">"Easter"</span><span class="p">,</span>
+          <span class="s2">"lname"</span><span class="p">:</span> <span class="s2">"Bunny"</span><span class="p">,</span>
+          <span class="s2">"timestamp"</span><span class="p">:</span> <span class="s2">"2022-10-08 09:15:27"</span><span class="p">,</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+  </code></pre></div>
+  <p>One of the purposes of an API is to decouple the data from the application that uses it, thereby hiding the data implementation details. Later in this tutorial series, you’ll save your data in a database. But for the start, an in-memory data structure works fine.</p>
+  </section><section class="section2" id="getting-started"><h2>Getting Started<a class="headerlink" href="#getting-started" title="Permanent link"></a></h2>
+  <p>In this section, you’ll prepare the development environment for your Flask REST API project. First, you’ll create a <strong>virtual environment</strong> and install all the <strong>dependencies</strong> that you need for your project.</p>
+  <section class="section3" id="create-a-virtual-environment"><h3>Create a Virtual Environment<a class="headerlink" href="#create-a-virtual-environment" title="Permanent link"></a></h3>
+  <p>In this section, you’ll build your project structure. You can name the root folder of your project any way you like. For example, you could name it <code>rp_flask_api/</code>. Create the folder and navigate into it:</p>
+  <div class="highlight sh"><pre><span></span><code><span class="gp">$ </span>mkdir rp_flask_api
+  <span class="gp">$ </span><span class="nb">cd</span> rp_flask_api
+  </code></pre></div>
+  <p>In this case, you name the root folder of your project <code>rp_flask_api/</code>. The files and folders that you create over the course of this series will be located in either this folder or its subfolders.</p>
+  <p>After you navigate to the project folder, it’s a good idea to create and activate. That way, you’re installing any project dependencies not system-wide but only in your project’s virtual environment.</p>
+  <p>Select your <strong>operating system</strong> below and use your platform-specific command to set up a virtual environment:</p>
+  <ul class="nav nav-tabs justify-content-end js-platform-widget-tabs" role="tablist">
+  
+    <li class="nav-item mb-0 js-platform-widget-tab-windows" role="presentation">
+      <a class="nav-link link-unstyled text-body active small" id="windows-tab-1" data-toggle="tab" href="#windows-1" role="tab" aria-controls="windows-1" aria-selected="true"><i class="fa fa-windows text-muted mr-1" aria-hidden="true"></i>Windows</a>
+    </li>
+  
+  
+  
+  
+    <li class="nav-item mb-0 js-platform-widget-tab-linuxmacos" role="presentation">
+      <a class="nav-link link-unstyled text-body small" id="macos-tab-1" data-toggle="tab" href="#linux-macos-1" role="tab" aria-controls="linux-macos-1" aria-selected="false"><i class="fa fa-linux text-muted mr-1" aria-hidden="true"></i><i class="fa fa-apple text-muted mr-1" aria-hidden="true"></i>Linux + macOS</a>
+    </li>
+  
+  </ul>
+  <div class="tab-content mt-2 mb-0 js-platform-widget-content">
+  <div aria-labelledby="windows-tab-1" class="tab-pane fade show active" id="windows-1" role="tabpanel">
+  <div class="highlight pscon"><pre><span></span><code><span class="gp">PS&gt; </span><span class="n">python</span> <span class="n">-m</span> <span class="n">venv</span> <span class="n">venv</span>
+  <span class="gp">PS&gt; </span><span class="p">.\</span><span class="n">venv</span><span class="p">\</span><span class="n">Scripts</span><span class="p">\</span><span class="n">activate</span>
+  <span class="gp gp-VirtualEnv">(venv)</span> <span class="gp">PS&gt;</span>
+  </code></pre></div>
+  </div>
+  <div aria-labelledby="linux-macos-tab-1" class="tab-pane fade " id="linux-macos-1" role="tabpanel">
+  <div class="highlight sh"><pre><span></span><code><span class="gp">$ </span>python -m venv venv
+  <span class="gp">$ </span><span class="nb">source</span> venv/bin/activate
+  <span class="gp gp-VirtualEnv">(venv)</span> <span class="gp">$</span>
+  </code></pre></div>
+  </div>
+  </div>
+  <p>With the commands shown above, you create and activate a virtual environment named <code>venv</code> by using Python’s built-in <code>venv</code> module. The parenthesized <code>(venv)</code> in front of the prompt indicate that you’ve successfully activated the virtual environment.</p>
+  </section><section class="section3" id="add-dependencies"><h3>Add Dependencies<a class="headerlink" href="#add-dependencies" title="Permanent link"></a></h3>
+  <p>After you’ve created and activated your virtual environment, it’s time to install <strong>Flask</strong> with <code>pip</code>:</p>
+  <div class="highlight sh"><pre><span></span><code><span class="gp gp-VirtualEnv">(venv)</span> <span class="gp">$ </span>python -m pip install <span class="nv">Flask</span><span class="o">==</span><span class="m">2</span>.2.2
+  </code></pre></div>
+  <p>The Flask <strong>micro web framework</strong> is the the main dependency that your project requires. On top of Flask, install <strong>Connexion</strong> to handle the HTTP requests:</p>
+  <div class="highlight sh"><pre><span></span><code><span class="gp gp-VirtualEnv">(venv)</span> <span class="gp">$ </span>python -m pip install <span class="s2">"connexion[swagger-ui]==2.14.1"</span>
+  </code></pre></div>
+  <p>To also make use of auto-generated API documentation, you install <a href="https://connexion.readthedocs.io/en/latest/index.html">Connexion</a> with the added support for <a href="https://swagger.io/tools/swagger-ui/">Swagger UI</a>. Later in this tutorial, you’ll learn more about the Python packages that you just installed.</p>
+  </section><section class="section3" id="initiate-your-flask-project"><h3>Initiate Your Flask Project<a class="headerlink" href="#initiate-your-flask-project" title="Permanent link"></a></h3>
+  <p>The main file of your Flask project will be <code>app.py</code>. Create <code>app.py</code> in <code>rp_flask_api/</code> and add the following content:</p>
+  <div class="highlight python"><pre><span></span><code><span class="c1"># app.py</span>
+  
+  <span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">render_template</span>
+  
+  <span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+  
+  <span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">"/"</span><span class="p">)</span>
+  <span class="k">def</span> <span class="nf">home</span><span class="p">():</span>
+      <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s2">"home.html"</span><span class="p">)</span>
+  
+  <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+      <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s2">"0.0.0.0"</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">8000</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+  </code></pre></div>
+  <p>You import the <code>Flask</code> module, giving the application access to the Flask functionality. You then create a Flask application instance named <code>app</code>. Next, you connect the URL route <code>"/"</code> to the <code>home()</code> function by decorating it with <code>@app.route("/")</code>. This function calls the Flask <code>render_template()</code> function to get the <code>home.html</code> file from the templates directory and return it to the browser.</p>
+  <p>In short, this code gets a basic web server up and running and makes it respond with a <code>home.html</code> template, which will be served to a browser when navigating to the URL <code>"/"</code>.</p>
+  <div class="alert alert-primary" role="alert">
+  <p><strong>Note:</strong> Flask’s development server defaults to port <code>5000</code>. On newer macOS versions, this port is already in use by the macOS <a href="https://en.wikipedia.org/wiki/AirPlay#Receivers">AirPlay receiver</a>. Above, you’ve changed the port of your Flask app with <code>port=8000</code>. If you want, you can <a href="https://support.apple.com/guide/mac-help/change-airplay-receiver-preferences-on-mac-mchl15c9e4b5/mac">change the AirPlay receiver preferences on your Mac</a> instead.</p>
+  </div>
+  <p>Flask expects <code>home.html</code> in a template directory named <code>templates/</code>. Create the <code>templates/</code> directory and add <code>home.html</code>:</p>
+  <div class="highlight html"><pre><span></span><code><span class="cm">&lt;!-- templates/home.html --&gt;</span>
+  
+  <span class="cp">&lt;!DOCTYPE html&gt;</span>
+  <span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">"en"</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">"UTF-8"</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>RP Flask REST API<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>
+          Hello, World!
+      <span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+  </code></pre></div>
+  <p>Flask comes with the Jinja Templating Engine, which enables you to enhance your templates. But your <code>home.html</code> template is a basic HTML file without any Jinja features. That’s okay for now, because the purpose of <code>home.html</code> is to verify that your Flask project responds as intended.</p>
+  <p>With the Python virtual environment active, you can run your application with this command line in the directory containing the <code>app.py</code> file:</p>
+  <div class="highlight sh"><pre><span></span><code><span class="gp gp-VirtualEnv">(venv)</span> <span class="gp">$ </span>python app.py
+  </code></pre></div>
+  <p>When you run <code>app.py</code>, a web server will start on port 8000. If you open a browser and navigate to <code>http://localhost:8000</code>, you should see <em>Hello, World!</em> displayed:</p>
+  <figure class="js-lightbox"><a href="https://files.realpython.com/media/flask-hello-world.a5c395d3d321.png" target="_blank"><img loading="lazy" class="img-fluid mx-auto d-block border " src="https://files.realpython.com/media/flask-hello-world.a5c395d3d321.png" srcset="https://robocrop.realpython.net/?url=https%3A//files.realpython.com/media/flask-hello-world.a5c395d3d321.png&amp;w=480&amp;sig=539ba051aa1aa46e3f281750a6ad680f4162f98d 480w, https://robocrop.realpython.net/?url=https%3A//files.realpython.com/media/flask-hello-world.a5c395d3d321.png&amp;w=960&amp;sig=f96e3ccb1720b9da72c41d7aa5a23e1524decdb2 960w, https://files.realpython.com/media/flask-hello-world.a5c395d3d321.png 1920w" sizes="75vw" alt="Screenshot of Flask Hello World Website." data-asset="4652" width="1920" height="1048"></a></figure>
+  
+  <p>Congratulations, your web server is running! You’ll extend the <code>home.html</code> file later to work with the REST API that you’re developing.</p>
+  <p>By now, your Flask project structure should look like this:</p>
+  <div class="highlight"><pre><span></span><code>rp_flask_api/
+  │
+  ├── templates/
+  │   └── home.html
+  │
+  └── app.py
+  </code></pre></div>
+  <p>This is a great structure for starting any Flask project. You may find that the source code will come in handy when you’re working on future projects. You can download it here:</p>
+  
+  <p>In the next sections, you’ll expand the project and add your first REST API endpoints. </p>
+  </section></section><section class="section2" id="adding-your-first-rest-api-endpoint"><h2>Adding Your First REST API Endpoint<a class="headerlink" href="#adding-your-first-rest-api-endpoint" title="Permanent link"></a></h2>
+  <p>Now that you’ve got a working web server, you can add your first REST API endpoint. To do this, you’ll use Connexion, which you installed in the previous section.</p>
+  <p>The Connexion module allows a Python program to use the <a href="https://www.openapis.org/">OpenAPI</a> specification with Swagger. The <strong>OpenAPI</strong> Specification is an API description format for REST APIs and provides a lot of functionality, including: </p>
+  <ul>
+  <li>Validation of input and output data to and from your API</li>
+  <li>Configuration of the API URL endpoints and the expected parameters</li>
+  </ul>
+  <p>When you use OpenAPI with Swagger, you can create a user interface (UI) to explore the API. All of this can happen when you create a configuration file that your Flask application can access.</p>
+  <section class="section3" id="create-the-api-configuration-file"><h3>Create the API Configuration File<a class="headerlink" href="#create-the-api-configuration-file" title="Permanent link"></a></h3>
+  <p>The Swagger configuration file is a YAML</a> or <a href="/json.html">JSON</a> file containing your OpenAPI definitions. This file contains all of the information necessary to configure your server to provide input parameter validation, output response data validation, and URL endpoint definition.</p>
+  <p>Create a file named <code>swagger.yml</code> and begin adding metadata to it:</p>
+  <div class="highlight yaml"><pre><span></span><code><span class="c1"># swagger.yml</span><span class="w"></span>
+  
+  <span class="nt">openapi</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.0.0</span><span class="w"></span>
+  <span class="nt">info</span><span class="p">:</span><span class="w"></span>
+  <span class="w">  </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="s">"RP</span><span class="nv"> </span><span class="s">Flask</span><span class="nv"> </span><span class="s">REST</span><span class="nv"> </span><span class="s">API"</span><span class="w"></span>
+  <span class="w">  </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">"An</span><span class="nv"> </span><span class="s">API</span><span class="nv"> </span><span class="s">about</span><span class="nv"> </span><span class="s">people</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">notes"</span><span class="w"></span>
+  <span class="w">  </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">"1.0.0"</span><span class="w"></span>
+  </code></pre></div>
+  <p>When you define an API, you must include the version of your OpenAPI definition. You use the <code>openapi</code> keyword for this. The version string is important because some parts of the OpenAPI structure may change over time. </p>
+  <p>Also, just like each new Python version includes new features, there may be keywords added or deprecated in the OpenAPI specification.</p>
+  <p>The <code>info</code> keyword begins the scope of the API information block:</p>
+  <ul>
+  <li><strong><code>title:</code></strong> Title included in the Connexion-generated UI system</li>
+  <li><strong><code>description:</code></strong> Description of what the API provides or is about</li>
+  <li><strong><code>version:</code></strong> Version value for the API</li>
+  </ul>
+  <p>Next, add <code>servers</code> and <code>url</code>, which define the root path of your API:</p>
+  <div class="highlight yaml"><pre><span></span><code><span class="c1"># swagger.yml</span><span class="w"></span>
+  
+  <span class="c1"># ...</span><span class="w"></span>
+  
+  <span class="nt">servers</span><span class="p">:</span><span class="w"></span>
+  <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="s">"/api"</span><span class="w"></span>
+  </code></pre></div>
+  <p>By providing <code>"/api"</code> as the value of <code>url</code>, you’ll be able to access all of your API paths relative to <code>http://localhost:8000/api</code>.</p>
+  <p>You define your API endpoints in a <code>paths</code> block:</p>
+  <div class="highlight yaml"><pre><span></span><code><span class="c1"># swagger.yml</span><span class="w"></span>
+  
+  <span class="c1"># ...</span><span class="w"></span>
+  
+  <span class="nt">paths</span><span class="p">:</span><span class="w"></span>
+  <span class="w">  </span><span class="nt">/people</span><span class="p">:</span><span class="w"></span>
+  <span class="w">    </span><span class="nt">get</span><span class="p">:</span><span class="w"></span>
+  <span class="w">      </span><span class="nt">operationId</span><span class="p">:</span><span class="w"> </span><span class="s">"people.read_all"</span><span class="w"></span>
+  <span class="w">      </span><span class="nt">tags</span><span class="p">:</span><span class="w"></span>
+  <span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"People"</span><span class="w"></span>
+  <span class="w">      </span><span class="nt">summary</span><span class="p">:</span><span class="w"> </span><span class="s">"Read</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">list</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">people"</span><span class="w"></span>
+  <span class="w">      </span><span class="nt">responses</span><span class="p">:</span><span class="w"></span>
+  <span class="w">        </span><span class="s">"200"</span><span class="p p-Indicator">:</span><span class="w"></span>
+  <span class="w">          </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">"Successfully</span><span class="nv"> </span><span class="s">read</span><span class="nv"> </span><span class="s">people</span><span class="nv"> </span><span class="s">list"</span><span class="w"></span>
+  </code></pre></div>
+  <p>The <code>paths</code> block begins the configuration of the API URL endpoint paths:</p>
+  <ul>
+  <li><strong><code>/people:</code></strong> The relative URL of your API endpoint</li>
+  <li><strong><code>get:</code></strong> The HTTP method that this URL endpoint will respond to </li>
+  </ul>
+  <p>Together with the <code>url</code> definition in <code>servers</code>, this creates the <code>GET /api/people</code> URL endpoint that you can access at <code>http://localhost:8000/api/people</code>.</p>
+  <p>The <code>get</code> block begins the configuration of the single <code>/api/people</code> URL endpoint:</p>
+  <ul>
+  <li><strong><code>operationId:</code></strong> The Python function that’ll respond to the request</li>
+  <li><strong><code>tags:</code></strong> The tags assigned to this endpoint, which allow you to group the operations in the UI</li>
+  <li><strong><code>summary</code>:</strong> The UI display text for this endpoint</li>
+  <li><strong><code>responses</code>:</strong> The status codes that the endpoint responds with</li>
+  </ul>
+  <p><code>operationId</code> must contain a string. Connexion will use <code>"people.read_all"</code> to find a Python function named <code>read_all()</code> in a <code>people</code> module of your project. You’ll create the corresponding Python code later in this tutorial.</p>
+  <p>The <code>responses</code> block defines the configuration of the possible status codes. Here, you define a successful response for the status code <code>"200"</code>, containing some <code>description</code> text.</p>
+  <p>You can find the complete content of the <code>swagger.yml</code> file in the collapsible below:</p>
+  <div class="card mb-3" id="collapse_card4007da">
+  <div class="card-header border-0">
+  <p class="m-0">
+      <button class="btn w-100" data-toggle="collapse" data-target="#collapse4007da" aria-expanded="false" aria-controls="collapse4007da" markdown="1"><span class="float-left" markdown="1"><code>swagger.yml</code> Source Code</span><span class="float-right text-muted">Show/Hide</span></button>
+    </p>
+  </div>
+  <div class="collapse js-collapsible-section" data-parent="#collapse_card4007da" id="collapse4007da">
+  <div class="card-body">
+  <p>Below, you’ll find the full source code of your OpenAPI definition:</p>
+  <div class="highlight yaml"><pre><span></span><code><span class="c1"># swagger.yml</span><span class="w"></span>
+  
+  <span class="nt">openapi</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.0.0</span><span class="w"></span>
+  <span class="nt">info</span><span class="p">:</span><span class="w"></span>
+  <span class="w">  </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="s">"RP</span><span class="nv"> </span><span class="s">Flask</span><span class="nv"> </span><span class="s">REST</span><span class="nv"> </span><span class="s">API"</span><span class="w"></span>
+  <span class="w">  </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">"An</span><span class="nv"> </span><span class="s">API</span><span class="nv"> </span><span class="s">about</span><span class="nv"> </span><span class="s">people</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">notes"</span><span class="w"></span>
+  <span class="w">  </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">"1.0.0"</span><span class="w"></span>
+  
+  <span class="nt">servers</span><span class="p">:</span><span class="w"></span>
+  <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="s">"/api"</span><span class="w"></span>
+  
+  <span class="nt">paths</span><span class="p">:</span><span class="w"></span>
+  <span class="w">  </span><span class="nt">/people</span><span class="p">:</span><span class="w"></span>
+  <span class="w">    </span><span class="nt">get</span><span class="p">:</span><span class="w"></span>
+  <span class="w">      </span><span class="nt">operationId</span><span class="p">:</span><span class="w"> </span><span class="s">"people.read_all"</span><span class="w"></span>
+  <span class="w">      </span><span class="nt">tags</span><span class="p">:</span><span class="w"></span>
+  <span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"People"</span><span class="w"></span>
+  <span class="w">      </span><span class="nt">summary</span><span class="p">:</span><span class="w"> </span><span class="s">"Read</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">list</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">people"</span><span class="w"></span>
+  <span class="w">      </span><span class="nt">responses</span><span class="p">:</span><span class="w"></span>
+  <span class="w">        </span><span class="s">"200"</span><span class="p p-Indicator">:</span><span class="w"></span>
+  <span class="w">          </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">"Successfully</span><span class="nv"> </span><span class="s">read</span><span class="nv"> </span><span class="s">people</span><span class="nv"> </span><span class="s">list"</span><span class="w"></span>
+  </code></pre></div>
+  <p>You’ve organized this file in a hierarchical manner. Each indentation level represents a level of ownership, or scope. </p>
+  <p>For example, <code>paths</code> marks the beginning of where all the API URL endpoints are defined. The <code>/people</code> value indented under that represents the start of where all the <code>/api/people</code> URL endpoints will be defined. The <code>get:</code> scope indented under <code>/people</code> holds the definitions associated with an HTTP GET request to the <code>/api/people</code> URL endpoint. This pattern goes on for the entire configuration.</p>
+  </div>
+  </div>
+  </div>
+  <p>The <code>swagger.yml</code> file is like a blueprint for your API. With the specifications that you include in <code>swagger.yml</code>, you define what data your web server can expect and how your server should respond to requests. But so far, your Flask project doesn’t know about your <code>swagger.yml</code> file. Read on to use Connexion to connect your OpenAPI specification with your Flask app.</p>
+</section><section class="section3" id="add-connexion-to-the-app"><h3>Add Connexion to the App<a class="headerlink" href="#add-connexion-to-the-app" title="Permanent link"></a></h3>
+  <p>There are two steps to adding a REST API URL endpoint to your Flask application with Connexion:</p>
+  <ol>
+  <li>Add an API configuration file to your project.</li>
+  <li>Connect your Flask app with the configuration file.</li>
+  </ol>
+  <p>You already added a configuration file named <code>swagger.yml</code> in the last section. To connect the API configuration file with your Flask app, you must reference <code>swagger.yml</code> in your <code>app.py</code> file:</p>
+  <div class="highlight python"><pre><span></span><code><span class="linenos"> 1</span><span class="c1"># app.py</span>
+  <span class="linenos"> 2</span>
+  <span class="hll"><span class="linenos"> 3</span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">render_template</span> <span class="c1"># Remove: import Flask</span>
+  </span><span class="hll"><span class="linenos"> 4</span><span class="kn">import</span> <span class="nn">connexion</span>
+  </span><span class="hll"><span class="linenos"> 5</span>
+  </span><span class="hll"><span class="linenos"> 6</span><span class="n">app</span> <span class="o">=</span> <span class="n">connexion</span><span class="o">.</span><span class="n">App</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">specification_dir</span><span class="o">=</span><span class="s2">"./"</span><span class="p">)</span>
+  </span><span class="hll"><span class="linenos"> 7</span><span class="n">app</span><span class="o">.</span><span class="n">add_api</span><span class="p">(</span><span class="s2">"swagger.yml"</span><span class="p">)</span>
+  </span><span class="linenos"> 8</span>
+  <span class="linenos"> 9</span><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">"/"</span><span class="p">)</span>
+  <span class="linenos">10</span><span class="k">def</span> <span class="nf">home</span><span class="p">():</span>
+  <span class="linenos">11</span>    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s2">"home.html"</span><span class="p">)</span>
+  <span class="linenos">12</span>
+  <span class="linenos">13</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+  <span class="linenos">14</span>    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s2">"0.0.0.0"</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">8000</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+  </code></pre></div>
+  <p>The <code>import connexion</code> statement adds the module to the program. The next step is creating the application instance using Connexion rather than Flask. Internally, the Flask app is still created, but it now has additional functionality added to it.</p>
+  <p>Part of the app instance creation includes the parameter <code>specification_dir</code> in line 6. This tells Connexion which directory to look in for its configuration file. In this case, it’s the same directory that you run <code>app.py</code> from.</p>
+  <p>In line 7, you tell the app instance to read the <code>swagger.yml</code> file from the specification directory and configure the system to provide the Connexion functionality.</p>
+  </section><section class="section3" id="return-data-from-your-people-endpoint"><h3>Return Data From Your People Endpoint<a class="headerlink" href="#return-data-from-your-people-endpoint" title="Permanent link"></a></h3>
+  <p>In the <code>swagger.yml</code> file, you configured Connexion with the <code>operationId</code> value <code>"people.read_all"</code>. So, when the API gets an HTTP request for <code>GET /api/people</code>, your Flask app calls a <code>read_all()</code> function within a <code>people</code> module. </p>
+  <p>To make this work, create a <code>people.py</code> file with a <code>read_all()</code> function: </p>
+  <div class="highlight python"><pre><span></span><code><span class="linenos"> 1</span><span class="c1"># people.py</span>
+  <span class="linenos"> 2</span>
+  <span class="linenos"> 3</span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+  <span class="linenos"> 4</span>
+  <span class="linenos"> 5</span><span class="k">def</span> <span class="nf">get_timestamp</span><span class="p">():</span>
+  <span class="linenos"> 6</span>    <span class="k">return</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">((</span><span class="s2">"%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S"</span><span class="p">))</span>
+  <span class="linenos"> 7</span>
+  <span class="linenos"> 8</span><span class="n">PEOPLE</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="linenos"> 9</span>    <span class="s2">"Fairy"</span><span class="p">:</span> <span class="p">{</span>
+  <span class="linenos">10</span>        <span class="s2">"fname"</span><span class="p">:</span> <span class="s2">"Tooth"</span><span class="p">,</span>
+  <span class="linenos">11</span>        <span class="s2">"lname"</span><span class="p">:</span> <span class="s2">"Fairy"</span><span class="p">,</span>
+  <span class="linenos">12</span>        <span class="s2">"timestamp"</span><span class="p">:</span> <span class="n">get_timestamp</span><span class="p">(),</span>
+  <span class="linenos">13</span>    <span class="p">},</span>
+  <span class="linenos">14</span>    <span class="s2">"Ruprecht"</span><span class="p">:</span> <span class="p">{</span>
+  <span class="linenos">15</span>        <span class="s2">"fname"</span><span class="p">:</span> <span class="s2">"Knecht"</span><span class="p">,</span>
+  <span class="linenos">16</span>        <span class="s2">"lname"</span><span class="p">:</span> <span class="s2">"Ruprecht"</span><span class="p">,</span>
+  <span class="linenos">17</span>        <span class="s2">"timestamp"</span><span class="p">:</span> <span class="n">get_timestamp</span><span class="p">(),</span>
+  <span class="linenos">18</span>    <span class="p">},</span>
+  <span class="linenos">19</span>    <span class="s2">"Bunny"</span><span class="p">:</span> <span class="p">{</span>
+  <span class="linenos">20</span>        <span class="s2">"fname"</span><span class="p">:</span> <span class="s2">"Easter"</span><span class="p">,</span>
+  <span class="linenos">21</span>        <span class="s2">"lname"</span><span class="p">:</span> <span class="s2">"Bunny"</span><span class="p">,</span>
+  <span class="linenos">22</span>        <span class="s2">"timestamp"</span><span class="p">:</span> <span class="n">get_timestamp</span><span class="p">(),</span>
+  <span class="linenos">23</span>    <span class="p">}</span>
+  <span class="linenos">24</span><span class="p">}</span>
+  <span class="linenos">25</span>
+  <span class="linenos">26</span><span class="k">def</span> <span class="nf">read_all</span><span class="p">():</span>
+  <span class="linenos">27</span>    <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">PEOPLE</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+  </code></pre></div>
+  <p>In line 5, you create a helper function named <code>get_timestamp()</code> that generates a string representation of the current timestamp.</p>
+  <p>You then define the <code>PEOPLE</code> dictionary data structure in line 8, which is the data you’ll work with in this part of the tutorial series.</p>
+  <p>The <code>PEOPLE</code> dictionary stands in for a proper database. As <code>PEOPLE</code> is a module variable, its state persists between REST API calls. However, any data that you change will be lost when you restart your web application. This is not ideal, but it’s fine for now.</p>
+  <p>Then you create the <code>read_all()</code> function in line 26. Your server will run <code>read_all()</code> when it receives an HTTP request to <code>GET /api/people</code>. The return value of <code>read_all()</code> is a list of dictionaries with information about a person.</p>
+  <p>Running your server code and navigating your browser to <code>http://localhost:8000/api/people</code> will display the list of people on-screen:</p>
+  <figure class="js-lightbox"><a href="https://files.realpython.com/media/flask-rest-people-response.45a5f8bd34b6.png" target="_blank"><img loading="lazy" class="img-fluid mx-auto d-block border " src="https://files.realpython.com/media/flask-rest-people-response.45a5f8bd34b6.png" srcset="https://robocrop.realpython.net/?url=https%3A//files.realpython.com/media/flask-rest-people-response.45a5f8bd34b6.png&amp;w=480&amp;sig=d308f89885accef8e35de3e44283ca3854b56967 480w, https://robocrop.realpython.net/?url=https%3A//files.realpython.com/media/flask-rest-people-response.45a5f8bd34b6.png&amp;w=960&amp;sig=f641800da8b344170879990caacbbf0920e55c65 960w, https://files.realpython.com/media/flask-rest-people-response.45a5f8bd34b6.png 1920w" sizes="75vw" alt="Screenshot of REST API JSON response." data-asset="4653" width="1920" height="1048"></a></figure>
+  
+  <p>Congratulations, you’ve created your first API endpoint! Before continuing on your way to building out your REST API with multiple endpoints, take a moment and explore the API a bit more in the next section.</p>
+  </section><section class="section3" id="explore-your-api-documentation"><h3>Explore Your API Documentation<a class="headerlink" href="#explore-your-api-documentation" title="Permanent link"></a></h3>
+  <p>Currently you have a REST API running with a single URL endpoint. Your Flask app knows what to serve based on your API specification in <code>swagger.yml</code>. Additionally, Connexion uses <code>swagger.yml</code> to create API documentation for you.</p>
+  <p>Navigate to <code>localhost:8000/api/ui</code> to see your API documentation in action:</p>
+  <figure class="js-lightbox"><a href="https://files.realpython.com/media/flask-swagger-ui.ab3f8a6f775d.png" target="_blank"><img loading="lazy" class="img-fluid mx-auto d-block " src="https://files.realpython.com/media/flask-swagger-ui.ab3f8a6f775d.png" srcset="https://robocrop.realpython.net/?url=https%3A//files.realpython.com/media/flask-swagger-ui.ab3f8a6f775d.png&amp;w=480&amp;sig=040068a6524f48ac696ac9272367f950043e0d98 480w, https://robocrop.realpython.net/?url=https%3A//files.realpython.com/media/flask-swagger-ui.ab3f8a6f775d.png&amp;w=960&amp;sig=72b6f4c44227e3f6b6b9cb79ec24e8bb6a5c25e7 960w, https://files.realpython.com/media/flask-swagger-ui.ab3f8a6f775d.png 1920w" sizes="75vw" alt="Screenshot of Swagger UI website" data-asset="4654" width="1920" height="1048"></a></figure>
+  
+  <p>This is the initial Swagger interface. It shows the list of URL endpoints supported at your <code>http://localhost:8000/api</code> endpoint. Connexion builds this automatically when it parses the <code>swagger.yml</code> file.</p>
+  <p>If you click on the <code>/people</code> endpoint in the interface, then the interface will expand to show more information about your API:</p>
+ 
+  
+  <p>This displays the structure of the expected response, the <code>content-type</code> of that response, and the description text that you entered about the endpoint in the <code>swagger.yml</code> file. Any time the configuration file changes, the Swagger UI changes as well. </p>
+  <p>You can even try the endpoint out by clicking the <em>Try it out</em> button. This feature can be extremely useful when your API grows. The Swagger UI API documentation gives you a way to explore and experiment with the API without having to write any code to do so.</p>
+  <p>Using OpenAPI with the Swagger UI offers a nice, clean way to create the API URL endpoints. So far, you’ve only created one endpoint to serve all people. In the next section, you’ll add additional endpoints to create, update, and delete people in your collection.</p>
+  </section></section><section class="section2" id="building-out-the-complete-api"><h2>Building Out the Complete API<a class="headerlink" href="#building-out-the-complete-api" title="Permanent link"></a></h2>
+  <p>So far, your Flask REST API has one endpoint. Now it’s time to build out an API providing full CRUD access to your people structure. As you recall, the definition of your API looks like this:</p>
+  <div class="table-responsive">
+  <table class="table table-hover">
+  <thead>
+  <tr>
+  <th class="text-left">Action</th>
+  <th class="text-left">HTTP Verb</th>
+  <th class="text-left">URL Path</th>
+  <th class="text-left">Description</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td class="text-left">Read</td>
+  <td class="text-left"><code>GET</code></td>
+  <td class="text-left"><code>/api/people</code></td>
+  <td class="text-left">Read a collection of people.</td>
+  </tr>
+  <tr>
+  <td class="text-left">Create</td>
+  <td class="text-left"><code>POST</code></td>
+  <td class="text-left"><code>/api/people</code></td>
+  <td class="text-left">Create a new person.</td>
+  </tr>
+  <tr>
+  <td class="text-left">Read</td>
+  <td class="text-left"><code>GET</code></td>
+  <td class="text-left"><code>/api/people/&lt;lname&gt;</code></td>
+  <td class="text-left">Read a particular person.</td>
+  </tr>
+  <tr>
+  <td class="text-left">Update</td>
+  <td class="text-left"><code>PUT</code></td>
+  <td class="text-left"><code>/api/people/&lt;lname&gt;</code></td>
+  <td class="text-left">Update an existing person.</td>
+  </tr>
+  <tr>
+  <td class="text-left">Delete</td>
+  <td class="text-left"><code>DELETE</code></td>
+  <td class="text-left"><code>/api/people/&lt;lname&gt;</code></td>
+  <td class="text-left">Delete an existing person.</td>
+  </tr>
+  </tbody>
+  </table>
+  </div>
+  <p>To achieve this, you’ll extend both the <code>swagger.yml</code> and <code>people.py</code> files to fully support the API defined above.</p>
+  <section class="section3" id="work-with-components"><h3>Work With Components<a class="headerlink" href="#work-with-components" title="Permanent link"></a></h3>
+  <p>Before you define new API paths in <code>swagger.yml</code>, you’ll add a new block for <strong>components</strong>. <a href="https://spec.openapis.org/oas/v3.0.0#components-object">Components</a> are building blocks in your OpenAPI specification that you can reference from other parts of your specification.</p>
+  <p>Add a <code>components</code> block with <code>schemas</code> for a single person:</p>
+  <div class="highlight yaml"><pre><span></span><code><span class="c1"># swagger.yml</span><span class="w"></span>
+  
+  <span class="nt">openapi</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.0.0</span><span class="w"></span>
+  <span class="nt">info</span><span class="p">:</span><span class="w"></span>
+  <span class="w">  </span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="s">"RP</span><span class="nv"> </span><span class="s">Flask</span><span class="nv"> </span><span class="s">REST</span><span class="nv"> </span><span class="s">API"</span><span class="w"></span>
+  <span class="w">  </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">"An</span><span class="nv"> </span><span class="s">API</span><span class="nv"> </span><span class="s">about</span><span class="nv"> </span><span class="s">people</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">notes"</span><span class="w"></span>
+  <span class="w">  </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">"1.0.0"</span><span class="w"></span>
+  
+  <span class="nt">servers</span><span class="p">:</span><span class="w"></span>
+  <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="s">"/api"</span><span class="w"></span>
+  
+  <span class="hll"><span class="nt">components</span><span class="p">:</span><span class="w"></span>
+  </span><span class="hll"><span class="w">  </span><span class="nt">schemas</span><span class="p">:</span><span class="w"></span>
+  </span><span class="hll"><span class="w">    </span><span class="nt">Person</span><span class="p">:</span><span class="w"></span>
+  </span><span class="hll"><span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">"object"</span><span class="w"></span>
+  </span><span class="hll"><span class="w">      </span><span class="nt">required</span><span class="p">:</span><span class="w"></span>
+  </span><span class="hll"><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lname</span><span class="w"></span>
+  </span><span class="hll"><span class="w">      </span><span class="nt">properties</span><span class="p">:</span><span class="w"></span>
+  </span><span class="hll"><span class="w">        </span><span class="nt">fname</span><span class="p">:</span><span class="w"></span>
+  </span><span class="hll"><span class="w">          </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">"string"</span><span class="w"></span>
+  </span><span class="hll"><span class="w">        </span><span class="nt">lname</span><span class="p">:</span><span class="w"></span>
+  </span><span class="hll"><span class="w">          </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">"string"</span><span class="w"></span>
+  </span><span class="c1"># ...</span><span class="w"></span>
+  </code></pre></div>
+  <p>To avoid code duplication, you create a <code>components</code> block. For now, you save only the <code>Person</code> data model in the <code>schemas</code> block:</p>
+  <ul>
+  <li><strong><code>type:</code></strong> The data type of the schema</li>
+  <li><strong><code>required:</code></strong> The required properties</li>
+  </ul>
+  <p>The dash (<code>-</code>) in front of <code>- lname</code> indicates that <code>required</code> can contain a list of properties. Any property that you define as <code>required</code> must also exist in <code>properties</code>, which includes the following:</p>
+  <ul>
+  <li><strong><code>fname:</code></strong> The first name of a person</li>
+  <li><strong><code>lname:</code></strong> The last name of a person</li>
+  </ul>
+  <p>The <code>type</code> key defines the value associated with its parent key. For <code>Person</code>, all properties are strings. You’ll represent this schema in your Python code as a <a href="https://realpython.com/python-dicts/">dictionary</a> later in this tutorial.</p>
+  </section><section class="section3" id="create-a-new-person"><h3>Create a New Person<a class="headerlink" href="#create-a-new-person" title="Permanent link"></a></h3>
+  <p>Extend your API endpoints by adding a new block for the <code>post</code> request in the <code>/people</code> block:</p>
+  <div class="highlight yaml"><pre><span></span><code><span class="c1"># swagger.yml</span><span class="w"></span>
+  
+  <span class="c1"># ...</span><span class="w"></span>
+  
+  <span class="nt">paths</span><span class="p">:</span><span class="w"></span>
+  <span class="w">  </span><span class="nt">/people</span><span class="p">:</span><span class="w"></span>
+  <span class="w">    </span><span class="nt">get</span><span class="p">:</span><span class="w"></span>
+  <span class="w">        </span><span class="c1"># ...</span><span class="w"></span>
+  <span class="hll"><span class="w">    </span><span class="nt">post</span><span class="p">:</span><span class="w"></span>
+  </span><span class="w">      </span><span class="nt">operationId</span><span class="p">:</span><span class="w"> </span><span class="s">"people.create"</span><span class="w"></span>
+  <span class="w">      </span><span class="nt">tags</span><span class="p">:</span><span class="w"></span>
+  <span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">People</span><span class="w"></span>
+  <span class="w">      </span><span class="nt">summary</span><span class="p">:</span><span class="w"> </span><span class="s">"Create</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">person"</span><span class="w"></span>
+  <span class="w">      </span><span class="nt">requestBody</span><span class="p">:</span><span class="w"></span>
+  <span class="w">          </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">"Person</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">create"</span><span class="w"></span>
+  <span class="w">          </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+  <span class="w">          </span><span class="nt">content</span><span class="p">:</span><span class="w"></span>
+  <span class="w">            </span><span class="nt">application/json</span><span class="p">:</span><span class="w"></span>
+  <span class="w">              </span><span class="nt">schema</span><span class="p">:</span><span class="w"></span>
+  <span class="w">                </span><span class="nt">x-body-name</span><span class="p">:</span><span class="w"> </span><span class="s">"person"</span><span class="w"></span>
+  <span class="w">                </span><span class="nt">$ref</span><span class="p">:</span><span class="w"> </span><span class="s">"#/components/schemas/Person"</span><span class="w"></span>
+  <span class="w">      </span><span class="nt">responses</span><span class="p">:</span><span class="w"></span>
+  <span class="w">        </span><span class="s">"201"</span><span class="p p-Indicator">:</span><span class="w"></span>
+  <span class="w">          </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">"Successfully</span><span class="nv"> </span><span class="s">created</span><span class="nv"> </span><span class="s">person"</span><span class="w"></span>
+  </code></pre></div>
+  <p>The structure for <code>post</code> looks similar to the existing <code>get</code> schema. One difference is that you also send <code>requestBody</code> to the server. After all, you need to tell Flask the information that it needs to create a new person. Another difference is <code>operationId</code>, which you set to <code>people.create</code>.</p>
+  <p>Inside of <code>content</code>, you define <code>application/json</code> as the <strong>data exchange format</strong> of your API.</p>
+  <p>You can serve different media types in your API requests and API responses. Nowadays APIs commonly use JSON as the data exchange format. This is good news for you as a Python developer, because JSON objects look very much like Python dictionaries. For example:</p>
+  <div class="highlight json"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+  <span class="w">    </span><span class="nt">"fname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tooth"</span><span class="p">,</span><span class="w"></span>
+  <span class="w">    </span><span class="nt">"lname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fairy"</span><span class="w"></span>
+  <span class="p">}</span><span class="w"></span>
+  </code></pre></div>
+  <p>This JSON object resembles the <code>Person</code> component that you were defining earlier in <code>swagger.yml</code> and that you’re referencing with <code>$ref</code> in <code>schema</code>.</p>
+  <p>You’re also using a 201 HTTP status code, which is a success response that indicates the creation of a new resource.</p>
+  <div class="alert alert-primary" role="alert">
+  <p><strong>Note:</strong> If you want to learn more about HTTP status codes, then you can check out Mozilla’s documentation about <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status">HTTP response status codes</a>.</p>
+  </div>
+  <p>With <code>people.create</code>, you’re telling your server to look for a <code>create()</code> function in the <code>people</code> module. Open <code>people.py</code> and add <code>create()</code> to the file:</p>
+  <div class="highlight python"><pre><span></span><code><span class="linenos"> 1</span><span class="c1"># people.py</span>
+  <span class="linenos"> 2</span>
+  <span class="linenos"> 3</span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+  <span class="hll"><span class="linenos"> 4</span><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">abort</span>
+  </span><span class="linenos"> 5</span>
+  <span class="linenos"> 6</span><span class="c1"># ...</span>
+  <span class="linenos"> 7</span>
+  <span class="hll"><span class="linenos"> 8</span><span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="n">person</span><span class="p">):</span>
+  </span><span class="linenos"> 9</span>    <span class="n">lname</span> <span class="o">=</span> <span class="n">person</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"lname"</span><span class="p">)</span>
+  <span class="linenos">10</span>    <span class="n">fname</span> <span class="o">=</span> <span class="n">person</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"fname"</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span>
+  <span class="linenos">11</span>
+  <span class="linenos">12</span>    <span class="k">if</span> <span class="n">lname</span> <span class="ow">and</span> <span class="n">lname</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">PEOPLE</span><span class="p">:</span>
+  <span class="linenos">13</span>        <span class="n">PEOPLE</span><span class="p">[</span><span class="n">lname</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="linenos">14</span>            <span class="s2">"lname"</span><span class="p">:</span> <span class="n">lname</span><span class="p">,</span>
+  <span class="linenos">15</span>            <span class="s2">"fname"</span><span class="p">:</span> <span class="n">fname</span><span class="p">,</span>
+  <span class="linenos">16</span>            <span class="s2">"timestamp"</span><span class="p">:</span> <span class="n">get_timestamp</span><span class="p">(),</span>
+  <span class="linenos">17</span>        <span class="p">}</span>
+  <span class="linenos">18</span>        <span class="k">return</span> <span class="n">PEOPLE</span><span class="p">[</span><span class="n">lname</span><span class="p">],</span> <span class="mi">201</span>
+  <span class="linenos">19</span>    <span class="k">else</span><span class="p">:</span>
+  <span class="linenos">20</span>        <span class="n">abort</span><span class="p">(</span>
+  <span class="linenos">21</span>            <span class="mi">406</span><span class="p">,</span>
+  <span class="linenos">22</span>            <span class="sa">f</span><span class="s2">"Person with last name </span><span class="si">{</span><span class="n">lname</span><span class="si">}</span><span class="s2"> already exists"</span><span class="p">,</span>
+  <span class="linenos">23</span>        <span class="p">)</span>
+  </code></pre></div>
+  <p>In line 4, you’re importing Flask’s <code>abort()</code> function. Using <code>abort()</code> helps you send an error message in line 20. You raise the error response when the <strong>request body</strong> doesn’t contain a last name or when a person with this last name already exists.</p>
+  <div class="alert alert-primary" role="alert">
+  <p><strong>Note:</strong> A person’s last name must be unique, because you’re using <code>lname</code> as a dictionary key of <code>PEOPLE</code>. That means you can’t have two people with the same last name in your project for now.</p>
+  </div>
+  <p>If the data in the request body is valid, you update <code>PEOPLE</code> in line 13 and respond with the new object and a 201 HTTP code in line 18. </p>
+ </section><section class="section3" id="handle-a-person"><h3>Handle a Person<a class="headerlink" href="#handle-a-person" title="Permanent link"></a></h3>
+  <p>So far, you’re able to create a new person and get a list with all your people. In this section, you’ll update <code>swagger.yml</code> and <code>people.py</code> to work with a new path that handles a single existing person.</p>
+  <p>Open <code>swagger.yml</code> and add the code below:</p>
+  <div class="highlight yaml"><pre><span></span><code><span class="c1"># swagger.yml</span><span class="w"></span>
+  
+  <span class="c1"># ...</span><span class="w"></span>
+  
+  <span class="nt">components</span><span class="p">:</span><span class="w"></span>
+  <span class="w">  </span><span class="nt">schemas</span><span class="p">:</span><span class="w"></span>
+  <span class="w">    </span><span class="c1"># ...</span><span class="w"></span>
+  <span class="hll"><span class="w">  </span><span class="nt">parameters</span><span class="p">:</span><span class="w"></span>
+  </span><span class="w">    </span><span class="nt">lname</span><span class="p">:</span><span class="w"></span>
+  <span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">"lname"</span><span class="w"></span>
+  <span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">"Last</span><span class="nv"> </span><span class="s">name</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">person</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">get"</span><span class="w"></span>
+  <span class="w">      </span><span class="nt">in</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">path</span><span class="w"></span>
+  <span class="w">      </span><span class="nt">required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span><span class="w"></span>
+  <span class="w">      </span><span class="nt">schema</span><span class="p">:</span><span class="w"></span>
+  <span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="s">"string"</span><span class="w"></span>
+  
+  <span class="nt">paths</span><span class="p">:</span><span class="w"></span>
+  <span class="w">  </span><span class="nt">/people</span><span class="p">:</span><span class="w"></span>
+  <span class="w">    </span><span class="c1"># ...</span><span class="w"></span>
+  <span class="hll"><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">/people/{lname}</span><span class="p p-Indicator">:</span><span class="w"></span>
+  </span><span class="w">    </span><span class="nt">get</span><span class="p">:</span><span class="w"></span>
+  <span class="w">      </span><span class="nt">operationId</span><span class="p">:</span><span class="w"> </span><span class="s">"people.read_one"</span><span class="w"></span>
+  <span class="w">      </span><span class="nt">tags</span><span class="p">:</span><span class="w"></span>
+  <span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">People</span><span class="w"></span>
+  <span class="w">      </span><span class="nt">summary</span><span class="p">:</span><span class="w"> </span><span class="s">"Read</span><span class="nv"> </span><span class="s">one</span><span class="nv"> </span><span class="s">person"</span><span class="w"></span>
+  <span class="w">      </span><span class="nt">parameters</span><span class="p">:</span><span class="w"></span>
+  <span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">$ref</span><span class="p">:</span><span class="w"> </span><span class="s">"#/components/parameters/lname"</span><span class="w"></span>
+  <span class="w">      </span><span class="nt">responses</span><span class="p">:</span><span class="w"></span>
+  <span class="w">        </span><span class="s">"200"</span><span class="p p-Indicator">:</span><span class="w"></span>
+  <span class="w">          </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">"Successfully</span><span class="nv"> </span><span class="s">read</span><span class="nv"> </span><span class="s">person"</span><span class="w"></span>
+  </code></pre></div>
+  <p>Similar to your <code>/people</code> path, you start with the <code>get</code> operation for the <code>/people/{lname}</code> path. The <code>{lname}</code> substring is a placeholder for the last name, which you have to pass in as a <strong>URL parameter</strong>. So, for example, the URL path <code>api/people/Ruprecht</code> contains <code>Ruprecht</code> as <code>lname</code>.</p>
+  <div class="alert alert-primary" role="alert">
+  <p><strong>Note:</strong> The URL parameters are <strong>case sensitive</strong>. That means you must type a last name like <em>Ruprecht</em> with an uppercase R. </p>
+  </div>
+  <p>You’ll use the <code>lname</code> parameter in other operations, too. So it makes sense to create a component for it and reference it where needed.</p>
+  <p><code>operationId</code> points to a <code>read_one()</code> function in <code>people.py</code>, so head over to that file again and create the missing function:</p>
+  <div class="highlight python"><pre><span></span><code><span class="c1"># people.py</span>
+  
+  <span class="c1"># ...</span>
+  
+  <span class="k">def</span> <span class="nf">read_one</span><span class="p">(</span><span class="n">lname</span><span class="p">):</span>
+      <span class="k">if</span> <span class="n">lname</span> <span class="ow">in</span> <span class="n">PEOPLE</span><span class="p">:</span>
+          <span class="k">return</span> <span class="n">PEOPLE</span><span class="p">[</span><span class="n">lname</span><span class="p">]</span>
+      <span class="k">else</span><span class="p">:</span>
+          <span class="n">abort</span><span class="p">(</span>
+              <span class="mi">404</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"Person with last name </span><span class="si">{</span><span class="n">lname</span><span class="si">}</span><span class="s2"> not found"</span>
+          <span class="p">)</span>
+  </code></pre></div>
+  <p>When your Flask app finds the provided last name in <code>PEOPLE</code>, then it returns the data for this particular person. Otherwise, the server will return a 404 HTTP error.</p>
+  <p>To update an existing person, update <code>swagger.yml</code> with this code:</p>
+  <div class="highlight yaml"><pre><span></span><code><span class="c1"># swagger.yml</span><span class="w"></span>
+  
+  <span class="c1"># ...</span><span class="w"></span>
+  
+  <span class="nt">paths</span><span class="p">:</span><span class="w"></span>
+  <span class="w">  </span><span class="nt">/people</span><span class="p">:</span><span class="w"></span>
+  <span class="w">    </span><span class="c1"># ...</span><span class="w"></span>
+  <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">/people/{lname}</span><span class="p p-Indicator">:</span><span class="w"></span>
+  <span class="w">    </span><span class="nt">get</span><span class="p">:</span><span class="w"></span>
+  <span class="w">        </span><span class="c1"># ...</span><span class="w"></span>
+  <span class="hll"><span class="w">    </span><span class="nt">put</span><span class="p">:</span><span class="w"></span>
+  </span><span class="w">      </span><span class="nt">tags</span><span class="p">:</span><span class="w"></span>
+  <span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">People</span><span class="w"></span>
+  <span class="w">      </span><span class="nt">operationId</span><span class="p">:</span><span class="w"> </span><span class="s">"people.update"</span><span class="w"></span>
+  <span class="w">      </span><span class="nt">summary</span><span class="p">:</span><span class="w"> </span><span class="s">"Update</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">person"</span><span class="w"></span>
+  <span class="w">      </span><span class="nt">parameters</span><span class="p">:</span><span class="w"></span>
+  <span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">$ref</span><span class="p">:</span><span class="w"> </span><span class="s">"#/components/parameters/lname"</span><span class="w"></span>
+  <span class="w">      </span><span class="nt">responses</span><span class="p">:</span><span class="w"></span>
+  <span class="w">        </span><span class="s">"200"</span><span class="p p-Indicator">:</span><span class="w"></span>
+  <span class="w">          </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">"Successfully</span><span class="nv"> </span><span class="s">updated</span><span class="nv"> </span><span class="s">person"</span><span class="w"></span>
+  <span class="w">      </span><span class="nt">requestBody</span><span class="p">:</span><span class="w"></span>
+  <span class="w">        </span><span class="nt">content</span><span class="p">:</span><span class="w"></span>
+  <span class="w">          </span><span class="nt">application/json</span><span class="p">:</span><span class="w"></span>
+  <span class="w">            </span><span class="nt">schema</span><span class="p">:</span><span class="w"></span>
+  <span class="w">              </span><span class="nt">x-body-name</span><span class="p">:</span><span class="w"> </span><span class="s">"person"</span><span class="w"></span>
+  <span class="w">              </span><span class="nt">$ref</span><span class="p">:</span><span class="w"> </span><span class="s">"#/components/schemas/Person"</span><span class="w"></span>
+  </code></pre></div>
+  <p>With this definition of the <code>put</code> operation, your server expects <code>update()</code> in <code>people.py</code>:</p>
+  <div class="highlight python"><pre><span></span><code><span class="c1"># people.py</span>
+  
+  <span class="c1"># ...</span>
+  
+  <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="n">lname</span><span class="p">,</span> <span class="n">person</span><span class="p">):</span>
+      <span class="k">if</span> <span class="n">lname</span> <span class="ow">in</span> <span class="n">PEOPLE</span><span class="p">:</span>
+          <span class="n">PEOPLE</span><span class="p">[</span><span class="n">lname</span><span class="p">][</span><span class="s2">"fname"</span><span class="p">]</span> <span class="o">=</span> <span class="n">person</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"fname"</span><span class="p">,</span> <span class="n">PEOPLE</span><span class="p">[</span><span class="n">lname</span><span class="p">][</span><span class="s2">"fname"</span><span class="p">])</span>
+          <span class="n">PEOPLE</span><span class="p">[</span><span class="n">lname</span><span class="p">][</span><span class="s2">"timestamp"</span><span class="p">]</span> <span class="o">=</span> <span class="n">get_timestamp</span><span class="p">()</span>
+          <span class="k">return</span> <span class="n">PEOPLE</span><span class="p">[</span><span class="n">lname</span><span class="p">]</span>
+      <span class="k">else</span><span class="p">:</span>
+          <span class="n">abort</span><span class="p">(</span>
+              <span class="mi">404</span><span class="p">,</span>
+              <span class="sa">f</span><span class="s2">"Person with last name </span><span class="si">{</span><span class="n">lname</span><span class="si">}</span><span class="s2"> not found"</span>
+          <span class="p">)</span>
+  </code></pre></div>
+  <p>The <code>update()</code> function expects the arguments <code>lname</code> and <code>person</code>. When a person with the provided last name exists, then you update the corresponding values in <code>PEOPLE</code> with the <code>person</code> data.</p>
+  <p>To get rid of a person in your dataset, you need to work with a <code>delete</code> operation:</p>
+  <div class="highlight yaml"><pre><span></span><code><span class="c1"># swagger.yml</span><span class="w"></span>
+  
+  <span class="c1"># ...</span><span class="w"></span>
+  
+  <span class="nt">paths</span><span class="p">:</span><span class="w"></span>
+  <span class="w">  </span><span class="nt">/people</span><span class="p">:</span><span class="w"></span>
+  <span class="w">    </span><span class="c1"># ...</span><span class="w"></span>
+  <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">/people/{lname}</span><span class="p p-Indicator">:</span><span class="w"></span>
+  <span class="w">    </span><span class="nt">get</span><span class="p">:</span><span class="w"></span>
+  <span class="w">        </span><span class="c1"># ...</span><span class="w"></span>
+  <span class="w">    </span><span class="nt">put</span><span class="p">:</span><span class="w"></span>
+  <span class="w">        </span><span class="c1"># ...</span><span class="w"></span>
+  <span class="hll"><span class="w">    </span><span class="nt">delete</span><span class="p">:</span><span class="w"></span>
+  </span><span class="w">      </span><span class="nt">tags</span><span class="p">:</span><span class="w"></span>
+  <span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">People</span><span class="w"></span>
+  <span class="w">      </span><span class="nt">operationId</span><span class="p">:</span><span class="w"> </span><span class="s">"people.delete"</span><span class="w"></span>
+  <span class="w">      </span><span class="nt">summary</span><span class="p">:</span><span class="w"> </span><span class="s">"Delete</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">person"</span><span class="w"></span>
+  <span class="w">      </span><span class="nt">parameters</span><span class="p">:</span><span class="w"></span>
+  <span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">$ref</span><span class="p">:</span><span class="w"> </span><span class="s">"#/components/parameters/lname"</span><span class="w"></span>
+  <span class="w">      </span><span class="nt">responses</span><span class="p">:</span><span class="w"></span>
+  <span class="w">        </span><span class="s">"204"</span><span class="p p-Indicator">:</span><span class="w"></span>
+  <span class="w">          </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">"Successfully</span><span class="nv"> </span><span class="s">deleted</span><span class="nv"> </span><span class="s">person"</span><span class="w"></span>
+  </code></pre></div>
+  <p>Add the corresponding <code>delete()</code> function to <code>person.py</code>:</p>
+  <div class="highlight python"><pre><span></span><code><span class="c1"># people.py</span>
+  
+  <span class="hll"><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">abort</span><span class="p">,</span> <span class="n">make_response</span>
+  </span>
+  <span class="c1"># ...</span>
+  
+  <span class="hll"><span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="n">lname</span><span class="p">):</span>
+  </span>    <span class="k">if</span> <span class="n">lname</span> <span class="ow">in</span> <span class="n">PEOPLE</span><span class="p">:</span>
+          <span class="k">del</span> <span class="n">PEOPLE</span><span class="p">[</span><span class="n">lname</span><span class="p">]</span>
+          <span class="k">return</span> <span class="n">make_response</span><span class="p">(</span>
+              <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">lname</span><span class="si">}</span><span class="s2"> successfully deleted"</span><span class="p">,</span> <span class="mi">200</span>
+          <span class="p">)</span>
+      <span class="k">else</span><span class="p">:</span>
+          <span class="n">abort</span><span class="p">(</span>
+              <span class="mi">404</span><span class="p">,</span>
+              <span class="sa">f</span><span class="s2">"Person with last name </span><span class="si">{</span><span class="n">lname</span><span class="si">}</span><span class="s2"> not found"</span>
+          <span class="p">)</span>
+  </code></pre></div>
+  <p>If the person you want to delete exists in your dataset, then you remove the item from <code>PEOPLE</code>. </p>
+  <p>Both <code>people.py</code> and <code>swagger.yml</code> are complete for this part of the tutorial. You can download the complete files by clicking the link below:</p>
+  
+  <p>With all the endpoints to manage people in place, it’s time to try out your API. Since you used Connexion to connect your Flask project with Swagger, your API documentation is ready for you when you restart your server.</p>
+  </section><section class="section3" id="explore-your-complete-api-documentation"><h3>Explore Your Complete API Documentation<a class="headerlink" href="#explore-your-complete-api-documentation" title="Permanent link"></a></h3>
+  <p>Once you’ve updated the <code>swagger.yml</code> and <code>people.py</code> files to complete the people API functionality, the Swagger UI system will update accordingly and look something like this:</p>
+  
+  
+  <p>This UI allows you to see all of the documentation that you’ve included in the <code>swagger.yml</code> file and to interact with all of the URL endpoints making up the CRUD functionality of the people interface.</p>
+  <p>Unfortunately, any changes that you make won’t persist when you restart your Flask application. That’s why you’ll plug a proper database in to your project in the next part of this tutorial series.</p>
+  </section></section><section class="section2" id="conclusion"><h2>Conclusion<a class="headerlink" href="#conclusion" title="Permanent link"></a></h2>
+  <p>In this part of the tutorial series, you created a comprehensive REST API with Python’s Flask web framework. With the Connexion module and some additional configuration work, useful documentation and an interactive system can be put in place. This makes building a REST API a very enjoyable experience.</p>
+  <p><strong>In the first part of this tutorial series, you learned how to:</strong></p>
+  <ul>
+  <li>Build a base <strong>Flask</strong> project with a <strong>REST API</strong></li>
+  <li>Handle <strong>HTTP requests</strong> with <strong>Connexion</strong></li>
+  <li>Define <strong>API endpoints</strong> using the <strong>OpenAPI</strong> specification</li>
+  <li>Interact with your <strong>API</strong> to manage data</li>
+  <li>Build <strong>API documentation</strong> with <strong>Swagger UI</strong></li>
+  </ul>
+  <p>In part two of this series, you’ll learn how to use a proper database to store your data permanently instead of relying on in-memory storage as you did here.</p>
+  
+  
+  </section>
+  
+      
+        
+        
+  
+      
+    </div>
+</body>
+
+</html>
